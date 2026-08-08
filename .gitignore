@@ -4,3 +4,9 @@ dist/
 __pycache__/
 *.pyc
 .venv/
+
+# Never commit raw source material to a public repo
+/pipeline/raw/
+/pipeline/downloads/
+*.pdf
+/pipeline/out/quarantine/
