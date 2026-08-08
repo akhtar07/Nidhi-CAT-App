@@ -11,7 +11,7 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 0 — Repo scaffold
+## Current milestone: 1 — Schemas & syllabus (not started)
 
 ## Binding decision recorded ahead of Milestone 1
 So the pipeline (Python) and app (TypeScript) content schemas can never drift,
@@ -40,7 +40,36 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
-_(nothing yet — Milestone 0 in progress)_
+
+### Milestone 0 — Repo scaffold (done)
+- `/app`: Vite + React 18 + TypeScript strict + Tailwind CSS v4 + shadcn/ui
+  (`base-nova` style, neutral base color, `dark` class variant support).
+  `Button` component installed as the first shadcn primitive.
+- Path alias `@/*` → `app/src/*` wired in `tsconfig.json`/`tsconfig.app.json`
+  (no `baseUrl` — deprecated in the installed TS 6.0 toolchain, `paths`
+  resolves relative to the tsconfig file instead) and `vite.config.ts`.
+- `react-router-dom` with `HashRouter` (avoids the GitHub Pages
+  404-on-refresh trap per SPEC.md §7). Single placeholder route at `/`
+  rendering `src/pages/Today.tsx`.
+- `vite.config.ts` → `base: '/Nidhi-CAT-App/'` for the
+  `akhtar07/Nidhi-CAT-App` GitHub Pages deployment. Verified via
+  `vite preview` that all asset URLs resolve under that base.
+- Lint via `oxlint` (installed by the shadcn CLI in place of ESLint;
+  equivalent role — fails CI on errors). `npm run typecheck` (`tsc -b`)
+  separated from `npm run build` (`vite build`) so CI can run them as
+  distinct steps.
+- Top-level `/content` and `/pipeline` folders created (each with a short
+  README) as placeholders for Milestones 1 and 3; both empty pending those
+  milestones. `/pipeline/raw/` exists locally and is gitignored per the new
+  hard rule.
+- `.github/workflows/deploy.yml`: on push to `main`, runs
+  `npm ci → lint → typecheck → build` in `/app`, then deploys `app/dist` to
+  GitHub Pages via `actions/configure-pages` +
+  `actions/upload-pages-artifact` + `actions/deploy-pages` (Pages source =
+  GitHub Actions, already configured on the repo).
+- Verified live: pushed to `main`, workflow run succeeded
+  (run id 31280771973), `https://akhtar07.github.io/Nidhi-CAT-App/` returns
+  200 with the placeholder page and correctly prefixed asset paths.
 
 ## Schema changes since SPEC.md
 - SPEC.md §6: added a hard rule — raw source material (PYQ PDFs, scraped
