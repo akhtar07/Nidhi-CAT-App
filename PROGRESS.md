@@ -1,12 +1,56 @@
 # Progress log
 
-## Current milestone: (none — not started)
+## Milestone order (revised)
+Original SPEC.md §15 order is sequential (0,1,2,3,...). Revised for this build:
+
+**0 → 1 → 3 → 2 → 4 → 5 → ...**
+
+Milestone 2 (Storage layer / StorageAdapter / DexieAdapter) is deferred until
+after Milestone 3 (Content pipeline v1). Rationale: the pipeline emits JSON
+into `/content` and has no dependency on learner-state storage, so there's no
+reason to block content ingestion on it. All other milestones keep their
+original numbers and order from SPEC.md §15.
+
+## Current milestone: 0 — Repo scaffold
+
+## Binding decision recorded ahead of Milestone 1
+So the pipeline (Python) and app (TypeScript) content schemas can never drift,
+Milestone 1 will be implemented as:
+
+- **`/pipeline/schemas.py`** (pydantic v2) is the single source of truth for
+  every content type in SPEC.md §5.1 (`MicroTopic`, `Lesson`, `Question`,
+  `PassageSet`, etc.).
+- JSON Schemas are **generated** from the pydantic models into
+  `/content/schemas/*.json`.
+- TypeScript types are **generated** from those JSON Schemas into
+  `/app/src/types/content.ts` via `json-schema-to-typescript` (new dev
+  dependency, added to SPEC.md §7 tooling — approved as part of this
+  decision, do not ask again).
+- Both generated outputs (`/content/schemas/*.json` and
+  `/app/src/types/content.ts`) are committed to git.
+- CI regenerates both from `/pipeline/schemas.py` on every push and fails the
+  build if the regenerated output differs from what's committed (drift
+  check).
+- **Never hand-edit `/app/src/types/content.ts` or `/content/schemas/*.json`.**
+  Change `/pipeline/schemas.py` and regenerate.
+
+Learner-state types (SPEC.md §5.2 — `Attempt`, `MasteryState`, `PlanDay`,
+`MockResult`, `Settings`) are NOT part of this generation pipeline; they are
+TypeScript-native (Milestone 2, storage layer) since they never need to be
+produced or validated by the Python pipeline.
 
 ## Completed
-_(nothing yet)_
+_(nothing yet — Milestone 0 in progress)_
 
 ## Schema changes since SPEC.md
-_(none)_
+- SPEC.md §6: added a hard rule — raw source material (PYQ PDFs, scraped
+  HTML, third-party solution text) is never committed; lives in
+  `/pipeline/raw/` (gitignored). Only pipeline-generated JSON in `/content/`
+  is committed, and every asset must carry a `licence` field or CI fails.
+- SPEC.md §7 (pending, to apply when Milestone 1 lands): add
+  `json-schema-to-typescript` as a frontend dev dependency, per the binding
+  decision above.
 
 ## Known issues / deferred
-_(none)_
+- Milestone 2 (Storage layer) deferred until after Milestone 3 — see
+  "Milestone order" above.

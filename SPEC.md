@@ -280,6 +280,8 @@ interface Settings { dailyMinutes: number; examDate: string; weakSectionBias: Se
 
 This pipeline is a **separate Python repo/folder (`/pipeline`) that runs offline on the build machine (128 cores, 24 GB A5000)** and emits JSON into `/content`. It never runs in the browser.
 
+**Hard rule — this repo is public: raw source material is never committed.** PYQ PDFs, scraped HTML, third-party solution text, or any other raw ingested material lives only in `/pipeline/raw/`, which is gitignored. Nothing under it ever reaches a commit. The only thing that leaves `/pipeline` and enters version control is pipeline-*generated* JSON written to `/content/`, and every asset there must carry a non-empty `licence` field or the CI content validator fails the build. If you're unsure whether a file counts as "raw," it stays out of git.
+
 ### 6.1 Sourcing — the legal and practical hierarchy
 
 **Tier 1 — Official CAT previous-year papers.** The IIMs publish the actual question papers and answer keys after each exam, and they circulate as public PDFs. This is the single most valuable content in the project: real CAT questions, real difficulty calibration, real answer keys. Target CAT 2017–2025, all three slots per year. That is roughly **60–70 questions × 3 slots × 9 years ≈ 1,600+ genuine items** before you generate anything. Build ingestion for these first.
