@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ascent.local/content/schemas/passage-set.schema.json",
+  "title": "PassageSet",
+  "$defs": {
+    "PassageAsset": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "table",
+            "chart"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "spec": {
+          "additionalProperties": true,
+          "description": "Render charts from data, not images, per SPEC.md \u00a75.1.",
+          "title": "Spec",
+          "type": "object"
+        }
+      },
+      "required": [
+        "type",
+        "spec"
+      ],
+      "title": "PassageAsset",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "section": {
+      "enum": [
+        "VARC",
+        "DILR"
+      ],
+      "title": "Section",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "rc_passage",
+        "di_set",
+        "lr_set"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "bodyMarkdown": {
+      "minLength": 1,
+      "title": "Bodymarkdown",
+      "type": "string"
+    },
+    "assets": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/PassageAsset"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Assets"
+    },
+    "questionIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Questionids",
+      "type": "array"
+    },
+    "genre": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Genre"
+    },
+    "wordCount": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Wordcount"
+    },
+    "targetMinutes": {
+      "exclusiveMinimum": 0,
+      "title": "Targetminutes",
+      "type": "number"
+    },
+    "licence": {
+      "description": "MANDATORY. See SPEC.md \u00a76. Blank fails CI.",
+      "minLength": 1,
+      "title": "Licence",
+      "type": "string"
+    },
+    "sourceUrl": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sourceurl"
+    }
+  },
+  "required": [
+    "id",
+    "section",
+    "kind",
+    "bodyMarkdown",
+    "targetMinutes",
+    "licence"
+  ],
+  "type": "object"
+}

@@ -8,7 +8,9 @@
     "build": "vite build",
     "typecheck": "tsc -b",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:types": "node scripts/generate-content-types.mjs",
+    "generate:types:check": "node scripts/generate-content-types.mjs --check"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -30,6 +32,7 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
+    "json-schema-to-typescript": "^15.0.4",
     "oxlint": "^1.75.0",
     "typescript": "~6.0.2",
     "vite": "^8.2.0"

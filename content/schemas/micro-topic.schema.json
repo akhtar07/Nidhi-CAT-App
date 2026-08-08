@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ascent.local/content/schemas/micro-topic.schema.json",
+  "title": "MicroTopic",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "description": "Stable slug id, e.g. 'qa.arith.tsd.boats-streams'. Never an array index.",
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "section": {
+      "enum": [
+        "VARC",
+        "DILR",
+        "QA"
+      ],
+      "title": "Section",
+      "type": "string"
+    },
+    "topicId": {
+      "minLength": 1,
+      "title": "Topicid",
+      "type": "string"
+    },
+    "prerequisites": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Prerequisites",
+      "type": "array"
+    },
+    "catFrequency": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "rare"
+      ],
+      "title": "Catfrequency",
+      "type": "string"
+    },
+    "roiScore": {
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "title": "Roiscore",
+      "type": "integer"
+    },
+    "estLearnMinutes": {
+      "exclusiveMinimum": 0,
+      "title": "Estlearnminutes",
+      "type": "integer"
+    },
+    "targetSecPerQuestion": {
+      "exclusiveMinimum": 0,
+      "title": "Targetsecperquestion",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "section",
+    "topicId",
+    "catFrequency",
+    "roiScore",
+    "estLearnMinutes",
+    "targetSecPerQuestion"
+  ],
+  "type": "object"
+}

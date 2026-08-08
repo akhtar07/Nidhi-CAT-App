@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ascent.local/content/schemas/lesson.schema.json",
+  "title": "Lesson",
+  "$defs": {
+    "FormulaCard": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "Stable id \u2014 the SRS deck (\u00a78.4) keys off this.",
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "microTopicId": {
+          "minLength": 1,
+          "title": "Microtopicid",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "bodyMarkdown": {
+          "description": "The formula/rule itself, KaTeX-enabled.",
+          "minLength": 1,
+          "title": "Bodymarkdown",
+          "type": "string"
+        },
+        "exampleMarkdown": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Examplemarkdown"
+        }
+      },
+      "required": [
+        "id",
+        "microTopicId",
+        "title",
+        "bodyMarkdown"
+      ],
+      "title": "FormulaCard",
+      "type": "object"
+    },
+    "WorkedExample": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "stemMarkdown": {
+          "minLength": 1,
+          "title": "Stemmarkdown",
+          "type": "string"
+        },
+        "solutionMarkdown": {
+          "description": "Step-by-step. Mandatory, never empty.",
+          "minLength": 1,
+          "title": "Solutionmarkdown",
+          "type": "string"
+        },
+        "altSolutionMarkdown": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The 'smart approach', per SPEC.md \u00a713.",
+          "title": "Altsolutionmarkdown"
+        }
+      },
+      "required": [
+        "id",
+        "stemMarkdown",
+        "solutionMarkdown"
+      ],
+      "title": "WorkedExample",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "microTopicId": {
+      "minLength": 1,
+      "title": "Microtopicid",
+      "type": "string"
+    },
+    "bodyMarkdown": {
+      "minLength": 1,
+      "title": "Bodymarkdown",
+      "type": "string"
+    },
+    "workedExamples": {
+      "items": {
+        "$ref": "#/$defs/WorkedExample"
+      },
+      "title": "Workedexamples",
+      "type": "array"
+    },
+    "formulaCards": {
+      "items": {
+        "$ref": "#/$defs/FormulaCard"
+      },
+      "title": "Formulacards",
+      "type": "array"
+    },
+    "commonTraps": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Commontraps",
+      "type": "array"
+    },
+    "estReadMinutes": {
+      "exclusiveMinimum": 0,
+      "title": "Estreadminutes",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "microTopicId",
+    "bodyMarkdown",
+    "estReadMinutes"
+  ],
+  "type": "object"
+}

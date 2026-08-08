@@ -364,6 +364,7 @@ Do **not** trust an LLM's difficulty label. Compute a composite:
 - **Recharts** for analytics charts; **`react-calendar-heatmap`** or a hand-rolled SVG grid for the calendar
 - `vite-plugin-pwa` (Workbox) for the service worker + install prompt
 - `date-fns` for dates. Pin everything to **Asia/Kolkata** for day boundaries — a "day" must roll over at midnight IST, not UTC, or her streak will break at 5:30 AM.
+- **`json-schema-to-typescript`** (dev dependency, Milestone 1) — generates `app/src/types/content.ts` from `/content/schemas/*.json`, which are themselves generated from `/pipeline/schemas.py`. `pipeline/schemas.py` (pydantic v2) is the single source of truth for shipped-content types; never hand-edit either generated output. See PROGRESS.md for the full flow and the CI drift check.
 
 **Content pipeline**
 - Python 3.11+, `pydantic` v2 for schemas, `vllm`, `sympy`, `pymupdf`, `pdfplumber`, `marker-pdf`, `sentence-transformers` (dedup), `httpx` + `tenacity` for polite fetching, `pytest`

@@ -1,0 +1,1089 @@
+[
+  {
+    "id": "varc.rc.main-idea",
+    "name": "Main Idea / Central Theme",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 80
+  },
+  {
+    "id": "varc.rc.direct-detail",
+    "name": "Direct / Explicit Detail",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 70
+  },
+  {
+    "id": "varc.rc.vocab-in-context",
+    "name": "Vocabulary-in-Context",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 70
+  },
+  {
+    "id": "varc.rc.structure-function",
+    "name": "Structure & Function of a Paragraph",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [
+      "varc.rc.main-idea"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "varc.rc.inference",
+    "name": "Inference",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [
+      "varc.rc.direct-detail",
+      "varc.rc.main-idea"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "varc.rc.tone-attitude",
+    "name": "Author's Tone & Attitude",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [
+      "varc.rc.inference"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 80
+  },
+  {
+    "id": "varc.rc.assumption",
+    "name": "Assumption",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [
+      "varc.rc.inference"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "varc.rc.strengthen-weaken",
+    "name": "Strengthen / Weaken",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [
+      "varc.rc.assumption"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "varc.rc.except-least-likely",
+    "name": "Except / Least-likely (Negative Questions)",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [
+      "varc.rc.inference"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "varc.rc.analogy-application",
+    "name": "Analogy / Application",
+    "section": "VARC",
+    "topicId": "varc.rc",
+    "prerequisites": [
+      "varc.rc.inference"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "varc.va.para-jumbles",
+    "name": "Para-jumbles",
+    "section": "VARC",
+    "topicId": "varc.va",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "varc.va.para-summary",
+    "name": "Para-summary",
+    "section": "VARC",
+    "topicId": "varc.va",
+    "prerequisites": [
+      "varc.rc.main-idea"
+    ],
+    "catFrequency": "high",
+    "roiScore": 4,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 75
+  },
+  {
+    "id": "varc.va.odd-sentence-out",
+    "name": "Odd-sentence-out / Odd-one-out",
+    "section": "VARC",
+    "topicId": "varc.va",
+    "prerequisites": [
+      "varc.va.para-jumbles"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "varc.va.para-completion",
+    "name": "Para-completion / Sentence Insertion",
+    "section": "VARC",
+    "topicId": "varc.va",
+    "prerequisites": [
+      "varc.va.para-jumbles"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "varc.va.critical-reasoning",
+    "name": "Critical Reasoning",
+    "section": "VARC",
+    "topicId": "varc.va",
+    "prerequisites": [
+      "varc.rc.assumption"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "varc.va.sentence-correction",
+    "name": "Sentence Correction",
+    "section": "VARC",
+    "topicId": "varc.va",
+    "prerequisites": [],
+    "catFrequency": "rare",
+    "roiScore": 1,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 70
+  },
+  {
+    "id": "varc.va.fill-in-blanks",
+    "name": "Fill in the Blanks",
+    "section": "VARC",
+    "topicId": "varc.va",
+    "prerequisites": [],
+    "catFrequency": "rare",
+    "roiScore": 1,
+    "estLearnMinutes": 15,
+    "targetSecPerQuestion": 60
+  },
+  {
+    "id": "dilr.di.tables",
+    "name": "Tables",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "dilr.di.bar-column",
+    "name": "Bar / Column Charts",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.tables"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "dilr.di.line-charts",
+    "name": "Line Charts",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.tables"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "dilr.di.pie-charts",
+    "name": "Pie Charts",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.tables"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "dilr.di.stacked-charts",
+    "name": "Stacked Charts",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.bar-column"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "dilr.di.radar-spider",
+    "name": "Radar / Spider Charts",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.bar-column"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "dilr.di.bubble-charts",
+    "name": "Bubble Charts",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.bar-column"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "dilr.di.combination-charts",
+    "name": "Combination Charts",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.bar-column",
+      "dilr.di.line-charts"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "dilr.di.caselets",
+    "name": "Caselets",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.tables"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 130
+  },
+  {
+    "id": "dilr.di.missing-data",
+    "name": "Missing / Incomplete Data Tables",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.tables"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 150
+  },
+  {
+    "id": "dilr.di.data-sufficiency",
+    "name": "Data Sufficiency",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.tables"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "dilr.di.growth-cagr",
+    "name": "Growth Rates, CAGR, Indices & Market Share",
+    "section": "DILR",
+    "topicId": "dilr.di",
+    "prerequisites": [
+      "dilr.di.tables",
+      "qa.arith.percentages"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 35,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "dilr.lr.arrangements",
+    "name": "Linear & Circular Arrangements",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 35,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "dilr.lr.distribution-grouping",
+    "name": "Distribution / Matching / Grouping (2D and 3D)",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [
+      "dilr.lr.arrangements"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 40,
+    "targetSecPerQuestion": 150
+  },
+  {
+    "id": "dilr.lr.selection-conditionalities",
+    "name": "Selection & Conditionalities",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [
+      "dilr.lr.arrangements"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "dilr.lr.ordering-ranking",
+    "name": "Ordering & Ranking, Comparisons",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [
+      "dilr.lr.arrangements"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "dilr.lr.games-tournaments",
+    "name": "Games & Tournaments",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [
+      "dilr.lr.ordering-ranking"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 35,
+    "targetSecPerQuestion": 140
+  },
+  {
+    "id": "dilr.lr.scheduling",
+    "name": "Scheduling & Timetables",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [
+      "dilr.lr.arrangements"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 130
+  },
+  {
+    "id": "dilr.lr.venn-set",
+    "name": "Venn Diagrams / Set-based LR",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [
+      "qa.modern.set-theory-venn"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "dilr.lr.network-routes",
+    "name": "Network & Routes, Maxima-Minima Flow",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [
+      "dilr.lr.arrangements"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 130
+  },
+  {
+    "id": "dilr.lr.binary-logic",
+    "name": "Binary Logic (Truth-teller / Liar)",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "dilr.lr.cubes-dice",
+    "name": "Cubes, Dice, Matrices",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "dilr.lr.quant-embedded",
+    "name": "Quant-embedded LR",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [
+      "dilr.lr.arrangements"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 130
+  },
+  {
+    "id": "dilr.lr.number-placement",
+    "name": "Puzzles: Number Placement, Magic Squares, Sudoku-like Grids",
+    "section": "DILR",
+    "topicId": "dilr.lr",
+    "prerequisites": [
+      "dilr.lr.arrangements"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "qa.arith.percentages",
+    "name": "Percentages",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 75
+  },
+  {
+    "id": "qa.arith.profit-loss-discount",
+    "name": "Profit, Loss & Discount",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.percentages"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.arith.si-ci-instalments",
+    "name": "Simple & Compound Interest, Instalments",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.percentages"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.arith.ratio-proportion-variation",
+    "name": "Ratio, Proportion & Variation",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.arith.mixtures-alligation",
+    "name": "Mixtures & Alligation",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.ratio-proportion-variation"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.arith.averages-weighted-averages",
+    "name": "Averages & Weighted Averages",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.ratio-proportion-variation"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.arith.tsd-relative-speed",
+    "name": "Time, Speed & Distance: Relative Speed",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.ratio-proportion-variation"
+    ],
+    "catFrequency": "high",
+    "roiScore": 4,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.arith.tsd-trains",
+    "name": "TSD: Trains",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.tsd-relative-speed"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.arith.tsd-boats-streams",
+    "name": "TSD: Boats & Streams",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.tsd-relative-speed"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.arith.tsd-races",
+    "name": "TSD: Races",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.tsd-relative-speed"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "qa.arith.tsd-circular-tracks",
+    "name": "TSD: Circular Tracks",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.tsd-relative-speed"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "qa.arith.time-work-pipes-cisterns",
+    "name": "Time & Work: Pipes & Cisterns",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.ratio-proportion-variation"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.arith.time-work-efficiency-wages",
+    "name": "Time & Work: Efficiency, Work-wages",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.time-work-pipes-cisterns"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.arith.time-work-chain-rule",
+    "name": "Time & Work: Chain Rule",
+    "section": "QA",
+    "topicId": "qa.arith",
+    "prerequisites": [
+      "qa.arith.time-work-pipes-cisterns"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 15,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.algebra.linear-equations",
+    "name": "Linear Equations, Systems, Integer Solutions",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.algebra.integer-solutions",
+    "name": "Integer Solutions (Diophantine-style)",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [
+      "qa.algebra.linear-equations"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.algebra.quadratic-equations",
+    "name": "Quadratic Equations: Roots, Discriminant, Sign Analysis",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [
+      "qa.algebra.linear-equations"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.algebra.polynomials-remainder-factor",
+    "name": "Higher-degree Polynomials, Remainder & Factor Theorem",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [
+      "qa.algebra.quadratic-equations"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "qa.algebra.inequalities-modulus",
+    "name": "Inequalities & Modulus",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [
+      "qa.algebra.quadratic-equations"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.algebra.logarithms",
+    "name": "Logarithms",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [
+      "qa.algebra.linear-equations"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.algebra.surds-indices",
+    "name": "Surds, Indices, Simplification",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [
+      "qa.algebra.linear-equations"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.algebra.functions",
+    "name": "Functions: Composite, Inverse, Graphs, Transformations",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [
+      "qa.algebra.quadratic-equations"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 35,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "qa.algebra.maxima-minima",
+    "name": "Maxima & Minima (AM-GM, Quadratic Vertex)",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [
+      "qa.algebra.quadratic-equations",
+      "qa.algebra.inequalities-modulus"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 130
+  },
+  {
+    "id": "qa.algebra.progressions",
+    "name": "Progressions: AP, GP, HP, AGP, Special Series",
+    "section": "QA",
+    "topicId": "qa.algebra",
+    "prerequisites": [
+      "qa.algebra.linear-equations"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 35,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.geometry.lines-angles",
+    "name": "Lines, Angles, Parallel Lines",
+    "section": "QA",
+    "topicId": "qa.geometry",
+    "prerequisites": [],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.geometry.triangles",
+    "name": "Triangles: Congruence, Similarity, Centres, Pythagorean Triples",
+    "section": "QA",
+    "topicId": "qa.geometry",
+    "prerequisites": [
+      "qa.geometry.lines-angles"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 35,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.geometry.quadrilaterals-polygons",
+    "name": "Quadrilaterals & Polygons",
+    "section": "QA",
+    "topicId": "qa.geometry",
+    "prerequisites": [
+      "qa.geometry.triangles"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.geometry.circles",
+    "name": "Circles: Tangents, Chords, Cyclic Quadrilaterals, Sectors",
+    "section": "QA",
+    "topicId": "qa.geometry",
+    "prerequisites": [
+      "qa.geometry.triangles"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "qa.geometry.coordinate-geometry",
+    "name": "Coordinate Geometry: Lines, Distance, Section Formula, Circles, Loci",
+    "section": "QA",
+    "topicId": "qa.geometry",
+    "prerequisites": [
+      "qa.geometry.lines-angles"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.geometry.trigonometry",
+    "name": "Trigonometry: Ratios, Identities, Heights & Distances",
+    "section": "QA",
+    "topicId": "qa.geometry",
+    "prerequisites": [
+      "qa.geometry.triangles"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 120
+  },
+  {
+    "id": "qa.geometry.mensuration-2d",
+    "name": "Mensuration 2D",
+    "section": "QA",
+    "topicId": "qa.geometry",
+    "prerequisites": [
+      "qa.geometry.quadrilaterals-polygons",
+      "qa.geometry.circles"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.geometry.mensuration-3d",
+    "name": "Mensuration 3D",
+    "section": "QA",
+    "topicId": "qa.geometry",
+    "prerequisites": [
+      "qa.geometry.mensuration-2d"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 130
+  },
+  {
+    "id": "qa.numsys.divisibility-factors",
+    "name": "Divisibility Rules, Factors & Multiples",
+    "section": "QA",
+    "topicId": "qa.numsys",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 80
+  },
+  {
+    "id": "qa.numsys.hcf-lcm",
+    "name": "HCF & LCM",
+    "section": "QA",
+    "topicId": "qa.numsys",
+    "prerequisites": [
+      "qa.numsys.divisibility-factors"
+    ],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 80
+  },
+  {
+    "id": "qa.numsys.remainders",
+    "name": "Remainders: Cyclicity, Fermat, Euler, Wilson, CRT",
+    "section": "QA",
+    "topicId": "qa.numsys",
+    "prerequisites": [
+      "qa.numsys.divisibility-factors"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.numsys.factors-count-sum-product",
+    "name": "Number of Factors, Sum of Factors, Product of Factors",
+    "section": "QA",
+    "topicId": "qa.numsys",
+    "prerequisites": [
+      "qa.numsys.divisibility-factors"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.numsys.base-systems",
+    "name": "Base Systems / Number Bases",
+    "section": "QA",
+    "topicId": "qa.numsys",
+    "prerequisites": [
+      "qa.numsys.divisibility-factors"
+    ],
+    "catFrequency": "rare",
+    "roiScore": 1,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.numsys.last-digit-trailing-zeroes",
+    "name": "Last Digit, Last Two Digits, Trailing Zeroes",
+    "section": "QA",
+    "topicId": "qa.numsys",
+    "prerequisites": [
+      "qa.numsys.divisibility-factors"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.numsys.factorials-prime-power",
+    "name": "Factorials, Highest Power of a Prime in n!",
+    "section": "QA",
+    "topicId": "qa.numsys",
+    "prerequisites": [
+      "qa.numsys.divisibility-factors"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 3,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.numsys.rational-irrational",
+    "name": "Rational / Irrational, Properties of Integers",
+    "section": "QA",
+    "topicId": "qa.numsys",
+    "prerequisites": [],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 15,
+    "targetSecPerQuestion": 80
+  },
+  {
+    "id": "qa.modern.permutations-combinations",
+    "name": "Permutations & Combinations",
+    "section": "QA",
+    "topicId": "qa.modern",
+    "prerequisites": [],
+    "catFrequency": "high",
+    "roiScore": 5,
+    "estLearnMinutes": 35,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.modern.probability",
+    "name": "Probability: Basic, Conditional, Independent Events",
+    "section": "QA",
+    "topicId": "qa.modern",
+    "prerequisites": [
+      "qa.modern.permutations-combinations"
+    ],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 30,
+    "targetSecPerQuestion": 110
+  },
+  {
+    "id": "qa.modern.set-theory-venn",
+    "name": "Set Theory & Venn Diagrams",
+    "section": "QA",
+    "topicId": "qa.modern",
+    "prerequisites": [],
+    "catFrequency": "medium",
+    "roiScore": 4,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 90
+  },
+  {
+    "id": "qa.modern.binomial-theorem",
+    "name": "Binomial Theorem (Light)",
+    "section": "QA",
+    "topicId": "qa.modern",
+    "prerequisites": [
+      "qa.modern.permutations-combinations"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 20,
+    "targetSecPerQuestion": 100
+  },
+  {
+    "id": "qa.modern.series-sequences-hybrids",
+    "name": "Logical/Quant Hybrids, Series & Sequences",
+    "section": "QA",
+    "topicId": "qa.modern",
+    "prerequisites": [
+      "qa.algebra.progressions"
+    ],
+    "catFrequency": "low",
+    "roiScore": 2,
+    "estLearnMinutes": 25,
+    "targetSecPerQuestion": 100
+  }
+]

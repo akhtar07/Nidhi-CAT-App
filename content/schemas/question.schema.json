@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ascent.local/content/schemas/question.schema.json",
+  "title": "Question",
+  "$defs": {
+    "QuestionOption": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        },
+        "markdown": {
+          "minLength": 1,
+          "title": "Markdown",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "markdown"
+      ],
+      "title": "QuestionOption",
+      "type": "object"
+    },
+    "VerificationRecord": {
+      "additionalProperties": false,
+      "description": "Captures which checks in SPEC.md \u00a76.3/\u00a76.4 an item passed.",
+      "properties": {
+        "method": {
+          "enum": [
+            "sympy_verified",
+            "self_consistency",
+            "human_reviewed",
+            "answerability_pass",
+            "pyq_official"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "verifiedAt": {
+          "description": "ISO 8601 timestamp.",
+          "title": "Verifiedat",
+          "type": "string"
+        },
+        "selfConsistencyAgreement": {
+          "anyOf": [
+            {
+              "maximum": 5,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "e.g. 4 of 5 sampled solutions agreed, per \u00a76.3.",
+          "title": "Selfconsistencyagreement"
+        },
+        "distractorAuditPassed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "\u00a76.3 distractor audit.",
+          "title": "Distractorauditpassed"
+        },
+        "dedupChecked": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "\u00a76.3 embedding-similarity dedup.",
+          "title": "Dedupchecked"
+        },
+        "reviewerNote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Human review notes, \u00a76.2 step 6.",
+          "title": "Reviewernote"
+        }
+      },
+      "required": [
+        "method",
+        "verifiedAt"
+      ],
+      "title": "VerificationRecord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "description": "Stable, content-hash based.",
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "microTopicIds": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Microtopicids",
+      "type": "array"
+    },
+    "section": {
+      "enum": [
+        "VARC",
+        "DILR",
+        "QA"
+      ],
+      "title": "Section",
+      "type": "string"
+    },
+    "format": {
+      "enum": [
+        "mcq",
+        "tita"
+      ],
+      "title": "Format",
+      "type": "string"
+    },
+    "stemMarkdown": {
+      "minLength": 1,
+      "title": "Stemmarkdown",
+      "type": "string"
+    },
+    "options": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/QuestionOption"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Options"
+    },
+    "correctKey": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Correctkey"
+    },
+    "correctValue": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Correctvalue"
+    },
+    "titaTolerance": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Titatolerance"
+    },
+    "difficulty": {
+      "enum": [
+        "easy",
+        "medium",
+        "hard",
+        "very_hard"
+      ],
+      "title": "Difficulty",
+      "type": "string"
+    },
+    "eloRating": {
+      "description": "Item difficulty, seeded from the difficulty label (\u00a76.4).",
+      "title": "Elorating",
+      "type": "number"
+    },
+    "solutionMarkdown": {
+      "description": "Step-by-step. MANDATORY, never empty.",
+      "minLength": 1,
+      "title": "Solutionmarkdown",
+      "type": "string"
+    },
+    "altSolutionMarkdown": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Altsolutionmarkdown"
+    },
+    "targetSeconds": {
+      "exclusiveMinimum": 0,
+      "title": "Targetseconds",
+      "type": "integer"
+    },
+    "source": {
+      "enum": [
+        "official_pyq",
+        "generated",
+        "authored"
+      ],
+      "title": "Source",
+      "type": "string"
+    },
+    "sourceRef": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "e.g. 'CAT 2023 Slot 2 Q14'.",
+      "title": "Sourceref"
+    },
+    "verification": {
+      "$ref": "#/$defs/VerificationRecord"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "microTopicIds",
+    "section",
+    "format",
+    "stemMarkdown",
+    "difficulty",
+    "eloRating",
+    "solutionMarkdown",
+    "targetSeconds",
+    "source",
+    "verification"
+  ],
+  "type": "object"
+}
