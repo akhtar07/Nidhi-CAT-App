@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.time-work-pipes-cisterns.gen-12b00a59ad",
+  "microTopicIds": [
+    "qa.arith.time-work-pipes-cisterns"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Pipe A can fill a cistern in 6 hours and pipe B can fill it in 14 hours. If both pipes are opened together, how long will they take to fill the cistern? (2 decimal places, in hours.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.2,
+  "titaTolerance": 0.02,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "A's rate $= 1/6$ of the cistern per hour, B's rate $= 1/14$. Combined rate $= 1/6 + 1/14 = 0.2381$ per hour. Time together $= \\dfrac{1}{1/6+1/14} = 4.20$ hours.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:time-work",
+    "pipes-cisterns"
+  ]
+}

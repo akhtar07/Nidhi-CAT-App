@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.probability.gen-95eee38576",
+  "microTopicIds": [
+    "qa.modern.probability"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A bag contains 4 red balls and 4 blue balls. If 3 balls are drawn at random without replacement, find the probability that all 3 are red. Give the answer as a reduced fraction, e.g. '3/10'.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "1/14",
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "P(all red) $= \\dfrac{\\binom{4}{3}}{\\binom{8}{3}} = \\dfrac{4}{56} = \\dfrac{1}{14}$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:probability"
+  ]
+}

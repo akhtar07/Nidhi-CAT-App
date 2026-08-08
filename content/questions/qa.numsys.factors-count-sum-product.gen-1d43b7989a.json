@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.factors-count-sum-product.gen-1d43b7989a",
+  "microTopicIds": [
+    "qa.numsys.factors-count-sum-product"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum of all factors (divisors) of 24.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 60.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$24 = 2^{3} \\times 3^{1}$. Sum of factors $= (2^{0} + 2^{1} + 2^{2} + 2^{3})(3^{0} + 3^{1}) = 60$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:sum-of-factors"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.circles.gen-751b963e25",
+  "microTopicIds": [
+    "qa.geometry.circles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A point P is 8 cm from the centre of a circle of radius 4 cm. Find the length of the tangent from P to the circle (2 decimal places).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6.93,
+  "titaTolerance": 0.02,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "The tangent, radius, and line from P to the centre form a right triangle (tangent \u22a5 radius at the point of contact). Tangent length $= \\sqrt{d^2 - r^2} = \\sqrt{8^2 - 4^2} = \\sqrt{48} = 6.93$ cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:circles",
+    "tangent"
+  ]
+}

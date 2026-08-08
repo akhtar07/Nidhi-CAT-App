@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.surds-indices.gen-d7451e5fc7",
+  "microTopicIds": [
+    "qa.algebra.surds-indices"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Simplify: $ 4^{3} \\times 4^{3} $.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4096.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Using $a^m \\times a^n = a^{m+n}$: $4^{3} \\times 4^{3} = 4^{6} = 4096$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:surds-indices"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-relative-speed.gen-aed9197dd8",
+  "microTopicIds": [
+    "qa.arith.tsd-relative-speed"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two cars start at the same time from two points 121 km apart and travel towards each other at 31 km/h and 59 km/h respectively. After how many hours will they meet? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.34,
+  "titaTolerance": 0.02,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Relative speed (approaching) $= 31 + 59 = 90$ km/h. Time to meet $= \\dfrac{\\text{distance}}{\\text{relative speed}} = \\dfrac{121}{90} = 1.34$ hours.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "relative-speed"
+  ]
+}

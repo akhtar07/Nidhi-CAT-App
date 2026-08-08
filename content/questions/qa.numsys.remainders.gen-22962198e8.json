@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.remainders.gen-22962198e8",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $16^{7}$ is divided by 18.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Using modular exponentiation (repeated squaring), $16^{7} \\bmod 18 = 16$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "modular-exponentiation"
+  ]
+}

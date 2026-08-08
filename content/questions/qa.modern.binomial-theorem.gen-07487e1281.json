@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.binomial-theorem.gen-07487e1281",
+  "microTopicIds": [
+    "qa.modern.binomial-theorem"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the coefficient of $x^{2}$ in the expansion of $(1 + 2x)^{9}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 144.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "General term: $\\binom{9}{2} 1^{9-2} (2x)^{2}$. Coefficient of $x^{2}$ $= \\binom{9}{2} 1^{7} 2^{2} = 144$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:binomial-theorem"
+  ]
+}

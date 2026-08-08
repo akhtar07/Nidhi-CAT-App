@@ -11,7 +11,7 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 3 — Content pipeline v1 (not started)
+## Current milestone: 2 — Storage layer (not started)
 
 ## Binding decision (implemented in Milestone 1 — this is now how it works)
 So the pipeline (Python) and app (TypeScript) content schemas can never drift:
@@ -39,6 +39,105 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 3 — Content pipeline v1 (done, via a sourcing pivot — read this first)
+
+**SPEC.md §6.1's Tier 1 plan (official PYQ PDFs "circulate as public PDFs")
+does not hold up.** Verified by research before writing any ingestion code:
+IIM CAT never publishes a standalone question-paper PDF. The only official
+view of real questions is the response-sheet/answer-key page, gated behind
+each candidate's own CAT login (User ID + password), live only for a ~3-day
+objection window right after the exam. The official mock test — also built
+from real PYQs — has the same login gate and is only live for ~2 weeks
+before the exam (not this time of year). What's actually freely
+downloadable everywhere is coaching-site content (2IIM, Cracku, CatKing,
+Testbook, ...), which SPEC.md §6.1 already forbids scraping, in its own
+words: *"a public GitHub repo full of their content is a DMCA takedown
+waiting to happen."*
+
+This was put to the project owner directly, including an explicit request
+to scrape those coaching sites anyway — **declined**: reproducing
+copyrighted commercial question banks and solutions in a public repo is
+infringement regardless of instruction, not a risk that's the requester's
+alone to accept, since the infringing act (the reproduction) happens the
+moment it's generated and committed.
+
+**Resolution: Tier 3 instead of Tier 1 for this milestone.** SPEC.md §6.3
+already specifies exactly this fallback — originally-authored items,
+verified by an independent, executable check rather than sourced from a
+third party. Every item here has `source: 'generated'` (not
+`'official_pyq'`), is honestly labelled as such, and is real content, not
+fabricated: every claimed answer is checked by running code that computes
+it independently before the item is kept.
+
+- **`pipeline/qagen/`** — the generation + verification harness.
+  - `harness.py`: an `ItemSpec` carries a stem, a claimed answer, and an
+    `answer_fn` that recomputes the answer independently. `verify_and_build()`
+    runs `answer_fn()` and only constructs a `Question` if it matches the
+    claim (numeric tolerance for TITA, exact for strings) — mismatch means
+    **discarded, not repaired**, per §6.3. MCQ items also get a distractor
+    audit (no duplicate option values). `run_generators()` also dedupes on
+    `(microtopic_id, stem)` — a small random-parameter space can draw the
+    same question twice; the second draw is dropped rather than let it
+    silently overwrite the first item's file (10 duplicates caught this way
+    across 249 initial draws → 239 unique items shipped).
+  - `generators/{arithmetic,algebra,geometry,numsys,modern}.py` — one
+    generator function per QA micro-topic (all 45 of them), each
+    parameterized and randomized, producing 2–8 instances per topic
+    (weighted by `roiScore`: 8/6/4/3/2 for roiScore 5/4/3/2/1 — more
+    generation effort on higher-ROI topics, per the triage philosophy in
+    §10.2). **Caught a real bug this way**: the first version of the
+    percentages/profit-loss generators used the *same* buggy closed-form
+    formula for both the claimed answer and the "independent" check, so a
+    genuine arithmetic error (`-99.41%` instead of the correct `-40.60%`)
+    passed verification — the two paths weren't actually independent.
+    Fixed by making every `answer_fn` a genuinely different computation
+    method than whatever produced the displayed solution (sequential
+    float simulation vs. closed-form; brute-force enumeration vs. formula;
+    `sympy` symbolic vs. direct arithmetic; direct-factorial vs. Legendre's
+    formula), and manually spot-checked ≥1 sample per generator (45/45) by
+    hand after that fix, not just trusted the "verified" flag.
+  - `syllabus_lookup.py` — pulls `targetSecPerQuestion` per micro-topic
+    from `content/syllabus.json` so generated items' timing ties back to
+    the syllabus rather than being re-guessed.
+  - `run.py` — orchestrates all 45 generators, verifies, writes
+    `content/questions/<id>.json` (one file per question; ids are
+    content-hash based on `microtopic_id + stem + claimed_value`).
+- **Result: 239 verified QA questions** across all 45 QA micro-topics
+  (≥200 target met with headroom). Every item has `verification.method =
+  'sympy_verified'`, a mandatory non-empty `solutionMarkdown`, and (where
+  useful) an `altSolutionMarkdown` "smart approach" per §13. Difficulty is
+  cycled (easy/medium/hard/very_hard) within each topic's item count, so
+  topics with ≥6 items have hard-tier coverage; the 2–3 item topics
+  (lowest roiScore) don't — flagged under Known issues below.
+- **`pipeline/review_ui/app.py`** — the human review UI SPEC.md §6.2 step 6
+  calls for ("Approve / Fix / Reject"), built with Streamlit per the
+  spec's own suggestion. No PDF crop to show alongside (nothing here came
+  from a PDF) — shows the rendered question, options/correct value,
+  solution(s), and verification metadata instead. Decisions log to
+  `pipeline/review_log.json` keyed by question id; **never mutates
+  `content/questions/*.json` directly** — rejecting an item logs the
+  rejection but doesn't delete it, so removal is always a deliberate,
+  reviewable second step. Smoke-tested headless (`streamlit run ... 
+  --server.headless true`, confirmed HTTP 200, no errors in server log) —
+  the project owner hasn't done an interactive review pass yet; that's
+  still open, see Known issues.
+- **`validate_content.py`** (built in Milestone 1, unchanged) now
+  validates all 239 real items — schema conformance, orphan
+  `microTopicIds` — with no code changes needed, since it was already
+  written to scan `content/questions/*.json` generically.
+- Also ran a bank-wide KaTeX delimiter balance check (`$...$` pairing) as a
+  cheap sanity pass — not the full automated KaTeX-render check SPEC.md
+  §16 wants (that needs an actual KaTeX renderer, more natural once the
+  question player exists), but catches the most common breakage. Clean
+  across all 239 items.
+- CI: no changes needed to the "Validate content" step — it already ran
+  `validate_content.py` generically. Added `pipeline/requirements-review.txt`
+  (streamlit, `-r requirements.txt`) split out from `pipeline/requirements.txt`
+  (pydantic, sympy) so CI's installs stay fast — CI never touches the
+  review UI, only schema/content validation.
+- Ran the full local CI sequence (lint → typecheck → JSON-Schema drift →
+  TS-types drift → validate content → build) before pushing; all green.
 
 ### Milestone 1 — Schemas & syllabus (done)
 - **`/pipeline/schemas.py`** — pydantic v2 models for every SPEC.md §5.1
@@ -144,7 +243,31 @@ produced or validated by the Python pipeline.
   but never defined anywhere in SPEC.md. Shapes proposed and confirmed
   with the project owner before implementation; see
   `pipeline/schemas.py` for the exact fields.
+- SPEC.md §6.1: corrected the Tier 1 sourcing claim ("official PYQ PDFs
+  circulate publicly") — verified false during Milestone 3, see the
+  Milestone 3 writeup above for the full account. Tier 1 is now marked
+  opportunistic rather than planned; Tier 3 (§6.3) is the realistic
+  primary QA/DILR source going forward, unless the project owner supplies
+  legitimately-obtained papers directly.
 
 ## Known issues / deferred
 - Milestone 2 (Storage layer) deferred until after Milestone 3 — see
   "Milestone order" above.
+- Content bank is QA only (239 items, all `source: 'generated'`). No
+  official PYQ items exist in the bank at all — see the Tier 1 correction
+  above. VARC, DILR, and lessons are still empty; DILR sets in particular
+  need programmatically-generated underlying data tables per §6.3's "never
+  let the LLM invent the numbers" rule, which this milestone didn't touch.
+- The lowest-`roiScore` QA topics (2–3 items each: `tsd-races`,
+  `time-work-chain-rule`, `base-systems`, `maxima-minima`, `trigonometry`,
+  `binomial-theorem`, `series-sequences-hybrids`) don't have hard/very_hard
+  items — too few items per topic for the difficulty cycle to reach that
+  tier. Fine for now (matches their low-ROI/triage status per §10.2) but
+  will matter once the mastery engine's "ceiling proof" criterion (§8.2.3,
+  ≥2 hard/very_hard correct) is implemented against these topics.
+- `pipeline/review_ui/app.py` is built and smoke-tested (starts cleanly,
+  serves HTTP 200, no server errors) but the project owner has not yet done
+  an interactive Approve/Fix/Reject pass over the 239 items. Run `streamlit
+  run review_ui/app.py` from `/pipeline` to do that pass; nothing in the
+  bank is blocked on it, but it's the "step everyone skips" §6.2 warns
+  about.

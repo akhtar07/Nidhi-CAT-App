@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.hcf-lcm.gen-2689af72b2",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the LCM of 42 and 77.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 462.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "HCF$(42, 77) = 7$. LCM $= \\dfrac{42 \\times 77}{7} = 462$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:hcf-lcm"
+  ]
+}

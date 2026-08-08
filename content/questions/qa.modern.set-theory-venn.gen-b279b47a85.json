@@ -1,0 +1,32 @@
+{
+  "id": "qa.modern.set-theory-venn.gen-b279b47a85",
+  "microTopicIds": [
+    "qa.modern.set-theory-venn"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a class, 43 students like Maths and 39 students like Science. If 6 students like both subjects, how many students like at least one of the two subjects?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 76.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$|A \\cup B| = |A| + |B| - |A \\cap B| = 43 + 39 - 6 = 76$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:set-theory",
+    "venn"
+  ]
+}

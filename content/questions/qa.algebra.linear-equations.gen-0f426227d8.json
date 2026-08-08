@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.linear-equations.gen-0f426227d8",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Solve for $x + y$: $\\;6x + 3y = 18$ and $\\;3x - y = 24$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Solving the two equations simultaneously (elimination or substitution) gives $x = 6$ and $y = -6$, so $x + y = 0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear-equations"
+  ]
+}

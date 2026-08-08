@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-1a1432f22b",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The average of 6 numbers is 44. When one more number is included, the average becomes the sum of all 7 numbers divided by 7. If the new number added is 70, find the new average (rounded to 2 decimal places).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 47.71,
+  "titaTolerance": 0.02,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Sum of original 6 numbers $= 6 \\times 44 = 264$. New sum $= 264 + 70 = 334$. New average $= \\dfrac{334}{7} = 47.71$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages"
+  ]
+}

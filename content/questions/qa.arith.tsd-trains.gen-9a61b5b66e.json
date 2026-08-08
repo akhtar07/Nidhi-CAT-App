@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-trains.gen-9a61b5b66e",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A train 133 m long crosses a platform 219 m long in how many seconds, if the train runs at 66 km/h? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 19.2,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Speed in m/s $= 66 \\times \\dfrac{5}{18} = 18.33$ m/s. Total distance to cover $= 133 + 219 = 352$ m. Time $= \\dfrac{352}{18.33} = 19.20$ s.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "trains"
+  ]
+}

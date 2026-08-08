@@ -1,0 +1,32 @@
+{
+  "id": "qa.algebra.progressions.gen-f55e645fda",
+  "microTopicIds": [
+    "qa.algebra.progressions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum of the first 29 terms of an arithmetic progression whose first term is 2 and common difference is 2.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 870.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$S_n = \\dfrac{n}{2}\\left[2a + (n-1)d\\right] = \\dfrac{29}{2}\\left[2(2) + (29-1)(2)\\right] = 870$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:progressions",
+    "ap"
+  ]
+}

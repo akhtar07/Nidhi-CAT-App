@@ -1,0 +1,32 @@
+{
+  "id": "qa.algebra.functions.gen-9bd78368d1",
+  "microTopicIds": [
+    "qa.algebra.functions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $f(x) = 5x + 1$, find $f(f(-2))$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -44.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$f(-2) = 5(-2) + 1 = -9$. $f(f(-2)) = f(-9) = 5(-9) + 1 = -44$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:functions",
+    "composite"
+  ]
+}

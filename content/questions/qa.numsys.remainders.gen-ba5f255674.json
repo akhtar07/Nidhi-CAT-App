@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.remainders.gen-ba5f255674",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $15^{7}$ is divided by 17.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Using modular exponentiation (repeated squaring), $15^{7} \\bmod 17 = 8$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "modular-exponentiation"
+  ]
+}

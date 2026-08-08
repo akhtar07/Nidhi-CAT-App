@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.hcf-lcm.gen-54038c3fa6",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the LCM of 70 and 20.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 140.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "HCF$(70, 20) = 10$. LCM $= \\dfrac{70 \\times 20}{10} = 140$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:hcf-lcm"
+  ]
+}

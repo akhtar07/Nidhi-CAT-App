@@ -1,0 +1,31 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons.gen-09f0caf39f",
+  "microTopicIds": [
+    "qa.geometry.quadrilaterals-polygons"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum of the interior angles of a convex polygon with 14 sides, in degrees.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2160.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Sum of interior angles $= (n-2) \\times 180 = (14-2) \\times 180 = 2160$\u00b0.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:polygons"
+  ]
+}

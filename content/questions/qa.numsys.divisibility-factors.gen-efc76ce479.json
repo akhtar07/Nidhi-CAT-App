@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.divisibility-factors.gen-efc76ce479",
+  "microTopicIds": [
+    "qa.numsys.divisibility-factors"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the number of factors (divisors) of 225.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$225 = 5^{2} \\times 3^{2}$. Number of factors $= (2+1)(2+1) = 9$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factors"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.remainders.gen-3e985086ad",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $21^{10}$ is divided by 18.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Using modular exponentiation (repeated squaring), $21^{10} \\bmod 18 = 9$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "modular-exponentiation"
+  ]
+}

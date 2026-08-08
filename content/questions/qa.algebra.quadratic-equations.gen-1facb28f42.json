@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-1facb28f42",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If the roots of $x^2 + 3x - 10 = 0$ are $\\alpha$ and $\\beta$, find $\\alpha^2 + \\beta^2$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 29.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\alpha + \\beta = -3$ and $\\alpha\\beta = -10$ (sum/product of roots). $\\alpha^2+\\beta^2 = (\\alpha+\\beta)^2 - 2\\alpha\\beta = -3^2 - 2(-10) = 29$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratics"
+  ]
+}

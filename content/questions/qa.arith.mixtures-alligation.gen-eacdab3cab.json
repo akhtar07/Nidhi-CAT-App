@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-eacdab3cab",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In what ratio must a solution containing 30% acid be mixed with a solution containing 78% acid to obtain a mixture that is 61% acid? Give the ratio (cheaper : dearer) in simplest form, e.g. '3:2'.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "17:31",
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "By alligation: $\\dfrac{\\text{cheaper}}{\\text{dearer}} = \\dfrac{y - z}{z - x} = \\dfrac{78 - 61}{61 - 30} = \\dfrac{17}{31} = 17:31$ (after simplifying by dividing both terms by 1).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:alligation"
+  ]
+}

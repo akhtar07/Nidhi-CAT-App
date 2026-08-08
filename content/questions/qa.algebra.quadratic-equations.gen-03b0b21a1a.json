@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-03b0b21a1a",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If the roots of $x^2 + 15x + 56 = 0$ are $\\alpha$ and $\\beta$, find $\\alpha^2 + \\beta^2$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 113.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$\\alpha + \\beta = -15$ and $\\alpha\\beta = 56$ (sum/product of roots). $\\alpha^2+\\beta^2 = (\\alpha+\\beta)^2 - 2\\alpha\\beta = -15^2 - 2(56) = 113$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratics"
+  ]
+}

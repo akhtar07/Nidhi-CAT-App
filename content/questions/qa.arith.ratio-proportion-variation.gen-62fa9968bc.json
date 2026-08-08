@@ -1,0 +1,48 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-62fa9968bc",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Two numbers are in the ratio 7:8. If their sum is 60, find the larger of the two numbers.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "28"
+    },
+    {
+      "key": "B",
+      "markdown": "60"
+    },
+    {
+      "key": "C",
+      "markdown": "32"
+    },
+    {
+      "key": "D",
+      "markdown": "36"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the numbers be $7x$ and $8x$. Then $7x + 8x = 60 \\Rightarrow x = 4$. The larger number is $8 \\times 4 = 32$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": true,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio-proportion"
+  ]
+}

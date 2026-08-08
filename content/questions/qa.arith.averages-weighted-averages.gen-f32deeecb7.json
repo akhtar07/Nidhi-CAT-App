@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-f32deeecb7",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The average of 10 numbers is 22. When one more number is included, the average becomes the sum of all 11 numbers divided by 11. If the new number added is 31, find the new average (rounded to 2 decimal places).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 22.82,
+  "titaTolerance": 0.02,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Sum of original 10 numbers $= 10 \\times 22 = 220$. New sum $= 220 + 31 = 251$. New average $= \\dfrac{251}{11} = 22.82$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages"
+  ]
+}

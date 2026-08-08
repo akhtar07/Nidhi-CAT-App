@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.divisibility-factors.gen-4beda58423",
+  "microTopicIds": [
+    "qa.numsys.divisibility-factors"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the number of factors (divisors) of 88.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$88 = 11^{1} \\times 2^{3}$. Number of factors $= (1+1)(3+1) = 8$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factors"
+  ]
+}

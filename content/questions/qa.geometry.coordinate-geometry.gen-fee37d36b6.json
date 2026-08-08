@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-fee37d36b6",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the distance between the points $(2, -5)$ and $(11, -45)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 41.0,
+  "titaTolerance": 0.02,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Distance $= \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} = \\sqrt{(9)^2 + (-40)^2} = \\sqrt{1681} = 41$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "distance"
+  ]
+}

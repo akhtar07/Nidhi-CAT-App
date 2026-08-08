@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.probability.gen-e74f739fb7",
+  "microTopicIds": [
+    "qa.modern.probability"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A bag contains 5 red balls and 6 blue balls. If 2 balls are drawn at random without replacement, find the probability that all 2 are red. Give the answer as a reduced fraction, e.g. '3/10'.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "2/11",
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "P(all red) $= \\dfrac{\\binom{5}{2}}{\\binom{11}{2}} = \\dfrac{10}{55} = \\dfrac{2}{11}$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:probability"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-093a7afc41",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Two numbers are in the ratio 5:3. If their sum is 40, find the larger of the two numbers.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "30"
+    },
+    {
+      "key": "B",
+      "markdown": "25"
+    },
+    {
+      "key": "C",
+      "markdown": "15"
+    },
+    {
+      "key": "D",
+      "markdown": "20"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Let the numbers be $5x$ and $3x$. Then $5x + 3x = 40 \\Rightarrow x = 5$. The larger number is $5 \\times 5 = 25$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": true,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio-proportion"
+  ]
+}

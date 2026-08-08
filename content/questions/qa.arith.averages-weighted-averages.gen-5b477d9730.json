@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-5b477d9730",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The average of 16 numbers is 78. When one more number is included, the average becomes the sum of all 17 numbers divided by 17. If the new number added is 127, find the new average (rounded to 2 decimal places).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 80.88,
+  "titaTolerance": 0.02,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Sum of original 16 numbers $= 16 \\times 78 = 1248$. New sum $= 1248 + 127 = 1375$. New average $= \\dfrac{1375}{17} = 80.88$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages"
+  ]
+}

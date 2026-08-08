@@ -1,0 +1,32 @@
+{
+  "id": "qa.modern.set-theory-venn.gen-5080f874a5",
+  "microTopicIds": [
+    "qa.modern.set-theory-venn"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a class, 26 students like Maths and 28 students like Science. If 12 students like both subjects, how many students like at least one of the two subjects?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 42.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$|A \\cup B| = |A| + |B| - |A \\cap B| = 26 + 28 - 12 = 42$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:set-theory",
+    "venn"
+  ]
+}

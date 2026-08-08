@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.gen-8674292966",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $p(x) = 1x^3 - 2x^2 + 10x + 1$ is divided by $(x + 2)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -35.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "By the Remainder Theorem, the remainder equals $p(-2)$: $p(-2) = 1(-2)^3 - 2(-2)^2 + 10(-2) + 1 = -35$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:remainder-theorem"
+  ]
+}

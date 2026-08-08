@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.logarithms.gen-4903960a80",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the value of $\\log_{3} 729$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\log_{3} 729 = \\log_{3} 3^{6} = 6$, since $3^{6} = 729$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms"
+  ]
+}

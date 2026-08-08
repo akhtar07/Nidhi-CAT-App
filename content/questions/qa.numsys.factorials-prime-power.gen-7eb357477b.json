@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.factorials-prime-power.gen-7eb357477b",
+  "microTopicIds": [
+    "qa.numsys.factorials-prime-power"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the highest power of 2 that divides 21!",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "By Legendre's formula, the highest power of 2 dividing $n!$ is $\\sum \\lfloor n/2^k \\rfloor = 18$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:legendre",
+    "prime-power"
+  ]
+}

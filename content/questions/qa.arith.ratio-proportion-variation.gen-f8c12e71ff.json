@@ -1,0 +1,48 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-f8c12e71ff",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Two numbers are in the ratio 3:7. If their sum is 140, find the larger of the two numbers.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "98"
+    },
+    {
+      "key": "B",
+      "markdown": "84"
+    },
+    {
+      "key": "C",
+      "markdown": "112"
+    },
+    {
+      "key": "D",
+      "markdown": "42"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the numbers be $3x$ and $7x$. Then $3x + 7x = 140 \\Rightarrow x = 14$. The larger number is $7 \\times 14 = 98$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": true,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio-proportion"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-beec89b535",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The average of 12 numbers is 49. When one more number is included, the average becomes the sum of all 13 numbers divided by 13. If the new number added is 141, find the new average (rounded to 2 decimal places).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 56.08,
+  "titaTolerance": 0.02,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Sum of original 12 numbers $= 12 \\times 49 = 588$. New sum $= 588 + 141 = 729$. New average $= \\dfrac{729}{13} = 56.08$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.circles.gen-0b96e9968a",
+  "microTopicIds": [
+    "qa.geometry.circles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A point P is 20 cm from the centre of a circle of radius 15 cm. Find the length of the tangent from P to the circle (2 decimal places).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 13.23,
+  "titaTolerance": 0.02,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The tangent, radius, and line from P to the centre form a right triangle (tangent \u22a5 radius at the point of contact). Tangent length $= \\sqrt{d^2 - r^2} = \\sqrt{20^2 - 15^2} = \\sqrt{175} = 13.23$ cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:circles",
+    "tangent"
+  ]
+}

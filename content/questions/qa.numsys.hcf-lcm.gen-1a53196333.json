@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.hcf-lcm.gen-1a53196333",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the LCM of 100 and 110.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1100.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "HCF$(100, 110) = 10$. LCM $= \\dfrac{100 \\times 110}{10} = 1100$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:hcf-lcm"
+  ]
+}

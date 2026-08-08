@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.mensuration-2d.gen-9aa1c6ee97",
+  "microTopicIds": [
+    "qa.geometry.mensuration-2d"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A trapezium has parallel sides of length 19 cm and 6 cm, and the perpendicular distance between them is 4 cm. Find its area in cm\u00b2.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 50.0,
+  "titaTolerance": 0.02,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Area of trapezium $= \\dfrac{1}{2}(a+b)h = \\dfrac{1}{2}(19+6)(4) = 50.00$ cm\u00b2.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:mensuration-2d",
+    "trapezium"
+  ]
+}

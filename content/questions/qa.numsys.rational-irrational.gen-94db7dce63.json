@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.rational-irrational.gen-94db7dce63",
+  "microTopicIds": [
+    "qa.numsys.rational-irrational"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Simplify $(\\sqrt{3} + \\sqrt{48})^2$ and give its exact (integer) value.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 75.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$\\sqrt{48} = \\sqrt{3 \\times 4^2} = 4\\sqrt{3}$, so $\\sqrt{3}+\\sqrt{48} = (1+4)\\sqrt{3}$. Squaring: $(1+4)^2 \\times 3 = 75$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:surds",
+    "rational-irrational"
+  ]
+}

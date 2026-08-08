@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-265cc7009e",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If the roots of $x^2 + 3x - 18 = 0$ are $\\alpha$ and $\\beta$, find $\\alpha^2 + \\beta^2$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 45.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$\\alpha + \\beta = -3$ and $\\alpha\\beta = -18$ (sum/product of roots). $\\alpha^2+\\beta^2 = (\\alpha+\\beta)^2 - 2\\alpha\\beta = -3^2 - 2(-18) = 45$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratics"
+  ]
+}

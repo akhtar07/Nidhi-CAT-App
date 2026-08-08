@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-circular-tracks.gen-232d7f59ce",
+  "microTopicIds": [
+    "qa.arith.tsd-circular-tracks"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two runners start at the same time from the same point on a circular track of length 600 m and run in opposite directions at 9 m/s and 14 m/s. After how many seconds will they first meet? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 26.09,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Running in opposite directions, relative speed $= 9 + 14 = 23$ m/s. They first meet after covering the full circumference between them: time $= \\dfrac{600}{23} = 26.09$ s.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "circular-tracks"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.algebra.progressions.gen-27bdfccd35",
+  "microTopicIds": [
+    "qa.algebra.progressions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum of the first 28 terms of an arithmetic progression whose first term is 8 and common difference is 4.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1736.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$S_n = \\dfrac{n}{2}\\left[2a + (n-1)d\\right] = \\dfrac{28}{2}\\left[2(8) + (28-1)(4)\\right] = 1736$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:progressions",
+    "ap"
+  ]
+}

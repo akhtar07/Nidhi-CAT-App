@@ -1,0 +1,32 @@
+{
+  "id": "qa.algebra.functions.gen-f4dc9657dc",
+  "microTopicIds": [
+    "qa.algebra.functions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $f(x) = 6x + 6$, find $f(f(1))$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 78.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$f(1) = 6(1) + 6 = 12$. $f(f(1)) = f(12) = 6(12) + 6 = 78$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:functions",
+    "composite"
+  ]
+}

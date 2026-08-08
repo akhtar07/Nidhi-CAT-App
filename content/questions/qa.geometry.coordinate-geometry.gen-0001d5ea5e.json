@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-0001d5ea5e",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the distance between the points $(-5, 8)$ and $(-2, 4)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 5.0,
+  "titaTolerance": 0.02,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Distance $= \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} = \\sqrt{(3)^2 + (-4)^2} = \\sqrt{25} = 5$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "distance"
+  ]
+}

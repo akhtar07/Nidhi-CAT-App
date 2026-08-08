@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.hcf-lcm.gen-a78b749a5b",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the LCM of 18 and 99.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 198.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "HCF$(18, 99) = 9$. LCM $= \\dfrac{18 \\times 99}{9} = 198$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:hcf-lcm"
+  ]
+}

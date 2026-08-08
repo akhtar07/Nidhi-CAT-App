@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.mensuration-3d.gen-5e3dd666a0",
+  "microTopicIds": [
+    "qa.geometry.mensuration-3d"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the volume of a right circular cylinder with radius 9 cm and height 20 cm. Use $\\pi = 3.14159$ and round to 2 decimal places.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 5089.38,
+  "titaTolerance": 0.5,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Volume $= \\pi r^2 h = \\pi \\times 9^2 \\times 20 = 5089.38$ cm\u00b3.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:mensuration-3d",
+    "cylinder"
+  ]
+}

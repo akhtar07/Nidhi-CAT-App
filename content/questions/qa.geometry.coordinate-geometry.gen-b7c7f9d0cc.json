@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-b7c7f9d0cc",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the distance between the points $(-4, -7)$ and $(1, 5)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 13.0,
+  "titaTolerance": 0.02,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Distance $= \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} = \\sqrt{(5)^2 + (12)^2} = \\sqrt{169} = 13$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "distance"
+  ]
+}

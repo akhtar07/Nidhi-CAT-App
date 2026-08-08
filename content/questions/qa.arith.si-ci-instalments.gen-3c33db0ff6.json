@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-3c33db0ff6",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the difference between the compound interest and the simple interest on \u20b92000 for 2 years at 8% per annum (interest compounded annually).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 12.8,
+  "titaTolerance": 0.5,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "SI for 2 years $= \\dfrac{P \\times r \\times t}{100} = \\dfrac{2000 \\times 8 \\times 2}{100} = 320.00$. CI for 2 years $= P\\left[(1+r/100)^2 - 1\\right] = 2000\\left[(1+8/100)^2 - 1\\right] = 332.80$. Difference $= 332.80 - 320.00 = 12.80$.",
+  "altSolutionMarkdown": "Shortcut: for 2 years, CI $-$ SI $= P(r/100)^2 = 2000(8/100)^2 = 12.80$.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ci-si"
+  ]
+}

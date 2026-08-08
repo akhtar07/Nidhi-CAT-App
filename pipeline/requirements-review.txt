@@ -1,0 +1,5 @@
+# Only needed to run the local human-review UI (review_ui/app.py), never in
+# CI — CI only runs generate_json_schemas.py / validate_content.py, neither
+# of which import streamlit. Keeps CI installs fast.
+-r requirements.txt
+streamlit>=1.40

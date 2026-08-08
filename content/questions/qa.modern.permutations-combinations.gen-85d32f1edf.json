@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.permutations-combinations.gen-85d32f1edf",
+  "microTopicIds": [
+    "qa.modern.permutations-combinations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In how many ways can a committee of 3 people be chosen from a group of 7 people?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 35.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "This is a selection (order doesn't matter): $\\binom{7}{3} = \\dfrac{7!}{3!(7-3)!} = 35$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:combinations"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-d6b398a7da",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the distance between the points $(-7, 1)$ and $(-14, 25)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 25.0,
+  "titaTolerance": 0.02,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Distance $= \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} = \\sqrt{(-7)^2 + (24)^2} = \\sqrt{625} = 25$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "distance"
+  ]
+}

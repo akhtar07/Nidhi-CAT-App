@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.mensuration-3d.gen-4d38d2ef1d",
+  "microTopicIds": [
+    "qa.geometry.mensuration-3d"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the volume of a right circular cylinder with radius 3 cm and height 5 cm. Use $\\pi = 3.14159$ and round to 2 decimal places.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 141.37,
+  "titaTolerance": 0.5,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Volume $= \\pi r^2 h = \\pi \\times 3^2 \\times 5 = 141.37$ cm\u00b3.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:mensuration-3d",
+    "cylinder"
+  ]
+}

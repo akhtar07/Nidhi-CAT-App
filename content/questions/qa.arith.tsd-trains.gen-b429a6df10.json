@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-trains.gen-b429a6df10",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A train 137 m long crosses a platform 271 m long in how many seconds, if the train runs at 104 km/h? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 14.12,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Speed in m/s $= 104 \\times \\dfrac{5}{18} = 28.89$ m/s. Total distance to cover $= 137 + 271 = 408$ m. Time $= \\dfrac{408}{28.89} = 14.12$ s.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "trains"
+  ]
+}
