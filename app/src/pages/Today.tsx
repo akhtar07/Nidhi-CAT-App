@@ -33,7 +33,12 @@ export function Today() {
 
   return (
     <main className="mx-auto min-h-svh max-w-2xl bg-background p-6 text-foreground">
-      <h1 className="mb-1 text-2xl font-semibold">Ascent</h1>
+      <div className="mb-1 flex items-baseline justify-between">
+        <h1 className="text-2xl font-semibold">Ascent</h1>
+        <Link to="/settings" className="text-sm text-primary underline">
+          Settings
+        </Link>
+      </div>
       <p className="mb-6 text-muted-foreground">
         Micro-topics with drillable questions. Pick one to practice.
       </p>

@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { Drill } from '@/pages/Drill'
+import { Settings } from '@/pages/Settings'
 import { Today } from '@/pages/Today'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Today />} />
       <Route path="/drill/:topicId" element={<Drill />} />
+      <Route path="/settings" element={<Settings />} />
     </Routes>
   )
 }

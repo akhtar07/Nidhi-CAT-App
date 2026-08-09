@@ -1,4 +1,4 @@
-import type { Attempt, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
+import type { Attempt, ItemEloState, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
 
 /**
  * Full snapshot of learner state, for the Export/Import JSON feature
@@ -11,6 +11,7 @@ export interface ExportBundle {
   masteryStates: MasteryState[]
   planDays: PlanDay[]
   mockResults: MockResult[]
+  itemEloStates: ItemEloState[]
   settings: Settings | null
 }
 
@@ -35,6 +36,9 @@ export interface StorageAdapter {
 
   addMockResult(result: MockResult): Promise<void>
   listMockResults(): Promise<MockResult[]>
+
+  getItemElo(questionId: string): Promise<number | undefined>
+  putItemElo(questionId: string, elo: number): Promise<void>
 
   /** Settings is a singleton row. */
   getSettings(): Promise<Settings | undefined>

@@ -11,7 +11,7 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 5 — Mastery engine (not started)
+## Current milestone: 6 — Lesson reader + Learn→Drill loop (not started)
 
 ## Binding decision (implemented in Milestone 1 — this is now how it works)
 So the pipeline (Python) and app (TypeScript) content schemas can never drift:
@@ -39,6 +39,112 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 5 — Mastery engine (done)
+- **`app/src/mastery/`** — pure-function algorithm modules first, storage
+  wiring second, per SPEC.md §16's acceptance line ("Mastery engine unit
+  tests cover: lucky-guess handling, speed failure, hard-tier requirement,
+  retention gap, anti-frustration exit" — all five are covered, by name, in
+  `masteryCriteria.test.ts`).
+  - `elo.ts` — SPEC.md §8.3's two-sided Elo, implemented literally:
+    `expected = 1/(1+10^((itemElo-learnerElo)/400))`,
+    `learnerElo += K_L*(actual-expected)` (K_L 24, decaying to 12 after 200
+    attempts **on that micro-topic** — SPEC doesn't say per-topic vs.
+    global, but `learnerElo` itself lives on the per-topic `MasteryState`,
+    so per-topic is the only reading consistent with the schema),
+    `itemElo += K_I*(expectedItem-actualItem)` with K_I=8 and the natural
+    `expectedItem/actualItem = 1-expected/1-actual` (SPEC doesn't define
+    those explicitly either — noted in a code comment rather than silently
+    assumed). `effectiveCorrectness()` implements §8.5's guess discount: a
+    correct-but-guessed answer scores 0.4, not 1, feeding into Elo's
+    `actual` — not into the raw `lastNCorrect` boolean log, which stays a
+    plain correctness record.
+  - `masteryCriteria.ts` — `evaluateMastery()`: all four §8.2 criteria
+    (accuracy >=75% over last 10 with a 12-attempt floor, using the
+    guess-discounted score, not raw booleans; speed = median(last 10) <=
+    targetSecPerQuestion*1.25; ceiling = >=2 hard/very_hard correct,
+    lifetime; retention = a correct attempt >=3 days after criteria 1-3
+    were *first* simultaneously true) plus the anti-frustration valve
+    (>=30 attempts without meeting 1-3, or <40% accuracy after 15) and the
+    §8.1 state machine (`learning` under 8 attempts / `practising` /
+    `mastered`; `locked`/`available`/`decaying` are out of scope here —
+    the first two come from prerequisite-gating UI that doesn't exist yet,
+    `decaying` needs SRS scheduling, Milestone 12).
+  - `selectItems.ts` — `selectDrillQueue()`: the §8.3 60/20/10/10 band
+    split (productive-struggle / stretch / fluency / interleaved), excludes
+    anything answered correctly in the last 14 days, backfills from the
+    general pool when a band is too thin rather than truncating the queue
+    (content bank is young — not every topic has a stretch-tier item yet).
+  - `errorClusters.ts` — `clusterErrorTags()`, the frequency-sort behind
+    §8.2's anti-frustration routing message ("needs a rewatch... route her
+    back to the lesson with the specific sub-concept her error tags
+    cluster around") — computed, not yet wired to an actual lesson-linking
+    UI since there's no Lesson reader yet (Milestone 6).
+  - `masteryEngine.ts` — `recordAttemptForMastery()`, the thin
+    storage-coupled glue: loads prior learner/item Elo, updates both,
+    re-evaluates criteria against the topic's full attempt history, and
+    persists the new `MasteryState` + `ItemEloState`. Not unit-tested in
+    isolation (it's glue, not algorithm) but has 3 integration tests
+    against a real `DexieAdapter` + `fake-indexeddb`, and was exercised
+    live in Chromium (see below).
+  - **53 new tests** (`elo`: 9, `masteryCriteria`: 25, `selectItems`: 6,
+    `masteryEngine`: 3), all passing alongside the existing 3.
+- **Schema additions to `app/src/types/state.ts`** (documented per the
+  schemaVersion-discipline rule, though these are additive/optional so no
+  migration step was needed):
+  - `MasteryState.criteria123FirstMetAt?: number` and
+    `antiFrustrationTriggered?: boolean` — required to implement §8.2
+    criterion 4 (retention) and the anti-frustration valve at all; neither
+    exists in SPEC.md §5.2's literal interface, which doesn't attempt to
+    spell out the full mastery-tracking shape.
+  - **New type `ItemEloState`** (+ `StorageAdapter.getItemElo`/`putItemElo`,
+    a new Dexie table via `.version(2).stores(...)`, migration plumbing,
+    and an `itemEloStates` array in `ExportBundle`) — SPEC.md §8.3 needs a
+    *live*, learner-adjusted item rating, but `Question.eloRating` is
+    shipped content from `/content` and can't be mutated by the client;
+    this is where the runtime-adjusted value lives instead, seeded from
+    `Question.eloRating` on first attempt. `DexieAdapter.test.ts` extended
+    with round-trip/export/import/clear coverage for it.
+- **Settings page + Export/Import JSON, built now**: SPEC.md §5.2 states
+  the button must ship "before Milestone 5" — there was no Settings page
+  to hang it on until this session (Milestone 4 built the first real
+  pages). `app/src/pages/Settings.tsx`, route `/settings`, linked from
+  Today. Export downloads `storage.exportAll()` as a JSON file; Import
+  reads a file and calls `storage.importAll()`. Only the backup feature —
+  the rest of `Settings` (dailyMinutes/examDate/weakSectionBias/emailOptIn)
+  belongs to whichever milestone builds the planner UI around them.
+- **Wired into the real app, not left as a dead module**:
+  `QuestionPlayer` now takes `topic`/`topicQuestions` props and calls
+  `recordAttemptForMastery()` right after `storage.addAttempt()`.
+  `Drill.tsx` now builds its queue via `selectDrillQueue()` (learnerElo
+  from the topic's `MasteryState`, itemElo from `ItemEloState` falling
+  back to `Question.eloRating`, recently-correct exclusion from the last
+  14 days of attempts) instead of just playing every question in file
+  order, and shows the resulting mastery status + learner Elo on the
+  drill-complete screen. The interleave band is empty for now — SPEC's
+  "10% from earlier mastered/decaying topics" needs a cross-topic session
+  composer that doesn't exist yet (this page is still the single-topic
+  harness from Milestone 4); documented in code as a known gap, not
+  silently dropped.
+- **Verified live in Chromium (Playwright), not just unit tests**: ran a
+  10-question drill (all skipped, deliberately, to get a clean "always
+  incorrect" signal) and confirmed via direct IndexedDB inspection that
+  `masteryStates` (status `practising`, `learnerElo` moved down from 1200
+  to ~1088) and `itemElo` (10 rows, all moved) were written correctly, and
+  the completion screen displayed the live status. Then ran a second
+  session, exported via the Settings page (`expect_download` — confirmed
+  10 attempts / 1 mastery state / 10 item-elo rows in the downloaded
+  file), **deleted the entire IndexedDB database** (`indexedDB.
+  deleteDatabase('ascent')`, simulating a cleared cache), re-imported the
+  same file, and confirmed all 10 attempts and the mastery state came back
+  exactly. Zero console/page errors throughout.
+- Ran the full local sequence before committing: lint → typecheck →
+  vitest (56 tests total) → build. All green.
+- **Known limitation, not addressed here**: `evaluateMastery()`
+  recomputes from the *entire* attempt history on every call (no
+  incremental/windowed computation) — fine at current data volumes
+  (hundreds of attempts per topic at most), would need revisiting if a
+  single topic's attempt count grows into the thousands.
 
 ### Milestone 4 — Question Player (done)
 - **Architecture decision, not previously specified anywhere in SPEC.md: how
@@ -516,11 +622,26 @@ it independently before the item is kept.
 ## Known issues / deferred
 - Milestone 2 (Storage layer) deferred until after Milestone 3 — see
   "Milestone order" above. (Now done — see Milestone 2 writeup.)
-- The storage layer (Milestone 2) has no consumers yet — nothing in `/app`
-  calls `storage` from `src/storage/index.ts`. The Settings-page Export/Import
-  JSON *button* SPEC.md §5.2 asks for ("before Milestone 5") is correctly
-  still unbuilt: there's no Settings page yet. Nothing on the live site
-  changes as a result of this milestone — it's storage plumbing with no UI.
+- ~~The storage layer (Milestone 2) has no consumers yet~~ **Resolved in
+  Milestone 4/5**: `QuestionPlayer` calls `storage.addAttempt()` and
+  `Drill.tsx`/`Settings.tsx` read from it; the Export/Import JSON button
+  SPEC.md §5.2 asks for "before Milestone 5" is built (`/settings`).
+- Adaptive selection's "10% interleaved from earlier mastered/decaying
+  topics" band (SPEC.md §8.3) is implemented in `selectDrillQueue()` but
+  fed an empty pool by `Drill.tsx` — there's no cross-topic session
+  composer yet (Drill.tsx is still the single-topic harness built for
+  Milestone 4). Worth revisiting once there's a real "start a session"
+  flow (Milestone 6 or 9).
+- `evaluateMastery()` and `recordAttemptForMastery()` recompute mastery
+  from a micro-topic's *entire* attempt history on every call — no
+  incremental state, no pagination. Fine at current volumes, would need a
+  windowed/incremental approach if a single topic's attempt count grows
+  into the thousands.
+- `locked`/`available`/`decaying` (SPEC.md §8.1) are not set by anything
+  yet: `locked`/`available` need prerequisite-gating UI (nothing currently
+  stops you from drilling a topic with unmet prerequisites — Drill.tsx has
+  no gating at all), and `decaying` needs SRS scheduling (`nextReviewAt`),
+  which is explicitly Milestone 12's job, not Milestone 5's.
 - Content bank is QA only (398 items as of the Milestone 3 addendum, all
   `source: 'generated'`). No official PYQ items exist in the bank at all —
   see the Tier 1 correction above. VARC, DILR, and lessons are still empty;

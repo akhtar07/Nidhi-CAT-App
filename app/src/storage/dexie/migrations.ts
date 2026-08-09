@@ -1,4 +1,4 @@
-import type { Attempt, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
+import type { Attempt, ItemEloState, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
 
 /**
  * Per-record schema migrations (SPEC.md §5.2: "Every schema gets a
@@ -16,6 +16,7 @@ export const CURRENT_SCHEMA_VERSION = {
   planDay: 1,
   mockResult: 1,
   settings: 1,
+  itemEloState: 1,
 } as const
 
 type Migration<T> = (record: T) => T
@@ -25,6 +26,7 @@ const masteryStateMigrations: Record<number, Migration<MasteryState>> = {}
 const planDayMigrations: Record<number, Migration<PlanDay>> = {}
 const mockResultMigrations: Record<number, Migration<MockResult>> = {}
 const settingsMigrations: Record<number, Migration<Settings>> = {}
+const itemEloStateMigrations: Record<number, Migration<ItemEloState>> = {}
 
 function migrateRecord<T extends { schemaVersion: number }>(
   record: T,
@@ -58,4 +60,7 @@ export function migrateMockResult(record: MockResult): MockResult {
 }
 export function migrateSettings(record: Settings): Settings {
   return migrateRecord(record, settingsMigrations, CURRENT_SCHEMA_VERSION.settings)
+}
+export function migrateItemEloState(record: ItemEloState): ItemEloState {
+  return migrateRecord(record, itemEloStateMigrations, CURRENT_SCHEMA_VERSION.itemEloState)
 }

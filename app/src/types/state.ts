@@ -50,11 +50,40 @@ export interface MasteryState {
   hardTierCleared: boolean
   attemptsCount: number
   masteredAt?: number
+  /**
+   * SPEC.md §8.2 criterion 4 (retention): set the first time criteria 1-3
+   * (accuracy/speed/ceiling) are simultaneously true. Status stays
+   * 'practising' (UI shows "practising (pending retention)") until a later
+   * correct attempt lands >= 3 days after this timestamp, at which point
+   * status becomes 'mastered'. Added in Milestone 5 — not in SPEC.md §5.2's
+   * literal interface, but required to implement §8.2 criterion 4 at all.
+   */
+  criteria123FirstMetAt?: number
+  /**
+   * SPEC.md §8.2 anti-frustration valve tripped for this topic (>=30
+   * attempts without meeting criteria 1-3, or <40% accuracy after 15).
+   * Added in Milestone 5, alongside criteria123FirstMetAt.
+   */
+  antiFrustrationTriggered?: boolean
   /** SRS */
   nextReviewAt?: number
   /** FSRS params */
   stability: number
   difficulty: number
+}
+
+/**
+ * Item-level Elo (SPEC.md §8.3's "both sides"). Not itself in SPEC.md
+ * §5.2's literal type list, but required by it: `Question.eloRating` is
+ * shipped content (immutable, from /content), so the *live*, adjusted
+ * item rating that adapts to how real learners perform against it has to
+ * live in learner state instead. Seeded from `Question.eloRating` the
+ * first time an item is attempted; keyed by questionId thereafter.
+ */
+export interface ItemEloState {
+  schemaVersion: 1
+  questionId: string
+  elo: number
 }
 
 export interface PlanItem {

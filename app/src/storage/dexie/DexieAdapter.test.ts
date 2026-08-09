@@ -130,11 +130,20 @@ describe('DexieAdapter', () => {
     expect(await adapter.getSettings()).toEqual(makeSettings({ dailyMinutes: 90 }))
   })
 
+  it('round-trips item elo', async () => {
+    expect(await adapter.getItemElo('q1')).toBeUndefined()
+    await adapter.putItemElo('q1', 1250)
+    expect(await adapter.getItemElo('q1')).toBe(1250)
+    await adapter.putItemElo('q1', 1310)
+    expect(await adapter.getItemElo('q1')).toBe(1310)
+  })
+
   it('exports and re-imports a full snapshot', async () => {
     await adapter.addAttempt(makeAttempt())
     await adapter.putMasteryState(makeMasteryState())
     await adapter.putPlanDay(makePlanDay())
     await adapter.addMockResult(makeMockResult())
+    await adapter.putItemElo('q1', 1250)
     await adapter.putSettings(makeSettings())
 
     const bundle = await adapter.exportAll()
@@ -142,6 +151,7 @@ describe('DexieAdapter', () => {
     expect(bundle.masteryStates).toEqual([makeMasteryState()])
     expect(bundle.planDays).toEqual([makePlanDay()])
     expect(bundle.mockResults).toEqual([makeMockResult()])
+    expect(bundle.itemEloStates).toEqual([{ schemaVersion: 1, questionId: 'q1', elo: 1250 }])
     expect(bundle.settings).toEqual(makeSettings())
 
     const restored = freshAdapter()
@@ -150,6 +160,7 @@ describe('DexieAdapter', () => {
     expect(await restored.listMasteryStates()).toEqual([makeMasteryState()])
     expect(await restored.listPlanDays()).toEqual([makePlanDay()])
     expect(await restored.listMockResults()).toEqual([makeMockResult()])
+    expect(await restored.getItemElo('q1')).toBe(1250)
     expect(await restored.getSettings()).toEqual(makeSettings())
   })
 
@@ -165,6 +176,7 @@ describe('DexieAdapter', () => {
     await adapter.putMasteryState(makeMasteryState())
     await adapter.putPlanDay(makePlanDay())
     await adapter.addMockResult(makeMockResult())
+    await adapter.putItemElo('q1', 1250)
     await adapter.putSettings(makeSettings())
 
     await adapter.clearAll()
@@ -173,6 +185,7 @@ describe('DexieAdapter', () => {
     expect(await adapter.listMasteryStates()).toEqual([])
     expect(await adapter.listPlanDays()).toEqual([])
     expect(await adapter.listMockResults()).toEqual([])
+    expect(await adapter.getItemElo('q1')).toBeUndefined()
     expect(await adapter.getSettings()).toBeUndefined()
   })
 })

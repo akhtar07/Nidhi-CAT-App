@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { recordAttemptForMastery } from '@/mastery/masteryEngine'
 import { storage } from '@/storage'
-import type { Question } from '@/types/content'
+import type { MicroTopic, Question } from '@/types/content'
 import type { Attempt } from '@/types/state'
 import { Markdown } from './Markdown'
 
@@ -44,10 +45,13 @@ type Phase = 'answering' | 'confidence' | 'revealed'
 export interface QuestionPlayerProps {
   question: Question
   mode: Attempt['mode']
+  /** The micro-topic being drilled, and all of its questions — used to update the Milestone 5 mastery engine after each attempt. */
+  topic: MicroTopic
+  topicQuestions: Question[]
   onComplete: (attempt: Attempt) => void
 }
 
-export function QuestionPlayer({ question, mode, onComplete }: QuestionPlayerProps) {
+export function QuestionPlayer({ question, mode, topic, topicQuestions, onComplete }: QuestionPlayerProps) {
   const [phase, setPhase] = useState<Phase>('answering')
   const [selectedKey, setSelectedKey] = useState<string | null>(null)
   const [titaValue, setTitaValue] = useState('')
@@ -117,7 +121,7 @@ export function QuestionPlayer({ question, mode, onComplete }: QuestionPlayerPro
       mode,
       markedForReview,
     }
-    void storage.addAttempt(attempt)
+    void storage.addAttempt(attempt).then(() => recordAttemptForMastery({ attempt, question, topic, topicQuestions }))
     onComplete(attempt)
   }
 

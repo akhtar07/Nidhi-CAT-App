@@ -50,3 +50,8 @@ export async function loadQuestionsForMicroTopic(microTopicId: string): Promise<
   const ids = index.filter((entry) => entry.microTopicIds.includes(microTopicId)).map((entry) => entry.id)
   return Promise.all(ids.map(loadQuestion))
 }
+
+export async function loadMicroTopic(microTopicId: string): Promise<MicroTopic | undefined> {
+  const syllabus = await loadSyllabus()
+  return syllabus.find((t) => t.id === microTopicId)
+}

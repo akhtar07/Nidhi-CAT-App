@@ -1,8 +1,9 @@
 import type { ExportBundle, StorageAdapter } from '@/storage/StorageAdapter'
-import type { Attempt, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
+import type { Attempt, ItemEloState, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
 import { AscentDB, SETTINGS_KEY, type SettingsRow } from './schema'
 import {
   migrateAttempt,
+  migrateItemEloState,
   migrateMasteryState,
   migrateMockResult,
   migratePlanDay,
@@ -72,6 +73,16 @@ export class DexieAdapter implements StorageAdapter {
     return rows.map(migrateMockResult)
   }
 
+  async getItemElo(questionId: string): Promise<number | undefined> {
+    const row = await this.db.itemElo.get(questionId)
+    return row ? migrateItemEloState(row).elo : undefined
+  }
+
+  async putItemElo(questionId: string, elo: number): Promise<void> {
+    const row: ItemEloState = { schemaVersion: 1, questionId, elo }
+    await this.db.itemElo.put(row)
+  }
+
   async getSettings(): Promise<Settings | undefined> {
     const row = await this.db.settings.get(SETTINGS_KEY)
     if (!row) return undefined
@@ -85,11 +96,12 @@ export class DexieAdapter implements StorageAdapter {
   }
 
   async exportAll(): Promise<ExportBundle> {
-    const [attempts, masteryStates, planDays, mockResults, settings] = await Promise.all([
+    const [attempts, masteryStates, planDays, mockResults, itemEloStates, settings] = await Promise.all([
       this.listAttempts(),
       this.listMasteryStates(),
       this.listPlanDays(),
       this.listMockResults(),
+      this.db.itemElo.toArray().then((rows) => rows.map(migrateItemEloState)),
       this.getSettings(),
     ])
     return {
@@ -98,46 +110,39 @@ export class DexieAdapter implements StorageAdapter {
       masteryStates,
       planDays,
       mockResults,
+      itemEloStates,
       settings: settings ?? null,
     }
   }
 
+  private allTables() {
+    return [
+      this.db.attempts,
+      this.db.masteryStates,
+      this.db.planDays,
+      this.db.mockResults,
+      this.db.itemElo,
+      this.db.settings,
+    ]
+  }
+
   async importAll(bundle: ExportBundle): Promise<void> {
-    await this.db.transaction(
-      'rw',
-      [this.db.attempts, this.db.masteryStates, this.db.planDays, this.db.mockResults, this.db.settings],
-      async () => {
-        await Promise.all([
-          this.db.attempts.clear(),
-          this.db.masteryStates.clear(),
-          this.db.planDays.clear(),
-          this.db.mockResults.clear(),
-          this.db.settings.clear(),
-        ])
-        await Promise.all([
-          this.db.attempts.bulkPut(bundle.attempts),
-          this.db.masteryStates.bulkPut(bundle.masteryStates),
-          this.db.planDays.bulkPut(bundle.planDays),
-          this.db.mockResults.bulkPut(bundle.mockResults),
-          bundle.settings ? this.putSettings(bundle.settings) : Promise.resolve(),
-        ])
-      },
-    )
+    await this.db.transaction('rw', this.allTables(), async () => {
+      await Promise.all(this.allTables().map((table) => table.clear()))
+      await Promise.all([
+        this.db.attempts.bulkPut(bundle.attempts),
+        this.db.masteryStates.bulkPut(bundle.masteryStates),
+        this.db.planDays.bulkPut(bundle.planDays),
+        this.db.mockResults.bulkPut(bundle.mockResults),
+        this.db.itemElo.bulkPut(bundle.itemEloStates),
+        bundle.settings ? this.putSettings(bundle.settings) : Promise.resolve(),
+      ])
+    })
   }
 
   async clearAll(): Promise<void> {
-    await this.db.transaction(
-      'rw',
-      [this.db.attempts, this.db.masteryStates, this.db.planDays, this.db.mockResults, this.db.settings],
-      async () => {
-        await Promise.all([
-          this.db.attempts.clear(),
-          this.db.masteryStates.clear(),
-          this.db.planDays.clear(),
-          this.db.mockResults.clear(),
-          this.db.settings.clear(),
-        ])
-      },
-    )
+    await this.db.transaction('rw', this.allTables(), async () => {
+      await Promise.all(this.allTables().map((table) => table.clear()))
+    })
   }
 }
