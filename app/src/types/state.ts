@@ -116,4 +116,12 @@ export interface Settings {
   examDate: string
   weakSectionBias: Section | null
   emailOptIn: boolean
+  /**
+   * Milestone 9: set once the first-launch diagnostic (SPEC.md §10.1) has
+   * been completed (or explicitly skipped). Not in SPEC.md §5.2's literal
+   * interface, but needed to know whether to show the diagnostic on next
+   * load — same "add the field, document why" pattern as MasteryState's
+   * Milestone 5 additions.
+   */
+  diagnosticCompletedAt?: number
 }

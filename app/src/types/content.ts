@@ -9,6 +9,35 @@
  * PROGRESS.md for the full generation flow.
  */
 
+export interface ExamMeta {
+  /**
+   * ISO 8601 date, e.g. '2026-11-29'.
+   */
+  examDate: string
+  /**
+   * ISO 8601 date.
+   */
+  registrationOpensDate: string
+  /**
+   * ISO 8601 date.
+   */
+  registrationClosesDate: string
+  /**
+   * IST time ranges, e.g. '08:30-10:30'.
+   */
+  slots: string[]
+  sectionOrder: ('VARC' | 'DILR' | 'QA')[]
+  totalMinutes: number
+  minutesPerSection: number
+  /**
+   * Approx count per section, e.g. {'VARC': 24}.
+   */
+  questionCount: {
+    [k: string]: number
+  }
+  maxScore: number
+}
+
 export interface Lesson {
   id: string
   microTopicId: string

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {
   loadLessonIndex,
   loadPassageSetIndex,
@@ -7,7 +7,10 @@ import {
   loadSyllabus,
   type PassageSetIndexEntry,
 } from '@/content/loadContent'
+import { MOCK_SENTINEL, REVIEW_SENTINEL } from '@/planner/generatePlan'
+import { storage } from '@/storage'
 import type { MicroTopic } from '@/types/content'
+import type { PlanDay } from '@/types/state'
 
 interface TopicRow {
   topic: MicroTopic
@@ -15,10 +18,28 @@ interface TopicRow {
   hasLesson: boolean
 }
 
+function planItemLabel(microTopicId: string, topicNameById: Map<string, string>): string {
+  if (microTopicId === MOCK_SENTINEL) return 'Mock test'
+  if (microTopicId === REVIEW_SENTINEL) return 'Review / SRS'
+  return topicNameById.get(microTopicId) ?? microTopicId
+}
+
 export function Today() {
+  const navigate = useNavigate()
   const [rows, setRows] = useState<TopicRow[] | null>(null)
   const [sets, setSets] = useState<PassageSetIndexEntry[]>([])
   const [error, setError] = useState<string | null>(null)
+  const [todayPlan, setTodayPlan] = useState<PlanDay | null>(null)
+  const [topicNameById, setTopicNameById] = useState<Map<string, string>>(new Map())
+
+  useEffect(() => {
+    storage
+      .getSettings()
+      .then((settings) => {
+        if (!settings?.diagnosticCompletedAt) navigate('/diagnostic', { replace: true })
+      })
+      .catch(() => undefined)
+  }, [navigate])
 
   useEffect(() => {
     Promise.all([loadSyllabus(), loadQuestionIndex(), loadLessonIndex(), loadPassageSetIndex()])
@@ -37,21 +58,56 @@ export function Today() {
             .sort((a, b) => Number(b.hasLesson) - Number(a.hasLesson) || b.count - a.count),
         )
         setSets(passageSets)
+        setTopicNameById(new Map(syllabus.map((t) => [t.id, t.name])))
       })
       .catch((e: Error) => setError(e.message))
+
+    const todayIso = new Date().toISOString().slice(0, 10)
+    storage
+      .getPlanDay(todayIso)
+      .then((day) => setTodayPlan(day ?? null))
+      .catch(() => undefined)
   }, [])
 
   return (
     <main className="mx-auto min-h-svh max-w-2xl bg-background p-6 text-foreground">
       <div className="mb-1 flex items-baseline justify-between">
         <h1 className="text-2xl font-semibold">Ascent</h1>
-        <Link to="/settings" className="text-sm text-primary underline">
-          Settings
-        </Link>
+        <div className="flex gap-3 text-sm">
+          <Link to="/calendar" className="text-primary underline">
+            Calendar
+          </Link>
+          <Link to="/settings" className="text-primary underline">
+            Settings
+          </Link>
+        </div>
       </div>
       <p className="mb-6 text-muted-foreground">
         Micro-topics with drillable questions. Pick one to practice.
       </p>
+
+      {todayPlan && (
+        <section className="mb-6 rounded-lg border border-border p-4">
+          <h2 className="mb-2 text-sm font-medium text-muted-foreground">Today's plan</h2>
+          <ul className="space-y-1 text-sm">
+            {todayPlan.items.map((item, i) => (
+              <li key={i} className="flex items-center justify-between">
+                <span className={item.done ? 'text-muted-foreground line-through' : ''}>
+                  {item.kind} · {planItemLabel(item.microTopicId, topicNameById)}
+                </span>
+                {item.microTopicId !== MOCK_SENTINEL && item.microTopicId !== REVIEW_SENTINEL && (
+                  <Link
+                    to={`/drill/${item.microTopicId}`}
+                    className="text-xs text-primary underline"
+                  >
+                    Go
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {error && <p className="text-destructive">Failed to load content: {error}</p>}
       {!rows && !error && <p className="text-muted-foreground">Loading…</p>}

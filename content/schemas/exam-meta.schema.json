@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ascent.local/content/schemas/exam-meta.schema.json",
+  "title": "ExamMeta",
+  "additionalProperties": false,
+  "properties": {
+    "examDate": {
+      "description": "ISO 8601 date, e.g. '2026-11-29'.",
+      "title": "Examdate",
+      "type": "string"
+    },
+    "registrationOpensDate": {
+      "description": "ISO 8601 date.",
+      "title": "Registrationopensdate",
+      "type": "string"
+    },
+    "registrationClosesDate": {
+      "description": "ISO 8601 date.",
+      "title": "Registrationclosesdate",
+      "type": "string"
+    },
+    "slots": {
+      "description": "IST time ranges, e.g. '08:30-10:30'.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Slots",
+      "type": "array"
+    },
+    "sectionOrder": {
+      "items": {
+        "enum": [
+          "VARC",
+          "DILR",
+          "QA"
+        ],
+        "type": "string"
+      },
+      "title": "Sectionorder",
+      "type": "array"
+    },
+    "totalMinutes": {
+      "exclusiveMinimum": 0,
+      "title": "Totalminutes",
+      "type": "integer"
+    },
+    "minutesPerSection": {
+      "exclusiveMinimum": 0,
+      "title": "Minutespersection",
+      "type": "integer"
+    },
+    "questionCount": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "description": "Approx count per section, e.g. {'VARC': 24}.",
+      "title": "Questioncount",
+      "type": "object"
+    },
+    "maxScore": {
+      "exclusiveMinimum": 0,
+      "title": "Maxscore",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "examDate",
+    "registrationOpensDate",
+    "registrationClosesDate",
+    "slots",
+    "sectionOrder",
+    "totalMinutes",
+    "minutesPerSection",
+    "questionCount",
+    "maxScore"
+  ],
+  "type": "object"
+}

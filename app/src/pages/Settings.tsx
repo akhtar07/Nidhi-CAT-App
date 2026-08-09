@@ -1,20 +1,36 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { storage } from '@/storage'
+import type { Section, Settings as SettingsType } from '@/types/state'
+
+const SECTIONS: Section[] = ['VARC', 'DILR', 'QA']
 
 /**
  * SPEC.md §5.2: "Ship an Export / Import JSON button in Settings before
- * Milestone 5 — if IndexedDB is cleared, all her work vanishes." Built now
- * (Milestone 5) since the storage layer it depends on (Milestone 2) is the
- * prerequisite, and there was no Settings page to hang the button off
- * before this. Only the export/import feature — the rest of Settings
- * (§5.2's dailyMinutes/examDate/weakSectionBias/emailOptIn fields) belongs
- * to whichever milestone actually builds the planner UI around them.
+ * Milestone 5 — if IndexedDB is cleared, all her work vanishes." Export/
+ * import shipped in Milestone 5; the dailyMinutes/examDate/weakSectionBias
+ * fields (set once by the Milestone 9 diagnostic) are editable here since
+ * this is the natural place to adjust them afterward.
  */
 export function Settings() {
   const [status, setStatus] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const [planSettings, setPlanSettings] = useState<SettingsType | null>(null)
+  const [planStatus, setPlanStatus] = useState<string | null>(null)
+
+  useEffect(() => {
+    storage
+      .getSettings()
+      .then((s) => setPlanSettings(s ?? null))
+      .catch(() => undefined)
+  }, [])
+
+  async function savePlanSettings() {
+    if (!planSettings) return
+    await storage.putSettings(planSettings)
+    setPlanStatus('Saved. Use "Regenerate plan" on the Calendar page to apply this to upcoming days.')
+  }
 
   async function handleExport() {
     const bundle = await storage.exportAll()
@@ -47,6 +63,51 @@ export function Settings() {
         </Link>
         <h1 className="mt-2 text-2xl font-semibold">Settings</h1>
       </div>
+
+      {planSettings && (
+        <section className="space-y-3">
+          <h2 className="font-medium">Plan</h2>
+          <label className="block text-sm">
+            <span className="mb-1 block font-medium">Minutes you can study per day</span>
+            <input
+              type="number"
+              min={15}
+              step={5}
+              value={planSettings.dailyMinutes}
+              onChange={(e) => setPlanSettings({ ...planSettings, dailyMinutes: Number(e.target.value) })}
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            />
+          </label>
+          <label className="block text-sm">
+            <span className="mb-1 block font-medium">Exam date</span>
+            <input
+              type="date"
+              value={planSettings.examDate}
+              onChange={(e) => setPlanSettings({ ...planSettings, examDate: e.target.value })}
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            />
+          </label>
+          <label className="block text-sm">
+            <span className="mb-1 block font-medium">Weak section (optional bias)</span>
+            <select
+              value={planSettings.weakSectionBias ?? ''}
+              onChange={(e) =>
+                setPlanSettings({ ...planSettings, weakSectionBias: (e.target.value || null) as Section | null })
+              }
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            >
+              <option value="">None</option>
+              {SECTIONS.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+          </label>
+          <Button onClick={() => void savePlanSettings()}>Save</Button>
+          {planStatus && <p className="text-sm text-muted-foreground">{planStatus}</p>}
+        </section>
+      )}
 
       <section className="space-y-2">
         <h2 className="font-medium">Backup</h2>

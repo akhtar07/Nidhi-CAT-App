@@ -1,0 +1,23 @@
+{
+  "examDate": "2026-11-29",
+  "registrationOpensDate": "2026-08-03",
+  "registrationClosesDate": "2026-09-15",
+  "slots": [
+    "08:30-10:30",
+    "12:30-14:30",
+    "16:30-18:30"
+  ],
+  "sectionOrder": [
+    "VARC",
+    "DILR",
+    "QA"
+  ],
+  "totalMinutes": 120,
+  "minutesPerSection": 40,
+  "questionCount": {
+    "VARC": 24,
+    "DILR": 20,
+    "QA": 22
+  },
+  "maxScore": 204
+}

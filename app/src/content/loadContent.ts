@@ -1,4 +1,4 @@
-import type { Lesson, MicroTopic, PassageSet, Question } from '@/types/content'
+import type { ExamMeta, Lesson, MicroTopic, PassageSet, Question } from '@/types/content'
 
 /**
  * All shipped content is fetched at runtime from static JSON under
@@ -35,6 +35,12 @@ export function loadSyllabus(): Promise<MicroTopic[]> {
   return syllabusCache
 }
 
+let examMetaCache: Promise<ExamMeta> | null = null
+export function loadExamMeta(): Promise<ExamMeta> {
+  examMetaCache ??= fetchJson<ExamMeta>(contentUrl('exam-meta.json'))
+  return examMetaCache
+}
+
 let questionIndexCache: Promise<QuestionIndexEntry[]> | null = null
 export function loadQuestionIndex(): Promise<QuestionIndexEntry[]> {
   questionIndexCache ??= fetchJson<QuestionIndexEntry[]>(contentUrl('questions/index.json'))
@@ -54,6 +60,19 @@ export async function loadQuestionsForMicroTopic(microTopicId: string): Promise<
 export async function loadMicroTopic(microTopicId: string): Promise<MicroTopic | undefined> {
   const syllabus = await loadSyllabus()
   return syllabus.find((t) => t.id === microTopicId)
+}
+
+/**
+ * Syllabus topics that actually have drillable content — most of §3's
+ * taxonomy (all of VARC, most of DILR) has no questions yet (RC/VA/DILR-set
+ * generation is Milestone 13), so anything that schedules or lists topics
+ * to *do* (the planner, Today's topic list) must filter through this
+ * first, or it points at a topic with nothing behind it.
+ */
+export async function topicsWithContent(): Promise<MicroTopic[]> {
+  const [syllabus, index] = await Promise.all([loadSyllabus(), loadQuestionIndex()])
+  const idsWithContent = new Set(index.flatMap((entry) => entry.microTopicIds))
+  return syllabus.filter((t) => idsWithContent.has(t.id))
 }
 
 let lessonIndexCache: Promise<string[]> | null = null

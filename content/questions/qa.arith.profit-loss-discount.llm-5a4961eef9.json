@@ -1,0 +1,49 @@
+{
+  "id": "qa.arith.profit-loss-discount.llm-5a4961eef9",
+  "microTopicIds": [
+    "qa.arith.profit-loss-discount"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A shopkeeper bought a batch of pens for $450 and sold them all at a profit of 20%. If he sold each pen for $18, how many pens were in the batch?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "25"
+    },
+    {
+      "key": "B",
+      "markdown": "30"
+    },
+    {
+      "key": "C",
+      "markdown": "35"
+    },
+    {
+      "key": "D",
+      "markdown": "40"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The total selling price of the pens is $450 * (1 + 20/100) = $540. Since each pen was sold for $18, the number of pens in the batch can be found by dividing the total selling price by the selling price per pen: $540 / $18 = 30.",
+  "altSolutionMarkdown": "We can calculate directly using profit percentage and selling price. If the cost is $450 and he sold at a 20% profit, his SP (selling price) was 120% of $450 which is $540. Each pen was sold for $18 so divide total SP by SP per pen: $540 / $18 = 30 pens.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "profit-loss",
+    "discount"
+  ]
+}

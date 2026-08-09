@@ -156,6 +156,27 @@ class Question(ContentModel):
 
 
 # ---------------------------------------------------------------------------
+# Exam metadata (SPEC.md §2: "store these in content/exam-meta.json so they
+# can be corrected in one place" — hard facts about CAT 2026, not learner
+# state and not pipeline-generated from source material, just a small
+# hand-authored fact sheet kept in the same schema-validated pipeline as
+# everything else in /content).
+# ---------------------------------------------------------------------------
+
+
+class ExamMeta(ContentModel):
+    examDate: str = Field(description="ISO 8601 date, e.g. '2026-11-29'.")
+    registrationOpensDate: str = Field(description="ISO 8601 date.")
+    registrationClosesDate: str = Field(description="ISO 8601 date.")
+    slots: list[str] = Field(description="IST time ranges, e.g. '08:30-10:30'.")
+    sectionOrder: list[Section]
+    totalMinutes: Annotated[int, Field(gt=0)]
+    minutesPerSection: Annotated[int, Field(gt=0)]
+    questionCount: dict[str, int] = Field(description="Approx count per section, e.g. {'VARC': 24}.")
+    maxScore: Annotated[int, Field(gt=0)]
+
+
+# ---------------------------------------------------------------------------
 # Passage / set (RC and DILR)
 # ---------------------------------------------------------------------------
 
@@ -186,4 +207,5 @@ CONTENT_MODELS: dict[str, type[ContentModel]] = {
     "lesson": Lesson,
     "question": Question,
     "passage-set": PassageSet,
+    "exam-meta": ExamMeta,
 }
