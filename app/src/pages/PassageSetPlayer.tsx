@@ -82,11 +82,82 @@ function TableAsset({ asset }: { asset: PassageAsset }) {
   )
 }
 
+const BAR_COLORS = ['var(--color-primary)', '#94a3b8', '#f59e0b', '#22c55e', '#a855f7']
+
+interface BarChartSeries {
+  name: string
+  values: number[]
+}
+
+/** Renders from the underlying {categories, series} data, not an image — SPEC.md §5.1: "render
+ * charts from data, not images, so they render responsively." Plain SVG, no charting library. */
+function BarChartAsset({ asset }: { asset: PassageAsset }) {
+  const categories = (asset.spec.categories as string[] | undefined) ?? []
+  const series = (asset.spec.series as BarChartSeries[] | undefined) ?? []
+  const unit = (asset.spec.unit as string | undefined) ?? ''
+
+  const maxValue = Math.max(1, ...series.flatMap((s) => s.values))
+  const chartHeight = 200
+  const groupWidth = 90
+  const barGap = 4
+  const barWidth = series.length > 0 ? (groupWidth - barGap * (series.length + 1)) / series.length : 0
+  const chartWidth = categories.length * groupWidth
+
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border p-3">
+      <svg width={chartWidth} height={chartHeight + 40} role="img" aria-label="Bar chart">
+        {categories.map((cat, ci) => (
+          <g key={cat} transform={`translate(${ci * groupWidth}, 0)`}>
+            {series.map((s, si) => {
+              const value = s.values[ci] ?? 0
+              const barHeight = (value / maxValue) * chartHeight
+              const x = barGap + si * (barWidth + barGap)
+              const y = chartHeight - barHeight
+              return (
+                <g key={s.name}>
+                  <rect x={x} y={y} width={barWidth} height={barHeight} fill={BAR_COLORS[si % BAR_COLORS.length]} />
+                  <text x={x + barWidth / 2} y={y - 4} fontSize={10} textAnchor="middle" className="fill-foreground">
+                    {value}
+                  </text>
+                </g>
+              )
+            })}
+            <text
+              x={groupWidth / 2}
+              y={chartHeight + 16}
+              fontSize={11}
+              textAnchor="middle"
+              className="fill-muted-foreground"
+            >
+              {cat}
+            </text>
+          </g>
+        ))}
+      </svg>
+      {series.length > 1 && (
+        <div className="mt-2 flex flex-wrap gap-3 text-xs text-muted-foreground">
+          {series.map((s, si) => (
+            <span key={s.name} className="flex items-center gap-1">
+              <span
+                className="inline-block size-2.5 rounded-sm"
+                style={{ backgroundColor: BAR_COLORS[si % BAR_COLORS.length] }}
+              />
+              {s.name}
+            </span>
+          ))}
+        </div>
+      )}
+      {unit && <p className="mt-1 text-xs text-muted-foreground">Values in {unit}</p>}
+    </div>
+  )
+}
+
 function SetAsset({ asset }: { asset: PassageAsset }) {
   if (asset.type === 'table') return <TableAsset asset={asset} />
+  if (asset.type === 'chart' && asset.spec.chartKind === 'bar') return <BarChartAsset asset={asset} />
   return (
     <p className="text-sm text-muted-foreground">
-      [chart rendering not yet implemented for this asset type]
+      [chart rendering not yet implemented for this chart type]
     </p>
   )
 }

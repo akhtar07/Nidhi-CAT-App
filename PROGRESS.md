@@ -11,9 +11,9 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 13 — Content pipeline v3 (not started)
+## Current milestone: 14 — Mocks (5 full + 5 sectional) (not started)
 
-Milestones 7 through 12 are done (see below). Milestone 7's content-bank
+Milestones 7 through 13 are done (see below). Milestone 7's content-bank
 scale-up is a long-running background process, not a one-session task — see
 its entry for current bank size and how to check/resume it.
 
@@ -43,6 +43,97 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 13 — Content pipeline v3 (done, content-scoped)
+
+SPEC.md §6.1 Tier 2's discipline ("RC passages must be real open-licence
+text — Gutenberg/Wikisource/arXiv/gov reports/Wikipedia CC BY-SA — never
+LLM-generated; only the questions are synthesised on top of real prose")
+extended from QA (Milestone 7) into RC, DILR-sets, and VA — the three
+content types Milestone 7's write-up explicitly deferred to this milestone.
+
+**RC pipeline** (`pipeline/qagen/rc_harness.py` + `pipeline/build_rc_passage_1.py`):
+- Source text: a 511-word excerpt of W. L. Courtney's 1901 introduction to
+  Mill's *On Liberty*, Project Gutenberg #34901 — definitively public
+  domain (Mill d. 1873, Courtney's intro published 1901). Fetched via the
+  Gutendex API, hand-word-counted to land on clean sentence boundaries.
+- **Two-part verification gate per SPEC.md §6.3**, both real, both fired
+  during the actual run (not formalities):
+  1. `span_exists_verbatim()` — the model's claimed `justifying_span` must
+     be a whitespace-normalized *exact* substring of the passage. Caught a
+     real rejection live: the model paraphrased `', but in 1851 her husband
+     died, and then Mill made her his wife.'` instead of quoting it, and
+     the item was discarded.
+  2. `answerability_check()` — 5 independent chat calls given only
+     passage+stem+options (never the claimed answer); requires ≥4/5
+     agreement *and* that the majority answer matches the claimed
+     `correct_key`. An ambiguous or wrong-keyed question fails silently
+     otherwise; this is what would catch it.
+  - Rejected items are discarded, never repaired, same rule as Milestone
+    7's QA harness.
+- Result: `varc.rc.on-liberty-intro.set-01`, 4 questions (main_idea, detail,
+  inference, tone types), `licence: "Public domain (Project Gutenberg
+  #34901)"`. Manually read all 4 post-generation, not just trusted the
+  gate — genuinely well-formed CAT-style RC questions.
+
+**DILR bar-chart set** (`pipeline/build_dilr_barchart_demo.py`): second DILR
+set, proving SPEC.md §6.3's DILR inversion (data generated programmatically
+first, questions derived deterministically, no LLM involved at all)
+generalises beyond Milestone 8's table format to a chart. Original
+synthetic two-product/four-month unit-sales data; every question's answer
+computed by a `_totals()`/`_month_with_highest_combined()`/etc. helper and
+`assert`-checked against hand-computed values before being written —
+e.g. `assert totals == {"A": 540, "B": 430}`. `licence: CC0-1.0` (original
+data, nothing to attribute).
+
+**New chart rendering** (`app/src/pages/PassageSetPlayer.tsx`): closes the
+gap Milestone 8's write-up explicitly flagged ("chart rendering not yet
+implemented for this asset type"). `BarChartAsset` — plain SVG grouped bar
+chart driven from the asset's `{categories, series, unit}` spec data, no
+charting library, per SPEC.md §5.1 ("render charts from data, not images").
+`SetAsset` dispatches on `asset.type`/`spec.chartKind`; only `bar` is wired
+so far — pie/line/stacked/radar/bubble chart kinds still fall through to
+the existing "not yet implemented" placeholder text, honestly, rather than
+silently mis-rendering. Verified live: 8 `<rect>`s rendered (4 months × 2
+products) with correct per-bar values, legend, and unit label.
+
+**VA para-jumbles** (`pipeline/build_va_parajumbles.py`): a third pattern,
+cheaper than either RC or QA — real prose (3 clusters of 4-5 consecutive
+sentences, verbatim, same Gutenberg #34901 source, different excerpts than
+the RC passage) is shuffled with a seeded RNG, and the "correct answer" is
+simply the sentences' true original order, computed and *asserted* in code
+(`reconstructed == original_order`) rather than typed by hand — so there is
+nothing for an LLM to get wrong or need verifying, sidestepping RC/QA's
+verification cost entirely for this question type. 3 questions written
+(`varc.va.para-jumbles.authored-*`), answers `BDCEA`/`BADC`/`BCAD`,
+`format: tita`, `source: authored`.
+
+**Verified live end to end** (Playwright, dev server, fresh content sync):
+RC set intro screen renders the full passage + correct target-time; "Attempt
+set" → Q1 shows the passage still visible above the question stem/options
+(the same single-column layout Milestone 8 established), zero console
+errors. DILR bar-chart set: SVG renders with correct values/legend. Full
+local CI re-run after all additions: lint (pre-existing warnings only),
+`tsc -b` clean, 147/147 vitest, production build succeeds, and
+`validate_content.py` passes (427 questions, 86 micro-topics — count is
+climbing further since Milestone 7's QA batch is still running in the
+background, unaffected by this milestone's work).
+
+**Content-scoped, not content-complete** — same honest framing as
+Milestones 7, 8, and 10. Against SPEC.md §6.5's target composition:
+RC has **1 of 60-80** target passages, DILR-as-sets has **2 of 120-160**
+target sets (1 table + 1 bar-chart), VA has **3 of 200-250** target
+para-jumbles. This milestone's job was proving each of the three pipelines
+end-to-end (source discipline, verification gate, deterministic-answer
+pattern) and closing the chart-rendering UI gap blocking DILR entirely —
+not scaling any of them to target volume. Scaling RC/DILR/VA the way
+Milestone 3's addendum scaled QA (239→398) is unstarted follow-up work, as
+is building the other 5 chart kinds `PassageSetPlayer` doesn't render yet.
+
+Run locally: `cd pipeline && conda run -n cat-pipeline python build_rc_passage_1.py`
+/ `build_dilr_barchart_demo.py` / `build_va_parajumbles.py`, then
+`cd app && npm run dev`, visit `/#/set/varc.rc.on-liberty-intro.set-01` or
+`/#/set/dilr.di.bar-column.set-01`.
 
 ### Milestone 12 — Review & SRS (done)
 

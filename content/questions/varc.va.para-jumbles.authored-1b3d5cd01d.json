@@ -1,0 +1,32 @@
+{
+  "id": "varc.va.para-jumbles.authored-1b3d5cd01d",
+  "microTopicIds": [
+    "varc.va.para-jumbles"
+  ],
+  "section": "VARC",
+  "format": "tita",
+  "stemMarkdown": "The following 4 sentences, when arranged in the correct order, form a coherent paragraph. Enter the correct sequence (e.g. ABCD).\n\nA. The ideal of individual freedom is not the ideal of Socialism, just as that invocation of governmental aid to which the Socialist resorts is not consistent with the theory of laisser-faire.\n\nB. From this it would appear that she gave Mill that tendency to Socialism which, while it lends a progressive spirit to his speculations on politics, at the same time does not manifestly accord with his earlier advocacy of peasant proprietorships.\n\nC. Nor, again, is it, on the face of it, consistent with those doctrines of individual liberty which, aided by the intellectual companionship of his wife, he propounded in a later work.\n\nD. Yet Liberty was planned by Mill and his wife in concert.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "BCAD",
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Original order: BCAD. Read in this order, the sentences form one continuous argument:\n\nFrom this it would appear that she gave Mill that tendency to Socialism which, while it lends a progressive spirit to his speculations on politics, at the same time does not manifestly accord with his earlier advocacy of peasant proprietorships.\n\nNor, again, is it, on the face of it, consistent with those doctrines of individual liberty which, aided by the intellectual companionship of his wife, he propounded in a later work.\n\nThe ideal of individual freedom is not the ideal of Socialism, just as that invocation of governmental aid to which the Socialist resorts is not consistent with the theory of laisser-faire.\n\nYet Liberty was planned by Mill and his wife in concert.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "authored",
+  "sourceRef": "Sentences excerpted verbatim from \"On Liberty\" (intro. by W. L. Courtney), Project Gutenberg #34901, public domain.",
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": "Sentence order is the source text's real original order, not an LLM claim."
+  },
+  "tags": [
+    "va:para-jumble"
+  ],
+  "mockReserved": false
+}

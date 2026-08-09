@@ -1,0 +1,52 @@
+{
+  "id": "dilr.di.bar-column.set-01",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The bar chart below shows the number of units sold each month for two products,\nA and B, at a retail store.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "bar",
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr"
+        ],
+        "series": [
+          {
+            "name": "Product A",
+            "values": [
+              120,
+              150,
+              90,
+              180
+            ]
+          },
+          {
+            "name": "Product B",
+            "values": [
+              80,
+              100,
+              140,
+              110
+            ]
+          }
+        ],
+        "unit": "units"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.bar-column.set-01.q1",
+    "dilr.di.bar-column.set-01.q2",
+    "dilr.di.bar-column.set-01.q3",
+    "dilr.di.bar-column.set-01.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

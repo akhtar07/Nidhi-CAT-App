@@ -1,0 +1,50 @@
+{
+  "id": "dilr.di.bar-column.set-01.q4",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In how many of the four months did Product B outsell Product A?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "0"
+    },
+    {
+      "key": "B",
+      "markdown": "1"
+    },
+    {
+      "key": "C",
+      "markdown": "2"
+    },
+    {
+      "key": "D",
+      "markdown": "3"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Compare each month: Jan (120 vs 80, A wins), Feb (150 vs 100, A wins), Mar (90 vs 140, B wins), Apr (180 vs 110, A wins). B outsold A in only **1** month.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-chart",
+    "comparison"
+  ],
+  "mockReserved": false
+}

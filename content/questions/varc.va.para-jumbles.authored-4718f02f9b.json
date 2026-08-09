@@ -1,0 +1,32 @@
+{
+  "id": "varc.va.para-jumbles.authored-4718f02f9b",
+  "microTopicIds": [
+    "varc.va.para-jumbles"
+  ],
+  "section": "VARC",
+  "format": "tita",
+  "stemMarkdown": "The following 5 sentences, when arranged in the correct order, form a coherent paragraph. Enter the correct sequence (e.g. ABCDE).\n\nA. The abstract truth gets the concrete illustration; the concrete illustration finds its proper foundation in a series of abstract inquiries.\n\nB. To any one whose thoughts have been occupied with the sphere of abstract speculation, the lively and vivid presentment of concrete fact comes as a delightful and agreeable shock.\n\nC. On the other hand, the man, with the more careful logical methods and the slow processes of formal reasoning, is apt to suppose that the happy intuition which leaps to the conclusion is really based on the intellectual processes of which he is conscious in his own case.\n\nD. The instinct of the woman often enables her not only to apprehend but to illustrate a truth for which she would be totally unable to give the adequate philosophic reasoning.\n\nE. Thus both parties to the happy contract are equally pleased.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "BDCEA",
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Original order: BDCEA. Read in this order, the sentences form one continuous argument:\n\nTo any one whose thoughts have been occupied with the sphere of abstract speculation, the lively and vivid presentment of concrete fact comes as a delightful and agreeable shock.\n\nThe instinct of the woman often enables her not only to apprehend but to illustrate a truth for which she would be totally unable to give the adequate philosophic reasoning.\n\nOn the other hand, the man, with the more careful logical methods and the slow processes of formal reasoning, is apt to suppose that the happy intuition which leaps to the conclusion is really based on the intellectual processes of which he is conscious in his own case.\n\nThus both parties to the happy contract are equally pleased.\n\nThe abstract truth gets the concrete illustration; the concrete illustration finds its proper foundation in a series of abstract inquiries.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "authored",
+  "sourceRef": "Sentences excerpted verbatim from \"On Liberty\" (intro. by W. L. Courtney), Project Gutenberg #34901, public domain.",
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": "Sentence order is the source text's real original order, not an LLM claim."
+  },
+  "tags": [
+    "va:para-jumble"
+  ],
+  "mockReserved": false
+}

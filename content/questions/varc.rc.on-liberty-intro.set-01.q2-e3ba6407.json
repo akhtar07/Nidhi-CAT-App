@@ -1,0 +1,49 @@
+{
+  "id": "varc.rc.on-liberty-intro.set-01.q2-e3ba6407",
+  "microTopicIds": [
+    "varc.rc.main-idea"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "What is the main idea of the passage?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The influence and impact of Harriet Taylor on John Stuart Mill's life, work, and personal relationships."
+    },
+    {
+      "key": "B",
+      "markdown": "The social critique of extramarital affairs in mid-19th century England."
+    },
+    {
+      "key": "C",
+      "markdown": "A biography of prominent philosophers J.S. Mill and his father James Mill."
+    },
+    {
+      "key": "D",
+      "markdown": "An exploration of Victorian literature and its impact on political treatises."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The passage primarily discusses Harriet Taylor's influence on John Stuart Mill\u2019s personal life and intellectual contributions, highlighting her role in his treatise on Liberty and other works. Option B focuses solely on social critique which is not emphasized over the impact on JS Mill himself; option C misrepresents it as a biography rather than an exploration of Harriet Taylor's specific influence on Mill; option D incorrectly characterizes it as about Victorian literature's impact on political thought, when in fact the passage focuses on personal relationships and intellectual contributions.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "answerability_pass",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": "justifying span: Mill was never weary of expatiating on all the advantages of so singular a relationship. In some of the presentation copies of his work on Political Economy, he wrote the following dedication:--\"To Mr"
+  },
+  "tags": [
+    "rc:main_idea"
+  ],
+  "mockReserved": false
+}

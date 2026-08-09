@@ -1,0 +1,50 @@
+{
+  "id": "dilr.di.bar-column.set-01.q1",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which month was the combined (Product A + Product B) units sold the highest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Jan"
+    },
+    {
+      "key": "B",
+      "markdown": "Feb"
+    },
+    {
+      "key": "C",
+      "markdown": "Mar"
+    },
+    {
+      "key": "D",
+      "markdown": "Apr"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Combined totals: Jan = 120+80 = 200, Feb = 150+100 = 250, Mar = 90+140 = 230, Apr = 180+110 = 290. April is highest at 290.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-chart",
+    "totals"
+  ],
+  "mockReserved": false
+}

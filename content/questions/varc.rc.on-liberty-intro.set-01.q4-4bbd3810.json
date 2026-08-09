@@ -1,0 +1,49 @@
+{
+  "id": "varc.rc.on-liberty-intro.set-01.q4-4bbd3810",
+  "microTopicIds": [
+    "varc.rc.tone-attitude"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "What best describes the tone of the author when discussing Mill's relationship with Mrs. Taylor?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Admiring and romantic"
+    },
+    {
+      "key": "B",
+      "markdown": "Cynical and dismissive"
+    },
+    {
+      "key": "C",
+      "markdown": "Neutral and factual"
+    },
+    {
+      "key": "D",
+      "markdown": "Slightly skeptical but respectful"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The author adopts a slightly skeptical yet respectful tone when discussing John Stuart Mill's relationship with Mrs. Taylor, as evidenced by mentioning both positive influence (her counsel) and the controversies around their relationship ('considerable trouble'). Options A and B are incorrect because while there is admiration and some facts stated, these do not encapsulate the balance of skepticism and respect in the author\u2019s tone. Option C is also wrong due to a lack of neutrality; the passage clearly contains nuanced opinions.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "answerability_pass",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": "justifying span: There is no question that Mill's infatuation was the cause of considerable trouble to his acquaintances and friends."
+  },
+  "tags": [
+    "rc:tone"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,49 @@
+{
+  "id": "varc.rc.on-liberty-intro.set-01.q1-c8a60559",
+  "microTopicIds": [
+    "varc.rc.inference"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Based on the passage, what can be inferred about John Stuart Mill's relationship with Harriet Taylor?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "It was a deep and intellectual partnership that significantly influenced his work."
+    },
+    {
+      "key": "B",
+      "markdown": "They were merely professional colleagues who had no personal connection."
+    },
+    {
+      "key": "C",
+      "markdown": "Their relationship caused Mill to abandon all of his previous beliefs."
+    },
+    {
+      "key": "D",
+      "markdown": "Mill's father and friends fully approved of their relationship from the beginning."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Option A is correct as the passage highlights that Harriet Taylor had a significant intellectual influence on Mill's work such as co-influencing the treatise on Liberty. Furthermore, it mentions multiple times about her influence over his mind and how he dedicated works to her. Options B and C are incorrect because they contradict the passage which presents their relationship as deeply influential rather than purely professional or involving abandonment of previous beliefs. Option D is also false since the text states that there was considerable trouble for Mill's acquaintances due to this relationship, indicating disapproval from some.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "answerability_pass",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": "justifying span: The passage quoted is not the only one in which John Stuart Mill proclaims his unhesitating belief in the intellectual influence of his wife. The treatise on Liberty was written especially under her a"
+  },
+  "tags": [
+    "rc:inference"
+  ],
+  "mockReserved": false
+}

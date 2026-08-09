@@ -1,0 +1,33 @@
+{
+  "id": "dilr.di.bar-column.set-01.q3",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the total number of Product A units sold across all four months?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 540.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Sum: 120 + 150 + 90 + 180 = 540.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 45,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-chart",
+    "totals"
+  ],
+  "mockReserved": false
+}

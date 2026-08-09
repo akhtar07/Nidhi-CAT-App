@@ -1,0 +1,49 @@
+{
+  "id": "varc.rc.on-liberty-intro.set-01.q3-077f117b",
+  "microTopicIds": [
+    "varc.rc.direct-detail"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "According to the passage, what caused considerable trouble to Mill's acquaintances and friends?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Mill dedicating his work to Mrs. Taylor."
+    },
+    {
+      "key": "B",
+      "markdown": "The publication of The Subjection of Women in 1869."
+    },
+    {
+      "key": "C",
+      "markdown": "Mill's infatuation with Mrs. Taylor before she was widowed."
+    },
+    {
+      "key": "D",
+      "markdown": "Mrs. Carlyle describing her as dangerous and patronizing."
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Option C is correct because the passage explicitly states that 'Mill's infatuation' with Mrs. Taylor caused considerable trouble for his acquaintances and friends, not dedicating work to her (A), publishing The Subjection of Women (B), or Mrs. Carlyle\u2019s description of her (D).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "answerability_pass",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": "justifying span: There is no question that Mill's infatuation was the cause of considerable trouble to his acquaintances and friends."
+  },
+  "tags": [
+    "rc:detail"
+  ],
+  "mockReserved": false
+}
