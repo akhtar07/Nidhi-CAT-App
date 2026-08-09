@@ -127,9 +127,11 @@ def gen_binomial_theorem() -> list[ItemSpec]:
     n = item_count(mt)
     specs = []
     x = sp.symbols("x")
+    # Widened power/a/b ranges for more combinatorial variety (was power in
+    # [5,9], a/b in [1,3] — ~225 combos, workable but thin at the high end).
     for i in range(n):
-        power = rng.randint(5, 9)
-        a, b = rng.randint(1, 3), rng.randint(1, 3)
+        power = rng.randint(5, 12)
+        a, b = rng.randint(1, 4), rng.randint(1, 4)
         k = rng.randint(1, power - 1)
         claimed = math.comb(power, k) * a ** (power - k) * b ** k
         stem = (
@@ -161,22 +163,46 @@ def gen_series_sequences_hybrids() -> list[ItemSpec]:
     rng = random.Random(mt)
     n = item_count(mt)
     specs = []
+    # Original version only ever produced "sum of squares" items — a single
+    # num parameter in [8,30] (23 possible values) is too thin a pool to
+    # safely draw 10 unique instances, and gives no real mathematical
+    # variety for a topic named "hybrids". Added a genuinely distinct
+    # sum-of-cubes variant (different closed form, different independent
+    # check) and widened the num range, so both the item count and the
+    # underlying maths vary.
+    num_choices = list(range(6, 60))
     for i in range(n):
-        num = rng.randint(8, 30)
-        claimed = num * (num + 1) * (2 * num + 1) // 6
-        stem = f"Find the sum $1^2 + 2^2 + 3^2 + \\dots + {num}^2$."
-        solution = (
-            f"$\\sum_{{i=1}}^{{n}} i^2 = \\dfrac{{n(n+1)(2n+1)}}{{6}} = "
-            f"\\dfrac{{{num}\\times{num + 1}\\times{2 * num + 1}}}{{6}} = {claimed}$."
-        )
+        series_type = rng.choice(["squares", "cubes"])
+        num = rng.choice(num_choices)
+        if series_type == "squares":
+            claimed = num * (num + 1) * (2 * num + 1) // 6
+            stem = f"Find the sum $1^2 + 2^2 + 3^2 + \\dots + {num}^2$."
+            solution = (
+                f"$\\sum_{{i=1}}^{{n}} i^2 = \\dfrac{{n(n+1)(2n+1)}}{{6}} = "
+                f"\\dfrac{{{num}\\times{num + 1}\\times{2 * num + 1}}}{{6}} = {claimed}$."
+            )
+            tag = "sum-of-squares"
 
-        def answer_fn(num=num):
-            return sum(k * k for k in range(1, num + 1))
+            def answer_fn(num=num):
+                return sum(k * k for k in range(1, num + 1))
+        else:
+            claimed = (num * (num + 1) // 2) ** 2
+            stem = f"Find the sum $1^3 + 2^3 + 3^3 + \\dots + {num}^3$."
+            solution = (
+                f"$\\sum_{{i=1}}^{{n}} i^3 = \\left[\\dfrac{{n(n+1)}}{{2}}\\right]^2 = "
+                f"\\left[\\dfrac{{{num}\\times{num + 1}}}{{2}}\\right]^2 = {claimed}$."
+            )
+            tag = "sum-of-cubes"
+
+            def answer_fn(num=num):
+                # Independent of the [n(n+1)/2]^2 closed form: direct
+                # cube-by-cube summation.
+                return sum(k ** 3 for k in range(1, num + 1))
 
         specs.append(ItemSpec(
             microtopic_id=mt, difficulty=_diffs(n)[i], stem=stem, solution=solution,
             answer_fn=answer_fn, claimed_value=claimed, target_seconds=target_seconds(mt),
-            tags=["modern:series", "sum-of-squares"], format="tita", tita_tolerance=0,
+            tags=["modern:series", tag], format="tita", tita_tolerance=0,
         ))
     return specs
 

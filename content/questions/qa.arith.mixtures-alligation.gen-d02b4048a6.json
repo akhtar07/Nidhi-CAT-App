@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-d02b4048a6",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In what ratio must a solution containing 10% acid be mixed with a solution containing 36% acid to obtain a mixture that is 24% acid? Give the ratio (cheaper : dearer) in simplest form, e.g. '3:2'.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "6:7",
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "By alligation: $\\dfrac{\\text{cheaper}}{\\text{dearer}} = \\dfrac{y - z}{z - x} = \\dfrac{36 - 24}{24 - 10} = \\dfrac{12}{14} = 6:7$ (after simplifying by dividing both terms by 2).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:alligation"
+  ]
+}

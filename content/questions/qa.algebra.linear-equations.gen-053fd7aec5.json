@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.linear-equations.gen-053fd7aec5",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Solve for $x + y$: $\\;x + 2y = 9$ and $\\;2x - 5y = -9$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Solving the two equations simultaneously (elimination or substitution) gives $x = 3$ and $y = 3$, so $x + y = 6$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear-equations"
+  ]
+}

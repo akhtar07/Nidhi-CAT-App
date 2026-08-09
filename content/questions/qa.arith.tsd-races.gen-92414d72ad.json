@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-races.gen-92414d72ad",
+  "microTopicIds": [
+    "qa.arith.tsd-races"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a race of 250 m, the ratio of speeds of A and B is 9:5. If they start together, by what distance (in m) does A win when A finishes the race? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 111.11,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "In the time A covers 250 m, B covers $\\dfrac{5}{9} \\times 250 = 138.89$ m (same time, speeds proportional to distance covered). A wins by $= 250 - 138.89 = 111.11$ m.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "races"
+  ]
+}

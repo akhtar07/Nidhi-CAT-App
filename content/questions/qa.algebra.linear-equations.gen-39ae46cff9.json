@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.linear-equations.gen-39ae46cff9",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Solve for $x + y$: $\\;x + 5y = 68$ and $\\;5x - 2y = -65$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Solving the two equations simultaneously (elimination or substitution) gives $x = -7$ and $y = 15$, so $x + y = 8$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear-equations"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes.gen-effefd890a",
+  "microTopicIds": [
+    "qa.numsys.last-digit-trailing-zeroes"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the number of trailing zeroes in 61!",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 14.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Trailing zeroes in $n!$ come from factors of 5 (since factors of 2 are more abundant). Count $= \\lfloor n/5 \\rfloor + \\lfloor n/25 \\rfloor + \\dots = \\lfloor 61/5 \\rfloor + \\lfloor 61/25 \\rfloor = 14$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:trailing-zeroes",
+    "legendre"
+  ]
+}

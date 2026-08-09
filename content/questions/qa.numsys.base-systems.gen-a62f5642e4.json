@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.base-systems.gen-a62f5642e4",
+  "microTopicIds": [
+    "qa.numsys.base-systems"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Convert 1244 (base 10) to base 12.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "878",
+  "titaTolerance": 0.0,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Repeatedly divide 1244 by 12 and read the remainders bottom-to-top: $(1244)_{10} = (878)_{12}$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:base-conversion"
+  ]
+}

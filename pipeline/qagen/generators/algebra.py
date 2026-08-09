@@ -276,10 +276,12 @@ def gen_maxima_minima() -> list[ItemSpec]:
     n = item_count(mt)
     specs = []
     x = sp.symbols("x")
+    # (a,b,c) space was already large (4*25*21 combos) — widened `a` a bit
+    # further for more variety at the high-difficulty end (steeper parabolas).
     for i in range(n):
-        a = rng.randint(1, 4)
-        b = rng.randint(-12, 12)
-        c = rng.randint(-10, 10)
+        a = rng.randint(1, 6)
+        b = rng.randint(-15, 15)
+        c = rng.randint(-12, 12)
         vertex_x = sp.Rational(-b, 2 * a)
         min_val = a * vertex_x ** 2 + b * vertex_x + c
         min_val_f = round(float(min_val), 2)

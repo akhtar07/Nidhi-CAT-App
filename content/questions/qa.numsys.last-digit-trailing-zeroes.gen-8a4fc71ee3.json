@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes.gen-8a4fc71ee3",
+  "microTopicIds": [
+    "qa.numsys.last-digit-trailing-zeroes"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the number of trailing zeroes in 21!",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.0,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Trailing zeroes in $n!$ come from factors of 5 (since factors of 2 are more abundant). Count $= \\lfloor n/5 \\rfloor + \\lfloor n/25 \\rfloor + \\dots = \\lfloor 21/5 \\rfloor = 4$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:trailing-zeroes",
+    "legendre"
+  ]
+}

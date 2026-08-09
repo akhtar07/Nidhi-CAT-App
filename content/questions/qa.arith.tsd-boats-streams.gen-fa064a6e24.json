@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-boats-streams.gen-fa064a6e24",
+  "microTopicIds": [
+    "qa.arith.tsd-boats-streams"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A boat's speed in still water is 20 km/h and the speed of the stream is 5 km/h. Find the time (in hours) taken by the boat to cover 79 km downstream. (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.16,
+  "titaTolerance": 0.02,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Downstream speed $= 20 + 5 = 25$ km/h. Time $= \\dfrac{79}{25} = 3.16$ hours.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "boats-streams"
+  ]
+}

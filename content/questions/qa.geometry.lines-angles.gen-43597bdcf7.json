@@ -1,0 +1,31 @@
+{
+  "id": "qa.geometry.lines-angles.gen-43597bdcf7",
+  "microTopicIds": [
+    "qa.geometry.lines-angles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two parallel lines are cut by a transversal. One of the angles formed is 154\u00b0. Find the co-interior (same-side interior) angle to it, in degrees.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 26.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Co-interior angles are supplementary (they sum to 180\u00b0). So the required angle $= 180 - 154 = 26$\u00b0.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:lines-angles"
+  ]
+}

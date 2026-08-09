@@ -1,0 +1,48 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-244e47d008",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Two numbers are in the ratio 6:7. If their sum is 195, find the larger of the two numbers.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "90"
+    },
+    {
+      "key": "B",
+      "markdown": "120"
+    },
+    {
+      "key": "C",
+      "markdown": "195"
+    },
+    {
+      "key": "D",
+      "markdown": "105"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the numbers be $6x$ and $7x$. Then $6x + 7x = 195 \\Rightarrow x = 15$. The larger number is $7 \\times 15 = 105$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": true,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio-proportion"
+  ]
+}

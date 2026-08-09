@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-races.gen-5b9289343f",
+  "microTopicIds": [
+    "qa.arith.tsd-races"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a race of 200 m, the ratio of speeds of A and B is 10:3. If they start together, by what distance (in m) does A win when A finishes the race? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 140.0,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "In the time A covers 200 m, B covers $\\dfrac{3}{10} \\times 200 = 60.00$ m (same time, speeds proportional to distance covered). A wins by $= 200 - 60.00 = 140.00$ m.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "races"
+  ]
+}

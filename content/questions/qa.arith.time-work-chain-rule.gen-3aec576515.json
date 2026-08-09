@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.time-work-chain-rule.gen-3aec576515",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "13 workers, each working 12 hours a day, can complete a job in 7 days. How many days will 25 workers, each working 11 hours a day, take to complete the same job? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.97,
+  "titaTolerance": 0.02,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Total work $= 13 \\times 7 \\times 12$ worker-hours $= 1092$. With 25 workers at 11 hours/day, days needed $= \\dfrac{1092}{25\\times11} = 3.97$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:time-work",
+    "chain-rule"
+  ]
+}

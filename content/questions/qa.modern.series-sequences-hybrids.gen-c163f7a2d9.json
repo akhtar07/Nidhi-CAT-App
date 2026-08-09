@@ -1,0 +1,32 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-c163f7a2d9",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum $1^3 + 2^3 + 3^3 + \\dots + 24^3$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 90000.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$\\sum_{i=1}^{n} i^3 = \\left[\\dfrac{n(n+1)}{2}\\right]^2 = \\left[\\dfrac{24\\times25}{2}\\right]^2 = 90000$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "sum-of-cubes"
+  ]
+}

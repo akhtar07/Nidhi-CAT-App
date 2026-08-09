@@ -1,0 +1,48 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-6326772cbb",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Two numbers are in the ratio 6:5. If their sum is 66, find the larger of the two numbers.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "30"
+    },
+    {
+      "key": "B",
+      "markdown": "66"
+    },
+    {
+      "key": "C",
+      "markdown": "36"
+    },
+    {
+      "key": "D",
+      "markdown": "42"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Let the numbers be $6x$ and $5x$. Then $6x + 5x = 66 \\Rightarrow x = 6$. The larger number is $6 \\times 6 = 36$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": true,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio-proportion"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-relative-speed.gen-c8143fc5d1",
+  "microTopicIds": [
+    "qa.arith.tsd-relative-speed"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two cars start at the same time from two points 357 km apart and travel towards each other at 42 km/h and 44 km/h respectively. After how many hours will they meet? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.15,
+  "titaTolerance": 0.02,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Relative speed (approaching) $= 42 + 44 = 86$ km/h. Time to meet $= \\dfrac{\\text{distance}}{\\text{relative speed}} = \\dfrac{357}{86} = 4.15$ hours.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "relative-speed"
+  ]
+}

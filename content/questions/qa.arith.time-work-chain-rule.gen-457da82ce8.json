@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.time-work-chain-rule.gen-457da82ce8",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "18 workers, each working 4 hours a day, can complete a job in 21 days. How many days will 25 workers, each working 5 hours a day, take to complete the same job? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 12.1,
+  "titaTolerance": 0.02,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Total work $= 18 \\times 21 \\times 4$ worker-hours $= 1512$. With 25 workers at 5 hours/day, days needed $= \\dfrac{1512}{25\\times5} = 12.10$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:time-work",
+    "chain-rule"
+  ]
+}

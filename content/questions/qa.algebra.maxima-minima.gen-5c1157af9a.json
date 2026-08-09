@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.maxima-minima.gen-5c1157af9a",
+  "microTopicIds": [
+    "qa.algebra.maxima-minima"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the minimum value of $f(x) = 5x^2 + 8x - 4$. (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -7.2,
+  "titaTolerance": 0.02,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Since $a=5>0$, the parabola opens upward and the minimum is at $x = -b/2a = -0.80$. Minimum value $= c - b^2/(4a) = -7.20$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:maxima-minima"
+  ]
+}

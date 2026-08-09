@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.permutations-combinations.gen-bebef59e02",
+  "microTopicIds": [
+    "qa.modern.permutations-combinations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In how many ways can a committee of 4 people be chosen from a group of 11 people?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 330.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "This is a selection (order doesn't matter): $\\binom{11}{4} = \\dfrac{11!}{4!(11-4)!} = 330$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:combinations"
+  ]
+}

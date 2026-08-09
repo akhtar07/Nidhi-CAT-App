@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-4ceb2630c0",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In what ratio must a solution containing 35% acid be mixed with a solution containing 88% acid to obtain a mixture that is 65% acid? Give the ratio (cheaper : dearer) in simplest form, e.g. '3:2'.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "23:30",
+  "titaTolerance": 0.0,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "By alligation: $\\dfrac{\\text{cheaper}}{\\text{dearer}} = \\dfrac{y - z}{z - x} = \\dfrac{88 - 65}{65 - 35} = \\dfrac{23}{30} = 23:30$ (after simplifying by dividing both terms by 1).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:alligation"
+  ]
+}

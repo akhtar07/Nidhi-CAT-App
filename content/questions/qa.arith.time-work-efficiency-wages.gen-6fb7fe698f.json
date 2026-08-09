@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.time-work-efficiency-wages.gen-6fb7fe698f",
+  "microTopicIds": [
+    "qa.arith.time-work-efficiency-wages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A is 3 times as efficient as B. Working together, they complete a job in 4 days. In how many days can A alone complete the job? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 5.33,
+  "titaTolerance": 0.02,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Let B's rate be $r$ per day; A's rate is $3r$. Combined rate $= (3+1)r = 1/4$, so $r = \\dfrac{1}{4\\times4}$. A's rate $= 3r$, so A alone takes $\\dfrac{1}{3r} = \\dfrac{4\\times4}{3} = 5.33$ days.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:time-work",
+    "efficiency"
+  ]
+}

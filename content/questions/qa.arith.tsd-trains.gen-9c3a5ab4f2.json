@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-trains.gen-9c3a5ab4f2",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A train 161 m long crosses a platform 273 m long in how many seconds, if the train runs at 97 km/h? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.11,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Speed in m/s $= 97 \\times \\dfrac{5}{18} = 26.94$ m/s. Total distance to cover $= 161 + 273 = 434$ m. Time $= \\dfrac{434}{26.94} = 16.11$ s.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "trains"
+  ]
+}

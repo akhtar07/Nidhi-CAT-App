@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.time-work-chain-rule.gen-fe44380727",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "25 workers, each working 8 hours a day, can complete a job in 17 days. How many days will 23 workers, each working 8 hours a day, take to complete the same job? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18.48,
+  "titaTolerance": 0.02,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Total work $= 25 \\times 17 \\times 8$ worker-hours $= 3400$. With 23 workers at 8 hours/day, days needed $= \\dfrac{3400}{23\\times8} = 18.48$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:time-work",
+    "chain-rule"
+  ]
+}

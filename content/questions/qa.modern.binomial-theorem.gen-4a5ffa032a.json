@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.binomial-theorem.gen-4a5ffa032a",
+  "microTopicIds": [
+    "qa.modern.binomial-theorem"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the coefficient of $x^{10}$ in the expansion of $(3 + 2x)^{12}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 608256.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "General term: $\\binom{12}{10} 3^{12-10} (2x)^{10}$. Coefficient of $x^{10}$ $= \\binom{12}{10} 3^{2} 2^{10} = 608256$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:binomial-theorem"
+  ]
+}

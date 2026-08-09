@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.profit-loss-discount.gen-7226cfd68a",
+  "microTopicIds": [
+    "qa.arith.profit-loss-discount"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A shopkeeper marks up an article by 67% above its cost price, then sells it at a discount of 37% on the marked price. Find his profit or loss percent. (Enter a negative number for a loss.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 5.21,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let cost price $= 100$. Marked price $= 100(1+67/100) = 167.00$. Selling price $= 167.00(1-37/100) = 105.21$. Profit \\% $= 105.21 - 100 = 5.21\\%$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:profit-loss-discount"
+  ]
+}

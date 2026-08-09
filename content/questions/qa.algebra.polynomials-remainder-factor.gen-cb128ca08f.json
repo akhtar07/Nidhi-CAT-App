@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.gen-cb128ca08f",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $p(x) = 5x^3 + 2x^2 + 2x + 1$ is divided by $(x - 1)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 10.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "By the Remainder Theorem, the remainder equals $p(1)$: $p(1) = 5(1)^3 + 2(1)^2 + 2(1) + 1 = 10$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:remainder-theorem"
+  ]
+}

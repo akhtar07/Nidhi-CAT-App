@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.maxima-minima.gen-f37746eb86",
+  "microTopicIds": [
+    "qa.algebra.maxima-minima"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the minimum value of $f(x) = 1x^2 + 14x + 8$. (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -41.0,
+  "titaTolerance": 0.02,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Since $a=1>0$, the parabola opens upward and the minimum is at $x = -b/2a = -7.00$. Minimum value $= c - b^2/(4a) = -41.00$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:maxima-minima"
+  ]
+}

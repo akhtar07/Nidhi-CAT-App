@@ -1,0 +1,32 @@
+{
+  "id": "qa.algebra.progressions.gen-159259e003",
+  "microTopicIds": [
+    "qa.algebra.progressions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum of the first 14 terms of an arithmetic progression whose first term is 9 and common difference is 7.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 763.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$S_n = \\dfrac{n}{2}\\left[2a + (n-1)d\\right] = \\dfrac{14}{2}\\left[2(9) + (14-1)(7)\\right] = 763$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:progressions",
+    "ap"
+  ]
+}

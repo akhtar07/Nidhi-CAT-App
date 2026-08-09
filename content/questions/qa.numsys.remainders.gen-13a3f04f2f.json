@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.remainders.gen-13a3f04f2f",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $4^{6}$ is divided by 5.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0,
+  "titaTolerance": 0.0,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Using modular exponentiation (repeated squaring), $4^{6} \\bmod 5 = 1$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "modular-exponentiation"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.linear-equations.gen-c8fb753825",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Solve for $x + y$: $\\;2x + 3y = 49$ and $\\;2x - y = 5$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 19.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Solving the two equations simultaneously (elimination or substitution) gives $x = 8$ and $y = 11$, so $x + y = 19$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear-equations"
+  ]
+}

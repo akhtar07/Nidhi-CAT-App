@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-races.gen-84a7677055",
+  "microTopicIds": [
+    "qa.arith.tsd-races"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a race of 400 m, the ratio of speeds of A and B is 11:8. If they start together, by what distance (in m) does A win when A finishes the race? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 109.09,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "In the time A covers 400 m, B covers $\\dfrac{8}{11} \\times 400 = 290.91$ m (same time, speeds proportional to distance covered). A wins by $= 400 - 290.91 = 109.09$ m.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "races"
+  ]
+}

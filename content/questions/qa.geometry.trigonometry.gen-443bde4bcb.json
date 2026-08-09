@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.trigonometry.gen-443bde4bcb",
+  "microTopicIds": [
+    "qa.geometry.trigonometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A pole stands vertically on the ground. From a point 75 m from its base, the angle of elevation of the top of the pole is 45\u00b0. Find the height of the pole (2 decimal places).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 75.0,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$\\text{height} = \\text{distance} \\times \\tan(45\u00b0) = 75 \\times \\tan(45\u00b0) = 75.00$ m.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:trigonometry",
+    "heights-distances"
+  ]
+}

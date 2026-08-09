@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.time-work-chain-rule.gen-5d3196cbf6",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "23 workers, each working 7 hours a day, can complete a job in 16 days. How many days will 30 workers, each working 7 hours a day, take to complete the same job? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 12.27,
+  "titaTolerance": 0.02,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Total work $= 23 \\times 16 \\times 7$ worker-hours $= 2576$. With 30 workers at 7 hours/day, days needed $= \\dfrac{2576}{30\\times7} = 12.27$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:time-work",
+    "chain-rule"
+  ]
+}

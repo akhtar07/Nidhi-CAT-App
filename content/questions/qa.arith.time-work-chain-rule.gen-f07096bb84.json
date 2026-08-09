@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.time-work-chain-rule.gen-f07096bb84",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "24 workers, each working 12 hours a day, can complete a job in 20 days. How many days will 22 workers, each working 7 hours a day, take to complete the same job? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 37.4,
+  "titaTolerance": 0.02,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Total work $= 24 \\times 20 \\times 12$ worker-hours $= 5760$. With 22 workers at 7 hours/day, days needed $= \\dfrac{5760}{22\\times7} = 37.40$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:time-work",
+    "chain-rule"
+  ]
+}

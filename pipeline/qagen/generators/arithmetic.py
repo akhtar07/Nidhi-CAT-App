@@ -356,11 +356,16 @@ def gen_tsd_races() -> list[ItemSpec]:
     rng = random.Random(mt)
     n = item_count(mt)
     specs = []
+    # Widened from length in {100,200,400,500,1000} x p in [5,9] x q in {3,4}
+    # (~50 combos, too narrow to safely draw 10 unique instances) to a much
+    # larger combinatorial space so the difficulty cycle reliably reaches
+    # hard/very_hard without duplicate-draw collisions.
+    lengths = [100, 150, 200, 250, 300, 400, 500, 600, 800, 1000, 1200, 1500]
     for i in range(n):
-        length = rng.choice([100, 200, 400, 500, 1000])
-        speed_ratio_p, speed_ratio_q = rng.randint(5, 9), rng.randint(3, 4)
-        while gcd(speed_ratio_p, speed_ratio_q) != 1:
-            speed_ratio_p, speed_ratio_q = rng.randint(5, 9), rng.randint(3, 4)
+        length = rng.choice(lengths)
+        speed_ratio_p, speed_ratio_q = rng.randint(5, 15), rng.randint(2, 9)
+        while gcd(speed_ratio_p, speed_ratio_q) != 1 or speed_ratio_q >= speed_ratio_p:
+            speed_ratio_p, speed_ratio_q = rng.randint(5, 15), rng.randint(2, 9)
         margin = round(float(length * (1 - Fraction(speed_ratio_q, speed_ratio_p))), 2)
         stem = (
             f"In a race of {length} m, the ratio of speeds of A and B is "
@@ -377,7 +382,18 @@ def gen_tsd_races() -> list[ItemSpec]:
         )
 
         def answer_fn(length=length, p=speed_ratio_p, q=speed_ratio_q):
-            return round(float(length * (1 - Fraction(q, p))), 2)
+            # Independent of the Fraction closed-form above: model the race
+            # on a real time axis instead of an algebraic ratio. Assign A and
+            # B literal speeds (p and q "units"), compute the wall-clock time
+            # A takes to finish with plain float division, then compute how
+            # far B physically travels in that time. This is a genuinely
+            # different computational path (float time-simulation vs exact
+            # Fraction algebra) — see PROGRESS.md re: the percentages/
+            # profit-loss bug where both paths were secretly the same formula.
+            speed_a, speed_b = float(p), float(q)
+            time_a_finishes = length / speed_a
+            dist_b_travelled = speed_b * time_a_finishes
+            return round(length - dist_b_travelled, 2)
 
         specs.append(ItemSpec(
             microtopic_id=mt, difficulty=_diffs(n)[i], stem=stem, solution=solution,
@@ -495,12 +511,15 @@ def gen_time_work_chain_rule() -> list[ItemSpec]:
     rng = random.Random(mt)
     n = item_count(mt)
     specs = []
+    # Parameter space (p,d,h,q,h2 all multi-valued ranges) was already large
+    # enough for 10 unique draws; widened h/h2 slightly for more variety at
+    # the high-difficulty end (more workers/hours combinations to reason about).
     for i in range(n):
-        p = rng.randint(4, 20)
-        d = rng.randint(4, 20)
-        h = rng.randint(4, 10)
-        q = rng.randint(4, 20)
-        h2 = rng.randint(4, 10)
+        p = rng.randint(4, 30)
+        d = rng.randint(4, 25)
+        h = rng.randint(3, 12)
+        q = rng.randint(4, 30)
+        h2 = rng.randint(3, 12)
         d2 = round(float(Fraction(p * d * h, q * h2)), 2)
         stem = (
             f"{p} workers, each working {h} hours a day, can complete a job in "
@@ -514,7 +533,16 @@ def gen_time_work_chain_rule() -> list[ItemSpec]:
         )
 
         def answer_fn(p=p, d=d, h=h, q=q, h2=h2):
-            return round(float(Fraction(p * d * h, q * h2)), 2)
+            # Independent of the Fraction closed-form above: set up the
+            # work-conservation equation p*h*d == q*h2*D (total worker-hours
+            # is constant) and solve for D with sympy's equation solver
+            # instead of directly evaluating the ratio — a different code
+            # path (symbolic solve vs. Fraction division), same discipline
+            # used for gen_linear_equations/gen_maxima_minima.
+            import sympy as sp
+            d_sym = sp.symbols("d_sym", positive=True)
+            solved = sp.solve(sp.Eq(p * h * d, q * h2 * d_sym), d_sym)[0]
+            return round(float(solved), 2)
 
         specs.append(ItemSpec(
             microtopic_id=mt, difficulty=_diffs(n)[i], stem=stem, solution=solution,

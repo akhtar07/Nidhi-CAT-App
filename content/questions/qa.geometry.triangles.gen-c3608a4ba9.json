@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.triangles.gen-c3608a4ba9",
+  "microTopicIds": [
+    "qa.geometry.triangles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A right-angled triangle has legs of length 12 cm and 16 cm. Find its area in cm\u00b2.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 96.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "For a right triangle, the two legs act as base and height: Area $= \\dfrac{1}{2} \\times 12 \\times 16 = 96.00$ cm\u00b2. (The hypotenuse works out to $20$ cm, a Pythagorean triple.)",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:triangles",
+    "right-triangle"
+  ]
+}

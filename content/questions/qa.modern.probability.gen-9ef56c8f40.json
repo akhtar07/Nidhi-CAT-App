@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.probability.gen-9ef56c8f40",
+  "microTopicIds": [
+    "qa.modern.probability"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A bag contains 5 red balls and 4 blue balls. If 3 balls are drawn at random without replacement, find the probability that all 3 are red. Give the answer as a reduced fraction, e.g. '3/10'.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "5/42",
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "P(all red) $= \\dfrac{\\binom{5}{3}}{\\binom{9}{3}} = \\dfrac{10}{84} = \\dfrac{5}{42}$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:probability"
+  ]
+}

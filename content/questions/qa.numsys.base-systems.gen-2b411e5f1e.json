@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.base-systems.gen-2b411e5f1e",
+  "microTopicIds": [
+    "qa.numsys.base-systems"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Convert 193 (base 10) to base 8.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "301",
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Repeatedly divide 193 by 8 and read the remainders bottom-to-top: $(193)_{10} = (301)_{8}$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:base-conversion"
+  ]
+}

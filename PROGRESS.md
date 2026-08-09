@@ -11,7 +11,7 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 4 — Question Player (not started)
+## Current milestone: 5 — Mastery engine (not started)
 
 ## Binding decision (implemented in Milestone 1 — this is now how it works)
 So the pipeline (Python) and app (TypeScript) content schemas can never drift:
@@ -39,6 +39,114 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 3 addendum — QA question bank scale-up (done)
+Follow-up to Milestone 3: scaled up item counts within the same
+generate-then-independently-verify pattern (no new sourcing — everything
+still comes from `pipeline/qagen/generators/*.py`, nothing external). Bank
+grew from **239 → 398** verified QA items, still 0 discarded on the full
+run (`python -m qagen.run` from `/pipeline`, `cat-pipeline` conda env).
+
+- **`pipeline/qagen/syllabus_lookup.py`**: `COUNT_BY_ROI` bumped ~50%
+  (`{5: 8, 4: 6, 3: 4, 2: 3, 1: 2}` → `{5: 12, 4: 9, 3: 6, 2: 5, 1: 3}`) so
+  the general per-topic target rose across all 45 QA micro-topics, not just
+  the flagged ones. Added `MIN_COUNT_OVERRIDE` — a floor of 10 items for the
+  seven topics below, since even the bumped roiScore weight (3 or 5) wasn't
+  enough to reach the difficulty-cycle's hard/very_hard tail (needs >= 8
+  items; `DIFF_CYCLE` in each `generators/*.py` is
+  `[easy,easy,medium,medium,medium,hard,hard,very_hard]`, length 8).
+- **The 7 flagged topics** (previously 2-3 items each, no hard/very_hard):
+  their generator functions in `generators/{arithmetic,algebra,geometry,
+  modern,numsys}.py` were widened so a 10-item draw succeeds with 10 unique
+  instances, all now have hard *and* very_hard coverage:
+  - `qa.arith.tsd-races`: 3 → 10. Widened race length choices (5 → 12
+    values) and speed-ratio ranges (was p∈[5,9],q∈[3,4]; now
+    p∈[5,15],q∈[2,9] with q<p and gcd=1 enforced).
+  - `qa.arith.time-work-chain-rule`: 3 → 10. Parameter space was already
+    large; widened hours/day ranges slightly for more variety.
+  - `qa.numsys.base-systems`: 2 → 10. Widened num range (50-500 →
+    50-2000) and base choices (5 → 10 bases, added 3/6/9/11/12).
+  - `qa.algebra.maxima-minima`: 3 → 10. Widened coefficient ranges
+    (a: 1-4→1-6, b: ±12→±15, c: ±10→±12).
+  - `qa.geometry.trigonometry`: 3 → 10. Widened distance choices (5 → 19
+    values); angle kept restricted to {30°,45°,60°} deliberately — the only
+    standard angles with exact, unambiguous tan values (adding e.g. 37°/53°
+    approximations risked ambiguous/inexact answers, the one case in this
+    task where "leave it, note why" would have applied — solved instead by
+    widening distance, so no compromise was needed here).
+  - `qa.modern.binomial-theorem`: 3 → 10. Widened power (5-9→5-12) and
+    coefficient ranges (1-3→1-4).
+  - `qa.modern.series-sequences-hybrids`: 2 → 10. This one *did* need new
+    generation logic, not just wider ranges — the old version only ever
+    produced "sum of squares" items (a single numeric parameter with 23
+    possible values, too thin a pool for the topic's "hybrids" framing).
+    Added a genuinely distinct sum-of-cubes variant (different closed form
+    $[n(n+1)/2]^2$, different independent check — direct cube summation)
+    alongside the original sum-of-squares, and widened the range parameter.
+  - All 7 verified via a direct harness test (draw, dedup, verify) showing
+    10/10 unique items with both `hard` and `very_hard` present in the
+    difficulty mix — see commit for the test script used.
+- **Fixed a live instance of the Milestone-3 "same formula on both sides"
+  bug** while widening two of the flagged generators (found by inspection,
+  not by a verification failure — the bug produces items that pass
+  verification vacuously, so it can't be caught by trusting the "verified"
+  flag, only by reading the code):
+  - `gen_tsd_races`'s `answer_fn` was `round(float(length * (1 -
+    Fraction(q, p))), 2)` — textually identical to the closed-form used to
+    produce `claimed_value`. Replaced with a time-based simulation (float
+    division/multiplication modelling "how far does B travel in the time A
+    takes to finish", not the same Fraction algebra).
+  - `gen_time_work_chain_rule`'s `answer_fn` was likewise the exact same
+    `Fraction(p*d*h, q*h2)` formula as the claim. Replaced with a sympy
+    `solve()` on the work-conservation equation `p*h*d == q*h2*D`, matching
+    the pattern already used for genuine independence in
+    `gen_linear_equations`/`gen_quadratic_equations`/`gen_maxima_minima`.
+  - **Not fixed (flagged, out of scope for this pass):** the same
+    same-formula pattern exists in several *untouched* arithmetic
+    generators — `gen_tsd_relative_speed`, `gen_tsd_trains`,
+    `gen_tsd_boats_streams`, `gen_tsd_circular_tracks`,
+    `gen_time_work_pipes_cisterns`, `gen_time_work_efficiency_wages`,
+    `gen_mixtures_alligation` all have `answer_fn` bodies that re-run the
+    same formula as the claimed-value computation rather than an
+    independently-derived one. They weren't touched this pass (this task
+    was scoped to the 7 flagged topics + count bump, not a full generator
+    audit), so their existing 239-generation items and any new items drawn
+    from the raised `COUNT_BY_ROI` weight are still only self-consistency
+    checked, not independence-checked. Worth a follow-up pass.
+- **Orphaned files cleaned up**: because 7 generators' internal logic
+  changed (not just their item count), the same `random.Random(mt)` seed
+  now draws different values partway through, so some of the old
+  content-hash ids from the original 239-item generation no longer
+  reappear in the new output. `qagen/run.py`'s `write_items()` only
+  writes/overwrites, it never deletes, so this would otherwise have left
+  19 stale (but still schema-valid) orphan files on disk — one set of old
+  draws per touched topic (3+3+2+3+3+3+2 = 19, confirmed by diffing the new
+  output's id set against what was already committed). Manually deleted
+  those 19 so `content/questions/` matches exactly what
+  `python -m qagen.run` currently produces. **This is a manual step, not
+  automated** — a future run that further edits a generator's internal
+  logic (not just its count) will need the same check. Worth adding a
+  `--clean` flag to `run.py` that removes any committed file whose id isn't
+  in the freshly-generated set, done per-run rather than by hand.
+- **Hand-verified samples** (per the "don't repeat the bug" rule): actually
+  did the arithmetic myself for 2 items per touched generator (14 items
+  total) rather than trusting the `verified` flag — race margins, chain-rule
+  worker-hours, base conversions (long division by hand), vertex/minimum via
+  completing the square, tan-based heights, binomial coefficients via
+  $\binom{n}{k}a^{n-k}b^k$, and sum-of-cubes/-squares closed forms. All 14
+  matched. (Sample stems/claims are in the commit; not reproduced here.)
+- `python validate_content.py` (unchanged) passes clean on the new bank:
+  `398 questions`, `86 micro-topics`, no orphan `microTopicIds`, no schema
+  errors.
+- Result: **239 → 398 verified QA items**, all still `source: 'generated'`,
+  `verification.method: 'sympy_verified'`. All 7 previously-flagged topics
+  now have hard/very_hard coverage. No topic was left un-widened for being
+  "inherently too small" — all 7 had enough real parameter room once
+  widened (unlike, say, a hypothetical fixed-set topic with only 3-4 sound
+  variants, which didn't come up here).
+- Scope discipline: did not touch `/app`, `/content/schemas`,
+  `/content/syllabus.json`, or `pipeline/schemas.py`, per instructions.
+  Only `content/questions/*.json` and `pipeline/qagen/**` changed.
 
 ### Milestone 2 — Storage layer (done)
 - **`app/src/types/state.ts`** — the SPEC.md §5.2 learner-state types
@@ -333,21 +441,38 @@ it independently before the item is kept.
   JSON *button* SPEC.md §5.2 asks for ("before Milestone 5") is correctly
   still unbuilt: there's no Settings page yet. Nothing on the live site
   changes as a result of this milestone — it's storage plumbing with no UI.
-- Content bank is QA only (239 items, all `source: 'generated'`). No
-  official PYQ items exist in the bank at all — see the Tier 1 correction
-  above. VARC, DILR, and lessons are still empty; DILR sets in particular
-  need programmatically-generated underlying data tables per §6.3's "never
-  let the LLM invent the numbers" rule, which this milestone didn't touch.
-- The lowest-`roiScore` QA topics (2–3 items each: `tsd-races`,
+- Content bank is QA only (398 items as of the Milestone 3 addendum, all
+  `source: 'generated'`). No official PYQ items exist in the bank at all —
+  see the Tier 1 correction above. VARC, DILR, and lessons are still empty;
+  DILR sets in particular need programmatically-generated underlying data
+  tables per §6.3's "never let the LLM invent the numbers" rule, which this
+  milestone didn't touch.
+- ~~The lowest-`roiScore` QA topics (2–3 items each: `tsd-races`,
   `time-work-chain-rule`, `base-systems`, `maxima-minima`, `trigonometry`,
   `binomial-theorem`, `series-sequences-hybrids`) don't have hard/very_hard
-  items — too few items per topic for the difficulty cycle to reach that
-  tier. Fine for now (matches their low-ROI/triage status per §10.2) but
-  will matter once the mastery engine's "ceiling proof" criterion (§8.2.3,
-  ≥2 hard/very_hard correct) is implemented against these topics.
+  items~~ **Resolved in the Milestone 3 addendum above** — all 7 widened
+  to 10 items each and now have hard/very_hard coverage.
+- **New finding (Milestone 3 addendum):** several *untouched* arithmetic
+  generators (`gen_tsd_relative_speed`, `gen_tsd_trains`,
+  `gen_tsd_boats_streams`, `gen_tsd_circular_tracks`,
+  `gen_time_work_pipes_cisterns`, `gen_time_work_efficiency_wages`,
+  `gen_mixtures_alligation` in `pipeline/qagen/generators/arithmetic.py`)
+  have the same "answer_fn re-runs the identical formula as the claim"
+  pattern that caused the original percentages/profit-loss bug — their
+  `answer_fn` isn't a genuinely independent derivation, just a restatement.
+  They weren't touched in the addendum (out of scope: it targeted the 7
+  flagged topics + a general count bump, not a full generator audit), so
+  every item drawn from them — old and newly-added — is still only
+  self-consistency checked, not independence-checked. No known-wrong items
+  have surfaced, but this is a real gap versus SPEC.md §6.3's verification
+  bar. Worth a dedicated follow-up pass through all ~45 generators to check
+  for this pattern and fix it (e.g. `answer_fn` via `sympy.solve` on the
+  underlying equation, as `gen_tsd_races`/`gen_time_work_chain_rule` were
+  fixed to do, or a numerically-simulated approach as `gen_percentages`
+  already does).
 - `pipeline/review_ui/app.py` is built and smoke-tested (starts cleanly,
   serves HTTP 200, no server errors) but the project owner has not yet done
-  an interactive Approve/Fix/Reject pass over the 239 items. Run `streamlit
+  an interactive Approve/Fix/Reject pass over the bank. Run `streamlit
   run review_ui/app.py` from `/pipeline` to do that pass; nothing in the
   bank is blocked on it, but it's the "step everyone skips" §6.2 warns
   about.

@@ -1,0 +1,32 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-e6946421c3",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum $1^2 + 2^2 + 3^2 + \\dots + 40^2$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 22140.0,
+  "titaTolerance": 0.0,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "$\\sum_{i=1}^{n} i^2 = \\dfrac{n(n+1)(2n+1)}{6} = \\dfrac{40\\times41\\times81}{6} = 22140$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "sum-of-squares"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-3979ab84cf",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum $1^2 + 2^2 + 3^2 + \\dots + 31^2$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 10416.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\sum_{i=1}^{n} i^2 = \\dfrac{n(n+1)(2n+1)}{6} = \\dfrac{31\\times32\\times63}{6} = 10416$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "sum-of-squares"
+  ]
+}

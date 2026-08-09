@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.time-work-chain-rule.gen-b754d60917",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "24 workers, each working 6 hours a day, can complete a job in 19 days. How many days will 8 workers, each working 10 hours a day, take to complete the same job? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 34.2,
+  "titaTolerance": 0.02,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Total work $= 24 \\times 19 \\times 6$ worker-hours $= 2736$. With 8 workers at 10 hours/day, days needed $= \\dfrac{2736}{8\\times10} = 34.20$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:time-work",
+    "chain-rule"
+  ]
+}

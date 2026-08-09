@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.binomial-theorem.gen-495636cb3b",
+  "microTopicIds": [
+    "qa.modern.binomial-theorem"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the coefficient of $x^{1}$ in the expansion of $(1 + 4x)^{8}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 32.0,
+  "titaTolerance": 0.0,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "General term: $\\binom{8}{1} 1^{8-1} (4x)^{1}$. Coefficient of $x^{1}$ $= \\binom{8}{1} 1^{7} 4^{1} = 32$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:binomial-theorem"
+  ]
+}

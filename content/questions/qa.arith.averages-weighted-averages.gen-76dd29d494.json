@@ -1,0 +1,31 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-76dd29d494",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The average of 14 numbers is 67. When one more number is included, the average becomes the sum of all 15 numbers divided by 15. If the new number added is 138, find the new average (rounded to 2 decimal places).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 71.73,
+  "titaTolerance": 0.02,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Sum of original 14 numbers $= 14 \\times 67 = 938$. New sum $= 938 + 138 = 1076$. New average $= \\dfrac{1076}{15} = 71.73$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages"
+  ]
+}

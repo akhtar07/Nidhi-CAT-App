@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.surds-indices.gen-22133432de",
+  "microTopicIds": [
+    "qa.algebra.surds-indices"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Simplify: $ 3^{3} \\times 3^{5} $.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6561.0,
+  "titaTolerance": 0.0,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Using $a^m \\times a^n = a^{m+n}$: $3^{3} \\times 3^{5} = 3^{8} = 6561$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:surds-indices"
+  ]
+}

@@ -182,9 +182,22 @@ def gen_trigonometry() -> list[ItemSpec]:
     n = item_count(mt)
     specs = []
     angle_tan = {30: sp.Rational(1, 1) / sp.sqrt(3), 45: sp.Integer(1), 60: sp.sqrt(3)}
+    # Widened dist choices from {10,20,30,40,50} (only 15 angle x dist combos
+    # total, too narrow for 10 unique draws) to a much larger pool. Angle
+    # stays restricted to {30,45,60} deliberately — those are the only
+    # standard angles with exact, unambiguous tan values; adding others
+    # (e.g. 37/53 degree approximations) risks the "degenerate or ambiguous
+    # math" the task asked us to avoid forcing. Even at 3 x 19 = 57 combos,
+    # independent rng.choice() draws collide often enough (birthday problem,
+    # ~55% chance of >=1 collision in 10 draws) to knock out the hard/
+    # very_hard tail of DIFF_CYCLE, which is exactly the failure mode we're
+    # trying to fix — so sample the (angle, dist) pairs without replacement
+    # instead of drawing each field independently.
+    all_combos = [(a, d) for a in (30, 45, 60) for d in range(10, 105, 5)]
+    rng.shuffle(all_combos)
+    combos = all_combos[:n]
     for i in range(n):
-        angle = rng.choice([30, 45, 60])
-        dist = rng.choice([10, 20, 30, 40, 50])
+        angle, dist = combos[i]
         height = float(dist * angle_tan[angle])
         claimed = round(height, 2)
         stem = (

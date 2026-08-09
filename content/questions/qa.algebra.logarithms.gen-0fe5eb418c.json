@@ -1,0 +1,31 @@
+{
+  "id": "qa.algebra.logarithms.gen-0fe5eb418c",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the value of $\\log_{2} 8$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$\\log_{2} 8 = \\log_{2} 2^{3} = 3$, since $2^{3} = 8$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms"
+  ]
+}

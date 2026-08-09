@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.permutations-combinations.gen-eaa9b8564f",
+  "microTopicIds": [
+    "qa.modern.permutations-combinations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In how many ways can a committee of 7 people be chosen from a group of 13 people?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1716.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "This is a selection (order doesn't matter): $\\binom{13}{7} = \\dfrac{13!}{7!(13-7)!} = 1716$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:combinations"
+  ]
+}

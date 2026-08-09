@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.hcf-lcm.gen-12ef229bb8",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the LCM of 33 and 9.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 99.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "HCF$(33, 9) = 3$. LCM $= \\dfrac{33 \\times 9}{3} = 99$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:hcf-lcm"
+  ]
+}

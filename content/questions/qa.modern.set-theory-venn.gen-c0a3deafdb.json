@@ -1,0 +1,32 @@
+{
+  "id": "qa.modern.set-theory-venn.gen-c0a3deafdb",
+  "microTopicIds": [
+    "qa.modern.set-theory-venn"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a class, 33 students like Maths and 42 students like Science. If 5 students like both subjects, how many students like at least one of the two subjects?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 70.0,
+  "titaTolerance": 0.0,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "$|A \\cup B| = |A| + |B| - |A \\cap B| = 33 + 42 - 5 = 70$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:set-theory",
+    "venn"
+  ]
+}

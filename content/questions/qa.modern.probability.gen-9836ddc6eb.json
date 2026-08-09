@@ -1,0 +1,31 @@
+{
+  "id": "qa.modern.probability.gen-9836ddc6eb",
+  "microTopicIds": [
+    "qa.modern.probability"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A bag contains 3 red balls and 5 blue balls. If 2 balls are drawn at random without replacement, find the probability that all 2 are red. Give the answer as a reduced fraction, e.g. '3/10'.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "3/28",
+  "titaTolerance": 0.0,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "P(all red) $= \\dfrac{\\binom{3}{2}}{\\binom{8}{2}} = \\dfrac{3}{28} = \\dfrac{3}{28}$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:probability"
+  ]
+}

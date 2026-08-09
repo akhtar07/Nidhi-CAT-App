@@ -1,0 +1,48 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-39dff9d7a5",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Two numbers are in the ratio 4:3. If their sum is 126, find the larger of the two numbers.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "90"
+    },
+    {
+      "key": "B",
+      "markdown": "72"
+    },
+    {
+      "key": "C",
+      "markdown": "54"
+    },
+    {
+      "key": "D",
+      "markdown": "126"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the numbers be $4x$ and $3x$. Then $4x + 3x = 126 \\Rightarrow x = 18$. The larger number is $4 \\times 18 = 72$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": true,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio-proportion"
+  ]
+}

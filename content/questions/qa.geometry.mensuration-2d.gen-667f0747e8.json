@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.mensuration-2d.gen-667f0747e8",
+  "microTopicIds": [
+    "qa.geometry.mensuration-2d"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A trapezium has parallel sides of length 9 cm and 7 cm, and the perpendicular distance between them is 5 cm. Find its area in cm\u00b2.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 40.0,
+  "titaTolerance": 0.02,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Area of trapezium $= \\dfrac{1}{2}(a+b)h = \\dfrac{1}{2}(9+7)(5) = 40.00$ cm\u00b2.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:mensuration-2d",
+    "trapezium"
+  ]
+}

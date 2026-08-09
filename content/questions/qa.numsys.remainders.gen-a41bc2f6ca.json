@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.remainders.gen-a41bc2f6ca",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $19^{9}$ is divided by 7.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Using modular exponentiation (repeated squaring), $19^{9} \\bmod 7 = 6$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "modular-exponentiation"
+  ]
+}

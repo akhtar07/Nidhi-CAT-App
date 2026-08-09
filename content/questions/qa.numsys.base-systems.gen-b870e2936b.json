@@ -1,0 +1,31 @@
+{
+  "id": "qa.numsys.base-systems.gen-b870e2936b",
+  "microTopicIds": [
+    "qa.numsys.base-systems"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Convert 59 (base 10) to base 6.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": "135",
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Repeatedly divide 59 by 6 and read the remainders bottom-to-top: $(59)_{10} = (135)_{6}$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:base-conversion"
+  ]
+}

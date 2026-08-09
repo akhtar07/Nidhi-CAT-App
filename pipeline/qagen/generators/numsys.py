@@ -144,9 +144,13 @@ def gen_base_systems() -> list[ItemSpec]:
     n = item_count(mt)
     specs = []
     digits = "0123456789ABCDEF"
+    # Space was already fairly wide (451 * 5 combos) but widened num range
+    # and base choices further for more genuine variety at the hard/
+    # very_hard tier (bigger numbers, less-common bases like base 3 and 9
+    # are more error-prone / harder to convert mentally).
     for i in range(n):
-        num = rng.randint(50, 500)
-        base = rng.choice([2, 5, 7, 8, 16])
+        num = rng.randint(50, 2000)
+        base = rng.choice([2, 3, 5, 6, 7, 8, 9, 11, 12, 16])
 
         def to_base(x: int, b: int) -> str:
             if x == 0:

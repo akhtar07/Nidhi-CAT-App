@@ -1,0 +1,32 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-b1f32f7a71",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the distance between the points $(3, 4)$ and $(-5, 19)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 17.0,
+  "titaTolerance": 0.02,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Distance $= \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2} = \\sqrt{(-8)^2 + (15)^2} = \\sqrt{289} = 17$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "distance"
+  ]
+}

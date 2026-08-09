@@ -1,0 +1,32 @@
+{
+  "id": "qa.arith.tsd-races.gen-bf2c4e97e4",
+  "microTopicIds": [
+    "qa.arith.tsd-races"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a race of 100 m, the ratio of speeds of A and B is 7:4. If they start together, by what distance (in m) does A win when A finishes the race? (2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 42.86,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "In the time A covers 100 m, B covers $\\dfrac{4}{7} \\times 100 = 57.14$ m (same time, speeds proportional to distance covered). A wins by $= 100 - 57.14 = 42.86$ m.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:tsd",
+    "races"
+  ]
+}

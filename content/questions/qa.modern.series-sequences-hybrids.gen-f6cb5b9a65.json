@@ -1,0 +1,32 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-f6cb5b9a65",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum $1^2 + 2^2 + 3^2 + \\dots + 52^2$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 48230.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$\\sum_{i=1}^{n} i^2 = \\dfrac{n(n+1)(2n+1)}{6} = \\dfrac{52\\times53\\times105}{6} = 48230$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "sum-of-squares"
+  ]
+}
