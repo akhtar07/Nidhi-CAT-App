@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.tables.set-01.q2",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the percentage growth in Company S's revenue from Q1 to Q4? (Enter just the number, e.g. 25 for 25%.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 25.0,
+  "titaTolerance": 0.5,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Company S: Q1 = 160, Q4 = 200. Growth $= \\dfrac{200 - 160}{160} \\times 100 = 25.0\\%$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables",
+    "percentage-change"
+  ]
+}

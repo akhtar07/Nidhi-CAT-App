@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.tables.set-01.q1",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which company had the highest total revenue over the four quarters combined?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "P"
+    },
+    {
+      "key": "B",
+      "markdown": "Q"
+    },
+    {
+      "key": "C",
+      "markdown": "S"
+    },
+    {
+      "key": "D",
+      "markdown": "T"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Sum each company's four quarters: P = 570, Q = 780, R = 383, S = 715, T = 670. Q has the highest total at 780 crore.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables",
+    "totals"
+  ]
+}

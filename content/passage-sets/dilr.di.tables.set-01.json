@@ -1,0 +1,68 @@
+{
+  "id": "dilr.di.tables.set-01",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The table below shows the quarterly revenue (in Rs. crore) of five companies,\nP, Q, R, S and T, over the four quarters of a fiscal year.\n\nStudy the table and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "table",
+      "spec": {
+        "columns": [
+          "Company",
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "rows": [
+          [
+            "P",
+            120,
+            135,
+            150,
+            165
+          ],
+          [
+            "Q",
+            200,
+            180,
+            190,
+            210
+          ],
+          [
+            "R",
+            90,
+            95,
+            100,
+            98
+          ],
+          [
+            "S",
+            160,
+            170,
+            185,
+            200
+          ],
+          [
+            "T",
+            175,
+            170,
+            165,
+            160
+          ]
+        ]
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.tables.set-01.q1",
+    "dilr.di.tables.set-01.q2",
+    "dilr.di.tables.set-01.q3",
+    "dilr.di.tables.set-01.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

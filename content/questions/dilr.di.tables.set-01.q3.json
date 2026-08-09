@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.tables.set-01.q3",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Company R's average quarterly revenue over the four quarters, in Rs. crore?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 95.75,
+  "titaTolerance": 0.1,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "R's quarters: 90, 95, 100, 98. Average $= 383/4 = 95.75$ crore.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables",
+    "average"
+  ]
+}

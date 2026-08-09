@@ -1,0 +1,287 @@
+import { useEffect, useRef, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { Markdown } from '@/components/question-player/Markdown'
+import { QuestionPlayer } from '@/components/question-player/QuestionPlayer'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { loadMicroTopic, loadPassageSet, loadQuestion, loadQuestionsForMicroTopic } from '@/content/loadContent'
+import { storage } from '@/storage'
+import type { MicroTopic, PassageAsset, PassageSet, Question } from '@/types/content'
+import type { Attempt } from '@/types/state'
+
+interface SetSession {
+  set: PassageSet
+  questions: Question[]
+  /** questionId -> the micro-topic to pass to QuestionPlayer for that question (its primary microTopicId). */
+  topicsByQuestionId: Map<string, { topic: MicroTopic; topicQuestions: Question[] }>
+}
+
+async function buildSession(setId: string): Promise<SetSession | null> {
+  const set = await loadPassageSet(setId).catch(() => null)
+  if (!set || !set.questionIds || set.questionIds.length === 0) return null
+
+  const questions = await Promise.all(set.questionIds.map((id) => loadQuestion(id)))
+
+  const primaryTopicIds = [...new Set(questions.map((q) => q.microTopicIds[0]))]
+  const topicEntries = await Promise.all(
+    primaryTopicIds.map(async (topicId) => {
+      const [topic, topicQuestions] = await Promise.all([
+        loadMicroTopic(topicId),
+        loadQuestionsForMicroTopic(topicId),
+      ])
+      return [topicId, topic, topicQuestions] as const
+    }),
+  )
+
+  const topicsByQuestionId = new Map<string, { topic: MicroTopic; topicQuestions: Question[] }>()
+  for (const q of questions) {
+    const primaryId = q.microTopicIds[0]
+    const entry = topicEntries.find(([id]) => id === primaryId)
+    if (entry?.[1]) {
+      topicsByQuestionId.set(q.id, { topic: entry[1], topicQuestions: entry[2] })
+    }
+  }
+
+  return { set, questions, topicsByQuestionId }
+}
+
+function formatSeconds(total: number): string {
+  const m = Math.floor(total / 60)
+  const s = total % 60
+  return `${m}:${s.toString().padStart(2, '0')}`
+}
+
+function TableAsset({ asset }: { asset: PassageAsset }) {
+  const columns = (asset.spec.columns as string[] | undefined) ?? []
+  const rows = (asset.spec.rows as (string | number)[][] | undefined) ?? []
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="bg-muted">
+            {columns.map((col) => (
+              <th key={col} className="px-3 py-2 text-left font-medium">
+                {col}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr key={i} className="border-t border-border">
+              {row.map((cell, j) => (
+                <td key={j} className="px-3 py-2">
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function SetAsset({ asset }: { asset: PassageAsset }) {
+  if (asset.type === 'table') return <TableAsset asset={asset} />
+  return (
+    <p className="text-sm text-muted-foreground">
+      [chart rendering not yet implemented for this asset type]
+    </p>
+  )
+}
+
+/** SPEC.md §13: timer stays visually quiet until 1.5x target, amber at 1.5x, red at 2.5x. */
+function timerColorClass(elapsedSec: number, targetSec: number): string {
+  if (elapsedSec >= targetSec * 2.5) return 'text-destructive'
+  if (elapsedSec >= targetSec * 1.5) return 'text-amber-500'
+  return 'text-muted-foreground'
+}
+
+type Phase = 'intro' | 'answering' | 'complete'
+
+/** Milestone 8: RC passages / DILR sets, with a set-level timer and the "attempt/skip" decision step. */
+export function PassageSetPlayer() {
+  const { setId } = useParams<{ setId: string }>()
+  const [session, setSession] = useState<SetSession | null | undefined>(undefined)
+  const [error, setError] = useState<string | null>(null)
+  const [phase, setPhase] = useState<Phase>('intro')
+  const [index, setIndex] = useState(0)
+  const [results, setResults] = useState<Attempt[]>([])
+  const [elapsedSec, setElapsedSec] = useState(0)
+  const startedAtRef = useRef(Date.now())
+
+  useEffect(() => {
+    if (!setId) return
+    setSession(undefined)
+    setError(null)
+    setPhase('intro')
+    setIndex(0)
+    setResults([])
+    setElapsedSec(0)
+    startedAtRef.current = Date.now()
+    buildSession(setId)
+      .then(setSession)
+      .catch((e: Error) => setError(e.message))
+  }, [setId])
+
+  useEffect(() => {
+    if (phase === 'complete') return
+    const interval = setInterval(() => setElapsedSec((s) => s + 1), 1000)
+    return () => clearInterval(interval)
+  }, [phase])
+
+  if (error) {
+    return (
+      <main className="mx-auto max-w-2xl p-6">
+        <p className="text-destructive">Failed to load set: {error}</p>
+        <Link to="/" className="text-primary underline">
+          Back
+        </Link>
+      </main>
+    )
+  }
+
+  if (session === undefined) {
+    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+  }
+
+  if (session === null) {
+    return (
+      <main className="mx-auto max-w-2xl p-6">
+        <p className="text-muted-foreground">This set isn't available yet.</p>
+        <Link to="/" className="text-primary underline">
+          Back
+        </Link>
+      </main>
+    )
+  }
+
+  const { set, questions, topicsByQuestionId } = session
+  const targetSec = set.targetMinutes * 60
+
+  async function skipEntireSet() {
+    const now = Date.now()
+    await Promise.all(
+      questions.map((q) =>
+        storage.addAttempt({
+          schemaVersion: 1,
+          id: crypto.randomUUID(),
+          questionId: q.id,
+          microTopicIds: q.microTopicIds,
+          startedAt: now,
+          submittedAt: now,
+          timeSpentSec: 0,
+          given: null,
+          correct: false,
+          mode: 'drill',
+          markedForReview: false,
+        }),
+      ),
+    )
+    setResults([])
+    setPhase('complete')
+  }
+
+  if (phase === 'intro') {
+    return (
+      <main className="mx-auto max-w-2xl space-y-4 p-6">
+        <div>
+          <Link to="/" className="text-sm text-primary underline">
+            Back
+          </Link>
+          <div className="mt-2 flex items-center justify-between">
+            <h1 className="text-xl font-semibold">
+              {set.kind === 'di_set' ? 'Data Interpretation set' : set.kind === 'lr_set' ? 'Logical Reasoning set' : 'Reading Comprehension passage'}
+            </h1>
+            <span className={cn('text-sm tabular-nums', timerColorClass(elapsedSec, targetSec))}>
+              {formatSeconds(elapsedSec)}
+            </span>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            {questions.length} questions · target {set.targetMinutes} min
+          </p>
+        </div>
+
+        <Markdown text={set.bodyMarkdown} />
+
+        {set.assets?.map((asset, i) => <SetAsset key={i} asset={asset} />)}
+
+        <div className="rounded-lg border border-border p-4">
+          <p className="mb-3 text-sm font-medium">Attempt this set, or skip it and move on?</p>
+          <p className="mb-3 text-sm text-muted-foreground">
+            Skipping counts as a strategic call, not a failure — some sets aren't worth the time. It'll be
+            logged as skipped for all {questions.length} questions.
+          </p>
+          <div className="flex gap-2">
+            <Button variant="ghost" onClick={() => void skipEntireSet()}>
+              Skip set
+            </Button>
+            <Button onClick={() => setPhase('answering')}>Attempt set</Button>
+          </div>
+        </div>
+      </main>
+    )
+  }
+
+  if (phase === 'answering') {
+    if (index >= questions.length) {
+      setPhase('complete')
+      return null
+    }
+
+    const question = questions[index]
+    const topicInfo = topicsByQuestionId.get(question.id)
+
+    if (!topicInfo) {
+      setPhase('complete')
+      return null
+    }
+
+    return (
+      <div>
+        <div className="mx-auto max-w-2xl space-y-3 px-4 pt-4">
+          <div className="flex items-center justify-between text-sm text-muted-foreground">
+            <span>
+              Question {index + 1} of {questions.length}
+            </span>
+            <span className={cn('tabular-nums', timerColorClass(elapsedSec, targetSec))}>
+              Set time {formatSeconds(elapsedSec)}
+            </span>
+          </div>
+          {set.assets?.map((asset, i) => <SetAsset key={i} asset={asset} />)}
+        </div>
+        <QuestionPlayer
+          key={question.id}
+          question={question}
+          mode="drill"
+          topic={topicInfo.topic}
+          topicQuestions={topicInfo.topicQuestions}
+          onComplete={(attempt) => {
+            setResults((r) => [...r, attempt])
+            setIndex((i) => i + 1)
+          }}
+        />
+      </div>
+    )
+  }
+
+  const correctCount = results.filter((a) => a.correct).length
+  const skipped = results.length === 0
+  return (
+    <main className="mx-auto max-w-2xl space-y-4 p-6 text-center">
+      <h2 className="text-xl font-semibold">Set complete</h2>
+      {skipped ? (
+        <p className="text-muted-foreground">Skipped — logged for all {questions.length} questions.</p>
+      ) : (
+        <p className="text-muted-foreground">
+          {correctCount} / {results.length} correct · {formatSeconds(elapsedSec)} elapsed (target{' '}
+          {formatSeconds(targetSec)})
+        </p>
+      )}
+      <Link to="/">
+        <Button>Back to topics</Button>
+      </Link>
+    </main>
+  )
+}

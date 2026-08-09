@@ -60,6 +60,30 @@ try {
   // No content/lessons/ directory yet — nothing to index.
 }
 
+// Same reasoning for passage-sets (Milestone 8): a small index of DILR/RC
+// set summaries — the app needs to list "sets available for this
+// micro-topic" without fetching every set file just to read its metadata.
+const passageSetsDir = path.join(DEST, 'passage-sets')
+let passageSetIndex = []
+try {
+  const setFiles = (await readdir(passageSetsDir)).filter((f) => f.endsWith('.json') && f !== 'index.json')
+  passageSetIndex = await Promise.all(
+    setFiles.map(async (file) => {
+      const set = JSON.parse(await readFile(path.join(passageSetsDir, file), 'utf-8'))
+      return {
+        id: set.id,
+        section: set.section,
+        kind: set.kind,
+        questionIds: set.questionIds ?? [],
+        targetMinutes: set.targetMinutes,
+      }
+    }),
+  )
+  await writeFile(path.join(passageSetsDir, 'index.json'), JSON.stringify(passageSetIndex))
+} catch {
+  // No content/passage-sets/ directory yet — nothing to index.
+}
+
 console.log(
-  `Synced ${SRC} -> ${DEST} (${index.length} questions, ${lessonMicroTopicIds.length} lessons indexed)`,
+  `Synced ${SRC} -> ${DEST} (${index.length} questions, ${lessonMicroTopicIds.length} lessons, ${passageSetIndex.length} passage-sets indexed)`,
 )

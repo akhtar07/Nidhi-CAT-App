@@ -1,4 +1,4 @@
-import type { Lesson, MicroTopic, Question } from '@/types/content'
+import type { Lesson, MicroTopic, PassageSet, Question } from '@/types/content'
 
 /**
  * All shipped content is fetched at runtime from static JSON under
@@ -66,4 +66,22 @@ export async function loadLesson(microTopicId: string): Promise<Lesson | undefin
   const index = await loadLessonIndex()
   if (!index.includes(microTopicId)) return undefined
   return fetchJson<Lesson>(contentUrl(`lessons/${microTopicId}.json`))
+}
+
+export interface PassageSetIndexEntry {
+  id: string
+  section: PassageSet['section']
+  kind: PassageSet['kind']
+  questionIds: string[]
+  targetMinutes: number
+}
+
+let passageSetIndexCache: Promise<PassageSetIndexEntry[]> | null = null
+export function loadPassageSetIndex(): Promise<PassageSetIndexEntry[]> {
+  passageSetIndexCache ??= fetchJson<PassageSetIndexEntry[]>(contentUrl('passage-sets/index.json'))
+  return passageSetIndexCache
+}
+
+export function loadPassageSet(id: string): Promise<PassageSet> {
+  return fetchJson<PassageSet>(contentUrl(`passage-sets/${id}.json`))
 }

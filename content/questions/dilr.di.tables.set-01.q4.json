@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.tables.set-01.q4",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "For how many of the five companies did revenue increase in every successive quarter (i.e. Q1 < Q2 < Q3 < Q4)?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "1"
+    },
+    {
+      "key": "B",
+      "markdown": "2"
+    },
+    {
+      "key": "C",
+      "markdown": "3"
+    },
+    {
+      "key": "D",
+      "markdown": "4"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Check each company: P (120<135<150<165) strictly increases. Q dips from 200 to 180 in Q2 \u2014 no. R dips from 100 to 98 in Q4 \u2014 no. S (160<170<185<200) strictly increases. T decreases throughout \u2014 no. Only **P and S** \u2014 2 companies.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables",
+    "trend-analysis"
+  ]
+}
