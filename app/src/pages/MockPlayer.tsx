@@ -71,6 +71,7 @@ export function MockPlayer() {
   const [now, setNow] = useState(() => Date.now())
   const [showCalculator, setShowCalculator] = useState(false)
   const [titaValue, setTitaValue] = useState('')
+  const [finishedResultId, setFinishedResultId] = useState<string | null>(null)
 
   const visitStartedAtRef = useRef(Date.now())
   const finishingRef = useRef(false)
@@ -138,14 +139,17 @@ export function MockPlayer() {
       const questionTimings: Record<string, number> = {}
       for (const [qid, state] of Object.entries(activeSession.questionStates)) questionTimings[qid] = state.dwellSec
 
+      const resultId = crypto.randomUUID()
       await storage.addMockResult({
         schemaVersion: 1,
-        id: crypto.randomUUID(),
+        id: resultId,
         mockId: mockDef.id,
         takenAt: Date.now(),
         sectionScores,
         questionTimings,
+        startedAt: activeSession.startedAt,
       })
+      setFinishedResultId(resultId)
 
       // Log a real Attempt (mode: 'mock') per question that was shown, and feed mastery — same
       // pipeline QuestionPlayer/Diagnostic use, so mock performance isn't invisible to the engine.
@@ -355,11 +359,15 @@ export function MockPlayer() {
     return (
       <main className="mx-auto max-w-2xl space-y-4 p-6 text-center">
         <h2 className="text-xl font-semibold">Mock complete</h2>
-        <p className="text-muted-foreground">
-          Detailed analysis is coming in a later milestone — for now, your attempts and section
-          scores are saved.
-        </p>
-        <Button onClick={() => navigate('/')}>Back to today</Button>
+        <p className="text-muted-foreground">Your attempts and section scores are saved.</p>
+        <div className="flex justify-center gap-2">
+          <Button variant="outline" onClick={() => navigate('/')}>
+            Back to today
+          </Button>
+          {finishedResultId && (
+            <Button onClick={() => navigate(`/mock-result/${finishedResultId}`)}>View analysis</Button>
+          )}
+        </div>
       </main>
     )
   }

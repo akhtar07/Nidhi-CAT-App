@@ -11,9 +11,9 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 11 — Mock analytics (not started)
+## Current milestone: 12 — Review & SRS (not started)
 
-Milestones 7, 8, and 9 are done (see below). Milestone 7's content-bank
+Milestones 7 through 11 are done (see below). Milestone 7's content-bank
 scale-up is a long-running background process, not a one-session task — see
 its entry for current bank size and how to check/resume it.
 
@@ -43,6 +43,53 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 11 — Mock analytics (done)
+
+SPEC.md §9.3's post-mock analysis, in `app/src/mock/{analysis,percentile}.ts` (pure,
+unit-tested — 21 more tests) plus `pages/MockAnalysis.tsx` at `/mock-result/:resultId`:
+
+- **Score & estimated percentile**: a hand-built anchor-point lookup table (`percentile.ts`)
+  interpolated between roughly-known CAT percentile bands, since there's no live cohort to compute
+  a real one against. Every result carries the exact disclaimer SPEC.md §9.3 requires verbatim
+  ("Estimated from historical CAT data — indicative only") — tested that the disclaimer is always
+  present, not just the number.
+- **Time-allocation waterfall**: minutes spent vs. marks earned, per section, from
+  `MockResult.questionTimings` (already recorded by Milestone 10's dwell tracking).
+- **Bleeder report**: attempted, wrong, and over 150 seconds — sorted worst first. Explicitly
+  excludes skips (not "wrong," just unattempted) and slow-but-*correct* attempts.
+- **Selection quality**: what fraction of skipped questions were "easy" — defined as below this
+  mock's own median item-Elo (not a fixed absolute cutoff, which would misfire on a mock that's
+  uniformly hard or easy) — with a call-out when that fraction is high.
+- **TITA discipline**: every blank TITA flagged explicitly, with the "no negative marking, this is
+  a pure unforced error" framing SPEC.md §9.3 calls for.
+- **Accuracy vs. attempts curve**: only her attempted questions have a known outcome (an unattempted
+  question's counterfactual result is unknowable), so the curve orders attempted questions
+  easiest-first by item-Elo and asks "if she'd stopped after only her N easiest, what would the
+  cumulative score be" — directly answering SPEC's "should you have attempted 18 or 22."
+- **Micro-topic damage report**: marks lost per micro-topic from wrong attempts (MCQ only — wrong
+  TITA costs 0 marks per SPEC.md §2's asymmetry, so it contributes no "damage"), sorted worst
+  first, each with a one-click **Practice** link straight to `/drill/:topicId`.
+- **Auto-generated remediation, writing back into the plan** — SPEC.md §9.3: "a mock that doesn't
+  change tomorrow's schedule is a wasted mock." Fully automatic on loading the analysis page (not
+  a manual per-topic button, since a report nobody has to act on doesn't satisfy that line either):
+  the top 3 damaged topics get a real `kind: 'review'` PlanItem added to tomorrow's PlanDay via
+  the existing `storage.putPlanDay`, skipping any topic already planned. Verified live by reading
+  IndexedDB directly after a mock with one deliberately-wrong MCQ: the exact micro-topic showed up
+  in tomorrow's `planDays` row, not just in the UI banner claiming it had.
+
+**New field**: `MockResult.startedAt` (optional, backward-compatible) — every `Attempt` from one
+mock sitting already shared the session's `startedAt` (Milestone 10), so this is the join key the
+analysis page uses to find "this specific result's attempts" without needing a new attempt-to-
+result id anywhere; a mock can be retaken and each sitting's attempts stay distinguishable.
+
+Verified live end to end with a short-duration test mock (same technique as Milestone 10, real
+mocks run 40-minute sections): answered questions with deliberately wrong answers, confirmed the
+score, damage report, and remediation banner all matched, and confirmed the actual IndexedDB write
+independently of what the UI claimed happened. Also caught, while composing the first live test,
+that most of `mock-1`'s reserved bank is TITA-format (21 of 22) — not a bug, just meant the first
+naive test slice happened to sample zero MCQs and produced a score of exactly 0 with no damage;
+had to deliberately pick an MCQ id to exercise the damage/remediation path at all.
 
 ### Milestone 10 — Mock engine (done, content-scoped)
 

@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.profit-loss-discount.llm-38f2a50719",
+  "microTopicIds": [
+    "qa.arith.profit-loss-discount"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A shopkeeper sells a toy for \u20b9120 and makes a profit of 25%. What was the cost price of the toy?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "\u20b996"
+    },
+    {
+      "key": "B",
+      "markdown": "\u20b9100"
+    },
+    {
+      "key": "C",
+      "markdown": "\u20b9110"
+    },
+    {
+      "key": "D",
+      "markdown": "\u20b990"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The selling price (SP) is given as \u20b9120 and the profit percentage is 25%. Using the formula for cost price (CP), we have CP = SP / (1 + profit/100). Plugging in the values, we get: $$\text{CP} = \frac{120}{1 + 0.25} = \frac{120}{1.25} = \u20b996$$",
+  "altSolutionMarkdown": "Since there is a profit of 25%, this means the selling price is 125% of the cost price. To find the original cost price, you can divide the selling price by 1.25: $$\text{CP} = \frac{\text{SP}}{1.25} = \frac{120}{1.25} = \u20b996$$",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "profit-loss-discount",
+    "easy"
+  ],
+  "mockReserved": false
+}

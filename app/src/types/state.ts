@@ -108,6 +108,14 @@ export interface MockResult {
   sectionScores: Record<Section, { score: number; correct: number; incorrect: number; skipped: number }>
   questionTimings: Record<string, number>
   percentileEstimate?: number
+  /**
+   * Milestone 11: every Attempt logged from one mock sitting shares the exact same startedAt
+   * (set from MockSession.startedAt in MockPlayer.finishMock) — the join key post-mock analysis
+   * uses to find "this result's attempts" specifically, since a mock can be retaken and Attempt
+   * itself carries no mock/result id. Not in SPEC.md §5.2's literal interface, same
+   * add-and-document pattern as every other learner-state addition this build.
+   */
+  startedAt?: number
 }
 
 export type PaletteStatus = 'not_visited' | 'not_answered' | 'answered' | 'marked' | 'answered_marked'
