@@ -10,22 +10,26 @@ import { PassageSetPlayer } from '@/pages/PassageSetPlayer'
 import { Review } from '@/pages/Review'
 import { Settings } from '@/pages/Settings'
 import { Today } from '@/pages/Today'
+import { UpdateBanner } from '@/pwa/UpdateBanner'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Today />} />
-      <Route path="/diagnostic" element={<Diagnostic />} />
-      <Route path="/calendar" element={<Calendar />} />
-      <Route path="/lesson/:topicId" element={<Lesson />} />
-      <Route path="/drill/:topicId" element={<Drill />} />
-      <Route path="/set/:setId" element={<PassageSetPlayer />} />
-      <Route path="/mock/:mockId" element={<MockPlayer />} />
-      <Route path="/mock-result/:resultId" element={<MockAnalysis />} />
-      <Route path="/mistakes" element={<MistakeNotebook />} />
-      <Route path="/review" element={<Review />} />
-      <Route path="/settings" element={<Settings />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Today />} />
+        <Route path="/diagnostic" element={<Diagnostic />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/lesson/:topicId" element={<Lesson />} />
+        <Route path="/drill/:topicId" element={<Drill />} />
+        <Route path="/set/:setId" element={<PassageSetPlayer />} />
+        <Route path="/mock/:mockId" element={<MockPlayer />} />
+        <Route path="/mock-result/:resultId" element={<MockAnalysis />} />
+        <Route path="/mistakes" element={<MistakeNotebook />} />
+        <Route path="/review" element={<Review />} />
+        <Route path="/settings" element={<Settings />} />
+      </Routes>
+      <UpdateBanner />
+    </>
   )
 }
 

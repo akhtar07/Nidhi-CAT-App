@@ -11,9 +11,9 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 15 — PWA + notifications (not started)
+## Current milestone: 16 — Supabase sync + email (not started)
 
-Milestones 7 through 14 are done (see below). Milestone 7's content-bank
+Milestones 7 through 15 are done (see below). Milestone 7's content-bank
 scale-up is a long-running background process, not a one-session task — see
 its entry for current bank size and how to check/resume it.
 
@@ -43,6 +43,94 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 15 — PWA + notifications (done)
+
+SPEC.md §7/§11/§12/§16: `vite-plugin-pwa` (Workbox), named explicitly in SPEC.md §7, wired with
+the `injectManifest` strategy (not the default `generateSW`) since the service worker needs
+real custom logic beyond precaching — `app/src/sw.ts`:
+
+- **App shell precache** via `precacheAndRoute(self.__WB_MANIFEST)` + `cleanupOutdatedCaches()`.
+- **`CONTENT_VERSION`-scoped runtime cache** for `/content/**` (`StaleWhileRevalidate`, cache
+  name `ascent-content-${CONTENT_VERSION}`), with an `activate` handler that deletes any
+  `ascent-content-*` bucket not matching the current version — SPEC.md §12's exact ask ("on
+  version bump the service worker must invalidate cached content but must never wipe learner
+  data. Test this explicitly.").
+- **Message-based local notification** (`SHOW_NOTIFICATION`) and `notificationclick` handling —
+  SPEC.md §11 Phase 1's "Web Push via service worker for the daily nudge — works offline, no
+  backend needed for local notifications scheduled by the SW." Honestly scoped: this is the
+  page asking its own active SW to show a notification while open, not true background push
+  (which needs a push subscription + a server to trigger it — Phase 2/Supabase, Milestone 16).
+  Documented in `app/src/pwa/notify.ts`'s own header comment so this isn't mistaken for more
+  than it is later.
+
+**`CONTENT_VERSION` bump — tested explicitly, live, per SPEC.md §12's instruction, not just
+asserted:** seeded a real `Attempt` into IndexedDB and warmed the `ascent-content-v1` cache,
+bumped the constant to `v2` and rebuilt, forced a service-worker update check, and clicked the
+app's own "Refresh" banner (see below). Confirmed directly via `caches.keys()`: `ascent-content-
+v1` was gone and `ascent-content-v2` existed after the swap, while the seeded attempt was still
+present in IndexedDB, byte-for-byte — the version bump invalidated content and left learner data
+completely untouched, exactly as required.
+
+**Install prompt** (`app/src/pwa/useInstallPrompt.ts`, wired into Settings): captures
+`beforeinstallprompt` (Chrome/Android-family only — Safari/iOS has no programmatic prompt and
+relies on Share → Add to Home Screen, noted in the UI text rather than presented as broken).
+New PNG icons (`app/public/icons/icon-{192,512,maskable-512}.png`) generated from the existing
+brand mark in `favicon.svg` — rendered via a headless-Chromium screenshot rather than a new
+image-processing dependency, since no SVG rasterizer (`rsvg-convert`/`cairosvg`/`sharp`) was
+available in this environment and Playwright was already at hand.
+
+**Update banner** (`app/src/pwa/pwaUpdate.ts` + `UpdateBanner.tsx`): `registerType: 'prompt'`,
+deliberately not `'autoUpdate'` — SPEC.md §12 warns an update must never silently disrupt a
+session (imagine it firing mid-mock), so a new service worker only activates when the user
+clicks "Refresh" in a small persistent banner. Implemented as a tiny `useSyncExternalStore`
+store rather than pulling in a state library — SPEC.md §7 names Zustand but nothing in this
+codebase has needed it yet, and one banner's worth of state didn't justify adding the first
+usage here.
+
+**Daily nudge in `Today.tsx`**: new `Settings.notificationsEnabled`/`lastNudgeShownDate` fields
+(additive/optional, same pattern as every prior schema addition this build). SPEC.md §11: "the
+in-app 'Today' card is the primary mechanism" — the local notification is a same-session
+supplement, fires at most once per **Asia/Kolkata** calendar day (not UTC), naming the first
+unfinished plan item.
+
+**Real bug fixed in the course of this, not a new one introduced:** SPEC.md §7 says "pin
+everything to Asia/Kolkata for day boundaries... or her streak will break at 5:30 AM" — the new
+nudge de-dupe logic needed a genuinely-correct IST day boundary, so `dateUtils.ts` gained
+`todayIsoIST()` (`Intl.DateTimeFormat` with `timeZone: 'Asia/Kolkata'`, no new dependency),
+unit-tested against the exact 5:30 AM UTC/IST-boundary case SPEC.md names by name. `Today.tsx`'s
+own `todayPlan` lookup was also switched from the old UTC `toISOString().slice(0,10)` to this —
+directly adjacent code in the same file, otherwise the nudge and the plan-day lookup would've
+disagreed about what day it is. **Not fixed, flagged instead:** `Diagnostic.tsx`, `Calendar.tsx`
+(3 call sites), and `MockAnalysis.tsx`'s "tomorrow" calculation still use UTC slicing — a
+pre-existing gap from Milestones 9/11, out of this milestone's scope to sweep, worth a dedicated
+pass since it's the exact named failure mode.
+
+**Verified live** (Playwright against `vite preview`'s production build, not just `vite dev`,
+since Workbox's generated SW behaves differently in dev mode):
+- Manifest fetches correctly with all 3 icon entries; SW registers, `scope`/`activeScriptURL`
+  correct.
+- **Full offline drill session** (SPEC.md §16: "Airplane mode: full drill session works"):
+  warmed caches online, `context.set_offline(True)`, reloaded the same drill URL — real question
+  content rendered from cache — answered all 10 questions (skip → reveal → error-tag → next,
+  cycling correctly), reached "Drill complete," and confirmed 10 real `Attempt` rows written to
+  IndexedDB, entirely offline. Zero console errors.
+- Settings' install/notification sections render correctly; toggling the notification checkbox
+  persists `notificationsEnabled: true` and requesting permission resolves.
+- **One thing this environment could not verify**: actually seeing the notification appear
+  on-screen. `Notification.requestPermission()` resolves `'granted'` under Playwright's
+  `permissions: ["notifications"]` context grant, but the deeper permission
+  `ServiceWorkerRegistration.showNotification()` checks doesn't get elevated by that same grant
+  in headless Chromium (`showNotification` throws "No notification permission has been granted
+  for this origin" even though `Notification.permission` reports `'granted'`) — a known
+  headless-browser limitation, not a code defect: the request→permission→toggle→SW-message
+  plumbing was verified error-free end to end, but the actual on-screen result needs a real
+  browser/device, same class of gap as SPEC.md §17's "real-device testing on her phone model,"
+  which this session was never going to be able to do either.
+
+Run locally: `cd app && npm run build && npm run preview`, visit the printed URL, install from
+the browser's address-bar icon or Settings → Install app. `npm run dev` also runs the service
+worker in dev mode (`devOptions.enabled: true`) for quick iteration.
 
 ### Milestone 14 — 5 full + 5 sectional mocks (done, content-scoped)
 

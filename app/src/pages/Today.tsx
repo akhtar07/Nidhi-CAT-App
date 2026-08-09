@@ -9,10 +9,12 @@ import {
   loadSyllabus,
   type PassageSetIndexEntry,
 } from '@/content/loadContent'
+import { todayIsoIST } from '@/planner/dateUtils'
 import { MOCK_SENTINEL, REVIEW_SENTINEL } from '@/planner/generatePlan'
+import { showLocalNotification } from '@/pwa/notify'
 import { storage } from '@/storage'
 import type { MicroTopic } from '@/types/content'
-import type { PlanDay } from '@/types/state'
+import type { PlanDay, Settings as SettingsType } from '@/types/state'
 
 interface TopicRow {
   topic: MicroTopic
@@ -47,15 +49,37 @@ export function Today() {
   const [error, setError] = useState<string | null>(null)
   const [todayPlan, setTodayPlan] = useState<PlanDay | null>(null)
   const [topicNameById, setTopicNameById] = useState<Map<string, string>>(new Map())
+  const [settings, setSettings] = useState<SettingsType | null>(null)
 
   useEffect(() => {
     storage
       .getSettings()
-      .then((settings) => {
-        if (!settings?.diagnosticCompletedAt) navigate('/diagnostic', { replace: true })
+      .then((s) => {
+        setSettings(s ?? null)
+        if (!s?.diagnosticCompletedAt) navigate('/diagnostic', { replace: true })
       })
       .catch(() => undefined)
   }, [navigate])
+
+  // SPEC.md §11 Phase 1: "In-app 'Today' card is the primary mechanism" for the daily nudge —
+  // the local notification (notify.ts) is a same-session supplement, not a replacement, and
+  // only ever fires once per Asia/Kolkata calendar day (todayIsoIST, not UTC — see dateUtils.ts).
+  useEffect(() => {
+    if (!settings?.notificationsEnabled || !todayPlan) return
+    if (typeof Notification === 'undefined' || Notification.permission !== 'granted') return
+    const today = todayIsoIST()
+    if (settings.lastNudgeShownDate === today) return
+    const firstUnfinished = todayPlan.items.find((item) => !item.done)
+    if (!firstUnfinished) return
+    const label = planItemLabel(firstUnfinished.microTopicId, topicNameById)
+    void showLocalNotification('Today on Ascent', `${label} — ${todayPlan.items.length} item(s) planned today.`).then(
+      () => {
+        const updated = { ...settings, lastNudgeShownDate: today }
+        setSettings(updated)
+        void storage.putSettings(updated)
+      },
+    )
+  }, [settings, todayPlan, topicNameById])
 
   useEffect(() => {
     Promise.all([loadSyllabus(), loadQuestionIndex(), loadLessonIndex(), loadPassageSetIndex()])
@@ -78,9 +102,8 @@ export function Today() {
       })
       .catch((e: Error) => setError(e.message))
 
-    const todayIso = new Date().toISOString().slice(0, 10)
     storage
-      .getPlanDay(todayIso)
+      .getPlanDay(todayIsoIST())
       .then((day) => setTodayPlan(day ?? null))
       .catch(() => undefined)
 

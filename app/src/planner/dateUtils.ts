@@ -34,3 +34,14 @@ export function dateRange(fromIso: string, toIso_: string): string[] {
 export function todayIso(): string {
   return toIso(new Date())
 }
+
+/**
+ * SPEC.md §7: "Pin everything to Asia/Kolkata for day boundaries — a 'day' must roll over at
+ * midnight IST, not UTC, or her streak will break at 5:30 AM." Unlike todayIso() above (UTC —
+ * a pre-existing gap elsewhere in this codebase, out of scope to sweep in this milestone, see
+ * PROGRESS.md), this is used for Milestone 15's daily-nudge de-dupe, which is new code with no
+ * reason to carry the same bug forward.
+ */
+export function todayIsoIST(): string {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata' }).format(new Date())
+}

@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import { addDays, dateRange, dayOfWeek, daysBetween } from './dateUtils'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { addDays, dateRange, dayOfWeek, daysBetween, todayIsoIST } from './dateUtils'
 
 describe('addDays', () => {
   it('adds positive days', () => {
@@ -32,5 +32,25 @@ describe('dayOfWeek', () => {
 describe('dateRange', () => {
   it('is inclusive of both endpoints', () => {
     expect(dateRange('2026-08-09', '2026-08-11')).toEqual(['2026-08-09', '2026-08-10', '2026-08-11'])
+  })
+})
+
+describe('todayIsoIST', () => {
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  it('rolls over at IST midnight, not UTC midnight (SPEC.md §7)', () => {
+    // 19:00 UTC on Aug 9 is 00:30 IST on Aug 10 (UTC+5:30) — already "tomorrow" in IST while
+    // still "today" in UTC. This is exactly the 5:30 AM streak-break bug SPEC.md §7 names.
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date('2026-08-09T19:00:00Z'))
+    expect(todayIsoIST()).toBe('2026-08-10')
+  })
+
+  it('agrees with the UTC date well inside the IST day', () => {
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date('2026-08-09T10:00:00Z')) // 15:30 IST, same calendar day either way
+    expect(todayIsoIST()).toBe('2026-08-09')
   })
 })

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
+import { isNotificationSupported, requestNotificationPermission, showLocalNotification } from '@/pwa/notify'
+import { useInstallPrompt } from '@/pwa/useInstallPrompt'
 import { storage } from '@/storage'
 import type { Section, Settings as SettingsType } from '@/types/state'
 
@@ -18,13 +20,41 @@ export function Settings() {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [planSettings, setPlanSettings] = useState<SettingsType | null>(null)
   const [planStatus, setPlanStatus] = useState<string | null>(null)
+  const [notificationStatus, setNotificationStatus] = useState<string | null>(null)
+  const [notificationsSupported, setNotificationsSupported] = useState(false)
+  const { canInstall, installed, promptInstall } = useInstallPrompt()
 
   useEffect(() => {
     storage
       .getSettings()
       .then((s) => setPlanSettings(s ?? null))
       .catch(() => undefined)
+    void isNotificationSupported().then(setNotificationsSupported)
   }, [])
+
+  async function toggleNotifications(enabled: boolean) {
+    if (!planSettings) return
+    if (enabled) {
+      const permission = await requestNotificationPermission()
+      if (permission !== 'granted') {
+        setNotificationStatus(
+          permission === 'denied'
+            ? 'Notifications are blocked in your browser settings — enable them there first.'
+            : 'Permission not granted.',
+        )
+        return
+      }
+    }
+    const updated = { ...planSettings, notificationsEnabled: enabled }
+    setPlanSettings(updated)
+    await storage.putSettings(updated)
+    setNotificationStatus(enabled ? 'Daily reminders on.' : 'Daily reminders off.')
+  }
+
+  async function sendTestNotification() {
+    await showLocalNotification('Ascent', "This is what your daily reminder will look like — you're all set.")
+    setNotificationStatus('Test notification sent.')
+  }
 
   async function savePlanSettings() {
     if (!planSettings) return
@@ -134,6 +164,55 @@ export function Settings() {
         </div>
         {status && <p className="text-sm text-muted-foreground">{status}</p>}
       </section>
+
+      <section className="space-y-2">
+        <h2 className="font-medium">Install app</h2>
+        {installed ? (
+          <p className="text-sm text-muted-foreground">Installed — Ascent runs as its own app from here on.</p>
+        ) : canInstall ? (
+          <>
+            <p className="text-sm text-muted-foreground">
+              Install Ascent for offline access and a normal app icon, no browser chrome.
+            </p>
+            <Button onClick={() => void promptInstall()}>Install Ascent</Button>
+          </>
+        ) : (
+          <p className="text-sm text-muted-foreground">
+            Not available right now — either it's already installed, or your browser doesn't support an in-page
+            install prompt (Safari/iOS: use Share → Add to Home Screen instead).
+          </p>
+        )}
+      </section>
+
+      {planSettings && (
+        <section className="space-y-2">
+          <h2 className="font-medium">Notifications</h2>
+          <p className="text-sm text-muted-foreground">
+            A daily reminder of today's plan, shown while the app is open — never more than one a day, and always
+            off unless you turn it on.
+          </p>
+          {notificationsSupported ? (
+            <>
+              <label className="flex items-center gap-2 text-sm">
+                <input
+                  type="checkbox"
+                  checked={planSettings.notificationsEnabled ?? false}
+                  onChange={(e) => void toggleNotifications(e.target.checked)}
+                />
+                Daily reminder
+              </label>
+              {planSettings.notificationsEnabled && (
+                <Button variant="outline" size="sm" onClick={() => void sendTestNotification()}>
+                  Send test notification
+                </Button>
+              )}
+            </>
+          ) : (
+            <p className="text-sm text-muted-foreground">Not supported in this browser.</p>
+          )}
+          {notificationStatus && <p className="text-sm text-muted-foreground">{notificationStatus}</p>}
+        </section>
+      )}
     </main>
   )
 }

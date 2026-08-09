@@ -192,4 +192,16 @@ export interface Settings {
    * Milestone 5 additions.
    */
   diagnosticCompletedAt?: number
+  /**
+   * Milestone 15: opt-in for the local daily-nudge notification (SPEC.md §11 Phase 1 — "Web
+   * Push via service worker... works offline, no backend needed"). Not in SPEC.md §5.2's
+   * literal interface for the same reason diagnosticCompletedAt isn't — added when the feature
+   * needing it was built, documented here per the project's schema-change rule.
+   */
+  notificationsEnabled?: boolean
+  /**
+   * Milestone 15: the local date (YYYY-MM-DD, Asia/Kolkata) the daily-nudge notification was
+   * last shown, so opening the app twice in one day doesn't fire it twice.
+   */
+  lastNudgeShownDate?: string
 }
