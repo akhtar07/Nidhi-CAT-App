@@ -12,6 +12,7 @@ import {
 } from '@/content/loadContent'
 import { generatePlan } from '@/planner/generatePlan'
 import { selectDiagnosticQuestions } from '@/planner/diagnosticSelection'
+import { withDecayApplied } from '@/srs/topicReview'
 import { storage } from '@/storage'
 import type { MicroTopic, Question } from '@/types/content'
 import type { Attempt } from '@/types/state'
@@ -76,7 +77,7 @@ export function Diagnostic() {
   async function finish() {
     setPhase('loading')
     const [syllabus, masteryStates] = await Promise.all([topicsWithContent(), storage.listMasteryStates()])
-    const masteryByTopicId = new Map(masteryStates.map((m) => [m.microTopicId, m]))
+    const masteryByTopicId = new Map(withDecayApplied(masteryStates).map((m) => [m.microTopicId, m]))
     const today = new Date().toISOString().slice(0, 10)
 
     const plan = generatePlan({ topics: syllabus, masteryByTopicId, today, examDate, dailyMinutes })

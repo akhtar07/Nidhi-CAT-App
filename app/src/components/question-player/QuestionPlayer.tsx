@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { recordAttemptForMastery } from '@/mastery/masteryEngine'
+import { addFormulaCardsForTopic, addMistakeCard } from '@/srs/addToDeck'
 import { storage } from '@/storage'
 import type { MicroTopic, Question } from '@/types/content'
 import type { Attempt } from '@/types/state'
@@ -124,6 +125,10 @@ export function QuestionPlayer({ question, mode, topic, topicQuestions, onComple
       markedForReview,
     }
     void storage.addAttempt(attempt).then(() => recordAttemptForMastery({ attempt, question, topic, topicQuestions }))
+    if (!correct) {
+      void addMistakeCard(question.id, topic.id, storage)
+      if (errorTag === 'unknown_formula') void addFormulaCardsForTopic(topic.id, storage)
+    }
     onComplete(attempt)
   }
 

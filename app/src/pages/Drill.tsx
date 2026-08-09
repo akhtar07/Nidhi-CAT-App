@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { loadMicroTopic, loadQuestionsForMicroTopic } from '@/content/loadContent'
 import { DEFAULT_LEARNER_ELO } from '@/mastery/elo'
 import { selectDrillQueue } from '@/mastery/selectItems'
+import { applyDecay } from '@/srs/topicReview'
 import { storage } from '@/storage'
 import type { MicroTopic, Question } from '@/types/content'
 import type { Attempt, MasteryState } from '@/types/state'
@@ -86,7 +87,7 @@ export function Drill() {
 
   useEffect(() => {
     if (!topicId || !session || index < session.queue.length) return
-    storage.getMasteryState(topicId).then(setFinalMastery)
+    storage.getMasteryState(topicId).then((m) => setFinalMastery(m ? applyDecay(m) : m))
   }, [topicId, session, index])
 
   if (error) {

@@ -1,5 +1,5 @@
 import type { ExportBundle, StorageAdapter } from '@/storage/StorageAdapter'
-import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings } from '@/types/state'
+import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
 import { AscentDB, MOCK_SESSION_KEY, SETTINGS_KEY, type MockSessionRow, type SettingsRow } from './schema'
 import {
   migrateAttempt,
@@ -9,6 +9,7 @@ import {
   migrateMockSession,
   migratePlanDay,
   migrateSettings,
+  migrateSrsCard,
 } from './migrations'
 
 export class DexieAdapter implements StorageAdapter {
@@ -112,16 +113,32 @@ export class DexieAdapter implements StorageAdapter {
     await this.db.mockSession.delete(MOCK_SESSION_KEY)
   }
 
+  async getSrsCard(id: string): Promise<SrsCard | undefined> {
+    const row = await this.db.srsCards.get(id)
+    return row ? migrateSrsCard(row) : undefined
+  }
+
+  async putSrsCard(card: SrsCard): Promise<void> {
+    await this.db.srsCards.put(card)
+  }
+
+  async listSrsCards(): Promise<SrsCard[]> {
+    const rows = await this.db.srsCards.toArray()
+    return rows.map(migrateSrsCard)
+  }
+
   async exportAll(): Promise<ExportBundle> {
-    const [attempts, masteryStates, planDays, mockResults, itemEloStates, settings, mockSession] = await Promise.all([
-      this.listAttempts(),
-      this.listMasteryStates(),
-      this.listPlanDays(),
-      this.listMockResults(),
-      this.db.itemElo.toArray().then((rows) => rows.map(migrateItemEloState)),
-      this.getSettings(),
-      this.getMockSession(),
-    ])
+    const [attempts, masteryStates, planDays, mockResults, itemEloStates, settings, mockSession, srsCards] =
+      await Promise.all([
+        this.listAttempts(),
+        this.listMasteryStates(),
+        this.listPlanDays(),
+        this.listMockResults(),
+        this.db.itemElo.toArray().then((rows) => rows.map(migrateItemEloState)),
+        this.getSettings(),
+        this.getMockSession(),
+        this.listSrsCards(),
+      ])
     return {
       exportedAt: new Date().toISOString(),
       attempts,
@@ -131,6 +148,7 @@ export class DexieAdapter implements StorageAdapter {
       itemEloStates,
       settings: settings ?? null,
       mockSession: mockSession ?? null,
+      srsCards,
     }
   }
 
@@ -143,6 +161,7 @@ export class DexieAdapter implements StorageAdapter {
       this.db.itemElo,
       this.db.settings,
       this.db.mockSession,
+      this.db.srsCards,
     ]
   }
 
@@ -157,6 +176,7 @@ export class DexieAdapter implements StorageAdapter {
         this.db.itemElo.bulkPut(bundle.itemEloStates),
         bundle.settings ? this.putSettings(bundle.settings) : Promise.resolve(),
         bundle.mockSession ? this.putMockSession(bundle.mockSession) : Promise.resolve(),
+        this.db.srsCards.bulkPut(bundle.srsCards ?? []),
       ])
     })
   }

@@ -6,6 +6,7 @@ import { computeCoverageForecast, type CoverageForecast } from '@/planner/covera
 import { addDays, daysBetween, todayIso } from '@/planner/dateUtils'
 import { generatePlan, MOCK_SENTINEL, REVIEW_SENTINEL } from '@/planner/generatePlan'
 import { redistributeMissedDay } from '@/planner/missedDay'
+import { withDecayApplied } from '@/srs/topicReview'
 import { storage } from '@/storage'
 import type { MicroTopic } from '@/types/content'
 import type { Attempt, PlanDay } from '@/types/state'
@@ -60,7 +61,7 @@ export function Calendar() {
 
     if (settings) {
       const masteryStates = await storage.listMasteryStates()
-      const masteryByTopicId = new Map(masteryStates.map((m) => [m.microTopicId, m]))
+      const masteryByTopicId = new Map(withDecayApplied(masteryStates).map((m) => [m.microTopicId, m]))
       const plan = generatePlan({
         topics: syllabus,
         masteryByTopicId,
@@ -98,7 +99,7 @@ export function Calendar() {
       nextDates.map(async (d) => (await storage.getPlanDay(d)) ?? { schemaVersion: 1 as const, date: d, items: [], status: 'pending' as const }),
     )
     const masteryStates = await storage.listMasteryStates()
-    const masteryByTopicId = new Map(masteryStates.map((m) => [m.microTopicId, m]))
+    const masteryByTopicId = new Map(withDecayApplied(masteryStates).map((m) => [m.microTopicId, m]))
     const baselineItemsPerDay = existingNextDays[0]?.items.length || 3
 
     const { updatedDays, droppedItems } = redistributeMissedDay(
@@ -127,7 +128,7 @@ export function Calendar() {
     if (!settings) return
     setRedistributeStatus('Regenerating…')
     const masteryStates = await storage.listMasteryStates()
-    const masteryByTopicId = new Map(masteryStates.map((m) => [m.microTopicId, m]))
+    const masteryByTopicId = new Map(withDecayApplied(masteryStates).map((m) => [m.microTopicId, m]))
     const tomorrow = addDays(today, 1)
     const plan = generatePlan({
       topics,

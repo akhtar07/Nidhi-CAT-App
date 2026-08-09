@@ -1,4 +1,4 @@
-import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings } from '@/types/state'
+import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
 
 /**
  * Full snapshot of learner state, for the Export/Import JSON feature
@@ -14,6 +14,7 @@ export interface ExportBundle {
   itemEloStates: ItemEloState[]
   settings: Settings | null
   mockSession: MockSession | null
+  srsCards: SrsCard[]
 }
 
 /**
@@ -49,6 +50,11 @@ export interface StorageAdapter {
   getMockSession(): Promise<MockSession | undefined>
   putMockSession(session: MockSession): Promise<void>
   clearMockSession(): Promise<void>
+
+  /** SPEC.md §8.4's card level: formula cards + every wrong question, FSRS-scheduled. */
+  getSrsCard(id: string): Promise<SrsCard | undefined>
+  putSrsCard(card: SrsCard): Promise<void>
+  listSrsCards(): Promise<SrsCard[]>
 
   exportAll(): Promise<ExportBundle>
   /** Replaces all existing learner state with the bundle's contents. */

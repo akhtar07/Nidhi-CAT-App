@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.llm-db75789cf8",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Two numbers are in the ratio of $3:5$. If their sum is $128$, what is the smaller number?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "48"
+    },
+    {
+      "key": "B",
+      "markdown": "64"
+    },
+    {
+      "key": "C",
+      "markdown": "72"
+    },
+    {
+      "key": "D",
+      "markdown": "96"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the two numbers be $3x$ and $5x$. According to the problem, their sum is given as:\n$$ 3x + 5x = 128 $$\nThis simplifies to:\n$$ 8x = 128 \\implies x = \\frac{128}{8} = 16. $$\nThe smaller number is $3x$, so we calculate it as follows:\n$$ 3 \\times 16 = 48. $$",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "ratio",
+    "sum"
+  ],
+  "mockReserved": false
+}

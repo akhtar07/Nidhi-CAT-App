@@ -1,5 +1,5 @@
 import Dexie, { type Table } from 'dexie'
-import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings } from '@/types/state'
+import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
 
 /** Settings is a singleton row; this fixed key is how it's addressed in the table. */
 export const SETTINGS_KEY = 'singleton'
@@ -23,6 +23,7 @@ export class AscentDB extends Dexie {
   itemElo!: Table<ItemEloState, string>
   settings!: Table<SettingsRow, string>
   mockSession!: Table<MockSessionRow, string>
+  srsCards!: Table<SrsCard, string>
 
   constructor(name = 'ascent') {
     super(name)
@@ -40,6 +41,10 @@ export class AscentDB extends Dexie {
     // Milestone 10: in-progress mock crash recovery (SPEC.md §9.1).
     this.version(3).stores({
       mockSession: 'id',
+    })
+    // Milestone 12: card-level SRS (SPEC.md §8.4) — formula cards + mistake questions.
+    this.version(4).stores({
+      srsCards: 'id, cardType, microTopicId, nextReviewAt',
     })
   }
 }

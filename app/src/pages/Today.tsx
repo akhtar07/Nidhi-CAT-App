@@ -83,6 +83,12 @@ export function Today() {
           <Link to="/calendar" className="text-primary underline">
             Calendar
           </Link>
+          <Link to="/review" className="text-primary underline">
+            Review
+          </Link>
+          <Link to="/mistakes" className="text-primary underline">
+            Mistakes
+          </Link>
           <Link to="/settings" className="text-primary underline">
             Settings
           </Link>

@@ -70,6 +70,35 @@ export interface MasteryState {
   /** FSRS params */
   stability: number
   difficulty: number
+  /**
+   * Milestone 12: when this topic was last graded through FSRS (elo.ts's updateElo also runs
+   * every attempt, but FSRS's stability-growth math specifically needs to know the *actual*
+   * elapsed time since the last review, not just now-vs-due — not in SPEC.md §5.2's literal
+   * interface, added for the same reason app/src/srs/fsrsAdapter.ts documents its own addition
+   * of this field).
+   */
+  lastReviewedAt?: number
+}
+
+/**
+ * Milestone 12 (SPEC.md §8.4): "Apply it [FSRS] at ... Card level — formula cards,
+ * vocabulary-in-context cards, and every question she got wrong (auto-added as a card)."
+ * Not in SPEC.md §5.2's literal type list (that section predates SRS cards being scoped out as
+ * their own storage concern) but required to implement §8.4's card level at all — same
+ * add-and-document pattern as everything else added this build.
+ */
+export interface SrsCard {
+  schemaVersion: 1
+  id: string
+  cardType: 'formula' | 'mistake'
+  /** FormulaCard.id for 'formula' cards, Question.id for 'mistake' cards. */
+  refId: string
+  microTopicId: string
+  stability: number
+  difficulty: number
+  nextReviewAt: number
+  lastReviewedAt?: number
+  addedAt: number
 }
 
 /**

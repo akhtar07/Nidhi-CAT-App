@@ -11,9 +11,9 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 12 — Review & SRS (not started)
+## Current milestone: 13 — Content pipeline v3 (not started)
 
-Milestones 7 through 11 are done (see below). Milestone 7's content-bank
+Milestones 7 through 12 are done (see below). Milestone 7's content-bank
 scale-up is a long-running background process, not a one-session task — see
 its entry for current bank size and how to check/resume it.
 
@@ -43,6 +43,60 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 12 — Review & SRS (done)
+
+SPEC.md §8.4/§14: `ts-fsrs` (explicitly named in SPEC.md §8.4 as the recommended scheduler — "if
+you want the best available" — so treated as pre-approved the same way §7's tech stack is, not
+an undocumented dependency needing a stop-and-ask). `app/src/srs/` wraps it:
+
+- **`fsrsAdapter.ts`** — `gradeReview()`/`initFsrsState()`/`isDue()`. Persisted state is
+  `{stability, difficulty, nextReviewAt, lastReviewedAt}`. The `lastReviewedAt` field is a
+  Milestone 12 addition on top of SPEC.md §5.2's frozen three (`nextReviewAt`/`stability`/
+  `difficulty`) — caught by a failing test (`gradeReview` produced the *identical* stability
+  across two well-spaced "Good" reviews) that FSRS's stability-growth math needs the actual
+  elapsed time since the last review, not just "is it past its due date," and there was nowhere
+  to persist that without a new field.
+- **`topicReview.ts`** — `mapAttemptToGrade()` (correctness + the same pre-reveal confidence
+  signal §8.5's guess-discount uses → Again/Hard/Good/Easy) and `applyDecay()`
+  (SPEC.md §8.4: FSRS "schedules the decaying → review cycle" — a `mastered` topic whose FSRS
+  review has come due reads back as `decaying` for display/planning). Every practice attempt is
+  treated as an implicit topic-level review — SPEC.md doesn't define a separate topic-review
+  session, unlike cards. Wired into `masteryEngine.recordAttemptForMastery` (replacing the inert
+  `stability: 0, difficulty: 0` placeholder Milestone 5 left there) and into every place that
+  *reads* MasteryState for display or planning (`Drill.tsx`, `Diagnostic.tsx`, `Calendar.tsx` ×3)
+  via `applyDecay`/`withDecayApplied` — decay is computed at read time, not stored continuously,
+  same trade-off as everything else in this static app with no background job.
+- **`addToDeck.ts`** — SPEC.md §8.4's card level. `addMistakeCard()`: every wrong attempt, from
+  `QuestionPlayer.tsx`'s existing `next()` (never resets an already-tracked card's schedule just
+  because she got it wrong again — that's what grading it Again is for). `addFormulaCardsForTopic()`:
+  wired to the `unknown_formula` errorTag specifically — SPEC.md §8.5's table: "Didn't know
+  formula → Auto-add the formula card to the SRS deck." New `SrsCard` learner-state type, full
+  StorageAdapter → Dexie v4 → migrations → ExportBundle plumbing (same pattern as every prior
+  addition this build).
+
+**Mistake Notebook** (`pages/MistakeNotebook.tsx`, `/mistakes`) — SPEC.md §14 item 1: auto-populated
+from wrong Attempts (most recent per question, so a since-fixed mistake doesn't linger forever),
+filterable by error tag and topic, **"Re-attempt this set"** replays exactly the filtered
+questions through `QuestionPlayer` (not generic topic practice — the literal missed questions).
+
+**Review / formula deck** (`pages/Review.tsx`, `/review`) — SPEC.md §14 item 3: due `SrsCard`s
+(formula cards render title/formula/example; mistake cards render the question stem), a
+"Show answer" flip, then Again/Hard/Good/Easy grading that calls `gradeReview` and reschedules.
+
+Verified live end to end: answered a Percentages question wrong, tagged "didn't know formula",
+confirmed 3 real `SrsCard` rows in IndexedDB (1 mistake + 2 formula cards — Percentages' lesson
+has two), confirmed both appear as due and render correctly in `/review` including live KaTeX,
+confirmed the Mistake Notebook shows the tagged entry with working filters, and confirmed
+"Re-attempt this set" actually launches `QuestionPlayer` on the exact missed question. Zero
+console errors throughout.
+
+**Deliberately out of scope**: SPEC.md §8.5's other error-tag responses (highlight-the-ask mode
+for misreads, a pacing trainer for time-outs, an elimination-discipline drill for careless picks)
+are each their own standalone feature, not part of this milestone's terse three-part definition
+("Mistake notebook, FSRS scheduling, formula deck") — only the formula-card row of that table is
+implemented. Vocabulary-in-context cards (§8.4's third card type) need VARC content that doesn't
+exist yet (Milestone 13).
 
 ### Milestone 11 — Mock analytics (done)
 

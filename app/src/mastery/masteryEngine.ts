@@ -1,5 +1,7 @@
 import { storage } from '@/storage'
 import type { StorageAdapter } from '@/storage/StorageAdapter'
+import { gradeReview, type FsrsState } from '@/srs/fsrsAdapter'
+import { mapAttemptToGrade } from '@/srs/topicReview'
 import type { MicroTopic, Question } from '@/types/content'
 import type { Attempt, MasteryState } from '@/types/state'
 import { DEFAULT_ITEM_ELO, DEFAULT_LEARNER_ELO, effectiveCorrectness, updateElo } from './elo'
@@ -60,6 +62,15 @@ export async function recordAttemptForMastery({
     criteria123FirstMetAt: existing?.criteria123FirstMetAt,
   })
 
+  // SPEC.md §8.4: FSRS at the micro-topic level. Every attempt is treated as an implicit review
+  // of that topic's forgetting curve (see topicReview.ts for why) — grade derived from
+  // correctness + the same pre-reveal confidence signal §8.5's guess-discount uses.
+  const priorFsrsState: FsrsState | undefined =
+    existing?.stability || existing?.nextReviewAt
+      ? { stability: existing.stability, difficulty: existing.difficulty, nextReviewAt: existing.nextReviewAt ?? attempt.submittedAt, lastReviewedAt: existing.lastReviewedAt }
+      : undefined
+  const fsrsState = gradeReview(priorFsrsState, mapAttemptToGrade(attempt), attempt.submittedAt)
+
   const newState: MasteryState = {
     schemaVersion: 1,
     microTopicId,
@@ -72,11 +83,10 @@ export async function recordAttemptForMastery({
     masteredAt: evaluation.status === 'mastered' ? (existing?.masteredAt ?? attempt.submittedAt) : existing?.masteredAt,
     criteria123FirstMetAt: evaluation.criteria123FirstMetAt,
     antiFrustrationTriggered: evaluation.antiFrustrationTriggered,
-    // SRS scheduling (nextReviewAt/stability/difficulty) is Milestone 12 —
-    // carried through unchanged, not computed here.
-    nextReviewAt: existing?.nextReviewAt,
-    stability: existing?.stability ?? 0,
-    difficulty: existing?.difficulty ?? 0,
+    nextReviewAt: fsrsState.nextReviewAt,
+    stability: fsrsState.stability,
+    difficulty: fsrsState.difficulty,
+    lastReviewedAt: fsrsState.lastReviewedAt,
   }
   await storageAdapter.putMasteryState(newState)
   return newState
