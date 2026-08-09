@@ -1,0 +1,37 @@
+{
+  "id": "sectional-qa-4",
+  "title": "QA Sectional 4",
+  "kind": "sectional",
+  "difficultyTier": "standard",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.arith.time-work-efficiency-wages.gen-58e057ac58",
+        "qa.arith.tsd-races.gen-5b9289343f",
+        "qa.geometry.trigonometry.gen-67d964f620",
+        "qa.geometry.triangles.gen-7d2b32399f",
+        "qa.arith.time-work-pipes-cisterns.gen-657c21a49d",
+        "qa.modern.binomial-theorem.gen-bfdf23385c",
+        "qa.algebra.logarithms.gen-cae74e110d",
+        "qa.algebra.integer-solutions.gen-fb730f6cb0",
+        "qa.arith.tsd-boats-streams.gen-61fd1e3d4d",
+        "qa.arith.ratio-proportion-variation.gen-093a7afc41",
+        "qa.arith.time-work-efficiency-wages.gen-57345d54a3",
+        "qa.arith.time-work-pipes-cisterns.gen-09a61de54f",
+        "qa.algebra.polynomials-remainder-factor.gen-29391babf6",
+        "qa.arith.mixtures-alligation.gen-d639a38acb",
+        "qa.geometry.circles.gen-0b96e9968a",
+        "qa.algebra.quadratic-equations.gen-03b0b21a1a",
+        "qa.geometry.mensuration-2d.gen-1288193845",
+        "qa.algebra.linear-equations.gen-d98bde38d5",
+        "qa.arith.ratio-proportion-variation.gen-e6f22cc6ee",
+        "qa.geometry.triangles.gen-17f931d74d",
+        "qa.numsys.factors-count-sum-product.gen-9cbb127b7d",
+        "qa.algebra.maxima-minima.gen-3cac3d8c33"
+      ]
+    }
+  ],
+  "composedNote": "VARC/DILR sectional mocks aren't shippable yet (7 VARC questions, 2 DILR sets \u2014 need ~24Q / ~5 sets respectively). SPEC.md \u00a79.2 anticipates this: 'ship 5 total if not [the bank allows 15]' \u2014 this is that fallback, QA only."
+}

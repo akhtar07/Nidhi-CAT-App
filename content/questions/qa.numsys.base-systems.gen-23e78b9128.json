@@ -27,5 +27,6 @@
   },
   "tags": [
     "numsys:base-conversion"
-  ]
+  ],
+  "mockReserved": true
 }

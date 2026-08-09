@@ -1,0 +1,37 @@
+{
+  "id": "sectional-qa-1",
+  "title": "QA Sectional 1",
+  "kind": "sectional",
+  "difficultyTier": "easier",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.algebra.inequalities-modulus.gen-2dcdf5be83",
+        "qa.numsys.rational-irrational.gen-94db7dce63",
+        "qa.modern.series-sequences-hybrids.gen-c163f7a2d9",
+        "qa.arith.percentages.llm-1e786aa70c",
+        "qa.arith.tsd-trains.gen-b429a6df10",
+        "qa.numsys.factorials-prime-power.gen-8d8c76e0d2",
+        "qa.arith.tsd-circular-tracks.gen-3c8fb14ff1",
+        "qa.geometry.mensuration-2d.gen-24f887fdf3",
+        "qa.algebra.quadratic-equations.gen-8a93b7111a",
+        "qa.numsys.last-digit-trailing-zeroes.gen-effefd890a",
+        "qa.arith.si-ci-instalments.gen-c370f2b295",
+        "qa.arith.tsd-circular-tracks.gen-232d7f59ce",
+        "qa.algebra.surds-indices.gen-d7451e5fc7",
+        "qa.geometry.quadrilaterals-polygons.gen-08a0558f93",
+        "qa.numsys.factors-count-sum-product.gen-a409a43150",
+        "qa.numsys.divisibility-factors.gen-6283c0ff83",
+        "qa.geometry.coordinate-geometry.gen-75c772492c",
+        "qa.modern.set-theory-venn.gen-5080f874a5",
+        "qa.arith.tsd-trains.gen-b04e0967c1",
+        "qa.arith.time-work-pipes-cisterns.gen-eed8955657",
+        "qa.modern.permutations-combinations.gen-85d32f1edf",
+        "qa.modern.set-theory-venn.gen-b9a3e0637e"
+      ]
+    }
+  ],
+  "composedNote": "VARC/DILR sectional mocks aren't shippable yet (7 VARC questions, 2 DILR sets \u2014 need ~24Q / ~5 sets respectively). SPEC.md \u00a79.2 anticipates this: 'ship 5 total if not [the bank allows 15]' \u2014 this is that fallback, QA only."
+}

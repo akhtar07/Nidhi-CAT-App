@@ -27,5 +27,6 @@
   },
   "tags": [
     "arith:profit-loss-discount"
-  ]
+  ],
+  "mockReserved": true
 }

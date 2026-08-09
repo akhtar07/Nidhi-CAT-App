@@ -1,0 +1,37 @@
+{
+  "id": "mock-2",
+  "title": "Full Mock 2",
+  "kind": "full",
+  "difficultyTier": "standard",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.arith.averages-weighted-averages.gen-76dd29d494",
+        "qa.geometry.mensuration-2d.gen-9aa1c6ee97",
+        "qa.modern.series-sequences-hybrids.gen-cbdf142dba",
+        "qa.algebra.quadratic-equations.gen-4396108c1e",
+        "qa.algebra.logarithms.gen-0fe5eb418c",
+        "qa.geometry.triangles.gen-81eecccacf",
+        "qa.arith.tsd-boats-streams.gen-3365dede96",
+        "qa.numsys.rational-irrational.gen-8b4f31710f",
+        "qa.algebra.linear-equations.gen-dafece1b01",
+        "qa.algebra.maxima-minima.gen-957d1c83a2",
+        "qa.modern.series-sequences-hybrids.gen-3979ab84cf",
+        "qa.algebra.quadratic-equations.gen-d42e717bc8",
+        "qa.arith.percentages.gen-1bcfab2194",
+        "qa.arith.tsd-races.gen-a5de40f346",
+        "qa.algebra.logarithms.gen-4903960a80",
+        "qa.algebra.inequalities-modulus.gen-25a4a133cf",
+        "qa.numsys.last-digit-trailing-zeroes.gen-9c991101a3",
+        "qa.algebra.integer-solutions.gen-029981c368",
+        "qa.numsys.factorials-prime-power.gen-6d10c8057c",
+        "qa.geometry.quadrilaterals-polygons.gen-d81f5a77fc",
+        "qa.modern.probability.gen-9836ddc6eb",
+        "qa.geometry.triangles.gen-fdbd8126a0"
+      ]
+    }
+  ],
+  "composedNote": "QA section only: VARC has 7 questions total and DILR has 2 sets (8 questions) \u2014 far short of the 24Q/~5-set-per-mock SPEC.md \u00a79.1/\u00a79.2 targets, so including them would mean either inventing content (against CLAUDE.md's 'no placeholder or fake content' rule) or shipping a dead, un-skippable 40-minute empty section. Milestone 13's RC/DILR/VA pipelines need further scale-up (tracked in PROGRESS.md) before VARC/DILR sections can be added here."
+}

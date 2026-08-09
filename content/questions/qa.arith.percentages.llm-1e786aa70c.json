@@ -45,5 +45,6 @@
   "tags": [
     "percentages",
     "easy"
-  ]
+  ],
+  "mockReserved": true
 }

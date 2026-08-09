@@ -1,0 +1,37 @@
+{
+  "id": "sectional-qa-5",
+  "title": "QA Sectional 5",
+  "kind": "sectional",
+  "difficultyTier": "harder",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.arith.ratio-proportion-variation.gen-39dff9d7a5",
+        "qa.modern.series-sequences-hybrids.gen-fbfe0c2070",
+        "qa.algebra.integer-solutions.gen-3b0ac756fd",
+        "qa.arith.tsd-relative-speed.gen-81c4dc9562",
+        "qa.geometry.mensuration-3d.gen-56eebc17e0",
+        "qa.algebra.surds-indices.gen-7d161de54d",
+        "qa.numsys.divisibility-factors.gen-e09cd6a9e1",
+        "qa.arith.time-work-efficiency-wages.gen-d4e2ce4cbc",
+        "qa.arith.percentages.gen-24fdf91ef3",
+        "qa.algebra.integer-solutions.gen-aa190ad72f",
+        "qa.algebra.maxima-minima.gen-7c05a1a215",
+        "qa.arith.time-work-chain-rule.gen-edd8ef9394",
+        "qa.arith.percentages.gen-6b38555f61",
+        "qa.arith.time-work-efficiency-wages.gen-01e547d631",
+        "qa.arith.mixtures-alligation.gen-fbf4f71884",
+        "qa.numsys.divisibility-factors.gen-efc76ce479",
+        "qa.numsys.base-systems.gen-2b411e5f1e",
+        "qa.geometry.trigonometry.gen-2081490748",
+        "qa.arith.tsd-relative-speed.gen-c8143fc5d1",
+        "qa.modern.binomial-theorem.gen-495636cb3b",
+        "qa.arith.averages-weighted-averages.gen-7119bbce6b",
+        "qa.modern.series-sequences-hybrids.gen-e6946421c3"
+      ]
+    }
+  ],
+  "composedNote": "VARC/DILR sectional mocks aren't shippable yet (7 VARC questions, 2 DILR sets \u2014 need ~24Q / ~5 sets respectively). SPEC.md \u00a79.2 anticipates this: 'ship 5 total if not [the bank allows 15]' \u2014 this is that fallback, QA only."
+}

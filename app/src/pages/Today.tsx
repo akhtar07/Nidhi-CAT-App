@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   loadLessonIndex,
+  loadMockDefinition,
   loadMockIndex,
   loadPassageSetIndex,
   loadQuestionIndex,
@@ -19,6 +20,19 @@ interface TopicRow {
   hasLesson: boolean
 }
 
+interface MockRow {
+  id: string
+  title: string
+  kind: 'full' | 'sectional'
+  difficultyTier?: 'easier' | 'standard' | 'harder'
+}
+
+const DIFFICULTY_LABEL: Record<string, string> = {
+  easier: 'Easier',
+  standard: 'CAT level',
+  harder: 'Harder',
+}
+
 function planItemLabel(microTopicId: string, topicNameById: Map<string, string>): string {
   if (microTopicId === MOCK_SENTINEL) return 'Mock test'
   if (microTopicId === REVIEW_SENTINEL) return 'Review / SRS'
@@ -29,7 +43,7 @@ export function Today() {
   const navigate = useNavigate()
   const [rows, setRows] = useState<TopicRow[] | null>(null)
   const [sets, setSets] = useState<PassageSetIndexEntry[]>([])
-  const [mockIds, setMockIds] = useState<string[]>([])
+  const [mocks, setMocks] = useState<MockRow[]>([])
   const [error, setError] = useState<string | null>(null)
   const [todayPlan, setTodayPlan] = useState<PlanDay | null>(null)
   const [topicNameById, setTopicNameById] = useState<Map<string, string>>(new Map())
@@ -71,7 +85,13 @@ export function Today() {
       .catch(() => undefined)
 
     loadMockIndex()
-      .then(setMockIds)
+      .then((ids) => Promise.all(ids.map((id) => loadMockDefinition(id))))
+      .then((defs) => {
+        const sorted = [...defs].sort(
+          (a, b) => Number(b.kind === 'full') - Number(a.kind === 'full') || a.id.localeCompare(b.id),
+        )
+        setMocks(sorted)
+      })
       .catch(() => undefined)
   }, [])
 
@@ -107,8 +127,8 @@ export function Today() {
                 <span className={item.done ? 'text-muted-foreground line-through' : ''}>
                   {item.kind} · {planItemLabel(item.microTopicId, topicNameById)}
                 </span>
-                {item.microTopicId === MOCK_SENTINEL && mockIds[0] && (
-                  <Link to={`/mock/${mockIds[0]}`} className="text-xs text-primary underline">
+                {item.microTopicId === MOCK_SENTINEL && mocks[0] && (
+                  <Link to={`/mock/${mocks[0].id}`} className="text-xs text-primary underline">
                     Go
                   </Link>
                 )}
@@ -160,13 +180,21 @@ export function Today() {
         </section>
       )}
 
-      {mockIds.length > 0 && (
+      {mocks.length > 0 && (
         <section className="mt-6">
           <h2 className="mb-2 text-sm font-medium text-muted-foreground">Mocks</h2>
           <ul className="divide-y divide-border rounded-lg border border-border">
-            {mockIds.map((id) => (
-              <li key={id} className="px-4 py-3 text-sm hover:bg-muted">
-                <Link to={`/mock/${id}`}>{id}</Link>
+            {mocks.map((mock) => (
+              <li key={mock.id} className="flex items-center justify-between px-4 py-3 text-sm hover:bg-muted">
+                <Link to={`/mock/${mock.id}`} className="flex-1">
+                  <span>{mock.title}</span>
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {mock.kind === 'full' ? 'Full mock' : 'Sectional'}
+                  </span>
+                </Link>
+                {mock.difficultyTier && (
+                  <span className="text-muted-foreground">{DIFFICULTY_LABEL[mock.difficultyTier]}</span>
+                )}
               </li>
             ))}
           </ul>

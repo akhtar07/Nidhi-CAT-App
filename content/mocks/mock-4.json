@@ -1,0 +1,37 @@
+{
+  "id": "mock-4",
+  "title": "Full Mock 4",
+  "kind": "full",
+  "difficultyTier": "standard",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.algebra.functions.gen-f4dc9657dc",
+        "qa.algebra.logarithms.gen-90aee8080c",
+        "qa.arith.time-work-pipes-cisterns.gen-787db0aedf",
+        "qa.geometry.trigonometry.gen-443bde4bcb",
+        "qa.modern.binomial-theorem.gen-31d7f99c9b",
+        "qa.arith.time-work-chain-rule.gen-3aec576515",
+        "qa.geometry.trigonometry.gen-34c7dadc81",
+        "qa.arith.tsd-trains.gen-d38711a835",
+        "qa.algebra.quadratic-equations.gen-1facb28f42",
+        "qa.modern.series-sequences-hybrids.gen-2725d479fc",
+        "qa.algebra.inequalities-modulus.gen-48fdda3e34",
+        "qa.arith.ratio-proportion-variation.gen-4faabe117e",
+        "qa.arith.time-work-chain-rule.gen-5d3196cbf6",
+        "qa.modern.set-theory-venn.gen-9de0890364",
+        "qa.geometry.coordinate-geometry.gen-d6b398a7da",
+        "qa.arith.averages-weighted-averages.gen-beec89b535",
+        "qa.modern.probability.gen-92e524cd8a",
+        "qa.geometry.coordinate-geometry.gen-b1f32f7a71",
+        "qa.arith.time-work-efficiency-wages.gen-257c6f5d87",
+        "qa.arith.si-ci-instalments.gen-5bb6ba9290",
+        "qa.arith.mixtures-alligation.gen-4ceb2630c0",
+        "qa.arith.profit-loss-discount.gen-79f83e24b8"
+      ]
+    }
+  ],
+  "composedNote": "QA section only: VARC has 7 questions total and DILR has 2 sets (8 questions) \u2014 far short of the 24Q/~5-set-per-mock SPEC.md \u00a79.1/\u00a79.2 targets, so including them would mean either inventing content (against CLAUDE.md's 'no placeholder or fake content' rule) or shipping a dead, un-skippable 40-minute empty section. Milestone 13's RC/DILR/VA pipelines need further scale-up (tracked in PROGRESS.md) before VARC/DILR sections can be added here."
+}

@@ -27,5 +27,6 @@
   },
   "tags": [
     "geometry:polygons"
-  ]
+  ],
+  "mockReserved": true
 }

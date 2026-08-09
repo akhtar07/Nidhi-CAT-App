@@ -29,5 +29,5 @@
     "geometry:coordinate",
     "distance"
   ],
-  "mockReserved": false
+  "mockReserved": true
 }

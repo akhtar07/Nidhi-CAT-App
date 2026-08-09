@@ -27,5 +27,6 @@
   },
   "tags": [
     "algebra:surds-indices"
-  ]
+  ],
+  "mockReserved": true
 }

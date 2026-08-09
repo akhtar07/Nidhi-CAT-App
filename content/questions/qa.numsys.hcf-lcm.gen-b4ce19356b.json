@@ -27,5 +27,6 @@
   },
   "tags": [
     "numsys:hcf-lcm"
-  ]
+  ],
+  "mockReserved": true
 }

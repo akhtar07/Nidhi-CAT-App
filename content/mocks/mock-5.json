@@ -1,0 +1,37 @@
+{
+  "id": "mock-5",
+  "title": "Full Mock 5",
+  "kind": "full",
+  "difficultyTier": "harder",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.arith.mixtures-alligation.gen-cc64485ec2",
+        "qa.algebra.progressions.gen-265f7ebde5",
+        "qa.algebra.linear-equations.gen-aaf6e26da6",
+        "qa.numsys.hcf-lcm.gen-c00bb69d6b",
+        "qa.algebra.maxima-minima.gen-f37746eb86",
+        "qa.algebra.surds-indices.gen-94debaa0f1",
+        "qa.modern.binomial-theorem.gen-c40f47bc22",
+        "qa.arith.time-work-chain-rule.gen-457da82ce8",
+        "qa.arith.profit-loss-discount.gen-25b8e1ae2d",
+        "qa.algebra.linear-equations.gen-f427619757",
+        "qa.numsys.last-digit-trailing-zeroes.gen-ba3665dfa9",
+        "qa.algebra.polynomials-remainder-factor.gen-cb128ca08f",
+        "qa.arith.tsd-trains.gen-9c3a5ab4f2",
+        "qa.geometry.trigonometry.gen-3c64a53375",
+        "qa.algebra.linear-equations.gen-0f426227d8",
+        "qa.algebra.surds-indices.gen-633b43eef1",
+        "qa.arith.tsd-relative-speed.gen-aae6b60d06",
+        "qa.modern.series-sequences-hybrids.gen-bf5739598d",
+        "qa.geometry.trigonometry.gen-033a5a0142",
+        "qa.arith.time-work-chain-rule.gen-fe44380727",
+        "qa.algebra.progressions.gen-dfbf5cd3d8",
+        "qa.numsys.last-digit-trailing-zeroes.gen-8a4fc71ee3"
+      ]
+    }
+  ],
+  "composedNote": "QA section only: VARC has 7 questions total and DILR has 2 sets (8 questions) \u2014 far short of the 24Q/~5-set-per-mock SPEC.md \u00a79.1/\u00a79.2 targets, so including them would mean either inventing content (against CLAUDE.md's 'no placeholder or fake content' rule) or shipping a dead, un-skippable 40-minute empty section. Milestone 13's RC/DILR/VA pipelines need further scale-up (tracked in PROGRESS.md) before VARC/DILR sections can be added here."
+}

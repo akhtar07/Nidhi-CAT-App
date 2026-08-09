@@ -27,5 +27,6 @@
   },
   "tags": [
     "algebra:integer-solutions"
-  ]
+  ],
+  "mockReserved": true
 }

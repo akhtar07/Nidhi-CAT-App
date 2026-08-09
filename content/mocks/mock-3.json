@@ -1,0 +1,37 @@
+{
+  "id": "mock-3",
+  "title": "Full Mock 3",
+  "kind": "full",
+  "difficultyTier": "standard",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.modern.binomial-theorem.gen-0808a05ada",
+        "qa.numsys.hcf-lcm.gen-a78b749a5b",
+        "qa.algebra.polynomials-remainder-factor.gen-8710189130",
+        "qa.algebra.progressions.gen-a3d05bbd96",
+        "qa.numsys.rational-irrational.gen-604eb13060",
+        "qa.numsys.factorials-prime-power.gen-6b6ef4b208",
+        "qa.arith.ratio-proportion-variation.gen-eeece43e98",
+        "qa.arith.tsd-races.gen-bf2c4e97e4",
+        "qa.modern.permutations-combinations.gen-d985ac32a5",
+        "qa.numsys.factors-count-sum-product.gen-d08ea5af27",
+        "qa.arith.tsd-trains.gen-c1265f0947",
+        "qa.geometry.mensuration-2d.gen-d3a8ed444c",
+        "qa.numsys.base-systems.gen-e7bdc3f824",
+        "qa.arith.time-work-efficiency-wages.gen-b86a49abe6",
+        "qa.numsys.rational-irrational.gen-eb12dc041b",
+        "qa.modern.series-sequences-hybrids.gen-8a45f04ac3",
+        "qa.numsys.base-systems.gen-23e78b9128",
+        "qa.modern.binomial-theorem.gen-69ddab6bde",
+        "qa.numsys.factors-count-sum-product.gen-af920d10b4",
+        "qa.arith.averages-weighted-averages.gen-f32deeecb7",
+        "qa.arith.si-ci-instalments.gen-36c5b2edb2",
+        "qa.algebra.quadratic-equations.gen-a67916943a"
+      ]
+    }
+  ],
+  "composedNote": "QA section only: VARC has 7 questions total and DILR has 2 sets (8 questions) \u2014 far short of the 24Q/~5-set-per-mock SPEC.md \u00a79.1/\u00a79.2 targets, so including them would mean either inventing content (against CLAUDE.md's 'no placeholder or fake content' rule) or shipping a dead, un-skippable 40-minute empty section. Milestone 13's RC/DILR/VA pipelines need further scale-up (tracked in PROGRESS.md) before VARC/DILR sections can be added here."
+}

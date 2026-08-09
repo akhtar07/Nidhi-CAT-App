@@ -1,0 +1,37 @@
+{
+  "id": "sectional-qa-3",
+  "title": "QA Sectional 3",
+  "kind": "sectional",
+  "difficultyTier": "standard",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.geometry.coordinate-geometry.gen-fee37d36b6",
+        "qa.numsys.last-digit-trailing-zeroes.gen-1c90209ee5",
+        "qa.numsys.hcf-lcm.gen-b4ce19356b",
+        "qa.geometry.mensuration-3d.gen-44783feea9",
+        "qa.algebra.logarithms.gen-cdeeb7d552",
+        "qa.algebra.linear-equations.gen-053fd7aec5",
+        "qa.geometry.mensuration-3d.gen-65b32e810a",
+        "qa.geometry.triangles.gen-c0363134f3",
+        "qa.arith.ratio-proportion-variation.gen-59219f0d4d",
+        "qa.algebra.linear-equations.gen-c8fb753825",
+        "qa.geometry.quadrilaterals-polygons.gen-09f0caf39f",
+        "qa.numsys.hcf-lcm.gen-7b7b33f0bb",
+        "qa.arith.tsd-circular-tracks.gen-31fbdbb397",
+        "qa.arith.tsd-races.gen-ae807b05e2",
+        "qa.algebra.polynomials-remainder-factor.gen-d29f59aa98",
+        "qa.arith.tsd-relative-speed.gen-aed9197dd8",
+        "qa.arith.ratio-proportion-variation.gen-fff6373dbf",
+        "qa.arith.tsd-circular-tracks.gen-c16e5ec348",
+        "qa.algebra.surds-indices.gen-e0bbf7644b",
+        "qa.algebra.logarithms.gen-7875c32177",
+        "qa.modern.set-theory-venn.gen-c0a3deafdb",
+        "qa.geometry.mensuration-2d.gen-350631d0c5"
+      ]
+    }
+  ],
+  "composedNote": "VARC/DILR sectional mocks aren't shippable yet (7 VARC questions, 2 DILR sets \u2014 need ~24Q / ~5 sets respectively). SPEC.md \u00a79.2 anticipates this: 'ship 5 total if not [the bank allows 15]' \u2014 this is that fallback, QA only."
+}

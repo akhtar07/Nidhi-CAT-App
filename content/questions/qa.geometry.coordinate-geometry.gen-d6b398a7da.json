@@ -28,5 +28,6 @@
   "tags": [
     "geometry:coordinate",
     "distance"
-  ]
+  ],
+  "mockReserved": true
 }

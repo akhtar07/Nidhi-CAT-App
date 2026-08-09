@@ -27,5 +27,6 @@
   },
   "tags": [
     "algebra:remainder-theorem"
-  ]
+  ],
+  "mockReserved": true
 }

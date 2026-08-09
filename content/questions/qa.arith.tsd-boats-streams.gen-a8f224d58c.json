@@ -29,5 +29,5 @@
     "arith:tsd",
     "boats-streams"
   ],
-  "mockReserved": false
+  "mockReserved": true
 }

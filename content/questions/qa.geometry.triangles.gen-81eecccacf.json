@@ -28,5 +28,6 @@
   "tags": [
     "geometry:triangles",
     "right-triangle"
-  ]
+  ],
+  "mockReserved": true
 }

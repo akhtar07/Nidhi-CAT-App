@@ -1,0 +1,37 @@
+{
+  "id": "sectional-qa-2",
+  "title": "QA Sectional 2",
+  "kind": "sectional",
+  "difficultyTier": "standard",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.numsys.divisibility-factors.gen-ea00a4496f",
+        "qa.algebra.maxima-minima.gen-ad3c798ac6",
+        "qa.modern.series-sequences-hybrids.gen-f6cb5b9a65",
+        "qa.arith.mixtures-alligation.gen-d02b4048a6",
+        "qa.geometry.trigonometry.gen-fb739bff67",
+        "qa.modern.set-theory-venn.gen-5205aeeaf4",
+        "qa.numsys.hcf-lcm.gen-1a53196333",
+        "qa.algebra.functions.gen-0c98b90fb2",
+        "qa.arith.tsd-boats-streams.gen-a8f224d58c",
+        "qa.modern.binomial-theorem.gen-4a5ffa032a",
+        "qa.geometry.lines-angles.gen-43597bdcf7",
+        "qa.algebra.maxima-minima.gen-b8fda7656a",
+        "qa.arith.time-work-pipes-cisterns.gen-0d87714625",
+        "qa.arith.tsd-circular-tracks.gen-0193e5125c",
+        "qa.modern.series-sequences-hybrids.gen-64cd173af0",
+        "qa.arith.percentages.gen-51fdd15ffc",
+        "qa.algebra.logarithms.gen-53d540672f",
+        "qa.geometry.mensuration-3d.gen-38ed955903",
+        "qa.algebra.maxima-minima.gen-bd2514ffdc",
+        "qa.algebra.progressions.gen-a2fc668754",
+        "qa.arith.time-work-efficiency-wages.gen-6fb7fe698f",
+        "qa.geometry.circles.gen-22e43d33c5"
+      ]
+    }
+  ],
+  "composedNote": "VARC/DILR sectional mocks aren't shippable yet (7 VARC questions, 2 DILR sets \u2014 need ~24Q / ~5 sets respectively). SPEC.md \u00a79.2 anticipates this: 'ship 5 total if not [the bank allows 15]' \u2014 this is that fallback, QA only."
+}

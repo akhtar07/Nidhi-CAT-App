@@ -28,5 +28,6 @@
   "tags": [
     "modern:series",
     "sum-of-squares"
-  ]
+  ],
+  "mockReserved": true
 }

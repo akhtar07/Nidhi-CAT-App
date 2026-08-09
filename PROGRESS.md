@@ -11,9 +11,9 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 14 — Mocks (5 full + 5 sectional) (not started)
+## Current milestone: 15 — PWA + notifications (not started)
 
-Milestones 7 through 13 are done (see below). Milestone 7's content-bank
+Milestones 7 through 14 are done (see below). Milestone 7's content-bank
 scale-up is a long-running background process, not a one-session task — see
 its entry for current bank size and how to check/resume it.
 
@@ -43,6 +43,76 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 14 — 5 full + 5 sectional mocks (done, content-scoped)
+
+SPEC.md §9.1/§9.2. `pipeline/compose_mocks_m14.py` extends Milestone 10's
+`compose_mock_1.py` pattern (never invents a question, only selects
+already-verified ids and flags them `mockReserved`) into the full set:
+mock-1 (Milestone 10, already `difficultyTier: easier`) plus mock-2..mock-5
+(full) and `sectional-qa-1`..`sectional-qa-5` (sectional), 10 mocks total,
+220 QA questions reserved with **zero id overlap** across any of them
+(checked directly, not assumed).
+
+- **Difficulty escalation, §9.1's exact wording** ("Mock 1 slightly easier
+  than CAT, Mocks 2-4 at CAT level, Mock 5 harder"): implemented as a fixed
+  `{easy, medium, hard, very_hard}` count mix per tier (10/9/3/0 easier,
+  6/9/5/2 standard, 3/7/8/4 harder — always summing to 22), not just an
+  itemElo filter, which would have made a "harder" mock topic-thin given
+  how few very_hard items exist per topic. Applied to both full and
+  sectional mocks for consistency, even though §9.1 only mandates it for
+  full mocks — there was no reason to leave sectionals ungraded once the
+  content was there to support it.
+- **Selection still spreads across micro-topics** within each difficulty
+  bucket (same shuffle-and-round-robin logic `compose_mock_1.py`
+  introduced), popped from a shared pool across all 10 compositions in one
+  script run so two mocks can never draw the same question.
+- **Content-scoped, not content-complete — same call as mock-1 and every
+  prior milestone's honest framing.** VARC has 7 questions (need 24/mock)
+  and DILR has 2 sets (need ~5/mock); every mock here is QA-only, same as
+  mock-1, with an explicit `composedNote` rather than a silently-empty or
+  padded section. §9.2's own wording anticipates this exact shortfall
+  ("ship 5 × VARC / 5 × DILR / 5 × QA sectional **if the bank allows; 5
+  total if not**") — 5 QA sectionals is that documented fallback, not a
+  shortfall against spec.
+- **`Today.tsx` mock list upgraded** from bare ids to title + kind ("Full
+  mock"/"Sectional") + a difficulty label ("Easier"/"CAT level"/"Harder") —
+  fetches every `MockDefinition` (10 small files, cheap) rather than just
+  the id index, since a milestone about difficulty grading needs the
+  grading to actually be visible somewhere, not just present in the JSON.
+
+**One real bug caught by live Playwright testing, not by CI** (typecheck/
+lint/tests/build were all green throughout): after composing the new
+mocks and re-syncing content, `MockPlayer` failed to load `mock-5` and
+`sectional-qa-1` with `Unexpected token '<'... is not valid JSON` — one
+specific question file (`qa.arith.tsd-relative-speed.gen-aae6b60d06.json`,
+confirmed present on disk, valid JSON, checksum-matched between `/content`
+and the synced `/app/public/content` copy) was being served as the SPA's
+`index.html` fallback (200, `text/html`) instead of its real JSON, only
+through the dev server that had been running continuously since early in
+this session across many `rm -rf` + recursive-`cp` content syncs. A full
+dev-server restart (not a content or app-code fix) resolved it immediately
+and the same URL served correctly afterward — a long-lived Vite dev
+session's static-file layer going stale under repeated bulk directory
+replacement, not a bug in anything committed. Documented here since it's
+exactly the kind of thing that looks like a content bug at first glance;
+if this recurs, restart `npm run dev` before suspecting the content pipeline.
+
+Verified live end to end: `Today.tsx`'s Mocks section lists all 10 with
+correct titles/kind/difficulty labels; `mock-5` (harder) and
+`sectional-qa-1` (easier) both load their intro screens with the correct
+section (QA, 40 min, 22 questions), the correct `composedNote` text, and
+the hard-lock/no-back-navigation copy — zero console errors. Full mock
+attempt-to-completion (sitting through a real 40-minute section) wasn't
+re-exercised here since Milestone 10 already proved the section-timer/
+palette/crash-recovery/scoring mechanics live on `mock-1` with the same
+`MockPlayer` component — this milestone only changed *which* questions get
+composed into *which* mock ids, not the player itself.
+
+Run locally: `cd pipeline && conda run -n cat-pipeline python
+compose_mocks_m14.py`, then `cd app && npm run dev`, visit `/#/` to see
+all 10 mocks listed, or `/#/mock/mock-5` / `/#/mock/sectional-qa-1`
+directly.
 
 ### Milestone 13 — Content pipeline v3 (done, content-scoped)
 
