@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Synced from /content at dev/build time by scripts/sync-content.mjs.
+# /content is the single source of truth; this copy is never committed.
+public/content
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

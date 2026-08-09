@@ -40,6 +40,86 @@ produced or validated by the Python pipeline.
 
 ## Completed
 
+### Milestone 4 — Question Player (done)
+- **Architecture decision, not previously specified anywhere in SPEC.md: how
+  content JSON reaches the browser at runtime.** SPEC.md never states this
+  explicitly, only implies it (§16's `CONTENT_VERSION` service-worker-cache
+  design, Milestone 15, only makes sense if content is fetched as static
+  assets rather than bundled into the JS). Decision made and implemented
+  (not asked about live, per the "don't stop" instruction this session —
+  flagging it clearly here instead): `/content` (repo root, single source
+  of truth, unchanged) is copied into `app/public/content` by
+  **`app/scripts/sync-content.mjs`**, wired as `predev`/`prebuild` (npm's
+  automatic pre-hook), so `npm run dev` and `npm run build` always run
+  against a fresh copy. `app/public/content` is **gitignored** — it's a
+  build artifact, never committed, so there's exactly one committed copy of
+  content data. The app fetches it at runtime via `fetch()` (see
+  `app/src/content/loadContent.ts`), not `import` — keeps content out of
+  the JS bundle, matters once the bank is 800+ items.
+  - Static hosting can't list a directory, so `sync-content.mjs` also
+    builds `public/content/questions/index.json` (id, microTopicIds,
+    section, format, difficulty, targetSeconds per question) by reading
+    every committed question file — this lets the app answer "all
+    questions for micro-topic X" without an HTTP request per file. It's
+    regenerated every sync, never committed, so it can't drift.
+- **`app/src/components/question-player/`**:
+  - `markdownSegments.ts` — a small hand-rolled tokenizer for the
+    `*Markdown` content fields, not a markdown library. Checked directly
+    against all 239 generated questions first: every one uses only plain
+    text + inline `$...$` KaTeX, nothing else — so rather than add a
+    markdown-parser dependency not listed in SPEC.md §7, this splits text
+    into text / inline-math / block-math (`$$...$$`, for forward
+    compatibility) / image (`![alt](src)`) segments. Pure function, unit
+    tested (4 cases) without needing a DOM.
+  - `Markdown.tsx` — renders those segments, math via `react-katex`
+    (`InlineMath`/`BlockMath`, per SPEC.md §7's existing KaTeX line).
+  - `QuestionPlayer.tsx` — the component itself. State machine:
+    `answering` (render MCQ options or TITA input, elapsed-time stopwatch
+    against `targetSeconds`, mark-for-review toggle, skip) →
+    `confidence` (guess/unsure/sure — asked **before** correctness is
+    revealed, per SPEC.md §5.2's explicit ordering) → `revealed`
+    (correct/incorrect, `solutionMarkdown` + `altSolutionMarkdown`,
+    error-tag chips shown only when incorrect, optional). "Next" builds
+    the `Attempt` record and calls `storage.addAttempt()` (Milestone 2's
+    `StorageAdapter`) directly — logging isn't left to a caller to
+    remember. TITA correctness checks numeric answers against
+    `titaTolerance` (falls back to exact string match for non-numeric
+    `correctValue`).
+- **`app/src/content/loadContent.ts`** — `loadSyllabus()`,
+  `loadQuestionIndex()`, `loadQuestion(id)`, `loadQuestionsForMicroTopic(id)`,
+  all fetching from the synced static copy, in-memory cached per call.
+- **`app/src/pages/Today.tsx`** (replaces the Milestone 0 placeholder) and
+  **`app/src/pages/Drill.tsx`** (new route `/drill/:topicId`) — a minimal
+  but real navigation harness to exercise the player: topic list with live
+  question counts → play through every question for that topic → a
+  drill-complete summary. This is **not** Milestone 6's Learn→Drill loop
+  (no Lesson reader, no adaptive selection, no planner integration — those
+  are their own milestones) — it exists so Milestone 4's component could
+  actually be driven end-to-end and verified, and happens to double as a
+  working drill mode already.
+- **Verified live in a real Chromium instance (Playwright), not just
+  typecheck/build**: topic list loads (45 topics, real counts) → opened a
+  TITA question (percentages), answered wrong, went through confidence →
+  reveal → error-tag chips → Next → opened an MCQ question
+  (ratio-proportion-variation), selected an option, same flow, KaTeX
+  rendered correctly for both plain and fraction-heavy solutions (checked
+  `.katex` elements were actually present, not just no crash) → ran a full
+  8-question drill via Skip to the completion screen → **queried
+  IndexedDB directly** (`indexedDB.open('ascent')` → `attempts` store) and
+  confirmed 8 real `Attempt` records were persisted with the correct
+  shape. Zero console/page errors across the whole run.
+- Dependencies added: `katex`, `react-katex` (+ `@types/*`) — both already
+  named in SPEC.md §7, no new approval needed.
+- Ran the full local sequence before committing: lint → typecheck →
+  JSON-Schema drift → TS-types drift → vitest (15 tests, 4 new for the
+  markdown tokenizer) → build. All green. Bundle is 640 kB (mostly KaTeX's
+  font files) — noted as a known cost, not addressed here; code-splitting
+  the KaTeX-dependent components would be a Milestone 17 (Polish) concern
+  if it matters by then.
+- Built in parallel with the Milestone 3 addendum below (disjoint files:
+  `/app` here vs `/pipeline` + `/content/questions` there), so neither
+  blocked on the other.
+
 ### Milestone 3 addendum — QA question bank scale-up (done)
 Follow-up to Milestone 3: scaled up item counts within the same
 generate-then-independently-verify pattern (no new sourcing — everything
