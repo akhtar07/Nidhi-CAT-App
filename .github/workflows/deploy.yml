@@ -66,6 +66,10 @@ jobs:
         working-directory: pipeline
         run: python validate_content.py
 
+      - name: Unit tests
+        working-directory: app
+        run: npm run test
+
       - name: Build
         working-directory: app
         run: npm run build

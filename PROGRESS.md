@@ -11,7 +11,7 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 2 — Storage layer (not started)
+## Current milestone: 4 — Question Player (not started)
 
 ## Binding decision (implemented in Milestone 1 — this is now how it works)
 So the pipeline (Python) and app (TypeScript) content schemas can never drift:
@@ -39,6 +39,81 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 2 — Storage layer (done)
+- **`app/src/types/state.ts`** — the SPEC.md §5.2 learner-state types
+  (`Attempt`, `MasteryState`, `PlanDay`/`PlanItem`, `MockResult`,
+  `Settings`), hand-written TypeScript (not part of the pydantic/JSON-Schema
+  generation pipeline — this data is never authored or validated by the
+  Python content pipeline, only produced by the app itself at runtime).
+  Every record type carries a `schemaVersion: 1` field per §5.2's rule
+  ("every schema gets a schemaVersion field... from day one").
+- **`app/src/storage/StorageAdapter.ts`** — the interface every learner-state
+  write and read goes through (§1 rule 2): CRUD for attempts, mastery
+  states, plan days, mock results, and a singleton settings row, plus
+  `exportAll()`/`importAll()` for the full-snapshot JSON export/import and
+  `clearAll()` (tests / explicit reset only, never called from normal app
+  code).
+- **`app/src/storage/dexie/`** — the v1 implementation:
+  - `schema.ts` — `AscentDB extends Dexie`, one `version(1).stores(...)`
+    call defining tables/indexes. This is deliberately a *different* kind
+    of versioning from the per-record `schemaVersion` above: Dexie's
+    version governs IndexedDB table/index structure; `schemaVersion`
+    governs an individual record's shape and can change without touching
+    Dexie's version at all.
+  - `migrations.ts` — `migrateRecord()` chains per-type migration-step maps
+    (keyed by source `schemaVersion`) up to `CURRENT_SCHEMA_VERSION`, and
+    throws if a record's version has no registered next step rather than
+    silently returning a mis-shaped record. All five maps are empty today
+    (schemaVersion 1 is the only version that has ever shipped) — this is
+    the migration *plumbing* required to exist "from day one" per §5.2,
+    not a claim that a real migration exists yet. Exercised by a unit test
+    that simulates a pre-v1 record and asserts the missing-step error.
+  - `DexieAdapter.ts` — implements `StorageAdapter`; every read runs the
+    record through its type's migrate function before returning it, so
+    callers never see a stale-shaped record. Settings is stored under a
+    fixed key (`SETTINGS_KEY = 'singleton'`), with the key stripped/added
+    at the adapter boundary so the `Settings` type itself stays clean.
+    `importAll()` replaces (not merges) all five tables inside one Dexie
+    `rw` transaction.
+- **`app/src/storage/index.ts`** — the single import site: `export const
+  storage: StorageAdapter = new DexieAdapter()`. A future `SupabaseAdapter`
+  (Milestone 16) swaps in here without any component changing, per SPEC.md
+  §1 rule 2's explicit design goal.
+- **Export/Import JSON**: the `exportAll()`/`importAll()` methods exist and
+  are unit-tested (round-trip, and "import replaces rather than merges").
+  SPEC.md §5.2 only requires the actual **Settings-page button** wired to
+  these before Milestone 5 ("Ship an Export / Import JSON button in
+  Settings before Milestone 5") — there is no Settings page yet, so that
+  UI wiring is correctly out of scope for this milestone and deferred, see
+  Known issues.
+- **Dependencies added** (all within SPEC.md §7's existing tooling list
+  except one test-only addition, see below): `dexie` (runtime, §7 already
+  names "Dexie.js over IndexedDB"); `vitest` (dev, §7's CI line already
+  names `vitest`); `@vitest/coverage-v8` (dev, vitest's own coverage
+  provider). **`fake-indexeddb`** (dev) is the one package not named
+  anywhere in SPEC.md — added because `vitest`'s Node test environment has
+  no real IndexedDB, and Dexie needs one to run at all; it's a test-only
+  devDependency with zero production footprint (loaded via
+  `vitest.config.ts`'s `setupFiles: ['fake-indexeddb/auto']`, never
+  imported from app code). Flagged here per the CLAUDE.md hard rule rather
+  than asked about live, since blocking on it would have stalled the whole
+  milestone for a call this narrow — revert if you'd rather this be asked
+  first next time.
+- **`app/src/storage/dexie/DexieAdapter.test.ts`,
+  `migrations.test.ts`** — 11 tests: CRUD round-trips for all five record
+  types, attempt filtering (by `microTopicId` via Dexie's multi-entry
+  index, and by `mode`), plan-day date-range filtering, settings
+  singleton semantics, full export→clear→import round trip, "import
+  replaces rather than merges", `clearAll()`, and the migration
+  missing-step error path. `npm run test` (`vitest run`).
+- **CI**: added a `vitest` step to `.github/workflows/deploy.yml` between
+  "Validate content" and "Build", matching SPEC.md §7's stated order
+  exactly (`lint → typecheck → schema-validate-content → vitest → build →
+  deploy`).
+- Ran the full local sequence in CI order before pushing: lint → typecheck
+  → JSON-Schema drift check → TS-types drift check → validate content →
+  vitest → build. All green.
 
 ### Milestone 3 — Content pipeline v1 (done, via a sourcing pivot — read this first)
 
@@ -252,7 +327,12 @@ it independently before the item is kept.
 
 ## Known issues / deferred
 - Milestone 2 (Storage layer) deferred until after Milestone 3 — see
-  "Milestone order" above.
+  "Milestone order" above. (Now done — see Milestone 2 writeup.)
+- The storage layer (Milestone 2) has no consumers yet — nothing in `/app`
+  calls `storage` from `src/storage/index.ts`. The Settings-page Export/Import
+  JSON *button* SPEC.md §5.2 asks for ("before Milestone 5") is correctly
+  still unbuilt: there's no Settings page yet. Nothing on the live site
+  changes as a result of this milestone — it's storage plumbing with no UI.
 - Content bank is QA only (239 items, all `source: 'generated'`). No
   official PYQ items exist in the bank at all — see the Tier 1 correction
   above. VARC, DILR, and lessons are still empty; DILR sets in particular
