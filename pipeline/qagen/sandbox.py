@@ -42,6 +42,16 @@ import json as _json
 {code}
 
 _result = compute()
+# sympy numeric types (Float, Integer, Rational, ...) aren't natively JSON-serializable —
+# coerce to a plain Python type first rather than letting a correct answer fail to report
+# just because it came out of a symbolic computation.
+try:
+    _json.dumps(_result)
+except TypeError:
+    try:
+        _result = float(_result)
+    except (TypeError, ValueError):
+        _result = str(_result)
 print(_json.dumps({{"ok": True, "result": _result}}))
 """
 
