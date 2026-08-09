@@ -25,7 +25,9 @@ function formatSeconds(total: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`
 }
 
-function computeCorrect(question: Question, given: string | null): boolean {
+/** Shared with the mock engine's scoring (app/src/mock/scoring.ts) — same correctness rule
+ * everywhere an Attempt's `correct` flag is derived. */
+export function computeCorrect(question: Question, given: string | null): boolean {
   if (given === null) return false
   if (question.format === 'mcq') {
     return given === question.correctKey

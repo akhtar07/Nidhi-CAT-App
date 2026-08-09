@@ -3,6 +3,7 @@ import { Calendar } from '@/pages/Calendar'
 import { Diagnostic } from '@/pages/Diagnostic'
 import { Drill } from '@/pages/Drill'
 import { Lesson } from '@/pages/Lesson'
+import { MockPlayer } from '@/pages/MockPlayer'
 import { PassageSetPlayer } from '@/pages/PassageSetPlayer'
 import { Settings } from '@/pages/Settings'
 import { Today } from '@/pages/Today'
@@ -16,6 +17,7 @@ function App() {
       <Route path="/lesson/:topicId" element={<Lesson />} />
       <Route path="/drill/:topicId" element={<Drill />} />
       <Route path="/set/:setId" element={<PassageSetPlayer />} />
+      <Route path="/mock/:mockId" element={<MockPlayer />} />
       <Route path="/settings" element={<Settings />} />
     </Routes>
   )

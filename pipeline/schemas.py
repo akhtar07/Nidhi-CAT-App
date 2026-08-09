@@ -135,6 +135,12 @@ class Question(ContentModel):
     sourceRef: str | None = Field(default=None, description="e.g. 'CAT 2023 Slot 2 Q14'.")
     verification: VerificationRecord
     tags: list[str] = Field(default_factory=list)
+    mockReserved: bool = Field(
+        default=False,
+        description="SPEC.md §9.1: 'maintain a mock_reserved flag on items so the drill engine "
+        "can never serve them.' Optional/defaults False so every already-committed item stays "
+        "valid without a rewrite.",
+    )
 
     @model_validator(mode="after")
     def _check_format_specific_fields(self) -> "Question":
@@ -177,6 +183,30 @@ class ExamMeta(ContentModel):
 
 
 # ---------------------------------------------------------------------------
+# Mock definitions (SPEC.md §9.1/§9.2). A mock is just a composed list of
+# already-verified question ids per section plus the section's time budget —
+# the mock engine (Milestone 10) reads this, it never invents questions.
+# ---------------------------------------------------------------------------
+
+
+class MockSectionDef(ContentModel):
+    section: Section
+    minutes: Annotated[int, Field(gt=0)]
+    questionIds: list[str] = Field(default_factory=list)
+
+
+class MockDefinition(ContentModel):
+    id: str = Field(min_length=1)
+    title: str = Field(min_length=1)
+    kind: Literal["full", "sectional"]
+    difficultyTier: Literal["easier", "standard", "harder"] = "standard"
+    sections: list[MockSectionDef] = Field(min_length=1)
+    composedNote: str | None = Field(
+        default=None, description="Honest caveat about composition gaps, e.g. content not ready yet."
+    )
+
+
+# ---------------------------------------------------------------------------
 # Passage / set (RC and DILR)
 # ---------------------------------------------------------------------------
 
@@ -208,4 +238,5 @@ CONTENT_MODELS: dict[str, type[ContentModel]] = {
     "question": Question,
     "passage-set": PassageSet,
     "exam-meta": ExamMeta,
+    "mock-definition": MockDefinition,
 }

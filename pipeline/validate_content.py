@@ -29,7 +29,7 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
-from schemas import ExamMeta, Lesson, MicroTopic, PassageSet, Question
+from schemas import ExamMeta, Lesson, MicroTopic, MockDefinition, PassageSet, Question
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = REPO_ROOT / "content"
@@ -144,6 +144,21 @@ def main() -> int:
             ExamMeta(**json.loads(exam_meta_path.read_text()))
         except ValidationError as e:
             errors.append(f"content/exam-meta.json: {e}")
+
+    mocks_dir = CONTENT_DIR / "mocks"
+    if mocks_dir.exists():
+        known_question_ids = {p.stem for p in (CONTENT_DIR / "questions").glob("*.json")}
+        for path in sorted(mocks_dir.glob("*.json")):
+            rel = path.relative_to(REPO_ROOT)
+            try:
+                mock = MockDefinition(**json.loads(path.read_text()))
+            except ValidationError as e:
+                errors.append(f"{rel}: {e}")
+                continue
+            for section in mock.sections:
+                for qid in section.questionIds:
+                    if qid not in known_question_ids:
+                        errors.append(f"{rel}: section {section.section} references unknown question {qid!r}")
 
     if errors:
         print(f"content validation FAILED — {len(errors)} error(s):\n")

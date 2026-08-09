@@ -32,6 +32,12 @@ const files = (await readdir(questionsDir)).filter((f) => f.endsWith('.json'))
 const index = []
 for (const file of files) {
   const q = JSON.parse(await readFile(path.join(questionsDir, file), 'utf-8'))
+  // SPEC.md §9.1: "maintain a mock_reserved flag on items so the drill
+  // engine can never serve them." Excluded from the index entirely — not
+  // just filtered by the drill queue — so nothing that scans the index
+  // (drill selection, the diagnostic) can discover a reserved item at all.
+  // The mock engine loads reserved questions directly by id instead.
+  if (q.mockReserved) continue
   index.push({
     id: q.id,
     microTopicIds: q.microTopicIds,
@@ -84,6 +90,23 @@ try {
   // No content/passage-sets/ directory yet — nothing to index.
 }
 
+// Same reasoning for mocks (Milestone 10): a small index of available mock ids.
+const mocksDir = path.join(DEST, 'mocks')
+let mockIds = []
+try {
+  const mockFiles = (await readdir(mocksDir)).filter((f) => f.endsWith('.json') && f !== 'index.json')
+  mockIds = await Promise.all(
+    mockFiles.map(async (file) => {
+      const mock = JSON.parse(await readFile(path.join(mocksDir, file), 'utf-8'))
+      return mock.id
+    }),
+  )
+  await writeFile(path.join(mocksDir, 'index.json'), JSON.stringify(mockIds))
+} catch {
+  // No content/mocks/ directory yet — nothing to index.
+}
+
 console.log(
-  `Synced ${SRC} -> ${DEST} (${index.length} questions, ${lessonMicroTopicIds.length} lessons, ${passageSetIndex.length} passage-sets indexed)`,
+  `Synced ${SRC} -> ${DEST} (${index.length} questions, ${lessonMicroTopicIds.length} lessons, ` +
+    `${passageSetIndex.length} passage-sets, ${mockIds.length} mocks indexed)`,
 )

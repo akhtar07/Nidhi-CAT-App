@@ -1,0 +1,37 @@
+{
+  "id": "mock-1",
+  "title": "Full Mock 1",
+  "kind": "full",
+  "difficultyTier": "easier",
+  "sections": [
+    {
+      "section": "QA",
+      "minutes": 40,
+      "questionIds": [
+        "qa.geometry.mensuration-3d.gen-4d38d2ef1d",
+        "qa.numsys.factors-count-sum-product.gen-bf61232c40",
+        "qa.arith.mixtures-alligation.gen-eacdab3cab",
+        "qa.algebra.quadratic-equations.gen-3bb7d86b89",
+        "qa.modern.permutations-combinations.gen-8efba9f651",
+        "qa.algebra.progressions.gen-23f2e8f680",
+        "qa.geometry.trigonometry.gen-ab629bbe60",
+        "qa.arith.si-ci-instalments.gen-3c33db0ff6",
+        "qa.numsys.divisibility-factors.gen-af80e6e0f1",
+        "qa.algebra.logarithms.gen-ee1db47366",
+        "qa.geometry.circles.gen-751b963e25",
+        "qa.numsys.remainders.gen-ba5f255674",
+        "qa.arith.ratio-proportion-variation.llm-0615b019cd",
+        "qa.arith.tsd-trains.gen-9a61b5b66e",
+        "qa.arith.averages-weighted-averages.gen-659d82e74c",
+        "qa.geometry.triangles.gen-7f8a6d0f50",
+        "qa.geometry.coordinate-geometry.gen-0001d5ea5e",
+        "qa.numsys.base-systems.gen-50b2e54818",
+        "qa.arith.tsd-circular-tracks.gen-92c0742d32",
+        "qa.algebra.inequalities-modulus.gen-298a307b6c",
+        "qa.numsys.last-digit-trailing-zeroes.gen-93b46ce039",
+        "qa.algebra.surds-indices.gen-2a3fe768ee"
+      ]
+    }
+  ],
+  "composedNote": "VARC and DILR sections aren't included yet: no VARC content exists, and the one DILR set that does is already used in the Passage/Set player demo rather than reserved for a mock. Milestone 13 (Content pipeline v3) is where RC/VA/DILR-set generation happens \u2014 this mock exercises the real section-locked, timed engine on the one section that has enough verified content, rather than padding the other two sections with an empty, un-skippable 40-minute block."
+}

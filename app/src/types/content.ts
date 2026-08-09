@@ -88,6 +88,26 @@ export interface MicroTopic {
   targetSecPerQuestion: number
 }
 
+export interface MockDefinition {
+  id: string
+  title: string
+  kind: 'full' | 'sectional'
+  difficultyTier?: 'easier' | 'standard' | 'harder'
+  /**
+   * @minItems 1
+   */
+  sections: [MockSectionDef, ...MockSectionDef[]]
+  /**
+   * Honest caveat about composition gaps, e.g. content not ready yet.
+   */
+  composedNote?: string | null
+}
+export interface MockSectionDef {
+  section: 'VARC' | 'DILR' | 'QA'
+  minutes: number
+  questionIds?: string[]
+}
+
 export interface PassageSet {
   id: string
   section: 'VARC' | 'DILR'
@@ -148,6 +168,10 @@ export interface Question {
   sourceRef?: string | null
   verification: VerificationRecord
   tags?: string[]
+  /**
+   * SPEC.md §9.1: 'maintain a mock_reserved flag on items so the drill engine can never serve them.' Optional/defaults False so every already-committed item stays valid without a rewrite.
+   */
+  mockReserved?: boolean
 }
 export interface QuestionOption {
   key: string

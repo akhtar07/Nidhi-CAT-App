@@ -1,0 +1,49 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.llm-9c55d154ca",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "The ratio of boys to girls in a class is $3:2$. If there are $10$ more boys than girls, how many students are there in total?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$50$"
+    },
+    {
+      "key": "B",
+      "markdown": "$60$"
+    },
+    {
+      "key": "C",
+      "markdown": "$70$"
+    },
+    {
+      "key": "D",
+      "markdown": "$80$"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the number of boys be $3x$ and the number of girls be $2x$. According to the problem, we have:\n\n$$\n3x = 2x + 10 \\\\\n=> x = 10.\n$$\nTherefore, the total number of students is:\n\n$$\n3x + 2x = 5x = 5 \\times 10 = 50.\n$$",
+  "altSolutionMarkdown": "As per the ratio $3:2$, let's assume the number of boys to be $3k$ and girls to be $2k$. Since there are $10$ more boys than girls:\n\n$$\n3k - 2k = 10 \\\\\nk = 10.\n$$\nThe total students: $5k = 5 \\times 10 = 50.$",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "ratio",
+    "proportion"
+  ]
+}

@@ -18,10 +18,14 @@ interface DrillSession {
 }
 
 async function buildSession(topicId: string): Promise<DrillSession | null> {
-  const [topic, topicQuestions] = await Promise.all([
+  const [topic, allTopicQuestions] = await Promise.all([
     loadMicroTopic(topicId),
     loadQuestionsForMicroTopic(topicId),
   ])
+  // SPEC.md §9.1: "maintain a mock_reserved flag on items so the drill
+  // engine can never serve them" — filtered here, before anything downstream
+  // (item-Elo banding, mastery denominators, the actual queue) ever sees them.
+  const topicQuestions = allTopicQuestions.filter((q) => !q.mockReserved)
   if (!topic || topicQuestions.length === 0) return null
 
   const [masteryState, attempts] = await Promise.all([

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   loadLessonIndex,
+  loadMockIndex,
   loadPassageSetIndex,
   loadQuestionIndex,
   loadSyllabus,
@@ -28,6 +29,7 @@ export function Today() {
   const navigate = useNavigate()
   const [rows, setRows] = useState<TopicRow[] | null>(null)
   const [sets, setSets] = useState<PassageSetIndexEntry[]>([])
+  const [mockIds, setMockIds] = useState<string[]>([])
   const [error, setError] = useState<string | null>(null)
   const [todayPlan, setTodayPlan] = useState<PlanDay | null>(null)
   const [topicNameById, setTopicNameById] = useState<Map<string, string>>(new Map())
@@ -67,6 +69,10 @@ export function Today() {
       .getPlanDay(todayIso)
       .then((day) => setTodayPlan(day ?? null))
       .catch(() => undefined)
+
+    loadMockIndex()
+      .then(setMockIds)
+      .catch(() => undefined)
   }, [])
 
   return (
@@ -95,11 +101,13 @@ export function Today() {
                 <span className={item.done ? 'text-muted-foreground line-through' : ''}>
                   {item.kind} · {planItemLabel(item.microTopicId, topicNameById)}
                 </span>
+                {item.microTopicId === MOCK_SENTINEL && mockIds[0] && (
+                  <Link to={`/mock/${mockIds[0]}`} className="text-xs text-primary underline">
+                    Go
+                  </Link>
+                )}
                 {item.microTopicId !== MOCK_SENTINEL && item.microTopicId !== REVIEW_SENTINEL && (
-                  <Link
-                    to={`/drill/${item.microTopicId}`}
-                    className="text-xs text-primary underline"
-                  >
+                  <Link to={`/drill/${item.microTopicId}`} className="text-xs text-primary underline">
                     Go
                   </Link>
                 )}
@@ -140,6 +148,19 @@ export function Today() {
                 <span className="text-muted-foreground">
                   {set.questionIds.length} questions · {set.targetMinutes} min
                 </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {mockIds.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-2 text-sm font-medium text-muted-foreground">Mocks</h2>
+          <ul className="divide-y divide-border rounded-lg border border-border">
+            {mockIds.map((id) => (
+              <li key={id} className="px-4 py-3 text-sm hover:bg-muted">
+                <Link to={`/mock/${id}`}>{id}</Link>
               </li>
             ))}
           </ul>

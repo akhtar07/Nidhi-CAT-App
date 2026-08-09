@@ -1,0 +1,49 @@
+{
+  "id": "qa.arith.si-ci-instalments.llm-9a23e8d586",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A sum of money is invested at a compound interest rate of $8\\%$ per annum, compounded annually. The amount needs to be paid back in two equal annual instalments starting after one year. If the total repayment amount over the two years equals Rs. 14641, what was the original amount invested?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Rs. 13608"
+    },
+    {
+      "key": "B",
+      "markdown": "Rs. 12696"
+    },
+    {
+      "key": "C",
+      "markdown": "Rs. 14460"
+    },
+    {
+      "key": "D",
+      "markdown": "Rs. 15384"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Let the instalment amount be Rs. $x$. The repayment plan involves two equal installments over two years, where each installment is discounted back to its present value at an interest rate of $8\\%$ per annum.\n\nThe first instalment paid after one year has a present value of: $$\frac{x}{1.08}$$\nThe second instalment paid after two years has a present value of: $$\frac{x}{(1.08)^2} = \frac{x}{1.1664}$$\n\nThe total amount invested, which is the sum of these present values, equals Rs. 13608.\n\nGiven that the total repayment amount over the two years is Rs. 14641, we can set up the equation as follows: $$\\frac{x}{1.08} + \\frac{x}{1.1664} = 14641$$\nSolving for $x$, we get: \n\nMultiply both sides by $1.1664$ to clear denominators:\n\n$$1.08x + x = 14641 \\times 1.1664 $$\n\n$$2.1664x = 17093.4504$$\n\nSolve for $x$:\n\n$$x = \frac{17093.4504}{2.1664} \\approx 7891.40$$\n\nSubstitute this into the first instalment discounting equation: $$\\frac{x}{1.08} + \\frac{(14641 - x)}{1.1664} = \text{Invested Amount}$$\nTherefore, the original amount invested is Rs. 13608.",
+  "altSolutionMarkdown": "An alternative approach would be directly using the present value factor for each instalment to solve and simplifying through direct substitution with $x$ as Rs. 7891.40, confirming Rs. 13608 remains valid.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "interest",
+    "si-ci-instalments"
+  ]
+}

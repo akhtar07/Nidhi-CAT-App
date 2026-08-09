@@ -110,6 +110,37 @@ export interface MockResult {
   percentileEstimate?: number
 }
 
+export type PaletteStatus = 'not_visited' | 'not_answered' | 'answered' | 'marked' | 'answered_marked'
+
+export interface MockQuestionState {
+  given: string | null
+  markedForReview: boolean
+  visitCount: number
+  /** Cumulative seconds actually spent on this question — SPEC.md §9.1's "silently record
+   * per-question dwell time." */
+  dwellSec: number
+}
+
+/**
+ * Milestone 10: the *in-progress* mock (SPEC.md §9.1's crash recovery —
+ * "persist mock state to IndexedDB every 5 seconds; on reload, resume with
+ * the correct remaining time"). Distinct from MockResult, which only exists
+ * once a mock is finished. A singleton like Settings: SPEC.md's flow is
+ * "resume THE in-progress mock," never several at once.
+ */
+export interface MockSession {
+  schemaVersion: 1
+  mockId: string
+  startedAt: number
+  currentSectionIndex: number
+  /** Wall-clock timestamp the current section started — remaining time is computed from this on
+   * every read, not a pausable countdown, so a closed tab doesn't freeze the clock. */
+  sectionStartedAt: number
+  currentQuestionIndex: number
+  questionStates: Record<string, MockQuestionState>
+  completedSectionIndices: number[]
+}
+
 export interface Settings {
   schemaVersion: 1
   dailyMinutes: number

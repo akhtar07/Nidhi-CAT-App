@@ -1,4 +1,4 @@
-import type { ExamMeta, Lesson, MicroTopic, PassageSet, Question } from '@/types/content'
+import type { ExamMeta, Lesson, MicroTopic, MockDefinition, PassageSet, Question } from '@/types/content'
 
 /**
  * All shipped content is fetched at runtime from static JSON under
@@ -103,4 +103,14 @@ export function loadPassageSetIndex(): Promise<PassageSetIndexEntry[]> {
 
 export function loadPassageSet(id: string): Promise<PassageSet> {
   return fetchJson<PassageSet>(contentUrl(`passage-sets/${id}.json`))
+}
+
+let mockIndexCache: Promise<string[]> | null = null
+export function loadMockIndex(): Promise<string[]> {
+  mockIndexCache ??= fetchJson<string[]>(contentUrl('mocks/index.json'))
+  return mockIndexCache
+}
+
+export function loadMockDefinition(id: string): Promise<MockDefinition> {
+  return fetchJson<MockDefinition>(contentUrl(`mocks/${id}.json`))
 }

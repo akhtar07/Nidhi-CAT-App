@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.llm-0615b019cd",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Two numbers are in the ratio of $5:7$. If their sum is $48$, what is the larger number?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "20"
+    },
+    {
+      "key": "B",
+      "markdown": "24"
+    },
+    {
+      "key": "C",
+      "markdown": "28"
+    },
+    {
+      "key": "D",
+      "markdown": "35"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the two numbers be $5x$ and $7x$. According to the problem, their sum is 48. Therefore, we have:\n$$5x + 7x = 12x = 48$$\nsolving for $x$, we get:\n$$ x = \\frac{48}{12} = 4 $$\nThe larger number in the ratio is $7x$:\n$$ 7x = 7 \times 4 = 28 $$",
+  "altSolutionMarkdown": "We can directly divide their sum by the combined parts of the ratio (5+7) and then multiply by the part representing the larger number: \\(\\frac{48}{12} \\times 7 = 28\\)",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "ratio",
+    "sum-proportion"
+  ],
+  "mockReserved": true
+}

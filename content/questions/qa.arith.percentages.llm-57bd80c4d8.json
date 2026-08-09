@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.percentages.llm-57bd80c4d8",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A store bought a TV set at $240 and sold it at a profit of 25%. What was the selling price?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$300"
+    },
+    {
+      "key": "B",
+      "markdown": "$310"
+    },
+    {
+      "key": "C",
+      "markdown": "$280"
+    },
+    {
+      "key": "D",
+      "markdown": "$350"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The cost price of the TV set is $240. The profit made on selling it is 25% of the cost price.\n\nProfit = 25\\% \\times 240 = \\frac{25}{100} \\times 240 = 0.25 \\times 240 = 60.\n\nTherefore, the selling price is Cost Price + Profit = 240 + 60 = $300.",
+  "altSolutionMarkdown": "A faster approach is to recognize that a 25% profit means the selling price is 125% of the cost price. Thus,\n$$\text{Selling Price} = \\frac{125}{100} \\times 240 = 1.25 \\times 240 = $300.$",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "percentages",
+    "profit-loss"
+  ],
+  "mockReserved": false
+}

@@ -11,13 +11,11 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 7 — Content pipeline v2 (not started)
+## Current milestone: 11 — Mock analytics (not started)
 
-**Milestone 6's own row in SPEC.md §15 says "Stop and demo this before
-scaling content."** Done below — but flagging explicitly that this is a
-SPEC-designated checkpoint, not just another milestone to plow through.
-The project owner should actually open `/lesson/qa.arith.percentages`
-before more content gets built on top of this pattern.
+Milestones 7, 8, and 9 are done (see below). Milestone 7's content-bank
+scale-up is a long-running background process, not a one-session task — see
+its entry for current bank size and how to check/resume it.
 
 ## Binding decision (implemented in Milestone 1 — this is now how it works)
 So the pipeline (Python) and app (TypeScript) content schemas can never drift:
@@ -46,7 +44,297 @@ produced or validated by the Python pipeline.
 
 ## Completed
 
-### Milestone 6 — Lesson reader + Learn→Drill loop (done — demo checkpoint, see note above)
+### Milestone 10 — Mock engine (done, content-scoped)
+
+SPEC.md §9.1's full mechanics, in `app/src/mock/` (pure, unit-tested: `paletteStatus.ts`,
+`scoring.ts`, `timing.ts` — 20 tests) plus `pages/MockPlayer.tsx` and
+`components/mock-player/{Palette,Calculator}.tsx`:
+
+- **Full-screen** on start (`requestFullscreen`), **exit warning** via `beforeunload` while a mock
+  is in progress.
+- **Per-section hard-locked countdown**, computed from wall-clock elapsed since
+  `session.sectionStartedAt` (never a pausable in-memory countdown — required for crash recovery
+  to show correct remaining time), amber/red styling under the 10-second SPEC.md-mandated warning
+  threshold, **auto-advance at 0:00**.
+- **No back-navigation**: `completedSectionIndices` tracks finished sections; the player only ever
+  renders the current section, nothing offers jumping back into a finished one.
+- **Real CAT palette convention** (`paletteStatus.ts`): not_visited (grey) / not_answered (red) /
+  answered (green) / marked (purple) / answered_marked (purple + ring) — deriving purely from
+  `{given, markedForReview, visitCount}`, no separate "status" field to keep in sync.
+- **Save & Next / Clear / Mark for Review & Next**, TITA numeric input vs. MCQ radio options.
+- **Draggable 4-function + %+ √ calculator** (pointer-event drag, no library).
+- **Dwell time + visit count per question**, accumulated via wall-clock deltas on every navigation.
+- **Crash recovery**: `MockSession` (new singleton-row learner-state type, full StorageAdapter →
+  Dexie v3 → migrations → ExportBundle plumbing, same pattern as every other learner-state type —
+  going through localStorage instead would have violated CLAUDE.md's "all learner state behind
+  StorageAdapter" rule) persisted every 5 seconds *and* immediately after every explicit
+  answer/navigation action. On mount, an existing session for the same mockId resumes instead of
+  restarting.
+- **`mock_reserved` flag** (SPEC.md §9.1 exact wording): new optional `Question.mockReserved`
+  field (schemas.py, backward-compatible default `False`). Reserved items are excluded from
+  `questions/index.json` entirely at sync time (`sync-content.mjs`), not just filtered at
+  selection time — nothing that scans the index (drill queue, the diagnostic) can discover one.
+  `Drill.tsx` also filters defensively at the point of use.
+- **Marking scheme** (`scoring.ts`): MCQ +3/-1, TITA +3/0 (SPEC.md §2's asymmetry), computed via
+  the same `computeCorrect()` QuestionPlayer already used — exported from there rather than
+  duplicated, so there's exactly one definition of "correct" anywhere in the app.
+- **New content type**: `MockDefinition`/`MockSectionDef` (schemas.py), validated in
+  `validate_content.py` with a question-id cross-reference check (a mock referencing a
+  non-existent question fails CI). `pipeline/compose_mock_1.py` composes one real mock from the
+  already-verified QA bank and flags the chosen items reserved — never invents a question.
+
+**Content-scoped, not content-complete.** SPEC.md §9.1 wants 5 full mocks (VARC 24Q / DILR 20Q as
+sets / QA 22Q, escalating difficulty). VARC has zero content and DILR has one set (already used in
+the Milestone 8 demo, not reserved), so **`mock-1` ships with only its QA section** (22 questions,
+spread across topics/difficulty). Initially composed with empty 40-minute VARC/DILR sections
+included "for format fidelity" — caught in live testing that this is actively worse than omitting
+them: the per-section timer runs for the section's full duration regardless of question count, so
+that would force sitting through two dead 40-minute blocks before ever reaching real content.
+Recomposed to include only sections with real content. The rest of the 5-mock, all-sections target
+is blocked on Milestone 13 (Content pipeline v3), same dependency Milestone 7's write-up already
+flagged for VARC/DILR-set generation.
+
+**Three real bugs caught via live Playwright testing** (not by typecheck — all logic bugs):
+1. `questions[index].id` was read before bounds-checking `index` against `questions.length` in an
+   early draft — same class of bug as Milestone 8's, from copying that page's end-of-list pattern
+   without re-deriving it; caught and fixed before it shipped.
+2. **Stale-closure double-update**: `markForReviewAndNext` originally composed two separate
+   `setSession(...)` calls in the same synchronous handler (toggle-mark, then save-and-advance);
+   both read the same pre-update `session` closure, so the first call's effect was silently lost.
+   Fixed by consolidating every answer/navigation path through one `commitAndGoTo()` that computes
+   the full next state once.
+3. **The crash-recovery persistence itself didn't work**, discovered by an actual reload-mid-mock
+   test: the first fix attempt captured the computed next-state from *inside* a functional
+   `setSession(prev => ...)` updater and tried to persist it immediately after — but React doesn't
+   invoke that updater synchronously inline (it's deferred to the render pass), so the captured
+   value was reliably still `null` right where it was read. Since `commitAndGoTo` is only ever
+   called once per handler (bug 2's fix made this safe), switched to computing `next` directly
+   from the `session` closure instead of a functional update, which *is* available synchronously
+   for persisting. Reconfirmed with the same reload test: resumes at the exact question and
+   remaining time.
+
+Verified live with a short-duration test mock (real mocks run 40-minute sections, impractical to
+sit through in an agent session): section auto-advances/auto-submits at 0:00 into "Mock complete,"
+a `MockResult` is written with correct per-section scores, one `Attempt` (`mode: 'mock'`) per
+question feeds `recordAttemptForMastery` same as Drill/Diagnostic, and `MockSession` is cleared
+after finishing.
+
+**Known gap**: mock-attempted questions are excluded from `topicQuestions` (since they're
+`mockReserved`, hence absent from the question index `loadQuestionsForMicroTopic` reads), so a
+mock attempt on a hard/very_hard item may not correctly register for that topic's ceiling-mastery
+criterion (SPEC.md §8.2). Elo updates are unaffected. Narrow enough to leave for now — full fix
+would mean threading reserved items back into mastery's topic-composition view without letting
+them leak into the drill queue.
+
+Run locally: `cd app && npm run dev`, then `/#/mock/mock-1`.
+
+### Milestone 9 — Planner, Calendar & Triage (done)
+
+SPEC.md §10 in full: `app/src/planner/` is four pure, independently unit-tested
+modules (28 tests) with no framework dependency —
+
+- **`roiSort.ts`** — `roiWeightedTopoSort()`: topological sort over
+  `MicroTopic.prerequisites` where topics with satisfied prerequisites are
+  ordered by `roiScore * catFrequencyWeight * (1 - currentMastery)`.
+  `currentMastery` has no direct source (MasteryState.status is categorical,
+  not a 0-1 scalar) — mapped via a fixed table
+  (`locked/available`→0, `learning`→0.3, `practising`→0.6, `decaying`→0.7,
+  `mastered`→1). A prerequisite cycle can't infinite-loop the sort; it just
+  breaks the cycle by taking any remaining topic.
+- **`generatePlan.ts`** — packs the sorted queue into `PlanDay[]` from today
+  to exam date: 20% of every day reserved for `kind: 'review'` (sentinel
+  `microTopicId: '__review__'` — real FSRS-scheduled review items are
+  Milestone 12), Sundays from week 3 onward become a single `kind: 'mock'`
+  day (sentinel `'__mock__'`), the last 3 weeks before the exam get zero new
+  `learn`/`drill` items (hard cutoff per spec), and topics costed at
+  `estLearnMinutes + 10 questions * targetSecPerQuestion` don't start on a
+  day that can't fit them if the day already has something else scheduled.
+  Already-`mastered` topics are excluded from the queue entirely.
+- **`coverageForecast.ts`** — SPEC.md §10.2's Triage: "high-ROI" = `roiScore
+  >= 3`; reports % of those actually scheduled before the cutoff, and names
+  the specific dropped topics + an hours estimate, not just a percentage.
+- **`missedDay.ts`** — SPEC.md §10.3: redistributes a missed day's undone
+  items across the next 5 days, capped at `max(1, floor(baselineItemsPerDay *
+  0.25))` per day (item-count is a proxy for "daily load" — PlanItem carries
+  no explicit minutes field), round-robin by day, dropping lowest
+  ROI-priority items first if capacity runs out.
+
+**Diagnostic** (`pages/Diagnostic.tsx`): ~15 questions via
+`diagnosticSelection.ts`, split evenly across VARC/DILR/QA and striding
+across difficulty within each section's pool, with an explicit top-up pass
+so a section with no content (VARC has none yet) doesn't shrink the total —
+its share gets redistributed to sections that do have content. Every
+attempt goes through the **existing, unmodified** `QuestionPlayer` →
+`recordAttemptForMastery` pipeline from Milestone 5 — there's no separate
+Elo-seeding mechanism to build or keep in sync; whatever topics the
+diagnostic happens to sample get a real, engine-computed `MasteryState`
+exactly like a normal drill attempt would produce. On completion,
+`generatePlan()` runs once and every `PlanDay` is written via
+`storage.putPlanDay`; `Settings.diagnosticCompletedAt` (new optional field,
+same "add it, document it" pattern as Milestone 5's `MasteryState`
+additions) gates the first-launch redirect in `Today.tsx`.
+
+**Calendar** (`pages/Calendar.tsx`): GitHub-style heatmap (last 12 weeks,
+intensity from `Attempt.timeSpentSec` summed per day), tap-a-day detail
+(planned items vs. actual attempts/correct/minutes), a 14-day forward list,
+exam-date + registration-deadline display (from the new `exam-meta.json`),
+the Coverage Forecast banner, and a missed-day banner with a "Redistribute"
+action wired to `missedDay.ts`. A "Regenerate plan" button reruns
+`generatePlan()` from **tomorrow** onward only — today's `PlanDay` is never
+touched, so a settings change (e.g. adjusting `dailyMinutes`) can't wipe out
+`done: true` flags on items already completed today.
+
+**Settings** (`pages/Settings.tsx`) gained the `dailyMinutes` / `examDate` /
+`weakSectionBias` editing fields SPEC.md §5.2 always specified but that had
+no UI to live in before this milestone.
+
+**New content type**: `content/exam-meta.json` (SPEC.md §2's hard facts —
+exam date, slots, registration window, marking scheme) is now a
+`schemas.py`-validated content type like everything else in `/content`,
+generated by `pipeline/build_exam_meta.py`. Not a directory-of-many-files
+like `questions/`, so `validate_content.py` validates it with a few
+dedicated lines rather than the shared `validate_dir()` helper.
+
+**Two real bugs caught by live Playwright testing, fixed before commit**
+(not by typecheck — both were logic bugs, not type errors):
+1. `diagnosticSelection`'s difficulty-striding loop had a guard bound
+   (`pool.length * 2`) that was too tight whenever a section's pool
+   clustered in one difficulty bucket (exactly this repo's current DILR
+   content — one set, mostly `easy`/`medium`) — it returned far fewer
+   questions than requested. Also didn't top up an empty section's share
+   from sections that do have content, so `selectDiagnosticQuestions(index,
+   15)` could return as few as 5. Rewrote with a per-section cursor and an
+   explicit top-up pass; both fixed and covered by new tests
+   (`diagnosticSelection.test.ts`).
+2. `generatePlan` was scheduling from the **entire syllabus**, including
+   VARC topics with zero questions in the bank — the generated plan
+   confidently scheduled "learn: Main Idea / Central Theme" with a "Go"
+   link to a topic that has no drillable content at all. Fixed with a new
+   `topicsWithContent()` helper in `loadContent.ts` (syllabus ∩ topics
+   present in the question index), used at both call sites (`Diagnostic`,
+   `Calendar`) instead of the raw `loadSyllabus()`.
+
+Run locally: `cd app && npm run dev`, visit on a fresh IndexedDB (or after
+`storage.clearAll()`) to see the diagnostic → plan → calendar flow.
+
+### Milestone 8 — Passage/Set player (done)
+
+One real DILR set for `dilr.di.tables`, same "one micro-topic fully playable
+end to end" approach as Milestone 6's single lesson:
+`pipeline/build_dilr_table_demo.py` generates a 5-company × 4-quarter
+revenue table and derives 4 questions from it, each answer computed by a
+`_expected()`-style function *from the same `DATA` dict the learner sees*
+and asserted in-script — not hand-typed separately, so a transcription slip
+would fail the script instead of shipping quietly wrong. `licence:
+CC0-1.0` (original synthetic data, nothing to attribute).
+
+`PassageSetPlayer.tsx` (route `/set/:setId`): renders the passage/table via
+a small `SetAsset`/`TableAsset` renderer (chart assets not implemented yet —
+no chart-type DILR content exists to build against), a set-level timer
+(amber at 1.5x target, red at 2.5x per SPEC.md §13 — the per-question timer
+in `QuestionPlayer` still doesn't have this, out of scope here), and the
+**attempt/skip decision step** SPEC.md §15's Milestone 8 row calls for
+explicitly. Skipping logs every question in the set as skipped
+(`given: null`) via `storage.addAttempt` directly, same semantics as an
+individual question's skip button, so mastery/SRS state doesn't silently
+drop them. Attempting reuses `QuestionPlayer` per question with the
+table/passage kept visible above it (single-column, matching this app's
+existing mobile-first layout — no split-pane).
+
+New content-loading plumbing: `loadPassageSetIndex()` / `loadPassageSet()`
+in `loadContent.ts`, a `passage-sets/index.json` manifest built by
+`sync-content.mjs` (same reasoning as the existing questions/lessons
+indexes — static hosting can't list a directory). `Today.tsx` gained a
+"Sets" section listing available sets.
+
+**One real bug caught by live Playwright testing**: the end-of-set
+completion check read `questions[index].id` before checking `index` against
+`questions.length` — crashed on `undefined.id` after the last question
+instead of reaching the "Set complete" screen. Fixed by reordering the
+bounds check first.
+
+### Milestone 7 — Content pipeline v2 (infrastructure done, generation ongoing)
+
+SPEC.md §6.3's full verification loop, implemented in `pipeline/qagen/`:
+
+- **`sandbox.py`** — runs an LLM-emitted `compute()` function in a
+  subprocess with a static import allowlist (`math`/`sympy`/`fractions`/
+  `itertools`/`decimal`/`statistics`/`cmath` only, regex-rejects
+  `os`/`subprocess`/`eval`/`exec`/etc. before ever executing), CPU/memory
+  `rlimit`s, and a timeout. Not a full seccomp jail — this runs
+  LLM-generated arithmetic code on the project owner's own machine, not
+  arbitrary untrusted internet input; the controls match what SPEC.md §6.3
+  actually asks for ("sandboxed subprocess with a timeout").
+- **`llm_harness.py`** — per item: draft (stem + options/value + solution +
+  verifier code) → run the verifier and require its output equal the
+  claimed value → for MCQ, a distractor-audit call → 5-sample
+  self-consistency at temperature 0.8 requiring ≥4 agreement → embedding
+  (`sentence-transformers`, `all-MiniLM-L6-v2`, cosine >0.92) + a
+  normalised-number hash dedup against the whole existing bank. Any failure
+  at any stage discards the item — never repaired, per SPEC.md §6.3's
+  explicit rule.
+- **`llm_client.py`** — thin OpenAI-compatible chat client. Points at
+  **Ollama** (`http://localhost:11434/v1`, model `qwen2.5:32b`), not vLLM as
+  SPEC.md §6.3 names specifically. Ollama was already running on this
+  machine as a stable service with the model pre-pulled; standing up vLLM
+  instead turned into a multi-hour fight (its current PyPI wheel hard-links
+  `libcudart.so.13` at the native-extension level — this box's driver only
+  supports CUDA 12.9, and no combination of reinstalling torch for a
+  matching CUDA build fixed it, since vLLM's own compiled `.so` is what's
+  pinned to 13, independent of whatever torch version sits next to it;
+  eventually resolved by pinning `vllm==0.8.5.post1`, which is old enough to
+  predate the CUDA 13 default, before abandoning that path entirely once
+  Ollama turned out to already be available). Both speak the identical
+  `/v1/chat/completions` contract, so swapping back to a real vLLM server
+  later is a one-line env var change (`VLLM_BASE_URL`), nothing else in the
+  harness needs to change. The now-unused `serve_llm.sh` vLLM launch script
+  is left in place for that eventuality.
+- **`run_llm.py`** — CLI entry point, iterates QA micro-topics generating a
+  requested count each, prints per-topic accept/reject summaries.
+
+**Model/pip environment lives on `/data`, not the home directory** — this
+machine's root filesystem had only ~7GB free (shared box, many users'
+conda envs). `HF_HOME` and the `cat-llm` conda env are both under
+`/data/Nidhi_backup_run/`.
+
+**One real crash, caught and fixed**: the first background batch run died
+~2 hours in on an uncaught `requests.exceptions.ReadTimeout` —
+`llm_client._chat()` only wrapped HTTP-status failures in the harness's own
+`LLMError`, so a single slow call on this shared, one-request-at-a-time
+Ollama instance (no free concurrency to parallelize — confirmed by timing
+two concurrent requests against one sequential baseline, identical total
+time) took the whole multi-hour process down instead of being retried like
+every other failure mode already was. Fixed in `llm_client.py` (wrap
+`requests.RequestException` too) and hardened `run_llm.py` (per-item
+try/except inside `generate_for_topic`, not just per-topic in `main()`, so
+partial progress within a topic survives an unexpected failure). Resumed
+from where it died rather than restarting from scratch.
+
+**Status as of this write-up**: bank at 405 questions (398 from Milestone
+3's deterministic generators + 4 hand-authored DILR + 3 LLM-verified so
+far), climbing at roughly one verified item per 1-3 minutes with the batch
+still running in the background. Yield is running ~40-50% (rejections are
+mostly self-consistency disagreement and the model occasionally truncating
+a long solution against the `max_tokens=2048` cap on the draft call — both
+benign, just retried). This is nowhere near SPEC.md §6.5's target
+composition (QA 700-900, DILR 500-650 as *sets*, VARC-RC 250-320, VARC-VA
+200-250) — only the QA generation path is built; DILR-set and VARC (RC/VA)
+generation need their own pipelines per SPEC.md §6.3's inversion (DILR:
+generate data programmatically first, let the LLM only write the framing;
+RC: real open-licence source text, never LLM-generated passages) and are
+not started. Milestone 13 ("Content pipeline v3") is explicitly where the
+RC/DILR-set work belongs — QA scale-up continuing in the background in the
+meantime doesn't block moving on to Milestone 10.
+
+**To check on or resume the batch**: `ps aux | grep run_llm`, or
+`tail -f` whatever log it's writing to. To restart after a stop, diff
+`content/questions/*.llm-*.json` topic counts against `syllabus.json`
+targets and pass `--topics` with whatever's left, same as the resume after
+the crash above — regenerating already-complete topics from scratch wastes
+GPU time for no benefit since dedup will reject exact repeats anyway but
+still costs a full generation+verification cycle to find that out.
+
+
 - **First real Lesson content**: `pipeline/build_lesson_percentages.py`
   writes `content/lessons/qa.arith.percentages.json` via the same
   pydantic-validated pattern as `build_syllabus.py` (not hand-typed JSON).

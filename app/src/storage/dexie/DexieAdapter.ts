@@ -1,11 +1,12 @@
 import type { ExportBundle, StorageAdapter } from '@/storage/StorageAdapter'
-import type { Attempt, ItemEloState, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
-import { AscentDB, SETTINGS_KEY, type SettingsRow } from './schema'
+import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings } from '@/types/state'
+import { AscentDB, MOCK_SESSION_KEY, SETTINGS_KEY, type MockSessionRow, type SettingsRow } from './schema'
 import {
   migrateAttempt,
   migrateItemEloState,
   migrateMasteryState,
   migrateMockResult,
+  migrateMockSession,
   migratePlanDay,
   migrateSettings,
 } from './migrations'
@@ -95,14 +96,31 @@ export class DexieAdapter implements StorageAdapter {
     await this.db.settings.put(row)
   }
 
+  async getMockSession(): Promise<MockSession | undefined> {
+    const row = await this.db.mockSession.get(MOCK_SESSION_KEY)
+    if (!row) return undefined
+    const { id: _id, ...session } = row
+    return migrateMockSession(session)
+  }
+
+  async putMockSession(session: MockSession): Promise<void> {
+    const row: MockSessionRow = { ...session, id: MOCK_SESSION_KEY }
+    await this.db.mockSession.put(row)
+  }
+
+  async clearMockSession(): Promise<void> {
+    await this.db.mockSession.delete(MOCK_SESSION_KEY)
+  }
+
   async exportAll(): Promise<ExportBundle> {
-    const [attempts, masteryStates, planDays, mockResults, itemEloStates, settings] = await Promise.all([
+    const [attempts, masteryStates, planDays, mockResults, itemEloStates, settings, mockSession] = await Promise.all([
       this.listAttempts(),
       this.listMasteryStates(),
       this.listPlanDays(),
       this.listMockResults(),
       this.db.itemElo.toArray().then((rows) => rows.map(migrateItemEloState)),
       this.getSettings(),
+      this.getMockSession(),
     ])
     return {
       exportedAt: new Date().toISOString(),
@@ -112,6 +130,7 @@ export class DexieAdapter implements StorageAdapter {
       mockResults,
       itemEloStates,
       settings: settings ?? null,
+      mockSession: mockSession ?? null,
     }
   }
 
@@ -123,6 +142,7 @@ export class DexieAdapter implements StorageAdapter {
       this.db.mockResults,
       this.db.itemElo,
       this.db.settings,
+      this.db.mockSession,
     ]
   }
 
@@ -136,6 +156,7 @@ export class DexieAdapter implements StorageAdapter {
         this.db.mockResults.bulkPut(bundle.mockResults),
         this.db.itemElo.bulkPut(bundle.itemEloStates),
         bundle.settings ? this.putSettings(bundle.settings) : Promise.resolve(),
+        bundle.mockSession ? this.putMockSession(bundle.mockSession) : Promise.resolve(),
       ])
     })
   }

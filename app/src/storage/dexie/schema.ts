@@ -1,9 +1,13 @@
 import Dexie, { type Table } from 'dexie'
-import type { Attempt, ItemEloState, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
+import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings } from '@/types/state'
 
 /** Settings is a singleton row; this fixed key is how it's addressed in the table. */
 export const SETTINGS_KEY = 'singleton'
 export type SettingsRow = Settings & { id: typeof SETTINGS_KEY }
+
+/** MockSession is also a singleton row (SPEC.md §9.1 — at most one in-progress mock). */
+export const MOCK_SESSION_KEY = 'singleton'
+export type MockSessionRow = MockSession & { id: typeof MOCK_SESSION_KEY }
 
 /**
  * Dexie's own `.version(N).stores(...)` versions the IndexedDB structure
@@ -18,6 +22,7 @@ export class AscentDB extends Dexie {
   mockResults!: Table<MockResult, string>
   itemElo!: Table<ItemEloState, string>
   settings!: Table<SettingsRow, string>
+  mockSession!: Table<MockSessionRow, string>
 
   constructor(name = 'ascent') {
     super(name)
@@ -31,6 +36,10 @@ export class AscentDB extends Dexie {
     // Milestone 5: item-level Elo (SPEC.md §8.3), keyed by questionId.
     this.version(2).stores({
       itemElo: 'questionId',
+    })
+    // Milestone 10: in-progress mock crash recovery (SPEC.md §9.1).
+    this.version(3).stores({
+      mockSession: 'id',
     })
   }
 }

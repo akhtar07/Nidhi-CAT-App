@@ -28,5 +28,6 @@
   "tags": [
     "numsys:remainders",
     "modular-exponentiation"
-  ]
+  ],
+  "mockReserved": true
 }

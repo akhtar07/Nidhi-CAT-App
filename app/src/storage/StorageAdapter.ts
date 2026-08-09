@@ -1,4 +1,4 @@
-import type { Attempt, ItemEloState, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
+import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings } from '@/types/state'
 
 /**
  * Full snapshot of learner state, for the Export/Import JSON feature
@@ -13,6 +13,7 @@ export interface ExportBundle {
   mockResults: MockResult[]
   itemEloStates: ItemEloState[]
   settings: Settings | null
+  mockSession: MockSession | null
 }
 
 /**
@@ -43,6 +44,11 @@ export interface StorageAdapter {
   /** Settings is a singleton row. */
   getSettings(): Promise<Settings | undefined>
   putSettings(settings: Settings): Promise<void>
+
+  /** MockSession is a singleton row — at most one in-progress mock at a time (SPEC.md §9.1). */
+  getMockSession(): Promise<MockSession | undefined>
+  putMockSession(session: MockSession): Promise<void>
+  clearMockSession(): Promise<void>
 
   exportAll(): Promise<ExportBundle>
   /** Replaces all existing learner state with the bundle's contents. */

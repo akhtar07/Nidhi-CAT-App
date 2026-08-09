@@ -28,5 +28,6 @@
   "tags": [
     "numsys:legendre",
     "prime-power"
-  ]
+  ],
+  "mockReserved": false
 }

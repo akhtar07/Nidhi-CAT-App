@@ -27,5 +27,6 @@
   },
   "tags": [
     "numsys:sum-of-factors"
-  ]
+  ],
+  "mockReserved": false
 }

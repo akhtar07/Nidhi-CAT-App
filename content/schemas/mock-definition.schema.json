@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ascent.local/content/schemas/mock-definition.schema.json",
+  "title": "MockDefinition",
+  "$defs": {
+    "MockSectionDef": {
+      "additionalProperties": false,
+      "properties": {
+        "section": {
+          "enum": [
+            "VARC",
+            "DILR",
+            "QA"
+          ],
+          "title": "Section",
+          "type": "string"
+        },
+        "minutes": {
+          "exclusiveMinimum": 0,
+          "title": "Minutes",
+          "type": "integer"
+        },
+        "questionIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Questionids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "section",
+        "minutes"
+      ],
+      "title": "MockSectionDef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "title": {
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "full",
+        "sectional"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "difficultyTier": {
+      "default": "standard",
+      "enum": [
+        "easier",
+        "standard",
+        "harder"
+      ],
+      "title": "Difficultytier",
+      "type": "string"
+    },
+    "sections": {
+      "items": {
+        "$ref": "#/$defs/MockSectionDef"
+      },
+      "minItems": 1,
+      "title": "Sections",
+      "type": "array"
+    },
+    "composedNote": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Honest caveat about composition gaps, e.g. content not ready yet.",
+      "title": "Composednote"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "kind",
+    "sections"
+  ],
+  "type": "object"
+}

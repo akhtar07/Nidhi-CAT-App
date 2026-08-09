@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.percentages.llm-ab3e26b874",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A shopkeeper marks up the price of an article by 30% over its cost price. If the cost price is $180, what should be the marked price?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$226"
+    },
+    {
+      "key": "B",
+      "markdown": "$234"
+    },
+    {
+      "key": "C",
+      "markdown": "$242"
+    },
+    {
+      "key": "D",
+      "markdown": "$258"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The markup is calculated as a percentage of the cost price. The marked price can be found by adding 30% of the $180 to itself.\n\nCost Price (CP) = \\$180\nMarkup Percentage = 30%\nMarked Price (MP) = CP + (30% of CP)\n$$ MP = 180 + (0.3 \\times 180) $$",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "percent",
+    "markup"
+  ],
+  "mockReserved": false
+}

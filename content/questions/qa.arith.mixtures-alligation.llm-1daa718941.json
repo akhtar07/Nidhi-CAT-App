@@ -1,0 +1,49 @@
+{
+  "id": "qa.arith.mixtures-alligation.llm-1daa718941",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A grocer mixes two types of tea, A and B, in the ratio 3:2. Type A costs $60 per kg and type B costs $45 per kg. What is the price per kg of the mixed tea?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$51"
+    },
+    {
+      "key": "B",
+      "markdown": "$54"
+    },
+    {
+      "key": "C",
+      "markdown": "$57"
+    },
+    {
+      "key": "D",
+      "markdown": "$60"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To find the cost of mixed tea, we can use weighted average calculation. The ratio of A to B is 3:2, and their costs are $60 and $45 per kg respectively.\n\n$$\\text{Cost per kg} = \\frac{(3 \times 60) + (2 \times 45)}{3+2} = \\frac{180 + 90}{5} = \\frac{270}{5} = 54$$\n\nThus, the price per kg of mixed tea is $54.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "mixtures-and-alligation",
+    "easy"
+  ]
+}
