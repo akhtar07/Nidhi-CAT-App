@@ -1,0 +1,49 @@
+{
+  "id": "qa.arith.percentages.llm-6edbd9c861",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A shopkeeper increased the price of a book by $15\\%$. If the new price is Rs. 460, what was the original price?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Rs. 400"
+    },
+    {
+      "key": "B",
+      "markdown": "Rs. 380"
+    },
+    {
+      "key": "C",
+      "markdown": "Rs. 420"
+    },
+    {
+      "key": "D",
+      "markdown": "Rs. 450"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the original price be Rs. $x$. An increase of $15\\%$ means the new price is $1.15 \\times x = 460$. Solving for $x$: $$ x = \\frac{460}{1.15} = 400.$$",
+  "altSolutionMarkdown": "We can solve this using proportion reasoning. If a $15\\%$ increase results in Rs. 460, we divide by 1.15 to get the original price.",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "percentages",
+    "easy"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "qa.arith.percentages.llm-1e786aa70c",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "If the price of a product increases by 20% to Rs. 120, what was its original price?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Rs. 96"
+    },
+    {
+      "key": "B",
+      "markdown": "Rs. 100"
+    },
+    {
+      "key": "C",
+      "markdown": "Rs. 75"
+    },
+    {
+      "key": "D",
+      "markdown": "Rs. 125"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the original price be $x$. After a 20% increase, the new price is $1.2x = 120$. Solving for $x$, we get:\n\n$$ x = \\frac{120}{1.2} = 100 $$\nThe original price was Rs. 100.",
+  "altSolutionMarkdown": "You can quickly determine that a 20% increase from the original price must result in an easy-to-reason number like 100, given the nature of the percentage calculation and provided options.",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "percentages",
+    "easy"
+  ]
+}

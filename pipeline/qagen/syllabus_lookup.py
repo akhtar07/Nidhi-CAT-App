@@ -39,3 +39,13 @@ def target_seconds(microtopic_id: str) -> int:
 def item_count(microtopic_id: str) -> int:
     base = COUNT_BY_ROI[_BY_ID[microtopic_id]["roiScore"]]
     return max(base, MIN_COUNT_OVERRIDE.get(microtopic_id, 0))
+
+
+def topic_name(microtopic_id: str) -> str:
+    return _BY_ID[microtopic_id]["name"]
+
+
+def topic_ids(section: str | None = None) -> list[str]:
+    if section is None:
+        return list(_BY_ID.keys())
+    return [mt_id for mt_id, mt in _BY_ID.items() if mt["section"] == section]
