@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { loadQuestionIndex, loadSyllabus } from '@/content/loadContent'
+import { loadLessonIndex, loadQuestionIndex, loadSyllabus } from '@/content/loadContent'
 import type { MicroTopic } from '@/types/content'
 
 interface TopicRow {
   topic: MicroTopic
   count: number
+  hasLesson: boolean
 }
 
 export function Today() {
@@ -13,19 +14,20 @@ export function Today() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    Promise.all([loadSyllabus(), loadQuestionIndex()])
-      .then(([syllabus, index]) => {
+    Promise.all([loadSyllabus(), loadQuestionIndex(), loadLessonIndex()])
+      .then(([syllabus, index, lessonTopicIds]) => {
         const counts = new Map<string, number>()
         for (const entry of index) {
           for (const microTopicId of entry.microTopicIds) {
             counts.set(microTopicId, (counts.get(microTopicId) ?? 0) + 1)
           }
         }
+        const lessonSet = new Set(lessonTopicIds)
         setRows(
           syllabus
-            .map((topic) => ({ topic, count: counts.get(topic.id) ?? 0 }))
+            .map((topic) => ({ topic, count: counts.get(topic.id) ?? 0, hasLesson: lessonSet.has(topic.id) }))
             .filter((row) => row.count > 0)
-            .sort((a, b) => b.count - a.count),
+            .sort((a, b) => Number(b.hasLesson) - Number(a.hasLesson) || b.count - a.count),
         )
       })
       .catch((e: Error) => setError(e.message))
@@ -48,15 +50,15 @@ export function Today() {
 
       {rows && (
         <ul className="divide-y divide-border rounded-lg border border-border">
-          {rows.map(({ topic, count }) => (
-            <li key={topic.id}>
-              <Link
-                to={`/drill/${topic.id}`}
-                className="flex items-center justify-between px-4 py-3 text-sm hover:bg-muted"
-              >
+          {rows.map(({ topic, count, hasLesson }) => (
+            <li key={topic.id} className="flex items-center justify-between px-4 py-3 text-sm hover:bg-muted">
+              <Link to={hasLesson ? `/lesson/${topic.id}` : `/drill/${topic.id}`} className="flex-1">
                 <span>{topic.name}</span>
-                <span className="text-muted-foreground">{count} questions</span>
+                {hasLesson && (
+                  <span className="ml-2 rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary">Lesson</span>
+                )}
               </Link>
+              <span className="text-muted-foreground">{count} questions</span>
             </li>
           ))}
         </ul>

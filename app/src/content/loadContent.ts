@@ -1,4 +1,4 @@
-import type { MicroTopic, Question } from '@/types/content'
+import type { Lesson, MicroTopic, Question } from '@/types/content'
 
 /**
  * All shipped content is fetched at runtime from static JSON under
@@ -54,4 +54,16 @@ export async function loadQuestionsForMicroTopic(microTopicId: string): Promise<
 export async function loadMicroTopic(microTopicId: string): Promise<MicroTopic | undefined> {
   const syllabus = await loadSyllabus()
   return syllabus.find((t) => t.id === microTopicId)
+}
+
+let lessonIndexCache: Promise<string[]> | null = null
+export function loadLessonIndex(): Promise<string[]> {
+  lessonIndexCache ??= fetchJson<string[]>(contentUrl('lessons/index.json'))
+  return lessonIndexCache
+}
+
+export async function loadLesson(microTopicId: string): Promise<Lesson | undefined> {
+  const index = await loadLessonIndex()
+  if (!index.includes(microTopicId)) return undefined
+  return fetchJson<Lesson>(contentUrl(`lessons/${microTopicId}.json`))
 }

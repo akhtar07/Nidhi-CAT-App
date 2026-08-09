@@ -11,7 +11,13 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 6 — Lesson reader + Learn→Drill loop (not started)
+## Current milestone: 7 — Content pipeline v2 (not started)
+
+**Milestone 6's own row in SPEC.md §15 says "Stop and demo this before
+scaling content."** Done below — but flagging explicitly that this is a
+SPEC-designated checkpoint, not just another milestone to plow through.
+The project owner should actually open `/lesson/qa.arith.percentages`
+before more content gets built on top of this pattern.
 
 ## Binding decision (implemented in Milestone 1 — this is now how it works)
 So the pipeline (Python) and app (TypeScript) content schemas can never drift:
@@ -39,6 +45,75 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 6 — Lesson reader + Learn→Drill loop (done — demo checkpoint, see note above)
+- **First real Lesson content**: `pipeline/build_lesson_percentages.py`
+  writes `content/lessons/qa.arith.percentages.json` via the same
+  pydantic-validated pattern as `build_syllabus.py` (not hand-typed JSON).
+  Chose percentages because it already had the deepest question bank
+  (12 items) and is foundational/high-ROI. Originally authored, not
+  sourced — per the "no fake/placeholder content" rule, every worked
+  example's arithmetic is independently checked by hand in a code comment
+  before being written into the lesson (e.g. the successive-%-change
+  example is verified two ways: direct sequential multiplication *and*
+  the closed-form formula, cross-checked against each other — same
+  discipline as the qagen verification harness, applied to prose this
+  time since there's no `answer_fn` to run). 3 worked examples, 2 formula
+  cards, 5 common traps, ~6 min read.
+- **`app/src/components/question-player/markdownSegments.ts` extended**:
+  added `**bold**` tokens and a new `parseMarkdownBlocks()` (splits on
+  blank lines, detects `## `/`### ` heading prefixes) — genuinely needed
+  now that lesson prose exists (headings, bold, multi-paragraph structure),
+  unlike the terse single-line question stems this parser originally
+  targeted. Still no markdown dependency added; extended the same
+  hand-rolled tokenizer, re-justified in the file's own header comment
+  rather than silently scope-creeping. New component `MarkdownBlocks`
+  (alongside the existing single-paragraph `Markdown`) renders the block
+  list; both share a `renderSegments()` helper now.
+  - **Bug caught and fixed while verifying live, not by the type checker**:
+    `BlockMath` (react-katex) renders a `<div>`, and `MarkdownBlocks`
+    initially wrapped paragraphs in `<p>` — a `$$...$$` formula inside a
+    lesson paragraph produced an invalid `<div>` inside `<p>`, which
+    Chrome silently "fixes" by breaking the DOM tree, and React logs a
+    hydration-nesting console error. Caught by actually checking the
+    browser console during Playwright verification (see below), not by
+    typecheck/build, which both stayed green throughout. Fixed by making
+    paragraph wrappers `<div>` instead of `<p>` — noted in a code comment
+    so it isn't quietly reverted later.
+  - **Second bug, also live-caught**: a `\%` written outside any `$...$`
+    math span in the successive-change formula card's body text rendered
+    literally as backslash-percent (LaTeX escaping only applies inside
+    math segments). Fixed in the pipeline script, regenerated, verified
+    the literal string no longer appears anywhere on the rendered page.
+- **`app/src/pages/Lesson.tsx`** (route `/lesson/:topicId`) — renders
+  `bodyMarkdown` via `MarkdownBlocks`, formula cards, worked examples
+  (stem/solution/alt-solution via `Markdown`), common traps, and a "Start
+  practising" button that navigates to `/drill/:topicId` — the actual
+  Learn→Drill transition. Topics without a lesson yet show "Practise
+  anyway" instead of a dead end.
+- **`content/lessons/index.json`** — same reasoning as the questions
+  index (Milestone 4): static hosting can't list a directory, so
+  `sync-content.mjs` now also builds a small list of which micro-topics
+  have a lesson, regenerated every sync, never committed.
+- **`Today.tsx`** updated: topics with a lesson show a "Lesson" badge and
+  link to `/lesson/:id` first (sorted to the top); topics without one
+  still link straight to `/drill/:id` as before.
+- **Verified live in Chromium (Playwright)**: topic list shows exactly
+  one "Lesson" badge (percentages) → opened the lesson → confirmed 47
+  KaTeX-rendered math elements (headings, bold, and formulas all render
+  correctly, including the two bugs above, caught and re-verified fixed)
+  → clicked "Start practising" → landed on `/drill/qa.arith.percentages`,
+  confirming the Learn→Drill loop actually connects. Zero console errors
+  after both fixes (there were two, both caught this way, not by
+  typecheck/build).
+- Ran the full local sequence before committing: lint → typecheck →
+  vitest (60 tests, +4 for the new markdown block/bold parsing) → build.
+  All green.
+- **Scope note**: "one micro-topic fully playable end to end" is
+  satisfied for exactly one topic (percentages) — this milestone is about
+  proving the pattern works, not covering the other 85 micro-topics with
+  lessons. That's explicitly Milestone 7+ ("scaling content"), which is
+  why SPEC.md calls for a stop-and-demo here first.
 
 ### Milestone 5 — Mastery engine (done)
 - **`app/src/mastery/`** — pure-function algorithm modules first, storage
@@ -618,6 +693,21 @@ it independently before the item is kept.
   opportunistic rather than planned; Tier 3 (§6.3) is the realistic
   primary QA/DILR source going forward, unless the project owner supplies
   legitimately-obtained papers directly.
+- SPEC.md §5.2 (Milestone 4/5, how content reaches the browser and how
+  item Elo is tracked): `/content` is synced into `app/public/content` and
+  fetched at runtime rather than bundled (not specified anywhere in
+  SPEC.md); `MasteryState` gained `criteria123FirstMetAt`/
+  `antiFrustrationTriggered` (required to implement §8.2 criterion 4 and
+  the anti-frustration valve, absent from §5.2's literal interface); new
+  type `ItemEloState` + a second Dexie table (needed since `Question.
+  eloRating` is immutable shipped content and §8.3's live item-Elo has to
+  live somewhere mutable). See the Milestone 4/5 writeups for full
+  reasoning on each.
+- `app/src/components/question-player/markdownSegments.ts` (Milestone 6):
+  extended beyond the original "only inline `$...$` math" scope to also
+  handle `**bold**` and `##`/`###` headings — re-justified in the file's
+  header comment now that Lesson prose (not just terse question stems)
+  exists. Still no markdown library dependency added.
 
 ## Known issues / deferred
 - Milestone 2 (Storage layer) deferred until after Milestone 3 — see

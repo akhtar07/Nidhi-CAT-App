@@ -43,4 +43,23 @@ for (const file of files) {
 }
 await writeFile(path.join(questionsDir, 'index.json'), JSON.stringify(index))
 
-console.log(`Synced ${SRC} -> ${DEST} (${index.length} questions indexed)`)
+// Same reasoning for lessons: a small index of which micro-topics have a
+// lesson, so the app doesn't have to 404-probe all 86 topics to find out.
+const lessonsDir = path.join(DEST, 'lessons')
+let lessonMicroTopicIds = []
+try {
+  const lessonFiles = (await readdir(lessonsDir)).filter((f) => f.endsWith('.json') && f !== 'index.json')
+  lessonMicroTopicIds = await Promise.all(
+    lessonFiles.map(async (file) => {
+      const lesson = JSON.parse(await readFile(path.join(lessonsDir, file), 'utf-8'))
+      return lesson.microTopicId
+    }),
+  )
+  await writeFile(path.join(lessonsDir, 'index.json'), JSON.stringify(lessonMicroTopicIds))
+} catch {
+  // No content/lessons/ directory yet — nothing to index.
+}
+
+console.log(
+  `Synced ${SRC} -> ${DEST} (${index.length} questions, ${lessonMicroTopicIds.length} lessons indexed)`,
+)

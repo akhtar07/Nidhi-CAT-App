@@ -1,0 +1,49 @@
+{
+  "id": "lesson.qa.arith.percentages",
+  "microTopicId": "qa.arith.percentages",
+  "bodyMarkdown": "## Percentages\n\nA percentage is just a fraction out of 100. $x\\%$ of $N$ means $\\dfrac{x}{100} \\times N$.\n\n### Percentage change\n\n$$\\text{\\% change} = \\frac{\\text{New} - \\text{Old}}{\\text{Old}} \\times 100$$\n\nAlways divide by the **original (old)** value, never the new one \u2014 this is the single most\ncommon source of errors in CAT percentage questions.\n\n### Increasing/decreasing by a percentage\n\n\"Increase $N$ by $x\\%$\" means multiply by $\\left(1 + \\dfrac{x}{100}\\right)$, not add $x$ to $N$.\n\"Decrease $N$ by $x\\%$\" means multiply by $\\left(1 - \\dfrac{x}{100}\\right)$.\n\n### Successive percentage changes\n\nIf a quantity changes by $a\\%$ and then by $b\\%$ (in that order), the **net** change is:\n\n$$a + b + \\frac{ab}{100}\\ \\%$$\n\nUse the actual signed values of $a$ and $b$ (a decrease is negative). This formula is why a\n20% increase followed by a 20% decrease does **not** cancel out \u2014 see the first worked example.\n\n### Reverse percentage\n\nIf a value $V$ remains after a $r\\%$ decrease from the original $O$, then\n$O = \\dfrac{V}{1 - r/100}$. Don't just add $r\\%$ of $V$ back \u2014 that's the same \"wrong base\"\nmistake as percentage change.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.percentages.we-01",
+      "stemMarkdown": "A number is increased by 20%, then the result is decreased by 20%. What is the net percentage change from the original number?",
+      "solutionMarkdown": "Take the original number as 100. After a 20% increase: $100 \\times 1.20 = 120$. After a 20% decrease on the new value: $120 \\times 0.80 = 96$. Net change $= \\dfrac{96 - 100}{100} \\times 100 = -4\\%$ \u2014 a **4% decrease**, not 0%.",
+      "altSolutionMarkdown": "Successive-change formula with $a = 20$, $b = -20$: $\\text{net} = a + b + \\dfrac{ab}{100} = 20 - 20 + \\dfrac{20 \\times (-20)}{100} = -4\\%$."
+    },
+    {
+      "id": "qa.arith.percentages.we-02",
+      "stemMarkdown": "The price of an item is reduced by 25%. By what percentage must the new price be increased to restore the original price?",
+      "solutionMarkdown": "Take the original price as 100. After a 25% reduction: $100 \\times 0.75 = 75$. To get back to 100 from 75, the required increase is measured on the **new** base (75): $\\dfrac{100 - 75}{75} \\times 100 = \\dfrac{25}{75} \\times 100 = 33.33\\%$.",
+      "altSolutionMarkdown": "Shortcut: if a value is reduced by $r\\%$, the increase needed to restore it is $\\dfrac{r}{100-r} \\times 100\\%$. Here $r=25$: $\\dfrac{25}{75}\\times 100 = 33.33\\%$."
+    },
+    {
+      "id": "qa.arith.percentages.we-03",
+      "stemMarkdown": "Aisha scored 30% marks in an exam and failed by 25 marks. Riya scored 60% marks and got 20 marks more than the passing marks. Find the maximum marks and the passing marks.",
+      "solutionMarkdown": "Let $M$ = maximum marks, $P$ = passing marks.\n\nAisha: $0.30M = P - 25$\n\nRiya: $0.60M = P + 20$\n\nSubtracting the first equation from the second: $0.30M = 45 \\implies M = 150$.\n\nThen $P = 0.30 \\times 150 + 25 = 70$. Check: $0.60 \\times 150 = 90 = 70 + 20$. \u2713\n\n**Maximum marks = 150, passing marks = 70.**",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.percentages.fc-percent-change",
+      "microTopicId": "qa.arith.percentages",
+      "title": "Percentage change",
+      "bodyMarkdown": "$$\\text{\\% change} = \\frac{\\text{New} - \\text{Old}}{\\text{Old}} \\times 100$$ Always divide by the *original* value.",
+      "exampleMarkdown": "Old = 80, New = 100 \u2192 % change = $(100-80)/80 \\times 100 = 25\\%$."
+    },
+    {
+      "id": "qa.arith.percentages.fc-successive-change",
+      "microTopicId": "qa.arith.percentages",
+      "title": "Successive percentage change",
+      "bodyMarkdown": "$$\\text{net \\%} = a + b + \\frac{ab}{100}$$ where $a, b$ are the two successive signed % changes.",
+      "exampleMarkdown": "10% increase then 10% decrease: $10 - 10 + \\dfrac{10 \\times (-10)}{100} = -1\\%$ net, not 0%."
+    }
+  ],
+  "commonTraps": [
+    "Successive percentage changes don't simply add \u2014 you must include the ab/100 cross term.",
+    "A percentage decrease followed by an equal percentage increase does NOT return you to the original value (the net effect is always negative, by ab/100).",
+    "Percentage change is always calculated on the original (base) value, not the new value \u2014 reversing this is a common trap.",
+    "\"Increased by 20%\" means multiply by 1.20, not add 20 to the number.",
+    "Reversing a percentage decrease: don't add r% of the reduced value back \u2014 divide by (1 - r/100) instead."
+  ],
+  "estReadMinutes": 6
+}
