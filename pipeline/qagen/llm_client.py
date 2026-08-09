@@ -43,18 +43,29 @@ class LLMError(Exception):
 
 
 def _chat(messages: list[dict[str, str]], temperature: float, max_tokens: int = 2048) -> str:
-    resp = requests.post(
-        f"{VLLM_BASE_URL}/chat/completions",
-        json={
-            "model": MODEL_NAME,
-            "messages": messages,
-            "temperature": temperature,
-            "max_tokens": max_tokens,
-        },
-        timeout=120,
-    )
+    # This shared, single-request-at-a-time Ollama instance occasionally
+    # takes well over a minute on a long generation under real load — a
+    # ReadTimeout here is routine, not exceptional, and previously escaped
+    # as a raw requests exception (only HTTP-status failures were wrapped
+    # in LLMError), which crashed an entire multi-hour batch run on one
+    # slow call. Both network-level and HTTP-status failures now raise the
+    # same LLMError so every caller's existing `except LLMError` handling
+    # covers both.
+    try:
+        resp = requests.post(
+            f"{VLLM_BASE_URL}/chat/completions",
+            json={
+                "model": MODEL_NAME,
+                "messages": messages,
+                "temperature": temperature,
+                "max_tokens": max_tokens,
+            },
+            timeout=300,
+        )
+    except requests.RequestException as e:
+        raise LLMError(f"request to {VLLM_BASE_URL} failed: {e}") from e
     if not resp.ok:
-        raise LLMError(f"vLLM request failed: {resp.status_code} {resp.text[:500]}")
+        raise LLMError(f"LLM request failed: {resp.status_code} {resp.text[:500]}")
     data = resp.json()
     return data["choices"][0]["message"]["content"]
 

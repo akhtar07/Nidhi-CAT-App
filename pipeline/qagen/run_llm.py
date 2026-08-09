@@ -52,7 +52,18 @@ def generate_for_topic(
         difficulty = DIFF_CYCLE[i % len(DIFF_CYCLE)]
         item = None
         for attempt in range(attempts_per_item):
-            item, reason = generate_one(microtopic_id, name, difficulty, tsec, dedup, recent_stems)
+            # A multi-hour run must not die on one item's unexpected
+            # failure — this crashed the whole batch once already on an
+            # uncaught network timeout (now fixed in llm_client.py, but
+            # this is the backstop for whatever's next). Caught per-item,
+            # not per-topic, so everything accepted so far in this topic
+            # is still returned to the caller and written to disk.
+            try:
+                item, reason = generate_one(microtopic_id, name, difficulty, tsec, dedup, recent_stems)
+            except Exception as e:
+                reject_log.append(f"[{microtopic_id}] attempt {attempt + 1}: unexpected error - {e}")
+                item = None
+                continue
             if item is not None:
                 break
             reject_log.append(f"[{microtopic_id}] attempt {attempt + 1}: {reason.stage} - {reason.detail}")
@@ -95,7 +106,15 @@ def main() -> None:
             print(f"{mt_id}: already at target ({have}/{target}), skipping")
             continue
         print(f"{mt_id}: generating {n} items (have {have}, target {target})...")
-        accepted, rejects = generate_for_topic(mt_id, n, dedup, args.attempts_per_item)
+        # Per-item failures are already caught inside generate_for_topic;
+        # this is the last-resort backstop for a failure outside that loop
+        # (e.g. in the dedup index itself) so one topic's total loss still
+        # can't take down the rest of the run.
+        try:
+            accepted, rejects = generate_for_topic(mt_id, n, dedup, args.attempts_per_item)
+        except Exception as e:
+            print(f"  -> ERROR generating for {mt_id}, skipping to next topic: {e}")
+            continue
         write_items(accepted)
         total_accepted += len(accepted)
         total_rejected += len(rejects)
