@@ -1,0 +1,33 @@
+{
+  "id": "dilr.di.caselets.headcount-ca93a0de.q3",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the overall average monthly salary across all employees in all three departments? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 67187.5,
+  "titaTolerance": 0.5,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Total salary bill $= 3200000 + 1500000 + 675000 = 5375000$. Overall average $= 5375000 / 80 = 67187.5$. Note this weighted average is closer to Engineering's salary than a simple average of the three department averages would be, since Engineering has the most employees.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselet",
+    "weighted-average"
+  ],
+  "mockReserved": false
+}

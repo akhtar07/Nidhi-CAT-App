@@ -1,0 +1,45 @@
+{
+  "id": "dilr.di.caselets.headcount-ca93a0de.q4",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which department has the lowest total monthly salary bill?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Engineering"
+    },
+    {
+      "key": "B",
+      "markdown": "Sales"
+    },
+    {
+      "key": "C",
+      "markdown": "Support"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Total bills: Engineering: 3200000, Sales: 1500000, Support: 675000. **Support** is lowest \u2014 note this is about the department's *total* bill, not its average salary; Support has both the fewest employees and the lowest average, so it's unambiguous here, but always check total vs. average.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselet"
+  ],
+  "mockReserved": false
+}

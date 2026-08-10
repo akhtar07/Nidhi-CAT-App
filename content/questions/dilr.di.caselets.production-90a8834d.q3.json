@@ -1,0 +1,33 @@
+{
+  "id": "dilr.di.caselets.production-90a8834d.q3",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the combined defect rate (%) across both factories? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.1,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Defective units: Factory A $= 1200 \\times 0.025 = 30$, Factory B $= 800 \\times 0.04 = 32$. Total defective $= 62$, total units $= 2000$. Combined defect rate $= 62/2000 \\times 100 = 3.1\\%$ \u2014 **not** the simple average of 2.5% and 4.0% (3.25%), because the two factories produce different volumes.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 105,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselet",
+    "weighted-average"
+  ],
+  "mockReserved": false
+}

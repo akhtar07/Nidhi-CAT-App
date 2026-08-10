@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.caselets.headcount-ca93a0de",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "TechNova Solutions has three departments. Engineering has 40 employees with an average monthly salary of Rs. 80,000. Sales has 25 employees with an average monthly salary of Rs. 60,000. Support has 15 employees with an average monthly salary of Rs. 45,000.\n\nRead the passage carefully and answer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.caselets.headcount-ca93a0de.q1",
+    "dilr.di.caselets.headcount-ca93a0de.q2",
+    "dilr.di.caselets.headcount-ca93a0de.q3",
+    "dilr.di.caselets.headcount-ca93a0de.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

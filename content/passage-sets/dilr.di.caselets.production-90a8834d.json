@@ -1,0 +1,17 @@
+{
+  "id": "dilr.di.caselets.production-90a8834d",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "A manufacturer runs two factories. Factory A produces 1,200 units per day with a defect rate of 2.5%. Factory B produces 800 units per day with a defect rate of 4.0%. A 'good' unit is one that is not defective.\n\nRead the passage carefully and answer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.caselets.production-90a8834d.q1",
+    "dilr.di.caselets.production-90a8834d.q2",
+    "dilr.di.caselets.production-90a8834d.q3"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 7.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

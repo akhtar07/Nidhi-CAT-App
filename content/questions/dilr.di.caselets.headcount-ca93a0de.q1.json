@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.caselets.headcount-ca93a0de.q1",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the total number of employees across all three departments?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 80.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$40 + 25 + 15 = 80$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselet"
+  ],
+  "mockReserved": false
+}

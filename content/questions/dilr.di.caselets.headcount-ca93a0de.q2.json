@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.caselets.headcount-ca93a0de.q2",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the total monthly salary bill for the Engineering department?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3200000.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$40 \\times 80{,}000 = 3200000$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselet"
+  ],
+  "mockReserved": false
+}

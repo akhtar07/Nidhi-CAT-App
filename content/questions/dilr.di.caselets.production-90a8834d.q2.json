@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.caselets.production-90a8834d.q2",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the total number of good units produced by both factories combined, per day?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1938.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Factory A: 1170, Factory B: 768. Total $= 1938$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselet"
+  ],
+  "mockReserved": false
+}
