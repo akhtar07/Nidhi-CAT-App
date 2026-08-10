@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.arrangements.set-abf1e249",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "5 friends \u2014 Anya, Divya, Chetan, Esha, and Bilal \u2014 sit around a circular table, facing the center. Study the clues below and answer the questions that follow.\n\n- There are exactly 2 people between Divya and Bilal, going clockwise from Divya.\n- There are exactly 1 people between Esha and Anya, going clockwise from Esha.\n- There are exactly 2 people between Bilal and Chetan, going clockwise from Bilal.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.arrangements.set-abf1e249.q1",
+    "dilr.lr.arrangements.set-abf1e249.q2",
+    "dilr.lr.arrangements.set-abf1e249.q3",
+    "dilr.lr.arrangements.set-abf1e249.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

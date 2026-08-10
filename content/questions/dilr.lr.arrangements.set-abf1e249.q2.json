@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.arrangements.set-abf1e249.q2",
+  "microTopicIds": [
+    "dilr.lr.arrangements"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many people sit between Divya and Esha, going clockwise from Divya?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Reading clockwise from Divya to Esha in the verified order Anya \u2192 Divya \u2192 Chetan \u2192 Esha \u2192 Bilal: 1 people in between.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:circular-arrangement"
+  ],
+  "mockReserved": false
+}

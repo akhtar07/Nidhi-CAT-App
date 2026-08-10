@@ -1,0 +1,40 @@
+{
+  "id": "lesson.qa.arith.time-work-pipes-cisterns",
+  "microTopicId": "qa.arith.time-work-pipes-cisterns",
+  "bodyMarkdown": "## Time & Work: Pipes & Cisterns\n\nTreat this exactly like Time & Work, with one twist: an **outlet** pipe (a leak, or a pipe that\nempties the tank) has a **negative** rate.\n\n$$\\text{Rate} = \\frac{1}{\\text{time to complete alone}} \\qquad \\text{Combined rate} = \\sum \\text{individual rates}$$\n\n$$\\text{Time} = \\frac{1}{\\text{combined rate}}$$\n\nInlet pipes: positive rate (they fill). Outlet pipes/leaks: negative rate (they empty). Never\naverage two times directly \u2014 always combine through rates.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.time-work-pipes-cisterns.we-01",
+      "stemMarkdown": "Pipe A can fill a tank in 6 hours, pipe B in 8 hours. If both pipes are opened together, how long will it take to fill the tank?",
+      "solutionMarkdown": "Rate of A $= \\dfrac{1}{6}$, rate of B $= \\dfrac{1}{8}$. Combined rate $= \\dfrac{1}{6} + \\dfrac{1}{8} = \\dfrac{4}{24} + \\dfrac{3}{24} = \\dfrac{7}{24}$. Time $= \\dfrac{24}{7} \\approx 3.43$ hours.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.time-work-pipes-cisterns.we-02",
+      "stemMarkdown": "Pipe A fills a tank in 5 hours. Pipe B can empty the full tank in 10 hours. If both are opened together, how long will it take to fill the tank?",
+      "solutionMarkdown": "Rate of A (inlet) $= \\dfrac{1}{5}$. Rate of B (outlet) $= -\\dfrac{1}{10}$. Combined rate $= \\dfrac{1}{5} - \\dfrac{1}{10} = \\dfrac{2}{10} - \\dfrac{1}{10} = \\dfrac{1}{10}$. Time $= 10$ hours.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.time-work-pipes-cisterns.we-03",
+      "stemMarkdown": "Pipes A and B can fill a tank in 12 and 15 hours respectively. Both are opened together, but after 4 hours pipe A is closed. How much longer will pipe B alone take to fill the remaining tank?",
+      "solutionMarkdown": "Combined rate $= \\dfrac{1}{12} + \\dfrac{1}{15} = \\dfrac{5}{60} + \\dfrac{4}{60} = \\dfrac{9}{60} = \\dfrac{3}{20}$. In 4 hours: $4 \\times \\dfrac{3}{20} = \\dfrac{3}{5}$ of the tank is filled, leaving $\\dfrac{2}{5}$. B alone fills at $\\dfrac{1}{15}$ per hour, so time $= \\dfrac{2/5}{1/15} = \\dfrac{2}{5} \\times 15 = 6$ hours.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.time-work-pipes-cisterns.fc-combined-rate",
+      "microTopicId": "qa.arith.time-work-pipes-cisterns",
+      "title": "Combined rate",
+      "bodyMarkdown": "$$\\text{Combined rate} = \\sum \\text{individual rates}, \\quad \\text{Time} = \\frac{1}{\\text{combined rate}}$$ Outlet/leak rates are negative.",
+      "exampleMarkdown": "Fill in 4h, leak empties in 12h: combined = 1/4 - 1/12 = 1/6 \u2192 fills in 6h."
+    }
+  ],
+  "commonTraps": [
+    "An outlet pipe's rate is subtracted, never added.",
+    "Never average two fill times directly (e.g. (6+8)/2) \u2014 you must combine through rates.",
+    "When a pipe is closed partway through, compute work done so far, then solve the remaining fraction with only the pipe(s) still open."
+  ],
+  "estReadMinutes": 6
+}

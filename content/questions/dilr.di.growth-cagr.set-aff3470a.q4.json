@@ -1,0 +1,42 @@
+{
+  "id": "dilr.di.growth-cagr.set-aff3470a.q4",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which company had the higher CAGR in revenue over 2019-2023?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Alpha Textiles"
+    },
+    {
+      "key": "B",
+      "markdown": "Beta Textiles"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Alpha's CAGR is 15.02%, Beta's is 12.47%. Alpha's is higher.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr",
+    "cagr"
+  ],
+  "mockReserved": false
+}

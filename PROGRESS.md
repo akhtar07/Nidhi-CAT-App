@@ -46,6 +46,72 @@ produced or validated by the Python pipeline.
 
 ## Completed
 
+### Content scale-up (ad hoc, requested directly — "more questions for practice, more for teaching")
+
+Not tied to a specific SPEC.md milestone number — a direct content request after Milestone 16.
+Targeted the two most glaring gaps a coverage audit turned up:
+
+**DILR was almost entirely empty**: 22 of 24 DILR micro-topics had zero questions (only the two
+Milestone 8/13 demo sets existed). Built 3 new deterministic, code-verified generators for the
+highest-ROI (roi=5) empty topics — same SPEC.md §6.3 DILR-inversion discipline as every prior
+DILR script (data/solution generated first, questions derived, answer verified in code, no LLM):
+
+- **`pipeline/build_dilr_lr_arrangement.py`** (`dilr.lr.arrangements`, 3 sets × 4 questions): a
+  genuine logic-puzzle generator, not just a data table. Generates a random circular seating,
+  then adds candidate clues one at a time, brute-forcing all 120 permutations after each addition
+  until **exactly one** circular arrangement (up to rotation) satisfies every clue so far —
+  the actual uniqueness guarantee a real LR puzzle needs, not just "clues that happen to be
+  true." **Caught and fixed a real bug during its own verification**: the first generated set's
+  "X sits immediately clockwise of Y" clue sentences had the relationship backwards from what
+  the code actually verified (a self-consistent-but-wrong bug — the uniqueness check used the
+  correct direction internally, but the English sentence printed the reverse) — caught by
+  independently re-deriving each clue's truth against the stated solution with a fresh parser,
+  not by trusting the generator's own internal checks. Fixed and every regenerated set
+  re-verified the same independent way.
+- **`pipeline/build_dilr_growth_cagr.py`** (`dilr.di.growth-cagr`, 1 set × 4 questions): two
+  companies' revenue over 5 years, YoY-growth and CAGR questions. Every answer hand-recomputed
+  independently (not just re-running the generator's own asserts) and matched exactly.
+- **`pipeline/build_dilr_missing_data.py`** (`dilr.di.missing-data`, 1 set × 4 questions): a
+  table with some cells blanked, placed so each blank is alone in its row and column (like
+  non-attacking rooks) — guaranteeing each is recoverable from either its row or column total
+  alone, and the script asserts both recoveries agree. Independently reconstructed by hand from
+  the raw table JSON and cross-checked against both row and column totals.
+
+All three chart/table/LR renderings verified live via Playwright — `PassageSetPlayer` already
+supported `lr_set`/`di_set`/table/bar-chart, so no UI changes were needed.
+
+**Teaching content (lessons)**: only `qa.arith.percentages` had a lesson (Milestone 6's "one
+topic end to end" scope). Added 5 more for the next-highest-ROI QA topics that already have a
+healthy question bank (`profit-loss-discount`, `averages-weighted-averages`, `hcf-lcm`,
+`time-work-pipes-cisterns`, `ratio-proportion-variation`) — same authored-and-hand-verified
+discipline as the Percentages lesson: every worked example's arithmetic independently
+recomputed via Python before being written (not generated and trusted), each with a formula
+card and common-traps list. **One real bug caught in live verification, not by the generator's
+own code**: two worked examples wrote `Profit\%`/`loss\%` in plain connector text between two
+`$...$` math spans rather than inside one — the exact same "\% outside a math span renders
+literally" bug class Milestone 7's Percentages lesson caught, in new content. Fixed by wrapping
+both in their own `$\text{...}\%$` span; re-verified via Playwright that no lesson page shows a
+literal `\%` and every KaTeX element renders (12-37 per lesson).
+
+**Also hit the same stale-long-lived-dev-server artifact from Milestone 15 again** (a valid,
+freshly-synced content file served as the SPA HTML fallback) — recognized immediately from the
+error signature, fixed the same way (restart `npm run dev`), didn't waste time re-diagnosing it
+as a content bug this time.
+
+**QA practice-question top-up**: a coverage audit also found Milestone 14's mock composition had
+an unintended side effect — spreading picks across "as many distinct micro-topics as possible"
+fully drained several already-thin topics (e.g. `qa.modern.series-sequences-hybrids`: all 10
+items became `mockReserved`, leaving zero drillable). Started a background batch
+(`qagen.run_llm --topics <24 thinnest QA topics> --per-topic 12`) targeting exactly the topics at
+≤5 unreserved questions. Long-running (LLM-bound, same one-request-at-a-time Ollama constraint
+documented in Milestone 7) — **still running as of this write-up**, not yet reflected in the
+question count below or committed; check `ps aux | grep run_llm` / the batch's log to resume
+monitoring, same as every other background-batch note in this file.
+
+Result so far: **+20 DILR questions across 3 previously-empty topics, +5 lessons (6 total)**,
+content validator green throughout (485 questions, 6 lessons), full app CI still green
+(typecheck/170 tests — no app code changed this round, only `/content` and `/pipeline`).
+
 ### Milestone 16 — Supabase sync + email (code-complete, not live)
 
 **Read this before touching anything sync/email-related: every line of code below is real,

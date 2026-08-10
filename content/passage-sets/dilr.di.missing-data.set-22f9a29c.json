@@ -1,0 +1,74 @@
+{
+  "id": "dilr.di.missing-data.set-22f9a29c",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The table below shows units sold by 4 products across 4 regions. Some cells are missing (shown as '?') but every row and column total is given. Study the table and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "table",
+      "spec": {
+        "columns": [
+          "Product",
+          "North",
+          "South",
+          "East",
+          "West",
+          "Row total"
+        ],
+        "rows": [
+          [
+            "Product P",
+            89,
+            50,
+            81,
+            "?",
+            302
+          ],
+          [
+            "Product Q",
+            47,
+            77,
+            "?",
+            47,
+            251
+          ],
+          [
+            "Product R",
+            90,
+            "?",
+            44,
+            36,
+            244
+          ],
+          [
+            "Product S",
+            "?",
+            28,
+            43,
+            69,
+            185
+          ],
+          [
+            "Column total",
+            271,
+            229,
+            248,
+            234,
+            982
+          ]
+        ]
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.missing-data.set-22f9a29c.q1",
+    "dilr.di.missing-data.set-22f9a29c.q2",
+    "dilr.di.missing-data.set-22f9a29c.q3",
+    "dilr.di.missing-data.set-22f9a29c.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 9.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

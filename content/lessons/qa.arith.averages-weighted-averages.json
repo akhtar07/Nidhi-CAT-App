@@ -1,0 +1,47 @@
+{
+  "id": "lesson.qa.arith.averages-weighted-averages",
+  "microTopicId": "qa.arith.averages-weighted-averages",
+  "bodyMarkdown": "## Averages & Weighted Averages\n\n$$\\text{Average} = \\frac{\\text{Sum of values}}{\\text{Number of values}} \\qquad \\Rightarrow \\qquad \\text{Sum} = \\text{Average} \\times \\text{Count}$$\n\nAlmost every average question is really a \"sum\" question in disguise \u2014 convert to sums first,\nsolve there, and only convert back to an average at the end if the question asks for one.\n\n### Weighted average\n\n$$\\bar{x} = \\frac{w_1 x_1 + w_2 x_2 + \\cdots}{w_1 + w_2 + \\cdots}$$\n\nThis is **not** the simple average of the group averages when the group sizes (weights) differ.\n\n### When one value joins, leaves, or is replaced\n\nConvert to sums: $\\text{new sum} = \\text{old sum} \\pm \\text{value changed}$, remembering that the\n**count** ($n$) usually changes too when a member joins or leaves (but not on a simple swap).",
+  "workedExamples": [
+    {
+      "id": "qa.arith.averages-weighted-averages.we-01",
+      "stemMarkdown": "The average of 5 numbers is 28. If one number is excluded, the average of the remaining 4 numbers becomes 25. What is the excluded number?",
+      "solutionMarkdown": "Sum of 5 numbers $= 28 \\times 5 = 140$. Sum of remaining 4 $= 25 \\times 4 = 100$. Excluded number $= 140 - 100 = 40$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.averages-weighted-averages.we-02",
+      "stemMarkdown": "The average weight of 10 students is 42 kg. A new student joins and the average becomes 43 kg. What is the weight of the new student?",
+      "solutionMarkdown": "Old sum (10 students) $= 42 \\times 10 = 420$. New sum (11 students) $= 43 \\times 11 = 473$. New student's weight $= 473 - 420 = 53$ kg.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.averages-weighted-averages.we-03",
+      "stemMarkdown": "A shopkeeper mixes 20 kg of rice costing Rs. 30/kg with 30 kg of rice costing Rs. 45/kg. Find the average cost per kg of the mixture.",
+      "solutionMarkdown": "Weighted average $= \\dfrac{20 \\times 30 + 30 \\times 45}{20 + 30} = \\dfrac{600 + 1350}{50} = \\dfrac{1950}{50} = 39$ Rs./kg. Note this is closer to 45 than to 30 \u2014 correctly reflecting the larger weight (30 kg) on the higher price.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.averages-weighted-averages.fc-sum-trick",
+      "microTopicId": "qa.arith.averages-weighted-averages",
+      "title": "Sum = Average \u00d7 Count",
+      "bodyMarkdown": "Convert average problems to sum problems first \u2014 it's almost always easier from there.",
+      "exampleMarkdown": "Average of 6 numbers is 15 \u2192 sum = 90."
+    },
+    {
+      "id": "qa.arith.averages-weighted-averages.fc-weighted-average",
+      "microTopicId": "qa.arith.averages-weighted-averages",
+      "title": "Weighted average",
+      "bodyMarkdown": "$$\\bar{x} = \\frac{w_1x_1 + w_2x_2 + \\cdots}{w_1 + w_2 + \\cdots}$$",
+      "exampleMarkdown": "10 items @ 20 and 5 items @ 50: weighted avg = (10\u00d720+5\u00d750)/15 = 30."
+    }
+  ],
+  "commonTraps": [
+    "Weighted average \u2260 simple average of the group averages when group sizes differ.",
+    "When a member joins or leaves, the count (n) changes too \u2014 forgetting this is the most common slip.",
+    "Convert to sums before solving; working directly with averages usually leads to fraction errors."
+  ],
+  "estReadMinutes": 5
+}

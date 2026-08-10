@@ -1,0 +1,47 @@
+{
+  "id": "lesson.qa.arith.ratio-proportion-variation",
+  "microTopicId": "qa.arith.ratio-proportion-variation",
+  "bodyMarkdown": "## Ratio, Proportion & Variation\n\nA ratio $a:b$ is just the fraction $\\dfrac{a}{b}$. A proportion $a:b :: c:d$ means\n$\\dfrac{a}{b} = \\dfrac{c}{d}$, i.e. $ad = bc$ (cross-multiplication).\n\n### Dividing a quantity in a given ratio\n\nIf a total $T$ is split in the ratio $p:q:r$, each share is\n$\\dfrac{p}{p+q+r} \\times T$, $\\dfrac{q}{p+q+r} \\times T$, $\\dfrac{r}{p+q+r} \\times T$ \u2014 the total\nnumber of \"parts\" is the **sum** of the ratio terms, not the number of people/groups.\n\n### Combining two ratios\n\nTo combine $a:b$ and $b:c$ into $a:b:c$, scale both so the common term ($b$) matches \u2014 usually\nvia the LCM of the two $b$ values.\n\n### Variation\n\n- **Direct**: $y \\propto x \\implies y = kx$ (y grows as x grows).\n- **Inverse**: $y \\propto \\dfrac{1}{x} \\implies y = \\dfrac{k}{x}$ (y shrinks as x grows).\n- **Joint**: $y \\propto \\dfrac{x}{z} \\implies y = \\dfrac{kx}{z}$.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.ratio-proportion-variation.we-01",
+      "stemMarkdown": "Divide Rs. 1400 among A, B, and C in the ratio 2:3:5.",
+      "solutionMarkdown": "Total parts $= 2+3+5 = 10$. $A = \\dfrac{2}{10}\\times 1400 = 280$, $B = \\dfrac{3}{10}\\times 1400 = 420$, $C = \\dfrac{5}{10}\\times 1400 = 700$. Check: $280+420+700 = 1400$. \u2713",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.ratio-proportion-variation.we-02",
+      "stemMarkdown": "If a:b = 2:3 and b:c = 4:5, find a:b:c.",
+      "solutionMarkdown": "Make the common term ($b$) equal: LCM(3, 4) = 12. $a:b = 2:3 = 8:12$ (\u00d74). $b:c = 4:5 = 12:15$ (\u00d73). Combined: $a:b:c = 8:12:15$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.ratio-proportion-variation.we-03",
+      "stemMarkdown": "y varies directly as x and inversely as z. When x = 6, z = 2, y = 9. Find y when x = 8, z = 4.",
+      "solutionMarkdown": "$y = \\dfrac{kx}{z}$. Using $x=6, z=2, y=9$: $9 = \\dfrac{k \\times 6}{2} = 3k \\implies k = 3$. When $x=8, z=4$: $y = \\dfrac{3 \\times 8}{4} = 6$.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.ratio-proportion-variation.fc-dividing-ratio",
+      "microTopicId": "qa.arith.ratio-proportion-variation",
+      "title": "Dividing a total in a ratio",
+      "bodyMarkdown": "Total parts = sum of ratio terms. Each share $= \\dfrac{\\text{its term}}{\\text{total parts}} \\times T$.",
+      "exampleMarkdown": "Split 900 in ratio 1:2:6 \u2192 parts=9 \u2192 shares 100, 200, 600."
+    },
+    {
+      "id": "qa.arith.ratio-proportion-variation.fc-variation",
+      "microTopicId": "qa.arith.ratio-proportion-variation",
+      "title": "Direct / inverse / joint variation",
+      "bodyMarkdown": "Direct: $y=kx$. Inverse: $y=k/x$. Joint: $y=kx/z$. Solve for $k$ first from given values.",
+      "exampleMarkdown": "y\u221dx\u00b2, y=20 at x=5 \u2192 k=0.8 \u2192 y=(0.8)(100)=80 at x=10."
+    }
+  ],
+  "commonTraps": [
+    "\"Divide in ratio\" \u2014 total parts is the sum of the ratio terms, not the number of people.",
+    "Combining two ratios requires matching the common term first (via LCM), not just multiplying blindly.",
+    "Inverse variation means y goes DOWN as x goes up \u2014 easy to accidentally treat it as direct."
+  ],
+  "estReadMinutes": 6
+}

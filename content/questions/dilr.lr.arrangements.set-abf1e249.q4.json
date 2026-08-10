@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.arrangements.set-abf1e249.q4",
+  "microTopicIds": [
+    "dilr.lr.arrangements"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "If Bilal is seat number 1 and seats are numbered clockwise, what seat number is Anya?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Numbering clockwise from Bilal as seat 1, the order is seat 1: Bilal, seat 2: Anya, seat 3: Divya, seat 4: Chetan, seat 5: Esha. Anya is seat 2.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:circular-arrangement"
+  ],
+  "mockReserved": false
+}

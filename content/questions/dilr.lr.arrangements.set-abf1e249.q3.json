@@ -1,0 +1,49 @@
+{
+  "id": "dilr.lr.arrangements.set-abf1e249.q3",
+  "microTopicIds": [
+    "dilr.lr.arrangements"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sits immediately clockwise of Chetan?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Esha"
+    },
+    {
+      "key": "B",
+      "markdown": "Anya"
+    },
+    {
+      "key": "C",
+      "markdown": "Divya"
+    },
+    {
+      "key": "D",
+      "markdown": "Bilal"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "From the verified order Anya \u2192 Divya \u2192 Chetan \u2192 Esha \u2192 Bilal, immediately clockwise of Chetan is **Esha**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:circular-arrangement"
+  ],
+  "mockReserved": false
+}

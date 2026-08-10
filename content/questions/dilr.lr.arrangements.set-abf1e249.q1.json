@@ -1,0 +1,49 @@
+{
+  "id": "dilr.lr.arrangements.set-abf1e249.q1",
+  "microTopicIds": [
+    "dilr.lr.arrangements"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who sits immediately clockwise of Anya?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Divya"
+    },
+    {
+      "key": "B",
+      "markdown": "Chetan"
+    },
+    {
+      "key": "C",
+      "markdown": "Esha"
+    },
+    {
+      "key": "D",
+      "markdown": "Bilal"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "From the clues, the verified circular order (clockwise) is Anya \u2192 Divya \u2192 Chetan \u2192 Esha \u2192 Bilal \u2192 (back to Anya). Immediately clockwise of Anya is **Divya**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:circular-arrangement"
+  ],
+  "mockReserved": false
+}

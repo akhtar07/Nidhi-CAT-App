@@ -1,0 +1,33 @@
+{
+  "id": "dilr.di.growth-cagr.set-aff3470a.q2",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is Alpha Textiles' CAGR (%) in revenue from 2019 to 2023? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 15.02,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "CAGR $= \\left(\\dfrac{210}{120}\\right)^{1/4} - 1 = 15.02\\%$ (4 periods between 2019 and 2023).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr",
+    "cagr"
+  ],
+  "mockReserved": false
+}

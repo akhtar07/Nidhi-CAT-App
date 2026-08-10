@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.arrangements.set-31406611",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "5 friends \u2014 Esha, Divya, Chetan, Bilal, and Anya \u2014 sit around a circular table, facing the center. Study the clues below and answer the questions that follow.\n\n- Divya sits immediately clockwise of Esha.\n- Chetan sits immediately clockwise of Divya.\n- Bilal sits immediately clockwise of Chetan.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.arrangements.set-31406611.q1",
+    "dilr.lr.arrangements.set-31406611.q2",
+    "dilr.lr.arrangements.set-31406611.q3",
+    "dilr.lr.arrangements.set-31406611.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

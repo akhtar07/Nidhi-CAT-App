@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.missing-data.set-22f9a29c.q3",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which product has the highest row total across all regions?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Product P"
+    },
+    {
+      "key": "B",
+      "markdown": "Product Q"
+    },
+    {
+      "key": "C",
+      "markdown": "Product R"
+    },
+    {
+      "key": "D",
+      "markdown": "Product S"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Row totals: Product P: 302, Product Q: 251, Product R: 244, Product S: 185. Highest is **Product P**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

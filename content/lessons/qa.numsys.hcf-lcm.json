@@ -1,0 +1,47 @@
+{
+  "id": "lesson.qa.numsys.hcf-lcm",
+  "microTopicId": "qa.numsys.hcf-lcm",
+  "bodyMarkdown": "## HCF & LCM\n\nFor **exactly two** numbers $a, b$:\n\n$$HCF(a,b) \\times LCM(a,b) = a \\times b$$\n\nThis does **not** extend to three or more numbers \u2014 compute HCF/LCM of 3+ numbers directly via\nprime factorization instead.\n\n### Via prime factorization\n\n- **LCM** = product of the **highest** power of every prime appearing in any number.\n- **HCF** = product of the **lowest** power of every prime common to **all** the numbers.\n\n### \"Leaves a remainder\" problems\n\n\"Find the largest number that divides $X$ and $Y$, leaving remainder $r$ in each case\" \u2014\n**subtract $r$ first**, then take the HCF of $(X-r)$ and $(Y-r)$.\n\n### Word-problem cue\n\nDividing things into equal groups / finding the largest common measure \u2192 **HCF**. Events that\nrecur together / finding when things next coincide \u2192 **LCM**.",
+  "workedExamples": [
+    {
+      "id": "qa.numsys.hcf-lcm.we-01",
+      "stemMarkdown": "Find the HCF and LCM of 36 and 60.",
+      "solutionMarkdown": "$36 = 2^2 \\times 3^2$, $60 = 2^2 \\times 3 \\times 5$. HCF $= 2^2 \\times 3 = 12$ (lowest common powers). LCM $= 2^2 \\times 3^2 \\times 5 = 180$ (highest powers of every prime). Check: $12 \\times 180 = 2160 = 36 \\times 60$. \u2713",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.numsys.hcf-lcm.we-02",
+      "stemMarkdown": "Three bells toll at intervals of 12, 18, and 24 minutes. If they toll together at 6:00 AM, when will they next toll together?",
+      "solutionMarkdown": "$12 = 2^2 \\times 3$, $18 = 2 \\times 3^2$, $24 = 2^3 \\times 3$. LCM $= 2^3 \\times 3^2 = 72$ minutes. Next together at $6{:}00 + 72\\text{ min} = 7{:}12$ AM.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.numsys.hcf-lcm.we-03",
+      "stemMarkdown": "Find the greatest number that divides 245 and 1029, leaving remainder 5 in each case.",
+      "solutionMarkdown": "Subtract the remainder first: $245 - 5 = 240$, $1029 - 5 = 1024$. $240 = 2^4 \\times 3 \\times 5$, $1024 = 2^{10}$. HCF $= 2^4 = 16$.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.numsys.hcf-lcm.fc-product-rule",
+      "microTopicId": "qa.numsys.hcf-lcm",
+      "title": "HCF \u00d7 LCM = product (two numbers only)",
+      "bodyMarkdown": "$$HCF(a,b) \\times LCM(a,b) = a \\times b$$ Only valid for exactly two numbers.",
+      "exampleMarkdown": "HCF(12,18)=6, LCM(12,18)=36, and 6\u00d736=216=12\u00d718."
+    },
+    {
+      "id": "qa.numsys.hcf-lcm.fc-remainder-trick",
+      "microTopicId": "qa.numsys.hcf-lcm",
+      "title": "\"Leaves remainder r\" trick",
+      "bodyMarkdown": "Subtract the remainder from each number *before* taking the HCF.",
+      "exampleMarkdown": "Largest number dividing 50 and 80 leaving remainder 2: HCF(48,78)=6."
+    }
+  ],
+  "commonTraps": [
+    "HCF \u00d7 LCM = product only works for exactly two numbers \u2014 not three or more.",
+    "In \"leaves remainder r\" problems, subtract r from each number before computing the HCF \u2014 a very common miss.",
+    "Confusing when to use HCF (equal grouping / largest common measure) vs LCM (things recurring together)."
+  ],
+  "estReadMinutes": 6
+}

@@ -1,0 +1,55 @@
+{
+  "id": "dilr.di.growth-cagr.set-aff3470a",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The chart below shows annual revenue (Rs. crore) for two textile companies, 2019-2023.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "bar",
+        "categories": [
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023"
+        ],
+        "series": [
+          {
+            "name": "Alpha Textiles",
+            "values": [
+              120,
+              138,
+              152,
+              175,
+              210
+            ]
+          },
+          {
+            "name": "Beta Textiles",
+            "values": [
+              95,
+              110,
+              118,
+              145,
+              152
+            ]
+          }
+        ],
+        "unit": "Rs. crore"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.growth-cagr.set-aff3470a.q1",
+    "dilr.di.growth-cagr.set-aff3470a.q2",
+    "dilr.di.growth-cagr.set-aff3470a.q3",
+    "dilr.di.growth-cagr.set-aff3470a.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 9.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-22f9a29c.q1",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the missing value for Product P in the West region?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 82.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Product P's row total is 302; the other three known cells sum to 220. Missing value $= 302 - 220 = 82$ (the West column total confirms the same figure).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}
