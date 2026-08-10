@@ -32,11 +32,11 @@ export default defineConfig({
         start_url: '/Nidhi-CAT-App/',
         scope: '/Nidhi-CAT-App/',
         display: 'standalone',
-        // #0a0a0a is the sRGB equivalent of index.css's dark --background (oklch(0.145 0 0)) —
-        // hex here, not oklch(), since manifest parsers vary in CSS Color 4 support and this
+        // #110c08 is the sRGB equivalent of index.css's dark --background (oklch(0.16 0.012 55))
+        // — hex here, not oklch(), since manifest parsers vary in CSS Color 4 support and this
         // field controls OS-level chrome (splash screen, status bar), unlike in-app CSS.
-        background_color: '#0a0a0a',
-        theme_color: '#0a0a0a',
+        background_color: '#110c08',
+        theme_color: '#110c08',
         icons: [
           { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
           { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
