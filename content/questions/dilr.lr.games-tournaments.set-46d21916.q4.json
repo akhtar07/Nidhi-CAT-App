@@ -1,0 +1,49 @@
+{
+  "id": "dilr.lr.games-tournaments.set-46d21916.q4",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which team finished last (fewest points)?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Eagles"
+    },
+    {
+      "key": "B",
+      "markdown": "Falcons"
+    },
+    {
+      "key": "C",
+      "markdown": "Hawks"
+    },
+    {
+      "key": "D",
+      "markdown": "Kites"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Points: Eagles: 0, Falcons: 4, Hawks: 6, Kites: 2. **Eagles** finished last.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:games-tournaments"
+  ],
+  "mockReserved": false
+}

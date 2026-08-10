@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-46d21916.q2",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many matches did Eagles win?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Eagles's matches: Falcons beat Eagles; Hawks beat Eagles; Kites beat Eagles. Eagles won 0 match(es).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:games-tournaments"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.games-tournaments.set-46d21916",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "In a round-robin tournament, 4 teams (Eagles, Falcons, Hawks, Kites) each played every other team exactly once (no draws). The results were:\n\n- Falcons beat Eagles\n- Hawks beat Eagles\n- Kites beat Eagles\n- Hawks beat Falcons\n- Falcons beat Kites\n- Hawks beat Kites\n\nA win is worth 2 points, a loss 0. Study the results and answer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.games-tournaments.set-46d21916.q1",
+    "dilr.lr.games-tournaments.set-46d21916.q2",
+    "dilr.lr.games-tournaments.set-46d21916.q3",
+    "dilr.lr.games-tournaments.set-46d21916.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}
