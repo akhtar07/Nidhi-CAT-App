@@ -9,7 +9,7 @@ import { redistributeMissedDay } from '@/planner/missedDay'
 import { withDecayApplied } from '@/srs/topicReview'
 import { storage } from '@/storage'
 import type { MicroTopic } from '@/types/content'
-import type { Attempt, PlanDay } from '@/types/state'
+import type { Attempt, PlanDay, PlanItem } from '@/types/state'
 
 const HEATMAP_WEEKS = 12
 
@@ -17,6 +17,29 @@ function planItemLabel(microTopicId: string, topicNameById: Map<string, string>)
   if (microTopicId === MOCK_SENTINEL) return 'Mock test'
   if (microTopicId === REVIEW_SENTINEL) return 'Review / SRS'
   return topicNameById.get(microTopicId) ?? microTopicId
+}
+
+/** generatePlan.ts deliberately schedules both a 'learn' and a 'drill' PlanItem for the same
+ * topic on the day it's introduced (the Learn→Drill loop) — two real, distinct steps, not a
+ * duplicate. Collapses them into one "Topic (learn + drill)" entry so the summary reads clearly
+ * instead of repeating the topic name with no explanation. */
+function summarizeDayItems(items: PlanItem[], topicNameById: Map<string, string>): string {
+  const kindsByLabel = new Map<string, Set<string>>()
+  const order: string[] = []
+  for (const item of items) {
+    const label = planItemLabel(item.microTopicId, topicNameById)
+    if (!kindsByLabel.has(label)) {
+      kindsByLabel.set(label, new Set())
+      order.push(label)
+    }
+    kindsByLabel.get(label)!.add(item.kind)
+  }
+  return order
+    .map((label) => {
+      const kinds = kindsByLabel.get(label)!
+      return kinds.size > 1 ? `${label} (${[...kinds].join(' + ')})` : label
+    })
+    .join(', ')
 }
 
 function intensityClass(minutes: number): string {
@@ -261,7 +284,7 @@ export function Calendar() {
                   <span className="text-xs text-muted-foreground">{day.items.length} item(s)</span>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  {day.items.map((i) => planItemLabel(i.microTopicId, topicNameById)).join(', ')}
+                  {summarizeDayItems(day.items, topicNameById)}
                 </p>
               </li>
             ))}
