@@ -11,11 +11,13 @@ into `/content` and has no dependency on learner-state storage, so there's no
 reason to block content ingestion on it. All other milestones keep their
 original numbers and order from SPEC.md §15.
 
-## Current milestone: 16 — Supabase sync + email (not started)
+## Current milestone: 17 — Polish (not started)
 
-Milestones 7 through 15 are done (see below). Milestone 7's content-bank
+Milestones 7 through 16 are done (see below). Milestone 7's content-bank
 scale-up is a long-running background process, not a one-session task — see
-its entry for current bank size and how to check/resume it.
+its entry for current bank size and how to check/resume it. **Milestone 16
+is code-complete but not live** — read its entry before assuming sync/email
+work; nothing runs until a real Supabase project + Resend account exist.
 
 ## Binding decision (implemented in Milestone 1 — this is now how it works)
 So the pipeline (Python) and app (TypeScript) content schemas can never drift:
@@ -43,6 +45,116 @@ TypeScript-native (Milestone 2, storage layer) since they never need to be
 produced or validated by the Python pipeline.
 
 ## Completed
+
+### Milestone 16 — Supabase sync + email (code-complete, not live)
+
+**Read this before touching anything sync/email-related: every line of code below is real,
+typechecked, and unit-tested, but nothing actually runs.** No live Supabase project or Resend
+account exists — there was no way to create either from this session (needs real external
+accounts), and CLAUDE.md/SPEC.md both forbid inventing or hardcoding credentials. The user
+explicitly chose "build the code, defer live setup" over pausing or skipping to Milestone 17.
+
+**`SupabaseSyncAdapter`** (`app/src/storage/supabase/`), the `SupabaseAdapter` SPEC.md §1 rule 2
+predicted from Milestone 2 ("added later without touching any component"): wraps `DexieAdapter`,
+not a replacement for it — every read and every synchronous write still goes straight through
+Dexie/IndexedDB, which stays the actual source of truth (CLAUDE.md: "IndexedDB is v1"). Every
+mutating call additionally records the write into a new Dexie `syncQueue` outbox table
+(`schema.ts` version 5), and `flushQueue()` best-effort pushes that outbox to Supabase —
+de-duplicating superseded writes to the same row first, leaving the whole queue untouched on any
+failure so the next attempt retries in order. This is what makes SPEC.md §16's "Airplane mode:
+full drill session works, syncs on reconnect" true by construction rather than by careful
+sequencing: a write can never block on network, and syncing is a separate, retriable, best-effort
+step layered on top. `mockSession` is deliberately excluded from sync — SPEC.md's crash-recovery
+requirement is local-only, and cross-device mid-mock resumption was never asked for.
+`storage/index.ts` now constructs `SupabaseSyncAdapter` unconditionally (no env-based branching
+needed) — with no Supabase project configured, `flushQueue()` is a verified no-op and the app is
+byte-for-byte the same experience as plain `DexieAdapter`. **7 new unit tests** covering: writes
+land in Dexie regardless of configuration; flush no-ops when unconfigured or signed-out; a
+successful flush drains the queue and sends the right rows; repeated writes to the same row
+de-duplicate to one upsert; a Supabase error leaves the queue intact for retry; reads never touch
+Supabase at all.
+
+**Magic-link auth** (`app/src/auth/useSupabaseAuth.ts`, wired into Settings' new "Sync across
+devices" section): `signInWithOtp`/`onAuthStateChange`/`signOut` via `@supabase/supabase-js`
+(added to SPEC.md §7's approved stack — Supabase is named explicitly there). Single-user app, so
+this is purely the cross-device *sync* login SPEC.md §12 option B describes, not a product
+signup flow (SPEC.md §0 is explicit there is no such thing here).
+
+**`app/src/lib/supabaseClient.ts`**: reads `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY`
+(`app/.env.example` documents both, real values go in a gitignored `.env.local`), returns `null`
+when either is missing — every consumer (`SupabaseSyncAdapter`, `useSupabaseAuth`) already
+handles a null client as "sync feature inert," so an unconfigured build needs no special-casing
+anywhere else. **This is not a CLAUDE.md "no API keys in client code" violation**: Supabase's
+anon key is the one credential explicitly designed to ship in a browser bundle — access control
+is entirely Row Level Security (below), not secrecy of this key. The one genuinely secret key
+(service-role, which bypasses RLS) never appears in `/app` at all — only inside the Edge
+Function, which runs on Supabase's servers.
+
+**`supabase/migrations/0001_init.sql`**: one table per synced learner-state type (`attempts`,
+`mastery_states`, `plan_days`, `mock_results`, `item_elo`, `settings`, `srs_cards`), each
+`primary key (user_id, <natural key>)`, RLS enabled with an `auth.uid() = user_id` policy on
+every table — the anon key can only ever touch its own signed-in user's rows. Plus `email_log`
+(`primary key (user_id, sent_date)`) enforcing SPEC.md §11's "never more than one email per day"
+**at the database level**, not just in application logic — a duplicated cron trigger can't
+double-send even if the Edge Function's own pre-check somehow raced. Column names are hand-kept
+in lockstep with `app/src/storage/supabase/toRow.ts`'s camelCase→snake_case mapping; there's no
+generation pipeline tying the two together the way `/content`'s schemas.py↔content.ts link is
+automated, since this is a one-way, Postgres-specific mapping with nothing to validate against
+in CI (no live database to check it against). Apply via `supabase db push` or the SQL editor,
+once a project exists.
+
+**Edge Function** (`supabase/functions/daily-nudge/index.ts`, Deno, deployed separately via the
+Supabase CLI — not part of the Vite build or CI): reads every `email_opt_in` user's synced
+settings/plan/mastery rows, picks at most one email via `selectEmailForToday` (priority:
+topic-complete > exam-milestone > mock-reminder > Sunday digest > daily nudge), sends through
+Resend, logs to `email_log`. Gated by an `x-cron-secret` header check, not Supabase auth (this
+is a server-to-server call from GitHub Actions, not a user action). **Two things scoped out,
+flagged honestly rather than faked**: topic-complete/mock-reminder/weekly-digest detection needs
+queries this pass didn't wire up (a mastery-history lookback, tomorrow's plan read, and a week of
+aggregated attempts respectively) — the `selectEmailForToday` function and its templates fully
+support all five email types and are tested for all of them, but `index.ts` currently only ever
+populates `todayPlanFirstItem`, so only the daily nudge and (once the exam date is real) the
+milestone emails will actually fire until those three queries are added.
+
+**Email templates** (`supabase/functions/_shared/{emailTemplates,selectEmail}.js`) — deliberately
+plain, dependency-free ESM **JavaScript**, not TypeScript: this is the one file both the Deno
+Edge Function and this Vite/vitest project import unmodified, and keeping it framework-free
+sidesteps needing a shared build step between two unrelated runtimes. `app/tsconfig.app.json`
+gained `allowJs: true` and an extra `include` entry pointing at this directory so `tsc -b` can
+still typecheck the app-side test that imports it. **14 new unit tests**
+(`app/src/email/emailTemplates.test.ts`) cover all 5 template types (including the exact SPEC.md
+§11 daily-email example shape, HTML-escaping of user-controlled topic names, and non-empty
+distinct copy for all 6 milestone days) plus every priority ordering in `selectEmailForToday`.
+
+**GitHub Actions cron** (`.github/workflows/daily-nudge-cron.yml`): SPEC.md §11's exact
+expression (`0 3 * * *` UTC = 08:30 IST), gated on two repo secrets
+(`SUPABASE_FUNCTION_URL`/`CRON_SECRET`) that don't exist yet — the job fails loudly with a clear
+message if they're missing, rather than silently no-op'ing (a missing secret should never look
+like "ran fine, nothing to send").
+
+**Full local CI green** throughout (lint/typecheck/170 tests, up from 149/build) — every file
+above that CAN be exercised without a live backend was exercised: the sync queue's offline/retry/
+dedup behaviour (mocked Supabase client), and every email template + selection rule, both via
+real automated tests, not just written-and-hoped.
+
+**Setup steps for when a real Supabase project exists** (not done in this session — needs
+accounts this environment can't create):
+1. Create the Supabase project; run `supabase/migrations/0001_init.sql` against it (SQL editor
+   or `supabase db push`).
+2. `app/.env.local` (gitignored): `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` from the
+   project's API settings.
+3. `supabase secrets set RESEND_API_KEY=... SUPABASE_SERVICE_ROLE_KEY=... CRON_SECRET=<any random string>`,
+   then `supabase functions deploy daily-nudge`.
+4. A verified sending domain in Resend; update the `from:` address in `index.ts` (currently a
+   placeholder `ascent@resend.dev`).
+5. GitHub repo secrets: `SUPABASE_FUNCTION_URL` (the deployed function's URL) and `CRON_SECRET`
+   (must match step 3's value).
+6. Rebuild/redeploy the app (`VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY` must also be available
+   to the GitHub Pages build — add them as repo secrets and reference them in `deploy.yml`'s
+   build step, which doesn't happen automatically).
+
+Run locally (everything except live sync): `cd app && npm run test -- --run` exercises the sync
+queue and email logic without any of the above.
 
 ### Milestone 15 — PWA + notifications (done)
 

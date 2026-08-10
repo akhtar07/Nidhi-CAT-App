@@ -1,0 +1,31 @@
+name: Daily nudge email
+
+# SPEC.md §11 Phase 2: "GitHub Actions cron (0 3 * * * UTC = 08:30 IST) -> calls a Supabase Edge
+# Function -> reads her synced progress -> sends via Resend." Inert until two repo secrets exist
+# (Settings -> Secrets and variables -> Actions): SUPABASE_FUNCTION_URL (the deployed daily-nudge
+# function's URL) and CRON_SECRET (must match the Edge Function's own CRON_SECRET env var — see
+# supabase/functions/daily-nudge/index.ts). Until both are set, this job runs and fails fast
+# with a clear message rather than silently no-op'ing, so a missing secret is never mistaken for
+# "nothing to send today."
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check required secrets are set
+        run: |
+          if [ -z "${{ secrets.SUPABASE_FUNCTION_URL }}" ] || [ -z "${{ secrets.CRON_SECRET }}" ]; then
+            echo "::error::SUPABASE_FUNCTION_URL and/or CRON_SECRET repo secrets are not set — see PROGRESS.md Milestone 16 setup steps."
+            exit 1
+          fi
+
+      - name: Call the daily-nudge Edge Function
+        run: |
+          curl --fail-with-body -sS \
+            -X POST "${{ secrets.SUPABASE_FUNCTION_URL }}" \
+            -H "x-cron-secret: ${{ secrets.CRON_SECRET }}"

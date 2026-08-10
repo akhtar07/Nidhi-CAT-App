@@ -1,5 +1,6 @@
 import Dexie, { type Table } from 'dexie'
 import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
+import type { SyncQueueEntry } from '@/storage/supabase/syncQueue'
 
 /** Settings is a singleton row; this fixed key is how it's addressed in the table. */
 export const SETTINGS_KEY = 'singleton'
@@ -24,6 +25,7 @@ export class AscentDB extends Dexie {
   settings!: Table<SettingsRow, string>
   mockSession!: Table<MockSessionRow, string>
   srsCards!: Table<SrsCard, string>
+  syncQueue!: Table<SyncQueueEntry, number>
 
   constructor(name = 'ascent') {
     super(name)
@@ -45,6 +47,12 @@ export class AscentDB extends Dexie {
     // Milestone 12: card-level SRS (SPEC.md §8.4) — formula cards + mistake questions.
     this.version(4).stores({
       srsCards: 'id, cardType, microTopicId, nextReviewAt',
+    })
+    // Milestone 16: outbox for SupabaseSyncAdapter (SPEC.md §12 option B) — IndexedDB stays the
+    // source of truth (CLAUDE.md), this table only tracks which writes still need pushing to
+    // Supabase, so a write made offline (SPEC.md §16: "syncs on reconnect") isn't lost.
+    this.version(5).stores({
+      syncQueue: '++seq, createdAt',
     })
   }
 }

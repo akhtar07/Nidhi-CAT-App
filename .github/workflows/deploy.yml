@@ -72,6 +72,12 @@ jobs:
 
       - name: Build
         working-directory: app
+        # Milestone 16: unset until a real Supabase project exists (repo secrets), at which
+        # point sync/auth activate with no further workflow changes — see PROGRESS.md. Empty
+        # values are safe: app/src/lib/supabaseClient.ts treats "" the same as unset.
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: npm run build
 
       - name: Setup Pages

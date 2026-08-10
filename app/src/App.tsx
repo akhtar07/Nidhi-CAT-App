@@ -11,8 +11,10 @@ import { Review } from '@/pages/Review'
 import { Settings } from '@/pages/Settings'
 import { Today } from '@/pages/Today'
 import { UpdateBanner } from '@/pwa/UpdateBanner'
+import { useAutoSync } from '@/storage/supabase/useAutoSync'
 
 function App() {
+  useAutoSync()
   return (
     <>
       <Routes>

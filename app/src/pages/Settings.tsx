@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useSupabaseAuth } from '@/auth/useSupabaseAuth'
 import { Button } from '@/components/ui/button'
 import { isNotificationSupported, requestNotificationPermission, showLocalNotification } from '@/pwa/notify'
 import { useInstallPrompt } from '@/pwa/useInstallPrompt'
-import { storage } from '@/storage'
+import { flushSyncQueue, storage } from '@/storage'
 import type { Section, Settings as SettingsType } from '@/types/state'
 
 const SECTIONS: Section[] = ['VARC', 'DILR', 'QA']
@@ -23,6 +24,10 @@ export function Settings() {
   const [notificationStatus, setNotificationStatus] = useState<string | null>(null)
   const [notificationsSupported, setNotificationsSupported] = useState(false)
   const { canInstall, installed, promptInstall } = useInstallPrompt()
+  const { configured: syncConfigured, email: syncedEmail, loading: authLoading, sendMagicLink, signOut } = useSupabaseAuth()
+  const [syncEmailInput, setSyncEmailInput] = useState('')
+  const [syncStatus, setSyncStatus] = useState<string | null>(null)
+  const [syncing, setSyncing] = useState(false)
 
   useEffect(() => {
     storage
@@ -72,6 +77,19 @@ export function Settings() {
     a.click()
     URL.revokeObjectURL(url)
     setStatus('Exported.')
+  }
+
+  async function handleSendMagicLink() {
+    setSyncStatus('Sending...')
+    const { error } = await sendMagicLink(syncEmailInput)
+    setSyncStatus(error ?? 'Check your email for a sign-in link.')
+  }
+
+  async function handleSyncNow() {
+    setSyncing(true)
+    const result = await flushSyncQueue()
+    setSyncing(false)
+    setSyncStatus(result.error ? `Sync failed: ${result.error}` : `Synced ${result.flushed} change(s).`)
   }
 
   async function handleImportFile(file: File) {
@@ -163,6 +181,49 @@ export function Settings() {
           />
         </div>
         {status && <p className="text-sm text-muted-foreground">{status}</p>}
+      </section>
+
+      <section className="space-y-2">
+        <h2 className="font-medium">Sync across devices</h2>
+        {!syncConfigured ? (
+          <p className="text-sm text-muted-foreground">
+            Not set up yet — this build doesn't have a Supabase project configured, so progress stays on this
+            device only. Export/Import above is the only backup for now.
+          </p>
+        ) : authLoading ? (
+          <p className="text-sm text-muted-foreground">Loading…</p>
+        ) : syncedEmail ? (
+          <>
+            <p className="text-sm text-muted-foreground">Signed in as {syncedEmail}.</p>
+            <div className="flex gap-2">
+              <Button size="sm" onClick={() => void handleSyncNow()} disabled={syncing}>
+                {syncing ? 'Syncing…' : 'Sync now'}
+              </Button>
+              <Button size="sm" variant="outline" onClick={() => void signOut()}>
+                Sign out
+              </Button>
+            </div>
+          </>
+        ) : (
+          <>
+            <p className="text-sm text-muted-foreground">
+              Sign in with a magic link to back up progress and pick up where you left off on another device.
+            </p>
+            <div className="flex gap-2">
+              <input
+                type="email"
+                placeholder="you@example.com"
+                value={syncEmailInput}
+                onChange={(e) => setSyncEmailInput(e.target.value)}
+                className="min-w-0 flex-1 rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+              />
+              <Button onClick={() => void handleSendMagicLink()} disabled={!syncEmailInput}>
+                Send link
+              </Button>
+            </div>
+          </>
+        )}
+        {syncStatus && <p className="text-sm text-muted-foreground">{syncStatus}</p>}
       </section>
 
       <section className="space-y-2">
