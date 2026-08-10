@@ -46,7 +46,75 @@ produced or validated by the Python pipeline.
 
 ## Completed
 
-### Content scale-up (ad hoc, requested directly — "more questions for practice, more for teaching")
+### Content scale-up, round 2 — teaching-first routing, more DILR, a stuck-batch diagnosis
+
+Direct follow-up requests: "complete the full syllabus... zero tolerance... don't fabricate,"
+then "teach like a kid before every question." Honest framing up front, re-audited with the same
+script each time, not just asserted: **still 0 of 86 micro-topics meet SPEC.md §16's real bar
+(≥15 questions + a lesson).** Progress this round: lessons 6→13, DILR topics-with-any-content
+5→8 of 24, zero-question topics 33→30. This is nowhere near "complete" — recorded here as an
+honest checkpoint, not a finish line.
+
+**Teaching-first routing (structural, not content)**: `Today.tsx` and `MockAnalysis.tsx`
+previously linked straight to `/drill/:id` for any topic without a lesson, skipping teaching
+entirely for the 80+ topics that had none. Every entry point now routes through `/lesson/:id`
+first — `Lesson.tsx` already had a graceful "No lesson yet — Practise anyway" fallback, so this
+makes the gate universal with no dead ends. Mistake-review flows (`MistakeNotebook`, `Review`)
+are untouched — re-attempting an already-seen missed question is a different, legitimate flow.
+
+**3 more DILR generators**, same code-verified, no-LLM discipline as round 1:
+- `build_dilr_lr_games_tournaments.py` (`dilr.lr.games-tournaments`, roi=5): simulates a
+  round-robin tournament (seeded RNG per match, no draws), retries the seed until standings have
+  a unique top/bottom team, derives every question from the real computed standings.
+- `build_dilr_lr_distribution_grouping.py` (`dilr.lr.distribution-grouping`, roi=5): a
+  matching-grid puzzle (4 people × pet × job, two linked permutations), same
+  generate-clues-until-unique brute-force pattern as the circular-arrangement generator, over all
+  4!×4!=576 combined possibilities. **Verified with a genuinely independent second script** — not
+  the generator's own logic — that re-parses each set's raw English clues with a fresh regex
+  parser and re-runs its own from-scratch brute-force search; confirmed exactly one solution for
+  all 3 generated sets and cross-checked all 12 questions against it.
+- `build_dilr_di_caselets.py` (`dilr.di.caselets`, roi=5): DI data embedded in narrative prose
+  instead of a table/chart (headcount/salary and factory-production/defect-rate scenarios) — the
+  tested skill is extraction as much as computation. Independently re-verified against the
+  generated JSON with fresh computation before committing.
+
+**7 more lessons** (`pipeline/build_lessons_batch3.py`), deliberately spread across all three
+sections since round 1 was QA-only and DILR/VARC had zero lessons each: permutations-
+combinations, progressions, divisibility-factors (QA); arrangements, tables (DILR); para-jumbles,
+main-idea (VARC). Written in a warmer, "explain it simply before the formula" tone per direct
+instruction.
+
+**3 more real bugs found and fixed**, via live re-verification across *all* 13 lessons (not just
+new ones) — the same rigor that's caught something every single lesson-writing pass this session:
+1. A markdown pipe-table in the divisibility-rules lesson rendered as literal `|`/`---` text —
+   the hand-rolled tokenizer never supported table syntax. Fixed by converting to a bullet list
+   (a content fix, not a renderer feature addition — a list conveys the same information).
+2. 9 instances of single-asterisk `*italic*` markdown (also unsupported by the tokenizer,
+   renders as literal asterisks) across both new lessons and two already-shipped ones from round
+   1. Found via a systematic grep distinguishing real content bugs from arithmetic-verification
+   code comments (which don't ship). Fixed by converting all 9 to `**bold**`.
+3. A constructed para-jumble teaching example had a genuine order ambiguity (two sentences could
+   plausibly both open the paragraph) — caught on review, not by any tool. Fixed by adding
+   explicit connector words ("As a result," "Indeed,") so each link is forced, not just
+   topically plausible.
+
+**The QA generation batch genuinely hung — diagnosed, not just retried.** Left running in the
+background, it produced zero output for 37 minutes on `qa.arith.si-ci-instalments`. Killed it,
+confirmed Ollama itself responds normally within 2.5s the instant the batch process is gone
+(ruling out a general server problem), restarted as a smaller 3-topic canary — it hung on the
+*same* topic again, reproducibly, with real (non-zero) CPU usage throughout, not a classic
+deadlock. Working theory: Ollama is in the degraded 77%/23% GPU/CPU split mode documented back in
+Milestone 7 (context not fitting fully on GPU); in that mode a single generation can run for a
+very long time if the model falls into a verbose/repetitive completion that never hits a stop
+token, and because Ollama streams tokens, the HTTP client's 300s read-timeout keeps resetting on
+each trickling token and never fires even though the call is effectively stuck. **Not yet fixed**
+— paused the LLM-dependent QA path rather than keep burning shared GPU time on blind retries, and
+put full effort into deterministic (no-LLM) DILR generation instead, which has been reliable and
+fully independently verifiable all session. Next step if revisited: bound `max_tokens` on the
+draft call more tightly, or replace the `requests` timeout with a true wall-clock deadline that
+doesn't reset on partial data.
+
+### Content scale-up, round 1 (ad hoc, requested directly — "more questions for practice, more for teaching")
 
 Not tied to a specific SPEC.md milestone number — a direct content request after Milestone 16.
 Targeted the two most glaring gaps a coverage audit turned up:
