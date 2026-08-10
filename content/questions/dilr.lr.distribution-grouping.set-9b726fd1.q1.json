@@ -1,0 +1,49 @@
+{
+  "id": "dilr.lr.distribution-grouping.set-9b726fd1.q1",
+  "microTopicIds": [
+    "dilr.lr.distribution-grouping"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What pet does Aria have?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Cat"
+    },
+    {
+      "key": "B",
+      "markdown": "Dog"
+    },
+    {
+      "key": "C",
+      "markdown": "Fish"
+    },
+    {
+      "key": "D",
+      "markdown": "Bird"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Full solution (from the clues): Aria: Dog, Artist; Ben: Cat, Doctor; Cora: Bird, Teacher; Dev: Fish, Engineer. Aria has the **Dog**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:distribution-grouping"
+  ],
+  "mockReserved": false
+}

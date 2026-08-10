@@ -1,0 +1,49 @@
+{
+  "id": "dilr.lr.distribution-grouping.set-9b726fd1.q2",
+  "microTopicIds": [
+    "dilr.lr.distribution-grouping"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who has the Dog?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Aria"
+    },
+    {
+      "key": "B",
+      "markdown": "Ben"
+    },
+    {
+      "key": "C",
+      "markdown": "Cora"
+    },
+    {
+      "key": "D",
+      "markdown": "Dev"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "From the full solution, **Aria** has the Dog.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:distribution-grouping"
+  ],
+  "mockReserved": false
+}

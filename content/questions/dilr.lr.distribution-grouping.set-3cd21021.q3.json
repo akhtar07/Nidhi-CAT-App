@@ -1,0 +1,49 @@
+{
+  "id": "dilr.lr.distribution-grouping.set-3cd21021.q3",
+  "microTopicIds": [
+    "dilr.lr.distribution-grouping"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What is Aria's job?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Doctor"
+    },
+    {
+      "key": "B",
+      "markdown": "Teacher"
+    },
+    {
+      "key": "C",
+      "markdown": "Engineer"
+    },
+    {
+      "key": "D",
+      "markdown": "Artist"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "From the full solution, Aria is the **Engineer**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-10T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:distribution-grouping"
+  ],
+  "mockReserved": false
+}

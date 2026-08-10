@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.distribution-grouping.set-3cd21021",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "4 friends \u2014 Aria, Ben, Cora, and Dev \u2014 each have a different pet (Cat, Dog, Fish, Bird) and a different job (Doctor, Teacher, Engineer, Artist). Study the clues below and answer the questions that follow.\n\n- Cora has the Cat.\n- Ben has the Dog.\n- Dev does not have the Dog.\n- Dev is not the Doctor.\n- Dev is not the Engineer.\n- The Engineer has the Bird.\n- Ben does not have the Cat.\n- Aria does not have the Cat.\n- Aria does not have the Dog.\n- Cora is not the Artist.\n- Aria is not the Doctor.\n- Cora does not have the Bird.\n- The Doctor has the Dog.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.distribution-grouping.set-3cd21021.q1",
+    "dilr.lr.distribution-grouping.set-3cd21021.q2",
+    "dilr.lr.distribution-grouping.set-3cd21021.q3",
+    "dilr.lr.distribution-grouping.set-3cd21021.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 9.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}
