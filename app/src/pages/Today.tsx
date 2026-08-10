@@ -156,7 +156,7 @@ export function Today() {
                   </Link>
                 )}
                 {item.microTopicId !== MOCK_SENTINEL && item.microTopicId !== REVIEW_SENTINEL && (
-                  <Link to={`/drill/${item.microTopicId}`} className="text-xs text-primary underline">
+                  <Link to={`/lesson/${item.microTopicId}`} className="text-xs text-primary underline">
                     Go
                   </Link>
                 )}
@@ -173,7 +173,7 @@ export function Today() {
         <ul className="divide-y divide-border rounded-lg border border-border">
           {rows.map(({ topic, count, hasLesson }) => (
             <li key={topic.id} className="flex items-center justify-between px-4 py-3 text-sm hover:bg-muted">
-              <Link to={hasLesson ? `/lesson/${topic.id}` : `/drill/${topic.id}`} className="flex-1">
+              <Link to={`/lesson/${topic.id}`} className="flex-1">
                 <span>{topic.name}</span>
                 {hasLesson && (
                   <span className="ml-2 rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary">Lesson</span>

@@ -1,0 +1,28 @@
+{
+  "id": "lesson.dilr.di.tables",
+  "microTopicId": "dilr.di.tables",
+  "bodyMarkdown": "## Reading Data Tables\n\nA DI table question is rarely about hard maths \u2014 it's about reading carefully and not rushing.\nBefore you touch a single question, spend 20-30 seconds just **understanding the table**:\n\n1. What does each **row** represent? What does each **column** represent?\n2. What are the **units** (Rs., kg, %, thousands...)? Mixing these up is the #1 source of wrong\n   answers in DI.\n3. Are there **totals** given (row totals, column totals)? If so, they're a free way to check\n   your own arithmetic \u2014 the row totals should always add up to the same grand total as the\n   column totals.\n\n### The \"totals cross-check\" trick\n\nIf a table gives you both row totals and column totals, they must agree:\n$$\\sum (\\text{row totals}) = \\sum (\\text{column totals}) = \\text{grand total}$$\n\nIf your calculated answer doesn't respect this, you've made an arithmetic slip somewhere \u2014 this\nis a genuinely useful sanity check, not just a curiosity.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.tables.we-01",
+      "stemMarkdown": "A table shows sales (units) for two products across two months: Product A sold 40 in Jan and 60 in Feb. Product B sold 30 in Jan and 50 in Feb. What is the row total for Product A, and does it match the sum of column totals?",
+      "solutionMarkdown": "Product A's row total $= 40+60=100$. Product B's row total $= 30+50=80$. Grand total (both rows) $= 180$. Column totals: Jan $=40+30=70$, Feb $=60+50=110$; sum $=70+110=180$. Both ways give **180** \u2014 the cross-check passes.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.tables.fc-cross-check",
+      "microTopicId": "dilr.di.tables",
+      "title": "Row/column totals cross-check",
+      "bodyMarkdown": "Sum of row totals = sum of column totals = grand total. Use this to catch arithmetic slips.",
+      "exampleMarkdown": null
+    }
+  ],
+  "commonTraps": [
+    "Mixing up which axis is rows vs columns when the question names a category \u2014 always re-check the header before reading a value.",
+    "Ignoring stated units (thousands, %, Rs. crore) \u2014 a right number in the wrong unit is a wrong answer.",
+    "Not using the totals cross-check when it's available \u2014 it's free error-detection."
+  ],
+  "estReadMinutes": 4
+}

@@ -13,7 +13,7 @@
       "id": "qa.arith.profit-loss-discount.we-02",
       "stemMarkdown": "A trader sells two items at Rs. 1200 each. On one he gains 20% and on the other he loses 20%. What is his overall profit or loss percentage?",
       "solutionMarkdown": "$CP_1 = \\dfrac{1200}{1.20} = 1000$ (20% gain). $CP_2 = \\dfrac{1200}{0.80} = 1500$ (20% loss). Total CP $= 2500$, total SP $= 2400$. Loss $= 100$, $\\text{loss\\%} = \\dfrac{100}{2500} \\times 100 = 4\\%$. It is **not** breakeven \u2014 equal SP with equal +x%/-x% always nets a loss.",
-      "altSolutionMarkdown": "Shortcut: when two items are sold at the *same* SP, one at $x\\%$ gain and the other at $x\\%$ loss, the overall result is always a loss of $\\dfrac{x^2}{100}\\%$, regardless of the SP value. Here $x = 20$: loss $= \\dfrac{20^2}{100} = 4\\%$."
+      "altSolutionMarkdown": "Shortcut: when two items are sold at the **same** SP, one at $x\\%$ gain and the other at $x\\%$ loss, the overall result is always a loss of $\\dfrac{x^2}{100}\\%$, regardless of the SP value. Here $x = 20$: loss $= \\dfrac{20^2}{100} = 4\\%$."
     },
     {
       "id": "qa.arith.profit-loss-discount.we-03",
@@ -34,7 +34,7 @@
       "id": "qa.arith.profit-loss-discount.fc-equal-sp-trick",
       "microTopicId": "qa.arith.profit-loss-discount",
       "title": "Equal-SP, equal-%, opposite-sign trick",
-      "bodyMarkdown": "Two items sold at the *same* SP, one at $+x\\%$ and one at $-x\\%$: overall result is always a **loss** of $\\dfrac{x^2}{100}\\%$.",
+      "bodyMarkdown": "Two items sold at the **same** SP, one at $+x\\%$ and one at $-x\\%$: overall result is always a **loss** of $\\dfrac{x^2}{100}\\%$.",
       "exampleMarkdown": "x=10 \u2192 always a 1% net loss, never breakeven."
     }
   ],

@@ -27,7 +27,7 @@
       "id": "qa.arith.percentages.fc-percent-change",
       "microTopicId": "qa.arith.percentages",
       "title": "Percentage change",
-      "bodyMarkdown": "$$\\text{\\% change} = \\frac{\\text{New} - \\text{Old}}{\\text{Old}} \\times 100$$ Always divide by the *original* value.",
+      "bodyMarkdown": "$$\\text{\\% change} = \\frac{\\text{New} - \\text{Old}}{\\text{Old}} \\times 100$$ Always divide by the **original** value.",
       "exampleMarkdown": "Old = 80, New = 100 \u2192 % change = $(100-80)/80 \\times 100 = 25\\%$."
     },
     {

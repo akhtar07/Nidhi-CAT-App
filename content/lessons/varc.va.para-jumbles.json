@@ -1,0 +1,28 @@
+{
+  "id": "lesson.varc.va.para-jumbles",
+  "microTopicId": "varc.va.para-jumbles",
+  "bodyMarkdown": "## Para-jumbles\n\nYou're given a set of sentences in the wrong order, and you need to figure out the order they\nwere originally written in \u2014 one that reads as a single, coherent argument or story.\n\n### How to find the starting sentence\n\nThe opening sentence usually:\n- Introduces a topic or person **without** referring back to something (\"This,\" \"However,\" \"The\n  same...\") \u2014 if a sentence starts with a pronoun pointing at something not yet introduced, it\n  can't be first.\n- Doesn't start with a conjunction like \"But,\" \"And,\" \"So\" \u2014 those connect to something before them.\n\n### How to find links between sentences\n\nLook for **explicit connectors**: pronouns (\"it,\" \"this,\" \"they\") that must refer to a specific\nnoun in an earlier sentence, transition words (\"however,\" \"therefore,\" \"in contrast\") that imply\na specific kind of sentence came before, and repeated or related nouns that thread two sentences\ntogether.\n\n### Build from both ends\n\nFind the sentence that's obviously first, and (often easier) the sentence that's obviously\n**last** \u2014 one that concludes or summarizes. Then work inward, linking pairs you're confident\nabout, rather than trying to solve the whole order in one pass.",
+  "workedExamples": [
+    {
+      "id": "varc.va.para-jumbles.we-01",
+      "stemMarkdown": "Arrange into a coherent paragraph:\n\nA. However, this convenience comes at a real cost to attention spans.\nB. Smartphones have made information instantly accessible.\nC. Indeed, studies increasingly link heavy phone use to shorter attention spans.\nD. As a result, anyone can look up any fact within seconds.",
+      "solutionMarkdown": "**B** names the subject (smartphones) with nothing referring backward \u2014 a clean opening. **D** opens with 'As a result,' which demands an immediately preceding cause \u2014 only B provides one, so D follows B. **A** opens with 'However, this convenience,' which needs a stated convenience just before it (B+D) and then pivots to a new claim (a cost) \u2014 so A comes next. **C** opens with 'Indeed,' which confirms/elaborates the claim just made \u2014 only A's claim (a cost to attention spans) fits, so C is last. Order: **B, D, A, C**.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.va.para-jumbles.fc-method",
+      "microTopicId": "varc.va.para-jumbles",
+      "title": "Method",
+      "bodyMarkdown": "Find the sentence with no backward reference (likely first) and the one that concludes (likely last). Link the rest via pronouns, connectors, and repeated nouns.",
+      "exampleMarkdown": null
+    }
+  ],
+  "commonTraps": [
+    "A sentence starting with a pronoun ('This,' 'They,' 'It') almost never opens the paragraph \u2014 it needs an antecedent.",
+    "Don't just look for topical similarity between two sentences \u2014 look for an actual grammatical link (a pronoun, a connector word).",
+    "Solve from BOTH ends (first and last) rather than only trying to find the opening sentence."
+  ],
+  "estReadMinutes": 5
+}

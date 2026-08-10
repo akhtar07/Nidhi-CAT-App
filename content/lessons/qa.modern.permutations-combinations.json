@@ -1,0 +1,40 @@
+{
+  "id": "lesson.qa.modern.permutations-combinations",
+  "microTopicId": "qa.modern.permutations-combinations",
+  "bodyMarkdown": "## Permutations & Combinations\n\nHere's the one question that tells them apart: **does the order matter?**\n\n- **Permutation** = arranging things where **who goes where** matters. Picking a President, a\n  Vice-President, and a Secretary from a group of friends is a permutation \u2014 swapping who gets\n  which job gives you a genuinely different outcome.\n- **Combination** = just picking a group, where order doesn't matter. Picking 3 friends to be on\n  a committee is a combination \u2014 it doesn't matter who you \"picked first.\"\n\n$$nPr = \\frac{n!}{(n-r)!} \\qquad nCr = \\frac{n!}{r! \\, (n-r)!}$$\n\nNotice $nCr$ is just $nPr$ divided by $r!$ \u2014 because for every group you pick, there are $r!$\nways to arrange that same group in order, and combinations don't care about those arrangements.\n\n### The two questions to ask yourself\n\n1. Am I **selecting** a group, or **arranging** things in specific positions/roles? (selecting \u2192\n   combination; arranging/assigning roles \u2192 permutation)\n2. Can something repeat, or is each item used at most once? (Most CAT questions: no repetition \u2014\n   read carefully when they do allow it.)",
+  "workedExamples": [
+    {
+      "id": "qa.modern.permutations-combinations.we-01",
+      "stemMarkdown": "In how many ways can 3 people be selected from a group of 6 to serve as President, Vice-President, and Secretary (three different roles)?",
+      "solutionMarkdown": "The roles are different, so **order/role matters** \u2014 this is a permutation. $^6P_3 = \\dfrac{6!}{3!} = 6 \\times 5 \\times 4 = 120$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.modern.permutations-combinations.we-02",
+      "stemMarkdown": "In how many ways can a committee of 3 be selected from the same group of 6 people?",
+      "solutionMarkdown": "A committee has no roles \u2014 just a group. This is a combination. $^6C_3 = \\dfrac{6!}{3! \\, 3!} = \\dfrac{720}{6 \\times 6} = 20$. Notice this is exactly the permutation answer (120) divided by $3! = 6$ \u2014 the number of ways to reorder any one group of 3.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.modern.permutations-combinations.we-03",
+      "stemMarkdown": "How many 4-letter arrangements (not necessarily meaningful words) can be formed using the letters of 'LOGIC', with no letter repeated?",
+      "solutionMarkdown": "'LOGIC' has 5 distinct letters, and we're arranging 4 of them in order (position matters \u2014 'LOGI' and 'GILO' are different arrangements). $^5P_4 = 5 \\times 4 \\times 3 \\times 2 = 120$.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.modern.permutations-combinations.fc-npr-ncr",
+      "microTopicId": "qa.modern.permutations-combinations",
+      "title": "nPr vs nCr",
+      "bodyMarkdown": "$$nPr = \\frac{n!}{(n-r)!}, \\qquad nCr = \\frac{n!}{r!(n-r)!} = \\frac{nPr}{r!}$$",
+      "exampleMarkdown": "5P2 = 20 (order matters), 5C2 = 10 (order doesn't)."
+    }
+  ],
+  "commonTraps": [
+    "Assigning distinct roles/positions is a permutation, even if the question doesn't use the word 'arrange.'",
+    "nCr is nPr divided by r! \u2014 forgetting this division is the most common slip when a problem actually needs a combination.",
+    "Read for repetition allowed vs not allowed \u2014 it changes the formula entirely (this lesson covers the no-repetition case, the default on CAT)."
+  ],
+  "estReadMinutes": 6
+}

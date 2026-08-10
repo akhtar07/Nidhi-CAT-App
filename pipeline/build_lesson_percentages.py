@@ -107,7 +107,7 @@ FORMULA_CARDS = [
         id=f"{MICRO_TOPIC_ID}.fc-percent-change",
         microTopicId=MICRO_TOPIC_ID,
         title="Percentage change",
-        bodyMarkdown=r"$$\text{\% change} = \frac{\text{New} - \text{Old}}{\text{Old}} \times 100$$ Always divide by the *original* value.",
+        bodyMarkdown=r"$$\text{\% change} = \frac{\text{New} - \text{Old}}{\text{Old}} \times 100$$ Always divide by the **original** value.",
         exampleMarkdown="Old = 80, New = 100 → % change = $(100-80)/80 \\times 100 = 25\\%$.",
     ),
     FormulaCard(

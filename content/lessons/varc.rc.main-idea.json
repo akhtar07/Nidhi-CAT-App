@@ -1,0 +1,28 @@
+{
+  "id": "lesson.varc.rc.main-idea",
+  "microTopicId": "varc.rc.main-idea",
+  "bodyMarkdown": "## Main Idea / Central Theme\n\nA \"main idea\" question asks: if you had to summarize this entire passage in one sentence, what\nwould it be? Not a summary of every detail \u2014 the single thread the whole passage is actually\narguing or exploring.\n\n### How to find it without re-reading the whole passage\n\n1. The main idea is usually stated (or strongly implied) in the **first paragraph** or the\n   **last paragraph** \u2014 authors tend to open with their thesis or close by restating it.\n2. Ask: what does **every** paragraph have in common? A wrong answer choice often describes just\n   ONE paragraph's detail, not the passage as a whole.\n3. Beware options that are **too narrow** (true, but only about one part of the passage) or **too\n   broad** (technically related, but goes beyond what the passage actually claims).\n\n### The most common wrong-answer traps\n\n- **A true detail, but not the main point.** The passage mentions it, but it's supporting\n  evidence, not the thesis.\n- **Too extreme.** The passage says something is \"one factor,\" the wrong option says it's \"the\n  only factor.\"\n- **Off-topic but plausible-sounding.** Related to the general subject, but not what this\n  specific passage actually argues.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.main-idea.we-01",
+      "stemMarkdown": "A passage opens by describing how early 20th-century economists assumed markets were always rational, spends two paragraphs on behavioral-economics experiments showing systematic irrational biases, and closes by arguing modern economic policy must account for these biases. Which best captures the main idea?\n\nA) Early economists were wrong about everything.\nB) Behavioral economics shows that accounting for real human irrationality, not just assumed rationality, should inform economic policy.\nC) A specific psychological experiment on loss aversion.\nD) Rational-market theory is used in most economics textbooks.",
+      "solutionMarkdown": "**(A)** is too extreme \u2014 the passage critiques one assumption, not \"everything.\" **(C)** is a supporting detail from the middle paragraphs, not the passage's overall point. **(D)** is true but is background, not the argument being made. **(B)** ties together the opening (the old assumption), the middle (evidence against it), and the close (the policy conclusion) \u2014 that's the actual thread running through the whole passage. **Answer: B.**",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.main-idea.fc-method",
+      "microTopicId": "varc.rc.main-idea",
+      "title": "Method",
+      "bodyMarkdown": "Check the first and last paragraphs first. Reject options that are too narrow (one paragraph only), too extreme, or off-topic.",
+      "exampleMarkdown": null
+    }
+  ],
+  "commonTraps": [
+    "Picking an option that's a true detail from one paragraph, not the passage's overall point.",
+    "Picking an option that's more extreme than what the passage actually claims.",
+    "Ignoring the concluding paragraph, which often restates the thesis most directly."
+  ],
+  "estReadMinutes": 5
+}

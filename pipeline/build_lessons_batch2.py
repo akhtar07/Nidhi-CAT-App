@@ -66,7 +66,7 @@ $$\text{single equivalent discount} = 1 - (1 - d_1)(1 - d_2)$$
                 "It is **not** breakeven — equal SP with equal +x%/-x% always nets a loss."
             ),
             altSolutionMarkdown=(
-                "Shortcut: when two items are sold at the *same* SP, one at $x\\%$ gain and the other at $x\\%$ loss, "
+                "Shortcut: when two items are sold at the **same** SP, one at $x\\%$ gain and the other at $x\\%$ loss, "
                 "the overall result is always a loss of $\\dfrac{x^2}{100}\\%$, regardless of the SP value. "
                 "Here $x = 20$: loss $= \\dfrac{20^2}{100} = 4\\%$."
             ),
@@ -94,7 +94,7 @@ $$\text{single equivalent discount} = 1 - (1 - d_1)(1 - d_2)$$
             id=f"{mt}.fc-equal-sp-trick",
             microTopicId=mt,
             title="Equal-SP, equal-%, opposite-sign trick",
-            bodyMarkdown=r"Two items sold at the *same* SP, one at $+x\%$ and one at $-x\%$: overall result is always a **loss** of $\dfrac{x^2}{100}\%$.",
+            bodyMarkdown=r"Two items sold at the **same** SP, one at $+x\%$ and one at $-x\%$: overall result is always a **loss** of $\dfrac{x^2}{100}\%$.",
             exampleMarkdown="x=10 → always a 1% net loss, never breakeven.",
         ),
     ]
@@ -277,7 +277,7 @@ recur together / finding when things next coincide → **LCM**.
             id=f"{mt}.fc-remainder-trick",
             microTopicId=mt,
             title="\"Leaves remainder r\" trick",
-            bodyMarkdown="Subtract the remainder from each number *before* taking the HCF.",
+            bodyMarkdown="Subtract the remainder from each number **before** taking the HCF.",
             exampleMarkdown="Largest number dividing 50 and 80 leaving remainder 2: HCF(48,78)=6.",
         ),
     ]

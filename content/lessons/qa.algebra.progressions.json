@@ -1,0 +1,47 @@
+{
+  "id": "lesson.qa.algebra.progressions",
+  "microTopicId": "qa.algebra.progressions",
+  "bodyMarkdown": "## Progressions: AP & GP\n\nA **progression** is just a list of numbers that follows a rule. Two kinds show up constantly:\n\n- **Arithmetic Progression (AP)**: you get the next number by **adding** a fixed amount every\n  time. $3, 7, 11, 15, \\ldots$ \u2014 always add 4.\n- **Geometric Progression (GP)**: you get the next number by **multiplying** by a fixed amount\n  every time. $3, 6, 12, 24, \\ldots$ \u2014 always multiply by 2.\n\n$$\\text{AP: } T_n = a + (n-1)d \\qquad S_n = \\frac{n}{2}\\big(2a + (n-1)d\\big)$$\n\n$$\\text{GP: } T_n = a \\cdot r^{n-1} \\qquad S_n = \\frac{a(r^n - 1)}{r - 1} \\ (r \\neq 1)$$\n\nwhere $a$ is the first term, $d$ is the common **difference** (AP), $r$ is the common **ratio** (GP).\n\n### The trick for \"find two unknowns\" GP/AP questions\n\nIf you're given two terms of a GP (say $T_3$ and $T_6$), **divide** them \u2014 the $a$ cancels and\nyou're left with a power of $r$ you can solve directly. The worked example below does exactly this.",
+  "workedExamples": [
+    {
+      "id": "qa.algebra.progressions.we-01",
+      "stemMarkdown": "Find the 15th term of the AP: 3, 7, 11, 15, ...",
+      "solutionMarkdown": "$a=3$, $d=4$. $T_{15} = a + 14d = 3 + 14 \\times 4 = 59$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.algebra.progressions.we-02",
+      "stemMarkdown": "Find the sum of the first 20 terms of the AP: 5, 8, 11, ...",
+      "solutionMarkdown": "$a=5$, $d=3$, $n=20$. $S_{20} = \\dfrac{20}{2}\\big(2(5) + 19(3)\\big) = 10 \\times (10+57) = 670$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.algebra.progressions.we-03",
+      "stemMarkdown": "The 3rd term of a GP is 12 and the 6th term is 96. Find the first term and the common ratio.",
+      "solutionMarkdown": "$T_3 = ar^2 = 12$, $T_6 = ar^5 = 96$. Dividing: $\\dfrac{T_6}{T_3} = r^3 = \\dfrac{96}{12} = 8 \\implies r = 2$. Then $a = \\dfrac{12}{r^2} = \\dfrac{12}{4} = 3$. Check: $T_6 = 3 \\times 2^5 = 3 \\times 32 = 96$. \u2713",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.algebra.progressions.fc-ap-gp",
+      "microTopicId": "qa.algebra.progressions",
+      "title": "AP and GP nth-term formulas",
+      "bodyMarkdown": "AP: $T_n = a+(n-1)d$. GP: $T_n = ar^{n-1}$.",
+      "exampleMarkdown": "AP 2,5,8,...: T10 = 2+9\u00d73 = 29. GP 2,6,18,...: T5 = 2\u00d73\u2074 = 162."
+    },
+    {
+      "id": "qa.algebra.progressions.fc-divide-trick",
+      "microTopicId": "qa.algebra.progressions",
+      "title": "Two-unknowns GP trick",
+      "bodyMarkdown": "Given two terms of a GP, divide them to cancel $a$ and isolate a power of $r$.",
+      "exampleMarkdown": "T2=6, T5=48 \u2192 r\u00b3=8 \u2192 r=2."
+    }
+  ],
+  "commonTraps": [
+    "Mixing up AP (add each time) and GP (multiply each time) \u2014 check the pattern of the given terms before picking a formula.",
+    "In S_n, it's (n-1)d or r^(n-1), not nd or r^n \u2014 an off-by-one that's easy to make under time pressure.",
+    "When given two GP terms, divide (don't subtract) to solve for r."
+  ],
+  "estReadMinutes": 6
+}

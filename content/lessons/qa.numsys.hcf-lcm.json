@@ -34,7 +34,7 @@
       "id": "qa.numsys.hcf-lcm.fc-remainder-trick",
       "microTopicId": "qa.numsys.hcf-lcm",
       "title": "\"Leaves remainder r\" trick",
-      "bodyMarkdown": "Subtract the remainder from each number *before* taking the HCF.",
+      "bodyMarkdown": "Subtract the remainder from each number **before** taking the HCF.",
       "exampleMarkdown": "Largest number dividing 50 and 80 leaving remainder 2: HCF(48,78)=6."
     }
   ],

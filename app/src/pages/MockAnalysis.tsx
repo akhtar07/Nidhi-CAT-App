@@ -267,7 +267,7 @@ export function MockAnalysis() {
                 <span>{topicNameById.get(d.microTopicId) ?? d.microTopicId}</span>
                 <span className="flex items-center gap-2">
                   <span className="text-destructive">-{d.marksLost}</span>
-                  <Link to={`/drill/${d.microTopicId}`} className="text-xs text-primary underline">
+                  <Link to={`/lesson/${d.microTopicId}`} className="text-xs text-primary underline">
                     Practice
                   </Link>
                 </span>

@@ -1,0 +1,47 @@
+{
+  "id": "lesson.qa.numsys.divisibility-factors",
+  "microTopicId": "qa.numsys.divisibility-factors",
+  "bodyMarkdown": "## Divisibility Rules, Factors & Multiples\n\nYou almost never need to actually divide to check divisibility \u2014 there's a quick check for\neach small number, and CAT rewards knowing them cold.\n\n- **2**: last digit is even\n- **3**: digit sum is divisible by 3\n- **4**: last **two** digits form a number divisible by 4\n- **5**: last digit is 0 or 5\n- **6**: divisible by **both** 2 and 3\n- **8**: last **three** digits divisible by 8\n- **9**: digit sum divisible by 9\n- **11**: (sum of digits at odd positions) \u2212 (sum at even positions, counting from the right) is divisible by 11\n\n### Counting factors, the fast way\n\nBreak the number into primes. If $N = p_1^{a} \\times p_2^{b} \\times p_3^{c}$, the number of\nfactors is $(a+1)(b+1)(c+1)$ \u2014 one more than each exponent, multiplied together. This works\nbecause each factor is built by independently choosing how many of each prime to include.",
+  "workedExamples": [
+    {
+      "id": "qa.numsys.divisibility-factors.we-01",
+      "stemMarkdown": "Is 4578 divisible by 6?",
+      "solutionMarkdown": "Divisible by 6 means divisible by both 2 and 3. Last digit is 8 (even) \u2192 passes the 2-check. Digit sum $= 4+5+7+8=24$, and $24 \\div 3 = 8$ \u2192 passes the 3-check. **Yes**, 4578 is divisible by 6.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.numsys.divisibility-factors.we-02",
+      "stemMarkdown": "Find the number of factors of 360.",
+      "solutionMarkdown": "$360 = 2^3 \\times 3^2 \\times 5^1$. Number of factors $= (3+1)(2+1)(1+1) = 4 \\times 3 \\times 2 = 24$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.numsys.divisibility-factors.we-03",
+      "stemMarkdown": "Is 9152 divisible by 11?",
+      "solutionMarkdown": "Reading digits from the right: 2 (position 1), 5 (position 2), 1 (position 3), 9 (position 4). Odd-position sum $= 2+1=3$. Even-position sum $= 5+9=14$. Difference $= 3-14=-11$, and $-11$ is divisible by 11. **Yes**, 9152 is divisible by 11.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.numsys.divisibility-factors.fc-factor-count",
+      "microTopicId": "qa.numsys.divisibility-factors",
+      "title": "Counting factors from prime powers",
+      "bodyMarkdown": "$N = p_1^a p_2^b p_3^c \\implies$ number of factors $= (a{+}1)(b{+}1)(c{+}1)$.",
+      "exampleMarkdown": "72 = 2\u00b3\u00d73\u00b2 \u2192 factors = 4\u00d73 = 12."
+    },
+    {
+      "id": "qa.numsys.divisibility-factors.fc-div-6",
+      "microTopicId": "qa.numsys.divisibility-factors",
+      "title": "Combined divisibility (6, 12, 15...)",
+      "bodyMarkdown": "To check divisibility by a composite number, break it into coprime factors and check each separately \u2014 divisible by 6 = divisible by 2 AND 3.",
+      "exampleMarkdown": "Divisible by 12 \u2192 check divisible by both 4 and 3."
+    }
+  ],
+  "commonTraps": [
+    "Divisibility by a composite number (6, 12, 15...) means checking ALL its coprime prime-power factors, not just one.",
+    "The factor-count formula adds 1 to each exponent before multiplying \u2014 forgetting the +1 is the most common slip.",
+    "The rule for 11 alternates by position from the right \u2014 mixing up which positions are 'odd' is an easy error under time pressure."
+  ],
+  "estReadMinutes": 6
+}
