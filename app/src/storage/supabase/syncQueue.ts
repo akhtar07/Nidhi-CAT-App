@@ -14,6 +14,7 @@ export type SyncTable =
   | 'item_elo'
   | 'settings'
   | 'srs_cards'
+  | 'bookmarks'
 
 export interface SyncQueueEntry {
   /** Dexie auto-increment primary key (`++seq` in schema.ts) — preserves write order for flush. */

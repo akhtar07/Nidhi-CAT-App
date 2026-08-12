@@ -1,11 +1,12 @@
 import { getSupabaseClient } from '@/lib/supabaseClient'
 import { DexieAdapter } from '@/storage/dexie/DexieAdapter'
 import type { ExportBundle, StorageAdapter } from '@/storage/StorageAdapter'
-import type { Attempt, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
+import type { Attempt, Bookmark, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
 import { SyncQueueStore } from './syncQueueStore'
 import type { SyncQueueEntry, SyncTable } from './syncQueue'
 import {
   attemptToRow,
+  bookmarkToRow,
   itemEloToRow,
   masteryStateToRow,
   mockResultToRow,
@@ -142,6 +143,29 @@ export class SupabaseSyncAdapter implements StorageAdapter {
     return this.dexie.listSrsCards()
   }
 
+  async addBookmark(bookmark: Bookmark): Promise<void> {
+    await this.dexie.addBookmark(bookmark)
+    await this.enqueue('bookmarks', bookmark.id, bookmark)
+  }
+
+  async removeBookmark(questionId: string): Promise<void> {
+    // The bookmarks table's sync key is the bookmark's own id (matches Supabase's primary key),
+    // not questionId — look up which row(s) are being deleted locally first so the delete queue
+    // entry carries the right key.
+    const existing = await this.dexie.listBookmarks()
+    const toRemove = existing.filter((b) => b.questionId === questionId)
+    await this.dexie.removeBookmark(questionId)
+    await Promise.all(toRemove.map((b) => this.enqueue('bookmarks', b.id, undefined, 'delete')))
+  }
+
+  listBookmarks(): Promise<Bookmark[]> {
+    return this.dexie.listBookmarks()
+  }
+
+  isBookmarked(questionId: string): Promise<boolean> {
+    return this.dexie.isBookmarked(questionId)
+  }
+
   exportAll(): Promise<ExportBundle> {
     return this.dexie.exportAll()
   }
@@ -176,6 +200,8 @@ export class SupabaseSyncAdapter implements StorageAdapter {
         return settingsToRow(payload as Settings, userId)
       case 'srs_cards':
         return srsCardToRow(payload as SrsCard, userId)
+      case 'bookmarks':
+        return bookmarkToRow(payload as Bookmark, userId)
     }
   }
 

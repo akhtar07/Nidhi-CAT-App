@@ -1,5 +1,5 @@
 import Dexie, { type Table } from 'dexie'
-import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
+import type { Attempt, Bookmark, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
 import type { SyncQueueEntry } from '@/storage/supabase/syncQueue'
 
 /** Settings is a singleton row; this fixed key is how it's addressed in the table. */
@@ -26,6 +26,7 @@ export class AscentDB extends Dexie {
   mockSession!: Table<MockSessionRow, string>
   srsCards!: Table<SrsCard, string>
   syncQueue!: Table<SyncQueueEntry, number>
+  bookmarks!: Table<Bookmark, string>
 
   constructor(name = 'ascent') {
     super(name)
@@ -53,6 +54,12 @@ export class AscentDB extends Dexie {
     // Supabase, so a write made offline (SPEC.md §16: "syncs on reconnect") isn't lost.
     this.version(5).stores({
       syncQueue: '++seq, createdAt',
+    })
+    // Professionalization pass: manual question bookmarks (study-flow feature, not tied to the
+    // SRS/mistake pipeline). Indexed by questionId too since isBookmarked()/removeBookmark() look
+    // up by question, not by the bookmark's own id.
+    this.version(6).stores({
+      bookmarks: 'id, questionId, microTopicId, createdAt',
     })
   }
 }

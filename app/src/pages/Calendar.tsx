@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/Skeleton'
 import { loadExamMeta, topicsWithContent } from '@/content/loadContent'
 import { computeCoverageForecast, type CoverageForecast } from '@/planner/coverageForecast'
 import { addDays, daysBetween, todayIso } from '@/planner/dateUtils'
@@ -177,7 +178,13 @@ export function Calendar() {
   }
 
   if (loading) {
-    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+    return (
+      <main className="mx-auto max-w-2xl space-y-6 p-6">
+        <Skeleton className="h-8 w-40" />
+        <Skeleton className="h-24 w-full" />
+        <Skeleton className="h-32 w-full" />
+      </main>
+    )
   }
 
   const selectedDay = selectedDate ? planDays.get(selectedDate) : undefined

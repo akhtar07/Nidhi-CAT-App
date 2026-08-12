@@ -1,5 +1,5 @@
 import type { SyncTable } from './syncQueue'
-import type { Attempt, MasteryState, MockResult, PlanDay, Settings, SrsCard } from '@/types/state'
+import type { Attempt, Bookmark, MasteryState, MockResult, PlanDay, Settings, SrsCard } from '@/types/state'
 
 /** Postgres convention is snake_case; the TS side stays camelCase throughout — these are the
  * only place the two meet. One direction only (JS -> row): SupabaseSyncAdapter never reads back
@@ -13,6 +13,7 @@ export const TABLE_KEY_COLUMN: Record<SyncTable, string> = {
   item_elo: 'question_id',
   settings: 'id',
   srs_cards: 'id',
+  bookmarks: 'id',
 }
 
 export function attemptToRow(a: Attempt, userId: string) {
@@ -109,5 +110,15 @@ export function srsCardToRow(c: SrsCard, userId: string) {
     next_review_at: c.nextReviewAt,
     last_reviewed_at: c.lastReviewedAt ?? null,
     added_at: c.addedAt,
+  }
+}
+
+export function bookmarkToRow(b: Bookmark, userId: string) {
+  return {
+    id: b.id,
+    user_id: userId,
+    question_id: b.questionId,
+    micro_topic_id: b.microTopicId,
+    created_at: b.createdAt,
   }
 }

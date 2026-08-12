@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Markdown } from '@/components/question-player/Markdown'
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/Skeleton'
 import { loadLesson, loadQuestion } from '@/content/loadContent'
 import { gradeReview, isDue, Rating, type Grade } from '@/srs/fsrsAdapter'
 import { storage } from '@/storage'
@@ -79,7 +80,12 @@ export function Review() {
     )
   }
   if (queue === null) {
-    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+    return (
+      <main className="mx-auto max-w-2xl space-y-4 p-6">
+        <Skeleton className="h-8 w-32" />
+        <Skeleton className="h-40 w-full" />
+      </main>
+    )
   }
 
   return (

@@ -1,3 +1,4 @@
+import { Star } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -62,6 +63,7 @@ export function QuestionPlayer({ question, mode, topic, topicQuestions, onComple
   const [confidence, setConfidence] = useState<Attempt['confidence']>(undefined)
   const [errorTag, setErrorTag] = useState<Attempt['errorTag']>(undefined)
   const [elapsedSec, setElapsedSec] = useState(0)
+  const [bookmarked, setBookmarked] = useState(false)
 
   const startedAtRef = useRef(Date.now())
   const submittedAtRef = useRef<number | null>(null)
@@ -80,6 +82,32 @@ export function QuestionPlayer({ question, mode, topic, topicQuestions, onComple
     submittedAtRef.current = null
     givenRef.current = null
   }, [question.id])
+
+  useEffect(() => {
+    let cancelled = false
+    void storage.isBookmarked(question.id).then((v) => {
+      if (!cancelled) setBookmarked(v)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [question.id])
+
+  async function toggleBookmark() {
+    const next = !bookmarked
+    setBookmarked(next) // optimistic — a failed write shouldn't block the UI on a low-stakes toggle
+    if (next) {
+      await storage.addBookmark({
+        schemaVersion: 1,
+        id: crypto.randomUUID(),
+        questionId: question.id,
+        microTopicId: topic.id,
+        createdAt: Date.now(),
+      })
+    } else {
+      await storage.removeBookmark(question.id)
+    }
+  }
 
   useEffect(() => {
     if (phase !== 'answering') return
@@ -135,8 +163,17 @@ export function QuestionPlayer({ question, mode, topic, topicQuestions, onComple
   return (
     <div className="mx-auto max-w-2xl space-y-4 p-4">
       <div className="flex items-center justify-between text-sm text-muted-foreground">
-        <span>
+        <span className="flex items-center gap-2">
           {question.difficulty} · {question.format.toUpperCase()}
+          <button
+            type="button"
+            onClick={() => void toggleBookmark()}
+            aria-label={bookmarked ? 'Remove bookmark' : 'Bookmark this question'}
+            aria-pressed={bookmarked}
+            className="text-muted-foreground transition-colors hover:text-primary"
+          >
+            <Star className={cn('size-4', bookmarked && 'fill-primary text-primary')} />
+          </button>
         </span>
         <span>
           {formatSeconds(elapsedSec)} <span className="opacity-60">/ target {formatSeconds(question.targetSeconds)}</span>

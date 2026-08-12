@@ -1,4 +1,4 @@
-import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
+import type { Attempt, Bookmark, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
 
 /**
  * Full snapshot of learner state, for the Export/Import JSON feature
@@ -15,6 +15,7 @@ export interface ExportBundle {
   settings: Settings | null
   mockSession: MockSession | null
   srsCards: SrsCard[]
+  bookmarks: Bookmark[]
 }
 
 /**
@@ -55,6 +56,12 @@ export interface StorageAdapter {
   getSrsCard(id: string): Promise<SrsCard | undefined>
   putSrsCard(card: SrsCard): Promise<void>
   listSrsCards(): Promise<SrsCard[]>
+
+  /** Manual "come back to this" flag on any question, independent of the SRS/mistake pipeline. */
+  addBookmark(bookmark: Bookmark): Promise<void>
+  removeBookmark(questionId: string): Promise<void>
+  listBookmarks(): Promise<Bookmark[]>
+  isBookmarked(questionId: string): Promise<boolean>
 
   exportAll(): Promise<ExportBundle>
   /** Replaces all existing learner state with the bundle's contents. */

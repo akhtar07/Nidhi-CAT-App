@@ -205,3 +205,17 @@ export interface Settings {
    */
   lastNudgeShownDate?: string
 }
+
+/**
+ * Study-flow feature (professionalization pass, not in SPEC.md's original type list — same
+ * add-and-document pattern as every other learner-state addition this build). Lets the learner
+ * flag any question during a drill/mock/review for later revisit, independent of the SRS/mistake
+ * pipeline (a bookmark is a manual "come back to this," not an auto-scheduled review card).
+ */
+export interface Bookmark {
+  schemaVersion: 1
+  id: string
+  questionId: string
+  microTopicId: string
+  createdAt: number
+}

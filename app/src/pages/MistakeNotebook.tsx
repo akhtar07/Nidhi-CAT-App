@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { Markdown } from '@/components/question-player/Markdown'
 import { QuestionPlayer } from '@/components/question-player/QuestionPlayer'
 import { Button } from '@/components/ui/button'
+import { EmptyState } from '@/components/ui/EmptyState'
+import { Skeleton } from '@/components/ui/Skeleton'
 import { loadMicroTopic, loadQuestion, loadQuestionsForMicroTopic } from '@/content/loadContent'
 import { storage } from '@/storage'
 import type { MicroTopic, Question } from '@/types/content'
@@ -116,7 +118,14 @@ export function MistakeNotebook() {
     )
   }
   if (mistakes === null) {
-    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+    return (
+      <main className="mx-auto max-w-2xl space-y-4 p-6">
+        <Skeleton className="h-8 w-48" />
+        <Skeleton className="h-16 w-full" />
+        <Skeleton className="h-16 w-full" />
+        <Skeleton className="h-16 w-full" />
+      </main>
+    )
   }
 
   if (retrying) {
@@ -161,7 +170,12 @@ export function MistakeNotebook() {
       </div>
 
       {mistakes.length === 0 ? (
-        <p className="text-muted-foreground">No mistakes to review yet — go break something.</p>
+        <EmptyState
+          title="No mistakes logged yet"
+          description="Wrong answers from drills and mocks show up here automatically, tagged by why you got them wrong — so you can find and fix a pattern instead of re-reading random questions."
+          actionLabel="Go practice"
+          actionTo="/"
+        />
       ) : (
         <>
           <div className="flex flex-wrap gap-2">

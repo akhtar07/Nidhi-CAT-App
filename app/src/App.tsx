@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { Bookmarks } from '@/pages/Bookmarks'
 import { Calendar } from '@/pages/Calendar'
 import { Diagnostic } from '@/pages/Diagnostic'
 import { Drill } from '@/pages/Drill'
@@ -7,6 +8,7 @@ import { MistakeNotebook } from '@/pages/MistakeNotebook'
 import { MockAnalysis } from '@/pages/MockAnalysis'
 import { MockPlayer } from '@/pages/MockPlayer'
 import { PassageSetPlayer } from '@/pages/PassageSetPlayer'
+import { Progress } from '@/pages/Progress'
 import { Review } from '@/pages/Review'
 import { Settings } from '@/pages/Settings'
 import { Today } from '@/pages/Today'
@@ -27,6 +29,8 @@ function App() {
         <Route path="/mock/:mockId" element={<MockPlayer />} />
         <Route path="/mock-result/:resultId" element={<MockAnalysis />} />
         <Route path="/mistakes" element={<MistakeNotebook />} />
+        <Route path="/bookmarks" element={<Bookmarks />} />
+        <Route path="/progress" element={<Progress />} />
         <Route path="/review" element={<Review />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>

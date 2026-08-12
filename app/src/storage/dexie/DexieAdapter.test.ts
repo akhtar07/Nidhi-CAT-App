@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { DexieAdapter } from './DexieAdapter'
-import type { Attempt, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
+import type { Attempt, Bookmark, MasteryState, MockResult, PlanDay, Settings } from '@/types/state'
 
 function makeAttempt(overrides: Partial<Attempt> = {}): Attempt {
   return {
@@ -72,6 +72,17 @@ function makeSettings(overrides: Partial<Settings> = {}): Settings {
   }
 }
 
+function makeBookmark(overrides: Partial<Bookmark> = {}): Bookmark {
+  return {
+    schemaVersion: 1,
+    id: 'bookmark-1',
+    questionId: 'qa.arith.percentages-0001',
+    microTopicId: 'qa.arith.percentages',
+    createdAt: 1000,
+    ...overrides,
+  }
+}
+
 let dbCounter = 0
 function freshAdapter(): DexieAdapter {
   dbCounter += 1
@@ -138,6 +149,18 @@ describe('DexieAdapter', () => {
     expect(await adapter.getItemElo('q1')).toBe(1310)
   })
 
+  it('round-trips bookmarks, most-recent first, and removes by questionId', async () => {
+    expect(await adapter.isBookmarked('q1')).toBe(false)
+    await adapter.addBookmark(makeBookmark({ id: 'b1', questionId: 'q1', createdAt: 1000 }))
+    await adapter.addBookmark(makeBookmark({ id: 'b2', questionId: 'q2', createdAt: 2000 }))
+    expect(await adapter.isBookmarked('q1')).toBe(true)
+    expect((await adapter.listBookmarks()).map((b) => b.id)).toEqual(['b2', 'b1'])
+
+    await adapter.removeBookmark('q1')
+    expect(await adapter.isBookmarked('q1')).toBe(false)
+    expect((await adapter.listBookmarks()).map((b) => b.id)).toEqual(['b2'])
+  })
+
   it('exports and re-imports a full snapshot', async () => {
     await adapter.addAttempt(makeAttempt())
     await adapter.putMasteryState(makeMasteryState())
@@ -145,6 +168,7 @@ describe('DexieAdapter', () => {
     await adapter.addMockResult(makeMockResult())
     await adapter.putItemElo('q1', 1250)
     await adapter.putSettings(makeSettings())
+    await adapter.addBookmark(makeBookmark())
 
     const bundle = await adapter.exportAll()
     expect(bundle.attempts).toEqual([makeAttempt()])
@@ -153,6 +177,7 @@ describe('DexieAdapter', () => {
     expect(bundle.mockResults).toEqual([makeMockResult()])
     expect(bundle.itemEloStates).toEqual([{ schemaVersion: 1, questionId: 'q1', elo: 1250 }])
     expect(bundle.settings).toEqual(makeSettings())
+    expect(bundle.bookmarks).toEqual([makeBookmark()])
 
     const restored = freshAdapter()
     await restored.importAll(bundle)
@@ -162,6 +187,7 @@ describe('DexieAdapter', () => {
     expect(await restored.listMockResults()).toEqual([makeMockResult()])
     expect(await restored.getItemElo('q1')).toBe(1250)
     expect(await restored.getSettings()).toEqual(makeSettings())
+    expect(await restored.listBookmarks()).toEqual([makeBookmark()])
   })
 
   it('importAll replaces existing data rather than merging', async () => {
@@ -178,6 +204,7 @@ describe('DexieAdapter', () => {
     await adapter.addMockResult(makeMockResult())
     await adapter.putItemElo('q1', 1250)
     await adapter.putSettings(makeSettings())
+    await adapter.addBookmark(makeBookmark())
 
     await adapter.clearAll()
 
@@ -187,5 +214,6 @@ describe('DexieAdapter', () => {
     expect(await adapter.listMockResults()).toEqual([])
     expect(await adapter.getItemElo('q1')).toBeUndefined()
     expect(await adapter.getSettings()).toBeUndefined()
+    expect(await adapter.listBookmarks()).toEqual([])
   })
 })

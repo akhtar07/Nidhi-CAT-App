@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { Skeleton } from '@/components/ui/Skeleton'
 import {
   loadLessonIndex,
   loadMockDefinition,
@@ -122,15 +123,21 @@ export function Today() {
     <main className="mx-auto min-h-svh max-w-2xl bg-background p-6 text-foreground">
       <div className="mb-1 flex items-baseline justify-between">
         <h1 className="text-2xl font-semibold">Ascent</h1>
-        <div className="flex gap-3 text-sm">
+        <div className="flex flex-wrap gap-3 text-sm">
           <Link to="/calendar" className="text-primary underline">
             Calendar
+          </Link>
+          <Link to="/progress" className="text-primary underline">
+            Progress
           </Link>
           <Link to="/review" className="text-primary underline">
             Review
           </Link>
           <Link to="/mistakes" className="text-primary underline">
             Mistakes
+          </Link>
+          <Link to="/bookmarks" className="text-primary underline">
+            Bookmarks
           </Link>
           <Link to="/settings" className="text-primary underline">
             Settings
@@ -167,9 +174,23 @@ export function Today() {
       )}
 
       {error && <p className="text-destructive">Failed to load content: {error}</p>}
-      {!rows && !error && <p className="text-muted-foreground">Loading…</p>}
+      {!rows && !error && (
+        <div className="space-y-2">
+          <Skeleton className="h-12 w-full" />
+          <Skeleton className="h-12 w-full" />
+          <Skeleton className="h-12 w-full" />
+          <Skeleton className="h-12 w-full" />
+        </div>
+      )}
 
-      {rows && (
+      {rows && rows.length === 0 && (
+        <p className="text-sm text-muted-foreground">
+          No drillable topics found. If you just set this up, the content bundle may not have synced yet — try
+          reloading.
+        </p>
+      )}
+
+      {rows && rows.length > 0 && (
         <ul className="divide-y divide-border rounded-lg border border-border">
           {rows.map(({ topic, count, hasLesson }) => (
             <li key={topic.id} className="flex items-center justify-between px-4 py-3 text-sm hover:bg-muted">

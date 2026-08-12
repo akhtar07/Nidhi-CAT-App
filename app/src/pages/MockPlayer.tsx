@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { Markdown } from '@/components/question-player/Markdown'
 import { computeCorrect } from '@/components/question-player/QuestionPlayer'
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/Skeleton'
 import { Calculator } from '@/components/mock-player/Calculator'
 import { Palette } from '@/components/mock-player/Palette'
 import { loadMicroTopic, loadMockDefinition, loadQuestion, loadQuestionsForMicroTopic } from '@/content/loadContent'
@@ -326,7 +327,13 @@ export function MockPlayer() {
   }
 
   if (!mockDef) {
-    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+    return (
+      <main className="mx-auto max-w-2xl space-y-4 p-6">
+        <Skeleton className="h-8 w-2/3" />
+        <Skeleton className="h-20 w-full" />
+        <Skeleton className="h-10 w-32" />
+      </main>
+    )
   }
 
   if (phase === 'intro') {

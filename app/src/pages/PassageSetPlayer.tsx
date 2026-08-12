@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { Markdown } from '@/components/question-player/Markdown'
 import { QuestionPlayer } from '@/components/question-player/QuestionPlayer'
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/Skeleton'
 import { cn } from '@/lib/utils'
 import { loadMicroTopic, loadPassageSet, loadQuestion, loadQuestionsForMicroTopic } from '@/content/loadContent'
 import { storage } from '@/storage'
@@ -411,7 +412,13 @@ export function PassageSetPlayer() {
   }
 
   if (session === undefined) {
-    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+    return (
+      <main className="mx-auto max-w-2xl space-y-4 p-6">
+        <Skeleton className="h-4 w-16" />
+        <Skeleton className="h-8 w-2/3" />
+        <Skeleton className="h-40 w-full" />
+      </main>
+    )
   }
 
   if (session === null) {

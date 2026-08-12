@@ -1,8 +1,9 @@
 import type { ExportBundle, StorageAdapter } from '@/storage/StorageAdapter'
-import type { Attempt, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
+import type { Attempt, Bookmark, ItemEloState, MasteryState, MockResult, MockSession, PlanDay, Settings, SrsCard } from '@/types/state'
 import { AscentDB, MOCK_SESSION_KEY, SETTINGS_KEY, type MockSessionRow, type SettingsRow } from './schema'
 import {
   migrateAttempt,
+  migrateBookmark,
   migrateItemEloState,
   migrateMasteryState,
   migrateMockResult,
@@ -127,8 +128,26 @@ export class DexieAdapter implements StorageAdapter {
     return rows.map(migrateSrsCard)
   }
 
+  async addBookmark(bookmark: Bookmark): Promise<void> {
+    await this.db.bookmarks.put(bookmark)
+  }
+
+  async removeBookmark(questionId: string): Promise<void> {
+    await this.db.bookmarks.where('questionId').equals(questionId).delete()
+  }
+
+  async listBookmarks(): Promise<Bookmark[]> {
+    const rows = await this.db.bookmarks.orderBy('createdAt').reverse().toArray()
+    return rows.map(migrateBookmark)
+  }
+
+  async isBookmarked(questionId: string): Promise<boolean> {
+    const count = await this.db.bookmarks.where('questionId').equals(questionId).count()
+    return count > 0
+  }
+
   async exportAll(): Promise<ExportBundle> {
-    const [attempts, masteryStates, planDays, mockResults, itemEloStates, settings, mockSession, srsCards] =
+    const [attempts, masteryStates, planDays, mockResults, itemEloStates, settings, mockSession, srsCards, bookmarks] =
       await Promise.all([
         this.listAttempts(),
         this.listMasteryStates(),
@@ -138,6 +157,7 @@ export class DexieAdapter implements StorageAdapter {
         this.getSettings(),
         this.getMockSession(),
         this.listSrsCards(),
+        this.listBookmarks(),
       ])
     return {
       exportedAt: new Date().toISOString(),
@@ -149,6 +169,7 @@ export class DexieAdapter implements StorageAdapter {
       settings: settings ?? null,
       mockSession: mockSession ?? null,
       srsCards,
+      bookmarks,
     }
   }
 
@@ -162,6 +183,7 @@ export class DexieAdapter implements StorageAdapter {
       this.db.settings,
       this.db.mockSession,
       this.db.srsCards,
+      this.db.bookmarks,
     ]
   }
 
@@ -177,6 +199,7 @@ export class DexieAdapter implements StorageAdapter {
         bundle.settings ? this.putSettings(bundle.settings) : Promise.resolve(),
         bundle.mockSession ? this.putMockSession(bundle.mockSession) : Promise.resolve(),
         this.db.srsCards.bulkPut(bundle.srsCards ?? []),
+        this.db.bookmarks.bulkPut(bundle.bookmarks ?? []),
       ])
     })
   }

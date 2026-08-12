@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { QuestionPlayer } from '@/components/question-player/QuestionPlayer'
 import { Button } from '@/components/ui/button'
+import { EmptyState } from '@/components/ui/EmptyState'
+import { Skeleton } from '@/components/ui/Skeleton'
 import { loadMicroTopic, loadQuestionsForMicroTopic } from '@/content/loadContent'
 import { DEFAULT_LEARNER_ELO } from '@/mastery/elo'
 import { selectDrillQueue } from '@/mastery/selectItems'
@@ -102,16 +104,25 @@ export function Drill() {
   }
 
   if (session === undefined) {
-    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+    return (
+      <main className="mx-auto max-w-2xl space-y-4 p-6">
+        <Skeleton className="h-5 w-32" />
+        <Skeleton className="h-24 w-full" />
+        <Skeleton className="h-10 w-full" />
+        <Skeleton className="h-10 w-full" />
+      </main>
+    )
   }
 
   if (session === null) {
     return (
       <main className="mx-auto max-w-2xl p-6">
-        <p className="text-muted-foreground">No questions for this micro-topic yet.</p>
-        <Link to="/" className="text-primary underline">
-          Back
-        </Link>
+        <EmptyState
+          title="No questions for this micro-topic yet"
+          description="This topic doesn't have any drillable questions in the bank yet — check back after the next content update, or pick a different topic for now."
+          actionLabel="Back to Today"
+          actionTo="/"
+        />
       </main>
     )
   }

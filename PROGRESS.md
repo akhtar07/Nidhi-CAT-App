@@ -46,6 +46,90 @@ produced or validated by the Python pipeline.
 
 ## Completed
 
+### Professionalization pass 1 — empty states/skeletons, sectional + trend charts, question bookmarks
+
+Direct follow-up request: "make this like a professional app... bring the idea from professional
+apps like this CAT exam prep and mirror it." Narrowed via a multi-select question to three
+concrete areas (visual/UX polish, score analytics, study-flow features) rather than guessing at
+scope — real prep-app "professionalism" here means information density and polish, not badges or
+streak gamification (SPEC.md §13 explicitly rules that out).
+
+**Visual polish — empty states and loading skeletons.** Added `components/ui/Skeleton.tsx` (a
+plain `animate-pulse` block, no new dependency) and `components/ui/EmptyState.tsx` (title +
+specific description + optional action link), then swapped bare "Loading…" text for
+layout-shaped skeletons across Today, Drill, Lesson, Calendar, MistakeNotebook, Review,
+PassageSetPlayer, MockPlayer, Diagnostic, and MockAnalysis, and upgraded genuinely bare "no data"
+messages (MistakeNotebook, Bookmarks, Progress, Today's zero-topics edge case, Drill's
+zero-questions case) to explain what's missing and give one clear next action. Left a few
+already-adequate states alone (Review's "no cards due" — a completion state, not a broken empty
+one; Lesson's existing "practise anyway" fallback) rather than reflexively wrapping everything in
+`EmptyState` for its own sake.
+
+**Score analytics — sectional chart + a new Progress trend page.** `MockAnalysis.tsx` already
+computed rich per-mock data (waterfall, bleeder report, selection quality, TITA discipline,
+accuracy-vs-attempts, micro-topic damage) but rendered all of it as plain text lists. Added:
+- `SectionScoreChart` in `MockAnalysis.tsx` — a horizontal bar per section (VARC/DILR/QA) showing
+  marks earned, same plain-SVG/no-library discipline as PassageSetPlayer's chart renderers
+  (SPEC.md §5.1). A negative section score renders in the destructive color instead of its
+  section color, so a real loss is visually distinct from a small positive bar, not just implied
+  by the number's sign.
+- A new `/progress` route (`pages/Progress.tsx`) showing score + estimated percentile trend
+  across every mock taken — the single most common "real test-prep app" dashboard feature that
+  was completely missing. Backed by a new pure function, `mock/progressTrend.ts`'s
+  `computeScoreTrend()` (sums `sectionScores`, reuses the existing `estimatePercentile()` — no
+  new scoring logic, just aggregation across history), covered by its own vitest file. The trend
+  chart is deliberately single-axis: percentile is a direct label per point, not a second y-axis
+  (a dual-axis chart with two different scales is the most common chart-reading mistake).
+- Linked from Today's nav and from MockAnalysis's score card ("View trend across mocks").
+
+**Study-flow — question bookmarks, wired through the full storage stack.** A manual "come back to
+this" star toggle on any question (`QuestionPlayer.tsx`, next to the difficulty/timer row, using
+the already-available `lucide-react` dependency — no new package), independent of the SRS/mistake
+pipeline. Threaded through every layer the existing patterns (`itemElo`, `srsCards`) established,
+so nothing here is a special case:
+- New `Bookmark` type (`types/state.ts`), added to `StorageAdapter`
+  (`addBookmark`/`removeBookmark`/`listBookmarks`/`isBookmarked`) and `ExportBundle`.
+- `storage/dexie/schema.ts` version 6 (`bookmarks: 'id, questionId, microTopicId, createdAt'`) —
+  Dexie's additive versioning means existing users' IndexedDB just gains a new empty table, no
+  migration of existing data needed. `migrations.ts` gained the matching
+  `CURRENT_SCHEMA_VERSION.bookmark`/`migrateBookmark` plumbing (empty migration map, same as every
+  other type — schemaVersion 1 is the only version that's ever shipped for anything in this app).
+  `DexieAdapter` implements the four methods and includes bookmarks in `exportAll`/`importAll`/
+  `clearAll`, with tests added to `DexieAdapter.test.ts` (round-trip, most-recent-first ordering,
+  remove-by-questionId, full export/re-import, clearAll).
+- `SupabaseSyncAdapter` gained the same enqueue-on-write wrapping every other synced type has
+  (`storage/supabase/syncQueue.ts`'s `SyncTable`, `toRow.ts`'s `bookmarkToRow`), plus a new
+  `supabase/migrations/0002_bookmarks.sql` table + RLS policy, inert until a real Supabase project
+  exists — same as `0001_init.sql`. `removeBookmark` has one real subtlety: the bookmarks table's
+  sync key is the bookmark's own `id` (matching its Postgres primary key), not `questionId`, so
+  the adapter looks up which row(s) are being deleted locally *before* deleting, to enqueue the
+  delete with the right key.
+- New `pages/Bookmarks.tsx` (route `/bookmarks`, linked from Today's nav) lists bookmarked
+  questions with topic name and date, an "Attempt" button that re-plays the question through
+  `QuestionPlayer` in `review` mode (same pattern as `MistakeNotebook`'s retry flow), and a
+  "Remove" button.
+
+**Verification.** Full CI (lint, typecheck, 174 vitest tests — 4 new: 1 bookmark round-trip test,
+3 for `computeScoreTrend`) green throughout. Live-verified in Chromium via Playwright: seeded a
+settings row + two mock results, screenshotted the Progress trend chart (correct score/percentile
+labels, correct chronological order regardless of insertion order), the MockAnalysis section chart
+(negative DILR score correctly rendered in the destructive color), every new/updated empty state,
+and the full bookmark round-trip live — starred a question in Drill, confirmed the star fills and
+persists, confirmed it appears in `/bookmarks` with the right topic/date, clicked "Attempt" and
+confirmed `QuestionPlayer` reloads the same question in review mode. Zero console/page errors
+across every screen. (One process note, not a bug: mock titles in a from-scratch Playwright
+session only resolve correctly when the seeded `mockId` matches a real file under
+`content/mocks/` — an invented id degrades to showing the raw id, which is the intended fallback
+behavior, not broken; caught during verification and the seed script fixed, not the app.)
+
+**Deferred, explicitly out of scope for this pass:** global search across topics/lessons, an
+onboarding walkthrough, and a full accessibility audit (keyboard-nav sweep, ARIA labeling pass,
+Lighthouse run) — all mentioned as options when scoping this request but not selected, and (for
+the accessibility audit specifically) that's Milestone 17's job, not started here. Also deferred:
+extending the same empty-state/skeleton treatment to `Settings.tsx`'s small inline auth-loading
+text and `MockPlayer`'s mid-session states — both low-visibility, not full-page loads, judged
+lower priority than the rest of this pass.
+
 ### Aesthetic/theme fix, Calendar bug fix, and content scale-up round 3 (7 new DILR topics + chart renderers)
 
 Three direct follow-up requests handled in sequence: a Calendar display bug report ("Review /

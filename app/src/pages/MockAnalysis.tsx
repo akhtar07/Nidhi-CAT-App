@@ -15,10 +15,53 @@ import {
   type TitaBlankEntry,
 } from '@/mock/analysis'
 import { estimatePercentile } from '@/mock/percentile'
+import { Skeleton } from '@/components/ui/Skeleton'
 import { loadMicroTopic, loadMockDefinition, loadQuestion } from '@/content/loadContent'
+import { cn } from '@/lib/utils'
 import { storage } from '@/storage'
 import type { MockDefinition } from '@/types/content'
-import type { MockResult } from '@/types/state'
+import type { MockResult, Section } from '@/types/state'
+
+const SECTION_COLORS: Record<Section, string> = {
+  QA: 'var(--color-primary)',
+  DILR: '#f59e0b',
+  VARC: '#22c55e',
+}
+const SECTION_ORDER: Section[] = ['VARC', 'DILR', 'QA']
+
+/** Visual sectional score breakdown — same plain-SVG-from-data discipline as PassageSetPlayer's
+ * chart renderers (SPEC.md §5.1). MockAnalysis already computed every number here (the waterfall
+ * section below shows the same marks per section as text); this is a rendering addition, not a
+ * new scoring computation. */
+function SectionScoreChart({ sectionScores }: { sectionScores: MockResult['sectionScores'] }) {
+  const maxAbs = Math.max(1, ...SECTION_ORDER.map((s) => Math.abs(sectionScores[s]?.score ?? 0)))
+  const barHeight = 28
+  const gap = 12
+
+  return (
+    <div className="space-y-2 rounded-lg border border-border p-4">
+      {SECTION_ORDER.map((section) => {
+        const score = sectionScores[section]?.score ?? 0
+        const widthPct = (Math.abs(score) / maxAbs) * 100
+        return (
+          <div key={section} className="flex items-center gap-3 text-sm" style={{ height: barHeight }}>
+            <span className="w-12 shrink-0 text-muted-foreground">{section}</span>
+            <div className="h-full flex-1 overflow-hidden rounded-md bg-muted">
+              <div
+                className="h-full rounded-md transition-[width]"
+                style={{ width: `${widthPct}%`, backgroundColor: score < 0 ? 'var(--color-destructive)' : SECTION_COLORS[section] }}
+              />
+            </div>
+            <span className={cn('w-10 shrink-0 text-right font-medium', score < 0 && 'text-destructive')}>{score}</span>
+          </div>
+        )
+      })}
+      <p className="pt-1 text-xs text-muted-foreground" style={{ marginTop: gap - 8 }}>
+        Marks per section (negative marking already applied).
+      </p>
+    </div>
+  )
+}
 
 const REMEDIATION_TOPIC_COUNT = 3
 
@@ -144,7 +187,14 @@ export function MockAnalysis() {
     )
   }
   if (data === undefined) {
-    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+    return (
+      <main className="mx-auto max-w-2xl space-y-6 p-6">
+        <Skeleton className="h-8 w-64" />
+        <Skeleton className="h-20 w-full" />
+        <Skeleton className="h-32 w-full" />
+        <Skeleton className="h-40 w-full" />
+      </main>
+    )
   }
   if (data === null) {
     return (
@@ -180,11 +230,18 @@ export function MockAnalysis() {
       </div>
 
       <section className="rounded-lg border border-border p-4">
-        <p className="text-3xl font-semibold">{totalScore}</p>
+        <div className="flex items-baseline justify-between">
+          <p className="text-3xl font-semibold">{totalScore}</p>
+          <Link to="/progress" className="text-xs text-primary underline">
+            View trend across mocks
+          </Link>
+        </div>
         <p className="text-sm text-muted-foreground">
           Estimated {percentile.percentile}%ile · {percentile.disclaimer}
         </p>
       </section>
+
+      <SectionScoreChart sectionScores={result.sectionScores} />
 
       {remediationStatus && (
         <div className="rounded-lg border border-primary/40 bg-primary/10 p-3 text-sm">{remediationStatus}</div>

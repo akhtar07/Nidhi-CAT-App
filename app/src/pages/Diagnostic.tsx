@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { QuestionPlayer } from '@/components/question-player/QuestionPlayer'
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/Skeleton'
 import {
   loadExamMeta,
   loadMicroTopic,
@@ -159,7 +160,12 @@ export function Diagnostic() {
   }
 
   if (phase === 'loading') {
-    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+    return (
+      <main className="mx-auto max-w-2xl space-y-4 p-6">
+        <Skeleton className="h-6 w-40" />
+        <Skeleton className="h-32 w-full" />
+      </main>
+    )
   }
 
   if (phase === 'done') {

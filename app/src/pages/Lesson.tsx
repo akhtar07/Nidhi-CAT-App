@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Markdown, MarkdownBlocks } from '@/components/question-player/Markdown'
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/Skeleton'
 import { loadLesson, loadMicroTopic } from '@/content/loadContent'
 import type { Lesson as LessonContent, MicroTopic } from '@/types/content'
 
@@ -38,7 +39,15 @@ export function Lesson() {
   }
 
   if (topic === undefined || lesson === undefined) {
-    return <main className="mx-auto max-w-2xl p-6 text-muted-foreground">Loading…</main>
+    return (
+      <main className="mx-auto max-w-2xl space-y-4 p-6">
+        <Skeleton className="h-4 w-16" />
+        <Skeleton className="h-8 w-2/3" />
+        <Skeleton className="h-24 w-full" />
+        <Skeleton className="h-24 w-full" />
+        <Skeleton className="h-10 w-40" />
+      </main>
+    )
   }
 
   if (!lesson || !topic) {
