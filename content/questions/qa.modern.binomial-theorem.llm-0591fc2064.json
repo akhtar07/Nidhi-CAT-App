@@ -1,0 +1,50 @@
+{
+  "id": "qa.modern.binomial-theorem.llm-0591fc2064",
+  "microTopicIds": [
+    "qa.modern.binomial-theorem"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "What is the coefficient of $x^3y^2$ in the expansion of $(x+y)^5$?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$10$"
+    },
+    {
+      "key": "B",
+      "markdown": "$5$"
+    },
+    {
+      "key": "C",
+      "markdown": "$25$"
+    },
+    {
+      "key": "D",
+      "markdown": "$30$"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "To find the coefficient of $x^3y^2$ in $(x+y)^5$, use the Binomial Theorem. The general term is given by $$ T_{k+1} = \\binom{5}{k} x^{5-k} y^k.$$ For $x^3y^2$, we need $5-k=3$ and $k=2$. Therefore, substituting these values in the general term, we get: $$\\binom{5}{2} x^3 y^2 = 10 x^3 y^2.$$ Hence, the coefficient of $x^3y^2$ is $10$.",
+  "altSolutionMarkdown": "Alternatively, you can recognize that for $(x+y)^n$, the sum of exponents in each term equals $n$. The binomial coefficient $\\binom{n}{k}$ gives the number of ways to choose $k$ instances from $n$, thus, for $\\binom{5}{2} = 10$. This way we quickly find that the coefficient is $10$. ",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "binomial-theorem",
+    "medium"
+  ],
+  "mockReserved": false
+}

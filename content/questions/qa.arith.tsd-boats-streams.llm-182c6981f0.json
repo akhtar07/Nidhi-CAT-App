@@ -1,0 +1,51 @@
+{
+  "id": "qa.arith.tsd-boats-streams.llm-182c6981f0",
+  "microTopicIds": [
+    "qa.arith.tsd-boats-streams"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A boat's speed in still water is 15 km/h. If it takes the same time to travel 45 km downstream as it does to travel 30 km upstream, what is the speed of the stream?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "2.5 km/h"
+    },
+    {
+      "key": "B",
+      "markdown": "3 km/h"
+    },
+    {
+      "key": "C",
+      "markdown": "4 km/h"
+    },
+    {
+      "key": "D",
+      "markdown": "5 km/h"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let the speed of the stream be \\(x\\) km/h. Then, the downstream speed is \\(15 + x\\) and the upstream speed is \\(15 - x\\). The time taken to travel 45 km downstream equals the time to travel 30 km upstream, so we have: $$\\frac{45}{15+x} = \\frac{30}{15-x}$$. Solving this equation gives \\(x=3\\) km/h.",
+  "altSolutionMarkdown": "Using the ratio of distances (45/30), we can set up a direct proportion with speeds to solve for the stream speed \\(x\\): $$\\frac{45}{15+x} = \\frac{30}{15-x}$$. Solving this directly gives us \\(x=3\\) km/h.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "boats",
+    "streams",
+    "TSD"
+  ],
+  "mockReserved": false
+}

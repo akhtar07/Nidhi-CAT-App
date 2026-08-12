@@ -1,0 +1,50 @@
+{
+  "id": "qa.algebra.logarithms.llm-a554c87610",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "If $\\log_5 125 = y$, what is the value of $y$?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$3$"
+    },
+    {
+      "key": "B",
+      "markdown": "$4$"
+    },
+    {
+      "key": "C",
+      "markdown": "$5$"
+    },
+    {
+      "key": "D",
+      "markdown": "$6$"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To find the value of $y$ in $\\log_5 125 = y$, we need to express 125 as a power of 5. Since $$125 = 5^3$$, it follows that $$ \\log_5 125 = \\log_5 (5^3) = 3.$$ Thus, $y = 3$.",
+  "altSolutionMarkdown": "Recognize that 125 is a power of 5. Since $$125 = 5 \times 5 \times 5 = 5^3$$, the logarithm base 5 of 125 must be 3.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "logarithms",
+    "easy"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "qa.modern.set-theory-venn.llm-b9f1c23090",
+  "microTopicIds": [
+    "qa.modern.set-theory-venn"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "In a college library, there are 70 students studying for exams. Among them, 40 are preparing for their Math exam and 35 for their Physics exam. If exactly 10 students are not preparing for either of these two exams, how many students are preparing for both the Math and Physics exams?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "15"
+    },
+    {
+      "key": "B",
+      "markdown": "20"
+    },
+    {
+      "key": "C",
+      "markdown": "25"
+    },
+    {
+      "key": "D",
+      "markdown": "30"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Total number of students studying = 70.\nNumber not preparing for either exam = 10.\nStudents preparing for at least one exam = 70 - 10 = 60.\nUsing the principle of inclusion-exclusion, \nMath + Physics = Math only + Physics only + Both.\nBut we also know that 40 students are preparing for Math and 35 for Physics.\nSo, 40 + 35 - Both = 60.\nSolving this equation:\n75 - Both = 60,\nhence Both = 15.",
+  "altSolutionMarkdown": "Since we know that the sum of individual preparers minus those preparing for both should equal the total studying either or both subjects (minus those not preparing at all), setting up and solving the inclusion-exclusion equation directly gives a quick solution.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "venn-diagram",
+    "set-theory"
+  ],
+  "mockReserved": false
+}

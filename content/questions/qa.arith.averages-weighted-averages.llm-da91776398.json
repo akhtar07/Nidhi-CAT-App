@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.averages-weighted-averages.llm-da91776398",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A company has two departments: Sales and IT with an equal number of employees. If the average salary in the Sales department is $$\\$50,000$$ and the average salary in the IT department is $$\\$80,000$$, what is the weighted average salary for all employees in both departments combined?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$\\$60,000$"
+    },
+    {
+      "key": "B",
+      "markdown": "$\\$65,000$"
+    },
+    {
+      "key": "C",
+      "markdown": "$\\$70,000$"
+    },
+    {
+      "key": "D",
+      "markdown": "$\\$75,000$"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The weighted average salary can be calculated by taking the sum of the products of each department's average salary and its proportion of employees. \nSince both departments have an equal number of employees, we can use: $$\\frac{50{,}000 + 80{,}000}{2} = \\$65{,}000$$.",
+  "altSolutionMarkdown": "The average salary of the combined group is simply the arithmetic mean since each department has an equal number of employees. Thus it's $$\\frac{50{,}000 + 80{,}000}{2} = \\$65{,}000$$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "averages",
+    "weighted-averages"
+  ],
+  "mockReserved": false
+}

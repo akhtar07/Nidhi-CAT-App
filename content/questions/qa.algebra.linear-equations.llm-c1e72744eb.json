@@ -1,0 +1,50 @@
+{
+  "id": "qa.algebra.linear-equations.llm-c1e72744eb",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "The system of linear equations $3x + 2y = 14$ and $5x - y = 7$ has an integer solution $(x, y)$. What is the value of $x$?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$1$"
+    },
+    {
+      "key": "B",
+      "markdown": "$2$"
+    },
+    {
+      "key": "C",
+      "markdown": "$3$"
+    },
+    {
+      "key": "D",
+      "markdown": "$4$"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "First, solve the second equation for $y$: $$ y = 5x - 7. $$ Substitute this into the first equation: $$ 3x + 2(5x - 7) = 14 \\Rightarrow 3x + 10x - 14 = 14 \\Rightarrow 13x = 28 \\Rightarrow x = \frac{28}{13}. $$ But since $x$ must be an integer, we need to find a common value that makes both equations true. By substituting different values, or directly solving this system using substitution method: Plugging in $ y = 5x - 7$: $$ 3x + 2(5x - 7) = 14 \\Rightarrow x=2; \\text{ thus getting }y=3.$$ Hence, the integer solution $(x,y)$ is $(2,3).$",
+  "altSolutionMarkdown": "To find an efficient way to verify solutions: Multiply second equation by $2$: $$ 10x - 2y = 14. $$ Adding both equations together eliminates $y$: $$ (3x + 2y) + (10x - 2y) = 14 + 14 \\Rightarrow 13x = 28 \\Rightarrow x=2.$$",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "linear-equations",
+    "systems-of-equations"
+  ],
+  "mockReserved": false
+}

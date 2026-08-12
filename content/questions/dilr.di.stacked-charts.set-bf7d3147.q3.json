@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.stacked-charts.set-bf7d3147.q3",
+  "microTopicIds": [
+    "dilr.di.stacked-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What percentage of Q1's total sales came from Electronics? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 45.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Electronics Q1 = 45, total Q1 = 100. $\\dfrac{45}{100} \\times 100 = 45.0\\%$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:stacked-charts"
+  ],
+  "mockReserved": false
+}

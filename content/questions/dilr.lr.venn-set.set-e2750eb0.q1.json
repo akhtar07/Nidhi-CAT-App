@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-e2750eb0.q1",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students like exactly one of the three sports?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 60.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Only-Cricket + only-Football + only-Tennis = 25 + 20 + 15 = **60**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:venn-set"
+  ],
+  "mockReserved": false
+}

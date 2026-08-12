@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.averages-weighted-averages.llm-c3413605cd",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A teacher calculated the average score of her class as 70 out of 100 based on a test taken by 25 students. Later, she realized that one student's score was recorded incorrectly. The actual score of this student was 90 instead of the previously recorded 60. What is the corrected average score for the class?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "71"
+    },
+    {
+      "key": "B",
+      "markdown": "72"
+    },
+    {
+      "key": "C",
+      "markdown": "73"
+    },
+    {
+      "key": "D",
+      "markdown": "74"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The initial total score can be calculated as $70 \times 25$. The error was in recording one student's score incorrectly: the recorded score was 60, but it should have been 90. Therefore, the corrected total score is $(70 \\times 25) - 60 + 90 = 1850$. Now considering this correction, the new average would be $\\frac{1850}{25} = 74$.",
+  "altSolutionMarkdown": "You can directly adjust the average by calculating the difference in scores and averaging it over all students. The corrected score (90) is 30 more than what was recorded (60). This additional 30 points needs to be spread across all 25 students, thus adding an extra $\\frac{30}{25} = 1.2$ to the original average of 70 resulting in a new average of 71.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "average",
+    "correction"
+  ],
+  "mockReserved": false
+}

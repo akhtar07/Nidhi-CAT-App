@@ -1,0 +1,50 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons.llm-3ba3dc6d18",
+  "microTopicIds": [
+    "qa.geometry.quadrilaterals-polygons"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A regular hexagon has a side length of 6 cm. What is the perimeter of the hexagon?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "30 cm"
+    },
+    {
+      "key": "B",
+      "markdown": "36 cm"
+    },
+    {
+      "key": "C",
+      "markdown": "42 cm"
+    },
+    {
+      "key": "D",
+      "markdown": "50 cm"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "A regular hexagon has 6 equal sides. Given the side length is 6 cm, we can find the perimeter by multiplying the side length by the number of sides: $$\text{Perimeter} = 6 \\times 6 \\,\\text{cm} = 36\\,\\text{cm}$$",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry",
+    "perimeter"
+  ],
+  "mockReserved": false
+}

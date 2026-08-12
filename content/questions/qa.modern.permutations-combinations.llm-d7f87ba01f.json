@@ -1,0 +1,50 @@
+{
+  "id": "qa.modern.permutations-combinations.llm-d7f87ba01f",
+  "microTopicIds": [
+    "qa.modern.permutations-combinations"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "How many different ways can the letters of the word 'READ' be arranged?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "24"
+    },
+    {
+      "key": "B",
+      "markdown": "12"
+    },
+    {
+      "key": "C",
+      "markdown": "6"
+    },
+    {
+      "key": "D",
+      "markdown": "30"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "We need to find the number of different ways that the letters in the word 'READ' can be arranged. Since all four letters are distinct, we use permutations: $$ P(4) = 4! = 4 \\times 3 \\times 2 \\times 1 = 24 $$ Thus, there are 24 different arrangements.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "permutations",
+    "combinations"
+  ],
+  "mockReserved": false
+}

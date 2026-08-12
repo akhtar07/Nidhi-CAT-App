@@ -1,0 +1,50 @@
+{
+  "id": "qa.geometry.trigonometry.llm-8d71f03493",
+  "microTopicIds": [
+    "qa.geometry.trigonometry"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A tower stands vertically on the ground. From a point on the ground, which is 20 meters away from the base of the tower, the angle of elevation to the top of the tower is found to be $45^\\circ$. What is the height of the tower (in meters)?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "10"
+    },
+    {
+      "key": "B",
+      "markdown": "20"
+    },
+    {
+      "key": "C",
+      "markdown": "30"
+    },
+    {
+      "key": "D",
+      "markdown": "40"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Since the angle of elevation is $45^\\circ$, which implies a right triangle with equal base and height, we can use the property of a $45^\\circ$-$45^\\circ$-$90^\\circ$ triangle where both legs are equal. Therefore, if the distance from the point on ground to the tower is 20 meters, then by symmetry and trigonometry, the height must also be 20 meters.",
+  "altSolutionMarkdown": "Using basic trigonometry, we know that in a right-angled triangle with an angle of $45^\\circ$, $tan(45^\\circ) = \\frac{opposite}{adjacent}$. Since $tan(45^\\circ) = 1$, the opposite and adjacent sides are equal. Hence, if the distance from point to base is 20m, height of the tower will also be 20m.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "trigonometry",
+    "heights-and-distances"
+  ],
+  "mockReserved": false
+}

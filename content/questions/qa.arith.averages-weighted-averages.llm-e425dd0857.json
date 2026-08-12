@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.averages-weighted-averages.llm-e425dd0857",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "The average weight of 5 boys is 48 kg, and the average weight of 3 girls is 42 kg. What is the average weight of all 8 children?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "45 kg"
+    },
+    {
+      "key": "B",
+      "markdown": "46 kg"
+    },
+    {
+      "key": "C",
+      "markdown": "47 kg"
+    },
+    {
+      "key": "D",
+      "markdown": "48 kg"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The total weight of the boys is $5 \\times 48 = 240$ kg, and the total weight of the girls is $3 \\times 42 = 126$ kg. The combined total weight for all children is $240 + 126 = 366$ kg. Therefore, the average weight of the 8 children is $\frac{366}{8} = 45.75$ kg which rounds to 46 kg.",
+  "altSolutionMarkdown": "To find the weighted average without directly summing up individual totals, we can use a weighted average formula: $\\text{Weighted Average} = \\frac{(n_1 \\cdot x_1) + (n_2 \\cdot x_2)}{n_1+n_2}$ where \\( n_1=5\\), \\(x_1=48\\), \\(n_2=3\\), and \\(x_2=42\\). This simplifies to $\frac{(5 \\times 48) + (3 \\times 42)}{5+3} = \frac{366}{8} = 45.75$ kg which rounds to 46 kg.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "averages",
+    "weighted averages"
+  ],
+  "mockReserved": false
+}

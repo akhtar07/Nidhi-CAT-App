@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.ds-q1",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "**What is the value of x?**\n\nStatement I: $2x + 3y = 12$\n\nStatement II: $x - y = 1$",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but Statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but Statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Either statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Both statements together are still not sufficient."
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Each statement alone is a single linear equation in 2 unknowns \u2014 infinitely many $(x, y)$ pairs satisfy it, so neither pins down $x$. Together, solving the 2\u00d72 system gives a unique solution ($x = 3$). **Answer: C**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

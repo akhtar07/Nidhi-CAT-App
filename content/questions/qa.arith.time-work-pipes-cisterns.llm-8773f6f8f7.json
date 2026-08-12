@@ -1,0 +1,51 @@
+{
+  "id": "qa.arith.time-work-pipes-cisterns.llm-8773f6f8f7",
+  "microTopicIds": [
+    "qa.arith.time-work-pipes-cisterns"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A tank can be filled by pipe A in 10 hours and by pipe B in 15 hours. Pipe C, which empties the tank, can do so in 30 hours. If all three pipes are opened at once, how many hours will it take to fill the tank?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "6"
+    },
+    {
+      "key": "B",
+      "markdown": "7.5"
+    },
+    {
+      "key": "C",
+      "markdown": "8"
+    },
+    {
+      "key": "D",
+      "markdown": "9"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The rate of filling for pipe A is $\\frac{1}{10}$ per hour and for pipe B, it is $\\frac{1}{15}$. The rate at which pipe C empties the tank is $-\\frac{1}{30}$. When all three are opened, their combined rate of filling the tank is:\\\n$$ \\frac{1}{10} + \\frac{1}{15} - \\frac{1}{30} = \\frac{3+2-1}{30} = \\frac{4}{30} = \\frac{2}{15} $$\\\nThe combined rate means the tank will be filled in $\\frac{15}{2}$ hours, or 7.5 hours.",
+  "altSolutionMarkdown": "An alternative approach: The LCM of 10, 15 and 30 is 30. If we consider this as the capacity (in units) for convenience:\\\nPipe A fills 3 units/hour, Pipe B fills 2 units/hour, and Pipe C empties 1 unit/hour. Combined they fill:\\\n$$ 3 + 2 - 1 = 4 \\text{ units/hour} $$\\\nThe tank capacity is 30 units so it will take \\\\(\\frac{30}{4} = 7.5 \\\\) hours.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "time-work",
+    "pipes-cisterns",
+    "medium"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-e2750eb0.q3",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students like none of the three sports?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 10.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "By inclusion-exclusion, students liking at least one sport = 47 + 43 + 35 \u2212 15 \u2212 13 \u2212 12 + 5 = 90. None = 100 \u2212 90 = **10**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 150,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:venn-set"
+  ],
+  "mockReserved": false
+}

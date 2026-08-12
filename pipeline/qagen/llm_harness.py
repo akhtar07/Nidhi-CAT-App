@@ -121,21 +121,32 @@ def _values_agree(a: object, b: object, tol: float = 0.05) -> bool:
         return str(a).strip().lower() == str(b).strip().lower()
 
 
-def self_consistency_check(stem: str, options: list[dict] | None, verified_value: object, samples: int = 5) -> int:
+def self_consistency_check(
+    stem: str, options: list[dict] | None, verified_value: object, samples: int = 5, label: str = ""
+) -> int:
     """Independently asks the model to solve the item `samples` times
     (given only stem/options, never the claimed answer) and counts how many
     agree with the already-sympy-verified value. Returns the agreement
-    count."""
+    count.
+
+    Prints one line per sample: a single self-consistency call can legitimately
+    take minutes under a loaded local model, and a batch run's only per-item
+    log line used to come after all 5 samples (plus draft + audit) finished —
+    so a slow-but-alive attempt was indistinguishable from a hung one for up
+    to ~35 minutes. See PROGRESS.md's QA-batch-hang writeup."""
     user = f"Question:\n{stem}"
     if options:
         user += "\n\nOptions:\n" + "\n".join(f"{o['key']}. {o['markdown']}" for o in options)
     agree = 0
-    for _ in range(samples):
+    for i in range(samples):
         try:
             reply = llm_client.chat_json(SOLVE_SYSTEM_PROMPT, user, temperature=0.8, max_tokens=1024)
-            if _values_agree(reply.get("final_answer"), verified_value):
+            ok = _values_agree(reply.get("final_answer"), verified_value)
+            if ok:
                 agree += 1
-        except llm_client.LLMError:
+            print(f"    {label}self-consistency sample {i + 1}/{samples}: {'agree' if ok else 'disagree'}", flush=True)
+        except llm_client.LLMError as e:
+            print(f"    {label}self-consistency sample {i + 1}/{samples}: call failed ({e})", flush=True)
             continue
     return agree
 
@@ -213,6 +224,8 @@ def generate_one(
     dedup: DedupIndex,
     recent_stems: list[str],
 ) -> tuple[Question | None, RejectReason | None]:
+    label = f"[{microtopic_id}/{difficulty}] "
+    print(f"  {label}draft...", flush=True)
     try:
         draft = llm_client.chat_json(
             DRAFT_SYSTEM_PROMPT,
@@ -221,16 +234,19 @@ def generate_one(
             max_tokens=2048,
         )
     except llm_client.LLMError as e:
+        print(f"  {label}draft failed: {e}", flush=True)
         return None, RejectReason("draft", str(e))
 
     fmt = draft.get("format")
     stem = draft.get("stem", "")
     if fmt not in ("mcq", "tita") or not stem:
         return None, RejectReason("draft", "malformed draft (missing format/stem)")
+    print(f"  {label}draft ok ({fmt}): {stem[:70]!r}...", flush=True)
 
     if dedup.is_duplicate(stem):
         return None, RejectReason("dedup", "duplicate of existing bank item")
 
+    print(f"  {label}sympy verify...", flush=True)
     verifier_code = draft.get("verifier_code", "")
     ok, computed, err = run_verifier(verifier_code)
     if not ok:
@@ -239,6 +255,7 @@ def generate_one(
     target = draft.get("verification_target")
     if not _values_agree(computed, target):
         return None, RejectReason("sympy_verify", f"program returned {computed!r}, claimed target {target!r}")
+    print(f"  {label}sympy verify ok (target={target!r})", flush=True)
 
     options = draft.get("options")
     correct_key = draft.get("correct_key")
@@ -248,11 +265,14 @@ def generate_one(
         values = [o.get("markdown") for o in options]
         if len(set(values)) != len(values):
             return None, RejectReason("distractor_audit", "duplicate option text")
+        print(f"  {label}distractor audit...", flush=True)
         audit_ok, issues = distractor_audit(stem, options, correct_key)
         if not audit_ok:
             return None, RejectReason("distractor_audit", "; ".join(issues) or "audit flagged issues")
+        print(f"  {label}distractor audit ok", flush=True)
 
-    agreement = self_consistency_check(stem, options, target, samples=5)
+    print(f"  {label}self-consistency (5 samples)...", flush=True)
+    agreement = self_consistency_check(stem, options, target, samples=5, label=label)
     if agreement < 4:
         return None, RejectReason("self_consistency", f"only {agreement}/5 independent solves agreed")
 

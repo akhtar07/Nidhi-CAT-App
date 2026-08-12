@@ -1,0 +1,50 @@
+{
+  "id": "qa.algebra.maxima-minima.llm-6e0d35d195",
+  "microTopicIds": [
+    "qa.algebra.maxima-minima"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Find the minimum value of the expression $x^2 + 4x + 5$.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "-1"
+    },
+    {
+      "key": "B",
+      "markdown": "0"
+    },
+    {
+      "key": "C",
+      "markdown": "1"
+    },
+    {
+      "key": "D",
+      "markdown": "4"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To find the minimum value of $x^2 + 4x + 5$, we can complete the square. \n\nRewrite $x^2 + 4x + 5$ as $(x+2)^2 - 4 + 5 = (x+2)^2 + 1$. The expression is minimized when the squared term is zero, i.e., at $x=-2$, and its minimum value is $0 + 1 = 1$.",
+  "altSolutionMarkdown": "A quadratic function of the form $ax^2 + bx + c$ has a vertex at $x=-\\frac{b}{2a}$. Here, $a=1$, $b=4$, so the vertex occurs at $x=-\\frac{4}{2*1} = -2$. Plugging this back into the original function gives $(\u22122)^2 + 4(\u22122) + 5 = 4 \u22128 + 5 = 1$.",
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "maxima-minima",
+    "quadratic-expression"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "qa.algebra.progressions.llm-52455ccdc3",
+  "microTopicIds": [
+    "qa.algebra.progressions"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "The first term of an arithmetic progression is $a=5$ and the common difference is $d=3$. What is the fifth term of this sequence?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$11$"
+    },
+    {
+      "key": "B",
+      "markdown": "$14$"
+    },
+    {
+      "key": "C",
+      "markdown": "$17$"
+    },
+    {
+      "key": "D",
+      "markdown": "$20$"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The $n^{th}$ term of an arithmetic progression is given by $a_n = a + (n-1)d$. Here, $a=5$, $d=3$, and we are looking for the fifth term ($n=5$). Substituting these values in: \n\n$$a_5 = 5 + (5-1) \\cdot 3 = 5 + 4\\cdot 3 = 5 + 12 = 17.$$",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "progressions",
+    "arithmetic-progression"
+  ],
+  "mockReserved": false
+}

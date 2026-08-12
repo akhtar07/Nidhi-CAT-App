@@ -1,0 +1,50 @@
+{
+  "id": "qa.algebra.logarithms.llm-7bc6cbcffe",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "If $\\log_{10} x = 2$, what is the value of $x$?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "50"
+    },
+    {
+      "key": "B",
+      "markdown": "100"
+    },
+    {
+      "key": "C",
+      "markdown": "200"
+    },
+    {
+      "key": "D",
+      "markdown": "300"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To solve $\\log_{10} x = 2$, we rewrite it in exponential form: $x = 10^2$. Therefore, $x = 100$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "logarithms",
+    "exponential-form"
+  ],
+  "mockReserved": false
+}

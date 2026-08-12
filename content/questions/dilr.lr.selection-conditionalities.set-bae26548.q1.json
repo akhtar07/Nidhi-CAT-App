@@ -1,0 +1,49 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bae26548.q1",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following is a valid team of 3, consistent with all the rules?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Amit, Bina, Esha"
+    },
+    {
+      "key": "B",
+      "markdown": "Amit, Chen, Esha"
+    },
+    {
+      "key": "C",
+      "markdown": "Chen, Deepa, Esha"
+    },
+    {
+      "key": "D",
+      "markdown": "Amit, Bina, Chen"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Amit, Bina, Esha breaks none of the 3 rules. Each other option breaks exactly one: Esha, Amit, Chen has Amit without Bina; Esha, Chen, Deepa has both Chen and Deepa; Bina, Amit, Chen has neither Esha nor Farid.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

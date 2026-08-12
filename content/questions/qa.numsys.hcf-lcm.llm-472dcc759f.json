@@ -1,0 +1,51 @@
+{
+  "id": "qa.numsys.hcf-lcm.llm-472dcc759f",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "The HCF of two numbers is 12 and their LCM is 180. If one number is 36, what is the other number?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "60"
+    },
+    {
+      "key": "B",
+      "markdown": "45"
+    },
+    {
+      "key": "C",
+      "markdown": "50"
+    },
+    {
+      "key": "D",
+      "markdown": "72"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The product of two numbers equals the product of their HCF and LCM. Hence, we have: \n$$36 \\times x = 12 \\times 180.$$ Solving for \\(x\\), we get:\n$$x = \\frac{12 \\times 180}{36} = 60.$$\nThus, the other number is 60.",
+  "altSolutionMarkdown": "One can also directly use the formula \\(\\text{lcm}(a,b) \\times \\text{hcf}(a,b) = a \\times b\\), and solving for \\(b\\) gives the same result.",
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "HCF",
+    "LCM",
+    "Numbers"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-e2750eb0.q4",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students like only Cricket (and no other sport)?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 25.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Only-Cricket = |Cricket| \u2212 (Cricket\u2229Football) \u2212 (Cricket\u2229Tennis) + (all three) = 47 \u2212 15 \u2212 12 + 5 = **25**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 150,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:venn-set"
+  ],
+  "mockReserved": false
+}

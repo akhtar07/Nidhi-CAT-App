@@ -1,0 +1,50 @@
+{
+  "id": "qa.modern.set-theory-venn.llm-9bbae60931",
+  "microTopicIds": [
+    "qa.modern.set-theory-venn"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "In a class of 50 students, 32 play football and 28 play basketball. If 15 students play both sports, how many do not play either?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "5"
+    },
+    {
+      "key": "B",
+      "markdown": "7"
+    },
+    {
+      "key": "C",
+      "markdown": "9"
+    },
+    {
+      "key": "D",
+      "markdown": "10"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To solve this, we use the principle of inclusion-exclusion. The number of students playing either sport is given by:\n$$ |F \\cup B| = |F| + |B| - |F \\cap B| $$\nwhere $|F|$ are those who play football, $|B|$ for basketball, and $|F \\cap B|$ for both.\nSo, the number of students playing either is:\n$$ 32 + 28 - 15 = 45 $$\nThe total class size is 50. Hence, the number who do not play either sport is:\n$$ 50 - 45 = 5 $$. Therefore, the correct answer is 5.",
+  "altSolutionMarkdown": "We can directly subtract from the total. Since there are 15 students who play both sports, these must be included in counts for football and basketball.\nAdding those only playing each sport: \n$$ (32 - 15) + (28 - 15) = 17 + 13 = 30 $$. Adding back the double-counted 15 who play both gives us:\n$$ 30 + 15 = 45 $$\nstudents playing at least one sport. Subtracting this from total students, we get those not playing either: \n$$ 50 - 45 = 5 $. This confirms our answer.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "set-theory",
+    "venn-diagrams"
+  ],
+  "mockReserved": false
+}

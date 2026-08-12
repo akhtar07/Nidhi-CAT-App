@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.ds-q3",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "**What is the perimeter of rectangle PQRS with length L and breadth B?**\n\nStatement I: L = 8 cm and the area of PQRS is 40 cm\u00b2.\n\nStatement II: B = 5 cm.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but Statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but Statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Either statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Both statements together are still not sufficient."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Statement I gives $L = 8$ and $LB = 40 \\Rightarrow B = 5$, so perimeter $= 2(8+5) = 26$ \u2014 sufficient alone. Statement II alone only fixes B, leaving L (and hence the perimeter) undetermined. **Answer: A**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

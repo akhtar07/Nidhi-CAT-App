@@ -1,0 +1,55 @@
+{
+  "id": "dilr.di.line-charts.set-0e8a5a2f",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The line chart below shows annual student enrollment at two colleges, 2019-2023.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "line",
+        "categories": [
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023"
+        ],
+        "series": [
+          {
+            "name": "Greenfield College",
+            "values": [
+              820,
+              865,
+              790,
+              910,
+              960
+            ]
+          },
+          {
+            "name": "Riverside College",
+            "values": [
+              700,
+              745,
+              810,
+              845,
+              880
+            ]
+          }
+        ],
+        "unit": "students"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.line-charts.set-0e8a5a2f.q1",
+    "dilr.di.line-charts.set-0e8a5a2f.q2",
+    "dilr.di.line-charts.set-0e8a5a2f.q3",
+    "dilr.di.line-charts.set-0e8a5a2f.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

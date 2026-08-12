@@ -1,0 +1,51 @@
+{
+  "id": "qa.arith.tsd-boats-streams.llm-262e0ecc19",
+  "microTopicIds": [
+    "qa.arith.tsd-boats-streams"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A boat travels upstream at a speed of 12 km/h and downstream at a speed of 20 km/h in a river. What is the speed of the stream?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "3 km/h"
+    },
+    {
+      "key": "B",
+      "markdown": "4 km/h"
+    },
+    {
+      "key": "C",
+      "markdown": "5 km/h"
+    },
+    {
+      "key": "D",
+      "markdown": "6 km/h"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The speed of the boat in still water is calculated as the average of upstream and downstream speeds. The speed of the stream can be found by subtracting the upstream speed from this value or using the formula: \n\n$$\\text{Speed of Stream} = \\frac{(\\text{Downstream Speed}- \\text{Upstream Speed})}{2}$$\n\nSubstituting the values given:\n\n$$\\text{Speed of Stream} = \\frac{(20 - 12)}{2} = \\frac{8}{2} = 4 \\,\\text{km/h}$$",
+  "altSolutionMarkdown": "To find the speed of the stream faster, note that the difference between downstream and upstream speeds is twice the speed of the stream. Hence,\n\n$$\\text{Speed of Stream} = \\frac{(20 - 12)}{2} = 4 \\, \\text{km/h}\n$$",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "TSD",
+    "Boats & Streams",
+    "easy"
+  ],
+  "mockReserved": false
+}

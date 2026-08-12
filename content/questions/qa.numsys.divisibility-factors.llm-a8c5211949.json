@@ -1,0 +1,51 @@
+{
+  "id": "qa.numsys.divisibility-factors.llm-a8c5211949",
+  "microTopicIds": [
+    "qa.numsys.divisibility-factors"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "What is the smallest positive integer that is divisible by both 6 and 8?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "12"
+    },
+    {
+      "key": "B",
+      "markdown": "16"
+    },
+    {
+      "key": "C",
+      "markdown": "24"
+    },
+    {
+      "key": "D",
+      "markdown": "30"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To find the smallest positive integer that is divisible by both 6 and 8, we need to find their least common multiple (LCM). The prime factorizations are $6 = 2 \\times 3$ and $8 = 2^3$. To compute LCM(6, 8), we take each prime number the greatest number of times it appears in either factorization: $2^3 \\times 3 = 24$. Therefore, the smallest positive integer divisible by both 6 and 8 is **24**.",
+  "altSolutionMarkdown": "An alternative approach involves recognizing that a common multiple must be even (since both numbers are) and should have at least three 2s from 8 and one 3 from 6. Thus, $2^3 \\times 3 = 8 \\times 3 = 24$ is the smallest number divisible by both.",
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "divisibility",
+    "factors",
+    "multiples"
+  ],
+  "mockReserved": false
+}

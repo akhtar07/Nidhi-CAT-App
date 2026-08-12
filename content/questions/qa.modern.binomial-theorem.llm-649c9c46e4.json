@@ -1,0 +1,50 @@
+{
+  "id": "qa.modern.binomial-theorem.llm-649c9c46e4",
+  "microTopicIds": [
+    "qa.modern.binomial-theorem"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "In the expansion of $(a + b)^5$, what is the sum of the coefficients?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$2^5$"
+    },
+    {
+      "key": "B",
+      "markdown": "$3^5$"
+    },
+    {
+      "key": "C",
+      "markdown": "$5!$"
+    },
+    {
+      "key": "D",
+      "markdown": "$10$"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To find the sum of coefficients in $(a + b)^5$, we can substitute $a=1$ and $b=1$. Hence, the expansion becomes $(1+1)^5 = 2^5 = 32$. Therefore, the correct answer is $A)$ $2^5 = 32.",
+  "altSolutionMarkdown": "Another way to look at it is by recognizing that when you substitute $a=b=1$ into the binomial expansion of $(a+b)^5$, each term will have a coefficient value. Summing these coefficients yields the sum of all terms, which equals $(1+1)^5 = 2^5$.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "binomial-theorem",
+    "easy"
+  ],
+  "mockReserved": false
+}

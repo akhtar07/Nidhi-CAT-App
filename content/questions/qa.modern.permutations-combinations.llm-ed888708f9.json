@@ -1,0 +1,50 @@
+{
+  "id": "qa.modern.permutations-combinations.llm-ed888708f9",
+  "microTopicIds": [
+    "qa.modern.permutations-combinations"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A class has 5 students and they need to form a team of 3 for a quiz competition. In how many ways can this be done?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "10"
+    },
+    {
+      "key": "B",
+      "markdown": "60"
+    },
+    {
+      "key": "C",
+      "markdown": "20"
+    },
+    {
+      "key": "D",
+      "markdown": "30"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To form a team of 3 students out of 5, we use combinations since the order in which students are chosen does not matter. The number of ways to choose 3 students from 5 is given by $C(5, 3) = \\frac{5!}{3!(5-3)!} = 10$. Thus, there are 10 different teams that can be formed.",
+  "altSolutionMarkdown": "A faster approach would be recognizing the symmetry in combinations: $C(n,k) = C(n,n-k)$. Therefore, $C(5,3) = C(5,2) = \\frac{5!}{2!(5-2)!} = \\frac{5 \\cdot 4}{2 \\cdot 1} = 10$.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "permutations-combinations",
+    "easy"
+  ],
+  "mockReserved": false
+}

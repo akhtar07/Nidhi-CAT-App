@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.venn-set.set-e2750eb0",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "In a survey of 100 students about the sports they play: 47 play Cricket, 43 play Football, and 35 play Tennis. 15 play both Cricket and Football, 13 play both Football and Tennis, and 12 play both Cricket and Tennis. 5 play all three sports.\n\nStudy this information and answer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.venn-set.set-e2750eb0.q1",
+    "dilr.lr.venn-set.set-e2750eb0.q2",
+    "dilr.lr.venn-set.set-e2750eb0.q3",
+    "dilr.lr.venn-set.set-e2750eb0.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 9.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

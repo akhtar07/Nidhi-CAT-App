@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.ordering-ranking.set-b3504daf.q4",
+  "microTopicIds": [
+    "dilr.lr.ordering-ranking"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students are ranked between Uma and Priya?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Uma is rank 2, Priya is rank 5. Students strictly between them: **2**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:ordering-ranking"
+  ],
+  "mockReserved": false
+}

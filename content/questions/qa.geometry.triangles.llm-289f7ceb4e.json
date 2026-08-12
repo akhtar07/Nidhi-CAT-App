@@ -1,0 +1,50 @@
+{
+  "id": "qa.geometry.triangles.llm-289f7ceb4e",
+  "microTopicIds": [
+    "qa.geometry.triangles"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "In a triangle ABC, the sides AB and BC are equal to 5 units each, and angle B is right-angled. What is the area of triangle ABC?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "10"
+    },
+    {
+      "key": "B",
+      "markdown": "12.5"
+    },
+    {
+      "key": "C",
+      "markdown": "7.5"
+    },
+    {
+      "key": "D",
+      "markdown": "15"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Given that triangle ABC is right-angled at B with AB = BC = 5 units, we can use the formula for the area of a right triangle: \\(\\text{Area} = \\frac{1}{2}\\times\\text{base}\\times\\text{height}\\). Here, base and height are both equal to 5 units. Therefore, Area = $\\frac{1}{2} \\times 5 \\times 5$ = 12.5 square units.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "triangles",
+    "congruence"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "qa.modern.binomial-theorem.llm-235d73e06d",
+  "microTopicIds": [
+    "qa.modern.binomial-theorem"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "The coefficient of $x^2$ in the expansion of $(1+3x)^4$ is:",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "54"
+    },
+    {
+      "key": "B",
+      "markdown": "81"
+    },
+    {
+      "key": "C",
+      "markdown": "108"
+    },
+    {
+      "key": "D",
+      "markdown": "27"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The binomial expansion of $(1+3x)^4$ is given by $\\binom{4}{k}(1)^{4-k}(3x)^k$. The coefficient of $x^2$ corresponds to the term where $k=2$, thus we get $\\binom{4}{2} \\cdot 1^{2} \\cdot (3x)^2 = 6 \\cdot 9x^2 = 54x^2$. Therefore, the coefficient is 54.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "binomial-theorem",
+    "easy"
+  ],
+  "mockReserved": false
+}

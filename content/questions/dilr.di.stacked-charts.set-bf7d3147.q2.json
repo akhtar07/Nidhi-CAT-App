@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.stacked-charts.set-bf7d3147.q2",
+  "microTopicIds": [
+    "dilr.di.stacked-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which quarter were the total sales (all product lines combined) the highest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Q1"
+    },
+    {
+      "key": "B",
+      "markdown": "Q2"
+    },
+    {
+      "key": "C",
+      "markdown": "Q3"
+    },
+    {
+      "key": "D",
+      "markdown": "Q4"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Quarterly totals: Q1: 100, Q2: 110, Q3: 110, Q4: 130. Highest is **Q4** (130).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:stacked-charts"
+  ],
+  "mockReserved": false
+}

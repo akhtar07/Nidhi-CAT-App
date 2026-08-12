@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bae26548.q4",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "If Chen is selected for the team, who cannot also be selected?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Amit"
+    },
+    {
+      "key": "B",
+      "markdown": "Bina"
+    },
+    {
+      "key": "C",
+      "markdown": "Deepa"
+    },
+    {
+      "key": "D",
+      "markdown": "Esha"
+    },
+    {
+      "key": "E",
+      "markdown": "Farid"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Rule 2 says Chen and Deepa cannot both be on the team \u2014 so **Deepa** cannot be selected.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

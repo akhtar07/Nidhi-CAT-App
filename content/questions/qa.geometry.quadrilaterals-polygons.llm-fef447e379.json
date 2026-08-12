@@ -1,0 +1,50 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons.llm-fef447e379",
+  "microTopicIds": [
+    "qa.geometry.quadrilaterals-polygons"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "In a parallelogram ABCD, if angle A measures $70^\\circ$, what is the measure of angle C?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$70^\\circ$"
+    },
+    {
+      "key": "B",
+      "markdown": "$110^\\circ$"
+    },
+    {
+      "key": "C",
+      "markdown": "$290^\\circ$"
+    },
+    {
+      "key": "D",
+      "markdown": "$80^\\circ$"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "In a parallelogram, opposite angles are equal. Since angle A measures $70^\\circ$, angle C, which is opposite to angle A, also measures $70^\\circ$. Thus, the measure of angle C is $70^\\circ$.",
+  "altSolutionMarkdown": "Recall that in a parallelogram, opposite angles are congruent. Given angle A is $70^\\circ$, it directly follows that angle C must be the same.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry",
+    "parallelograms"
+  ],
+  "mockReserved": false
+}

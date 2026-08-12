@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.ds-q4",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "**What is the value of x?**\n\nStatement I: $x^2 = 16$\n\nStatement II: $x > -10$",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but Statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but Statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Either statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Both statements together are still not sufficient."
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Statement I gives $x = 4$ or $x = -4$ \u2014 two possible values, not sufficient alone. Statement II alone is clearly insufficient (any x > \u221210 works). Together: both $4$ and $-4$ satisfy $x > -10$, so the ambiguity survives even combined. **Answer: E**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

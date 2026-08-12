@@ -1,0 +1,51 @@
+{
+  "id": "qa.geometry.lines-angles.llm-cbc756793a",
+  "microTopicIds": [
+    "qa.geometry.lines-angles"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "In the given figure, lines AB and CD are parallel to each other. A transversal line EF intersects them at points G and H respectively. If $\\angle AGF = 50^\\circ$, what is the measure of $\\angle GHJ$?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "40\u00b0"
+    },
+    {
+      "key": "B",
+      "markdown": "50\u00b0"
+    },
+    {
+      "key": "C",
+      "markdown": "130\u00b0"
+    },
+    {
+      "key": "D",
+      "markdown": "140\u00b0"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Given that lines AB and CD are parallel, $\\angle AGF$ and $\\angle GHJ$ are corresponding angles with respect to the transversal EF. Since AB || CD, we know $\\angle AGF = \\angle GHJ$. Therefore, $\\angle GHJ = 50^\\circ$. However, since $\\angle GHJ$ is the supplement of the angle formed on the straight line at H (180\u00b0 - 50\u00b0), we find that $\\angle GHJ = 130^\\circ$.",
+  "altSolutionMarkdown": "Because AB is parallel to CD and EF is a transversal, corresponding angles AGF and GHJ are equal. Since $\\angle AGF$ measures 50 degrees, its corresponding angle is also 50 degrees, but as asked for the supplementary angle on the straight line at H, we find that it equals 180 - 50 = 130.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "parallel_lines",
+    "angles",
+    "transversal"
+  ],
+  "mockReserved": false
+}

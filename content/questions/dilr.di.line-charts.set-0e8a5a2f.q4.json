@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.line-charts.set-0e8a5a2f.q4",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which year was the gap between the two colleges' enrollment the smallest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "2019"
+    },
+    {
+      "key": "B",
+      "markdown": "2020"
+    },
+    {
+      "key": "C",
+      "markdown": "2021"
+    },
+    {
+      "key": "D",
+      "markdown": "2022"
+    },
+    {
+      "key": "E",
+      "markdown": "2023"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Absolute gaps by year: 2019: 120, 2020: 120, 2021: 20, 2022: 65, 2023: 80. Smallest is **2021** (gap of 20).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

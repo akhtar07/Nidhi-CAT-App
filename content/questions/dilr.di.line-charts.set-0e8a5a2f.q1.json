@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.line-charts.set-0e8a5a2f.q1",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Greenfield College's enrollment in 2021?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 790.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Read directly off the 2021 point on Greenfield's line: **790 students**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 45,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

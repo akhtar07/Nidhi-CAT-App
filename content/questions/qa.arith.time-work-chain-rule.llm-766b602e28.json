@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.time-work-chain-rule.llm-766b602e28",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A pipe can fill a tank in 6 hours. Due to a leak at the bottom, it takes 9 hours to fill the tank. If the tank is full, how long will it take for the leak alone to empty the tank?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "12 hours"
+    },
+    {
+      "key": "B",
+      "markdown": "18 hours"
+    },
+    {
+      "key": "C",
+      "markdown": "24 hours"
+    },
+    {
+      "key": "D",
+      "markdown": "36 hours"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "First, we calculate the rate at which the pipe fills the tank without leakage. The pipe fills the tank in 6 hours so its rate is $\\frac{1}{6}$ of the tank per hour.\n\nWith a leak, it takes 9 hours to fill the tank, implying an effective rate of $\\frac{1}{9}$ of the tank per hour.\n\nThe leakage reduces the net filling rate from $\\frac{1}{6}$ to $\\frac{1}{9}$. Therefore, the leakage rate is:\n\n$$ \\text{Leakage Rate} = \\frac{1}{6} - \\frac{1}{9} = \\frac{3-2}{18} = \\frac{1}{18} $$\n\nThus, it would take $\\boxed{18}$ hours for the leak alone to empty the tank.",
+  "altSolutionMarkdown": "Let's denote the full capacity of the tank as 1 unit. The pipe fills this in 6 hours at a rate of $\\frac{1}{6}$. Due to the leak, it takes 9 hours with an effective rate of $\\frac{1}{9}$.\n\nThe leaking effect can be calculated by considering the difference between these rates:\n\n$$ \\left( \\frac{1}{6} - \\text{Leak Rate} \\right) = \\frac{1}{9} $$\n\nSolving for Leak Rate, we get $\\text{Leak Rate} = \\frac{1}{18}$ implying the leak will take 18 hours to empty.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "time-work",
+    "leakage-rate"
+  ],
+  "mockReserved": false
+}

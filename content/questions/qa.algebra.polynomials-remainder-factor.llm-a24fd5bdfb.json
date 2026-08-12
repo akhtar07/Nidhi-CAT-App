@@ -1,0 +1,50 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.llm-a24fd5bdfb",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "If the polynomial $p(x) = x^3 - 6x^2 + 11x - 6$ is divided by $(x-3)$, what is the remainder?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$0$"
+    },
+    {
+      "key": "B",
+      "markdown": "$1$"
+    },
+    {
+      "key": "C",
+      "markdown": "$2$"
+    },
+    {
+      "key": "D",
+      "markdown": "$3$"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "We can use the Remainder Theorem. According to it, if a polynomial $p(x)$ is divided by $(x - c)$, then the remainder of this division is $p(c)$. Here, $c = 3$, so we need to evaluate $p(3)$:\n\n$$\np(3) = 3^3 - 6 \\cdot 3^2 + 11 \\cdot 3 - 6 = 27 - 54 + 33 - 6 = 0.\n$$\nThus, the remainder when $p(x)$ is divided by $(x-3)$ is \\(0\\).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "polynomials",
+    "remainder-theorem"
+  ],
+  "mockReserved": false
+}

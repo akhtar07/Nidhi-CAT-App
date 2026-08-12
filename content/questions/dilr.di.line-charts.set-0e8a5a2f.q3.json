@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.line-charts.set-0e8a5a2f.q3",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In how many of the 5 years shown did Riverside College have a higher enrollment than Greenfield College?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Comparing year by year, Riverside exceeds Greenfield only in 2021 \u2192 **1 year(s)**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

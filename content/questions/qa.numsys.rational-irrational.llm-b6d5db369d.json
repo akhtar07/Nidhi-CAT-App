@@ -1,0 +1,50 @@
+{
+  "id": "qa.numsys.rational-irrational.llm-b6d5db369d",
+  "microTopicIds": [
+    "qa.numsys.rational-irrational"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "If $a$ and $b$ are positive integers such that $2^a = 3^b$, what can you conclude about the rationality of the ratio $\frac{a}{b}$?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The ratio is irrational."
+    },
+    {
+      "key": "B",
+      "markdown": "The ratio is a positive integer."
+    },
+    {
+      "key": "C",
+      "markdown": "The ratio simplifies to an even number."
+    },
+    {
+      "key": "D",
+      "markdown": "There are no such integers $a$ and $b$. Any solution leads to a contradiction."
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Suppose there exist positive integers $a$ and $b$ such that $2^a = 3^b$. If this were true, we would have an equation where the left side is a power of 2 (which only has 2 as its prime factor) and the right side is a power of 3 (with only 3 as its prime factor). This means there are no such integers $a$ and $b$. Any solution leads to a contradiction, thus indicating that there are no positive integer solutions for $a$ and $b$. Therefore the ratio $\frac{a}{b}$ cannot be defined in terms of rational or irrational.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "rational-irrational",
+    "properties-of-integers"
+  ],
+  "mockReserved": false
+}

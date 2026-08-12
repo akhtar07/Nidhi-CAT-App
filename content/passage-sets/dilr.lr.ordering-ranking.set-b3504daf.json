@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.ordering-ranking.set-b3504daf",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "6 students \u2014 Priya, Rohan, Sara, Tarun, Uma, and Vikram \u2014 took a test and each got a distinct rank from 1 (highest score) to 6 (lowest score). Study the clues below and answer the questions that follow.\n\n- Uma scored better than Rohan.\n- Uma scored better than Tarun.\n- Tarun scored better than Sara.\n- Vikram scored better than Uma.\n- Vikram scored better than Priya.\n- Exactly one student is ranked between Tarun and Priya.\n- Vikram scored better than Sara.\n- Exactly one student is ranked between Tarun and Vikram.\n- Priya scored better than Rohan.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.ordering-ranking.set-b3504daf.q1",
+    "dilr.lr.ordering-ranking.set-b3504daf.q2",
+    "dilr.lr.ordering-ranking.set-b3504daf.q3",
+    "dilr.lr.ordering-ranking.set-b3504daf.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 9.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

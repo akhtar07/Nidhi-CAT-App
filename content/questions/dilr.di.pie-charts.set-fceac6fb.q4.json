@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-fceac6fb.q4",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How much (in Rs. lakh) is spent on Marketing and Utilities combined, out of the total Rs. 60 lakh budget?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Marketing (20%) + Utilities (10%) = 30% of 60 lakh $= 18.0$ lakh.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

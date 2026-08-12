@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.ds-q2",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "**Is the positive integer n even?**\n\nStatement I: n is divisible by 4.\n\nStatement II: n + 1 is odd.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but Statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but Statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Either statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Both statements together are still not sufficient."
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Statement I: any multiple of 4 is even \u2014 sufficient alone. Statement II: n + 1 odd means n is even (odd \u2212 1 = even) \u2014 sufficient alone too. Since each alone answers the question, **Answer: D**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

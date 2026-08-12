@@ -1,0 +1,61 @@
+{
+  "id": "dilr.di.stacked-charts.set-bf7d3147",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The stacked bar chart below shows a company's quarterly sales (Rs. lakh) across three product lines.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "stacked-bar",
+        "categories": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "series": [
+          {
+            "name": "Electronics",
+            "values": [
+              45,
+              52,
+              48,
+              60
+            ]
+          },
+          {
+            "name": "Apparel",
+            "values": [
+              30,
+              28,
+              35,
+              38
+            ]
+          },
+          {
+            "name": "Groceries",
+            "values": [
+              25,
+              30,
+              27,
+              32
+            ]
+          }
+        ],
+        "unit": "Rs. lakh"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.stacked-charts.set-bf7d3147.q1",
+    "dilr.di.stacked-charts.set-bf7d3147.q2",
+    "dilr.di.stacked-charts.set-bf7d3147.q3",
+    "dilr.di.stacked-charts.set-bf7d3147.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

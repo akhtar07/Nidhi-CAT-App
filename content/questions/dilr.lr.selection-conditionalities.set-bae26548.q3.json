@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bae26548.q3",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many different valid teams of 3 satisfy all the rules?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Checking all C(6,3) = 20 possible teams of 3 against the 3 rules leaves **9** valid teams.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 150,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

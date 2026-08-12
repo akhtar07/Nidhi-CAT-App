@@ -1,0 +1,57 @@
+{
+  "id": "dilr.lr.ordering-ranking.set-e15ad323.q1",
+  "microTopicIds": [
+    "dilr.lr.ordering-ranking"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who scored the highest (rank 1)?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Priya"
+    },
+    {
+      "key": "B",
+      "markdown": "Rohan"
+    },
+    {
+      "key": "C",
+      "markdown": "Sara"
+    },
+    {
+      "key": "D",
+      "markdown": "Tarun"
+    },
+    {
+      "key": "E",
+      "markdown": "Uma"
+    },
+    {
+      "key": "F",
+      "markdown": "Vikram"
+    }
+  ],
+  "correctKey": "F",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Full ranking (best to worst): Vikram > Sara > Tarun > Rohan > Uma > Priya. Rank 1 is **Vikram**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:ordering-ranking"
+  ],
+  "mockReserved": false
+}

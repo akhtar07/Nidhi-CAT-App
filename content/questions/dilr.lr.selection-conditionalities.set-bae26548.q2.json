@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bae26548.q2",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "If Amit is selected for the team, who else must also be selected?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Bina"
+    },
+    {
+      "key": "B",
+      "markdown": "Chen"
+    },
+    {
+      "key": "C",
+      "markdown": "Deepa"
+    },
+    {
+      "key": "D",
+      "markdown": "Esha"
+    },
+    {
+      "key": "E",
+      "markdown": "Farid"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Rule 1 says if Amit is selected, Bina must be too \u2014 so **Bina**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

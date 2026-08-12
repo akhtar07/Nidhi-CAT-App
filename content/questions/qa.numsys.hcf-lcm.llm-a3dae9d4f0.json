@@ -1,0 +1,50 @@
+{
+  "id": "qa.numsys.hcf-lcm.llm-a3dae9d4f0",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Two positive integers A and B have an HCF of $h$. If the product of these two numbers is $p$ and their LCM is $l$, which of the following equations must be true?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$h = \\frac{p}{l}$"
+    },
+    {
+      "key": "B",
+      "markdown": "$h^2 = pl$"
+    },
+    {
+      "key": "C",
+      "markdown": "$hl = p$"
+    },
+    {
+      "key": "D",
+      "markdown": "$\\frac{h^2}{l} = p$"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "To find which equation must be true given the HCF and LCM, we use a key property of two numbers: their product (A * B) is equal to the product of their HCF and their LCM. Mathematically this can be expressed as $$p = h \\cdot l$$",
+  "altSolutionMarkdown": "Another faster approach is using the relationship that if A and B are integers with an HCF $h$ and LCM $l$, then the product AB equals p, and from properties of HCF and LCM: $AB = h \\cdot l$. This directly points to the correct answer.",
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys",
+    "hcf-lcm"
+  ],
+  "mockReserved": false
+}

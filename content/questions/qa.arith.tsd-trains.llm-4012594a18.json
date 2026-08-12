@@ -1,0 +1,51 @@
+{
+  "id": "qa.arith.tsd-trains.llm-4012594a18",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A train passes a pole in 6 seconds with a speed of 54 km/h. How long is the train?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "90 meters"
+    },
+    {
+      "key": "B",
+      "markdown": "120 meters"
+    },
+    {
+      "key": "C",
+      "markdown": "150 meters"
+    },
+    {
+      "key": "D",
+      "markdown": "180 meters"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To find the length of the train, we first convert its speed to meters per second: $$\\text{Speed} = \\frac{54 \\times 1000}{3600} = 15~\\text{m/s}$$ Using the formula for distance (distance = speed \u00d7 time), we can find the length of the train. The time taken to pass a pole is given as 6 seconds: $$\text{Length of Train} = 15 \\times 6 = 90 \\, \text{meters}.$$",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "TSD",
+    "trains",
+    "easy"
+  ],
+  "mockReserved": false
+}

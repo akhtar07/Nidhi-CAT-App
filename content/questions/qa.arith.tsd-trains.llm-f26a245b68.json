@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.tsd-trains.llm-f26a245b68",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "A train traveling at a constant speed crosses a bridge that is 300 meters long in 20 seconds. If the length of the train is 100 meters, what is its speed in km/h?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "72"
+    },
+    {
+      "key": "B",
+      "markdown": "64"
+    },
+    {
+      "key": "C",
+      "markdown": "80"
+    },
+    {
+      "key": "D",
+      "markdown": "56"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To find the speed of the train in km/h, we first calculate its speed in meters per second. The total distance the train travels to cross the bridge is the sum of the length of the train and the length of the bridge: $300 + 100 = 400$ meters. Since it takes 20 seconds to cover this distance, the speed of the train in m/s is $$\\frac{400}{20} = \\text{20 m/s}$$. To convert this speed into km/h, we use the conversion factor $1 \\text{m/s} = 3.6 \text{km/h}$. Thus, the speed of the train in km/h is $$\\text{20 m/s} \\times \\frac{18}{5} = \\text{72 km/h}$$.",
+  "altSolutionMarkdown": "The total length covered by the train during crossing the bridge can be directly divided by time to get velocity and then convert it into km/h using the conversion factor $\\frac{18}{5}$.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "TSD",
+    "Trains"
+  ],
+  "mockReserved": false
+}

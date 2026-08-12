@@ -1,0 +1,57 @@
+{
+  "id": "dilr.lr.ordering-ranking.set-a8981003.q3",
+  "microTopicIds": [
+    "dilr.lr.ordering-ranking"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who scored the lowest (rank 6)?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Priya"
+    },
+    {
+      "key": "B",
+      "markdown": "Rohan"
+    },
+    {
+      "key": "C",
+      "markdown": "Sara"
+    },
+    {
+      "key": "D",
+      "markdown": "Tarun"
+    },
+    {
+      "key": "E",
+      "markdown": "Uma"
+    },
+    {
+      "key": "F",
+      "markdown": "Vikram"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "From the full ranking, **Tarun** is last (rank 6).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:ordering-ranking"
+  ],
+  "mockReserved": false
+}

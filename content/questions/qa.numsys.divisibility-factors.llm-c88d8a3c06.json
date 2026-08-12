@@ -1,0 +1,50 @@
+{
+  "id": "qa.numsys.divisibility-factors.llm-c88d8a3c06",
+  "microTopicIds": [
+    "qa.numsys.divisibility-factors"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "If a number $N$ is divisible by 15 and 20, which of the following must also be true?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$N$ is divisible by 30."
+    },
+    {
+      "key": "B",
+      "markdown": "$N$ is divisible by 45."
+    },
+    {
+      "key": "C",
+      "markdown": "$N$ is divisible by 4."
+    },
+    {
+      "key": "D",
+      "markdown": "$N$ is divisible by 60."
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "To solve this, we need to find the Least Common Multiple (LCM) of 15 and 20. The prime factorization of 15 is $3\\times5$, and for 20 it's $2^2\\times5$. Therefore, LCM(15, 20) = $2^2 \\times 3 \\times 5 = 60$. So, if a number $N$ is divisible by both 15 and 20, then $N$ must be divisible by their LCM which is 60.",
+  "altSolutionMarkdown": "We can also observe that since the number must be divisible by both 15 (which has factors of 3 and 5) and 20 (which requires at least two 2's and one 5), it needs to have all these prime factors, leading us directly to $2^2 \\times 3 \\times 5 = 60$.",
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "divisibility",
+    "lcm"
+  ],
+  "mockReserved": false
+}

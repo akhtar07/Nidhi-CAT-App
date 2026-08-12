@@ -1,0 +1,50 @@
+{
+  "id": "qa.numsys.base-systems.llm-994845cdcf",
+  "microTopicIds": [
+    "qa.numsys.base-systems"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "What is the decimal equivalent of the binary number $1011_2$?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "8"
+    },
+    {
+      "key": "B",
+      "markdown": "9"
+    },
+    {
+      "key": "C",
+      "markdown": "10"
+    },
+    {
+      "key": "D",
+      "markdown": "11"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To convert the binary number $1011_2$ to decimal, we use the following computation: \n$$\n1 \\cdot 2^3 + 0 \\cdot 2^2 + 1 \\cdot 2^1 + 1 \\cdot 2^0 = 8 + 0 + 2 + 1 = 11\n$$",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "binary",
+    "number-systems"
+  ],
+  "mockReserved": false
+}

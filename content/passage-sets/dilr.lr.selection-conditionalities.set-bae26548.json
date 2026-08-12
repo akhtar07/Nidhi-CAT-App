@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bae26548",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "A company must pick a team of 3 people from 6 candidates \u2014 Amit, Bina, Chen, Deepa, Esha, and Farid \u2014 subject to these rules:\n\n- If Amit is selected, Bina must also be selected.\n- Chen and Deepa cannot both be selected.\n- At least one of Esha or Farid must be selected.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.selection-conditionalities.set-bae26548.q1",
+    "dilr.lr.selection-conditionalities.set-bae26548.q2",
+    "dilr.lr.selection-conditionalities.set-bae26548.q3",
+    "dilr.lr.selection-conditionalities.set-bae26548.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 9.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

@@ -1,0 +1,50 @@
+{
+  "id": "qa.algebra.quadratic-equations.llm-653d75d349",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Consider the quadratic equation $ax^2 + bx + c = 0$. If $a=1$, $b=-5$, and $c=6$, what is the nature of its roots?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The roots are real and distinct"
+    },
+    {
+      "key": "B",
+      "markdown": "The roots are complex and conjugate pairs"
+    },
+    {
+      "key": "C",
+      "markdown": "The root is a single repeated value"
+    },
+    {
+      "key": "D",
+      "markdown": "None of the above"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To determine the nature of the roots, we can use the discriminant $\\Delta = b^2 - 4ac$. Given that $a=1$, $b=-5$, and $c=6$, we have $$\\Delta = (-5)^2 - 4*1*6 = 25-24 = 1.$$ Since $\\Delta > 0$, the roots are real and distinct.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "quadratic-equations",
+    "discriminant"
+  ],
+  "mockReserved": false
+}

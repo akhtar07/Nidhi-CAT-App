@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-fceac6fb.q1",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "The company's total annual budget is Rs. 60 lakh. Based on the pie chart, how much (in Rs. lakh) is allocated to Salaries?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 24.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Salaries is 40% of the budget: $\\dfrac{40}{100} \\times 60 = 24.0$ lakh.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

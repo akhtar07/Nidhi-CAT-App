@@ -1,0 +1,48 @@
+{
+  "id": "dilr.di.pie-charts.set-fceac6fb",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The pie chart below shows how a company's Rs. 60 lakh annual budget is split across 5 expense categories.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "pie",
+        "slices": [
+          {
+            "name": "Salaries",
+            "value": 40
+          },
+          {
+            "name": "Marketing",
+            "value": 20
+          },
+          {
+            "name": "Rent",
+            "value": 15
+          },
+          {
+            "name": "R&D",
+            "value": 15
+          },
+          {
+            "name": "Utilities",
+            "value": 10
+          }
+        ],
+        "unit": "%"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.pie-charts.set-fceac6fb.q1",
+    "dilr.di.pie-charts.set-fceac6fb.q2",
+    "dilr.di.pie-charts.set-fceac6fb.q3",
+    "dilr.di.pie-charts.set-fceac6fb.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

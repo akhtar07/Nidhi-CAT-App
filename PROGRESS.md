@@ -46,6 +46,102 @@ produced or validated by the Python pipeline.
 
 ## Completed
 
+### Aesthetic/theme fix, Calendar bug fix, and content scale-up round 3 (7 new DILR topics + chart renderers)
+
+Three direct follow-up requests handled in sequence: a Calendar display bug report ("Review /
+SRS, Tables, Tables" with no explanation), "my app is just black and white, make it look
+aesthetic," then "lots of questions, tough/medium/easy, in all topics, relevant."
+
+**Calendar bug** (`app/src/pages/Calendar.tsx`): root cause was display-only, not a data bug —
+`generatePlan.ts` correctly pushes both a `learn` and a `drill` PlanItem for the same topic by
+design, but the "Coming up" summary line rendered each occurrence of a topic name with no `kind`
+label, so two legitimate plan items looked like an accidental duplicate. Added
+`summarizeDayItems()`, which collapses same-topic entries into `"Topic (learn + drill)"`.
+Reproduced the exact reported shape with seeded IndexedDB data before and after the fix. Committed
+`d926185`.
+
+**Theme** (`app/src/index.css`, `app/index.html`, `app/vite.config.ts`, PWA icons): every CSS
+token in both `:root` and `.dark` was pure achromatic gray (0 chroma), and `.dark` was never
+applied anywhere in the codebase — SPEC.md §13's "dark mode default, warm neutral palette, one
+accent colour" had never actually been built. Replaced with a warm-neutral (hue ~55) base and one
+violet accent (hue ~300, matching the existing brand mark, not a new color invented from nothing),
+`class="dark"` hardcoded on `<html>`, and every text/background pairing checked against WCAG AA
+via a purpose-built oklch→sRGB→contrast-ratio Python script before shipping (one real fix: the
+initial dark-mode accent lightness gave only 3.00:1 button-text contrast, tuned to 4.90:1). PWA
+icons and manifest/theme-color regenerated to match. Full CI green; verified live via Playwright
+screenshots across Today/Lesson/Drill/Settings/Calendar. Committed `8c2e3bd`.
+
+**Content round 3** — same zero-LLM-required discipline as round 2, plus infrastructure fixes that
+unblock future LLM batches:
+
+- **`COUNT_BY_ROI` in `pipeline/qagen/syllabus_lookup.py` was capping below SPEC.md §16's own bar.**
+  Previous table `{5: 12, 4: 9, 3: 6, 2: 5, 1: 3}` meant even a roiScore-5 topic could never reach
+  "≥15 questions" — no amount of re-running `run_llm.py` could ever close the gap. Raised to
+  `{5: 24, 4: 20, 3: 17, 2: 15, 1: 15}` (floor of 15 everywhere, more for higher ROI); removed the
+  now-redundant `MIN_COUNT_OVERRIDE` special-case dict. This alone doesn't generate anything — it's
+  the target `run_llm.py --shortfall-only` reads — but the old numbers made "complete" structurally
+  impossible regardless of how many generation passes ran.
+- **`pipeline/qagen/llm_harness.py` observability fix**: `generate_one()`'s only log line used to
+  print after a full attempt (up to 1 draft + 1 audit + 5 self-consistency calls) returned, so a
+  legitimately slow attempt under load was indistinguishable from a hang for up to ~35 minutes (see
+  round 2's stuck-batch diagnosis). Added a print at every stage transition (draft/verify/audit/each
+  self-consistency sample), each `flush=True`. Root cause of the hang itself is still unfixed — this
+  only makes a live run's progress visible.
+- **QA/VARC LLM generation deliberately deferred, not run, this round** — the project owner's GPU
+  was in active use by another process when this work started (confirmed via `nvidia-smi`-adjacent
+  `ps aux`: a separate `vllm serve Qwen3-8B` process already running). `qagen.run_llm
+  --shortfall-only` has a ~649-item queue ready to go across all 45 QA topics once the GPU is free
+  (VARC's RC/VA topics need `rc_harness.py`/LLM generation too, not started). This is the single
+  largest remaining content gap — see "Known issues" below.
+- **7 new DILR generators, all zero-LLM, all independently re-verified with a second, differently-
+  written script before committing** (not the generator's own internal checks):
+  - `build_dilr_di_line_charts.py` (`dilr.di.line-charts`, roi=4) and
+    `build_dilr_di_pie_charts.py` (`dilr.di.pie-charts`, roi=4) — needed new frontend renderers
+    first (see below); questions computed directly from the same data dict the chart displays.
+  - `build_dilr_di_stacked_charts.py` (`dilr.di.stacked-charts`, roi=3) — same pattern, needed a
+    new `StackedBarChartAsset` renderer.
+  - `build_dilr_lr_selection_conditionalities.py` (`dilr.lr.selection-conditionalities`, roi=4) —
+    "pick a team of 3 from 6 subject to 3 conditional rules" puzzle; valid teams computed by
+    brute-forcing all C(6,3)=20 combinations against the rules, re-verified with a second,
+    separately-written rule-check pass.
+  - `build_dilr_lr_venn_set.py` (`dilr.lr.venn-set`, roi=3) — 3-set survey/Venn puzzle; the 8
+    ground-truth disjoint regions are picked first, every aggregate the learner is given (|A|,
+    pairwise overlaps, etc.) is *derived* via inclusion-exclusion, then independently re-verified
+    by a genuinely different method: an explicit synthetic-student-ID simulation using real Python
+    set operations, not the inclusion-exclusion formulas used to build the stem.
+  - `build_dilr_lr_ordering_ranking.py` (`dilr.lr.ordering-ranking`, roi=3) — linear ranking puzzle
+    (6 students, ranks 1-6), same generate-clues-until-unique brute force as the circular-
+    arrangement/distribution-grouping generators, over all 6!=720 permutations; independently
+    re-verified per-set with a fresh regex clue parser + separate brute force.
+  - `build_dilr_di_data_sufficiency.py` (`dilr.di.data-sufficiency`, roi=3) — standard 5-option
+    CAT DS format (A/B/C/D/E). No PassageSet needed (`validate_content.py` doesn't require DILR
+    questions to belong to one; they load by `microTopicId` like any other question). Every
+    sufficient/not-sufficient verdict is derived by actually solving the system (`sympy.solve` for
+    the algebraic cases, bounded exhaustive enumeration for the parity case) and asserted against
+    the fixed-option answer before writing, not hand-labeled.
+- **Frontend: `LineChartAsset`, `PieChartAsset`, `StackedBarChartAsset` added to
+  `PassageSetPlayer.tsx`** (`app/src/pages/PassageSetPlayer.tsx`) — previously only `chartKind:
+  'bar'` had a renderer; `line-charts`/`pie-charts`/`stacked-charts` questions would have shipped
+  with "[chart rendering not yet implemented for this chart type]" instead of the actual chart.
+  Same "render from data, not images" plain-SVG approach as the existing `BarChartAsset` (SPEC.md
+  §5.1). **One real bug caught in Playwright screenshot review, not by CI**: the pie chart's legend
+  showed "40% (40%)" — a duplicated percentage — because the generator's slice values are already
+  percentages but the renderer unconditionally appended a second, recomputed `(x%)`. Fixed by
+  skipping the recomputed percentage when `unit === '%'`.
+- Full CI (lint, typecheck, 170 vitest tests, build) green after every change. Content re-synced
+  via `sync-content.mjs`, `validate_content.py` clean (86 micro-topics, 13 lessons, 544 question
+  files including `mockReserved` items).
+
+**Honest re-audit, same script as every round** (excludes `mockReserved` items, matches SPEC.md
+§16's literal bar): zero-question topics **30 → 23** (QA 2, DILR 16→9, VARC still 12, untouched
+this round — no LLM/RC pipeline run needed for the DILR wins, but VARC's remaining 12 need either
+LLM generation or real source text, same as QA). **0 of 86 micro-topics still meet the full ≥15-
+questions-+-lesson bar** — every DILR topic this round has exactly 4 questions (or 8-12 for the
+brute-force multi-set generators), nowhere near 15. This round closed structural gaps (impossible
+target numbers, missing chart renderers, unreliable LLM observability) more than it closed the
+raw content gap — recorded here as the same kind of honest checkpoint as round 2, not a finish
+line.
+
 ### Content scale-up, round 2 — teaching-first routing, more DILR, a stuck-batch diagnosis
 
 Direct follow-up requests: "complete the full syllabus... zero tolerance... don't fabricate,"
@@ -1594,6 +1690,21 @@ it independently before the item is kept.
   exists. Still no markdown library dependency added.
 
 ## Known issues / deferred
+- **QA/VARC LLM generation queued but not run (content round 3)** — deliberately deferred because
+  the project owner's GPU was busy with another process. `pipeline/qagen/run_llm.py
+  --shortfall-only` (from `/pipeline`, `cat-llm` conda env, needs Ollama up at
+  `localhost:11434`) will fill the ~649-item QA shortfall against the new (correct) `COUNT_BY_ROI`
+  targets once the GPU is free. VARC's 12 zero-question topics need `rc_harness.py` (RC) or a new
+  LLM pipeline (VA) — neither run this round.
+- **The QA-batch "hang" root cause (round 2) is still not fixed**, only made observable —
+  `llm_harness.py` now prints per-stage progress (see content round 3) so a live run's state is
+  visible, but the actual fix (bounding `max_tokens` more tightly, or a true wall-clock deadline
+  that doesn't reset on partial streamed tokens) has not been implemented.
+- **A pre-existing LaTeX-rendering bug was spotted incidentally** (during the theme-fix
+  screenshot pass) in at least one LLM-generated QA question's `solutionMarkdown`: raw, unescaped
+  `\%`/`\times` printed literally instead of rendering, and one instance of a mangled
+  `\text{...}` (lost backslash, showing " ext..."). Flagged to the project owner, not
+  investigated — scope across the ~465+ LLM-generated questions is unknown.
 - Milestone 2 (Storage layer) deferred until after Milestone 3 — see
   "Milestone order" above. (Now done — see Milestone 2 writeup.)
 - ~~The storage layer (Milestone 2) has no consumers yet~~ **Resolved in

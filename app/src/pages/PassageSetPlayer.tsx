@@ -152,9 +152,206 @@ function BarChartAsset({ asset }: { asset: PassageAsset }) {
   )
 }
 
+/** Same data-driven-SVG approach as BarChartAsset, one polyline per series. */
+function LineChartAsset({ asset }: { asset: PassageAsset }) {
+  const categories = (asset.spec.categories as string[] | undefined) ?? []
+  const series = (asset.spec.series as BarChartSeries[] | undefined) ?? []
+  const unit = (asset.spec.unit as string | undefined) ?? ''
+
+  const maxValue = Math.max(1, ...series.flatMap((s) => s.values))
+  const chartHeight = 200
+  const stepWidth = 90
+  const chartWidth = Math.max(1, categories.length - 1) * stepWidth + 40
+
+  const pointFor = (value: number, ci: number) => {
+    const x = 20 + ci * stepWidth
+    const y = chartHeight - (value / maxValue) * chartHeight
+    return { x, y }
+  }
+
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border p-3">
+      <svg width={chartWidth} height={chartHeight + 40} role="img" aria-label="Line chart">
+        {series.map((s, si) => {
+          const points = s.values.map((v, ci) => pointFor(v, ci))
+          const path = points.map((p) => `${p.x},${p.y}`).join(' ')
+          const color = BAR_COLORS[si % BAR_COLORS.length]
+          return (
+            <g key={s.name}>
+              <polyline points={path} fill="none" stroke={color} strokeWidth={2} />
+              {points.map((p, ci) => (
+                <g key={ci}>
+                  <circle cx={p.x} cy={p.y} r={3} fill={color} />
+                  <text x={p.x} y={p.y - 8} fontSize={10} textAnchor="middle" className="fill-foreground">
+                    {s.values[ci]}
+                  </text>
+                </g>
+              ))}
+            </g>
+          )
+        })}
+        {categories.map((cat, ci) => (
+          <text
+            key={cat}
+            x={20 + ci * stepWidth}
+            y={chartHeight + 16}
+            fontSize={11}
+            textAnchor="middle"
+            className="fill-muted-foreground"
+          >
+            {cat}
+          </text>
+        ))}
+      </svg>
+      {series.length > 1 && (
+        <div className="mt-2 flex flex-wrap gap-3 text-xs text-muted-foreground">
+          {series.map((s, si) => (
+            <span key={s.name} className="flex items-center gap-1">
+              <span
+                className="inline-block size-2.5 rounded-sm"
+                style={{ backgroundColor: BAR_COLORS[si % BAR_COLORS.length] }}
+              />
+              {s.name}
+            </span>
+          ))}
+        </div>
+      )}
+      {unit && <p className="mt-1 text-xs text-muted-foreground">Values in {unit}</p>}
+    </div>
+  )
+}
+
+/** Stacked columns from the same {categories, series} shape as BarChartAsset — each series is a
+ * segment stacked cumulatively within one column per category, instead of side-by-side groups. */
+function StackedBarChartAsset({ asset }: { asset: PassageAsset }) {
+  const categories = (asset.spec.categories as string[] | undefined) ?? []
+  const series = (asset.spec.series as BarChartSeries[] | undefined) ?? []
+  const unit = (asset.spec.unit as string | undefined) ?? ''
+
+  const totals = categories.map((_, ci) => series.reduce((sum, s) => sum + (s.values[ci] ?? 0), 0))
+  const maxTotal = Math.max(1, ...totals)
+  const chartHeight = 200
+  const groupWidth = 90
+  const barWidth = 48
+  const chartWidth = categories.length * groupWidth
+
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border p-3">
+      <svg width={chartWidth} height={chartHeight + 40} role="img" aria-label="Stacked bar chart">
+        {categories.map((cat, ci) => {
+          let cumulative = 0
+          const x = (groupWidth - barWidth) / 2
+          return (
+            <g key={cat} transform={`translate(${ci * groupWidth}, 0)`}>
+              {series.map((s, si) => {
+                const value = s.values[ci] ?? 0
+                const segHeight = (value / maxTotal) * chartHeight
+                const y = chartHeight - cumulative - segHeight
+                cumulative += value
+                return (
+                  <g key={s.name}>
+                    <rect x={x} y={y} width={barWidth} height={segHeight} fill={BAR_COLORS[si % BAR_COLORS.length]} />
+                    {segHeight > 14 && (
+                      <text x={x + barWidth / 2} y={y + segHeight / 2 + 4} fontSize={10} textAnchor="middle" fill="var(--color-primary-foreground)">
+                        {value}
+                      </text>
+                    )}
+                  </g>
+                )
+              })}
+              <text x={groupWidth / 2} y={chartHeight - cumulative - 6} fontSize={10} textAnchor="middle" className="fill-foreground">
+                {totals[ci]}
+              </text>
+              <text
+                x={groupWidth / 2}
+                y={chartHeight + 16}
+                fontSize={11}
+                textAnchor="middle"
+                className="fill-muted-foreground"
+              >
+                {cat}
+              </text>
+            </g>
+          )
+        })}
+      </svg>
+      {series.length > 1 && (
+        <div className="mt-2 flex flex-wrap gap-3 text-xs text-muted-foreground">
+          {series.map((s, si) => (
+            <span key={s.name} className="flex items-center gap-1">
+              <span
+                className="inline-block size-2.5 rounded-sm"
+                style={{ backgroundColor: BAR_COLORS[si % BAR_COLORS.length] }}
+              />
+              {s.name}
+            </span>
+          ))}
+        </div>
+      )}
+      {unit && <p className="mt-1 text-xs text-muted-foreground">Values in {unit}</p>}
+    </div>
+  )
+}
+
+interface PieSlice {
+  name: string
+  value: number
+}
+
+/** Pure-SVG pie chart built from cumulative angle math, not a library — same reasoning as
+ * BarChartAsset: render from the underlying {slices} data so it stays crisp and responsive. */
+function PieChartAsset({ asset }: { asset: PassageAsset }) {
+  const slices = (asset.spec.slices as PieSlice[] | undefined) ?? []
+  const unit = (asset.spec.unit as string | undefined) ?? ''
+  const total = slices.reduce((sum, s) => sum + s.value, 0) || 1
+  const radius = 90
+  const cx = 100
+  const cy = 100
+
+  let cumulativeAngle = -Math.PI / 2
+  const arcs = slices.map((s, i) => {
+    const angle = (s.value / total) * 2 * Math.PI
+    const startAngle = cumulativeAngle
+    const endAngle = cumulativeAngle + angle
+    cumulativeAngle = endAngle
+    const x1 = cx + radius * Math.cos(startAngle)
+    const y1 = cy + radius * Math.sin(startAngle)
+    const x2 = cx + radius * Math.cos(endAngle)
+    const y2 = cy + radius * Math.sin(endAngle)
+    const largeArc = angle > Math.PI ? 1 : 0
+    const path = `M ${cx} ${cy} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`
+    return { path, color: BAR_COLORS[i % BAR_COLORS.length], name: s.name, value: s.value }
+  })
+
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border p-3">
+      <div className="flex flex-wrap items-center gap-4">
+        <svg width={200} height={200} role="img" aria-label="Pie chart">
+          {arcs.map((a) => (
+            <path key={a.name} d={a.path} fill={a.color} stroke="var(--color-card)" strokeWidth={1} />
+          ))}
+        </svg>
+        <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+          {arcs.map((a) => (
+            <span key={a.name} className="flex items-center gap-1.5">
+              <span className="inline-block size-2.5 rounded-sm" style={{ backgroundColor: a.color }} />
+              {unit === '%'
+                ? `${a.name}: ${a.value}%`
+                : `${a.name}: ${a.value}${unit ? ` ${unit}` : ''} (${Math.round((a.value / total) * 1000) / 10}%)`}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function SetAsset({ asset }: { asset: PassageAsset }) {
   if (asset.type === 'table') return <TableAsset asset={asset} />
   if (asset.type === 'chart' && asset.spec.chartKind === 'bar') return <BarChartAsset asset={asset} />
+  if (asset.type === 'chart' && asset.spec.chartKind === 'line') return <LineChartAsset asset={asset} />
+  if (asset.type === 'chart' && asset.spec.chartKind === 'pie') return <PieChartAsset asset={asset} />
+  if (asset.type === 'chart' && asset.spec.chartKind === 'stacked-bar') return <StackedBarChartAsset asset={asset} />
   return (
     <p className="text-sm text-muted-foreground">
       [chart rendering not yet implemented for this chart type]

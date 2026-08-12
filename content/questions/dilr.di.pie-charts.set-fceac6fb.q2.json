@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.pie-charts.set-fceac6fb.q2",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which category has the smallest share of the budget?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Salaries"
+    },
+    {
+      "key": "B",
+      "markdown": "Marketing"
+    },
+    {
+      "key": "C",
+      "markdown": "Rent"
+    },
+    {
+      "key": "D",
+      "markdown": "R&D"
+    },
+    {
+      "key": "E",
+      "markdown": "Utilities"
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Shares are Salaries: 40%, Marketing: 20%, Rent: 15%, R&D: 15%, Utilities: 10%. Smallest is **Utilities** (10%).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 45,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-12T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

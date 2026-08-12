@@ -1,0 +1,50 @@
+{
+  "id": "qa.arith.time-work-chain-rule.llm-435135e3ce",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "If 5 workers can complete a job in 12 days, how many days will it take for 8 workers to complete the same job?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "6 days"
+    },
+    {
+      "key": "B",
+      "markdown": "7.5 days"
+    },
+    {
+      "key": "C",
+      "markdown": "8 days"
+    },
+    {
+      "key": "D",
+      "markdown": "10 days"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The problem involves the concept of inverse proportion between workers and time.\n\nWhen 5 workers take 12 days, we can find out how many worker-days are required to complete the job:\n$$\text{Worker-Days} = 5 \times 12 = 60 \text{ worker-days}\n$$\n\nIf there are 8 workers, the number of days (D) they will take is given by solving:\n$$8 \\times D = 60 \\implies D = \\frac{60}{8} = 7.5 \\text{ days}\n$$",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "time-work",
+    "chain-rule"
+  ],
+  "mockReserved": false
+}

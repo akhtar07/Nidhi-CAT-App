@@ -1,0 +1,50 @@
+{
+  "id": "qa.numsys.factorials-prime-power.llm-55f6952783",
+  "microTopicIds": [
+    "qa.numsys.factorials-prime-power"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "What is the highest power of $3$ that divides evenly into $15!$?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$4$"
+    },
+    {
+      "key": "B",
+      "markdown": "$5$"
+    },
+    {
+      "key": "C",
+      "markdown": "$6$"
+    },
+    {
+      "key": "D",
+      "markdown": "$7$"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To find the highest power of $3$ that divides evenly into $15!$, we use de Polignac's (Legendre's) formula which states the exponent is given by summing the integer parts of dividing $n$ successively by powers of the prime number. \n\nFor $3^k$: $$\\sum_{k=1}^\\infty \\left\\lfloor \frac{15}{3^k}\right\rfloor = \\left\\lfloor \frac{15}{3}\right\rfloor +  \\left\\lfloor \frac{15}{9}\right\rfloor = 5 + 1 = 6$$",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "factorials",
+    "prime-power"
+  ],
+  "mockReserved": false
+}

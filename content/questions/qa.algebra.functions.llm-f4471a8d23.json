@@ -1,0 +1,50 @@
+{
+  "id": "qa.algebra.functions.llm-f4471a8d23",
+  "microTopicIds": [
+    "qa.algebra.functions"
+  ],
+  "section": "QA",
+  "format": "mcq",
+  "stemMarkdown": "Let $f(x) = x^2 + 1$ and $g(x) = \\sqrt{x}$. What is the value of $(f \\circ g)(9)$?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "$10$"
+    },
+    {
+      "key": "B",
+      "markdown": "$82$"
+    },
+    {
+      "key": "C",
+      "markdown": "$37$"
+    },
+    {
+      "key": "D",
+      "markdown": "$4$"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$(f \\circ g)(9) = f(g(9))$. First, find $g(9)$: $$\ng(x) = \\sqrt{x} \n\\Rightarrow g(9) = \\sqrt{9} = 3\n$$ Now apply $f$ to the value obtained from $g$: $$\nf(x) = x^2 + 1 \n\\Rightarrow f(g(9)) = f(3) = 3^2 + 1 = 9 + 1 = 10.\n$$ Hence, $(f \\circ g)(9) = 10.$",
+  "altSolutionMarkdown": "Since $g(x)$ takes the square root and $f(x)$ then squares it back up while adding 1, substitute 9 into $g$, yielding 3. Then input 3 in $f$ to get $3^2 + 1 = 10$. This skips manual function composition notation.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": 5,
+    "distractorAuditPassed": true,
+    "dedupChecked": true,
+    "reviewerNote": null
+  },
+  "tags": [
+    "function-composition",
+    "square-root-function"
+  ],
+  "mockReserved": false
+}
