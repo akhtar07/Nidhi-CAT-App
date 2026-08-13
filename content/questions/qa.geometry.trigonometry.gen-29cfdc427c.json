@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.trigonometry.gen-29cfdc427c",
+  "microTopicIds": [
+    "qa.geometry.trigonometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "From a point 100 m away from the foot of a tower, the angle of elevation of its top is $30$ degrees. Find the height (in m) of the tower. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 57.735,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$\\tan(30^\\circ) = \\dfrac{\\text{height}}{100}$, so the height is $100 \\times \\tan(30^\\circ) = 57.735$ m.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:trigonometry",
+    "heights-distances"
+  ],
+  "mockReserved": false
+}

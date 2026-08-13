@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-c534420ab3",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the discriminant of the quadratic equation $3x^2 + 13x + 5 = 0$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 109.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$D = b^2 - 4ac = (13)^2 - 4(3)(5) = 169 - 60 = 109$. Since $D > 0$, the equation has two distinct real roots.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratic",
+    "discriminant"
+  ],
+  "mockReserved": false
+}

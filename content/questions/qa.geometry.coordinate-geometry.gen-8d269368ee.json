@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-8d269368ee",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the distance between the points $(3, -5)$ and $(9, 3)$. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 10.0,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$d = \\sqrt{(9 - 3)^2 + (3 - -5)^2} = \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "distance"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.base-systems.gen-e0419ab808",
+  "microTopicIds": [
+    "qa.numsys.base-systems"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Convert the base-3 number $22011_{3}$ to decimal.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 220.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Expand by place value: $2 \\times 3^{4} + 2 \\times 3^{3} + 1 \\times 3^{1} + 1 \\times 3^{0} = 220$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:base",
+    "to-decimal"
+  ],
+  "mockReserved": false
+}

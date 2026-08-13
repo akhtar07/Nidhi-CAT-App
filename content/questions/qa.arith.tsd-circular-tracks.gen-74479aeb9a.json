@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-circular-tracks.gen-74479aeb9a",
+  "microTopicIds": [
+    "qa.arith.tsd-circular-tracks"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two runners start together from the same point on a circular track 600 m long and run in opposite directions at 5 km/h and 2 km/h. After how many seconds do they meet for the first time? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 308.5714,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Running in opposite directions their speeds add: $1.9444$ m/s. Together they must cover one full lap, so they meet after $\\dfrac{600}{1.9444} = 308.5714$ seconds.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:circular",
+    "opposite"
+  ],
+  "mockReserved": false
+}

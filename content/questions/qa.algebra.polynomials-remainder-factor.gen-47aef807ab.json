@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.gen-47aef807ab",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $5x^3 + 5x^2 - 8x + 5$ is divided by $(x - 3)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 161.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "By the Remainder Theorem the remainder is $p(3)$: $5(3)^3 + 5(3)^2 + -8(3) + 5 = 161$.",
+  "altSolutionMarkdown": "No long division needed \u2014 substituting the root of the divisor is the whole trick.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:polynomials",
+    "remainder-theorem"
+  ],
+  "mockReserved": false
+}

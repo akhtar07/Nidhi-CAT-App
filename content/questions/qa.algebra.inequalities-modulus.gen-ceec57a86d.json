@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.inequalities-modulus.gen-ceec57a86d",
+  "microTopicIds": [
+    "qa.algebra.inequalities-modulus"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many integers $x$ satisfy $|x - 5| < 8$?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 15.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$|x - 5| < 8$ means $-3 < x < 13$. The integers strictly between them run from $-2$ to $12$, which is $15$ values.",
+  "altSolutionMarkdown": "The count is always $2b - 1$ for a strict inequality: $2(8) - 1 = 15$.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:inequalities",
+    "modulus"
+  ],
+  "mockReserved": false
+}

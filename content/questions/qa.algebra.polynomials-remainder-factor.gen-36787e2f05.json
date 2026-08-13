@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.gen-36787e2f05",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $1x^3 - 1x^2 + 0x - 12$ is divided by $(x - 1)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -12.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "By the Remainder Theorem the remainder is $p(1)$: $1(1)^3 + -1(1)^2 + 0(1) + -12 = -12$.",
+  "altSolutionMarkdown": "No long division needed \u2014 substituting the root of the divisor is the whole trick.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:polynomials",
+    "remainder-theorem"
+  ],
+  "mockReserved": false
+}

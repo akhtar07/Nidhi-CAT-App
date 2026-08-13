@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.probability.gen-0587be075b",
+  "microTopicIds": [
+    "qa.modern.probability"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two fair dice are thrown together. What is the probability that the sum of the numbers shown is $10$? (Round to 6 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.083333,
+  "titaTolerance": 1e-05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "There are $6 \\times 6 = 36$ equally likely outcomes. The pairs summing to $10$ number $3$, so the probability is $\\dfrac{3}{36} = 0.083333$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:probability",
+    "dice"
+  ],
+  "mockReserved": false
+}

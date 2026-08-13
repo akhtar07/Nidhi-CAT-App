@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.logarithms.gen-f1f0087271",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Evaluate $\\log_{5} 3125$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 5.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "We need the power to which $5$ must be raised to give $3125$. Since $5^{5} = 3125$, the answer is $5$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms",
+    "evaluate"
+  ],
+  "mockReserved": false
+}

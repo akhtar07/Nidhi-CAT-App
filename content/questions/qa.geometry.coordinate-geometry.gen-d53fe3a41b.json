@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-d53fe3a41b",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the $x$-coordinate of the point that divides the line segment joining $(-8, 9)$ and $(-1, 2)$ internally in the ratio $4 : 2$. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -3.3333,
+  "titaTolerance": 0.001,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "By the section formula, $x = \\dfrac{m x_2 + n x_1}{m + n} = \\dfrac{4(-1) + 2(-8)}{4 + 2} = -3.3333$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "section-formula"
+  ],
+  "mockReserved": false
+}

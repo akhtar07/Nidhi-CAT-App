@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.logarithms.gen-8e3ac9fc43",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $\\log_{2} x = 3$, find $x$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "By definition $\\log_{2} x = 3$ means $x = 2^{3} = 8$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms",
+    "solve"
+  ],
+  "mockReserved": false
+}

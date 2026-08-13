@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.remainders.gen-557d87b964",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $519 \\times 51$ is divided by $17$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Reduce each factor first: $519 \\equiv 9$ and $51 \\equiv 0 \\pmod{17}$. So the product is $\\equiv 9 \\times 0 = 0 \\equiv 0 \\pmod{17}$.",
+  "altSolutionMarkdown": "Reducing before multiplying keeps the numbers small \u2014 the remainder is unaffected.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "product"
+  ],
+  "mockReserved": false
+}

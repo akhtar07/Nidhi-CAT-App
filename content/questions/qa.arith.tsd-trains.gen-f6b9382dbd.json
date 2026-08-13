@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-trains.gen-f6b9382dbd",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A train 285 m long travelling at 69 km/h overtakes a man walking at 6.3 km/h in the same direction as the train. How many seconds does the train take to pass him completely? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.3636,
+  "titaTolerance": 0.001,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Same direction, so the speeds subtract: $69 - 6.3 = 62.7$ km/h $= 17.4167$ m/s. The train covers its own length relative to the man: $\\dfrac{285}{17.4167} = 16.3636$ seconds.",
+  "altSolutionMarkdown": "A man is treated as having no length \u2014 only the train's length counts.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:trains",
+    "overtaking-man"
+  ],
+  "mockReserved": false
+}

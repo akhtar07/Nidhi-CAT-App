@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-f792e5fb0e",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the larger root of $x^2 - 13x + 36 = 0$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Factorising: $x^2 - 13x + 36 = (x - 4)(x - 9) = 0$, so the roots are $4$ and $9$. The larger is $9$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratic",
+    "roots"
+  ],
+  "mockReserved": false
+}

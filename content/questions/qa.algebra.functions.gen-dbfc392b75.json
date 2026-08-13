@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.functions.gen-dbfc392b75",
+  "microTopicIds": [
+    "qa.algebra.functions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $f(x) = 2x + 0$ and $g(x) = 2x - 5$, find $(f \\circ g)(1)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -6.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "First $g(1) = 2(1) - 5 = -3$. Then $f(-3) = 2(-3) + 0 = -6$.",
+  "altSolutionMarkdown": "Work from the inside out \u2014 $(f \\circ g)(x)$ means $g$ acts first, then $f$.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:functions",
+    "composite"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.linear-equations.gen-29ec6475a4",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Solve for $x$: $5x + 6y = 78$ and $7x + 2y = 90$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 12.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Multiply the first equation by $7$ and the second by $5$ to match the $x$ terms, then subtract to eliminate $x$ and solve for $y$. Substituting back gives $x = 12$ (and $y = 3$).",
+  "altSolutionMarkdown": "Cramer's rule: $x = \\dfrac{78 \\cdot 2 - 90 \\cdot 6}{5 \\cdot 2 - 7 \\cdot 6} = 12$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear",
+    "system"
+  ],
+  "mockReserved": false
+}

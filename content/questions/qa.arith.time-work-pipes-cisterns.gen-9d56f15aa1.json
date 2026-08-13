@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-pipes-cisterns.gen-9d56f15aa1",
+  "microTopicIds": [
+    "qa.arith.time-work-pipes-cisterns"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A pipe can fill a cistern in 8 hours, while a waste pipe at the bottom can empty the full cistern in 11 hours. If both are opened together, how many hours will the cistern take to fill? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 29.3333,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "The filling pipe adds $\\dfrac{1}{8}$ per hour and the waste pipe removes $\\dfrac{1}{11}$ per hour, so the net rate is $\\dfrac{1}{8} - \\dfrac{1}{11} = 0.034091$ per hour. The cistern fills in $29.3333$ hours.",
+  "altSolutionMarkdown": "An emptying pipe is simply a negative rate \u2014 the arithmetic is otherwise identical.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:pipes",
+    "leak"
+  ],
+  "mockReserved": false
+}

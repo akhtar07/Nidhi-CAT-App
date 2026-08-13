@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.inequalities-modulus.gen-0a730c9af7",
+  "microTopicIds": [
+    "qa.algebra.inequalities-modulus"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many integers $x$ satisfy $|x - 17| < 15$?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 29.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$|x - 17| < 15$ means $2 < x < 32$. The integers strictly between them run from $3$ to $31$, which is $29$ values.",
+  "altSolutionMarkdown": "The count is always $2b - 1$ for a strict inequality: $2(15) - 1 = 29$.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:inequalities",
+    "modulus"
+  ],
+  "mockReserved": false
+}

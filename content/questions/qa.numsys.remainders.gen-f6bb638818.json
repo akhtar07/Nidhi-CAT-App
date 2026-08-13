@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.remainders.gen-f6bb638818",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $11^{37}$ is divided by $13$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 11.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Powers of $11$ modulo $13$ repeat in a cycle: the first few remainders are 11, 4, 5, 3, 7, 12, and the pattern has length $12$. Since $37 \\bmod 12 = 1$, the remainder is $11$.",
+  "altSolutionMarkdown": "Find the cycle length first \u2014 after that the exponent only matters modulo that length.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "cyclicity"
+  ],
+  "mockReserved": false
+}

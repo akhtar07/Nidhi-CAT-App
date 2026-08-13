@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.hcf-lcm.gen-42f1447baa",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the LCM of $36$ and $48$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 144.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\text{HCF}(36, 48) = 12$, and since $\\text{HCF} \\times \\text{LCM} = 36 \\times 48$, the LCM is $\\dfrac{36 \\times 48}{12} = 144$.",
+  "altSolutionMarkdown": "The product identity only works for two numbers \u2014 it does not extend to three.",
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:hcf-lcm",
+    "lcm"
+  ],
+  "mockReserved": false
+}

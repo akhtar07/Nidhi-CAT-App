@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.functions.gen-e846836309",
+  "microTopicIds": [
+    "qa.algebra.functions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $f(x) = 7x - 2$, find $f^{-1}(26)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$f^{-1}(26)$ is the input that $f$ maps to $26$. Solving $7x - 2 = 26$ gives $x = \\dfrac{26 - (-2)}{7} = 4.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:functions",
+    "inverse"
+  ],
+  "mockReserved": false
+}

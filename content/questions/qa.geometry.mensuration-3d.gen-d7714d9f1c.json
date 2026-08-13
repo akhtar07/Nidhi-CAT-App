@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.mensuration-3d.gen-d7714d9f1c",
+  "microTopicIds": [
+    "qa.geometry.mensuration-3d"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the total surface area (in square cm) of a cube of side 10 cm.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 600.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "A cube has 6 identical square faces: $6 \\times 10^2 = 6 \\times 100 = 600$ square cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:mensuration-3d",
+    "cube"
+  ],
+  "mockReserved": false
+}

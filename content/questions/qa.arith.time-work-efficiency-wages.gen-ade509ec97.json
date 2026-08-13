@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-efficiency-wages.gen-ade509ec97",
+  "microTopicIds": [
+    "qa.arith.time-work-efficiency-wages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A can do a piece of work in 15 days. A and B working together finish it in 11 days. How many days would B alone take? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 41.25,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Together they do $\\dfrac{1}{11}$ of the work per day and A alone does $\\dfrac{1}{15}$, so B's daily rate is $\\dfrac{1}{11} - \\dfrac{1}{15} = 0.024242$. B alone needs $41.25$ days.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:efficiency",
+    "b-alone"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.inequalities-modulus.gen-f982e9bc24",
+  "microTopicIds": [
+    "qa.algebra.inequalities-modulus"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many integers $x$ satisfy $|x - 17| < 9$?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 17.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$|x - 17| < 9$ means $8 < x < 26$. The integers strictly between them run from $9$ to $25$, which is $17$ values.",
+  "altSolutionMarkdown": "The count is always $2b - 1$ for a strict inequality: $2(9) - 1 = 17$.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:inequalities",
+    "modulus"
+  ],
+  "mockReserved": false
+}

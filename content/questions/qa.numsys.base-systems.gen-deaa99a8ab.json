@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.base-systems.gen-deaa99a8ab",
+  "microTopicIds": [
+    "qa.numsys.base-systems"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Convert the base-3 number $100000_{3}$ to decimal.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 243.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Expand by place value: $1 \\times 3^{5} = 243$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:base",
+    "to-decimal"
+  ],
+  "mockReserved": false
+}

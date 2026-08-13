@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-72cb962783",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the discriminant of the quadratic equation $2x^2 + 5x + 3 = 0$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$D = b^2 - 4ac = (5)^2 - 4(2)(3) = 25 - 24 = 1$. Since $D > 0$, the equation has two distinct real roots.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratic",
+    "discriminant"
+  ],
+  "mockReserved": false
+}

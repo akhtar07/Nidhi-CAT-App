@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factorials-prime-power.gen-0b04312609",
+  "microTopicIds": [
+    "qa.numsys.factorials-prime-power"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the highest power of $3$ that divides $30!$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 14.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "By Legendre's formula, add the floors of $30$ divided by successive powers of $3$: \\left\\lfloor \\dfrac{30}{3} \\right\\rfloor = 10 , \\left\\lfloor \\dfrac{30}{9} \\right\\rfloor = 3 , \\left\\lfloor \\dfrac{30}{27} \\right\\rfloor = 1. The total is $14$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factorials",
+    "legendre"
+  ],
+  "mockReserved": false
+}

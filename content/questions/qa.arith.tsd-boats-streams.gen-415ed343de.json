@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-boats-streams.gen-415ed343de",
+  "microTopicIds": [
+    "qa.arith.tsd-boats-streams"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A boat whose speed in still water is 14 km/h rows 77 km downstream and returns to the starting point. If the stream flows at 6 km/h, find the total time taken (in hours). (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 13.475,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Downstream: $\\dfrac{77}{20} = 3.8500$ hours. Upstream: $\\dfrac{77}{8} = 9.6250$ hours. Total $= 13.475$ hours.",
+  "altSolutionMarkdown": "The return trip always takes longer than the outward one, so the round trip is never just twice the still-water time.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:boats",
+    "round-trip"
+  ],
+  "mockReserved": false
+}

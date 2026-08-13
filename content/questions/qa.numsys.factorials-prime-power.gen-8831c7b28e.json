@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factorials-prime-power.gen-8831c7b28e",
+  "microTopicIds": [
+    "qa.numsys.factorials-prime-power"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the highest power of $3$ that divides $20!$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "By Legendre's formula, add the floors of $20$ divided by successive powers of $3$: \\left\\lfloor \\dfrac{20}{3} \\right\\rfloor = 6 , \\left\\lfloor \\dfrac{20}{9} \\right\\rfloor = 2. The total is $8$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factorials",
+    "legendre"
+  ],
+  "mockReserved": false
+}

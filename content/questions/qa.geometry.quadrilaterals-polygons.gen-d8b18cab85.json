@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons.gen-d8b18cab85",
+  "microTopicIds": [
+    "qa.geometry.quadrilaterals-polygons"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find each interior angle (in degrees) of a regular polygon with 6 sides. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 120.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The interior angles of an $n$-sided polygon sum to $(n-2) \\times 180 = 720$ degrees. Divided equally among $6$ angles that is $120.0$ degrees each.",
+  "altSolutionMarkdown": "Or: each exterior angle is $\\dfrac{360}{6} = 60.0$ degrees, and the interior angle is its supplement.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:polygons",
+    "interior-angle"
+  ],
+  "mockReserved": false
+}

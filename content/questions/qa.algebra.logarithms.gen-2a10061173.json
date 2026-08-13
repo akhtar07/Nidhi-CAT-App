@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.logarithms.gen-2a10061173",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $\\log_{6} x = 5$, find $x$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 7776.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "By definition $\\log_{6} x = 5$ means $x = 6^{5} = 7776$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms",
+    "solve"
+  ],
+  "mockReserved": false
+}

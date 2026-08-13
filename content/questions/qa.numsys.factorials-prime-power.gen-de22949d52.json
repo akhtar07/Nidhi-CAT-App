@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factorials-prime-power.gen-de22949d52",
+  "microTopicIds": [
+    "qa.numsys.factorials-prime-power"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the highest power of $7$ that divides $100!$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "By Legendre's formula, add the floors of $100$ divided by successive powers of $7$: \\left\\lfloor \\dfrac{100}{7} \\right\\rfloor = 14 , \\left\\lfloor \\dfrac{100}{49} \\right\\rfloor = 2. The total is $16$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factorials",
+    "legendre"
+  ],
+  "mockReserved": false
+}

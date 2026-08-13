@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.inequalities-modulus.gen-9244380809",
+  "microTopicIds": [
+    "qa.algebra.inequalities-modulus"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many integers $x$ satisfy $(x - -1)(x - 4) < 0$?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "A product of two factors is negative exactly between the roots, so $-1 < x < 4$. The integers strictly inside are $0$ through $3$, giving $4$ values.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:inequalities",
+    "quadratic"
+  ],
+  "mockReserved": false
+}

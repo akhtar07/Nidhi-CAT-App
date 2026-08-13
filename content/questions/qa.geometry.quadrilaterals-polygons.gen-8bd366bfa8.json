@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons.gen-8bd366bfa8",
+  "microTopicIds": [
+    "qa.geometry.quadrilaterals-polygons"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many diagonals does a polygon with 12 sides have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 54.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Each vertex joins to $9$ non-adjacent vertices, and each diagonal gets counted twice: $\\dfrac{12 \\times 9}{2} = 54$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:polygons",
+    "diagonals"
+  ],
+  "mockReserved": false
+}

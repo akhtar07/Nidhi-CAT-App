@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-races.gen-4ad5d1514f",
+  "microTopicIds": [
+    "qa.arith.tsd-races"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a 500 m race, A beats B by 10 m. Find the ratio of A's speed to B's speed, expressed as a decimal. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0204,
+  "titaTolerance": 0.001,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "When A finishes 500 m, B has run only $500 - 10 = 490$ m in the same time. Since the times are equal, the speeds are in the ratio of the distances: $\\dfrac{500}{490} = 1.0204$.",
+  "altSolutionMarkdown": "Equal time is the hinge \u2014 it is what lets you compare distances directly as speeds.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:races",
+    "beats-by-distance"
+  ],
+  "mockReserved": false
+}

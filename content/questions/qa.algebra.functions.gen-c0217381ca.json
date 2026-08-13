@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.functions.gen-c0217381ca",
+  "microTopicIds": [
+    "qa.algebra.functions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $f(x) = 4x + 2$, find $f^{-1}(34)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$f^{-1}(34)$ is the input that $f$ maps to $34$. Solving $4x + 2 = 34$ gives $x = \\dfrac{34 - (2)}{4} = 8.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:functions",
+    "inverse"
+  ],
+  "mockReserved": false
+}

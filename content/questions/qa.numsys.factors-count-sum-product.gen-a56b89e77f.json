@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factors-count-sum-product.gen-a56b89e77f",
+  "microTopicIds": [
+    "qa.numsys.factors-count-sum-product"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many even factors does $240$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$240$ has $2^{4}$ in its factorisation. An even factor must take at least one factor of 2, leaving $4$ choices for the power of 2 and $4$ ways to build the rest, so $4 \\times 4 = 16$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factors",
+    "even-factors"
+  ],
+  "mockReserved": false
+}

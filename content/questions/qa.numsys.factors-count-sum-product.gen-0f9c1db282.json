@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factors-count-sum-product.gen-0f9c1db282",
+  "microTopicIds": [
+    "qa.numsys.factors-count-sum-product"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many even factors does $72$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$72$ has $2^{3}$ in its factorisation. An even factor must take at least one factor of 2, leaving $3$ choices for the power of 2 and $3$ ways to build the rest, so $3 \\times 3 = 9$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factors",
+    "even-factors"
+  ],
+  "mockReserved": false
+}

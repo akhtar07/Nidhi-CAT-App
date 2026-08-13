@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-relative-speed.gen-60fb8a2d46",
+  "microTopicIds": [
+    "qa.arith.tsd-relative-speed"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A man travels from A to B at 45 km/h and returns along the same road at 72 km/h. What is his average speed (in km/h) for the whole journey? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 55.3846,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Average speed is total distance over total time, not the average of the two speeds. Taking the one-way distance as $d$: time $= \\dfrac{d}{45} + \\dfrac{d}{72}$, so average speed $= \\dfrac{2d}{d/45 + d/72} = \\dfrac{2 \\times 45 \\times 72}{45 + 72} = 55.3846$.",
+  "altSolutionMarkdown": "For equal distances the answer is the harmonic mean. The plain average $\\dfrac{45 + 72}{2} = 58.5$ is the classic wrong answer, and it is always too high.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:relative-speed",
+    "average-speed"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.circles.gen-9113e8da47",
+  "microTopicIds": [
+    "qa.geometry.circles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the area (in square cm) of a sector of a circle of radius 10 cm subtending an angle of $210$ degrees at the centre. Use $\\pi = 3.14159265$. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 183.2596,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "A sector is the fraction $\\dfrac{210}{360}$ of the whole circle: $\\dfrac{210}{360} \\times \\pi \\times 10^2 = 183.2596$ square cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:circles",
+    "sector"
+  ],
+  "mockReserved": false
+}

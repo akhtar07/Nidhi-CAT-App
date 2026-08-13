@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.triangles.gen-0cae19d167",
+  "microTopicIds": [
+    "qa.geometry.triangles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A right-angled triangle has legs of 36 cm and 160 cm. Find the length (in cm) of its hypotenuse.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 164.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$h^2 = 36^2 + 160^2 = 1296 + 25600 = 26896$, so $h = 164$ cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:triangles",
+    "pythagoras"
+  ],
+  "mockReserved": false
+}

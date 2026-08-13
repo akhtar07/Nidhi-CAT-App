@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.gen-69b701527d",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $(x + 2)$ is a factor of $4x^3 + 1x^2 + kx + 2$, find the value of $k$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -13.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "By the Factor Theorem, substituting $x = -2$ must give zero: $4(-2)^3 + 1(-2)^2 + k(-2) + 2 = 0$, which solves to $k = -13.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:polynomials",
+    "factor-theorem"
+  ],
+  "mockReserved": false
+}

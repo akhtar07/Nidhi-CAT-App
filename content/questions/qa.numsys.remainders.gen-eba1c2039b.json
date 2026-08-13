@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.remainders.gen-eba1c2039b",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $82 \\times 832$ is divided by $7$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Reduce each factor first: $82 \\equiv 5$ and $832 \\equiv 6 \\pmod{7}$. So the product is $\\equiv 5 \\times 6 = 30 \\equiv 2 \\pmod{7}$.",
+  "altSolutionMarkdown": "Reducing before multiplying keeps the numbers small \u2014 the remainder is unaffected.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "product"
+  ],
+  "mockReserved": false
+}

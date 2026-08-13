@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factorials-prime-power.gen-b70d8cae55",
+  "microTopicIds": [
+    "qa.numsys.factorials-prime-power"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the highest power of $5$ that divides $20!$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "By Legendre's formula, add the floors of $20$ divided by successive powers of $5$: \\left\\lfloor \\dfrac{20}{5} \\right\\rfloor = 4. The total is $4$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factorials",
+    "legendre"
+  ],
+  "mockReserved": false
+}

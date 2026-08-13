@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.inequalities-modulus.gen-430ac3d5f1",
+  "microTopicIds": [
+    "qa.algebra.inequalities-modulus"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many integers $x$ satisfy $(x - -3)(x - 1) < 0$?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "A product of two factors is negative exactly between the roots, so $-3 < x < 1$. The integers strictly inside are $-2$ through $0$, giving $3$ values.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:inequalities",
+    "quadratic"
+  ],
+  "mockReserved": false
+}

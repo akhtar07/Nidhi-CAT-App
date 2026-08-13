@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.linear-equations.gen-de61d98475",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The sum of two numbers is 95 and their difference is 63. Find the larger number.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 79.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Adding the two conditions: $2 \\times \\text{larger} = 95 + 63 = 158$, so the larger number is $79$ and the smaller is $16$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear",
+    "sum-difference"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes.gen-3b6e9ad5bf",
+  "microTopicIds": [
+    "qa.numsys.last-digit-trailing-zeroes"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many trailing zeroes does $365!$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 89.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Each trailing zero needs a factor of 10, and 5s are scarcer than 2s, so count the 5s: \\left\\lfloor \\dfrac{365}{5} \\right\\rfloor = 73 , \\left\\lfloor \\dfrac{365}{25} \\right\\rfloor = 14 , \\left\\lfloor \\dfrac{365}{125} \\right\\rfloor = 2. Adding these gives $89$.",
+  "altSolutionMarkdown": "Higher powers of 5 must be counted again \u2014 25 contributes two 5s, 125 contributes three.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:trailing-zeroes"
+  ],
+  "mockReserved": false
+}

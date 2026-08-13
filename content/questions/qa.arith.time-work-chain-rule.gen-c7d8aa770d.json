@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-chain-rule.gen-c7d8aa770d",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If 27 men can build a wall in 21 days, how many days will 36 men take to build the same wall, working at the same rate? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 15.75,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "The wall needs $27 \\times 21 = 567$ man-days of effort regardless of who does it. With 36 men that is $\\dfrac{567}{36} = 15.75$ days.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:chain-rule",
+    "men-days"
+  ],
+  "mockReserved": false
+}

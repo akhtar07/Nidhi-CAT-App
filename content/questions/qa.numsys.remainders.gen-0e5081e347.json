@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.remainders.gen-0e5081e347",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $13^{53}$ is divided by $13$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Powers of $13$ modulo $13$ repeat in a cycle: the first few remainders are 0, and the pattern has length $1$. Since $53 \\bmod 1 = 0$, the remainder is $0$.",
+  "altSolutionMarkdown": "Find the cycle length first \u2014 after that the exponent only matters modulo that length.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "cyclicity"
+  ],
+  "mockReserved": false
+}

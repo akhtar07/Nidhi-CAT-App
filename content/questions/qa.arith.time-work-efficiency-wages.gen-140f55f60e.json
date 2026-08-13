@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-efficiency-wages.gen-140f55f60e",
+  "microTopicIds": [
+    "qa.arith.time-work-efficiency-wages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A can complete a job in 15 days and B in 30 days. They work together and are paid Rs. 6000 in total. What is A's share (in Rs.)? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4000.0,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Wages are split in the ratio of work done, which is the ratio of their rates: $\\dfrac{1}{15} : \\dfrac{1}{30} = 30 : 15$. A's share is $\\dfrac{30}{45} \\times 6000 = 4000.0$.",
+  "altSolutionMarkdown": "The faster worker earns more \u2014 pay follows output, not hours present.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:efficiency",
+    "wages"
+  ],
+  "mockReserved": false
+}

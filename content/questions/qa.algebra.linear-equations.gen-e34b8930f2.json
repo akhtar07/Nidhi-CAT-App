@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.linear-equations.gen-e34b8930f2",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A box contains 44 coins made up of Rs. 5 and Rs. 10 coins, worth Rs. 320 in total. How many Rs. 5 coins are there?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 24.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "If there are $x$ five-rupee coins then there are $44 - x$ ten-rupee coins, so $5x + 10(44 - x) = 320$. Simplifying gives $-5x = -120$, so $x = 24$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear",
+    "word-problem"
+  ],
+  "mockReserved": false
+}

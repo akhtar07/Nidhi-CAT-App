@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-c9b2b5cdaa",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the distance between the points $(6, 1)$ and $(14, 16)$. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 17.0,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$d = \\sqrt{(14 - 6)^2 + (16 - 1)^2} = \\sqrt{8^2 + 15^2} = \\sqrt{289} = 17.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "distance"
+  ],
+  "mockReserved": false
+}

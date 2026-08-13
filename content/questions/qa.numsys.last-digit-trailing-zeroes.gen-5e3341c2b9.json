@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes.gen-5e3341c2b9",
+  "microTopicIds": [
+    "qa.numsys.last-digit-trailing-zeroes"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the last digit of $2^{15}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Only the units digit of the base matters, which is $2$. Its powers cycle through 2, 4, 8, 6 with period $4$. Locating $15$ in that cycle gives a last digit of $8$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:last-digit",
+    "cyclicity"
+  ],
+  "mockReserved": false
+}

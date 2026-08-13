@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.binomial-theorem.gen-8719d598a9",
+  "microTopicIds": [
+    "qa.modern.binomial-theorem"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the coefficient of $x^{2}$ in the expansion of $(1 + x)^{9}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 36.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "The coefficient of $x^r$ in $(1+x)^n$ is $\\binom{n}{r}$: $\\binom{9}{2} = \\dfrac{9!}{2!(9-2)!} = 36$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:binomial",
+    "coefficient"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.maxima-minima.gen-17148bcae5",
+  "microTopicIds": [
+    "qa.algebra.maxima-minima"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the minimum value of $f(x) = 4x^2 + 48x + 144$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.0,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Since $a = 4 > 0$ the parabola opens upward, so its vertex is the minimum. The vertex is at $x = -\\dfrac{b}{2a} = -6$, and $f(-6) = 0$.",
+  "altSolutionMarkdown": "In completed-square form $f(x) = 4(x - -6)^2 + 0$, and the squared term is never negative, so the least value is $0$.",
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:maxima-minima",
+    "vertex"
+  ],
+  "mockReserved": false
+}

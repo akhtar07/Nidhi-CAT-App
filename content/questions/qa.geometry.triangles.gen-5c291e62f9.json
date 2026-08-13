@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.triangles.gen-5c291e62f9",
+  "microTopicIds": [
+    "qa.geometry.triangles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A right-angled triangle has legs of 9 cm and 40 cm. Find the length (in cm) of its hypotenuse.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 41.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$h^2 = 9^2 + 40^2 = 81 + 1600 = 1681$, so $h = 41$ cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:triangles",
+    "pythagoras"
+  ],
+  "mockReserved": false
+}

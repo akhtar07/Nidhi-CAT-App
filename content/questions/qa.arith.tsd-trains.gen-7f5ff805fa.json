@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-trains.gen-7f5ff805fa",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A train 120 m long is running at 54 km/h. How many seconds does it take to pass a telegraph pole? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "To pass a pole the train must cover its own length. Speed $= 54 \\times \\dfrac{5}{18} = 15.0000$ m/s, so time $= \\dfrac{120}{15.0000} = 8.0$ seconds.",
+  "altSolutionMarkdown": "A pole has no length, so the distance is exactly the train's length \u2014 nothing else.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:trains",
+    "pole"
+  ],
+  "mockReserved": false
+}

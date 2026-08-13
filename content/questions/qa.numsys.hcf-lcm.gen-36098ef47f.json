@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.hcf-lcm.gen-36098ef47f",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Three bells ring at intervals of 8, 6 and 6 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 24.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "They coincide at a common multiple of all three intervals, and the first such moment is the LCM of $8$, $6$ and $6$, which is $24$ seconds.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:hcf-lcm",
+    "bells"
+  ],
+  "mockReserved": false
+}

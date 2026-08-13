@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.hcf-lcm.gen-744f8d4715",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the LCM of $36$ and $30$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 180.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\text{HCF}(36, 30) = 6$, and since $\\text{HCF} \\times \\text{LCM} = 36 \\times 30$, the LCM is $\\dfrac{36 \\times 30}{6} = 180$.",
+  "altSolutionMarkdown": "The product identity only works for two numbers \u2014 it does not extend to three.",
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:hcf-lcm",
+    "lcm"
+  ],
+  "mockReserved": false
+}

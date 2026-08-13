@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.surds-indices.gen-27feba921f",
+  "microTopicIds": [
+    "qa.algebra.surds-indices"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $\\dfrac{2^{4}}{2^{1}} = 2^{n}$, find $n$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Dividing powers of the same base subtracts the exponents: $2^{4} \\div 2^{1} = 2^{4 - 1} = 2^{3}$, so $n = 3$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:indices",
+    "exponent-rules"
+  ],
+  "mockReserved": false
+}

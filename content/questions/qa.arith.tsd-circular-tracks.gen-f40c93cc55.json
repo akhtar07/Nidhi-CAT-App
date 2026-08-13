@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-circular-tracks.gen-f40c93cc55",
+  "microTopicIds": [
+    "qa.arith.tsd-circular-tracks"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two runners start together from the same point on a circular track 400 m long and run in the same direction at 10 km/h and 6 km/h. After how many seconds does the faster runner first lap the slower one? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 360.0,
+  "titaTolerance": 0.001,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "In the same direction the speeds subtract: $1.1111$ m/s. To meet again the faster runner must gain a full lap of 400 m, which takes $\\dfrac{400}{1.1111} = 360.0$ seconds.",
+  "altSolutionMarkdown": "Meeting on a circle means the gap between them has grown to exactly one whole lap.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:circular",
+    "same-direction"
+  ],
+  "mockReserved": false
+}

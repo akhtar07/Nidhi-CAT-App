@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.remainders.gen-c2cc465963",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $902 \\times 119$ is divided by $19$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 7.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Reduce each factor first: $902 \\equiv 9$ and $119 \\equiv 5 \\pmod{19}$. So the product is $\\equiv 9 \\times 5 = 45 \\equiv 7 \\pmod{19}$.",
+  "altSolutionMarkdown": "Reducing before multiplying keeps the numbers small \u2014 the remainder is unaffected.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "product"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-8e16adc4c6",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the larger root of $x^2 - 3x - 4 = 0$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Factorising: $x^2 - 3x - 4 = (x - 4)(x - -1) = 0$, so the roots are $4$ and $-1$. The larger is $4$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratic",
+    "roots"
+  ],
+  "mockReserved": false
+}

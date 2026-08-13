@@ -1,0 +1,32 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes.gen-e5fc78b600",
+  "microTopicIds": [
+    "qa.numsys.last-digit-trailing-zeroes"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many trailing zeroes does $25!$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Each trailing zero needs a factor of 10, and 5s are scarcer than 2s, so count the 5s: \\left\\lfloor \\dfrac{25}{5} \\right\\rfloor = 5 , \\left\\lfloor \\dfrac{25}{25} \\right\\rfloor = 1. Adding these gives $6$.",
+  "altSolutionMarkdown": "Higher powers of 5 must be counted again \u2014 25 contributes two 5s, 125 contributes three.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:trailing-zeroes"
+  ],
+  "mockReserved": false
+}

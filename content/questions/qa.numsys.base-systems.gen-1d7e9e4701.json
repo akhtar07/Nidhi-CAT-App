@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.base-systems.gen-1d7e9e4701",
+  "microTopicIds": [
+    "qa.numsys.base-systems"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many digits does the decimal number $200$ have when written in base $2$?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Repeatedly divide $200$ by $2$, recording remainders: the base-2 form is $11001000_{2}$, which has $8$ digits.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:base",
+    "digit-count"
+  ],
+  "mockReserved": false
+}

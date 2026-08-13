@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons.gen-87b53e5d96",
+  "microTopicIds": [
+    "qa.geometry.quadrilaterals-polygons"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find each interior angle (in degrees) of a regular polygon with 15 sides. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 156.0,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "The interior angles of an $n$-sided polygon sum to $(n-2) \\times 180 = 2340$ degrees. Divided equally among $15$ angles that is $156.0$ degrees each.",
+  "altSolutionMarkdown": "Or: each exterior angle is $\\dfrac{360}{15} = 24.0$ degrees, and the interior angle is its supplement.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:polygons",
+    "interior-angle"
+  ],
+  "mockReserved": false
+}

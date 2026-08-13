@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons.gen-5ca2d8fd9e",
+  "microTopicIds": [
+    "qa.geometry.quadrilaterals-polygons"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many diagonals does a polygon with 10 sides have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 35.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Each vertex joins to $7$ non-adjacent vertices, and each diagonal gets counted twice: $\\dfrac{10 \\times 7}{2} = 35$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:polygons",
+    "diagonals"
+  ],
+  "mockReserved": false
+}

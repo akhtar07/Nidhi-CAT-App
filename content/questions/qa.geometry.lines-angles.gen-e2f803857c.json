@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.lines-angles.gen-e2f803857c",
+  "microTopicIds": [
+    "qa.geometry.lines-angles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two parallel lines are cut by a transversal. If one of the interior angles on the same side of the transversal is $35$ degrees, find the other one (in degrees).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 145.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Co-interior (allied) angles between parallel lines are supplementary, so the other angle is $180 - 35 = 145$ degrees.",
+  "altSolutionMarkdown": "Corresponding and alternate angles are equal; only co-interior angles add to 180.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:lines-angles",
+    "parallel"
+  ],
+  "mockReserved": false
+}

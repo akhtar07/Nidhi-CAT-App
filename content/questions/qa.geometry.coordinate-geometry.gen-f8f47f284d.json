@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-f8f47f284d",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the distance between the points $(4, 9)$ and $(7, 13)$. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 5.0,
+  "titaTolerance": 0.001,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$d = \\sqrt{(7 - 4)^2 + (13 - 9)^2} = \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "distance"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.functions.gen-a881449d7c",
+  "microTopicIds": [
+    "qa.algebra.functions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $f(x) = 4x - 6$ and $g(x) = 3x - 2$, find $(f \\circ g)(0)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -14.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "First $g(0) = 3(0) - 2 = -2$. Then $f(-2) = 4(-2) - 6 = -14$.",
+  "altSolutionMarkdown": "Work from the inside out \u2014 $(f \\circ g)(x)$ means $g$ acts first, then $f$.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:functions",
+    "composite"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-pipes-cisterns.gen-8dfb0c4dfb",
+  "microTopicIds": [
+    "qa.arith.time-work-pipes-cisterns"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Pipe A can fill a tank in 15 hours and pipe B can fill it in 6 hours. If both are opened together, how many hours will it take to fill the tank? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.2857,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "In one hour A fills $\\dfrac{1}{15}$ of the tank and B fills $\\dfrac{1}{6}$, so together they fill $\\dfrac{1}{15} + \\dfrac{1}{6} = 0.233333$ per hour. The full tank takes $\\dfrac{1}{0.233333} = 4.2857$ hours.",
+  "altSolutionMarkdown": "Add rates, never times \u2014 the combined time is always less than either pipe alone.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:pipes",
+    "combined"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.maxima-minima.gen-467341cb30",
+  "microTopicIds": [
+    "qa.algebra.maxima-minima"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two positive numbers add up to 40. What is the maximum possible value of their product?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 400.0,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "By AM-GM, for a fixed sum the product is largest when the numbers are equal. Each is $\\dfrac{40}{2} = 20.0$, so the maximum product is $20.0 \\times 20.0 = 400.0$.",
+  "altSolutionMarkdown": "Equality in AM-GM always happens when the terms are equal \u2014 that is what makes it an optimisation tool.",
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:maxima-minima",
+    "am-gm"
+  ],
+  "mockReserved": false
+}

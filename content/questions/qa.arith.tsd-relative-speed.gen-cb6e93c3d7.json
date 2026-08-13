@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-relative-speed.gen-cb6e93c3d7",
+  "microTopicIds": [
+    "qa.arith.tsd-relative-speed"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Walking at 8 km/h a student reaches school 25 minutes late, and walking at 11 km/h he reaches 22 minutes early. Find the distance (in km) to the school. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 22.9778,
+  "titaTolerance": 0.001,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "The two journeys differ in time by $25 + 22 = 47$ minutes $= 0.7833$ hours. If the distance is $d$, then $\\dfrac{d}{8} - \\dfrac{d}{11} = 0.7833$, giving $d = 22.9778$ km.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:relative-speed",
+    "late-early"
+  ],
+  "mockReserved": false
+}

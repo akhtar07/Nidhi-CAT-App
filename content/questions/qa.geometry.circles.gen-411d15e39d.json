@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.circles.gen-411d15e39d",
+  "microTopicIds": [
+    "qa.geometry.circles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the area (in square cm) of a circle of radius 21 cm. Use $\\pi = 3.14159265$. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1385.4424,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Area $= \\pi r^2 = \\pi \\times 21^2 = 1385.4424$ square cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:circles",
+    "area"
+  ],
+  "mockReserved": false
+}

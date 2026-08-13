@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-efficiency-wages.gen-8ce356709b",
+  "microTopicIds": [
+    "qa.arith.time-work-efficiency-wages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A can do a job in 20 days. B is 25% more efficient than A. How many days does B take to do the same job alone? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.0,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Being 25% more efficient means B works at $125\\%$ of A's rate, so B takes $\\dfrac{100}{125}$ of A's time: $20 \\times \\dfrac{100}{125} = 16.0$ days.",
+  "altSolutionMarkdown": "Efficiency and time are inversely related \u2014 more efficient means proportionally fewer days.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:efficiency",
+    "percentage-efficiency"
+  ],
+  "mockReserved": false
+}

@@ -44,13 +44,16 @@ from collections.abc import Callable
 
 from qagen.harness import ItemSpec
 
-from . import arith
+from . import algebra, arith, numsys_geom, tsd_work
 
 TemplateFn = Callable[[random.Random, str], ItemSpec]
 
 # micro-topic id -> the archetypes CAT asks for that topic.
 TEMPLATES: dict[str, list[TemplateFn]] = {}
 TEMPLATES.update(arith.TEMPLATES)
+TEMPLATES.update(tsd_work.TEMPLATES)
+TEMPLATES.update(algebra.TEMPLATES)
+TEMPLATES.update(numsys_geom.TEMPLATES)
 
 # Difficulty ladder walked in parallel with the template cycle, so a topic's items
 # spread across both axes instead of all its "hard" items landing on one archetype.

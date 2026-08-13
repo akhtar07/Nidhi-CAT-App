@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.logarithms.gen-d5305d9705",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Evaluate $\\log_{3} 9 + \\log_{3} 3$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Logs with the same base add by multiplying their arguments: $\\log_{3} (9 \\times 3) = \\log_{3} 27 = 3$, since $3^{3} = 27$.",
+  "altSolutionMarkdown": "Separately, $\\log_{3} 9 = 2$ and $\\log_{3} 3 = 1$, and $2 + 1 = 3$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms",
+    "product-rule"
+  ],
+  "mockReserved": false
+}

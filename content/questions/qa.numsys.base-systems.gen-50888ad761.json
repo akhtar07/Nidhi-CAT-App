@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.base-systems.gen-50888ad761",
+  "microTopicIds": [
+    "qa.numsys.base-systems"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Convert the base-5 number $2411_{5}$ to decimal.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 356.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Expand by place value: $2 \\times 5^{3} + 4 \\times 5^{2} + 1 \\times 5^{1} + 1 \\times 5^{0} = 356$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:base",
+    "to-decimal"
+  ],
+  "mockReserved": false
+}

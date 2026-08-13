@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-efficiency-wages.gen-2dcee6e97c",
+  "microTopicIds": [
+    "qa.arith.time-work-efficiency-wages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A can do a job in 18 days. B is 80% more efficient than A. How many days does B take to do the same job alone? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 10.0,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Being 80% more efficient means B works at $180\\%$ of A's rate, so B takes $\\dfrac{100}{180}$ of A's time: $18 \\times \\dfrac{100}{180} = 10.0$ days.",
+  "altSolutionMarkdown": "Efficiency and time are inversely related \u2014 more efficient means proportionally fewer days.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:efficiency",
+    "percentage-efficiency"
+  ],
+  "mockReserved": false
+}

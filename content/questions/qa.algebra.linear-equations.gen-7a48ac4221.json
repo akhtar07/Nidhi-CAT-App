@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.linear-equations.gen-7a48ac4221",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Solve for $x$: $5x + 8y = 108$ and $5x + 11y = 126$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 12.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Multiply the first equation by $5$ and the second by $5$ to match the $x$ terms, then subtract to eliminate $x$ and solve for $y$. Substituting back gives $x = 12$ (and $y = 6$).",
+  "altSolutionMarkdown": "Cramer's rule: $x = \\dfrac{108 \\cdot 11 - 126 \\cdot 8}{5 \\cdot 11 - 5 \\cdot 8} = 12$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear",
+    "system"
+  ],
+  "mockReserved": false
+}

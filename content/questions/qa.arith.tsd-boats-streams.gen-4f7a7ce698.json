@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-boats-streams.gen-4f7a7ce698",
+  "microTopicIds": [
+    "qa.arith.tsd-boats-streams"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The speed of a boat in still water is 12 km/h and the speed of the stream is 5 km/h. How many hours does the boat take to travel 45 km downstream? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.6471,
+  "titaTolerance": 0.001,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Downstream the current helps, so the effective speed is $12 + 5 = 17$ km/h. Time $= \\dfrac{45}{17} = 2.6471$ hours.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:boats",
+    "downstream"
+  ],
+  "mockReserved": false
+}

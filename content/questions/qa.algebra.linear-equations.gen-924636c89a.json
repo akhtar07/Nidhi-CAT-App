@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.linear-equations.gen-924636c89a",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A box contains 21 coins made up of Rs. 5 and Rs. 10 coins, worth Rs. 145 in total. How many Rs. 5 coins are there?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 13.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "If there are $x$ five-rupee coins then there are $21 - x$ ten-rupee coins, so $5x + 10(21 - x) = 145$. Simplifying gives $-5x = -65$, so $x = 13$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear",
+    "word-problem"
+  ],
+  "mockReserved": false
+}

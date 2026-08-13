@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factorials-prime-power.gen-317945cb05",
+  "microTopicIds": [
+    "qa.numsys.factorials-prime-power"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the highest power of $2$ that divides $30!$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 26.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "By Legendre's formula, add the floors of $30$ divided by successive powers of $2$: \\left\\lfloor \\dfrac{30}{2} \\right\\rfloor = 15 , \\left\\lfloor \\dfrac{30}{4} \\right\\rfloor = 7 , \\left\\lfloor \\dfrac{30}{8} \\right\\rfloor = 3 , \\left\\lfloor \\dfrac{30}{16} \\right\\rfloor = 1. The total is $26$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factorials",
+    "legendre"
+  ],
+  "mockReserved": false
+}

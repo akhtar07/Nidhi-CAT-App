@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.functions.gen-c269d4b882",
+  "microTopicIds": [
+    "qa.algebra.functions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $f(x) = 5x + 4$, find $f^{-1}(49)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$f^{-1}(49)$ is the input that $f$ maps to $49$. Solving $5x + 4 = 49$ gives $x = \\dfrac{49 - (4)}{5} = 9.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:functions",
+    "inverse"
+  ],
+  "mockReserved": false
+}

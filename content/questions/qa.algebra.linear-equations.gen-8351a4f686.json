@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.linear-equations.gen-8351a4f686",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Solve for $x$: $1x + 3y = 27$ and $3x + 5y = 61$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 12.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Multiply the first equation by $3$ and the second by $1$ to match the $x$ terms, then subtract to eliminate $x$ and solve for $y$. Substituting back gives $x = 12$ (and $y = 5$).",
+  "altSolutionMarkdown": "Cramer's rule: $x = \\dfrac{27 \\cdot 5 - 61 \\cdot 3}{1 \\cdot 5 - 3 \\cdot 3} = 12$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear",
+    "system"
+  ],
+  "mockReserved": false
+}

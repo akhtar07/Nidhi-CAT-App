@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-relative-speed.gen-51e9bec077",
+  "microTopicIds": [
+    "qa.arith.tsd-relative-speed"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Walking at 3 km/h a student reaches school 20 minutes late, and walking at 4 km/h he reaches 15 minutes early. Find the distance (in km) to the school. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 7.0,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The two journeys differ in time by $20 + 15 = 35$ minutes $= 0.5833$ hours. If the distance is $d$, then $\\dfrac{d}{3} - \\dfrac{d}{4} = 0.5833$, giving $d = 7.0$ km.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:relative-speed",
+    "late-early"
+  ],
+  "mockReserved": false
+}

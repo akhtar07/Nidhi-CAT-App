@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-races.gen-3ecdc8ccf3",
+  "microTopicIds": [
+    "qa.arith.tsd-races"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a 800 m race, A beats B by 15 m. Find the ratio of A's speed to B's speed, expressed as a decimal. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0191,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "When A finishes 800 m, B has run only $800 - 15 = 785$ m in the same time. Since the times are equal, the speeds are in the ratio of the distances: $\\dfrac{800}{785} = 1.0191$.",
+  "altSolutionMarkdown": "Equal time is the hinge \u2014 it is what lets you compare distances directly as speeds.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:races",
+    "beats-by-distance"
+  ],
+  "mockReserved": false
+}

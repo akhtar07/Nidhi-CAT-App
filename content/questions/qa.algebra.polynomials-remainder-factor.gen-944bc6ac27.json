@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.gen-944bc6ac27",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $(x + 1)$ is a factor of $4x^3 - 7x^2 + kx - 4$, find the value of $k$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -15.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "By the Factor Theorem, substituting $x = -1$ must give zero: $4(-1)^3 + -7(-1)^2 + k(-1) + -4 = 0$, which solves to $k = -15.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:polynomials",
+    "factor-theorem"
+  ],
+  "mockReserved": false
+}

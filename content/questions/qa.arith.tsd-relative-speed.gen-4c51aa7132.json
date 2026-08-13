@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-relative-speed.gen-4c51aa7132",
+  "microTopicIds": [
+    "qa.arith.tsd-relative-speed"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two cars start at the same moment from two towns 180 km apart and drive towards each other at 40 km/h and 30 km/h. After how many hours do they meet? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.5714,
+  "titaTolerance": 0.001,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Moving towards each other, the gap shrinks at the sum of the speeds: $40 + 30 = 70$ km/h. Time $= \\dfrac{180}{70} = 2.5714$ hours.",
+  "altSolutionMarkdown": "Closing speed is what matters, not either speed alone \u2014 this is the whole idea of relative speed.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:relative-speed",
+    "towards"
+  ],
+  "mockReserved": false
+}

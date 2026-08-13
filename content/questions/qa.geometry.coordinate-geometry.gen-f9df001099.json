@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.coordinate-geometry.gen-f9df001099",
+  "microTopicIds": [
+    "qa.geometry.coordinate-geometry"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the $x$-coordinate of the point that divides the line segment joining $(3, -1)$ and $(0, -3)$ internally in the ratio $3 : 5$. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.875,
+  "titaTolerance": 0.001,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "By the section formula, $x = \\dfrac{m x_2 + n x_1}{m + n} = \\dfrac{3(0) + 5(3)}{3 + 5} = 1.875$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:coordinate",
+    "section-formula"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-12ff6294ee",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A quadratic equation has roots $2$ and $2$. If it is written in the form $x^2 + bx + c = 0$, find the value of $c$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "The equation is $(x - 2)(x - 2) = 0$, i.e. $x^2 - 4x + 4 = 0$. So $c = 4$, which is just the product of the roots.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratic",
+    "construct"
+  ],
+  "mockReserved": false
+}

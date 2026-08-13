@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-races.gen-75c2f1f6e2",
+  "microTopicIds": [
+    "qa.arith.tsd-races"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a 500 m race, A finishes in 44 seconds and B finishes in 57 seconds. By how many metres does A beat B? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 114.0351,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "B's speed is $\\dfrac{500}{57} = 8.7719$ m/s. When A finishes at 44 s, B has covered $8.7719 \\times 44 = 385.9649$ m. A therefore beats B by $114.0351$ m.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:races",
+    "beats-by-time"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.remainders.gen-49a8ee09d2",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $2^{15}$ is divided by $9$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Powers of $2$ modulo $9$ repeat in a cycle: the first few remainders are 2, 4, 8, 7, 5, 1, and the pattern has length $6$. Since $15 \\bmod 6 = 3$, the remainder is $8$.",
+  "altSolutionMarkdown": "Find the cycle length first \u2014 after that the exponent only matters modulo that length.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "cyclicity"
+  ],
+  "mockReserved": false
+}

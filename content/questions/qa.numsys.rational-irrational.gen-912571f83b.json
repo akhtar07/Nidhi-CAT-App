@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.rational-irrational.gen-912571f83b",
+  "microTopicIds": [
+    "qa.numsys.rational-irrational"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The recurring decimal $0.\\overline{113}$ (the block $113$ repeating) is written as a fraction in lowest terms. What is its denominator?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 999.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "A block of $3$ repeating digits sits over $999$: $0.\\overline{113} = \\dfrac{113}{999}$. Reducing by the HCF $1$ gives $\\dfrac{113}{999}$.",
+  "altSolutionMarkdown": "One repeating digit sits over 9, two over 99, three over 999 \u2014 the pattern continues.",
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:rational",
+    "recurring"
+  ],
+  "mockReserved": false
+}

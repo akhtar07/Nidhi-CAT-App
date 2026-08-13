@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factorials-prime-power.gen-081d1d1362",
+  "microTopicIds": [
+    "qa.numsys.factorials-prime-power"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the highest power of $2$ that divides $20!$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "By Legendre's formula, add the floors of $20$ divided by successive powers of $2$: \\left\\lfloor \\dfrac{20}{2} \\right\\rfloor = 10 , \\left\\lfloor \\dfrac{20}{4} \\right\\rfloor = 5 , \\left\\lfloor \\dfrac{20}{8} \\right\\rfloor = 2 , \\left\\lfloor \\dfrac{20}{16} \\right\\rfloor = 1. The total is $18$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factorials",
+    "legendre"
+  ],
+  "mockReserved": false
+}

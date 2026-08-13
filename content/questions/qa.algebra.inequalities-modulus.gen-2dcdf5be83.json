@@ -9,11 +9,11 @@
   "options": null,
   "correctKey": null,
   "correctValue": 11.0,
-  "titaTolerance": 0.0,
+  "titaTolerance": 0.01,
   "difficulty": "easy",
   "eloRating": 1000.0,
-  "solutionMarkdown": "$|x-5| < 6$ means $-1 < x < 11$, an open interval of length $12$. Counting the integers strictly inside gives $11$.",
-  "altSolutionMarkdown": null,
+  "solutionMarkdown": "$|x - 5| < 6$ means $-1 < x < 11$. The integers strictly between them run from $0$ to $10$, which is $11$ values.",
+  "altSolutionMarkdown": "The count is always $2b - 1$ for a strict inequality: $2(6) - 1 = 11$.",
   "targetSeconds": 110,
   "source": "generated",
   "sourceRef": null,
@@ -26,7 +26,8 @@
     "reviewerNote": null
   },
   "tags": [
-    "algebra:inequalities-modulus"
+    "algebra:inequalities",
+    "modulus"
   ],
-  "mockReserved": true
+  "mockReserved": false
 }

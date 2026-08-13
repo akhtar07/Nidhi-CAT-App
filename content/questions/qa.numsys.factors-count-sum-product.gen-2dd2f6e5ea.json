@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factors-count-sum-product.gen-2dd2f6e5ea",
+  "microTopicIds": [
+    "qa.numsys.factors-count-sum-product"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum of all factors of $24$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 60.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "With $24 = 2^{3} \\times 3^{1}$, the sum of factors is the product of the geometric series for each prime, $\\dfrac{p^{e+1} - 1}{p - 1}$, which gives $60$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factors",
+    "sum"
+  ],
+  "mockReserved": false
+}

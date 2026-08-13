@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.triangles.gen-bc20f0afe2",
+  "microTopicIds": [
+    "qa.geometry.triangles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A right-angled triangle has legs of 20 cm and 21 cm. Find the length (in cm) of its hypotenuse.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 29.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$h^2 = 20^2 + 21^2 = 400 + 441 = 841$, so $h = 29$ cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:triangles",
+    "pythagoras"
+  ],
+  "mockReserved": false
+}

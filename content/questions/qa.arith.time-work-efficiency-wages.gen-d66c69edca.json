@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-efficiency-wages.gen-d66c69edca",
+  "microTopicIds": [
+    "qa.arith.time-work-efficiency-wages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A can complete a job in 14 days and B in 21 days. They work together and are paid Rs. 9900 in total. What is A's share (in Rs.)? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 5940.0,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Wages are split in the ratio of work done, which is the ratio of their rates: $\\dfrac{1}{14} : \\dfrac{1}{21} = 21 : 14$. A's share is $\\dfrac{21}{35} \\times 9900 = 5940.0$.",
+  "altSolutionMarkdown": "The faster worker earns more \u2014 pay follows output, not hours present.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:efficiency",
+    "wages"
+  ],
+  "mockReserved": false
+}

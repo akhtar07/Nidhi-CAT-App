@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.surds-indices.gen-f7c2ccf30a",
+  "microTopicIds": [
+    "qa.algebra.surds-indices"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $\\dfrac{3^{3}}{3^{2}} = 3^{n}$, find $n$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Dividing powers of the same base subtracts the exponents: $3^{3} \\div 3^{2} = 3^{3 - 2} = 3^{1}$, so $n = 1$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:indices",
+    "exponent-rules"
+  ],
+  "mockReserved": false
+}

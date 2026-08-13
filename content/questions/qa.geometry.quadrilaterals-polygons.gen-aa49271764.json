@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons.gen-aa49271764",
+  "microTopicIds": [
+    "qa.geometry.quadrilaterals-polygons"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many diagonals does a polygon with 6 sides have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Each vertex joins to $3$ non-adjacent vertices, and each diagonal gets counted twice: $\\dfrac{6 \\times 3}{2} = 9$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:polygons",
+    "diagonals"
+  ],
+  "mockReserved": false
+}

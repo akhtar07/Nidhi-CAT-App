@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-races.gen-33feb42971",
+  "microTopicIds": [
+    "qa.arith.tsd-races"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The speeds of A and B are in the ratio 3 : 2. In a 400 m race, how many metres of a head start must A give B so that the race ends in a dead heat? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 133.3333,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "In the time A covers 400 m, B covers $400 \\times \\dfrac{2}{3} = 266.6667$ m. For a tie, B must be started ahead by the shortfall: $133.3333$ m.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:races",
+    "head-start"
+  ],
+  "mockReserved": false
+}

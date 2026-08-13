@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.triangles.gen-a1a70c4e10",
+  "microTopicIds": [
+    "qa.geometry.triangles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the area (in square cm) of a triangle whose sides are 13 cm, 14 cm and 15 cm. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 84.0,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Semi-perimeter $s = \\dfrac{13 + 14 + 15}{2} = 21.0$. By Heron's formula, area $= \\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{21.0 \\times 8.0 \\times 7.0 \\times 6.0} = 84.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:triangles",
+    "heron"
+  ],
+  "mockReserved": false
+}

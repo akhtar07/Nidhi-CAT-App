@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-boats-streams.gen-a650308d52",
+  "microTopicIds": [
+    "qa.arith.tsd-boats-streams"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A boat covers 48 km downstream in 2.6667 hours and the same 48 km upstream in 4.0000 hours. Find the speed of the stream (in km/h). (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Downstream speed $= \\dfrac{48}{2.6667} = 18.0000$ km/h and upstream speed $= \\dfrac{48}{4.0000} = 12.0000$ km/h. The stream speed is half their difference: $3$ km/h.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:boats",
+    "stream-from-times"
+  ],
+  "mockReserved": false
+}

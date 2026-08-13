@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-relative-speed.gen-e9ca45b61b",
+  "microTopicIds": [
+    "qa.arith.tsd-relative-speed"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A thief driving at 57 km/h gets a head start of 1.5 hours. A police car then sets off along the same road at 75 km/h. How many hours does the police car take to catch the thief? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.75,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "In 1.5 hours the thief covers $57 \\times 1.5 = 85.5$ km. The police close that gap at $75 - 57 = 18$ km/h, taking $\\dfrac{85.5}{18} = 4.75$ hours.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:relative-speed",
+    "catch-up"
+  ],
+  "mockReserved": false
+}

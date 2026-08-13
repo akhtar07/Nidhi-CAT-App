@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.mensuration-2d.gen-29758343aa",
+  "microTopicIds": [
+    "qa.geometry.mensuration-2d"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A rectangular garden 40 m by 15 m is surrounded by a path 3 m wide running all around it on the outside. Find the area (in square m) of the path.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 366.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The outer rectangle measures $46$ m by $21$ m, an area of $966$ square m. Subtracting the garden's $600$ square m leaves $366$.",
+  "altSolutionMarkdown": "The path widens the plot on both sides, so each dimension grows by twice the width.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:mensuration-2d",
+    "path"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-trains.gen-7679414955",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A train 310 m long, travelling at 45 km/h, crosses a platform 285 m long. How many seconds does it take? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 47.6,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "The train must clear its own length **plus** the platform: $310 + 285 = 595$ m. At $12.5000$ m/s that takes $\\dfrac{595}{12.5000} = 47.6$ seconds.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:trains",
+    "platform"
+  ],
+  "mockReserved": false
+}

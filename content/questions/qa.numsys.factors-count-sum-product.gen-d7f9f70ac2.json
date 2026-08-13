@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factors-count-sum-product.gen-d7f9f70ac2",
+  "microTopicIds": [
+    "qa.numsys.factors-count-sum-product"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum of all factors of $180$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 546.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "With $180 = 2^{2} \\times 3^{2} \\times 5^{1}$, the sum of factors is the product of the geometric series for each prime, $\\dfrac{p^{e+1} - 1}{p - 1}$, which gives $546$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factors",
+    "sum"
+  ],
+  "mockReserved": false
+}

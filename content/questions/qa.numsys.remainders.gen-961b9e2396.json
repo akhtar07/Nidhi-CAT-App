@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.remainders.gen-961b9e2396",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $3^{20}$ is divided by $7$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Powers of $3$ modulo $7$ repeat in a cycle: the first few remainders are 3, 2, 6, 4, 5, 1, and the pattern has length $6$. Since $20 \\bmod 6 = 2$, the remainder is $2$.",
+  "altSolutionMarkdown": "Find the cycle length first \u2014 after that the exponent only matters modulo that length.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "cyclicity"
+  ],
+  "mockReserved": false
+}

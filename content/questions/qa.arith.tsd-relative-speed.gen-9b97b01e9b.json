@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-relative-speed.gen-9b97b01e9b",
+  "microTopicIds": [
+    "qa.arith.tsd-relative-speed"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A thief driving at 30 km/h gets a head start of 2 hours. A police car then sets off along the same road at 40 km/h. How many hours does the police car take to catch the thief? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6.0,
+  "titaTolerance": 0.001,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "In 2 hours the thief covers $30 \\times 2 = 60$ km. The police close that gap at $40 - 30 = 10$ km/h, taking $\\dfrac{60}{10} = 6.0$ hours.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:relative-speed",
+    "catch-up"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-chain-rule.gen-2a164f0ff1",
+  "microTopicIds": [
+    "qa.arith.time-work-chain-rule"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If 20 men can build a wall in 20 days, how many days will 15 men take to build the same wall, working at the same rate? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 26.6667,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The wall needs $20 \\times 20 = 400$ man-days of effort regardless of who does it. With 15 men that is $\\dfrac{400}{15} = 26.6667$ days.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:chain-rule",
+    "men-days"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes.gen-86348c2677",
+  "microTopicIds": [
+    "qa.numsys.last-digit-trailing-zeroes"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the last digit of $17^{347}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Only the units digit of the base matters, which is $7$. Its powers cycle through 7, 9, 3, 1 with period $4$. Locating $347$ in that cycle gives a last digit of $3$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:last-digit",
+    "cyclicity"
+  ],
+  "mockReserved": false
+}

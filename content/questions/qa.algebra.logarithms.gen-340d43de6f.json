@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.logarithms.gen-340d43de6f",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Evaluate $\\log_{5} 3125 + \\log_{5} 125$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Logs with the same base add by multiplying their arguments: $\\log_{5} (3125 \\times 125) = \\log_{5} 390625 = 8$, since $5^{8} = 390625$.",
+  "altSolutionMarkdown": "Separately, $\\log_{5} 3125 = 5$ and $\\log_{5} 125 = 3$, and $5 + 3 = 8$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms",
+    "product-rule"
+  ],
+  "mockReserved": false
+}

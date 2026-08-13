@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.rational-irrational.gen-78c2426df8",
+  "microTopicIds": [
+    "qa.numsys.rational-irrational"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The recurring decimal $0.\\overline{76}$ (the block $76$ repeating) is written as a fraction in lowest terms. What is its denominator?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 99.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "A block of $2$ repeating digits sits over $99$: $0.\\overline{76} = \\dfrac{76}{99}$. Reducing by the HCF $1$ gives $\\dfrac{76}{99}$.",
+  "altSolutionMarkdown": "One repeating digit sits over 9, two over 99, three over 999 \u2014 the pattern continues.",
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:rational",
+    "recurring"
+  ],
+  "mockReserved": false
+}

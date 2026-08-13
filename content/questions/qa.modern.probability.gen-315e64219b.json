@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.probability.gen-315e64219b",
+  "microTopicIds": [
+    "qa.modern.probability"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A bag contains 6 red balls and 11 blue balls. Two balls are drawn at random without replacement. What is the probability that both are red? (Round to 6 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.110294,
+  "titaTolerance": 1e-05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Choose 2 from the 6 red balls out of 2 from all 17: $\\dfrac{\\binom{6}{2}}{\\binom{17}{2}} = \\dfrac{15}{136} = 0.110294$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:probability",
+    "combinations"
+  ],
+  "mockReserved": false
+}

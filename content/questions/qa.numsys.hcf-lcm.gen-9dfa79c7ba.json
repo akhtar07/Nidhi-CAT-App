@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.hcf-lcm.gen-9dfa79c7ba",
+  "microTopicIds": [
+    "qa.numsys.hcf-lcm"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the LCM of $126$ and $252$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 252.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$\\text{HCF}(126, 252) = 126$, and since $\\text{HCF} \\times \\text{LCM} = 126 \\times 252$, the LCM is $\\dfrac{126 \\times 252}{126} = 252$.",
+  "altSolutionMarkdown": "The product identity only works for two numbers \u2014 it does not extend to three.",
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:hcf-lcm",
+    "lcm"
+  ],
+  "mockReserved": false
+}

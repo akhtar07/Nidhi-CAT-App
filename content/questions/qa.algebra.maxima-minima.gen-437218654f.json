@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.maxima-minima.gen-437218654f",
+  "microTopicIds": [
+    "qa.algebra.maxima-minima"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the minimum value of $f(x) = 2x^2 + 28x + 88$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -10.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Since $a = 2 > 0$ the parabola opens upward, so its vertex is the minimum. The vertex is at $x = -\\dfrac{b}{2a} = -7$, and $f(-7) = -10$.",
+  "altSolutionMarkdown": "In completed-square form $f(x) = 2(x - -7)^2 + -10$, and the squared term is never negative, so the least value is $-10$.",
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:maxima-minima",
+    "vertex"
+  ],
+  "mockReserved": false
+}

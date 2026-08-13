@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.surds-indices.gen-62d3eb2da3",
+  "microTopicIds": [
+    "qa.algebra.surds-indices"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Evaluate $\\dfrac{1}{4 + \\sqrt{7}}$ as a decimal. (Round to 6 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.150472,
+  "titaTolerance": 1e-05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Multiply top and bottom by the conjugate $4 - \\sqrt{7}$: $\\dfrac{4 - \\sqrt{7}}{4^2 - 7} = \\dfrac{4 - \\sqrt{7}}{9} = 0.150472$.",
+  "altSolutionMarkdown": "Rationalising does not change the value \u2014 it just moves the irrational part to the numerator.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:surds",
+    "rationalise"
+  ],
+  "mockReserved": false
+}

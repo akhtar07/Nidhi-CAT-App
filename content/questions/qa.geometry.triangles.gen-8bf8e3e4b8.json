@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.triangles.gen-8bf8e3e4b8",
+  "microTopicIds": [
+    "qa.geometry.triangles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A right-angled triangle has legs of 25 cm and 60 cm. Find the length (in cm) of its hypotenuse.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 65.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$h^2 = 25^2 + 60^2 = 625 + 3600 = 4225$, so $h = 65$ cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:triangles",
+    "pythagoras"
+  ],
+  "mockReserved": false
+}

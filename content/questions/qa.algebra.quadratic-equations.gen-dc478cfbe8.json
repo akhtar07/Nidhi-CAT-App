@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-dc478cfbe8",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the discriminant of the quadratic equation $1x^2 + 7x + 3 = 0$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 37.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "$D = b^2 - 4ac = (7)^2 - 4(1)(3) = 49 - 12 = 37$. Since $D > 0$, the equation has two distinct real roots.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratic",
+    "discriminant"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-trains.gen-88db2950c9",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two trains, 150 m and 240 m long, are running towards each other on parallel tracks at 54 km/h and 54 km/h. How many seconds do they take to cross each other completely? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 13.0,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Opposite directions means the speeds add: $54 + 54 = 108$ km/h $= 30.0000$ m/s. They must cover the sum of their lengths, $150 + 240 = 390$ m, so the time is $\\dfrac{390}{30.0000} = 13.0$ seconds.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:trains",
+    "two-trains"
+  ],
+  "mockReserved": false
+}

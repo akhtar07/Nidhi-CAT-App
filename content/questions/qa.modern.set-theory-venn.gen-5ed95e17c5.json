@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.set-theory-venn.gen-5ed95e17c5",
+  "microTopicIds": [
+    "qa.modern.set-theory-venn"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a survey of 100 people, 60 like tea and 50 like coffee, while 20 like neither. How many like both tea and coffee?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 30.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "People liking at least one drink: $100 - 20 = 80$. By inclusion-exclusion, $|A \\cup B| = |A| + |B| - |A \\cap B|$, so $|A \\cap B| = 60 + 50 - 80 = 30$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:venn",
+    "two-sets"
+  ],
+  "mockReserved": false
+}

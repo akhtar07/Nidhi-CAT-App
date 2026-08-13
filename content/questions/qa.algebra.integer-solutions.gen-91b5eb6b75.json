@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.integer-solutions.gen-91b5eb6b75",
+  "microTopicIds": [
+    "qa.algebra.integer-solutions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many solutions in positive integers $(x, y)$ does $2x + 7y = 80$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 5.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Both $x \\geq 1$ and $y \\geq 1$ are required, so $2x$ can range only up to $80 - 7$. Checking which of those leave a multiple of $7$ gives $5$ solutions.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:integer-solutions",
+    "positive"
+  ],
+  "mockReserved": false
+}

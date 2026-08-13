@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes.gen-5c58d72b6b",
+  "microTopicIds": [
+    "qa.numsys.last-digit-trailing-zeroes"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the last digit of $2^{40}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Only the units digit of the base matters, which is $2$. Its powers cycle through 2, 4, 8, 6 with period $4$. Locating $40$ in that cycle gives a last digit of $6$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:last-digit",
+    "cyclicity"
+  ],
+  "mockReserved": false
+}

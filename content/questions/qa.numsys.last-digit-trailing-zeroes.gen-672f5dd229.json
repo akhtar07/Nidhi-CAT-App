@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes.gen-672f5dd229",
+  "microTopicIds": [
+    "qa.numsys.last-digit-trailing-zeroes"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the last digit of $24^{347}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Only the units digit of the base matters, which is $4$. Its powers cycle through 4, 6, 4, 6 with period $2$. Locating $347$ in that cycle gives a last digit of $4$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:last-digit",
+    "cyclicity"
+  ],
+  "mockReserved": false
+}

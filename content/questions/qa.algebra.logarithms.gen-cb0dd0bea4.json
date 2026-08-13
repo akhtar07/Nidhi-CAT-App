@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.logarithms.gen-cb0dd0bea4",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Evaluate $\\log_{3} 9 + \\log_{3} 9$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Logs with the same base add by multiplying their arguments: $\\log_{3} (9 \\times 9) = \\log_{3} 81 = 4$, since $3^{4} = 81$.",
+  "altSolutionMarkdown": "Separately, $\\log_{3} 9 = 2$ and $\\log_{3} 9 = 2$, and $2 + 2 = 4$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms",
+    "product-rule"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.circles.gen-9d18e8dbc1",
+  "microTopicIds": [
+    "qa.geometry.circles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the area (in square cm) of a sector of a circle of radius 7 cm subtending an angle of $60$ degrees at the centre. Use $\\pi = 3.14159265$. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 25.6563,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "A sector is the fraction $\\dfrac{60}{360}$ of the whole circle: $\\dfrac{60}{360} \\times \\pi \\times 7^2 = 25.6563$ square cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:circles",
+    "sector"
+  ],
+  "mockReserved": false
+}

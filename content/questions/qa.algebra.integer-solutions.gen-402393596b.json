@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.integer-solutions.gen-402393596b",
+  "microTopicIds": [
+    "qa.algebra.integer-solutions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many solutions in positive integers $(x, y)$ does $3x + 5y = 50$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Both $x \\geq 1$ and $y \\geq 1$ are required, so $3x$ can range only up to $50 - 5$. Checking which of those leave a multiple of $5$ gives $3$ solutions.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:integer-solutions",
+    "positive"
+  ],
+  "mockReserved": false
+}

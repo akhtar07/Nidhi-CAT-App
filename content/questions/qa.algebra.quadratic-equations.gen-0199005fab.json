@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.quadratic-equations.gen-0199005fab",
+  "microTopicIds": [
+    "qa.algebra.quadratic-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A quadratic equation has roots $9$ and $1$. If it is written in the form $x^2 + bx + c = 0$, find the value of $c$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The equation is $(x - 9)(x - 1) = 0$, i.e. $x^2 - 10x + 9 = 0$. So $c = 9$, which is just the product of the roots.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:quadratic",
+    "construct"
+  ],
+  "mockReserved": false
+}

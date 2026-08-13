@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.gen-ca22cc25c1",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $3x^3 - 6x^2 - 6x - 12$ is divided by $(x + 2)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -48.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "By the Remainder Theorem the remainder is $p(-2)$: $3(-2)^3 + -6(-2)^2 + -6(-2) + -12 = -48$.",
+  "altSolutionMarkdown": "No long division needed \u2014 substituting the root of the divisor is the whole trick.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:polynomials",
+    "remainder-theorem"
+  ],
+  "mockReserved": false
+}

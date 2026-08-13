@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.linear-equations.gen-cb3a532ea1",
+  "microTopicIds": [
+    "qa.algebra.linear-equations"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Solve for $x$: $5x + 8y = 82$ and $9x + 2y = 98$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 10.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Multiply the first equation by $9$ and the second by $5$ to match the $x$ terms, then subtract to eliminate $x$ and solve for $y$. Substituting back gives $x = 10$ (and $y = 4$).",
+  "altSolutionMarkdown": "Cramer's rule: $x = \\dfrac{82 \\cdot 2 - 98 \\cdot 8}{5 \\cdot 2 - 9 \\cdot 8} = 10$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:linear",
+    "system"
+  ],
+  "mockReserved": false
+}

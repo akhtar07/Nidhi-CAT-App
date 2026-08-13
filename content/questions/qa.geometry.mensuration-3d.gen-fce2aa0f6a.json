@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.mensuration-3d.gen-fce2aa0f6a",
+  "microTopicIds": [
+    "qa.geometry.mensuration-3d"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the volume (in cubic cm) of a cylinder of radius 14 cm and height 10 cm. Use $\\pi = 3.14159265$. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6157.5216,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Volume $= \\pi r^2 h = \\pi \\times 14^2 \\times 10 = 6157.5216$ cubic cm.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:mensuration-3d",
+    "cylinder"
+  ],
+  "mockReserved": false
+}

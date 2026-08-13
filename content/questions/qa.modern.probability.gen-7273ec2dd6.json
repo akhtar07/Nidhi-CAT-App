@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.probability.gen-7273ec2dd6",
+  "microTopicIds": [
+    "qa.modern.probability"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A bag contains 4 red balls and 2 blue balls. Two balls are drawn at random without replacement. What is the probability that both are red? (Round to 6 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.4,
+  "titaTolerance": 1e-05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Choose 2 from the 4 red balls out of 2 from all 6: $\\dfrac{\\binom{4}{2}}{\\binom{6}{2}} = \\dfrac{6}{15} = 0.4$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:probability",
+    "combinations"
+  ],
+  "mockReserved": false
+}

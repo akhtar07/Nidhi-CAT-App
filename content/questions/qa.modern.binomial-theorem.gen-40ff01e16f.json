@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.binomial-theorem.gen-40ff01e16f",
+  "microTopicIds": [
+    "qa.modern.binomial-theorem"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the coefficient of $x^{4}$ in the expansion of $(1 + x)^{8}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 70.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "The coefficient of $x^r$ in $(1+x)^n$ is $\\binom{n}{r}$: $\\binom{8}{4} = \\dfrac{8!}{4!(8-4)!} = 70$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:binomial",
+    "coefficient"
+  ],
+  "mockReserved": false
+}

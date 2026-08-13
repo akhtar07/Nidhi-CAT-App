@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.functions.gen-26e16dcc05",
+  "microTopicIds": [
+    "qa.algebra.functions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $f(x) = 2x - 1$ and $g(x) = 1x + 1$, find $(f \\circ g)(0)$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "First $g(0) = 1(0) + 1 = 1$. Then $f(1) = 2(1) - 1 = 1$.",
+  "altSolutionMarkdown": "Work from the inside out \u2014 $(f \\circ g)(x)$ means $g$ acts first, then $f$.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:functions",
+    "composite"
+  ],
+  "mockReserved": false
+}

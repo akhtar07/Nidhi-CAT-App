@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.base-systems.gen-0af7c2bb31",
+  "microTopicIds": [
+    "qa.numsys.base-systems"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Convert the base-8 number $2270_{8}$ to decimal.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1208.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Expand by place value: $2 \\times 8^{3} + 2 \\times 8^{2} + 7 \\times 8^{1} = 1208$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:base",
+    "to-decimal"
+  ],
+  "mockReserved": false
+}

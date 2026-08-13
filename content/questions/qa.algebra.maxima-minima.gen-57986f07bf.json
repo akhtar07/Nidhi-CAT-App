@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.maxima-minima.gen-57986f07bf",
+  "microTopicIds": [
+    "qa.algebra.maxima-minima"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the minimum value of $f(x) = 1x^2 + 12x + 21$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -15.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Since $a = 1 > 0$ the parabola opens upward, so its vertex is the minimum. The vertex is at $x = -\\dfrac{b}{2a} = -6$, and $f(-6) = -15$.",
+  "altSolutionMarkdown": "In completed-square form $f(x) = 1(x - -6)^2 + -15$, and the squared term is never negative, so the least value is $-15$.",
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:maxima-minima",
+    "vertex"
+  ],
+  "mockReserved": false
+}

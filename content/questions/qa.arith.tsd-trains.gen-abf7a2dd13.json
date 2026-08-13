@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-trains.gen-abf7a2dd13",
+  "microTopicIds": [
+    "qa.arith.tsd-trains"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A train 240 m long, travelling at 36 km/h, crosses a platform 360 m long. How many seconds does it take? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 60.0,
+  "titaTolerance": 0.001,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The train must clear its own length **plus** the platform: $240 + 360 = 600$ m. At $10.0000$ m/s that takes $\\dfrac{600}{10.0000} = 60.0$ seconds.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:trains",
+    "platform"
+  ],
+  "mockReserved": false
+}

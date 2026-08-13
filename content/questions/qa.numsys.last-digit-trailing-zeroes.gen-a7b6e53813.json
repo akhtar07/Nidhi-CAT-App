@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes.gen-a7b6e53813",
+  "microTopicIds": [
+    "qa.numsys.last-digit-trailing-zeroes"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the last digit of $3^{22}$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Only the units digit of the base matters, which is $3$. Its powers cycle through 3, 9, 7, 1 with period $4$. Locating $22$ in that cycle gives a last digit of $9$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:last-digit",
+    "cyclicity"
+  ],
+  "mockReserved": false
+}

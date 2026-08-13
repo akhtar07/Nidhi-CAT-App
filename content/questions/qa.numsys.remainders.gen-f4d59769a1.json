@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.remainders.gen-f4d59769a1",
+  "microTopicIds": [
+    "qa.numsys.remainders"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the remainder when $326 \\times 638$ is divided by $19$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 14.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Reduce each factor first: $326 \\equiv 3$ and $638 \\equiv 11 \\pmod{19}$. So the product is $\\equiv 3 \\times 11 = 33 \\equiv 14 \\pmod{19}$.",
+  "altSolutionMarkdown": "Reducing before multiplying keeps the numbers small \u2014 the remainder is unaffected.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:remainders",
+    "product"
+  ],
+  "mockReserved": false
+}

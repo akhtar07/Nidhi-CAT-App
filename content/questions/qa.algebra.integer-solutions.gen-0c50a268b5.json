@@ -1,0 +1,32 @@
+{
+  "id": "qa.algebra.integer-solutions.gen-0c50a268b5",
+  "microTopicIds": [
+    "qa.algebra.integer-solutions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many non-negative integer solutions $(x, y)$ does the equation $5x + 6y = 60$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "For each $x$ from $0$ upward, $60 - 5x$ must be non-negative and divisible by $6$. Sweeping $x$ over its possible range gives $3$ valid pairs.",
+  "altSolutionMarkdown": "Since $\\gcd(5, 6) = 1$ divides $60$, solutions exist and are spaced $6$ apart in $x$; counting how many of those land in $[0, 12]$ gives $3$.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:integer-solutions"
+  ],
+  "mockReserved": false
+}

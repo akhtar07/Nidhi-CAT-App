@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons.gen-ba7e926b83",
+  "microTopicIds": [
+    "qa.geometry.quadrilaterals-polygons"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find each interior angle (in degrees) of a regular polygon with 10 sides. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 144.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The interior angles of an $n$-sided polygon sum to $(n-2) \\times 180 = 1440$ degrees. Divided equally among $10$ angles that is $144.0$ degrees each.",
+  "altSolutionMarkdown": "Or: each exterior angle is $\\dfrac{360}{10} = 36.0$ degrees, and the interior angle is its supplement.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:polygons",
+    "interior-angle"
+  ],
+  "mockReserved": false
+}

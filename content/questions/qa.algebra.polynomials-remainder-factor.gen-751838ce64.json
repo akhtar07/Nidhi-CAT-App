@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.gen-751838ce64",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $(x - 2)$ is a factor of $3x^3 - 3x^2 + kx + 5$, find the value of $k$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -8.5,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "By the Factor Theorem, substituting $x = 2$ must give zero: $3(2)^3 + -3(2)^2 + k(2) + 5 = 0$, which solves to $k = -8.5$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:polynomials",
+    "factor-theorem"
+  ],
+  "mockReserved": false
+}

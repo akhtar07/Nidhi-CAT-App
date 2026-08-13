@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-boats-streams.gen-1be28e0180",
+  "microTopicIds": [
+    "qa.arith.tsd-boats-streams"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A boat travels downstream at 21 km/h and upstream at 7 km/h. Find the speed (in km/h) of the boat in still water.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 14.0,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Downstream speed is boat $+$ stream and upstream is boat $-$ stream. Adding the two cancels the stream: boat speed $= \\dfrac{21 + 7}{2} = 14$ km/h.",
+  "altSolutionMarkdown": "Subtracting instead gives the stream speed: $\\dfrac{21 - 7}{2} = 7$ km/h.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:boats",
+    "still-water"
+  ],
+  "mockReserved": false
+}

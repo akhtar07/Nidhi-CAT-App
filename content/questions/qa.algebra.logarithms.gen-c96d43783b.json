@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.logarithms.gen-c96d43783b",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Evaluate $\\log_{7} 2401 + \\log_{7} 2401$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Logs with the same base add by multiplying their arguments: $\\log_{7} (2401 \\times 2401) = \\log_{7} 5764801 = 8$, since $7^{8} = 5764801$.",
+  "altSolutionMarkdown": "Separately, $\\log_{7} 2401 = 4$ and $\\log_{7} 2401 = 4$, and $4 + 4 = 8$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms",
+    "product-rule"
+  ],
+  "mockReserved": false
+}

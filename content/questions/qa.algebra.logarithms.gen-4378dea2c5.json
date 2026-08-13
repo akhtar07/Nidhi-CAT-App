@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.logarithms.gen-4378dea2c5",
+  "microTopicIds": [
+    "qa.algebra.logarithms"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $\\log_{3} x = 3$, find $x$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 27.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "By definition $\\log_{3} x = 3$ means $x = 3^{3} = 27$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:logarithms",
+    "solve"
+  ],
+  "mockReserved": false
+}

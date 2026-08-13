@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-races.gen-470e530b3c",
+  "microTopicIds": [
+    "qa.arith.tsd-races"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a 400 m race, A finishes in 20 seconds and B finishes in 30 seconds. By how many metres does A beat B? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 133.3333,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "B's speed is $\\dfrac{400}{30} = 13.3333$ m/s. When A finishes at 20 s, B has covered $13.3333 \\times 20 = 266.6667$ m. A therefore beats B by $133.3333$ m.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:races",
+    "beats-by-time"
+  ],
+  "mockReserved": false
+}

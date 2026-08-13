@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.integer-solutions.gen-46fd4ab62d",
+  "microTopicIds": [
+    "qa.algebra.integer-solutions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many solutions in positive integers $(x, y)$ does $7x + 11y = 137$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Both $x \\geq 1$ and $y \\geq 1$ are required, so $7x$ can range only up to $137 - 11$. Checking which of those leave a multiple of $11$ gives $2$ solutions.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:integer-solutions",
+    "positive"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor.gen-4dc4a59210",
+  "microTopicIds": [
+    "qa.algebra.polynomials-remainder-factor"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $(x - 3)$ is a factor of $4x^3 - 2x^2 + kx + 7$, find the value of $k$.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -32.3333,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "By the Factor Theorem, substituting $x = 3$ must give zero: $4(3)^3 + -2(3)^2 + k(3) + 7 = 0$, which solves to $k = -32.3333$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:polynomials",
+    "factor-theorem"
+  ],
+  "mockReserved": false
+}

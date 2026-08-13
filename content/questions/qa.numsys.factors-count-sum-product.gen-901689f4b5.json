@@ -1,0 +1,33 @@
+{
+  "id": "qa.numsys.factors-count-sum-product.gen-901689f4b5",
+  "microTopicIds": [
+    "qa.numsys.factors-count-sum-product"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many factors does $180$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Prime factorisation: $180 = 2^{2} \\times 3^{2} \\times 5^{1}$. The number of factors is the product of (each exponent $+ 1$): $(2 + 1) \\times (2 + 1) \\times (1 + 1) = 18$.",
+  "altSolutionMarkdown": "Every factor is built by choosing an exponent for each prime, independently \u2014 hence the product.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "numsys:factors",
+    "count"
+  ],
+  "mockReserved": false
+}

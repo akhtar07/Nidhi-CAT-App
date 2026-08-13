@@ -1,0 +1,33 @@
+{
+  "id": "qa.geometry.triangles.gen-056c0f631e",
+  "microTopicIds": [
+    "qa.geometry.triangles"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the area (in square cm) of a triangle whose sides are 6 cm, 8 cm and 10 cm. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 24.0,
+  "titaTolerance": 0.001,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Semi-perimeter $s = \\dfrac{6 + 8 + 10}{2} = 12.0$. By Heron's formula, area $= \\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{12.0 \\times 6.0 \\times 4.0 \\times 2.0} = 24.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "geometry:triangles",
+    "heron"
+  ],
+  "mockReserved": false
+}

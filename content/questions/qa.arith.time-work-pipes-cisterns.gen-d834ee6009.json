@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.time-work-pipes-cisterns.gen-d834ee6009",
+  "microTopicIds": [
+    "qa.arith.time-work-pipes-cisterns"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Three pipes A, B and C can fill a tank in 14, 28 and 42 hours respectively. If all three are opened together, how many hours will the tank take to fill? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 7.6364,
+  "titaTolerance": 0.001,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Combined rate $= \\dfrac{1}{14} + \\dfrac{1}{28} + \\dfrac{1}{42} = 0.130952$ tanks per hour, so the time is $7.6364$ hours.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "work:pipes",
+    "three-pipes"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-relative-speed.gen-53bc712383",
+  "microTopicIds": [
+    "qa.arith.tsd-relative-speed"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A man travels from A to B at 40 km/h and returns along the same road at 50 km/h. What is his average speed (in km/h) for the whole journey? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 44.4444,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Average speed is total distance over total time, not the average of the two speeds. Taking the one-way distance as $d$: time $= \\dfrac{d}{40} + \\dfrac{d}{50}$, so average speed $= \\dfrac{2d}{d/40 + d/50} = \\dfrac{2 \\times 40 \\times 50}{40 + 50} = 44.4444$.",
+  "altSolutionMarkdown": "For equal distances the answer is the harmonic mean. The plain average $\\dfrac{40 + 50}{2} = 45.0$ is the classic wrong answer, and it is always too high.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:relative-speed",
+    "average-speed"
+  ],
+  "mockReserved": false
+}

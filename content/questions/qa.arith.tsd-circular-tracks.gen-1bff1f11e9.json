@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.tsd-circular-tracks.gen-1bff1f11e9",
+  "microTopicIds": [
+    "qa.arith.tsd-circular-tracks"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two runners start together from the same point on a circular track 1500 m long, running at 7.5 km/h and 10 km/h. After how many seconds will they both be at the starting point together again? (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2160.0,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Each runner is back at the start only after a whole number of laps. One lap takes $720.0000$ s and $540.0000$ s respectively, so they coincide at the start at the LCM of those two times: $2160.0$ seconds.",
+  "altSolutionMarkdown": "This is different from simply meeting somewhere on the track \u2014 here both must be at the start line, so it is an LCM of lap times, not a relative-speed calculation.",
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "tsd:circular",
+    "meet-at-start"
+  ],
+  "mockReserved": false
+}

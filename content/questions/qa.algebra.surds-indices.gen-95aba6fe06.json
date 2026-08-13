@@ -1,0 +1,33 @@
+{
+  "id": "qa.algebra.surds-indices.gen-95aba6fe06",
+  "microTopicIds": [
+    "qa.algebra.surds-indices"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Evaluate $\\dfrac{1}{1 + \\sqrt{3}}$ as a decimal. (Round to 6 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.366025,
+  "titaTolerance": 1e-05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Multiply top and bottom by the conjugate $1 - \\sqrt{3}$: $\\dfrac{1 - \\sqrt{3}}{1^2 - 3} = \\dfrac{1 - \\sqrt{3}}{-2} = 0.366025$.",
+  "altSolutionMarkdown": "Rationalising does not change the value \u2014 it just moves the irrational part to the numerator.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:surds",
+    "rationalise"
+  ],
+  "mockReserved": false
+}

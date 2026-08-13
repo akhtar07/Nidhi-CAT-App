@@ -1,0 +1,32 @@
+{
+  "id": "qa.algebra.integer-solutions.gen-b321dbd451",
+  "microTopicIds": [
+    "qa.algebra.integer-solutions"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "How many non-negative integer solutions $(x, y)$ does the equation $11x + 6y = 210$ have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "For each $x$ from $0$ upward, $210 - 11x$ must be non-negative and divisible by $6$. Sweeping $x$ over its possible range gives $4$ valid pairs.",
+  "altSolutionMarkdown": "Since $\\gcd(11, 6) = 1$ divides $210$, solutions exist and are spaced $6$ apart in $x$; counting how many of those land in $[0, 19]$ gives $4$.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "algebra:integer-solutions"
+  ],
+  "mockReserved": false
+}
