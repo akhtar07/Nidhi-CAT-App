@@ -2009,3 +2009,135 @@ very_hard 1. Bank now 1,443 questions.
 - The `answer_fn` independence gap in the older `pipeline/qagen/generators/`
   arithmetic generators (flagged in the Milestone 3 addendum above) is still
   unaddressed. The newer `qagen/templates/` modules do not have it.
+
+## Session: DILR to the SPEC §16 bar
+
+Goal for the session was one thing: bring every DILR micro-topic up to SPEC.md §16's bar of
+15 questions. **All 24 are now at 15 or 16, up from 15 of 24 sitting below it.** The bank grew
+from 1,443 questions to **1,643** — 200 new questions across 50 new sets.
+
+### Three chart types that could not be rendered at all
+
+`radar-spider`, `bubble-charts` and `combination-charts` had zero questions, and the block was
+rendering rather than content: `PassageSetPlayer.tsx` had no renderer for any of them, so a set
+would have displayed "[chart rendering not yet implemented]". All three renderers now exist,
+plain SVG driven from the data as SPEC.md §5.1 requires, no charting library.
+
+- **Radar** — grid rings, one polygon per series, values printed at each vertex. Two series
+  that score similarly on one attribute put their vertices within a few pixels of each other,
+  so labels are nudged along the tangent, per series, rather than sharing one offset.
+- **Bubble** — area (not radius) proportional to the third dimension, since linear radius
+  overstates a large bubble by squaring the difference. Every point sits exactly on a labelled
+  gridline: the generator declares `xDivisions`/`yDivisions` so nothing has to be interpolated
+  by eye, because a chart you can only read approximately cannot carry an arithmetic question.
+- **Combination** — bars on the left axis, line on the right, which is the whole point of the
+  type: two different units, so a question can only be answered by reading each series against
+  its own scale. Gridline count is chosen so *both* axes get round steps.
+
+Shared `ChartLegend` extracted; the bar, line and stacked renderers had three byte-identical
+copies of it.
+
+### 50 new sets
+
+| topic group | sets | questions |
+| --- | --- | --- |
+| radar / bubble / combination (`build_dilr_new_charts.py`) | 12 | 48 |
+| bar / line / pie / stacked / tables (`build_dilr_charts_batch5.py`) | 15 | 60 |
+| growth-cagr / missing-data / data-sufficiency / caselets (`build_dilr_analysis_batch5.py`) | 11 | 44 |
+| six LR topics (`build_dilr_lr_batch5.py`) | 12 | 48 |
+
+Difficulty spread: 71 easy, 130 medium, 95 hard. 215 TITA, 81 MCQ.
+
+New shared machinery:
+
+- `dilr_common.py` — `QSpec`/`SetPlan`/`emit`, content-hashed ids so re-running is idempotent
+  and previously shipped ids survive. Rejects at construction time: an MCQ whose key is not
+  uniquely among its options, an MCQ with fewer than four options, a non-finite TITA value, an
+  empty solution, and **markdown the app cannot render**.
+- `dilr_di_archetypes.py` — thirteen question archetypes over a `{categories, series}` dataset.
+  The point is the same one `qagen/templates/__init__.py` makes: inventing a fresh scenario is
+  not inventing a fresh question, and "read the March bar" and "read the September bar" are one
+  question. What varies per set is the *operation* — read, total, average, cross-series
+  comparison, percentage change, share of base, count above own average.
+
+### A rendering bug this caught, in old content as well as new
+
+The app's markdown tokenizer (`markdownSegments.ts`) supports `**bold**` and no other emphasis.
+Single-asterisk italics do not fail loudly — they render as literal asterisks in front of the
+learner. Eight solutions were doing this, seven of them written this session and one
+pre-existing in `build_dilr_di_caselets.py`. All fixed at the generator and regenerated, and
+`_check_markdown` in `dilr_common.py` now makes it a build-time crash. Pipe tables and
+unbalanced `$` are rejected the same way.
+
+### Verification
+
+`verify_dilr_batch5.py` does not import the generators. It reads the shipped JSON — the bytes
+the browser will fetch — and re-derives answers using separately written arithmetic:
+
+- **LR puzzles**: constraints re-encoded by hand from the shipped `bodyMarkdown` and solved by
+  exhaustive search over all 720 seatings / 24 assignments / 35 committees, asserting a unique
+  solution before any answer is compared. This is the genuine `answer_fn` independence the QA
+  templates demand: the search never consults the reasoning the solution text describes.
+- **DI chart and table sets**: 72 answers recomputed from `assets[].spec`.
+- **Every solution's arithmetic**: 251 displayed equations parsed out of the LaTeX, evaluated
+  on both sides and compared. This catches a transposed digit in working that happens to reach
+  the right final answer — which answer-checking alone cannot see. 43 spans carrying free
+  variables were skipped rather than guessed at.
+- **Structural checks** on all 383 DILR items.
+
+Exhaustive search earned its place twice during authoring: it found a "which pair can never be
+selected together" question where **two** of the five options were correct, and a committee
+puzzle so tightly constrained that only one valid panel existed, leaving nothing to ask about.
+Both were caught before shipping because the generator crashes rather than emitting an
+ambiguous set.
+
+Browser sweep of all 95 DILR sets in Chromium: every set loads, every set renders its asset,
+no "[chart rendering not yet implemented]", no literal markup leaking into the page, zero
+console errors. Each set was then walked end to end — answer, confidence, revealed solution —
+for **379 questions and 379 solutions**, rendering 393 KaTeX nodes with no markup leaks and no
+console errors.
+
+Three real rendering defects were found by looking at the screenshots rather than trusting the
+element counts, and fixed: two radar series printed their values on top of each other wherever
+their scores were close ("6551" where 65 and 51 should be); "Data Interpretation" was clipped
+by the radar viewBox; and the combination chart's right axis read 6.25 / 12.5 / 18.75 on a
+percentage scale.
+
+CI green: typecheck, 276 tests, content validation (86 lessons, 1,643 questions).
+
+### Deliberately not changed
+
+Ten MCQs across the bank have two or three options. They are binary by nature — "truth-teller
+or liar?", "which of these two companies?" — and padding them with invented options would be
+worse than leaving them. `verify_dilr_batch5.py` reports them rather than failing on them.
+
+### Still not done — do not read this section as complete
+
+- **6 topics still have zero questions**, all VARC RC types: `vocab-in-context`,
+  `structure-function`, `assumption`, `strengthen-weaken`, `except-least-likely`,
+  `analogy-application`. Every one needs real open-licence passages, which is a sourcing
+  decision, not a generation problem. Their lessons are written.
+- **21 topics remain below 15 questions** — down from 30. All of them are VARC or QA; DILR is
+  clear. The four QA stragglers (`lines-angles`, `divisibility-factors`, `progressions`,
+  `permutations-combinations`) sit at 12-13 and need only one more template pass each.
+- The QA LLM batch (~649 items) is still blocked on the GPU.
+- ntfy delivery still confirmed only against the server, never on a real handset.
+- The `answer_fn` independence gap in the older `pipeline/qagen/generators/` arithmetic
+  generators is still unaddressed.
+- The hand-written arithmetic sets in this batch (pie, growth, missing-data, caselets,
+  data-sufficiency) have double-entry asserts in the generator and equation-level checking in
+  the verifier, but not the independent-route verification the LR puzzles get. That is a real
+  difference in strength and is recorded rather than glossed.
+
+### Commands
+
+```
+cd pipeline
+python build_dilr_new_charts.py
+python build_dilr_charts_batch5.py
+python build_dilr_analysis_batch5.py
+python build_dilr_lr_batch5.py
+python verify_dilr_batch5.py
+cd .. && python pipeline/validate_content.py
+cd app && node scripts/sync-content.mjs && npm run typecheck && npx vitest run && npm run dev
+```
