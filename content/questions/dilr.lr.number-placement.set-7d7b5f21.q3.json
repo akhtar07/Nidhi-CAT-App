@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.number-placement.set-7d7b5f21.q3",
+  "microTopicIds": [
+    "dilr.lr.number-placement"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the number in the centre cell?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 5.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "In any 3 by 3 magic square built from 1 to 9 the centre is always 5, and here it is **5**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:number-placement"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.cubes-dice.set-f5421444",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "A wooden cube is painted on all six faces and then cut into 64 identical smaller cubes by making equally spaced cuts, 4 small cubes along each edge.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.cubes-dice.set-f5421444.q1",
+    "dilr.lr.cubes-dice.set-f5421444.q2",
+    "dilr.lr.cubes-dice.set-f5421444.q3",
+    "dilr.lr.cubes-dice.set-f5421444.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

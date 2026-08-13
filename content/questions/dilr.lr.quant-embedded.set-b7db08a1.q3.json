@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.quant-embedded.set-b7db08a1.q3",
+  "microTopicIds": [
+    "dilr.lr.quant-embedded"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the difference between the highest and lowest scores?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 20.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "46 minus 26 is **20**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:quant-embedded"
+  ],
+  "mockReserved": false
+}

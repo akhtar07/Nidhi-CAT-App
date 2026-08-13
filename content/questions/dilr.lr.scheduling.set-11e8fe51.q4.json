@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.scheduling.set-11e8fe51.q4",
+  "microTopicIds": [
+    "dilr.lr.scheduling"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many presentations fall between Chirag's and Esha's?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Chirag is on Monday and Esha is on Friday, so the presentations strictly between them number **3**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:scheduling"
+  ],
+  "mockReserved": false
+}

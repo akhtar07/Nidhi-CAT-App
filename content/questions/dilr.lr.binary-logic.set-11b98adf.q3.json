@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.binary-logic.set-11b98adf.q3",
+  "microTopicIds": [
+    "dilr.lr.binary-logic"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many of the three are truth-tellers?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "From the unique assignment (Ravi: liar, Sunil: truth-teller, Tara: truth-teller), the truth-tellers are Sunil, Tara \u2014 that is **2**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:binary-logic"
+  ],
+  "mockReserved": false
+}

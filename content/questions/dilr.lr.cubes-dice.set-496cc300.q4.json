@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.cubes-dice.set-496cc300.q4",
+  "microTopicIds": [
+    "dilr.lr.cubes-dice"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many of the small cubes have no painted face at all?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 64.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The unpainted cubes form the hidden core: $(6 - 2)^3 = $ **64**. As a check, $8 + 48 + 96 + 64 = 216$, the total number of small cubes.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:cubes"
+  ],
+  "mockReserved": false
+}

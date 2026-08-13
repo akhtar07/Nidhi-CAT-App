@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.number-placement.set-0920d2a6",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "A 3 by 3 grid is filled with the digits 1 to 9, each used exactly once, so that every row, every column and both diagonals add up to the same total. Some cells are already filled:\n\n- row 1, column 1: empty\n- row 1, column 2: empty\n- row 1, column 3: 4\n- row 2, column 1: empty\n- row 2, column 2: empty\n- row 2, column 3: empty\n- row 3, column 1: empty\n- row 3, column 2: empty\n- row 3, column 3: 8",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.number-placement.set-0920d2a6.q1",
+    "dilr.lr.number-placement.set-0920d2a6.q2",
+    "dilr.lr.number-placement.set-0920d2a6.q3",
+    "dilr.lr.number-placement.set-0920d2a6.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 9.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

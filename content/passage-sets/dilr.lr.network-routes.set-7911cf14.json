@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.network-routes.set-7911cf14",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "The road network below connects six towns. Each road is one-way, in the direction shown, and its length is given in kilometres.\n\n- A to B: 12 km\n- A to C: 12 km\n- B to D: 3 km\n- B to E: 2 km\n- C to D: 4 km\n- C to E: 5 km\n- D to F: 15 km\n- E to F: 8 km",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.network-routes.set-7911cf14.q1",
+    "dilr.lr.network-routes.set-7911cf14.q2",
+    "dilr.lr.network-routes.set-7911cf14.q3",
+    "dilr.lr.network-routes.set-7911cf14.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 10.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

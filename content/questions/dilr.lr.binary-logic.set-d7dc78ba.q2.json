@@ -1,0 +1,41 @@
+{
+  "id": "dilr.lr.binary-logic.set-d7dc78ba.q2",
+  "microTopicIds": [
+    "dilr.lr.binary-logic"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Is Ravi a truth-teller or a liar?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Truth-teller"
+    },
+    {
+      "key": "B",
+      "markdown": "Liar"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "In the unique consistent assignment (Ravi: liar, Sunil: truth-teller, Tara: truth-teller), Ravi is a **liar**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:binary-logic"
+  ],
+  "mockReserved": false
+}

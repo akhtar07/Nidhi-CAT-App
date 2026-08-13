@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.cubes-dice.set-f5421444.q1",
+  "microTopicIds": [
+    "dilr.lr.cubes-dice"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many of the small cubes have exactly three painted faces?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Only the corner cubes show three painted faces, and a cube has **8** corners whatever the number of cuts.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:cubes"
+  ],
+  "mockReserved": false
+}

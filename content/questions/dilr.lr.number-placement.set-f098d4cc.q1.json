@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.number-placement.set-f098d4cc.q1",
+  "microTopicIds": [
+    "dilr.lr.number-placement"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What number belongs in row 1, column 1?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Every row, column and diagonal must total 15, and the digits 1 to 9 are each used once. Those constraints leave exactly one completion, in which row 1, column 1 holds **6**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:number-placement"
+  ],
+  "mockReserved": false
+}

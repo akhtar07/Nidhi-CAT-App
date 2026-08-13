@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.network-routes.set-85ddaec9.q2",
+  "microTopicIds": [
+    "dilr.lr.network-routes"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many distinct routes lead from A to F without revisiting any town?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Enumerating every simple path from A to F gives **4** routes.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:network-routes"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.scheduling.set-b21c8615.q2",
+  "microTopicIds": [
+    "dilr.lr.scheduling"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who presents last?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Anil"
+    },
+    {
+      "key": "B",
+      "markdown": "Bhavna"
+    },
+    {
+      "key": "C",
+      "markdown": "Chirag"
+    },
+    {
+      "key": "D",
+      "markdown": "Divya"
+    },
+    {
+      "key": "E",
+      "markdown": "Esha"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "From the schedule (Monday: Bhavna, Tuesday: Chirag, Wednesday: Esha, Thursday: Anil, Friday: Divya), the Friday slot goes to **Divya**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:scheduling"
+  ],
+  "mockReserved": false
+}

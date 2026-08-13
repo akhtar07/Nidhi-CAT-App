@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.scheduling.set-23e23890.q3",
+  "microTopicIds": [
+    "dilr.lr.scheduling"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "On which day does Anil present?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Monday"
+    },
+    {
+      "key": "B",
+      "markdown": "Tuesday"
+    },
+    {
+      "key": "C",
+      "markdown": "Wednesday"
+    },
+    {
+      "key": "D",
+      "markdown": "Thursday"
+    },
+    {
+      "key": "E",
+      "markdown": "Friday"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "From the schedule, Anil presents on **Thursday**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:scheduling"
+  ],
+  "mockReserved": false
+}

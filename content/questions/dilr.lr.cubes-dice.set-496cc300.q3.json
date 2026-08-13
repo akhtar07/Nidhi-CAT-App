@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.cubes-dice.set-496cc300.q3",
+  "microTopicIds": [
+    "dilr.lr.cubes-dice"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many of the small cubes have exactly one painted face?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 96.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "These form the interior of each of the six faces: $6 \\times (6 - 2)^2 = $ **96**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:cubes"
+  ],
+  "mockReserved": false
+}

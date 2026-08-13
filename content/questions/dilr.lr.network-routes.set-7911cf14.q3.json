@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.network-routes.set-7911cf14.q3",
+  "microTopicIds": [
+    "dilr.lr.network-routes"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the length (in km) of the longest route from A to F without revisiting any town?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 31.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Of the 4 simple routes, the most expensive totals **31 km**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:network-routes"
+  ],
+  "mockReserved": false
+}

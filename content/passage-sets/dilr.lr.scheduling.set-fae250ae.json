@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.scheduling.set-fae250ae",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "Five colleagues \u2014 Anil, Bhavna, Chirag, Divya and Esha \u2014 each give exactly one presentation, one per day from Monday to Friday. Use the clues below.\n\n- Divya presents on an earlier day than Chirag.\n- Esha presents on an earlier day than Anil.\n- Esha presents on the day immediately before Divya.\n- Anil presents neither on Monday nor on Friday.\n- Esha presents neither on Monday nor on Friday.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.scheduling.set-fae250ae.q1",
+    "dilr.lr.scheduling.set-fae250ae.q2",
+    "dilr.lr.scheduling.set-fae250ae.q3",
+    "dilr.lr.scheduling.set-fae250ae.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 9.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

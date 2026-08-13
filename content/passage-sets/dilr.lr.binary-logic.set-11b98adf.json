@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.binary-logic.set-11b98adf",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "On an island every inhabitant is either a truth-teller (whose every statement is true) or a liar (whose every statement is false). Three inhabitants \u2014 Ravi, Sunil and Tara \u2014 each make one statement.\n\n- Ravi says: \"Both of the others are liars\"\n- Sunil says: \"At least one of the other two is a truth-teller\"\n- Tara says: \"Sunil is a truth-teller\"",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.binary-logic.set-11b98adf.q1",
+    "dilr.lr.binary-logic.set-11b98adf.q2",
+    "dilr.lr.binary-logic.set-11b98adf.q3",
+    "dilr.lr.binary-logic.set-11b98adf.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

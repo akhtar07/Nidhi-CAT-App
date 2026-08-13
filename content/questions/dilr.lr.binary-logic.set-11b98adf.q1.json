@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.binary-logic.set-11b98adf.q1",
+  "microTopicIds": [
+    "dilr.lr.binary-logic"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many of the three are liars?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Testing all eight possible truth-teller/liar combinations, only one is self-consistent: Ravi: liar, Sunil: truth-teller, Tara: truth-teller. That gives **1** liar(s).",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:binary-logic"
+  ],
+  "mockReserved": false
+}

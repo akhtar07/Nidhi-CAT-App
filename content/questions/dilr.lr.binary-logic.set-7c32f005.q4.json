@@ -1,0 +1,41 @@
+{
+  "id": "dilr.lr.binary-logic.set-7c32f005.q4",
+  "microTopicIds": [
+    "dilr.lr.binary-logic"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Is Tara a truth-teller or a liar?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Truth-teller"
+    },
+    {
+      "key": "B",
+      "markdown": "Liar"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "From the unique assignment (Ravi: truth-teller, Sunil: liar, Tara: liar), Tara is a **liar**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:binary-logic"
+  ],
+  "mockReserved": false
+}

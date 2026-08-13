@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.number-placement.set-0c3c5366.q2",
+  "microTopicIds": [
+    "dilr.lr.number-placement"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What number belongs in row 3, column 3?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "From the same unique completion, row 3, column 3 holds **8**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:number-placement"
+  ],
+  "mockReserved": false
+}

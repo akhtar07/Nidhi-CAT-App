@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.quant-embedded.set-b7db08a1",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "Four analysts \u2014 Kiran, Lata, Manoj and Nisha \u2014 sat the same test and scored 160 marks between them. Their scores were all different whole numbers, and:\n\n- Kiran scored more than Lata, who scored more than Manoj, who scored more than Nisha.\n- Kiran scored exactly 1 marks more than Lata.\n- Manoj scored 43 marks.\n- Nisha scored 26 marks.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.quant-embedded.set-b7db08a1.q1",
+    "dilr.lr.quant-embedded.set-b7db08a1.q2",
+    "dilr.lr.quant-embedded.set-b7db08a1.q3",
+    "dilr.lr.quant-embedded.set-b7db08a1.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 10.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

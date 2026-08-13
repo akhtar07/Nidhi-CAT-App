@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.quant-embedded.set-b7db08a1.q1",
+  "microTopicIds": [
+    "dilr.lr.quant-embedded"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is Kiran's score?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 46.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The constraints pin every score down uniquely \u2014 Kiran: 46, Lata: 45, Manoj: 43, Nisha: 26. So Kiran scored **46**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:quant-embedded"
+  ],
+  "mockReserved": false
+}

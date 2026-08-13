@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.number-placement.set-7d7b5f21.q4",
+  "microTopicIds": [
+    "dilr.lr.number-placement"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the sum of the four corner cells?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 20.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The corners are 4, 8, 2 and 6, summing to **20**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:number-placement"
+  ],
+  "mockReserved": false
+}

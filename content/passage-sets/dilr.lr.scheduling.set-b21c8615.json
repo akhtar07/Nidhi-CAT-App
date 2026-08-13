@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.scheduling.set-b21c8615",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "Five colleagues \u2014 Anil, Bhavna, Chirag, Divya and Esha \u2014 each give exactly one presentation, one per day from Monday to Friday. Use the clues below.\n\n- Exactly one presentation falls between Chirag and Anil.\n- Anil presents on an earlier day than Divya.\n- Bhavna presents on the day immediately before Chirag.\n- Exactly one presentation falls between Bhavna and Esha.\n- Chirag presents on Tuesday.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.scheduling.set-b21c8615.q1",
+    "dilr.lr.scheduling.set-b21c8615.q2",
+    "dilr.lr.scheduling.set-b21c8615.q3",
+    "dilr.lr.scheduling.set-b21c8615.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 9.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

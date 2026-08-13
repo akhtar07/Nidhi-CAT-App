@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.network-routes.set-7911cf14.q1",
+  "microTopicIds": [
+    "dilr.lr.network-routes"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the length (in km) of the shortest route from A to F?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 22.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Listing every route from A to F and totalling its legs, the cheapest is A to B to E to F at **22 km**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:network-routes"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.quant-embedded.set-80e5699f.q4",
+  "microTopicIds": [
+    "dilr.lr.quant-embedded"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the average of the four scores?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 30.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "The four scores total 120, so the average is $\\dfrac{120}{4} = $ **30.0**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:quant-embedded"
+  ],
+  "mockReserved": false
+}

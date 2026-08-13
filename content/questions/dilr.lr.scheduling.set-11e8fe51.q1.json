@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.scheduling.set-11e8fe51.q1",
+  "microTopicIds": [
+    "dilr.lr.scheduling"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who presents on Wednesday?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Anil"
+    },
+    {
+      "key": "B",
+      "markdown": "Bhavna"
+    },
+    {
+      "key": "C",
+      "markdown": "Chirag"
+    },
+    {
+      "key": "D",
+      "markdown": "Divya"
+    },
+    {
+      "key": "E",
+      "markdown": "Esha"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Working the clues gives the full schedule \u2014 Monday: Chirag, Tuesday: Divya, Wednesday: Anil, Thursday: Bhavna, Friday: Esha. Wednesday is **Anil**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "lr:scheduling"
+  ],
+  "mockReserved": false
+}
