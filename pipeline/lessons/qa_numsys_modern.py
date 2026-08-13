@@ -2,11 +2,38 @@
 
 from __future__ import annotations
 
-from . import EX, FC, LessonSpec
+from . import EX, FC, LessonSpec, Method
 
 SPECS = [
     LessonSpec(
         mt="qa.numsys.remainders",
+        prereq="Division with remainder, and index laws.",
+        methods=[
+            Method(
+                name="Remainder of a large power",
+                recognise="something like $7^{100}$ divided by a small number.",
+                steps=[
+                    "Compute the remainders of the first few powers and look for the cycle.",
+                    "Divide the exponent by the cycle length and take the remainder.",
+                    "Read off the corresponding entry in the cycle — a remainder of 0 means the last entry.",
+                ],
+                worked="Powers of 3 mod 7 cycle 3, 2, 6, 4, 5, 1 with length 6; $3^{100}$ has $100 \\bmod 6 = 4$, so the answer is 4.",
+            ),
+            Method(
+                name="Remainder of a product",
+                recognise="several numbers multiplied, then divided.",
+                steps=[
+                    "Reduce each factor to its own remainder first.",
+                    "Multiply the small remainders together.",
+                    "Reduce again at the end.",
+                ],
+                worked="$53 \\times 47 \\bmod 9$ becomes $8 \\times 2 = 16$, which reduces to 7.",
+            ),
+        ],
+        checklist=[
+            "Find the cycle length of a power modulo a small number.",
+            "Reduce each factor before multiplying, not after.",
+        ],
         intuition=(
             "Look at a clock. It is 10 o'clock and you wait 5 hours — you land on 3, not 15, because the "
             "clock wraps around at 12. Remainders work exactly like that: only the wrap-around position "
@@ -69,6 +96,42 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.numsys.factors-count-sum-product",
+        prereq="Prime factorisation.",
+        methods=[
+            Method(
+                name="Counting the factors",
+                recognise="'how many factors does N have?'",
+                steps=[
+                    "Write $N$ in prime factorised form, $p^a q^b r^c$.",
+                    "Add one to each index and multiply: $(a+1)(b+1)(c+1)$.",
+                    "Each factor is built by choosing an index from 0 up to the maximum, which is why the plus one is there.",
+                ],
+                worked="$72 = 2^3 \\times 3^2$ has $4 \\times 3 = 12$ factors.",
+            ),
+            Method(
+                name="Sum of the factors",
+                recognise="'find the sum of all factors of N'.",
+                steps=[
+                    "For each prime, form the sum $1 + p + p^2 + \\cdots + p^a$.",
+                    "Multiply those sums together.",
+                ],
+                worked="$72$ gives $(1+2+4+8)(1+3+9) = 15 \\times 13 = 195$.",
+            ),
+            Method(
+                name="Counting only even or only odd factors",
+                recognise="a restriction on the kind of factor wanted.",
+                steps=[
+                    "Odd factors: ignore the power of 2 entirely and count from the rest.",
+                    "Even factors: total factors minus odd factors.",
+                ],
+                worked="$72$ has $(2+1) = 3$ odd factors, so $12 - 3 = 9$ even ones.",
+            ),
+        ],
+        checklist=[
+            "Prime factorise quickly and reliably.",
+            "Count and sum factors from the factorisation alone.",
+            "Split a count into odd and even factors.",
+        ],
         intuition=(
             "Every whole number is built from prime bricks, and there is only one way to build it. "
             "$12 = 2 \\times 2 \\times 3$, always.\n\n"
@@ -130,6 +193,31 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.numsys.base-systems",
+        prereq="Place value — base 10 is one case of a general idea.",
+        methods=[
+            Method(
+                name="Converting to decimal",
+                recognise="a number written with a base subscript.",
+                steps=[
+                    "Give each digit its place value: powers of the base, rising from the right starting at zero.",
+                    "Multiply and add.",
+                ],
+                worked="$1011_2 = 8 + 0 + 2 + 1 = 11$.",
+            ),
+            Method(
+                name="Converting from decimal",
+                recognise="a decimal number to be written in another base.",
+                steps=[
+                    "Divide repeatedly by the base, recording each remainder.",
+                    "Read the remainders **upwards** — bottom to top.",
+                ],
+                worked="$45$ in base 3: remainders 0, 0, 2, 1 read upwards give $1200_3$.",
+            ),
+        ],
+        checklist=[
+            "Convert in both directions without confusing the digit order.",
+            "Recognise that a digit must always be smaller than the base.",
+        ],
         intuition=(
             "We count in tens because we have ten fingers. The number 342 means three hundreds, four tens and "
             "two ones — each place is worth ten times the one to its right.\n\n"
@@ -187,6 +275,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.numsys.last-digit-trailing-zeroes",
+        prereq="Cyclicity of last digits, and prime factorisation.",
+        methods=[
+            Method(
+                name="Last digit of a large power",
+                recognise="'the unit digit of $n^k$'.",
+                steps=[
+                    "Only the last digit of the base matters.",
+                    "Last digits repeat with a cycle of length 1, 2 or 4.",
+                    "Reduce the exponent modulo the cycle length and read off.",
+                ],
+                worked="$7^{102}$: the cycle is 7, 9, 3, 1 of length 4, and $102 \\bmod 4 = 2$, so the last digit is 9.",
+            ),
+            Method(
+                name="Trailing zeroes in a factorial",
+                recognise="'how many zeroes does $n!$ end in?'",
+                steps=[
+                    "A zero needs a 2 and a 5; fives are always scarcer, so count fives.",
+                    "Add $\\left\\lfloor \\dfrac{n}{5} \\right\\rfloor + \\left\\lfloor \\dfrac{n}{25} \\right\\rfloor + \\left\\lfloor \\dfrac{n}{125} \\right\\rfloor + \\cdots$",
+                    "Stop when the divisor exceeds $n$.",
+                ],
+                worked="$100!$ has $20 + 4 = 24$ trailing zeroes.",
+            ),
+        ],
+        checklist=[
+            "Find any last digit using the cycle of length at most 4.",
+            "Count trailing zeroes by counting fives, and say why fives and not twos.",
+        ],
         intuition=(
             "Multiply any two numbers and look only at the last digit of the answer. It depends **only** on "
             "the last digits of the two numbers you multiplied. $37 \\times 43$ ends in 1 for the same reason "
@@ -246,6 +361,23 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.numsys.factorials-prime-power",
+        prereq="Factorials and prime factorisation.",
+        methods=[
+            Method(
+                name="Highest power of a prime dividing a factorial",
+                recognise="'the largest k such that $p^k$ divides $n!$'.",
+                steps=[
+                    "Use Legendre's formula: add $\\left\\lfloor \\dfrac{n}{p} \\right\\rfloor + \\left\\lfloor \\dfrac{n}{p^2} \\right\\rfloor + \\cdots$",
+                    "Stop once the divisor exceeds $n$.",
+                    "Each term counts the multiples that contribute one further copy of the prime.",
+                ],
+                worked="The power of 3 in $50!$ is $16 + 5 + 1 = 22$.",
+            ),
+        ],
+        checklist=[
+            "Apply Legendre's formula and explain each term.",
+            "Handle a composite divisor by doing each prime separately and taking the binding one.",
+        ],
         intuition=(
             "$10!$ means $1 \\times 2 \\times 3 \\times \\cdots \\times 10$. Suppose you want to know how many "
             "2s are hiding inside it. You could multiply the whole thing out — or you could just walk along "
@@ -294,6 +426,23 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.numsys.rational-irrational",
+        prereq="Fractions and decimals.",
+        methods=[
+            Method(
+                name="Turning a recurring decimal into a fraction",
+                recognise="a decimal with a bar or 'recurring'.",
+                steps=[
+                    "Let $x$ be the decimal, and multiply by a power of 10 that shifts one full period.",
+                    "Subtract the original from the shifted version, which cancels the recurring tail.",
+                    "Solve for $x$ and simplify.",
+                ],
+                worked="$x = 0.\\overline{36}$ gives $100x - x = 36$, so $x = \\dfrac{36}{99} = \\dfrac{4}{11}$.",
+            ),
+        ],
+        checklist=[
+            "Convert any recurring decimal to a fraction.",
+            "Say whether a given number is rational, and justify it.",
+        ],
         intuition=(
             "A **rational** number is one you can write as a fraction of whole numbers. $0.5$ is $\\frac12$, "
             "and even $0.333\\ldots$ is $\\frac13$. Their decimals either stop or settle into a repeating "
@@ -346,6 +495,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.modern.probability",
+        prereq="Counting — probability is a count divided by a count.",
+        methods=[
+            Method(
+                name="Dice outcomes",
+                recognise="one or more dice, asking for a sum or a condition.",
+                steps=[
+                    "The sample space for two dice is 36 equally likely ordered pairs.",
+                    "Count the pairs meeting the condition, treating the dice as distinguishable.",
+                    "Divide.",
+                ],
+                worked="A sum of 8 happens in 5 ways out of 36, so the probability is $\\dfrac{5}{36}$.",
+            ),
+            Method(
+                name="Drawing balls from a bag",
+                recognise="coloured items drawn together or in succession.",
+                steps=[
+                    "Count the total ways to draw using combinations.",
+                    "Count the favourable ways, choosing from each colour group.",
+                    "Divide. Whether draws are with or without replacement changes the denominator, so check.",
+                ],
+                worked="Two reds from 5 red and 3 blue: $\\dfrac{\\binom{5}{2}}{\\binom{8}{2}} = \\dfrac{10}{28} = \\dfrac{5}{14}$.",
+            ),
+        ],
+        checklist=[
+            "Write down the sample space before counting anything.",
+            "Use combinations when order does not matter, permutations when it does.",
+            "Notice whether draws replace or not.",
+        ],
         intuition=(
             "Probability is just careful counting. Roll a die: there are 6 equally likely outcomes, and 3 of "
             "them are even, so the chance of an even number is $\\frac36 = \\frac12$.\n\n"
@@ -410,6 +587,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.modern.set-theory-venn",
+        prereq="Nothing beyond counting, though a drawn diagram helps enormously.",
+        methods=[
+            Method(
+                name="Two overlapping sets",
+                recognise="two categories with an overlap, and a total.",
+                steps=[
+                    "Use $|A \\cup B| = |A| + |B| - |A \\cap B|$.",
+                    "If some elements are in neither, subtract them from the total first.",
+                    "Solve for whichever quantity is missing.",
+                ],
+                worked="50 people, 30 tea, 25 coffee, 8 neither: $42 = 30 + 25 - x$, so $x = 13$ like both.",
+            ),
+            Method(
+                name="Three sets",
+                recognise="three categories, usually with 'exactly two' or 'all three' mentioned.",
+                steps=[
+                    "Fill the diagram from the middle outwards: all three first, then the pairwise-only regions, then the singles.",
+                    "Remember that 'both A and B' includes those who also have C, whereas 'only A and B' does not.",
+                    "Use the alternating inclusion-exclusion formula as a check on the diagram.",
+                ],
+                worked="Exactly two $=$ (sum of pairwise overlaps) $- 3 \\times$ (all three).",
+            ),
+        ],
+        checklist=[
+            "Apply inclusion-exclusion for two and three sets.",
+            "Tell 'both' from 'only both' in a stem.",
+            "Fill a Venn diagram from the centre outwards.",
+        ],
         intuition=(
             "Twenty students play cricket and fifteen play football. How many students are there? You cannot "
             "just say 35 — some of them play both, and you have counted those twice.\n\n"
@@ -464,6 +669,23 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.modern.binomial-theorem",
+        prereq="Combinations, and index laws.",
+        methods=[
+            Method(
+                name="A specific term or coefficient",
+                recognise="'the coefficient of $x^k$ in $(a + bx)^n$', or 'the rth term'.",
+                steps=[
+                    "The general term is $T_{r+1} = \\binom{n}{r} a^{n-r} b^r$.",
+                    "Set the power of $x$ equal to the one you want and solve for $r$.",
+                    "Substitute that $r$ back to get the coefficient.",
+                ],
+                worked="In $(1 + x)^{10}$ the coefficient of $x^3$ is $\\binom{10}{3} = 120$.",
+            ),
+        ],
+        checklist=[
+            "Write the general term and use it to find any coefficient.",
+            "Remember the term index is $r + 1$, not $r$.",
+        ],
         intuition=(
             "Multiply out $(1+x)^3$ by hand and you get $1 + 3x + 3x^2 + x^3$. Where does that 3 come from? "
             "There are three brackets, and to get a single $x$ you pick it from exactly one of them — three "
@@ -523,6 +745,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.modern.series-sequences-hybrids",
+        prereq="Arithmetic and geometric progressions.",
+        methods=[
+            Method(
+                name="Standard summation formulas",
+                recognise="the sum of the first n squares, cubes, or integers.",
+                steps=[
+                    "$\\sum n = \\dfrac{n(n+1)}{2}$, $\\sum n^2 = \\dfrac{n(n+1)(2n+1)}{6}$, $\\sum n^3 = \\left(\\dfrac{n(n+1)}{2}\\right)^2$.",
+                    "Match the series to the right formula, then substitute.",
+                    "Note the sum of cubes is the square of the sum of integers — a useful check.",
+                ],
+                worked="$\\sum_{1}^{10} n^2 = \\dfrac{10 \\times 11 \\times 21}{6} = 385$.",
+            ),
+            Method(
+                name="Spotting the pattern in an unfamiliar series",
+                recognise="a list of numbers with the next term wanted, and no obvious AP or GP.",
+                steps=[
+                    "Write the differences between consecutive terms.",
+                    "If those are constant it is an AP; if they themselves form a pattern, look at second differences.",
+                    "Check ratios instead if the terms grow quickly.",
+                ],
+                worked="2, 6, 12, 20, 30 has differences 4, 6, 8, 10, so the next term is $30 + 12 = 42$.",
+            ),
+        ],
+        checklist=[
+            "Recall the three standard summation formulas.",
+            "Use differences and ratios to identify an unfamiliar pattern.",
+        ],
         intuition=(
             "Some sequences grow by **adding** the same thing each time: 3, 7, 11, 15 — always plus 4. That is "
             "an arithmetic progression, and it is like climbing stairs of equal height.\n\n"

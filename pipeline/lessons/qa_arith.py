@@ -2,11 +2,69 @@
 
 from __future__ import annotations
 
-from . import EX, FC, LessonSpec
+from . import EX, FC, LessonSpec, Method
 
 SPECS = [
     LessonSpec(
         mt="qa.arith.si-ci-instalments",
+        prereq="Percentages, especially the multiplier habit and repeated growth over several periods.",
+        methods=[
+            Method(
+                name="Plain simple interest",
+                recognise="a principal, a rate and a time, with no mention of compounding.",
+                steps=[
+                    "Apply $SI = \\dfrac{PRT}{100}$.",
+                    "Read the question again: it may want the amount $P + SI$, not the interest.",
+                ],
+                worked="Rs. 6000 at 9 percent for 4 years gives $\\dfrac{6000 \\times 9 \\times 4}{100} = 2160$.",
+            ),
+            Method(
+                name="Compound amount after n years",
+                recognise="the words 'compound interest', or interest that is added to the principal each year.",
+                steps=[
+                    "Use $A = P\\left(1 + \\dfrac{R}{100}\\right)^T$.",
+                    "Subtract $P$ if the question wants the interest rather than the amount.",
+                ],
+                worked="Rs. 5000 at 8 percent for 2 years gives $5000 \\times 1.08^2 = 5832$, so $CI = 832$.",
+            ),
+            Method(
+                name="Difference between CI and SI",
+                recognise="both interests on the same principal, rate and time, asking for the gap.",
+                steps=[
+                    "For 2 years use $P\\left(\\dfrac{R}{100}\\right)^2$ directly.",
+                    "For 3 years the gap is $P\\left(\\dfrac{R}{100}\\right)^2\\left(3 + \\dfrac{R}{100}\\right)$.",
+                    "For anything longer, compute both and subtract — do not stretch the 2-year formula.",
+                ],
+                worked="Rs. 10000 at 10 percent for 2 years differ by $10000 \\times 0.01 = 100$.",
+            ),
+            Method(
+                name="Rate from a multiple of the principal",
+                recognise="'a sum doubles in 8 years' or 'becomes three times in 12 years'.",
+                steps=[
+                    "Under simple interest, doubling means the interest equals the principal, so $\\dfrac{RT}{100} = 1$ for doubling and $= k - 1$ to become $k$ times.",
+                    "Solve for whichever of $R$ or $T$ is missing.",
+                    "Under compound interest instead, use $\\left(1 + \\dfrac{R}{100}\\right)^T = k$.",
+                ],
+                worked="Doubling in 8 years under SI needs $\\dfrac{8R}{100} = 1$, so $R = 12.5$ percent.",
+            ),
+            Method(
+                name="Compounding more often than yearly",
+                recognise="'compounded half-yearly', 'quarterly', or 'monthly'.",
+                steps=[
+                    "Divide the annual rate by the number of periods in a year.",
+                    "Multiply the number of years by that same number.",
+                    "Then apply the ordinary compound formula with the adjusted rate and periods.",
+                ],
+                worked="Rs. 8000 at 10 percent for 1 year half-yearly is $8000 \\times 1.05^2 = 8820$.",
+            ),
+        ],
+        checklist=[
+            "Compute simple and compound interest, and say which one a question is describing.",
+            "Explain in one sentence why the two differ from year two onwards.",
+            "Use the 2-year gap formula, and know not to apply it to a 3-year question.",
+            "Find a rate or a time from 'the sum doubles in n years', under either convention.",
+            "Adjust rate and periods correctly for half-yearly or quarterly compounding.",
+        ],
         intuition=(
             "Imagine you lend a friend Rs. 1000 and charge Rs. 100 a year. Under **simple interest** "
             "you charge Rs. 100 every single year, forever, because you always charge on the original "
@@ -83,6 +141,54 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.arith.mixtures-alligation",
+        prereq="Ratios, and weighted averages — alligation is a weighted average read backwards.",
+        methods=[
+            Method(
+                name="Blending two ingredients in a known ratio",
+                recognise="two quantities with known strengths or prices, mixed in a stated ratio.",
+                steps=[
+                    "Compute the total quantity of the valued component from each part.",
+                    "Divide by the total mixture to get the resulting strength or price.",
+                ],
+                worked="3 litres of 40 percent and 2 litres of 15 percent give $\\dfrac{1.2 + 0.3}{5} = 30$ percent.",
+            ),
+            Method(
+                name="Alligation: finding the ratio for a target",
+                recognise="two known strengths and a required strength in between, asking for the mixing ratio.",
+                steps=[
+                    "Write the cheaper or weaker value, the target, and the dearer or stronger value.",
+                    "The ratio of the two quantities is (dearer $-$ target) : (target $-$ cheaper).",
+                    "Note it comes out **crosswise**: the quantity of the cheaper ingredient pairs with the gap on the dearer side.",
+                ],
+                worked="Mixing 20 percent and 50 percent to reach 30 percent needs $(50-30) : (30-20) = 2 : 1$.",
+            ),
+            Method(
+                name="Adding water or a pure ingredient",
+                recognise="water, which contributes none of the valued component, is added to dilute a mixture.",
+                steps=[
+                    "Note that the amount of the valued component does not change — only the total does.",
+                    "Write valued amount $=$ new strength $\\times$ new total, and solve for the new total.",
+                    "Subtract the original total to find how much water was added.",
+                ],
+                worked="9 litres of 40 percent milk holds 3.6 litres of milk; to reach 30 percent the total must be 12 litres, so add 3 litres of water.",
+            ),
+            Method(
+                name="Repeated replacement",
+                recognise="some of the mixture is removed and replaced with pure liquid, possibly several times over.",
+                steps=[
+                    "Each operation multiplies the remaining original liquid by $\\left(1 - \\dfrac{\\text{removed}}{\\text{total}}\\right)$.",
+                    "After $n$ operations the original liquid is $P\\left(1 - \\dfrac{x}{P}\\right)^n$.",
+                    "The rest of the container is the replacement liquid.",
+                ],
+                worked="From 40 litres, removing and replacing 8 litres twice leaves $40 \\times 0.8^2 = 25.6$ litres of the original.",
+            ),
+        ],
+        checklist=[
+            "Find the strength of a mixture blended in a given ratio.",
+            "Run alligation in reverse to get the ratio for a target strength.",
+            "Handle added water by holding the valued component constant.",
+            "Apply the repeated-replacement formula and explain why it is a power, not a multiple.",
+        ],
         intuition=(
             "Picture two jugs of squash. One is weak, one is strong. Pour them into a bigger jug and the "
             "result sits somewhere between the two — closer to whichever jug you poured more of.\n\n"
@@ -150,6 +256,54 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.arith.tsd-relative-speed",
+        prereq="Distance = speed x time, and comfort converting between km/h and m/s.",
+        methods=[
+            Method(
+                name="Approaching from opposite ends",
+                recognise="two objects starting apart and moving towards each other.",
+                steps=[
+                    "Add the speeds to get the closing speed.",
+                    "Divide the initial gap by that closing speed.",
+                ],
+                worked="A 300 km gap closing at $60 + 40 = 100$ km/h takes 3 hours.",
+            ),
+            Method(
+                name="Catching up",
+                recognise="one object chasing another in the same direction, often starting later.",
+                steps=[
+                    "Subtract the speeds to get the closing speed.",
+                    "Find the head start in distance: the leader's speed times its head-start time.",
+                    "Divide that distance by the closing speed.",
+                ],
+                worked="A car at 80 chasing one at 60 that left an hour earlier closes a 60 km gap at 20 km/h, taking 3 hours.",
+            ),
+            Method(
+                name="Average speed over a there-and-back journey",
+                recognise="the same distance covered twice at different speeds.",
+                steps=[
+                    "Never average the two speeds.",
+                    "Use total distance over total time, or the harmonic mean $\\dfrac{2v_1v_2}{v_1+v_2}$ for two equal legs.",
+                    "Check the answer is below the plain average — it always is.",
+                ],
+                worked="4 km/h out and 6 km/h back averages $\\dfrac{2 \\times 24}{10} = 4.8$ km/h.",
+            ),
+            Method(
+                name="Late and early arrivals",
+                recognise="'at 5 km/h he is 10 minutes late, at 6 km/h he is 5 minutes early'.",
+                steps=[
+                    "The distance is the same both times, so write it as speed times time for each case.",
+                    "Express both times relative to the on-time duration $t$, converting minutes to hours.",
+                    "Set the two distances equal and solve for $t$.",
+                ],
+                worked="$5\\left(t + \\dfrac{1}{6}\\right) = 6\\left(t - \\dfrac{1}{12}\\right)$ gives $t = \\dfrac{4}{3}$ hours and a distance of 7.5 km.",
+            ),
+        ],
+        checklist=[
+            "Decide instantly whether speeds add or subtract.",
+            "Turn a head start in time into a head start in distance.",
+            "Compute an average speed correctly for equal distances and explain why it is not the mean.",
+            "Set up a late-and-early question using the fact that the distance is unchanged.",
+        ],
         intuition=(
             "Sit in a moving train and look out of the window. A train coming the other way flashes past "
             "in a second. A train going the same way as you, at almost your speed, seems to crawl alongside "
@@ -214,6 +368,52 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.arith.tsd-trains",
+        prereq="Relative speed, and the km/h to m/s conversion — train questions are almost always in metres and seconds.",
+        methods=[
+            Method(
+                name="Crossing a pole or a standing person",
+                recognise="a train passing something with no length of its own.",
+                steps=[
+                    "The distance covered is exactly the train's own length.",
+                    "Divide the length by the speed in m/s.",
+                ],
+                worked="A 180 m train at 20 m/s passes a pole in 9 seconds.",
+            ),
+            Method(
+                name="Crossing a platform or bridge",
+                recognise="the object being crossed has a stated length.",
+                steps=[
+                    "The distance is the train's length **plus** the platform's length.",
+                    "Divide that total by the speed.",
+                ],
+                worked="A 180 m train crossing a 220 m platform covers 400 m; at 20 m/s that is 20 seconds.",
+            ),
+            Method(
+                name="Two trains crossing each other",
+                recognise="two trains, each with a length, passing one another.",
+                steps=[
+                    "The distance is the sum of both lengths.",
+                    "The speed is the relative speed: add for opposite directions, subtract for the same direction.",
+                    "Divide.",
+                ],
+                worked="Trains of 150 m and 200 m at 20 and 15 m/s head-on cover 350 m at 35 m/s: 10 seconds.",
+            ),
+            Method(
+                name="Passing a walking or running person",
+                recognise="a train overtaking or meeting someone who is themselves moving.",
+                steps=[
+                    "The distance is the train's length only — a person has no length.",
+                    "The speed is relative: subtract if they move the same way, add if opposite.",
+                ],
+                worked="A 200 m train at 25 m/s overtaking a person at 5 m/s covers 200 m at 20 m/s: 10 seconds.",
+            ),
+        ],
+        checklist=[
+            "Decide what distance is involved: the train alone, or the train plus something.",
+            "Convert km/h to m/s without hesitating.",
+            "Combine both rules at once for two moving trains.",
+            "Explain why a person contributes no length but does contribute speed.",
+        ],
         intuition=(
             "Think about walking past a doorway versus walking past a long wall. To clear the doorway you "
             "only need to move your own body length. To clear the wall you need your length plus the wall's "
@@ -273,6 +473,54 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.arith.tsd-boats-streams",
+        prereq="Relative speed. The stream is just another moving frame.",
+        methods=[
+            Method(
+                name="Downstream and upstream speeds",
+                recognise="a boat speed in still water and a stream speed are given.",
+                steps=[
+                    "Downstream $=$ boat $+$ stream.",
+                    "Upstream $=$ boat $-$ stream.",
+                    "Then treat each leg as an ordinary distance-speed-time problem.",
+                ],
+                worked="A boat at 12 km/h in a 3 km/h stream does 15 km/h down and 9 km/h up.",
+            ),
+            Method(
+                name="Finding boat and stream speeds from the two rates",
+                recognise="downstream and upstream speeds given, asking for the boat or the stream.",
+                steps=[
+                    "Boat speed $= \\dfrac{\\text{down} + \\text{up}}{2}$.",
+                    "Stream speed $= \\dfrac{\\text{down} - \\text{up}}{2}$.",
+                    "These are just the sum and difference undone.",
+                ],
+                worked="Down 18 and up 10 give a boat of 14 and a stream of 4.",
+            ),
+            Method(
+                name="Round trip over the same distance",
+                recognise="a boat goes somewhere and returns, with a total time given.",
+                steps=[
+                    "Write total time $= \\dfrac{d}{\\text{down}} + \\dfrac{d}{\\text{up}}$.",
+                    "Solve for whichever quantity is missing.",
+                    "The average speed for the round trip is the harmonic mean of the two rates, never the boat's still-water speed.",
+                ],
+                worked="24 km each way at 15 and 9 km/h takes $1.6 + 2.67 = 4.27$ hours.",
+            ),
+            Method(
+                name="Stream speed from two travel times",
+                recognise="the times for equal distances downstream and upstream are given.",
+                steps=[
+                    "The distances are equal, so speed is inversely proportional to time.",
+                    "Write $\\dfrac{\\text{down}}{\\text{up}} = \\dfrac{t_{up}}{t_{down}}$.",
+                    "Combine with the sum-and-difference relations to extract the stream speed.",
+                ],
+                worked="If upstream takes twice as long, then down $= 2 \\times$ up, so the stream is a third of the boat's speed.",
+            ),
+        ],
+        checklist=[
+            "Write downstream and upstream speeds from boat and stream, and reverse it.",
+            "Handle a round trip without averaging the two speeds.",
+            "Use the inverse relation between speed and time over a fixed distance.",
+        ],
         intuition=(
             "Walking on an airport travelator: walk with it and you fly along, walk against it and you barely "
             "make progress. Your own walking speed never changed — the floor is helping or fighting you.\n\n"
@@ -330,6 +578,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.arith.tsd-races",
+        prereq="Relative speed, and the fact that speed is proportional to distance when time is fixed.",
+        methods=[
+            Method(
+                name="Beats by a distance",
+                recognise="'A beats B by 40 m in a 400 m race'.",
+                steps=[
+                    "In the time A covers the full distance, B covers the distance minus the margin.",
+                    "So the speed ratio is $\\dfrac{\\text{full}}{\\text{full} - \\text{margin}}$.",
+                    "Use that ratio for any other race between the same two.",
+                ],
+                worked="A beating B by 40 m in 400 m means their speeds are in the ratio $400 : 360 = 10 : 9$.",
+            ),
+            Method(
+                name="A head start",
+                recognise="'A gives B a start of 50 m', or a start measured in seconds.",
+                steps=[
+                    "A runs the full distance; B runs the distance minus the start.",
+                    "Set their times equal for a dead heat, or compare them for a winner.",
+                    "A start in seconds converts to distance by multiplying by that runner's speed.",
+                ],
+                worked="Over 200 m with a 20 m start, B runs 180 m while A runs 200 m; a dead heat needs the speed ratio $200 : 180$.",
+            ),
+            Method(
+                name="Beats by a time",
+                recognise="'A beats B by 5 seconds'.",
+                steps=[
+                    "Convert the time margin into a distance using B's speed.",
+                    "Then treat it as a beats-by-distance question.",
+                ],
+                worked="If B runs at 8 m/s and loses by 5 seconds, B was 40 m behind when A finished.",
+            ),
+        ],
+        checklist=[
+            "Convert a beats-by-distance statement into a speed ratio.",
+            "Convert a time margin into a distance margin and back.",
+            "Work out the start one runner must give another for a dead heat.",
+        ],
         intuition=(
             "Two children race across a playground. When the faster one touches the wall, the slower one is "
             "still a few steps behind. Those few steps are the whole story: the two ran for the **same amount "
@@ -383,6 +668,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.arith.tsd-circular-tracks",
+        prereq="Relative speed, and lowest common multiples for the meeting-at-the-start questions.",
+        methods=[
+            Method(
+                name="Meeting when running in opposite directions",
+                recognise="two runners starting together and going opposite ways round a circle.",
+                steps=[
+                    "They meet whenever their combined distance adds up to one full lap.",
+                    "Time to first meeting $= \\dfrac{\\text{track length}}{v_1 + v_2}$.",
+                    "Subsequent meetings come at that same interval.",
+                ],
+                worked="On a 400 m track at 5 and 3 m/s they meet every $\\dfrac{400}{8} = 50$ seconds.",
+            ),
+            Method(
+                name="Meeting when running the same way",
+                recognise="both runners going the same way round.",
+                steps=[
+                    "The faster must gain a full lap on the slower.",
+                    "Time to first meeting $= \\dfrac{\\text{track length}}{|v_1 - v_2|}$.",
+                ],
+                worked="At 5 and 3 m/s on 400 m they meet every $\\dfrac{400}{2} = 200$ seconds.",
+            ),
+            Method(
+                name="Meeting again at the starting point",
+                recognise="the question asks when they are together **at the start**, not merely together.",
+                steps=[
+                    "Find each runner's lap time: track length divided by speed.",
+                    "The answer is the LCM of those lap times — as fractions if they are not whole numbers.",
+                    "This is always a multiple of, and usually much later than, the first meeting anywhere on the track.",
+                ],
+                worked="Lap times of 80 and $133\\tfrac{1}{3}$ seconds have an LCM of 400 seconds.",
+            ),
+        ],
+        checklist=[
+            "Distinguish 'meet anywhere' from 'meet at the starting point'.",
+            "Compute first-meeting times in both directions.",
+            "Take an LCM of fractional lap times without rounding first.",
+        ],
         intuition=(
             "Think of the hands of a clock. The minute hand keeps catching up to the hour hand, over and over. "
             "They do not need to reach a finish line — they meet whenever the faster one has gained a full lap "
@@ -439,6 +761,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.arith.time-work-efficiency-wages",
+        prereq="The idea that work done per day is a rate, and that rates add.",
+        methods=[
+            Method(
+                name="One worker's time from the pair's",
+                recognise="A and B together take a known time, and A alone is known.",
+                steps=[
+                    "Subtract A's rate from the combined rate.",
+                    "Invert what remains to get B's time alone.",
+                ],
+                worked="Together 6 days, A alone 10: B's rate is $\\dfrac{1}{6} - \\dfrac{1}{10} = \\dfrac{1}{15}$, so 15 days.",
+            ),
+            Method(
+                name="Splitting wages",
+                recognise="a payment shared between workers who did the job together.",
+                steps=[
+                    "Wages divide in the ratio of **work done**, which for equal time is the ratio of rates.",
+                    "Compute each rate, form the ratio, and split the money in it.",
+                    "A faster worker is paid more, which is the sanity check.",
+                ],
+                worked="Rates of $\\dfrac{1}{10}$ and $\\dfrac{1}{15}$ are in the ratio $3 : 2$, so Rs. 1500 splits as 900 and 600.",
+            ),
+            Method(
+                name="Efficiency expressed as a percentage",
+                recognise="'A is 25 percent more efficient than B'.",
+                steps=[
+                    "More efficient means a higher rate, so the rate ratio is $1.25 : 1$.",
+                    "Times are the inverse of rates, so the time ratio is $1 : 1.25$, or $4 : 5$.",
+                    "The more efficient worker takes less time — check your answer against that.",
+                ],
+                worked="If A is 25 percent more efficient and B takes 20 days, A takes $20 \\times \\dfrac{4}{5} = 16$ days.",
+            ),
+        ],
+        checklist=[
+            "Recover one worker's solo time from a combined time.",
+            "Split wages in the ratio of work done, not of time spent.",
+            "Convert an efficiency percentage into a time ratio, the right way up.",
+        ],
         intuition=(
             "If you can paint a room in 4 hours, then in one hour you paint a quarter of it. That is your "
             "**rate**. If your friend takes 6 hours, their rate is one sixth per hour.\n\n"
@@ -501,6 +860,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.arith.time-work-chain-rule",
+        prereq="Ratios and inverse variation — the chain rule is several inverse variations at once.",
+        methods=[
+            Method(
+                name="Men and days",
+                recognise="a number of workers taking some days, asking about a different number of workers.",
+                steps=[
+                    "Note that men $\\times$ days is constant for a fixed job.",
+                    "Write $m_1 d_1 = m_2 d_2$ and solve.",
+                    "More men means fewer days — check the direction before trusting the number.",
+                ],
+                worked="15 men taking 24 days means 20 men take $\\dfrac{360}{20} = 18$ days.",
+            ),
+            Method(
+                name="The full chain: men, days, hours and amount of work",
+                recognise="three or more quantities varying at once, often with a different-sized job.",
+                steps=[
+                    "Write $\\dfrac{m_1 d_1 h_1}{W_1} = \\dfrac{m_2 d_2 h_2}{W_2}$.",
+                    "Substitute everything known and solve for the one unknown.",
+                    "Decide for each quantity whether it should push the answer up or down, and check the result agrees.",
+                ],
+                worked="12 men, 8 hours, 10 days build 1 wall; for 2 walls with 16 men at 6 hours the days are $\\dfrac{12 \\times 8 \\times 10 \\times 2}{16 \\times 6} = 20$.",
+            ),
+        ],
+        checklist=[
+            "Apply the men-days product for a fixed job.",
+            "Set up the full chain-rule equation with hours and a changed workload.",
+            "Predict the direction of the answer before computing it.",
+        ],
         intuition=(
             "Digging a hole takes a certain amount of total effort — say, 60 hours of one person's shovelling. "
             "It does not matter whether that is one person for 60 hours, or ten people for 6 hours. The hole "

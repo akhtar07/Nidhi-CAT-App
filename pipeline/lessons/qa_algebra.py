@@ -2,11 +2,49 @@
 
 from __future__ import annotations
 
-from . import EX, FC, LessonSpec
+from . import EX, FC, LessonSpec, Method
 
 SPECS = [
     LessonSpec(
         mt="qa.algebra.linear-equations",
+        prereq="Comfort rearranging an equation, and turning a sentence into symbols.",
+        methods=[
+            Method(
+                name="Two equations in two unknowns",
+                recognise="two separate facts about two unknown quantities.",
+                steps=[
+                    "Line the equations up with the variables in the same order.",
+                    "Eliminate one variable by adding or subtracting suitable multiples, or substitute one equation into the other.",
+                    "Solve for the survivor, then back-substitute for the other.",
+                ],
+                worked="$2x + 3y = 23$ and $x - y = 4$ give $x = y + 4$, so $2(y+4) + 3y = 23$, hence $5y = 15$, $y = 3$ and $x = 7$.",
+            ),
+            Method(
+                name="Sum and difference",
+                recognise="'the sum of two numbers is 40 and their difference is 8'.",
+                steps=[
+                    "Add the two facts to get twice the larger; halve it.",
+                    "Subtract them to get twice the smaller; halve that.",
+                    "This is faster than full elimination and worth recognising on sight.",
+                ],
+                worked="Sum 40, difference 8 give $\\dfrac{48}{2} = 24$ and $\\dfrac{32}{2} = 16$.",
+            ),
+            Method(
+                name="Coins, tickets and mixed-item word problems",
+                recognise="a count of items and a total value, with items of differing worth.",
+                steps=[
+                    "Write one equation for the number of items and one for the total value.",
+                    "The value equation multiplies each count by its denomination.",
+                    "Solve the pair as usual.",
+                ],
+                worked="30 coins of Rs. 1 and Rs. 5 worth Rs. 78 give $x + y = 30$ and $x + 5y = 78$, so $y = 12$.",
+            ),
+        ],
+        checklist=[
+            "Solve a two-variable system by both elimination and substitution.",
+            "Spot a sum-and-difference pair and answer it in one line.",
+            "Turn a worded count-and-value situation into two equations.",
+        ],
         intuition=(
             "A balance scale with the same weight on both pans stays level. Add 3 kg to one side and you "
             "must add 3 kg to the other, or it tips. An equation is that scale, and the equals sign is the "
@@ -62,6 +100,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.algebra.integer-solutions",
+        prereq="Linear equations, and comfort with divisibility.",
+        methods=[
+            Method(
+                name="Counting positive integer solutions",
+                recognise="$ax + by = c$ with both unknowns required to be positive whole numbers.",
+                steps=[
+                    "Solve for one variable in terms of the other.",
+                    "Find the smallest value of the free variable that makes the other a positive integer.",
+                    "Step forward by $\\dfrac{b}{\\gcd(a,b)}$ and count how many fit before the other goes non-positive.",
+                ],
+                worked="$3x + 5y = 100$ with both positive: $100 - 5y$ must be a positive multiple of 3, which forces $y = 2, 5, 8, 11, 14, 17$ — six solutions.",
+            ),
+            Method(
+                name="Allowing zero as well",
+                recognise="'non-negative' rather than 'positive'.",
+                steps=[
+                    "Do exactly the same count, but let each variable reach 0.",
+                    "This usually adds one or two solutions at the ends of the range.",
+                ],
+                worked="The same equation with non-negatives adds $y = 20$, which gives $x = 0$ — seven solutions rather than six.",
+            ),
+        ],
+        checklist=[
+            "Decide which variable to make the subject so divisibility is easiest to read.",
+            "Find the step size between consecutive solutions.",
+            "Count solutions for positive and non-negative constraints separately.",
+        ],
         intuition=(
             "You have only Rs. 5 and Rs. 7 coins and need to pay exactly Rs. 43. You cannot hand over half a "
             "coin, so most combinations simply will not work. The question is not 'what is $x$' but 'how many "
@@ -112,6 +177,54 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.algebra.quadratic-equations",
+        prereq="Factorising, and the idea that a product is zero only if a factor is zero.",
+        methods=[
+            Method(
+                name="Sum and product of roots",
+                recognise="the question asks about the roots without needing their individual values.",
+                steps=[
+                    "For $ax^2 + bx + c = 0$, the sum is $-\\dfrac{b}{a}$ and the product is $\\dfrac{c}{a}$.",
+                    "Express what is asked in terms of those two. For instance $\\alpha^2 + \\beta^2 = (\\alpha+\\beta)^2 - 2\\alpha\\beta$.",
+                    "Substitute. You never need to solve the equation.",
+                ],
+                worked="For $x^2 - 7x + 12$, sum 7 and product 12, so $\\alpha^2 + \\beta^2 = 49 - 24 = 25$.",
+            ),
+            Method(
+                name="Nature of the roots from the discriminant",
+                recognise="'real and distinct', 'equal', 'no real roots', or a condition on a parameter.",
+                steps=[
+                    "Compute $D = b^2 - 4ac$.",
+                    "$D > 0$ means two distinct real roots, $D = 0$ means one repeated root, $D < 0$ means none.",
+                    "If a parameter is involved, turn the condition on $D$ into an inequality in that parameter.",
+                ],
+                worked="$x^2 + kx + 9$ has equal roots when $k^2 - 36 = 0$, so $k = \\pm 6$.",
+            ),
+            Method(
+                name="Finding a specific root",
+                recognise="the larger root, the smaller root, or a numerical value is wanted.",
+                steps=[
+                    "Try factorising first — CAT quadratics usually factorise.",
+                    "Otherwise use $x = \\dfrac{-b \\pm \\sqrt{D}}{2a}$.",
+                    "The larger root takes the plus sign when $a > 0$.",
+                ],
+                worked="$x^2 - 5x + 6$ factorises to $(x-2)(x-3)$, so the roots are 2 and 3.",
+            ),
+            Method(
+                name="Building an equation from its roots",
+                recognise="roots are given, or described, and the equation is wanted.",
+                steps=[
+                    "Compute the sum $S$ and product $P$ of the required roots.",
+                    "The equation is $x^2 - Sx + P = 0$.",
+                    "Scale up if integer coefficients are needed.",
+                ],
+                worked="Roots 3 and $-5$ give $S = -2$, $P = -15$, so $x^2 + 2x - 15 = 0$.",
+            ),
+        ],
+        checklist=[
+            "Answer a question about the roots without solving the equation.",
+            "Read off the nature of the roots from the discriminant.",
+            "Construct an equation from a required sum and product.",
+        ],
         intuition=(
             "Throw a ball straight up. It rises, slows, stops, and falls back. Plot its height against time "
             "and you get an arch — a parabola. A quadratic equation asks: at what times was the ball at "
@@ -173,6 +286,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.algebra.polynomials-remainder-factor",
+        prereq="Substituting a value into an expression, and basic algebra.",
+        methods=[
+            Method(
+                name="Remainder when dividing by a linear factor",
+                recognise="'find the remainder when $p(x)$ is divided by $x - a$'.",
+                steps=[
+                    "The remainder theorem says the answer is simply $p(a)$.",
+                    "Substitute and evaluate — no long division needed.",
+                    "For $x + a$, substitute $-a$.",
+                ],
+                worked="$p(x) = x^3 - 2x + 5$ divided by $x - 2$ leaves $p(2) = 8 - 4 + 5 = 9$.",
+            ),
+            Method(
+                name="Finding an unknown coefficient",
+                recognise="a polynomial with a letter in it, plus a stated factor or remainder.",
+                steps=[
+                    "If $x - a$ is a factor, then $p(a) = 0$; if the remainder is $r$, then $p(a) = r$.",
+                    "Substitute and solve the resulting equation for the unknown.",
+                ],
+                worked="If $x - 3$ divides $x^2 + kx - 6$ then $9 + 3k - 6 = 0$, so $k = -1$.",
+            ),
+        ],
+        checklist=[
+            "Use the remainder theorem instead of dividing.",
+            "Translate 'is a factor' into 'the polynomial vanishes there'.",
+            "Solve for a missing coefficient from a factor or remainder condition.",
+        ],
         intuition=(
             "Divide 17 by 5 and you get 3 remainder 2. Polynomials divide the same way, but there is a "
             "wonderful shortcut: to find the remainder when dividing by $(x - a)$, you do not divide at all. "
@@ -227,6 +367,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.algebra.inequalities-modulus",
+        prereq="Solving equations, and the number line as a picture.",
+        methods=[
+            Method(
+                name="Quadratic inequalities",
+                recognise="a quadratic expression compared to zero.",
+                steps=[
+                    "Find the roots, which split the line into intervals.",
+                    "For an upward parabola the expression is negative **between** the roots and positive outside.",
+                    "Pick the intervals the inequality asks for, minding whether the endpoints are included.",
+                ],
+                worked="$x^2 - 5x + 6 < 0$ has roots 2 and 3, so the answer is $2 < x < 3$.",
+            ),
+            Method(
+                name="Counting integer solutions of a modulus inequality",
+                recognise="$|x - a| < b$ or similar, asking how many integers satisfy it.",
+                steps=[
+                    "Read $|x - a| < b$ as 'distance from $a$ is less than $b$', giving $a - b < x < a + b$.",
+                    "Count the integers strictly inside, or inclusive if the sign allows equality.",
+                ],
+                worked="$|x - 4| \\le 3$ gives $1 \\le x \\le 7$: seven integers.",
+            ),
+        ],
+        checklist=[
+            "Read a modulus as a distance on the number line.",
+            "Decide where a quadratic is positive or negative from its roots.",
+            "Count integers in an interval without off-by-one errors.",
+        ],
         intuition=(
             "$|x|$ just means 'how far is $x$ from zero, ignoring direction'. Both 5 and $-5$ are five steps "
             "from zero, so both have modulus 5.\n\n"
@@ -288,6 +455,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.algebra.logarithms",
+        prereq="Powers and indices — a logarithm is only an index written the other way round.",
+        methods=[
+            Method(
+                name="Evaluating a logarithm directly",
+                recognise="$\\log_a b$ with a clean answer.",
+                steps=[
+                    "Ask: what power of the base gives this number?",
+                    "Rewrite the number as a power of the base if it is not obvious.",
+                ],
+                worked="$\\log_2 32 = 5$ because $2^5 = 32$.",
+            ),
+            Method(
+                name="Combining logs with the same base",
+                recognise="several logs added or subtracted, or a coefficient in front of one.",
+                steps=[
+                    "Use $\\log a + \\log b = \\log ab$ and $\\log a - \\log b = \\log \\dfrac{a}{b}$.",
+                    "Move any coefficient inside as a power: $n\\log a = \\log a^n$.",
+                    "Then evaluate the single log that remains.",
+                ],
+                worked="$\\log_3 9 + \\log_3 27 = \\log_3 243 = 5$.",
+            ),
+            Method(
+                name="Solving an equation containing a log",
+                recognise="the unknown appears inside a logarithm.",
+                steps=[
+                    "Collect everything into a single logarithm on one side.",
+                    "Convert to exponential form: $\\log_a b = c$ means $a^c = b$.",
+                    "Solve, then discard any root that makes a logarithm's argument zero or negative.",
+                ],
+                worked="$\\log_2(x - 3) = 4$ gives $x - 3 = 16$, so $x = 19$.",
+            ),
+        ],
+        checklist=[
+            "Convert between logarithmic and exponential form in either direction.",
+            "Combine and split logs using the product, quotient and power rules.",
+            "Reject solutions that would need the log of a non-positive number.",
+        ],
         intuition=(
             "A logarithm answers one question: **how many times do I multiply this number by itself to get "
             "that number?**\n\n"
@@ -349,6 +553,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.algebra.surds-indices",
+        prereq="The index laws, and multiplying out brackets.",
+        methods=[
+            Method(
+                name="Simplifying with index laws",
+                recognise="powers multiplied, divided, or raised to further powers.",
+                steps=[
+                    "Rewrite every base as a power of the same prime where possible.",
+                    "Apply $a^m a^n = a^{m+n}$, $\\dfrac{a^m}{a^n} = a^{m-n}$ and $(a^m)^n = a^{mn}$.",
+                    "Compare exponents if the equation has matching bases on both sides.",
+                ],
+                worked="$\\dfrac{8^4}{4^5} = \\dfrac{2^{12}}{2^{10}} = 2^2 = 4$.",
+            ),
+            Method(
+                name="Rationalising a denominator",
+                recognise="a surd in the bottom of a fraction, often $a + \\sqrt{b}$.",
+                steps=[
+                    "Multiply top and bottom by the conjugate, $a - \\sqrt{b}$.",
+                    "The denominator becomes $a^2 - b$, which is rational.",
+                    "Simplify the numerator.",
+                ],
+                worked="$\\dfrac{1}{3 + \\sqrt{2}} = \\dfrac{3 - \\sqrt{2}}{9 - 2} = \\dfrac{3 - \\sqrt{2}}{7}$.",
+            ),
+        ],
+        checklist=[
+            "Bring several powers to a common base.",
+            "Rationalise a denominator using the conjugate.",
+            "Compare exponents once bases match, rather than evaluating the powers.",
+        ],
         intuition=(
             "$2^5$ just means five 2s multiplied together. So $2^5 \\times 2^3$ is five 2s next to three 2s — "
             "eight 2s in total, which is $2^8$. You add the exponents because you are literally counting how "
@@ -409,6 +641,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.algebra.functions",
+        prereq="Substitution — a function is a rule you feed a number into.",
+        methods=[
+            Method(
+                name="Composite functions",
+                recognise="$f(g(x))$, or 'apply g then f'.",
+                steps=[
+                    "Work from the inside out: evaluate the inner function first.",
+                    "Feed that result into the outer function.",
+                    "Order matters — $f(g(x))$ is generally not $g(f(x))$.",
+                ],
+                worked="With $f(x) = 2x + 1$ and $g(x) = x^2$, $f(g(3)) = f(9) = 19$, while $g(f(3)) = g(7) = 49$.",
+            ),
+            Method(
+                name="Inverse functions",
+                recognise="'find $f^{-1}$', or a question that undoes the rule.",
+                steps=[
+                    "Write $y = f(x)$.",
+                    "Swap $x$ and $y$, then make $y$ the subject.",
+                    "Check by confirming $f(f^{-1}(x)) = x$.",
+                ],
+                worked="For $f(x) = 3x - 4$, swapping gives $x = 3y - 4$, so $f^{-1}(x) = \\dfrac{x + 4}{3}$.",
+            ),
+        ],
+        checklist=[
+            "Evaluate a composite in the right order.",
+            "Find an inverse and verify it by composition.",
+        ],
         intuition=(
             "A function is a machine. Put a number in the top, and a number comes out of the bottom. "
             "$f(x) = 2x + 3$ is the machine that doubles whatever you feed it and then adds 3.\n\n"
@@ -464,6 +723,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.algebra.maxima-minima",
+        prereq="Quadratics, and the shape of a parabola.",
+        methods=[
+            Method(
+                name="Vertex of a quadratic",
+                recognise="a quadratic expression whose greatest or least value is wanted.",
+                steps=[
+                    "The turning point sits at $x = -\\dfrac{b}{2a}$.",
+                    "Substitute back to get the extreme value.",
+                    "If $a > 0$ the parabola opens upward, so this is a minimum; if $a < 0$, a maximum.",
+                ],
+                worked="$x^2 - 6x + 11$ turns at $x = 3$, giving a minimum of $9 - 18 + 11 = 2$.",
+            ),
+            Method(
+                name="AM-GM for a sum with a fixed product",
+                recognise="an expression like $x + \\dfrac{k}{x}$ for positive $x$.",
+                steps=[
+                    "The arithmetic mean is at least the geometric mean, so $x + \\dfrac{k}{x} \\ge 2\\sqrt{k}$.",
+                    "Equality holds when the two terms are equal, which fixes the value of $x$.",
+                    "Check the variable really is restricted to positive values — AM-GM needs that.",
+                ],
+                worked="$x + \\dfrac{9}{x}$ has minimum $2\\sqrt{9} = 6$, at $x = 3$.",
+            ),
+        ],
+        checklist=[
+            "Locate a parabola's vertex and say whether it is a maximum or a minimum.",
+            "Apply AM-GM and state when equality is attained.",
+        ],
         intuition=(
             "You have 40 metres of fencing and want to enclose the biggest possible rectangular garden. A long "
             "thin strip encloses almost nothing. So does a very short wide one. Somewhere in between is the "

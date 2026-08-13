@@ -2,11 +2,28 @@
 
 from __future__ import annotations
 
-from . import EX, FC, LessonSpec
+from . import EX, FC, LessonSpec, Method
 
 SPECS = [
     LessonSpec(
         mt="qa.geometry.lines-angles",
+        prereq="Nothing — this is where geometry starts.",
+        methods=[
+            Method(
+                name="Angles on parallel lines with a transversal",
+                recognise="two parallel lines cut by a third.",
+                steps=[
+                    "Corresponding and alternate angles are equal; co-interior angles add to 180 degrees.",
+                    "Mark every angle you can deduce on the figure before writing any equation.",
+                    "Angles on a straight line add to 180, and around a point to 360.",
+                ],
+                worked="If one co-interior angle is 110 degrees, the other is 70.",
+            ),
+        ],
+        checklist=[
+            "Name and use corresponding, alternate and co-interior angles.",
+            "Chain several angle facts across a figure.",
+        ],
         intuition=(
             "Stand facing north and spin all the way round back to north. You have turned 360 degrees. Turn "
             "only half of that and you are facing south — a straight line, 180 degrees.\n\n"
@@ -60,6 +77,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.geometry.triangles",
+        prereq="Angles, and square roots.",
+        methods=[
+            Method(
+                name="Right-angled triangles and Pythagoras",
+                recognise="a right angle marked, or a triple like 3-4-5 hiding in the numbers.",
+                steps=[
+                    "Identify the hypotenuse — always opposite the right angle.",
+                    "Apply $a^2 + b^2 = c^2$.",
+                    "Watch for the common triples 3-4-5, 5-12-13, 8-15-17 and their multiples, which save time.",
+                ],
+                worked="Legs 9 and 12 give a hypotenuse of 15, a 3-4-5 triangle scaled by 3.",
+            ),
+            Method(
+                name="Area from three sides",
+                recognise="all three sides given, no height.",
+                steps=[
+                    "Compute the semi-perimeter $s = \\dfrac{a+b+c}{2}$.",
+                    "Apply Heron's formula, $\\sqrt{s(s-a)(s-b)(s-c)}$.",
+                    "If a height is available instead, $\\dfrac{1}{2} \\times$ base $\\times$ height is far quicker.",
+                ],
+                worked="Sides 13, 14, 15 give $s = 21$ and an area of $\\sqrt{21 \\times 8 \\times 7 \\times 6} = 84$.",
+            ),
+        ],
+        checklist=[
+            "Spot a Pythagorean triple rather than computing the square root.",
+            "Choose between the base-height formula and Heron's, depending on what is given.",
+        ],
         intuition=(
             "Tear the three corners off a paper triangle and place them side by side. They always form a "
             "perfectly straight line. That is the 180-degree rule, and it holds for every triangle ever drawn.\n\n"
@@ -126,6 +170,32 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.geometry.quadrilaterals-polygons",
+        prereq="Angles in a triangle summing to 180 degrees.",
+        methods=[
+            Method(
+                name="Interior and exterior angles",
+                recognise="a regular polygon with a stated number of sides, or an angle given.",
+                steps=[
+                    "Interior angles sum to $(n - 2) \\times 180$ degrees.",
+                    "For a regular polygon, divide by $n$ for one interior angle.",
+                    "Exterior angles always sum to 360, so one is $\\dfrac{360}{n}$ — usually the faster route.",
+                ],
+                worked="A regular decagon has exterior angles of 36 degrees, so interior angles of 144.",
+            ),
+            Method(
+                name="Counting diagonals",
+                recognise="'how many diagonals does an n-sided polygon have?'",
+                steps=[
+                    "Every pair of vertices gives a line, which is $\\binom{n}{2}$.",
+                    "Subtract the $n$ sides, leaving $\\dfrac{n(n-3)}{2}$.",
+                ],
+                worked="A hexagon has $\\dfrac{6 \\times 3}{2} = 9$ diagonals.",
+            ),
+        ],
+        checklist=[
+            "Use exterior angles as a shortcut to interior ones.",
+            "Derive the diagonal count rather than memorising it.",
+        ],
         intuition=(
             "Walk all the way around the edge of a field and back to where you started, facing the same way. "
             "You have turned a full 360 degrees, no matter how many corners the field has — three or thirty.\n\n"
@@ -185,6 +255,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.geometry.circles",
+        prereq="Area and perimeter of simple shapes.",
+        methods=[
+            Method(
+                name="Area and circumference",
+                recognise="a radius or diameter, asking for area or perimeter.",
+                steps=[
+                    "Halve the diameter first if that is what you were given — a very common slip.",
+                    "Area is $\\pi r^2$; circumference is $2\\pi r$.",
+                ],
+                worked="A radius of 7 gives an area of $154$ and a circumference of $44$, taking $\\pi = \\dfrac{22}{7}$.",
+            ),
+            Method(
+                name="Sectors and arcs",
+                recognise="a slice of a circle with a stated angle.",
+                steps=[
+                    "A sector is the fraction $\\dfrac{\\theta}{360}$ of the whole circle.",
+                    "Apply that fraction to the area or the circumference as needed.",
+                    "The perimeter of a sector includes the two radii as well as the arc.",
+                ],
+                worked="A 90-degree sector of radius 14 has area $\\dfrac{1}{4} \\times 616 = 154$.",
+            ),
+        ],
+        checklist=[
+            "Move between radius, diameter, area and circumference confidently.",
+            "Treat a sector as a fraction of the whole circle.",
+            "Remember the two radii when a sector's perimeter is asked for.",
+        ],
         intuition=(
             "Stand in the middle of a round room and look at a painting on the wall. Now walk to the wall "
             "yourself and look at the same painting from there. From the centre it looks twice as wide as it "
@@ -249,6 +346,32 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.geometry.coordinate-geometry",
+        prereq="Pythagoras, and plotting a point.",
+        methods=[
+            Method(
+                name="Distance between two points",
+                recognise="two coordinate pairs, asking for a length.",
+                steps=[
+                    "Subtract the x-coordinates and the y-coordinates.",
+                    "Apply $\\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$ — this is just Pythagoras on the right triangle formed.",
+                ],
+                worked="From $(1,2)$ to $(4,6)$ the distance is $\\sqrt{9 + 16} = 5$.",
+            ),
+            Method(
+                name="Section formula",
+                recognise="a point dividing a segment in a given ratio, or a midpoint.",
+                steps=[
+                    "For a point dividing $AB$ in ratio $m:n$ internally, use $\\left(\\dfrac{mx_2 + nx_1}{m+n}, \\dfrac{my_2 + ny_1}{m+n}\\right)$.",
+                    "Note the cross-pairing: $m$ goes with the **second** point.",
+                    "A midpoint is the special case $1:1$, giving plain averages.",
+                ],
+                worked="Dividing $(2,3)$ to $(8,9)$ in $1:2$ gives $\\left(\\dfrac{8+4}{3}, \\dfrac{9+6}{3}\\right) = (4,5)$.",
+            ),
+        ],
+        checklist=[
+            "Compute a distance and recognise it as Pythagoras.",
+            "Apply the section formula with the ratio the right way round.",
+        ],
         intuition=(
             "Coordinate geometry is geometry with a street map. Instead of describing a point as 'over there', "
             "you give it an address: 3 blocks east, 4 blocks north.\n\n"
@@ -314,6 +437,24 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.geometry.trigonometry",
+        prereq="Right-angled triangles, and the idea of a ratio.",
+        methods=[
+            Method(
+                name="Heights and distances",
+                recognise="an angle of elevation or depression, with one length given.",
+                steps=[
+                    "Draw the right triangle and label which side is opposite, adjacent and hypotenuse relative to the angle.",
+                    "Pick the ratio that connects what you know to what you want: sine, cosine or tangent.",
+                    "Use the standard values for 30, 45 and 60 degrees — CAT questions almost always use these.",
+                ],
+                worked="A 45-degree elevation means the height equals the horizontal distance, since $\\tan 45 = 1$.",
+            ),
+        ],
+        checklist=[
+            "Label a triangle's sides relative to a chosen angle.",
+            "Recall the ratios for 30, 45 and 60 degrees.",
+            "Tell an angle of elevation from one of depression.",
+        ],
         intuition=(
             "Lean a ladder against a wall. Keep the angle the same but use a ladder twice as long, and both "
             "the height it reaches and its distance from the wall double. The **ratio** between them does not "
@@ -378,6 +519,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.geometry.mensuration-2d",
+        prereq="Areas of rectangles and triangles.",
+        methods=[
+            Method(
+                name="Paths and borders",
+                recognise="a path running round the outside or inside of a rectangle or garden.",
+                steps=[
+                    "Compute the area of the larger rectangle, including the path.",
+                    "Compute the area of the inner rectangle, excluding it.",
+                    "Subtract. Remember the path adds its width to **both** ends of each dimension.",
+                ],
+                worked="A 20 by 15 garden with a 2 m outer path has outer area $24 \\times 19 = 456$, so the path is $456 - 300 = 156$.",
+            ),
+            Method(
+                name="Trapeziums and composite shapes",
+                recognise="a four-sided figure with one pair of parallel sides, or a shape made of simpler ones.",
+                steps=[
+                    "Area of a trapezium is $\\dfrac{1}{2}(a + b)h$, with $a$ and $b$ the parallel sides.",
+                    "For a composite shape, split it into rectangles and triangles and add.",
+                ],
+                worked="Parallel sides 12 and 8 with height 5 give $\\dfrac{1}{2} \\times 20 \\times 5 = 50$.",
+            ),
+        ],
+        checklist=[
+            "Handle a border by subtracting an inner area from an outer one.",
+            "Remember a path widens each dimension twice over.",
+            "Split a composite figure into shapes you know.",
+        ],
         intuition=(
             "Area is how much paint you need to cover a shape. Perimeter is how much fence you need around it. "
             "They are completely different quantities, and two shapes with the same perimeter can have wildly "
@@ -438,6 +606,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="qa.geometry.mensuration-3d",
+        prereq="2D areas, since every 3D formula is built from them.",
+        methods=[
+            Method(
+                name="Cylinders",
+                recognise="a can, pipe or circular tank.",
+                steps=[
+                    "Volume is the base area times the height, $\\pi r^2 h$.",
+                    "Curved surface area is $2\\pi r h$ — the label unrolled into a rectangle.",
+                    "Total surface area adds the two circular ends: $2\\pi r h + 2\\pi r^2$.",
+                ],
+                worked="Radius 7, height 10 give a volume of $1540$ and a curved area of $440$, with $\\pi = \\dfrac{22}{7}$.",
+            ),
+            Method(
+                name="Cubes and cuboids",
+                recognise="a box, a room, or a cube being cut or painted.",
+                steps=[
+                    "Volume is $l \\times b \\times h$; for a cube, $a^3$.",
+                    "Surface area is $2(lb + bh + hl)$; for a cube, $6a^2$.",
+                    "For a painted cube cut into smaller ones, count by position: corners have 3 faces, edges 2, face centres 1, interior 0.",
+                ],
+                worked="A cube of side 6 has volume 216 and surface area 216 — equal only at side 6.",
+            ),
+        ],
+        checklist=[
+            "Recall volume and surface area for cubes, cuboids and cylinders.",
+            "Explain why the curved surface of a cylinder is a rectangle.",
+            "Count painted faces on the pieces of a cut cube.",
+        ],
         intuition=(
             "Volume is how much water a container holds. Surface area is how much wrapping paper you would "
             "need to cover it. A closed box needs paper on all six faces; an open tank needs only five.\n\n"
