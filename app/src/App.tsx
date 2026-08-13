@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { BottomNav } from '@/components/AppShell'
 import { Bookmarks } from '@/pages/Bookmarks'
 import { Calendar } from '@/pages/Calendar'
 import { Diagnostic } from '@/pages/Diagnostic'
@@ -34,6 +35,7 @@ function App() {
         <Route path="/review" element={<Review />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
+      <BottomNav />
       <UpdateBanner />
     </>
   )
