@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.percentages.gen-0f085d0d50",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The price of rice rises by 20%. By what percent must a family reduce its consumption so that its total expenditure on rice only stays the same? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.67,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Take price $= 100$ and consumption $= 100$, so expenditure $= 10000$. The new price is $120$ and the new expenditure must be $10000$, so the new consumption is $\\dfrac{10000}{120} = 83.33$. That is a drop of $16.67\\%$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:percentages",
+    "expenditure"
+  ],
+  "mockReserved": false
+}

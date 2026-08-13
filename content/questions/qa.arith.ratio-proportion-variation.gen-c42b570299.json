@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-c42b570299",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The present ages of A and B are in the ratio 3 : 5. After 4 years, their ages will be in the ratio 19 : 29. What is A's present age (in years)?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 15.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Let the present ages be $3x$ and $5x$. Then $\\dfrac{3x + 4}{5x + 4} = \\dfrac{19}{29}$. Cross-multiplying and solving gives $x = 5$, so A is $3 \\times 5 = 15$ years old.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "ages"
+  ],
+  "mockReserved": false
+}

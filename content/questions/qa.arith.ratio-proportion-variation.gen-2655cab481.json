@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-2655cab481",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $A : B = 5 : 6$ and $B : C = 2 : 8$, find the value of $A : C$ as a decimal. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.2083,
+  "titaTolerance": 0.001,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Scale $B$ to a common value. $A : C = \\dfrac{A}{B} \\times \\dfrac{B}{C} = \\dfrac{5}{6} \\times \\dfrac{2}{8} = 0.2083$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "compound-ratio"
+  ],
+  "mockReserved": false
+}

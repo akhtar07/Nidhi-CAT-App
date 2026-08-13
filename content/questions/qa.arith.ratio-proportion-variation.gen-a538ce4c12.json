@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-a538ce4c12",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Rs. 2200 is divided among three people in the ratio 6 : 3 : 2. What is the largest share (in Rs.)?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1200.0,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "There are $6 + 3 + 2 = 11$ equal parts, so one part is $\\dfrac{2200}{11} = 200$. The largest share is $6$ parts $= 6 \\times 200 = 1200$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "division"
+  ],
+  "mockReserved": false
+}

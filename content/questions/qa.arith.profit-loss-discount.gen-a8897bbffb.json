@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.profit-loss-discount.gen-a8897bbffb",
+  "microTopicIds": [
+    "qa.arith.profit-loss-discount"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "An article marked at Rs. 1900 is sold at a discount of 20%, still yielding a profit of 25%. Find its cost price (in Rs., rounded to 2 decimal places).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1216.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "SP $= 1900 \\times \\dfrac{80}{100} = 1520.00$. Since SP is $125\\%$ of CP, CP $= 1520.00 \\times \\dfrac{100}{125} = 1216.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:profit-loss",
+    "mp-discount-cp"
+  ],
+  "mockReserved": false
+}

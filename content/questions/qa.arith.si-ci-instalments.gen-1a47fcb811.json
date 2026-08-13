@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-1a47fcb811",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the simple interest (in Rs.) on a principal of Rs. 23000 at 7.5% per annum for 7 years.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 12075.0,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "$SI = \\dfrac{P \\times R \\times T}{100} = \\dfrac{23000 \\times 7.5 \\times 7}{100} = 12075.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "simple-interest"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.percentages.gen-025b8249c3",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The population of a town is 30000 and grows at 20% per year. What will the population be after 2 years? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 43200.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Apply 20% growth to the running total each year \u2014 after year 1: $36000.00$, after year 2: $43200.00$. So the population is $43200.0$.",
+  "altSolutionMarkdown": "Closed form: $P = 30000 \\times \\left(1 + \\dfrac{20}{100}\\right)^{2} = 43200.0$.",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:percentages",
+    "compound-growth"
+  ],
+  "mockReserved": false
+}

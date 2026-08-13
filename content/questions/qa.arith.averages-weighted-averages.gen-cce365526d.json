@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-cce365526d",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The average of 10 observations was calculated as 51, but one observation was wrongly read as 60 instead of the correct value 80. What is the correct average? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 53.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The recorded total was $10 \\times 51 = 510$. Correcting the single entry changes it by $80 - 60 = 20$, giving a true total of $530$. The correct average is $\\dfrac{530}{10} = 53.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages",
+    "correction"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-8ecafcd020",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the amount (in Rs.) when Rs. 3000 is invested at 10% per annum compound interest, compounded annually, for 2 years. (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3630.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Interest is added to the principal each year \u2014 end of year 1: $3300.00$, end of year 2: $3630.00$. Amount $= 3630.0$.",
+  "altSolutionMarkdown": "$A = P\\left(1 + \\dfrac{R}{100}\\right)^T = 3000\\left(1 + \\dfrac{10}{100}\\right)^{2} = 3630.0$.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "compound-interest"
+  ],
+  "mockReserved": false
+}

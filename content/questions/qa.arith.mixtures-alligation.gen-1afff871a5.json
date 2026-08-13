@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-1afff871a5",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A vessel contains 60 litres of pure milk. 12 litres are drawn out and replaced with water. This operation is repeated 3 times in total. How many litres of milk remain in the vessel? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 30.72,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Each operation leaves $\\dfrac{48}{60}$ of the milk behind. After 3 operations the milk left is $60 \\times \\left(\\dfrac{48}{60}\\right)^{3} = 30.72$ litres.",
+  "altSolutionMarkdown": "General rule: milk remaining $= V\\left(1 - \\dfrac{x}{V}\\right)^n$. The water added never changes the vessel's volume, which is why the same fraction applies every round.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:mixtures",
+    "replacement"
+  ],
+  "mockReserved": false
+}

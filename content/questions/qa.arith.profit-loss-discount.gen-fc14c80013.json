@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.profit-loss-discount.gen-fc14c80013",
+  "microTopicIds": [
+    "qa.arith.profit-loss-discount"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A man sells two articles at the same price. On one he gains 15% and on the other he loses 15%. What is his overall percentage profit or loss on the whole transaction? (Enter a negative value for a loss, rounded to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -2.25,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Let each SP be 10000. Then CP of the first is $\\dfrac{10000}{1 + 15/100} = 8695.65$ and CP of the second is $\\dfrac{10000}{1 - 15/100} = 11764.71$. Total CP $= 20460.36$ against a total SP of 20000, a net **loss** of $2.25\\%$.",
+  "altSolutionMarkdown": "Whenever two items sell at the same price with equal gain and loss percentages, the result is always a loss of $\\dfrac{x^2}{100} = \\dfrac{225}{100} = 2.25\\%$ \u2014 never a break-even.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:profit-loss",
+    "equal-gain-loss"
+  ],
+  "mockReserved": false
+}

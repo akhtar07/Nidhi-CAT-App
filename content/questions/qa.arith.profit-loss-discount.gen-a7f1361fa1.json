@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.profit-loss-discount.gen-a7f1361fa1",
+  "microTopicIds": [
+    "qa.arith.profit-loss-discount"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A shop offers two successive discounts of 12% and 18% on an item. What single discount percentage is equivalent to these two? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 27.84,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Take MP $= 100$. After 12%: $88$. After a further 18%: $72.16$. The total discount is $100 - 72.16 = 27.84\\%$.",
+  "altSolutionMarkdown": "Equivalent discount $= d_1 + d_2 - \\dfrac{d_1 d_2}{100} = 12 + 18 - \\dfrac{216}{100} = 27.84\\%$. Note it is **not** $30\\%$.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:profit-loss",
+    "successive-discount"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-2f530de57f",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A 60-litre solution contains 40% acid. How many litres of water must be added to dilute it to a 20% acid solution? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 60.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The acid stays fixed at $24.00$ litres. For that to be $20\\%$ of the solution, the total volume must become $\\dfrac{24.00 \\times 100}{20} = 120.00$ litres. Water to add $= 120.00 - 60 = 60.0$ litres.",
+  "altSolutionMarkdown": "Only the solvent changes \u2014 anchoring on the unchanged solute is what makes these quick.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:mixtures",
+    "dilution"
+  ],
+  "mockReserved": false
+}

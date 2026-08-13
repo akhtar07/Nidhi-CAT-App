@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-4bf30d69de",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the difference (in Rs.) between the compound interest and the simple interest on Rs. 16000 at 12% per annum for 2 years. (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 230.4,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "CI: the amount after 2 years is $20070.40$, so CI $= 4070.40$. SI $= \\dfrac{16000 \\times 12 \\times 2}{100} = 3840.00$. The difference is $230.4$.",
+  "altSolutionMarkdown": "For 2 years the gap is always the interest earned on the first year's interest: $P\\left(\\dfrac{R}{100}\\right)^2 = 16000 \\times \\left(\\dfrac{12}{100}\\right)^2 = 230.4$.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "ci-si-difference"
+  ],
+  "mockReserved": false
+}

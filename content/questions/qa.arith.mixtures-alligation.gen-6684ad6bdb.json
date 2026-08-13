@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-6684ad6bdb",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "40 litres of a 25% acid solution is mixed with 10 litres of a 50% acid solution. What is the acid concentration (in %) of the resulting mixture? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 30.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Acid from the first: $10.00$ L. From the second: $5.00$ L. Total acid $= 15.00$ L in $50$ L of mixture, so the concentration is $30.0\\%$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:mixtures",
+    "blending"
+  ],
+  "mockReserved": false
+}

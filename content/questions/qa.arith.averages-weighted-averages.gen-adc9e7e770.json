@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-adc9e7e770",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The average age of a team of 15 members is 34 years. If the captain is 49 years old, what is the average age (in years) of the remaining members? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 32.93,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Total age $= 15 \\times 34 = 510$. Excluding the captain leaves $510 - 49 = 461$ years across $14$ members, so the average is $\\dfrac{461}{14} = 32.93$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages",
+    "exclusion"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.percentages.gen-79e549f8da",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Each side of a square is increased by 20%. By what percent does its area increase? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 44.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Take the side as 100, so the area is $10000$. The new side is $120$ and the new area is $14400$. The increase is $\\dfrac{4400}{10000} \\times 100 = 44.0\\%$.",
+  "altSolutionMarkdown": "Both dimensions grow by $x\\%$, so the area grows by $2x + \\dfrac{x^2}{100} = 2(20) + \\dfrac{400}{100} = 44.0\\%$.",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:percentages",
+    "area-percentage"
+  ],
+  "mockReserved": false
+}

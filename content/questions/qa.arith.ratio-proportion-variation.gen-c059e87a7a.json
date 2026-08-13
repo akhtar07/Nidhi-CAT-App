@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-c059e87a7a",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Two numbers are in the ratio 2 : 3. When 4 is added to each, the ratio becomes 14 : 19. Find the smaller of the two original numbers.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 10.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Let the numbers be $2x$ and $3x$. Then $\\dfrac{2x + 4}{3x + 4} = \\dfrac{14}{19}$, which solves to $x = 5$. The smaller number is $2 \\times 5 = 10$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "ratio-shift"
+  ],
+  "mockReserved": false
+}

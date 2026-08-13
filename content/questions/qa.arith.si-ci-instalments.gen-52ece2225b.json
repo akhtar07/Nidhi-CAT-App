@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-52ece2225b",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "At what rate percent per annum of simple interest will a sum of money become 4 times itself in 16 years? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18.75,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "To become 4 times itself, the interest earned must be $3$ times the principal. So $\\dfrac{P \\times R \\times 16}{100} = 3P$, giving $R = \\dfrac{3 \\times 100}{16} = 18.75\\%$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "rate-from-multiple"
+  ],
+  "mockReserved": false
+}

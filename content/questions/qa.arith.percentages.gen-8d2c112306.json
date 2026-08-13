@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.percentages.gen-8d2c112306",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The price of an article is increased by 44% and the new price is then decreased by 54%. Find the net percentage change in the price. (Enter a negative value for a net decrease.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": -33.76,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Start from 100. After the increase: $100 \\times (1 + 44/100) = 144.00$. After the decrease: $144.00 \\times (1 - 54/100) = 66.24$. Net change $= -33.76\\%$.",
+  "altSolutionMarkdown": "Shortcut: net $\\% = p_1 - p_2 - \\dfrac{p_1 p_2}{100} = 44 - 54 - \\dfrac{2376}{100} = -33.76\\%$.",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:percentages",
+    "successive-change"
+  ],
+  "mockReserved": false
+}

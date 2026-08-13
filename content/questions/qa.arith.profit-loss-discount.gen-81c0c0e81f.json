@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.profit-loss-discount.gen-81c0c0e81f",
+  "microTopicIds": [
+    "qa.arith.profit-loss-discount"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "By selling an article for Rs. 400.00, a shopkeeper incurs a loss of 20%. At what price (in Rs.) should he sell it to make a profit of 10%?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 550.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "A 20% loss means SP is $80\\%$ of CP, so CP $= 400.00 \\times \\dfrac{100}{80} = 500$. For a 10% profit, SP $= 500 \\times \\dfrac{110}{100} = 550.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:profit-loss",
+    "target-price"
+  ],
+  "mockReserved": false
+}

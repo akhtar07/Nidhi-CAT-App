@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-d82be8ca59",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If 15 workers can complete a job in 10 days, how many days will 6 workers take to complete the same job, working at the same rate? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 25.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The job needs $15 \\times 10 = 150$ worker-days. With 6 workers that takes $\\dfrac{150}{6} = 25.0$ days. Workers and days vary inversely.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "inverse-variation"
+  ],
+  "mockReserved": false
+}

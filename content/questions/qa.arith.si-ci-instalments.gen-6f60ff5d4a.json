@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-6f60ff5d4a",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the difference (in Rs.) between the compound interest and the simple interest on Rs. 29000 at 10% per annum for 2 years. (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 290.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "CI: the amount after 2 years is $35090.00$, so CI $= 6090.00$. SI $= \\dfrac{29000 \\times 10 \\times 2}{100} = 5800.00$. The difference is $290.0$.",
+  "altSolutionMarkdown": "For 2 years the gap is always the interest earned on the first year's interest: $P\\left(\\dfrac{R}{100}\\right)^2 = 29000 \\times \\left(\\dfrac{10}{100}\\right)^2 = 290.0$.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "ci-si-difference"
+  ],
+  "mockReserved": false
+}

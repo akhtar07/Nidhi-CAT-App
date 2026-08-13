@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-b24998de07",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the average of 6 consecutive integers starting from 119. (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 121.5,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "The numbers run from $119$ to $124$. For an evenly spaced list the average is the midpoint of the first and last terms: $\\dfrac{119 + 124}{2} = 121.5$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages",
+    "consecutive"
+  ],
+  "mockReserved": false
+}

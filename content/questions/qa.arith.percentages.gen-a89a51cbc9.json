@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.percentages.gen-a89a51cbc9",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "After its price was increased by 12%, an article costs Rs. 2688. What was its price (in Rs.) before the increase?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2400.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "If the original price is $x$, then $x \\times \\left(1 + \\dfrac{12}{100}\\right) = 2688$, so $x = \\dfrac{2688 \\times 100}{112} = 2400$.",
+  "altSolutionMarkdown": "The new price is 112% of the old, so the old price is $\\dfrac{100}{112}$ of Rs. 2688 $=$ Rs. 2400.",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:percentages",
+    "reverse-percentage"
+  ],
+  "mockReserved": false
+}

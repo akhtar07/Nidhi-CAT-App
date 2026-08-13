@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-08040cfbd4",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A vessel contains 80 litres of pure milk. 10 litres are drawn out and replaced with water. This operation is repeated 2 times in total. How many litres of milk remain in the vessel? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 61.25,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Each operation leaves $\\dfrac{70}{80}$ of the milk behind. After 2 operations the milk left is $80 \\times \\left(\\dfrac{70}{80}\\right)^{2} = 61.25$ litres.",
+  "altSolutionMarkdown": "General rule: milk remaining $= V\\left(1 - \\dfrac{x}{V}\\right)^n$. The water added never changes the vessel's volume, which is why the same fraction applies every round.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:mixtures",
+    "replacement"
+  ],
+  "mockReserved": false
+}

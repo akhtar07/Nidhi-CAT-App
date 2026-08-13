@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.profit-loss-discount.gen-0b60601cbd",
+  "microTopicIds": [
+    "qa.arith.profit-loss-discount"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A dishonest shopkeeper claims to sell his goods at cost price, but uses a weight of 840 g in place of 1 kg. Find his percentage gain. (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 19.05,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "He charges for 1000 g but delivers 840 g, so on goods costing him Rs. 840 (at Rs. 1 per gram) he collects Rs. 1000. His gain is Rs. 160 on a cost of Rs. 840, i.e. $\\dfrac{160}{840} \\times 100 = 19.05\\%$.",
+  "altSolutionMarkdown": "Formula: gain $\\% = \\dfrac{\\text{error}}{\\text{true weight} - \\text{error}} \\times 100 = \\dfrac{160}{840} \\times 100 = 19.05\\%$. The denominator is what he actually gives, not 1000.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:profit-loss",
+    "false-weight"
+  ],
+  "mockReserved": false
+}

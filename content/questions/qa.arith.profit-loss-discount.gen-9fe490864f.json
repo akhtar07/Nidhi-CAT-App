@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.profit-loss-discount.gen-9fe490864f",
+  "microTopicIds": [
+    "qa.arith.profit-loss-discount"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "An article is bought for Rs. 2250 and sold at a profit of 25%. Find its selling price (in Rs.).",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2812.5,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Profit $= 25\\%$ of Rs. 2250 $=$ Rs. $562.50$. So SP $=$ CP $+$ profit $= 2250 + 562.50 = 2812.5$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:profit-loss",
+    "sp-from-cp"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.percentages.gen-d8110a29c4",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If A's salary is 100% more than B's salary, then B's salary is what percent less than A's salary? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 50.0,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Let B $= 100$, so A $= 200$. B is short of A by $100$, and as a percentage **of A** that is $\\dfrac{100}{200} \\times 100 = 50.0\\%$.",
+  "altSolutionMarkdown": "Formula: if A is $x\\%$ more than B, then B is $\\dfrac{100x}{100 + x}\\%$ less than A $= \\dfrac{100 \\times 100}{200} = 50.0\\%$. The base changes from B to A \u2014 that swap is the whole trap.",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:percentages",
+    "base-change"
+  ],
+  "mockReserved": false
+}

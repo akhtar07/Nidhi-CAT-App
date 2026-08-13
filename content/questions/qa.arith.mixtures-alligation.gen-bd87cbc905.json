@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-bd87cbc905",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In what ratio must rice costing Rs. 46 per kg be mixed with rice costing Rs. 72 per kg so that the mixture costs Rs. 64 per kg? Give the answer as the ratio (cheaper : dearer) expressed as a decimal, rounded to 4 decimal places.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.4444,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "By alligation, the ratio of quantities is the ratio of the opposite differences: $\\dfrac{\\text{dear} - \\text{mean}}{\\text{mean} - \\text{cheap}} = \\dfrac{72 - 64}{64 - 46} = \\dfrac{8}{18} = 0.4444$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:mixtures",
+    "alligation"
+  ],
+  "mockReserved": false
+}

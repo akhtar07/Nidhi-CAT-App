@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-90acfb542f",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If $A : B = 2 : 7$ and $B : C = 4 : 3$, find the value of $A : C$ as a decimal. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 0.381,
+  "titaTolerance": 0.001,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "Scale $B$ to a common value. $A : C = \\dfrac{A}{B} \\times \\dfrac{B}{C} = \\dfrac{2}{7} \\times \\dfrac{4}{3} = 0.381$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "compound-ratio"
+  ],
+  "mockReserved": false
+}

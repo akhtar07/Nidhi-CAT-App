@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-57ff707f10",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If 27 workers can complete a job in 11 days, how many days will 9 workers take to complete the same job, working at the same rate? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 33.0,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "The job needs $27 \\times 11 = 297$ worker-days. With 9 workers that takes $\\dfrac{297}{9} = 33.0$ days. Workers and days vary inversely.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "inverse-variation"
+  ],
+  "mockReserved": false
+}

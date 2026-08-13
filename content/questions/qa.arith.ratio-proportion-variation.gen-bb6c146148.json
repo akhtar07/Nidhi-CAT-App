@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-bb6c146148",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Rs. 23800 is divided among three people in the ratio 7 : 2 : 5. What is the largest share (in Rs.)?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 11900.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "There are $7 + 2 + 5 = 14$ equal parts, so one part is $\\dfrac{23800}{14} = 1700$. The largest share is $7$ parts $= 7 \\times 1700 = 11900$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "division"
+  ],
+  "mockReserved": false
+}

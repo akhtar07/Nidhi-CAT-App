@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-ceec60c31a",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the amount (in Rs.) when Rs. 18000 is invested for 1 year at 15% per annum compound interest, compounded half-yearly. (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 20801.25,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Half-yearly compounding halves the rate and doubles the periods: 7.5% for 2 periods. $A = 18000\\left(1 + \\dfrac{7.5}{100}\\right)^{2} = 20801.25$.",
+  "altSolutionMarkdown": "Compounding more often beats annual compounding: at 15% compounded annually the amount would only be $20700.00$.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "half-yearly"
+  ],
+  "mockReserved": false
+}

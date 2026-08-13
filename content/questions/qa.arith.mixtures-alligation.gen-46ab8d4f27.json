@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-46ab8d4f27",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A 45-litre solution contains 36% acid. How many litres of water must be added to dilute it to a 30% acid solution? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9.0,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "The acid stays fixed at $16.20$ litres. For that to be $30\\%$ of the solution, the total volume must become $\\dfrac{16.20 \\times 100}{30} = 54.00$ litres. Water to add $= 54.00 - 45 = 9.0$ litres.",
+  "altSolutionMarkdown": "Only the solvent changes \u2014 anchoring on the unchanged solute is what makes these quick.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:mixtures",
+    "dilution"
+  ],
+  "mockReserved": false
+}

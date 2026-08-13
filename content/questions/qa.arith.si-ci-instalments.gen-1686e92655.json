@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-1686e92655",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the amount (in Rs.) when Rs. 9000 is invested at 15% per annum compound interest, compounded annually, for 3 years. (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 13687.87,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Interest is added to the principal each year \u2014 end of year 1: $10350.00$, end of year 2: $11902.50$, end of year 3: $13687.87$. Amount $= 13687.87$.",
+  "altSolutionMarkdown": "$A = P\\left(1 + \\dfrac{R}{100}\\right)^T = 9000\\left(1 + \\dfrac{15}{100}\\right)^{3} = 13687.87$.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "compound-interest"
+  ],
+  "mockReserved": false
+}

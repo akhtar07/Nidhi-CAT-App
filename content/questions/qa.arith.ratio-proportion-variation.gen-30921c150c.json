@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-30921c150c",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Rs. 6400 is divided among three people in the ratio 7 : 6 : 3. What is the largest share (in Rs.)?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2800.0,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "There are $7 + 6 + 3 = 16$ equal parts, so one part is $\\dfrac{6400}{16} = 400$. The largest share is $7$ parts $= 7 \\times 400 = 2800$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "division"
+  ],
+  "mockReserved": false
+}

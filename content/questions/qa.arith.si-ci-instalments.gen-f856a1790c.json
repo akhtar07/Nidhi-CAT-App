@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-f856a1790c",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the simple interest (in Rs.) on a principal of Rs. 7500 at 6.5% per annum for 6 years.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2925.0,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "$SI = \\dfrac{P \\times R \\times T}{100} = \\dfrac{7500 \\times 6.5 \\times 6}{100} = 2925.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "simple-interest"
+  ],
+  "mockReserved": false
+}

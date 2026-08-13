@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.percentages.gen-fc2545b858",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A student scored 270 marks in an exam and failed by 30 marks. If the pass mark is 50% of the maximum marks, what are the maximum marks?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 600.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The pass mark is $270 + 30 = 300$. If the maximum is $M$, then $\\dfrac{50}{100} \\times M = 300$, so $M = \\dfrac{300 \\times 100}{50} = 600$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:percentages",
+    "pass-marks"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-a15abbabce",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the amount (in Rs.) when Rs. 26000 is invested for 1 year at 10% per annum compound interest, compounded half-yearly. (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 28665.0,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Half-yearly compounding halves the rate and doubles the periods: 5.0% for 2 periods. $A = 26000\\left(1 + \\dfrac{5.0}{100}\\right)^{2} = 28665.0$.",
+  "altSolutionMarkdown": "Compounding more often beats annual compounding: at 10% compounded annually the amount would only be $28600.00$.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "half-yearly"
+  ],
+  "mockReserved": false
+}

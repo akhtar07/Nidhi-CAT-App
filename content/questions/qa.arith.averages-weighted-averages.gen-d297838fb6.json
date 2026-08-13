@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-d297838fb6",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "In a class, 20 boys have an average score of 50 and 10 girls have an average score of 46. What is the average score of the whole class? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 48.67,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "Total score $= 20 \\times 50 + 10 \\times 46 = 1460$ across $30$ students, so the average is $\\dfrac{1460}{30} = 48.67$.",
+  "altSolutionMarkdown": "The combined average must lie between 46 and 50, closer to whichever group is larger \u2014 a useful sanity check before computing.",
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages",
+    "weighted"
+  ],
+  "mockReserved": false
+}

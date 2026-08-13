@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.percentages.gen-83da3251a1",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "After its price was increased by 50%, an article costs Rs. 5550. What was its price (in Rs.) before the increase?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3700.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "If the original price is $x$, then $x \\times \\left(1 + \\dfrac{50}{100}\\right) = 5550$, so $x = \\dfrac{5550 \\times 100}{150} = 3700$.",
+  "altSolutionMarkdown": "The new price is 150% of the old, so the old price is $\\dfrac{100}{150}$ of Rs. 5550 $=$ Rs. 3700.",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:percentages",
+    "reverse-percentage"
+  ],
+  "mockReserved": false
+}

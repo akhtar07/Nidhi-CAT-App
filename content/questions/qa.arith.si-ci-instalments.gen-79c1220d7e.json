@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-79c1220d7e",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "At what rate percent per annum of simple interest will a sum of money become 3 times itself in 10 years? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 20.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "To become 3 times itself, the interest earned must be $2$ times the principal. So $\\dfrac{P \\times R \\times 10}{100} = 2P$, giving $R = \\dfrac{2 \\times 100}{10} = 20.0\\%$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "rate-from-multiple"
+  ],
+  "mockReserved": false
+}

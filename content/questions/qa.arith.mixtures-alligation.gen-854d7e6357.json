@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.mixtures-alligation.gen-854d7e6357",
+  "microTopicIds": [
+    "qa.arith.mixtures-alligation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "A 80-litre solution contains 25% acid. How many litres of water must be added to dilute it to a 10% acid solution? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 120.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The acid stays fixed at $20.00$ litres. For that to be $10\\%$ of the solution, the total volume must become $\\dfrac{20.00 \\times 100}{10} = 200.00$ litres. Water to add $= 200.00 - 80 = 120.0$ litres.",
+  "altSolutionMarkdown": "Only the solvent changes \u2014 anchoring on the unchanged solute is what makes these quick.",
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:mixtures",
+    "dilution"
+  ],
+  "mockReserved": false
+}

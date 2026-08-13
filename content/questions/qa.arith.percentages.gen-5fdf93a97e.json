@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.percentages.gen-5fdf93a97e",
+  "microTopicIds": [
+    "qa.arith.percentages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The population of a town is 29000 and grows at 8% per year. What will the population be after 3 years? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 36531.65,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "Apply 8% growth to the running total each year \u2014 after year 1: $31320.00$, after year 2: $33825.60$, after year 3: $36531.65$. So the population is $36531.65$.",
+  "altSolutionMarkdown": "Closed form: $P = 29000 \\times \\left(1 + \\dfrac{8}{100}\\right)^{3} = 36531.65$.",
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:percentages",
+    "compound-growth"
+  ],
+  "mockReserved": false
+}

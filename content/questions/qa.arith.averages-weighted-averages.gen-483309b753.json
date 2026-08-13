@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-483309b753",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "The average weight of 9 students increases by 4 kg when a new student replaces one weighing 50 kg. What is the weight (in kg) of the new student?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 86.0,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "The total weight rises by $9 \\times 4 = 36$ kg. That entire increase comes from one swap, so the new student is $36$ kg heavier than the one who left: $50 + 36 = 86$ kg.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages",
+    "replacement"
+  ],
+  "mockReserved": false
+}

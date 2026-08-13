@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-e64c00759b",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the simple interest (in Rs.) on a principal of Rs. 29000 at 5% per annum for 3 years.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4350.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$SI = \\dfrac{P \\times R \\times T}{100} = \\dfrac{29000 \\times 5 \\times 3}{100} = 4350.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "simple-interest"
+  ],
+  "mockReserved": false
+}

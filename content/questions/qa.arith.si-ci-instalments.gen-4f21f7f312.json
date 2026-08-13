@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.si-ci-instalments.gen-4f21f7f312",
+  "microTopicIds": [
+    "qa.arith.si-ci-instalments"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "At what rate percent per annum of simple interest will a sum of money become 2 times itself in 5 years? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 20.0,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "To become 2 times itself, the interest earned must be $1$ times the principal. So $\\dfrac{P \\times R \\times 5}{100} = 1P$, giving $R = \\dfrac{1 \\times 100}{5} = 20.0\\%$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:si-ci",
+    "rate-from-multiple"
+  ],
+  "mockReserved": false
+}

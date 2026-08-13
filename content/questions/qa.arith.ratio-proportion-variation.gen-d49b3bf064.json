@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-d49b3bf064",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Rs. 8000 is divided among three people in the ratio 3 : 2 : 5. What is the largest share (in Rs.)?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4000.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "There are $3 + 2 + 5 = 10$ equal parts, so one part is $\\dfrac{8000}{10} = 800$. The largest share is $5$ parts $= 5 \\times 800 = 4000$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "division"
+  ],
+  "mockReserved": false
+}

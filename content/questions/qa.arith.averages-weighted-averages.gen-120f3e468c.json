@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.averages-weighted-averages.gen-120f3e468c",
+  "microTopicIds": [
+    "qa.arith.averages-weighted-averages"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the average of 12 consecutive integers starting from 103. (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 108.5,
+  "titaTolerance": 0.05,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "The numbers run from $103$ to $114$. For an evenly spaced list the average is the midpoint of the first and last terms: $\\dfrac{103 + 114}{2} = 108.5$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:averages",
+    "consecutive"
+  ],
+  "mockReserved": false
+}

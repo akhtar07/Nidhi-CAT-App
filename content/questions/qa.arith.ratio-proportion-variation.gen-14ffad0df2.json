@@ -1,0 +1,33 @@
+{
+  "id": "qa.arith.ratio-proportion-variation.gen-14ffad0df2",
+  "microTopicIds": [
+    "qa.arith.ratio-proportion-variation"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "If 12 workers can complete a job in 12 days, how many days will 10 workers take to complete the same job, working at the same rate? (Round to 2 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 14.4,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The job needs $12 \\times 12 = 144$ worker-days. With 10 workers that takes $\\dfrac{144}{10} = 14.4$ days. Workers and days vary inversely.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "arith:ratio",
+    "inverse-variation"
+  ],
+  "mockReserved": false
+}
