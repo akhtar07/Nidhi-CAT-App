@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.critical-reasoning.va-396bb8dea4",
+  "microTopicIds": [
+    "varc.va.critical-reasoning"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "\"All employees who completed the training passed the audit. Ramesh passed the audit, so he must have completed the training.\"\n\nThe reasoning is flawed because:",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "passing the audit may be possible without the training"
+    },
+    {
+      "key": "B",
+      "markdown": "Ramesh may have completed a different training course"
+    },
+    {
+      "key": "C",
+      "markdown": "the audit may not be a fair test of ability"
+    },
+    {
+      "key": "D",
+      "markdown": "not all employees are required to take the audit"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "very_hard",
+  "eloRating": 1500.0,
+  "solutionMarkdown": "The premise says training is **sufficient** for passing, not **necessary**. Someone could pass without it, so the conclusion does not follow. This is the classic error of reversing a conditional: 'all A are B' does not give 'all B are A'.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 95,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:critical-reasoning",
+    "flaw"
+  ],
+  "mockReserved": false
+}

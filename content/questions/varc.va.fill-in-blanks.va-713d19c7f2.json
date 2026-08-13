@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-713d19c7f2",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nThe minister's answer was deliberately ___, leaving reporters unsure what had actually been decided.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "vague"
+    },
+    {
+      "key": "B",
+      "markdown": "precise"
+    },
+    {
+      "key": "C",
+      "markdown": "lengthy"
+    },
+    {
+      "key": "D",
+      "markdown": "audible"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The second half explains the blank: reporters were left unsure. Only **vague** produces that confusion. **Lengthy** and **audible** do not bear on clarity, and **precise** is its opposite.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "context"
+  ],
+  "mockReserved": false
+}

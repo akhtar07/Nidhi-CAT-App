@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.odd-sentence-out.va-436832807b",
+  "microTopicIds": [
+    "varc.va.odd-sentence-out"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Four of the following five sentences form a coherent paragraph. Which one does NOT belong?\n\n1. Most people assume that adding lanes to a motorway reduces congestion.\n2. In practice, extra capacity tends to attract additional drivers.\n3. Within a few years, traffic often returns to its previous level of delay.\n4. Economists call this effect induced demand.\n5. Motorways are typically maintained by national rather than local authorities.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Sentence 5"
+    },
+    {
+      "key": "B",
+      "markdown": "Sentence 2"
+    },
+    {
+      "key": "C",
+      "markdown": "Sentence 3"
+    },
+    {
+      "key": "D",
+      "markdown": "Sentence 4"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Sentences 1 to 4 develop one idea from assumption to mechanism to its name. Sentence 5 is an administrative fact about **who maintains motorways**, unrelated to the argument about congestion and referenced by nothing else.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 85,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:odd-sentence"
+  ],
+  "mockReserved": false
+}

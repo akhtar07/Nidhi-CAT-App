@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.odd-sentence-out.va-f555e50f2a",
+  "microTopicIds": [
+    "varc.va.odd-sentence-out"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Four of the following five sentences form a coherent paragraph. Which one does NOT belong?\n\n1. In 2010 the city council began redesigning its bus network.\n2. The redesign replaced dozens of winding routes with a smaller grid of frequent ones.\n3. Public transport is a system of shared vehicles operating on fixed routes.\n4. Ridership rose by a third within two years of the change.\n5. Similar redesigns have since been adopted by three neighbouring cities.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Sentence 3"
+    },
+    {
+      "key": "B",
+      "markdown": "Sentence 1"
+    },
+    {
+      "key": "C",
+      "markdown": "Sentence 4"
+    },
+    {
+      "key": "D",
+      "markdown": "Sentence 5"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Sentences 1, 2, 4 and 5 form a chronological account of one city's redesign and its consequences, each referring back to the previous. Sentence 3 is a **general definition** pitched at a different level entirely \u2014 on topic, but doing a different job and connected to nothing in the sequence.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:odd-sentence"
+  ],
+  "mockReserved": false
+}

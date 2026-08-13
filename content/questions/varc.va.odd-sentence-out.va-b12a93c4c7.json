@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.odd-sentence-out.va-b12a93c4c7",
+  "microTopicIds": [
+    "varc.va.odd-sentence-out"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Four of the following five sentences form a coherent paragraph. Which one does NOT belong?\n\n1. Coral reefs support roughly a quarter of all marine species.\n2. They do so by providing physical structure in otherwise open water.\n3. This structure offers shelter, breeding sites and hunting grounds.\n4. Rising sea temperatures have caused widespread coral bleaching since the 1980s.\n5. Remove the reef and the species that depend on that structure disappear with it.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Sentence 4"
+    },
+    {
+      "key": "B",
+      "markdown": "Sentence 2"
+    },
+    {
+      "key": "C",
+      "markdown": "Sentence 3"
+    },
+    {
+      "key": "D",
+      "markdown": "Sentence 5"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Sentences 1, 2, 3 and 5 build a single argument about **why** reefs support so much life \u2014 structure, what it provides, and what happens without it. Sentence 4 introduces a separate topic, the causes of bleaching, which the surrounding argument neither sets up nor uses.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:odd-sentence"
+  ],
+  "mockReserved": false
+}

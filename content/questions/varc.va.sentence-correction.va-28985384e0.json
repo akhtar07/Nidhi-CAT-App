@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-28985384e0",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The list of banned items is displayed at the entrance."
+    },
+    {
+      "key": "B",
+      "markdown": "The list of banned items are displayed at the entrance."
+    },
+    {
+      "key": "C",
+      "markdown": "The list of banned items were displayed at the entrance."
+    },
+    {
+      "key": "D",
+      "markdown": "The list of banned items have been displayed at the entrance."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The subject is **list**, which is singular; **of banned items** is a prepositional phrase and cannot change the subject. So the verb must be **is**. The plural noun sitting next to the verb is what misleads the ear.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "subject-verb"
+  ],
+  "mockReserved": false
+}

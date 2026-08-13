@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-0f7130ae5d",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "She enjoys reading, writing and painting."
+    },
+    {
+      "key": "B",
+      "markdown": "She enjoys reading, writing and to paint."
+    },
+    {
+      "key": "C",
+      "markdown": "She enjoys to read, writing and painting."
+    },
+    {
+      "key": "D",
+      "markdown": "She enjoys reading, to write and painting."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Items in a list must share a grammatical form. All three must be gerunds \u2014 **reading, writing and painting**. Each wrong option switches one item to an infinitive, breaking the parallelism.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "parallelism"
+  ],
+  "mockReserved": false
+}

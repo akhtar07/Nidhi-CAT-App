@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-summary.va-f911daffeb",
+  "microTopicIds": [
+    "varc.va.para-summary"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Summarise the paragraph:\n\n\"Early maps of the ocean floor assumed it was a featureless plain. Sonar surveys in the twentieth century revealed mountain ranges longer than any on land, trenches deeper than the Himalayas are tall, and volcanic activity along vast ridges. The ocean floor turned out to be more geologically active than the continents.\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Sonar revealed the ocean floor to be dramatically more varied and active than had been assumed."
+    },
+    {
+      "key": "B",
+      "markdown": "Sonar technology was the most important scientific advance of the twentieth century."
+    },
+    {
+      "key": "C",
+      "markdown": "The ocean floor contains mountain ranges and deep trenches."
+    },
+    {
+      "key": "D",
+      "markdown": "Early cartographers made serious errors in mapping the continents."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The paragraph's point is the overturning of an assumption. The third option lists details without the contrast that gives them meaning; the second makes a claim about sonar's importance the paragraph never makes; the fourth misplaces the error onto continental mapping.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 85,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-summary"
+  ],
+  "mockReserved": false
+}

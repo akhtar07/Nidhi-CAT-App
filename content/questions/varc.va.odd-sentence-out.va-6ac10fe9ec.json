@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.odd-sentence-out.va-6ac10fe9ec",
+  "microTopicIds": [
+    "varc.va.odd-sentence-out"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Four of the following five sentences form a coherent paragraph. Which one does NOT belong?\n\n1. Sourdough bread relies on wild yeasts rather than commercial ones.\n2. These yeasts live alongside bacteria that produce lactic acid.\n3. The acid gives the bread its characteristic sour flavour.\n4. It also slows staling, so the loaf keeps longer than most.\n5. Bread has been a staple food across Europe and Asia for thousands of years.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Sentence 5"
+    },
+    {
+      "key": "B",
+      "markdown": "Sentence 2"
+    },
+    {
+      "key": "C",
+      "markdown": "Sentence 3"
+    },
+    {
+      "key": "D",
+      "markdown": "Sentence 4"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Sentences 1 to 4 form a causal chain: wild yeasts, accompanying bacteria, the acid they produce, and its two effects. Sentence 5 is a broad historical statement about bread in general, at a different level of generality and connected to nothing in the chain.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 85,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:odd-sentence"
+  ],
+  "mockReserved": false
+}

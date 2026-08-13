@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-0bebdac79e",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nDespite its ___ appearance, the building is structurally sound.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "dilapidated"
+    },
+    {
+      "key": "B",
+      "markdown": "imposing"
+    },
+    {
+      "key": "C",
+      "markdown": "modern"
+    },
+    {
+      "key": "D",
+      "markdown": "elegant"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**Despite** sets up a contrast with **structurally sound**, so the appearance must suggest the opposite. Only **dilapidated** implies decay; the others would agree with soundness rather than contrast with it.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "contrast"
+  ],
+  "mockReserved": false
+}

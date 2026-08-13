@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.critical-reasoning.va-0d82fa9bc2",
+  "microTopicIds": [
+    "varc.va.critical-reasoning"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "A company reports: \"After we redesigned our packaging, sales rose 20 percent. The redesign clearly caused the increase.\"\n\nWhich of the following, if true, most weakens this argument?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The company's main competitor withdrew from the market in the same month."
+    },
+    {
+      "key": "B",
+      "markdown": "The redesign was carried out by an experienced design agency."
+    },
+    {
+      "key": "C",
+      "markdown": "Some customers said they preferred the earlier packaging."
+    },
+    {
+      "key": "D",
+      "markdown": "The redesign cost more than the company had budgeted."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The argument leaps from a correlation in time to a cause. It is weakened most by an **alternative explanation** for the same rise, which a competitor's exit provides. The other options concern the redesign's quality or cost, neither of which bears on what caused the sales increase.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:critical-reasoning",
+    "weaken"
+  ],
+  "mockReserved": false
+}

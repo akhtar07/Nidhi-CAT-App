@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.critical-reasoning.va-2474cf2f34",
+  "microTopicIds": [
+    "varc.va.critical-reasoning"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "\"The new bridge will reduce traffic congestion, because it provides drivers with a second route into the city.\"\n\nThe argument assumes that:",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "a meaningful number of drivers will actually use the new route"
+    },
+    {
+      "key": "B",
+      "markdown": "the bridge was completed within its original budget"
+    },
+    {
+      "key": "C",
+      "markdown": "the existing route is the oldest road into the city"
+    },
+    {
+      "key": "D",
+      "markdown": "congestion is the most serious problem facing the city"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Apply the negation test. If no drivers use the new route, the bridge cannot reduce congestion and the argument collapses \u2014 so this is a **necessary assumption**. Negating any other option leaves the argument intact, so none of them is assumed.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:critical-reasoning",
+    "assumption"
+  ],
+  "mockReserved": false
+}

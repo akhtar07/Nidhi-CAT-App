@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-5a080d1f4f",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Between you and me, the proposal seems unworkable."
+    },
+    {
+      "key": "B",
+      "markdown": "Between you and I, the proposal seems unworkable."
+    },
+    {
+      "key": "C",
+      "markdown": "Between yourself and I, the proposal seems unworkable."
+    },
+    {
+      "key": "D",
+      "markdown": "Between you and myself, the proposal seems unworkable."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**Between** is a preposition, so the pronouns following it must be in the object form: **me**, not **I**. Reflexives like **myself** cannot serve as the object of a preposition here either.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "pronoun"
+  ],
+  "mockReserved": false
+}

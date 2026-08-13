@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-7b3e4c29e5",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The new policy is more effective than the old one."
+    },
+    {
+      "key": "B",
+      "markdown": "The new policy is more effective than the old."
+    },
+    {
+      "key": "C",
+      "markdown": "The new policy is more effective as the old one."
+    },
+    {
+      "key": "D",
+      "markdown": "The new policy is the most effective than the old one."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "A comparison of two things uses the comparative **more effective ... than**. The third option wrongly uses **as** with a comparative, and the fourth mixes a superlative with **than**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "comparatives"
+  ],
+  "mockReserved": false
+}

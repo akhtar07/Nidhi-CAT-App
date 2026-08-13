@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-336ea927d5",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The scientist explained that water boils at 100 degrees Celsius at sea level."
+    },
+    {
+      "key": "B",
+      "markdown": "The scientist explained that water boiled at 100 degrees Celsius at sea level."
+    },
+    {
+      "key": "C",
+      "markdown": "The scientist explained that water will boil at 100 degrees Celsius at sea level."
+    },
+    {
+      "key": "D",
+      "markdown": "The scientist explained that water would have boiled at 100 degrees Celsius at sea level."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "A permanent scientific fact stays in the present tense even after a past-tense reporting verb. Shifting it to the past wrongly implies water no longer behaves that way.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "tense"
+  ],
+  "mockReserved": false
+}

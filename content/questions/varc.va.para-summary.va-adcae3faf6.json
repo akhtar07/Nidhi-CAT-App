@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-summary.va-adcae3faf6",
+  "microTopicIds": [
+    "varc.va.para-summary"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Summarise the paragraph:\n\n\"The city's cycle lanes were built quickly and have been well used. But they stop abruptly at major junctions, precisely where cyclists are most at risk. Usage data shows riders diverting onto pavements at these points, which suggests the network's gaps matter more than its total length.\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The cycle network's usefulness is limited by gaps at dangerous junctions rather than by its overall size."
+    },
+    {
+      "key": "B",
+      "markdown": "The city's cycle lanes were built too quickly to be safe."
+    },
+    {
+      "key": "C",
+      "markdown": "Cyclists in the city frequently ride on pavements."
+    },
+    {
+      "key": "D",
+      "markdown": "The city should build a greater total length of cycle lanes."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The paragraph's conclusion is explicitly about gaps mattering more than length. The second blames the speed of construction, which the paragraph mentions neutrally; the third reports a supporting observation as the main point; the fourth recommends the very thing the paragraph says is not the issue.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-summary"
+  ],
+  "mockReserved": false
+}

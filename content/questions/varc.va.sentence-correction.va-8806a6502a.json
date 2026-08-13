@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-8806a6502a",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Having finished the report, I found that the printer had jammed."
+    },
+    {
+      "key": "B",
+      "markdown": "Having finished the report, the printer had jammed."
+    },
+    {
+      "key": "C",
+      "markdown": "Having finished the report, the jam in the printer was discovered."
+    },
+    {
+      "key": "D",
+      "markdown": "Having finished the report, it was found that the printer jammed."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "An opening participial phrase attaches to whatever immediately follows the comma. Only the correct option puts a person there; the others make the printer, the jam, or nothing at all the one who finished the report. This is a **dangling modifier**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "modifier"
+  ],
+  "mockReserved": false
+}

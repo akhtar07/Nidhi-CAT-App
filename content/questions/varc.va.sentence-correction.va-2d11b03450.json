@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-2d11b03450",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The number of applicants has risen sharply this year."
+    },
+    {
+      "key": "B",
+      "markdown": "The number of applicants have risen sharply this year."
+    },
+    {
+      "key": "C",
+      "markdown": "A number of applicants has risen sharply this year."
+    },
+    {
+      "key": "D",
+      "markdown": "The number of applicants are rising sharply this year."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "**The number** is singular and takes **has**; confusingly, **a number of** is plural and takes a plural verb. The third option uses the plural phrase with a singular verb and also changes the meaning.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "subject-verb"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-cb341d767b",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nHer argument was so ___ that even her critics conceded the point.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "compelling"
+    },
+    {
+      "key": "B",
+      "markdown": "convoluted"
+    },
+    {
+      "key": "C",
+      "markdown": "tentative"
+    },
+    {
+      "key": "D",
+      "markdown": "brief"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Critics conceding indicates the argument succeeded, so the blank needs strong positive force. **Compelling** supplies it. **Convoluted** and **tentative** would weaken it, and **brief** says nothing about persuasiveness.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "context"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.odd-sentence-out.va-08430aad1d",
+  "microTopicIds": [
+    "varc.va.odd-sentence-out"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Four of the following five sentences form a coherent paragraph. Which one does NOT belong?\n\n1. The manuscript was discovered in a monastery library in 1923.\n2. Its margins contained notes in at least three different hands.\n3. Scholars used these annotations to trace the text's readers across two centuries.\n4. Monasteries in the region were founded largely between the ninth and eleventh centuries.\n5. The result was a detailed picture of how the work had been used and understood.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Sentence 4"
+    },
+    {
+      "key": "B",
+      "markdown": "Sentence 1"
+    },
+    {
+      "key": "C",
+      "markdown": "Sentence 3"
+    },
+    {
+      "key": "D",
+      "markdown": "Sentence 5"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Sentences 1, 2, 3 and 5 follow one thread: a manuscript found, its annotations, what scholars did with them, and the outcome. Sentence 4 gives background about **when monasteries were founded**, which nothing else refers to and which the argument never uses.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 85,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:odd-sentence"
+  ],
+  "mockReserved": false
+}

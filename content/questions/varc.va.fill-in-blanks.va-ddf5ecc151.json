@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-ddf5ecc151",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nMoreover, the report ___ the earlier findings rather than challenging them.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "corroborated"
+    },
+    {
+      "key": "B",
+      "markdown": "contradicted"
+    },
+    {
+      "key": "C",
+      "markdown": "ignored"
+    },
+    {
+      "key": "D",
+      "markdown": "delayed"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**Rather than challenging** tells you directly that the report supported the findings, and **moreover** signals continuation rather than contrast. **Corroborated** means confirmed.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "continuation"
+  ],
+  "mockReserved": false
+}

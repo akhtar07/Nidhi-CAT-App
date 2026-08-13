@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-summary.va-53c519ba9f",
+  "microTopicIds": [
+    "varc.va.para-summary"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Summarise the paragraph:\n\n\"Remote work reduces commuting time and gives employees more control over their day. Yet it also weakens the informal contact through which junior staff learn from experienced colleagues. Organisations that have moved entirely remote report faster individual output but slower development of new hires.\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Remote work improves individual productivity but hinders the informal learning junior staff rely on."
+    },
+    {
+      "key": "B",
+      "markdown": "Remote work is more efficient than office work in every respect."
+    },
+    {
+      "key": "C",
+      "markdown": "Organisations should require all employees to return to the office."
+    },
+    {
+      "key": "D",
+      "markdown": "Junior staff generally prefer working in an office to working remotely."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The paragraph balances a benefit against a cost, and the summary must carry both. The second option keeps only the benefit, the third recommends an action the paragraph never proposes, and the fourth asserts a preference that is never mentioned.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-summary"
+  ],
+  "mockReserved": false
+}

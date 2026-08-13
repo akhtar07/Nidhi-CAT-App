@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-f96a1bd853",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nBecause the evidence was overwhelming, the jury reached a ___ verdict.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "unanimous"
+    },
+    {
+      "key": "B",
+      "markdown": "tentative"
+    },
+    {
+      "key": "C",
+      "markdown": "disputed"
+    },
+    {
+      "key": "D",
+      "markdown": "delayed"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**Because** signals agreement between cause and effect. Overwhelming evidence produces agreement, so **unanimous** follows. The others all imply doubt or difficulty, contradicting the stated cause.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "cause"
+  ],
+  "mockReserved": false
+}

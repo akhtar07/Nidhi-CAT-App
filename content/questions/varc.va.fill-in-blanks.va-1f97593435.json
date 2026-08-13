@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-1f97593435",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nThe policy was introduced to ___ the shortage, but it made matters worse.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "alleviate"
+    },
+    {
+      "key": "B",
+      "markdown": "aggravate"
+    },
+    {
+      "key": "C",
+      "markdown": "conceal"
+    },
+    {
+      "key": "D",
+      "markdown": "postpone"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "**But it made matters worse** contrasts with the intention, so the intention must have been to improve things: **alleviate**. **Aggravate** would remove the contrast the sentence explicitly signals.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "contrast"
+  ],
+  "mockReserved": false
+}

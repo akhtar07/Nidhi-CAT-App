@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-completion.va-b0a70e2089",
+  "microTopicIds": [
+    "varc.va.para-completion"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the sentence that best completes the paragraph:\n\n\"Open-plan offices were introduced partly to encourage collaboration. Studies since have found that face-to-face interaction actually falls when partitions are removed, while written messaging rises sharply. Workers, it seems, create the privacy they need by other means. ___\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Removing physical barriers does not remove the desire for them."
+    },
+    {
+      "key": "B",
+      "markdown": "Open-plan layouts also reduce the cost of office space per employee."
+    },
+    {
+      "key": "C",
+      "markdown": "Written messaging tools have improved considerably in recent years."
+    },
+    {
+      "key": "D",
+      "markdown": "Most large firms adopted open-plan layouts during the same period."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The last given sentence observes that workers find other ways to get privacy. The completion should crystallise that insight, which the first option does. The others introduce cost, tooling or adoption history \u2014 none of which the paragraph was heading towards.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-completion"
+  ],
+  "mockReserved": false
+}

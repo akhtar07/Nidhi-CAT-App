@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.critical-reasoning.va-8e8d59ba5c",
+  "microTopicIds": [
+    "varc.va.critical-reasoning"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "\"Students who eat breakfast score higher on tests. Therefore, schools should provide free breakfast to raise test scores.\"\n\nWhich of the following, if true, most strengthens this argument?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "In trials where breakfast was provided to randomly chosen students, their scores rose."
+    },
+    {
+      "key": "B",
+      "markdown": "Breakfast is widely regarded as the most important meal of the day."
+    },
+    {
+      "key": "C",
+      "markdown": "Most students say they would eat a free breakfast if it were offered."
+    },
+    {
+      "key": "D",
+      "markdown": "Schools in wealthier districts already provide free breakfast."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The argument's weakness is that eating breakfast may simply mark out better-off or better-organised households. A **randomised** trial removes that alternative explanation and supports genuine causation. The others restate opinion, intention, or an existing practice without addressing cause.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:critical-reasoning",
+    "strengthen"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.critical-reasoning.va-f867e80c47",
+  "microTopicIds": [
+    "varc.va.critical-reasoning"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "\"The average salary at our firm rose last year. Therefore every employee earned more than in the previous year.\"\n\nThe reasoning is flawed because:",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "an average can rise even if some individuals earn less"
+    },
+    {
+      "key": "B",
+      "markdown": "salaries are not the only form of compensation"
+    },
+    {
+      "key": "C",
+      "markdown": "the firm may have hired new employees"
+    },
+    {
+      "key": "D",
+      "markdown": "the previous year's figures may have been misreported"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "This moves from a **group statistic to a claim about every individual**. A rise in the average is fully consistent with some employees taking a pay cut, as long as others gained more. The other options raise possibilities but do not identify the logical error.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 85,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:critical-reasoning",
+    "flaw"
+  ],
+  "mockReserved": false
+}

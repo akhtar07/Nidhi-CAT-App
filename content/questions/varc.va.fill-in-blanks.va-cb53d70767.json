@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-cb53d70767",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nThe results were ___, so the team repeated the experiment before publishing.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "inconclusive"
+    },
+    {
+      "key": "B",
+      "markdown": "definitive"
+    },
+    {
+      "key": "C",
+      "markdown": "publishable"
+    },
+    {
+      "key": "D",
+      "markdown": "encouraging"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Repeating the experiment implies the first results settled nothing, which is **inconclusive**. Each other option would have made repetition unnecessary.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "cause"
+  ],
+  "mockReserved": false
+}

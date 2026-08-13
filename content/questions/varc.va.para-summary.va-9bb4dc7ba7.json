@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-summary.va-9bb4dc7ba7",
+  "microTopicIds": [
+    "varc.va.para-summary"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Summarise the paragraph:\n\n\"Antibiotic resistance is often described as a future threat. It is not. Infections that no longer respond to first-line treatment are already routine in hospitals worldwide, and the pipeline of genuinely new antibiotics has been nearly empty for two decades.\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Antibiotic resistance is a present crisis, not a future one, and few new drugs are coming."
+    },
+    {
+      "key": "B",
+      "markdown": "Antibiotic resistance will become a serious problem within the next few decades."
+    },
+    {
+      "key": "C",
+      "markdown": "Hospitals should improve their infection control procedures."
+    },
+    {
+      "key": "D",
+      "markdown": "Pharmaceutical companies have stopped researching new medicines altogether."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The paragraph exists to correct a framing: the threat is current, not future. The second option reasserts exactly the view being corrected. The third proposes an unmentioned action, and the fourth overstates 'nearly empty antibiotic pipeline' into abandoning all research.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 85,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-summary"
+  ],
+  "mockReserved": false
+}

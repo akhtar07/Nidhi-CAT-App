@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-completion.va-75caf54154",
+  "microTopicIds": [
+    "varc.va.para-completion"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the sentence that best completes the paragraph:\n\n\"For decades the standard treatment was prescribed to nearly every patient with the condition. Recent trials, however, show it helps only those with a particular genetic marker, and offers no benefit at all to the rest. ___\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Testing for that marker should therefore precede any decision to prescribe."
+    },
+    {
+      "key": "B",
+      "markdown": "The condition affects roughly one in four hundred adults."
+    },
+    {
+      "key": "C",
+      "markdown": "Genetic testing has become considerably cheaper in recent years."
+    },
+    {
+      "key": "D",
+      "markdown": "The treatment was first developed in the 1960s."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The paragraph establishes that the treatment works only for an identifiable subgroup. The completion that follows is the practical implication \u2014 test first. The others add background facts that the paragraph was not building towards.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-completion"
+  ],
+  "mockReserved": false
+}

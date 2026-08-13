@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-summary.va-362038bc61",
+  "microTopicIds": [
+    "varc.va.para-summary"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Summarise the paragraph:\n\n\"Microfinance has genuinely helped some borrowers start small businesses and smooth irregular incomes. But its advocates have often presented it as a cure for poverty itself, a claim the evidence does not support. Most studies find modest gains for a minority of borrowers and no measurable effect on overall poverty rates.\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Microfinance offers real but limited benefits that its supporters have overstated."
+    },
+    {
+      "key": "B",
+      "markdown": "Microfinance has failed to help borrowers and should be abandoned."
+    },
+    {
+      "key": "C",
+      "markdown": "Microfinance allows borrowers to start small businesses and smooth incomes."
+    },
+    {
+      "key": "D",
+      "markdown": "Studies of microfinance have produced inconsistent and unreliable results."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The paragraph makes two moves: it concedes real benefits, then criticises the exaggeration. A faithful summary must keep both. The second option drops the concession and overstates the criticism, the third drops the criticism entirely, and the fourth misdescribes the evidence, which the paragraph says is fairly consistent.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-summary"
+  ],
+  "mockReserved": false
+}

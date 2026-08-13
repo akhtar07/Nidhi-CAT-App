@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-afe34fb7e5",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "When the committee announced its decision, the members applauded."
+    },
+    {
+      "key": "B",
+      "markdown": "When the committee announced their decision, the members applauded."
+    },
+    {
+      "key": "C",
+      "markdown": "When the committee announced it's decision, the members applauded."
+    },
+    {
+      "key": "D",
+      "markdown": "When the committee announced its' decision, the members applauded."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**Committee** here acts as a single body, so the possessive is **its**. Note **it's** means 'it is', and **its'** is not a word at all.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "pronoun"
+  ],
+  "mockReserved": false
+}

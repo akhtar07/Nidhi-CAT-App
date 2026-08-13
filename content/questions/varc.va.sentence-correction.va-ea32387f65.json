@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-ea32387f65",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Fewer people attended than we had expected."
+    },
+    {
+      "key": "B",
+      "markdown": "Less people attended than we had expected."
+    },
+    {
+      "key": "C",
+      "markdown": "Fewer people attended then we had expected."
+    },
+    {
+      "key": "D",
+      "markdown": "Less people attended then we had expected."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**Fewer** is used for countable nouns like people; **less** is for uncountable quantities. Also **than** makes comparisons, while **then** refers to time.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "usage"
+  ],
+  "mockReserved": false
+}

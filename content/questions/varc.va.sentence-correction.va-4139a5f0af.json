@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-4139a5f0af",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Neither the manager nor the employees were informed of the change."
+    },
+    {
+      "key": "B",
+      "markdown": "Neither the manager nor the employees was informed of the change."
+    },
+    {
+      "key": "C",
+      "markdown": "Neither the manager nor the employees is informed of the change."
+    },
+    {
+      "key": "D",
+      "markdown": "Neither the manager or the employees were informed of the change."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "With **neither ... nor**, the verb agrees with the nearer subject, which is **employees** (plural), so **were** is right. The last option also wrongly pairs **neither** with **or** instead of **nor**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "subject-verb"
+  ],
+  "mockReserved": false
+}

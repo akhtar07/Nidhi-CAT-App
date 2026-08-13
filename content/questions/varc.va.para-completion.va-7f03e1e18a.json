@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-completion.va-7f03e1e18a",
+  "microTopicIds": [
+    "varc.va.para-completion"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the sentence that best completes the paragraph:\n\n\"Translators have long argued about whether to render a text literally or freely. A literal version preserves the original's structure but can read awkwardly; a free one reads well but may drift from what was actually said. ___\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Most working translators therefore treat the choice as a balance to be struck afresh in each passage."
+    },
+    {
+      "key": "B",
+      "markdown": "Translation has existed for as long as written language itself."
+    },
+    {
+      "key": "C",
+      "markdown": "Literal translation is clearly the more scholarly of the two approaches."
+    },
+    {
+      "key": "D",
+      "markdown": "Many great works of literature have never been translated at all."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The paragraph sets up a genuine two-sided tension, giving each side a cost. The completion must resolve that tension rather than pick a winner arbitrarily or change topic. Only the first does so; the third takes a side the paragraph deliberately left open.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-completion"
+  ],
+  "mockReserved": false
+}

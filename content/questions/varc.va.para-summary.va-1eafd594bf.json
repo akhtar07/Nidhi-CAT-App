@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-summary.va-1eafd594bf",
+  "microTopicIds": [
+    "varc.va.para-summary"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Summarise the paragraph:\n\n\"Attempts to measure a school's quality by its examination results are appealing because the data already exists. But results reflect the students a school admits at least as much as the teaching it provides. A school selecting high-achieving entrants will post strong results regardless of what happens in its classrooms.\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Exam results are a poor measure of school quality because they largely reflect which students were admitted."
+    },
+    {
+      "key": "B",
+      "markdown": "Schools should stop publishing their examination results."
+    },
+    {
+      "key": "C",
+      "markdown": "Examination data is convenient because it is already collected."
+    },
+    {
+      "key": "D",
+      "markdown": "High-achieving students perform well wherever they are educated."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The paragraph concedes convenience and then explains why the measure fails. The correct summary keeps the conclusion and its reason. The second recommends an action never proposed, the third keeps only the concession, and the fourth states a supporting detail as though it were the main point.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-summary"
+  ],
+  "mockReserved": false
+}

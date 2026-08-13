@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.critical-reasoning.va-4a2726b4ad",
+  "microTopicIds": [
+    "varc.va.critical-reasoning"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "\"Cities with more parks report lower rates of anxiety. Building more parks would therefore reduce anxiety.\"\n\nWhich of the following, if true, most weakens this argument?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Wealthier cities tend both to build more parks and to have better healthcare."
+    },
+    {
+      "key": "B",
+      "markdown": "Some people who live near parks never visit them."
+    },
+    {
+      "key": "C",
+      "markdown": "Parks are expensive to maintain over time."
+    },
+    {
+      "key": "D",
+      "markdown": "Anxiety can be measured in several different ways."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "very_hard",
+  "eloRating": 1500.0,
+  "solutionMarkdown": "This identifies a **common cause** \u2014 wealth \u2014 that could produce both the parks and the lower anxiety, meaning the parks need not be doing the work. The other options concern usage, cost or measurement, none of which undermines the causal claim itself.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 95,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:critical-reasoning",
+    "weaken"
+  ],
+  "mockReserved": false
+}

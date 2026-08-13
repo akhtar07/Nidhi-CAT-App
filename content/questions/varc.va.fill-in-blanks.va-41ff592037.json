@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-41ff592037",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nThe committee remained ___ despite hours of debate, and no decision was reached.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "divided"
+    },
+    {
+      "key": "B",
+      "markdown": "unanimous"
+    },
+    {
+      "key": "C",
+      "markdown": "efficient"
+    },
+    {
+      "key": "D",
+      "markdown": "punctual"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "No decision was reached, so the committee must have stayed in disagreement: **divided**. **Unanimous** would have produced a decision, and the other two are irrelevant to agreement.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "context"
+  ],
+  "mockReserved": false
+}

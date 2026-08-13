@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-completion.va-8472c63751",
+  "microTopicIds": [
+    "varc.va.para-completion"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the sentence that best completes the paragraph:\n\n\"The policy failed on three counts: the funding arrived late, the training was never delivered, and the monitoring system was abandoned within a year. Each of these problems was foreseeable, and indeed foreseen \u2014 officials had raised all three in writing before the launch. ___\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The question, then, is not why the policy failed but why those warnings were ignored."
+    },
+    {
+      "key": "B",
+      "markdown": "Similar policies have been attempted in several other countries."
+    },
+    {
+      "key": "C",
+      "markdown": "Late funding is a common problem in public administration."
+    },
+    {
+      "key": "D",
+      "markdown": "The policy was eventually replaced by a different scheme."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The final given sentence sharpens the point: the failures were predicted in advance. The completion should follow that to its natural conclusion \u2014 the puzzle is now about the ignoring, not the failing. The other options change subject or restate a detail already made.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-completion"
+  ],
+  "mockReserved": false
+}

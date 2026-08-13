@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.critical-reasoning.va-1098a994d1",
+  "microTopicIds": [
+    "varc.va.critical-reasoning"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "A survey conducted on a shopping website found that 90 percent of respondents prefer shopping online. The site concludes that most people prefer shopping online.\n\nThe reasoning is flawed because:",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "the people surveyed are not representative of the general population"
+    },
+    {
+      "key": "B",
+      "markdown": "90 percent is not a large enough majority to draw conclusions"
+    },
+    {
+      "key": "C",
+      "markdown": "the survey did not ask respondents to explain their preference"
+    },
+    {
+      "key": "D",
+      "markdown": "online shopping has grown steadily in recent years"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Everyone surveyed was already visiting a shopping website, so they were predisposed to prefer online shopping. A self-selected sample cannot support a claim about people in general. This is **selection bias**, and it is the flaw regardless of how large the percentage is.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:critical-reasoning",
+    "flaw"
+  ],
+  "mockReserved": false
+}

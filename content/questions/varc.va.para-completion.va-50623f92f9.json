@@ -1,0 +1,49 @@
+{
+  "id": "varc.va.para-completion.va-50623f92f9",
+  "microTopicIds": [
+    "varc.va.para-completion"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the sentence that best completes the paragraph:\n\n\"Early forecasts of electric vehicle adoption consistently underestimated it. Analysts assumed buyers would wait for battery costs to fall to parity with petrol engines. In fact, buyers responded to running costs and local emissions rules long before that point was reached. ___\"",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "The forecasts erred not in their cost projections but in their model of what buyers respond to."
+    },
+    {
+      "key": "B",
+      "markdown": "Battery costs have continued to fall steadily since those forecasts were made."
+    },
+    {
+      "key": "C",
+      "markdown": "Electric vehicles now account for a substantial share of new car sales."
+    },
+    {
+      "key": "D",
+      "markdown": "Petrol engines remain more common in commercial vehicles than in private cars."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "very_hard",
+  "eloRating": 1500.0,
+  "solutionMarkdown": "The paragraph diagnoses a specific mistake: the analysts' assumption about buyer motivation, not their arithmetic. The completion names that diagnosis. The other options supply further facts without completing the argument the paragraph was making.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 95,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:para-completion"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-7c9799037f",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Each of the candidates has submitted a proposal."
+    },
+    {
+      "key": "B",
+      "markdown": "Each of the candidates have submitted a proposal."
+    },
+    {
+      "key": "C",
+      "markdown": "Each of the candidates are submitting a proposal."
+    },
+    {
+      "key": "D",
+      "markdown": "Each of the candidates were submitting a proposal."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**Each** is always singular, however many candidates there are, so it takes **has**. The plural **candidates** belongs to the prepositional phrase and does not govern the verb.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "subject-verb"
+  ],
+  "mockReserved": false
+}

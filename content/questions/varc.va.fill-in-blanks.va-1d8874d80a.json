@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-1d8874d80a",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nHis explanation was ___; it accounted for every detail we had raised.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "comprehensive"
+    },
+    {
+      "key": "B",
+      "markdown": "superficial"
+    },
+    {
+      "key": "C",
+      "markdown": "evasive"
+    },
+    {
+      "key": "D",
+      "markdown": "concise"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The semicolon introduces an explanation of the blank: it covered every detail. That is **comprehensive**. **Concise** describes length, not coverage, and the other two contradict the second clause.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "context"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.fill-in-blanks.va-b506e2917d",
+  "microTopicIds": [
+    "varc.va.fill-in-blanks"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Choose the word that best fits the blank:\n\nThe witness gave a ___ account, changing key details each time she was questioned.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "inconsistent"
+    },
+    {
+      "key": "B",
+      "markdown": "detailed"
+    },
+    {
+      "key": "C",
+      "markdown": "credible"
+    },
+    {
+      "key": "D",
+      "markdown": "rehearsed"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Changing details each time is the definition of **inconsistent**. **Detailed** and **rehearsed** do not address the contradiction, and **credible** contradicts it.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:fill-blanks",
+    "context"
+  ],
+  "mockReserved": false
+}

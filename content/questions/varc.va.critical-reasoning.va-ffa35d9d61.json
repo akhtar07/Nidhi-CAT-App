@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.critical-reasoning.va-ffa35d9d61",
+  "microTopicIds": [
+    "varc.va.critical-reasoning"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "\"Either we raise ticket prices or the museum will close. We cannot let the museum close, so prices must rise.\"\n\nThe reasoning is most vulnerable to the criticism that it:",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "treats two options as the only possibilities when others may exist"
+    },
+    {
+      "key": "B",
+      "markdown": "assumes the museum is worth keeping open"
+    },
+    {
+      "key": "C",
+      "markdown": "relies on the opinions of museum staff"
+    },
+    {
+      "key": "D",
+      "markdown": "does not specify how much prices would rise"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "This is a **false dichotomy**. Donations, sponsorship, reduced opening hours or public funding could all be alternatives, and the argument never rules them out. The other options question the premises' desirability or detail, not the logical structure.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:critical-reasoning",
+    "flaw"
+  ],
+  "mockReserved": false
+}

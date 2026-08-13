@@ -1,0 +1,50 @@
+{
+  "id": "varc.va.sentence-correction.va-c4f4f453b8",
+  "microTopicIds": [
+    "varc.va.sentence-correction"
+  ],
+  "section": "VARC",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following sentences is grammatically correct?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Not only did she finish the report, but she also presented it."
+    },
+    {
+      "key": "B",
+      "markdown": "Not only she finished the report, but she also presented it."
+    },
+    {
+      "key": "C",
+      "markdown": "Not only did she finish the report, but she presented it also."
+    },
+    {
+      "key": "D",
+      "markdown": "Not only she did finish the report, but also presented it."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "**Not only** at the start of a clause forces inversion \u2014 **did she finish** \u2014 and it pairs with **but also** in the standard correlative structure.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "human_reviewed",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "va:sentence-correction",
+    "parallelism"
+  ],
+  "mockReserved": false
+}
