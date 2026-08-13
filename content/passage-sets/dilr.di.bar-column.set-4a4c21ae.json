@@ -1,0 +1,55 @@
+{
+  "id": "dilr.di.bar-column.set-4a4c21ae",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The bar chart below shows the monthly output, in units, of two plants of the same manufacturer.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "bar",
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May"
+        ],
+        "series": [
+          {
+            "name": "Plant X",
+            "values": [
+              340,
+              420,
+              380,
+              500,
+              460
+            ]
+          },
+          {
+            "name": "Plant Y",
+            "values": [
+              300,
+              350,
+              410,
+              390,
+              520
+            ]
+          }
+        ],
+        "unit": "units"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.bar-column.set-4a4c21ae.q1",
+    "dilr.di.bar-column.set-4a4c21ae.q2",
+    "dilr.di.bar-column.set-4a4c21ae.q3",
+    "dilr.di.bar-column.set-4a4c21ae.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

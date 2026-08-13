@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.set-7b260d00.q1",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What is the value of $x$?\n\n**I.** $x^2 = 49$\n\n**II.** $x > 0$",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Each statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Statements I and II together are not sufficient."
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**I alone:** $x = 7$ or $x = -7$. Two values, so not sufficient \u2014 forgetting the negative root is the single most common error in this question type.\n\n**II alone:** $x$ could be any positive number. Not sufficient.\n\n**Together:** the two candidates from I, filtered by II, leave $x = 7$. Sufficient.\n\nSo **both statements together are sufficient, but neither alone is**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

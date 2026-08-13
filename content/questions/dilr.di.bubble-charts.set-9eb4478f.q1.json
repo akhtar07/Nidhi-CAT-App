@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.bubble-charts.set-9eb4478f.q1",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which school has the highest pass percentage?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "School V"
+    },
+    {
+      "key": "B",
+      "markdown": "School W"
+    },
+    {
+      "key": "C",
+      "markdown": "School X"
+    },
+    {
+      "key": "D",
+      "markdown": "School Y"
+    },
+    {
+      "key": "E",
+      "markdown": "School Z"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Highest on the vertical axis is **School W**, at 90%.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

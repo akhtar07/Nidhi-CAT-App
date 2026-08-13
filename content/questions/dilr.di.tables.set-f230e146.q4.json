@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.tables.set-f230e146.q4",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which of these grew the fastest in percentage terms from Jan to Jun?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Mall A"
+    },
+    {
+      "key": "B",
+      "markdown": "Mall B"
+    },
+    {
+      "key": "C",
+      "markdown": "Mall C"
+    },
+    {
+      "key": "D",
+      "markdown": "All of them grew at the same rate"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Percentage growth, each against its own starting figure:\n\n- Mall A: $\\dfrac{70 - 45}{45} = 55.56\\%$\n- Mall B: $\\dfrac{68 - 60}{60} = 13.33\\%$\n- Mall C: $\\dfrac{58 - 30}{30} = 93.33\\%$\n\nFastest is **Mall C**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables"
+  ],
+  "mockReserved": false
+}

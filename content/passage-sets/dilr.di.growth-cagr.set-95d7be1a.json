@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.growth-cagr.set-95d7be1a",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "A company's annual revenue, in Rs crore, was:\n\n- 2021: 128\n- 2022: 192\n- 2023: 288\n- 2024: 432\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.growth-cagr.set-95d7be1a.q1",
+    "dilr.di.growth-cagr.set-95d7be1a.q2",
+    "dilr.di.growth-cagr.set-95d7be1a.q3",
+    "dilr.di.growth-cagr.set-95d7be1a.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

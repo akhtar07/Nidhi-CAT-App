@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-38dfd64e.q3",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "If the student registers for Marketing, which course can they not register for?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Economics"
+    },
+    {
+      "key": "B",
+      "markdown": "Finance"
+    },
+    {
+      "key": "C",
+      "markdown": "Statistics"
+    },
+    {
+      "key": "D",
+      "markdown": "History"
+    },
+    {
+      "key": "E",
+      "markdown": "Law"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Marketing drags Economics in with it, and one slot is already committed to History or Law. That leaves one slot for Finance and Statistics together \u2014 but Finance cannot come without Statistics, so Finance cannot fit.\n\n**Finance**. The valid Marketing registrations are $\\{$Economics, Statistics, Marketing, History$\\}$ and $\\{$Economics, Statistics, Marketing, Law$\\}$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

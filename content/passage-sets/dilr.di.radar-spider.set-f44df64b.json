@@ -1,0 +1,56 @@
+{
+  "id": "dilr.di.radar-spider.set-f44df64b",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The radar chart below shows how a review site scored two smartphones, Aurora and Bolt, on five attributes. Each attribute is scored out of 50.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "radar",
+        "axes": [
+          "Battery",
+          "Camera",
+          "Display",
+          "Performance",
+          "Value"
+        ],
+        "series": [
+          {
+            "name": "Aurora",
+            "values": [
+              43,
+              36,
+              45,
+              40,
+              30
+            ]
+          },
+          {
+            "name": "Bolt",
+            "values": [
+              34,
+              44,
+              38,
+              46,
+              33
+            ]
+          }
+        ],
+        "max": 50,
+        "unit": "points out of 50"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.radar-spider.set-f44df64b.q1",
+    "dilr.di.radar-spider.set-f44df64b.q2",
+    "dilr.di.radar-spider.set-f44df64b.q3",
+    "dilr.di.radar-spider.set-f44df64b.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

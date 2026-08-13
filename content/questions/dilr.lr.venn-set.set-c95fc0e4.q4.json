@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-c95fc0e4.q4",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many people read exactly one of the two newspapers?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 260.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Take the overlap out of the union once more, since the union counts the both-readers:\n\n$340 - 80 = 260$\n\n**260 people**. Equivalently, A only is $240 - 80 = 160$ and B only is $180 - 80 = 100$, and $160 + 100 = 260$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:venn-set"
+  ],
+  "mockReserved": false
+}

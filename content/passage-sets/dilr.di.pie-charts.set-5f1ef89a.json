@@ -1,0 +1,69 @@
+{
+  "id": "dilr.di.pie-charts.set-5f1ef89a",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "A college has 1,200 students. The first pie chart splits them by stream. The second pie chart splits the **Science** students alone by specialisation. All figures are percentages of the relevant whole.\n\nStudy the charts and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "pie",
+        "slices": [
+          {
+            "name": "Science",
+            "value": 35
+          },
+          {
+            "name": "Commerce",
+            "value": 30
+          },
+          {
+            "name": "Arts",
+            "value": 20
+          },
+          {
+            "name": "Law",
+            "value": 15
+          }
+        ],
+        "unit": "%"
+      }
+    },
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "pie",
+        "slices": [
+          {
+            "name": "Physics",
+            "value": 30
+          },
+          {
+            "name": "Chemistry",
+            "value": 25
+          },
+          {
+            "name": "Biology",
+            "value": 25
+          },
+          {
+            "name": "Mathematics",
+            "value": 20
+          }
+        ],
+        "unit": "%"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.pie-charts.set-5f1ef89a.q1",
+    "dilr.di.pie-charts.set-5f1ef89a.q2",
+    "dilr.di.pie-charts.set-5f1ef89a.q3",
+    "dilr.di.pie-charts.set-5f1ef89a.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

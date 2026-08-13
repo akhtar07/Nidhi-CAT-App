@@ -1,0 +1,65 @@
+{
+  "id": "dilr.di.stacked-charts.set-0ac64260",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The stacked column chart below splits a city's daily commuters, in lakh, across three modes of transport.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "stacked-bar",
+        "categories": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "series": [
+          {
+            "name": "Bus",
+            "values": [
+              40,
+              42,
+              38,
+              45,
+              50
+            ]
+          },
+          {
+            "name": "Metro",
+            "values": [
+              10,
+              15,
+              22,
+              30,
+              42
+            ]
+          },
+          {
+            "name": "Car",
+            "values": [
+              25,
+              26,
+              28,
+              27,
+              30
+            ]
+          }
+        ],
+        "unit": "lakh commuters"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.stacked-charts.set-0ac64260.q1",
+    "dilr.di.stacked-charts.set-0ac64260.q2",
+    "dilr.di.stacked-charts.set-0ac64260.q3",
+    "dilr.di.stacked-charts.set-0ac64260.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

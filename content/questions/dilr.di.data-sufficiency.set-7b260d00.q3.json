@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.set-7b260d00.q3",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What is the average of five numbers?\n\n**I.** Their sum is 200.\n\n**II.** The largest of them is 60.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Each statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Statements I and II together are not sufficient."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "**I alone:** an average is the sum divided by the count, and both are known: $\\dfrac{200}{5} = 40$. Sufficient.\n\n**II alone:** knowing the largest value says nothing about the other four. Not sufficient.\n\nSo **statement I alone is sufficient, but statement II alone is not**. You do not need the individual numbers \u2014 averages depend only on the total.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

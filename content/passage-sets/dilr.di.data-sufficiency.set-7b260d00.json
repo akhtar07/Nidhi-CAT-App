@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.data-sufficiency.set-7b260d00",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Each question below is followed by two statements, I and II. Decide whether the statements are sufficient to answer the question, and choose the matching option.\n\nA statement is sufficient if it pins the answer down to exactly one value \u2014 or, for a yes/no question, settles it as a definite yes or a definite no. You never need to actually compute the answer, only to establish that it is determined.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.data-sufficiency.set-7b260d00.q1",
+    "dilr.di.data-sufficiency.set-7b260d00.q2",
+    "dilr.di.data-sufficiency.set-7b260d00.q3",
+    "dilr.di.data-sufficiency.set-7b260d00.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

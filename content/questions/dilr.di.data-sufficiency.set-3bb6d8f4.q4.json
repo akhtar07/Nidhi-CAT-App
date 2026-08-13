@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.set-3bb6d8f4.q4",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "A shopkeeper sells an article at a profit of 25%. What is the selling price?\n\n**I.** The cost price is Rs 400.\n\n**II.** The profit is Rs 100.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Each statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Statements I and II together are not sufficient."
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "**I alone:** $400 \\times 1.25 = 500$. Sufficient.\n\n**II alone:** the profit of Rs 100 is the 25% named in the question stem, so cost price $= \\dfrac{100}{0.25} = 400$ and the selling price is 500. Sufficient.\n\nSo **each statement alone is sufficient**. The information in the stem counts as given for both statements \u2014 a statement that looks thin on its own is often sufficient once the stem is used properly.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

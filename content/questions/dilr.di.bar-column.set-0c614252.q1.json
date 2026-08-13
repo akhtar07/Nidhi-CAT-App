@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bar-column.set-0c614252.q1",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the combined figure across all 3 categories for 2022?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 316.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$150 + 100 + 66 = 316$, so **316 students**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.tables.set-59a24b52.q1",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Wheat's figure for State R?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 220.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Read the Wheat entry for State R: **220 thousand tonnes**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables"
+  ],
+  "mockReserved": false
+}

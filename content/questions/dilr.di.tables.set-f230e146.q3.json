@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.tables.set-f230e146.q3",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In how many months was Mall A higher than Mall B?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Compare the two figures month by month. Mall A is ahead in Apr, Jun \u2014 **2**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-a6588c6e.q1",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the minimum possible number of people who like both tea and coffee?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 40.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The overlap is smallest when the union is as large as it can be, and the union cannot exceed the group:\n\n$130 + 110 - 200 = 40$\n\n**40 people**. Together the two preferences account for 240 preference-slots among 200 people, so at least 40 people must be supplying two of them.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:venn-set"
+  ],
+  "mockReserved": false
+}

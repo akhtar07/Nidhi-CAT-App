@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.data-sufficiency.set-3bb6d8f4",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Each question below is followed by two statements, I and II. Decide whether the statements are sufficient to answer the question, and choose the matching option.\n\nWatch for statements that restate the question in other words, and for statements that look like background detail but silently fix a quantity.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.data-sufficiency.set-3bb6d8f4.q1",
+    "dilr.di.data-sufficiency.set-3bb6d8f4.q2",
+    "dilr.di.data-sufficiency.set-3bb6d8f4.q3",
+    "dilr.di.data-sufficiency.set-3bb6d8f4.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

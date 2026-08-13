@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.combination-charts.set-b11f03c0.q4",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In how many of the years shown did revenue rise over the previous year while the profit margin fell?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "0"
+    },
+    {
+      "key": "B",
+      "markdown": "1"
+    },
+    {
+      "key": "C",
+      "markdown": "2"
+    },
+    {
+      "key": "D",
+      "markdown": "3"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Check each year-on-year move for the two conditions together:\n\n- 2021: revenue up 400 to 520, margin up 10 to 12 \u2014 no\n- 2022: revenue down 520 to 480 \u2014 no\n- 2023: revenue up 480 to 650, margin down 15 to 12 \u2014 **yes**\n- 2024: revenue up 650 to 800, margin up 12 to 14 \u2014 no\n\nExactly **1** year. 2023 is also the year with the second-highest profit, so \"margin fell\" and \"the business did worse\" are not the same statement.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

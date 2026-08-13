@@ -25,7 +25,7 @@
   "titaTolerance": null,
   "difficulty": "medium",
   "eloRating": 1200.0,
-  "solutionMarkdown": "Total bills: Engineering: 3200000, Sales: 1500000, Support: 675000. **Support** is lowest \u2014 note this is about the department's *total* bill, not its average salary; Support has both the fewest employees and the lowest average, so it's unambiguous here, but always check total vs. average.",
+  "solutionMarkdown": "Total bills: Engineering: 3200000, Sales: 1500000, Support: 675000. **Support** is lowest \u2014 note this is about the department's **total** bill, not its average salary; Support has both the fewest employees and the lowest average, so it's unambiguous here, but always check total vs. average.",
   "altSolutionMarkdown": null,
   "targetSeconds": 75,
   "source": "generated",

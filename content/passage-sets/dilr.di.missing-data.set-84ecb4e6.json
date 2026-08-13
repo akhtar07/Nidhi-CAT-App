@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.missing-data.set-84ecb4e6",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "A factory produced 1,200 units in a day across three shifts. Shift 1 produced 35% of the day's output and Shift 3 produced two-fifths of it. Shift 2's output was not recorded.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.missing-data.set-84ecb4e6.q1",
+    "dilr.di.missing-data.set-84ecb4e6.q2",
+    "dilr.di.missing-data.set-84ecb4e6.q3",
+    "dilr.di.missing-data.set-84ecb4e6.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

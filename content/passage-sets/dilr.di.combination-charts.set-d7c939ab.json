@@ -1,0 +1,58 @@
+{
+  "id": "dilr.di.combination-charts.set-d7c939ab",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The chart below shows an airline's monthly passengers carried as bars, read against the left axis in lakh, and its on-time performance as a line, read against the right axis in percent.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "combo",
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May"
+        ],
+        "bars": [
+          {
+            "name": "Passengers",
+            "values": [
+              12,
+              15,
+              18,
+              14,
+              20
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "name": "On-time performance",
+            "values": [
+              82,
+              78,
+              70,
+              85,
+              74
+            ]
+          }
+        ],
+        "leftUnit": "lakh",
+        "rightUnit": "%"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.combination-charts.set-d7c939ab.q1",
+    "dilr.di.combination-charts.set-d7c939ab.q2",
+    "dilr.di.combination-charts.set-d7c939ab.q3",
+    "dilr.di.combination-charts.set-d7c939ab.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

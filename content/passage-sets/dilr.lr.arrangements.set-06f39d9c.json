@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.arrangements.set-06f39d9c",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "Six friends \u2014 Anaya, Bhavesh, Chirag, Divya, Esha and Farhan \u2014 sit in a row of six seats numbered 1 to 6 from left to right. All of them face the same direction.\n\n- Anaya sits at one of the two ends.\n- Bhavesh sits exactly two seats to the right of Anaya.\n- Divya sits immediately to the right of Chirag.\n- Esha sits immediately to the right of Bhavesh.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.arrangements.set-06f39d9c.q1",
+    "dilr.lr.arrangements.set-06f39d9c.q2",
+    "dilr.lr.arrangements.set-06f39d9c.q3",
+    "dilr.lr.arrangements.set-06f39d9c.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

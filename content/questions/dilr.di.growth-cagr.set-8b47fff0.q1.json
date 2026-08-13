@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.growth-cagr.set-8b47fff0.q1",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the town's population at the end of 2021?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 66000.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$50{,}000 \\times 1.20 = 60{,}000$ at the end of 2020, then $60{,}000 \\times 1.10 = 66{,}000$.\n\n**66,000**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

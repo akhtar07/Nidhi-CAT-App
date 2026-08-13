@@ -1,0 +1,68 @@
+{
+  "id": "dilr.di.tables.set-f230e146",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The table below shows monthly footfall, in thousands, at three shopping malls.\n\nStudy the table and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "table",
+      "spec": {
+        "columns": [
+          "Month",
+          "Mall A",
+          "Mall B",
+          "Mall C"
+        ],
+        "rows": [
+          [
+            "Jan",
+            "45",
+            "60",
+            "30"
+          ],
+          [
+            "Feb",
+            "52",
+            "58",
+            "35"
+          ],
+          [
+            "Mar",
+            "48",
+            "62",
+            "40"
+          ],
+          [
+            "Apr",
+            "60",
+            "55",
+            "42"
+          ],
+          [
+            "May",
+            "55",
+            "65",
+            "50"
+          ],
+          [
+            "Jun",
+            "70",
+            "68",
+            "58"
+          ]
+        ]
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.tables.set-f230e146.q1",
+    "dilr.di.tables.set-f230e146.q2",
+    "dilr.di.tables.set-f230e146.q3",
+    "dilr.di.tables.set-f230e146.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

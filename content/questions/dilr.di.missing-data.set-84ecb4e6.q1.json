@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-84ecb4e6.q1",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many units did Shift 1 produce?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 420.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$1200 \\times 0.35 = 420$ units.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 45,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

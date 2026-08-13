@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.bubble-charts.set-85896648.q2",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which city has the highest average monthly household income?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "City P"
+    },
+    {
+      "key": "B",
+      "markdown": "City Q"
+    },
+    {
+      "key": "C",
+      "markdown": "City R"
+    },
+    {
+      "key": "D",
+      "markdown": "City S"
+    },
+    {
+      "key": "E",
+      "markdown": "City T"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Highest on the vertical axis is **City S**, at Rs 30 thousand. City Q is furthest right but not highest \u2014 the two axes are independent.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 45,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

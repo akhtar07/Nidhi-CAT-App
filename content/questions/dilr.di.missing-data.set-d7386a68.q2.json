@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-d7386a68.q2",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the grand total of units sold by all three salespeople over the four months?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 164.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Add the row totals: $63 + 60 + 41 = 164$.\n\n**164 units**. Adding the four monthly columns gives $40 + 40 + 47 + 37 = 164$ as well \u2014 a free check that the missing entry was filled in correctly.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

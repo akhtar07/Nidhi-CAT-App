@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-a6588c6e.q4",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the maximum possible number of people who like exactly one of the two drinks?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 160.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Exactly-one equals $130 + 110 - 2 \\times (\\text{both})$, so it is largest when the overlap is smallest. The smallest possible overlap is 40:\n\n$130 + 110 - 2 \\times 40 = 240 - 80 = 160$\n\n**160 people**. That case has nobody outside both circles: 40 like both, 90 like tea only, 70 like coffee only, and $40 + 90 + 70 = 200$. Note the overlap is subtracted **twice** here, once from each group, because someone who likes both is excluded from exactly-one on two counts.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:venn-set"
+  ],
+  "mockReserved": false
+}

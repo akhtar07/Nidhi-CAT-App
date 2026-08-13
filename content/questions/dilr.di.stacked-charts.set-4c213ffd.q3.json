@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.stacked-charts.set-4c213ffd.q3",
+  "microTopicIds": [
+    "dilr.di.stacked-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In 2024, Other charges accounted for what percentage of the total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 11.11,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The whole column for 2024 is $80 + 40 + 15 = 135$.\n\n$\\dfrac{15}{135} \\times 100 = 11.11\\%$\n\n**11.11%**. The denominator is this column's own height, not the total of Other charges across every column.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:stacked-charts"
+  ],
+  "mockReserved": false
+}

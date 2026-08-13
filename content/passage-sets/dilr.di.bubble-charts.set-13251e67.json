@@ -1,0 +1,64 @@
+{
+  "id": "dilr.di.bubble-charts.set-13251e67",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Five products of a company are plotted below. The horizontal axis is unit price in rupees, the vertical axis is annual units sold in thousands, and bubble area is proportional to the advertising spend on that product in Rs lakh (printed inside the bubble).\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "bubble",
+        "points": [
+          {
+            "name": "Product A",
+            "x": 200,
+            "y": 70,
+            "size": 10
+          },
+          {
+            "name": "Product B",
+            "x": 300,
+            "y": 60,
+            "size": 25
+          },
+          {
+            "name": "Product C",
+            "x": 500,
+            "y": 40,
+            "size": 40
+          },
+          {
+            "name": "Product D",
+            "x": 600,
+            "y": 30,
+            "size": 15
+          },
+          {
+            "name": "Product E",
+            "x": 700,
+            "y": 20,
+            "size": 30
+          }
+        ],
+        "xLabel": "Unit price (Rs)",
+        "yLabel": "Units sold (thousand)",
+        "sizeLabel": "advertising spend in Rs lakh",
+        "xMax": 800,
+        "yMax": 80,
+        "xDivisions": 8,
+        "yDivisions": 8
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.bubble-charts.set-13251e67.q1",
+    "dilr.di.bubble-charts.set-13251e67.q2",
+    "dilr.di.bubble-charts.set-13251e67.q3",
+    "dilr.di.bubble-charts.set-13251e67.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.combination-charts.set-d7c939ab.q2",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many passengers, in lakh, arrived on time in April?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 11.9,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "April carried 14 lakh passengers with 85% on-time performance.\n\n$14 \\times 0.85 = 11.9$\n\n**11.9 lakh passengers**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

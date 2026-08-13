@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-48db7338.q3",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many matches in the tournament ended in a draw?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Add the draws column: $1 + 1 + 0 + 2 = 4$. But a drawn match puts a draw against **two** teams, so the number of drawn matches is half that:\n\n$\\dfrac{4}{2} = 2$\n\n**2 matches**. Check: 4 wins means 4 decisive matches, and $4 + 2 = 6$, the whole tournament.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:games-tournaments"
+  ],
+  "mockReserved": false
+}

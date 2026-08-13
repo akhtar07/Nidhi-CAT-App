@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-7380deb6.q4",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students play exactly two of the three sports?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 45.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Each pairwise figure includes the 10 who play all three, so subtract them from each:\n\n- cricket and football only: $30 - 10 = 20$\n- football and tennis only: $25 - 10 = 15$\n- cricket and tennis only: $20 - 10 = 10$\n\n$20 + 15 + 10 = 45$\n\n**45 students**. Adding the three pairwise figures to 75 and stopping there is the standard error \u2014 it triple-counts the centre.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:venn-set"
+  ],
+  "mockReserved": false
+}

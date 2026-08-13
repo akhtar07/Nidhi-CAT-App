@@ -1,0 +1,64 @@
+{
+  "id": "dilr.di.combination-charts.set-99871067",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The chart below shows a retailer's quarterly online and offline sales as bars, read against the left axis in Rs lakh, and the average discount offered as a line, read against the right axis in percent.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "combo",
+        "categories": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "bars": [
+          {
+            "name": "Online",
+            "values": [
+              60,
+              75,
+              90,
+              120
+            ]
+          },
+          {
+            "name": "Offline",
+            "values": [
+              140,
+              130,
+              110,
+              100
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "name": "Average discount",
+            "values": [
+              10,
+              15,
+              20,
+              25
+            ]
+          }
+        ],
+        "leftUnit": "Rs lakh",
+        "rightUnit": "%"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.combination-charts.set-99871067.q1",
+    "dilr.di.combination-charts.set-99871067.q2",
+    "dilr.di.combination-charts.set-99871067.q3",
+    "dilr.di.combination-charts.set-99871067.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.combination-charts.set-022bcbd5.q2",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students in total appeared for the exam in 2023?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 280.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$130 \\text{ boys} + 150 \\text{ girls} = 280$ students.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

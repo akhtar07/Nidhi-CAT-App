@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.bubble-charts.set-f02ea716.q1",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which startup has the highest annual revenue?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Alpha"
+    },
+    {
+      "key": "B",
+      "markdown": "Beta"
+    },
+    {
+      "key": "C",
+      "markdown": "Gamma"
+    },
+    {
+      "key": "D",
+      "markdown": "Delta"
+    },
+    {
+      "key": "E",
+      "markdown": "Epsilon"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Furthest right on the revenue axis is **Gamma**, at Rs 200 crore.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

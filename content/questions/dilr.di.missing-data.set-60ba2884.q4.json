@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-60ba2884.q4",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What would Rahul have needed to score for the four-student average to be 76?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 86.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "A 76 average over 4 students needs a total of $76 \\times 4 = 304$.\n\n$304 - 218 = 86$\n\n**86**. Shortcut: lifting the average by 2 across 4 students needs 8 extra marks, and $78 + 8 = 86$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

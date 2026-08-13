@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.arrangements.set-06f39d9c.q4",
+  "microTopicIds": [
+    "dilr.lr.arrangements"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which pair occupies the two ends of the row?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Anaya and Divya"
+    },
+    {
+      "key": "B",
+      "markdown": "Anaya and Chirag"
+    },
+    {
+      "key": "C",
+      "markdown": "Farhan and Divya"
+    },
+    {
+      "key": "D",
+      "markdown": "Bhavesh and Divya"
+    },
+    {
+      "key": "E",
+      "markdown": "Anaya and Farhan"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Seat 1 is Anaya and seat 6 is Divya, so the ends are **Anaya and Divya**.\n\nWorth noticing: Anaya's position was forced by the very first clue, and Divya's fell out only at the last step. In a linear arrangement, start from the clue that has the fewest ways of being true \u2014 here \"two seats to the right of an end seat\" has exactly one.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:arrangements"
+  ],
+  "mockReserved": false
+}

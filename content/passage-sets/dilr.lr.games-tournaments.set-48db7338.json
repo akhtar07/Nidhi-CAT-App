@@ -1,0 +1,56 @@
+{
+  "id": "dilr.lr.games-tournaments.set-48db7338",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "Four teams played a single round-robin tournament, so every team played every other team exactly once. A win is worth 3 points, a draw 1 point and a loss 0 points. The table below shows each team's record.\n\nAnswer the questions that follow.",
+  "assets": [
+    {
+      "type": "table",
+      "spec": {
+        "columns": [
+          "Team",
+          "Won",
+          "Drawn",
+          "Lost"
+        ],
+        "rows": [
+          [
+            "Warriors",
+            "2",
+            "1",
+            "0"
+          ],
+          [
+            "Xplorers",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "Yodhas",
+            "1",
+            "0",
+            "2"
+          ],
+          [
+            "Zephyrs",
+            "0",
+            "2",
+            "1"
+          ]
+        ]
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.lr.games-tournaments.set-48db7338.q1",
+    "dilr.lr.games-tournaments.set-48db7338.q2",
+    "dilr.lr.games-tournaments.set-48db7338.q3",
+    "dilr.lr.games-tournaments.set-48db7338.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

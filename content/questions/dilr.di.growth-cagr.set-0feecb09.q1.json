@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.growth-cagr.set-0feecb09.q1",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the absolute gain on Investment A, in rupees?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 19000.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$27{,}000 - 8{,}000 = 19000$, so **Rs 19000**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

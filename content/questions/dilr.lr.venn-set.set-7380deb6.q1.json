@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-7380deb6.q1",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students play at least one of the three sports?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 115.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Inclusion-exclusion for three sets:\n\n$70 + 60 + 50 - 30 - 25 - 20 + 10 = 115$\n\n**115 students**. The final $+10$ is there because the triple overlap was subtracted three times by the pairwise terms after being added three times by the singles \u2014 it has to be put back once.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:venn-set"
+  ],
+  "mockReserved": false
+}

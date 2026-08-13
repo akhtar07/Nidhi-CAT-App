@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-859c70da.q1",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "If P is selected, who else must necessarily be on the team?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Q"
+    },
+    {
+      "key": "B",
+      "markdown": "R"
+    },
+    {
+      "key": "C",
+      "markdown": "S"
+    },
+    {
+      "key": "D",
+      "markdown": "T"
+    },
+    {
+      "key": "E",
+      "markdown": "U"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "The first condition says P selected forces Q selected, so **Q** must be on the team. The arrow runs one way only: Q can be selected without P.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

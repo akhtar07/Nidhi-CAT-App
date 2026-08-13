@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-84ecb4e6.q3",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Shift 2's output was what percentage of the day's total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 25.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\dfrac{300}{1200} \\times 100 = 25\\%$.\n\nFaster: the other two shifts hold $35\\% + 40\\% = 75\\%$, so Shift 2 holds the remaining **25%** \u2014 no need to find 300 first.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

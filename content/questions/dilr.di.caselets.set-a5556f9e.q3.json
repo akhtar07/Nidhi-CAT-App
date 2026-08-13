@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.caselets.set-a5556f9e.q3",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How much must Ritu pay the others when they settle up, in rupees?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1200.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Ritu owes the gap between her share and what she actually paid:\n\n$3300 - 2100 = 1200$\n\n**Rs 1200**. Check the settlement balances: Pranav is owed $4200 - 3300 = 900$ and Quasar is owed $3600 - 3300 = 300$, and $900 + 300 = 1200$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselets"
+  ],
+  "mockReserved": false
+}

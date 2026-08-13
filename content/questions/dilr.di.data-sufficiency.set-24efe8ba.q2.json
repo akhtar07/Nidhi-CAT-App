@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.set-24efe8ba.q2",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What is the value of $x + y$?\n\n**I.** $2x + 2y = 18$\n\n**II.** $x - y = 3$",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Each statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Statements I and II together are not sufficient."
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**I alone:** divide by 2 to get $x + y = 9$. Sufficient \u2014 the question asks for the **sum**, not for $x$ and $y$ separately.\n\n**II alone:** the difference fixes nothing about the sum: $(5, 2)$ gives 7 and $(10, 7)$ gives 17. Not sufficient.\n\nSo **statement I alone is sufficient, but statement II alone is not**. Answer the question actually asked: two equations feel necessary only if you insist on solving for both variables.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

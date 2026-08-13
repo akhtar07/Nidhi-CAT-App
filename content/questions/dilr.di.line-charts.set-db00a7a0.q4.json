@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.line-charts.set-db00a7a0.q4",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which of these grew the fastest in percentage terms from Jan to May?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Site P"
+    },
+    {
+      "key": "B",
+      "markdown": "Site Q"
+    },
+    {
+      "key": "C",
+      "markdown": "All of them grew at the same rate"
+    },
+    {
+      "key": "D",
+      "markdown": "Cannot be determined from the data given"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Percentage growth, each against its own starting figure:\n\n- Site P: $\\dfrac{200 - 120}{120} = 66.67\\%$\n- Site Q: $\\dfrac{165 - 90}{90} = 83.33\\%$\n\nFastest is **Site Q**. Site P grew by the largest **amount** (80) and is not the answer, because it starts from a much larger base.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-4036edf6.q3",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many matches in the tournament ended in a draw?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Draws column: $1 + 2 + 0 + 2 + 1 = 6$ team-draws, and each drawn match creates two of them:\n\n$\\dfrac{6}{2} = 3$\n\n**3 matches**. Check: 7 decisive matches plus 3 draws is 10, the whole tournament.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:games-tournaments"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-38dfd64e.q4",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which pair of courses can never appear together in a valid registration?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Finance and Marketing"
+    },
+    {
+      "key": "B",
+      "markdown": "Economics and History"
+    },
+    {
+      "key": "C",
+      "markdown": "Statistics and Law"
+    },
+    {
+      "key": "D",
+      "markdown": "Economics and Marketing"
+    },
+    {
+      "key": "E",
+      "markdown": "Finance and History"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "**Finance and Marketing** cannot coexist: Finance needs Statistics, Marketing needs Economics, and one slot must go to History or Law \u2014 that is five courses for four slots.\n\nEach of the others appears in some valid registration: Economics and History in $\\{$Economics, Finance, Statistics, History$\\}$, Statistics and Law in $\\{$Economics, Finance, Statistics, Law$\\}$, Economics and Marketing in $\\{$Economics, Statistics, Marketing, History$\\}$, and Finance and History in the first of those.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

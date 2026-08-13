@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bubble-charts.set-9eb4478f.q4",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Across all five schools, how many students passed the board exam?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3290.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Multiply each school's enrolment by its own pass rate \u2014 you cannot apply an average rate to the combined enrolment, because the big schools have the lower rates:\n\n- School V: 360\n- School W: 810\n- School X: 720\n- School Y: 1050\n- School Z: 350\n\n$360 + 810 + 720 + 1050 + 350 = 3290$\n\n**3290 students**. Total enrolment is 4750, so the overall pass rate is about 69.3% \u2014 below the simple average of the five percentages (70%), because enrolment is weighted towards the weaker schools.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 140,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

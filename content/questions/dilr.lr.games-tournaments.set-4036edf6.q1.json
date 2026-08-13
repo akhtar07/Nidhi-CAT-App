@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-4036edf6.q1",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many matches were played in the tournament in total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 10.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$\\dbinom{5}{2} = \\dfrac{5 \\times 4}{2} = 10$ matches. Equivalently, 5 teams playing 4 matches each is 20 team-appearances, and each match uses two: $\\dfrac{20}{2} = 10$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:games-tournaments"
+  ],
+  "mockReserved": false
+}

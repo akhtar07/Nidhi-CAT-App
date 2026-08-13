@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.stacked-charts.set-0ac64260.q2",
+  "microTopicIds": [
+    "dilr.di.stacked-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which year was the combined figure the highest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "2020"
+    },
+    {
+      "key": "B",
+      "markdown": "2021"
+    },
+    {
+      "key": "C",
+      "markdown": "2022"
+    },
+    {
+      "key": "D",
+      "markdown": "2023"
+    },
+    {
+      "key": "E",
+      "markdown": "2024"
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Combined figures: 2020 75, 2021 83, 2022 88, 2023 102, 2024 122.\n\nHighest is **2024**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:stacked-charts"
+  ],
+  "mockReserved": false
+}

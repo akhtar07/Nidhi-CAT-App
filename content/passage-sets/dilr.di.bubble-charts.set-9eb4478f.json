@@ -1,0 +1,64 @@
+{
+  "id": "dilr.di.bubble-charts.set-9eb4478f",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Five schools are plotted below. The horizontal axis is the student-teacher ratio, the vertical axis is the board-exam pass percentage, and bubble area is proportional to total enrolment (printed inside the bubble).\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "bubble",
+        "points": [
+          {
+            "name": "School V",
+            "x": 15,
+            "y": 80,
+            "size": 450
+          },
+          {
+            "name": "School W",
+            "x": 20,
+            "y": 90,
+            "size": 900
+          },
+          {
+            "name": "School X",
+            "x": 25,
+            "y": 60,
+            "size": 1200
+          },
+          {
+            "name": "School Y",
+            "x": 30,
+            "y": 70,
+            "size": 1500
+          },
+          {
+            "name": "School Z",
+            "x": 35,
+            "y": 50,
+            "size": 700
+          }
+        ],
+        "xLabel": "Student-teacher ratio",
+        "yLabel": "Pass percentage",
+        "sizeLabel": "total enrolment",
+        "xMax": 40,
+        "yMax": 100,
+        "xDivisions": 8,
+        "yDivisions": 10
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.bubble-charts.set-9eb4478f.q1",
+    "dilr.di.bubble-charts.set-9eb4478f.q2",
+    "dilr.di.bubble-charts.set-9eb4478f.q3",
+    "dilr.di.bubble-charts.set-9eb4478f.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

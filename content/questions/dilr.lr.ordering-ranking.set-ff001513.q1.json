@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.ordering-ranking.set-ff001513.q1",
+  "microTopicIds": [
+    "dilr.lr.ordering-ranking"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who won the race?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Manav"
+    },
+    {
+      "key": "B",
+      "markdown": "Nisha"
+    },
+    {
+      "key": "C",
+      "markdown": "Omar"
+    },
+    {
+      "key": "D",
+      "markdown": "Priya"
+    },
+    {
+      "key": "E",
+      "markdown": "Rehan"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Chain the order clues: Nisha is immediately before Omar, and Omar is ahead of Manav, who is immediately before Priya. That gives the block Nisha, Omar, ..., Manav, Priya covering four of the five places in that order, with Rehan somewhere.\n\nRehan cannot be first or last, and Nisha-Omar and Manav-Priya are each adjacent pairs, so the only place left for Rehan is the middle: **Nisha, Omar, Rehan, Manav, Priya**.\n\n**Nisha** won.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:ordering-ranking"
+  ],
+  "mockReserved": false
+}

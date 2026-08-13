@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.set-24efe8ba.q1",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What is the area of a square?\n\n**I.** Its perimeter is 40 cm.\n\n**II.** Its diagonal is $10\\sqrt{2}$ cm.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Each statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Statements I and II together are not sufficient."
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**I alone:** side $= \\dfrac{40}{4} = 10$, so area $= 100$ sq cm. Sufficient.\n\n**II alone:** a square's diagonal is side $\\times \\sqrt{2}$, so the side is 10 and the area is 100 sq cm. Sufficient.\n\nSo **each statement alone is sufficient**. A square has one degree of freedom \u2014 fix any one length and everything else follows.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

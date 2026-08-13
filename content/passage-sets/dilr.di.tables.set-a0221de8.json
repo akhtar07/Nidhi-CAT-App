@@ -1,0 +1,56 @@
+{
+  "id": "dilr.di.tables.set-a0221de8",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The table below shows the year-end headcount of two departments at a company.\n\nStudy the table and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "table",
+      "spec": {
+        "columns": [
+          "Year",
+          "Engineering",
+          "Sales"
+        ],
+        "rows": [
+          [
+            "2020",
+            "200",
+            "150"
+          ],
+          [
+            "2021",
+            "240",
+            "160"
+          ],
+          [
+            "2022",
+            "300",
+            "180"
+          ],
+          [
+            "2023",
+            "360",
+            "200"
+          ],
+          [
+            "2024",
+            "400",
+            "210"
+          ]
+        ]
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.tables.set-a0221de8.q1",
+    "dilr.di.tables.set-a0221de8.q2",
+    "dilr.di.tables.set-a0221de8.q3",
+    "dilr.di.tables.set-a0221de8.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

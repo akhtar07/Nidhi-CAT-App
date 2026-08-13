@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.combination-charts.set-022bcbd5.q4",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which year did the total number of students appearing rise over the previous year while the pass percentage fell?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "2021"
+    },
+    {
+      "key": "B",
+      "markdown": "2022"
+    },
+    {
+      "key": "C",
+      "markdown": "2023"
+    },
+    {
+      "key": "D",
+      "markdown": "2024"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Totals by year: 2021 220, 2022 270, 2023 280, 2024 340. Pass percentages: 2021 75%, 2022 80%, 2023 75%, 2024 85%.\n\n- 2022: total up 220 to 270, but pass rate up 75 to 80 \u2014 no\n- 2023: total up 270 to 280, pass rate down 80 to 75 \u2014 **yes**\n- 2024: total up 280 to 340, pass rate up 75 to 85 \u2014 no\n\nThe answer is **2023**. In absolute terms 210 students passed in 2023 against 216 in 2022, so more people sat the exam and fewer passed it.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

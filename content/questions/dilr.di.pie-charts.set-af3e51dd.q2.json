@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-af3e51dd.q2",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the central angle, in degrees, of the sector representing raw material?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 90.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\dfrac{25}{100} \\times 360 = 90$\n\n**90 degrees** \u2014 a quarter of the pie, which is worth recognising on sight rather than computing.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

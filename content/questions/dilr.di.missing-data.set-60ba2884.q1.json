@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-60ba2884.q1",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What did Rahul score?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 78.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "An average of 74 over 4 students means a total of $74 \\times 4 = 296$.\n\n$296 - (72 + 65 + 81) = 296 - 218 = 78$\n\n**78**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

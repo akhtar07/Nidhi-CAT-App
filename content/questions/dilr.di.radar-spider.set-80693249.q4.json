@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.radar-spider.set-80693249.q4",
+  "microTopicIds": [
+    "dilr.di.radar-spider"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "The company shortlists a candidate only if that candidate scores at least 15 on **every** competency. Who is shortlisted?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Kavya only"
+    },
+    {
+      "key": "B",
+      "markdown": "Rohit only"
+    },
+    {
+      "key": "C",
+      "markdown": "Meera only"
+    },
+    {
+      "key": "D",
+      "markdown": "Kavya and Meera"
+    },
+    {
+      "key": "E",
+      "markdown": "None of them"
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The rule is about the weakest spoke, not the total, so look for the innermost vertex of each polygon:\n\n- Kavya's minimum is 12 (Leadership)\n- Rohit's minimum is 13 (Technical)\n- Meera's minimum is 13 (Communication)\n\nEvery candidate dips below 15 somewhere, so **none of them** is shortlisted. Meera has the highest total and still fails \u2014 an \"every category\" condition is decided by the worst value, and a radar chart shows that as the vertex closest to the centre.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:radar-spider"
+  ],
+  "mockReserved": false
+}

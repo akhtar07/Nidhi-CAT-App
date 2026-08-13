@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-c95fc0e4.q2",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many people read at least one of the two newspapers?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 340.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Work in percentages first, then convert once:\n\n$60 + 45 - 20 = 85\\%$\n\n$400 \\times 0.85 = 340$\n\n**340 people**. Adding 60% and 45% to 105% and not subtracting the overlap gives an impossible figure above the survey size \u2014 a built-in warning that the overlap was missed.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:venn-set"
+  ],
+  "mockReserved": false
+}

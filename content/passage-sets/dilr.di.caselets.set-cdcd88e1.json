@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.caselets.set-cdcd88e1",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "In one day a bakery sold 120 loaves at Rs 45 each, 80 cakes at Rs 250 each and 200 pastries at Rs 30 each. Ingredient cost came to 60% of revenue on loaves, 55% on cakes and 40% on pastries.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.caselets.set-cdcd88e1.q1",
+    "dilr.di.caselets.set-cdcd88e1.q2",
+    "dilr.di.caselets.set-cdcd88e1.q3",
+    "dilr.di.caselets.set-cdcd88e1.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-859c70da.q4",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many different valid teams of 3 can the manager form?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Split on whether Q is selected.\n\n**Q in** (so U is out; the other two come from P, R, S, T):\n\n- $\\{Q, P, R\\}$ \u2014 legal\n- $\\{Q, P, S\\}$ \u2014 legal\n- $\\{Q, P, T\\}$ \u2014 T needs R, rejected\n- $\\{Q, R, S\\}$ \u2014 R and S clash, rejected\n- $\\{Q, R, T\\}$ \u2014 legal\n- $\\{Q, S, T\\}$ \u2014 T needs R, rejected\n\nThree teams.\n\n**Q out** (so P is out too, since P would force Q; the team is 3 of R, S, T, U):\n\n- $\\{R, S, T\\}$ and $\\{R, S, U\\}$ \u2014 R and S clash, rejected\n- $\\{S, T, U\\}$ \u2014 T needs R, rejected\n- $\\{R, T, U\\}$ \u2014 legal\n\nOne team.\n\nTotal **4**: $\\{P,Q,R\\}$, $\\{P,Q,S\\}$, $\\{Q,R,T\\}$ and $\\{R,T,U\\}$. Splitting on the candidate that appears in the most conditions \u2014 Q here \u2014 is what keeps the casework to two short branches instead of twenty.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 180,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

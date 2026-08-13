@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.distribution-grouping.set-66c3db54.q2",
+  "microTopicIds": [
+    "dilr.lr.distribution-grouping"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How much did Kabir pay, in rupees?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 120.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Lata has Rs 80, so Ishan, Jaya and Kabir hold 120, 150 and 200 in some order. The chain Kabir $<$ Jaya $<$ Ishan (Ishan ordered tea) forces them in that order:\n\n$\\text{Kabir} = 120,\\ \\text{Jaya} = 150,\\ \\text{Ishan} = 200$\n\n**Rs 120**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:distribution-grouping"
+  ],
+  "mockReserved": false
+}

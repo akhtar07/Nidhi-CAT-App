@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.ordering-ranking.set-ff001513.q4",
+  "microTopicIds": [
+    "dilr.lr.ordering-ranking"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "If Rehan had finished one place better, who would have finished third?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Manav"
+    },
+    {
+      "key": "B",
+      "markdown": "Nisha"
+    },
+    {
+      "key": "C",
+      "markdown": "Omar"
+    },
+    {
+      "key": "D",
+      "markdown": "Priya"
+    },
+    {
+      "key": "E",
+      "markdown": "Rehan"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Rehan moves from third to second, and Omar \u2014 who held second \u2014 drops to third. The order becomes Nisha, Rehan, Omar, Manav, Priya, so **Omar** finishes third.\n\nOnly the two runners involved swap; a hypothetical about one runner moving one place does not shift anybody else.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:ordering-ranking"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.caselets.set-a5556f9e.q4",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Suppose instead they had agreed to split the total in the ratio of nights stayed \u2014 Pranav 5, Quasar 4 and Ritu 3. How much would Ritu then have had to pay the others, in rupees?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 375.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The ratio has $5 + 4 + 3 = 12$ parts, so one part is $\\dfrac{9900}{12} = 825$.\n\nRitu's share is $3 \\times 825 = 2475$, and she already paid 2,100:\n\n$2475 - 2100 = 375$\n\n**Rs 375**. Her bill drops from 1,200 to 375 without anyone spending a rupee differently \u2014 all that changed is the rule for dividing the same total.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselets"
+  ],
+  "mockReserved": false
+}

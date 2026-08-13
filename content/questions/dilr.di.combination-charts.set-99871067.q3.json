@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.combination-charts.set-99871067.q3",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which quarter did online sales first exceed half of offline sales?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Q1"
+    },
+    {
+      "key": "B",
+      "markdown": "Q2"
+    },
+    {
+      "key": "C",
+      "markdown": "Q3"
+    },
+    {
+      "key": "D",
+      "markdown": "Q4"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Compare online against half of offline each quarter:\n\n- Q1: online 60, half of offline 70\n- Q2: online 75, half of offline 65\n- Q3: online 90, half of offline 55\n- Q4: online 120, half of offline 50\n\nThe first time online is larger is **Q2**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

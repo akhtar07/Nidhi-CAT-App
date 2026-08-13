@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-60ba2884.q2",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the difference between the highest and the lowest of the four scores?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Highest 81 (Sana), lowest 65 (Qadir): $81 - 65 = 16$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

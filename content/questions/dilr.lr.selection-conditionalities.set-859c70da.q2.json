@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-859c70da.q2",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "If T is selected, who else must necessarily be on the team?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "P"
+    },
+    {
+      "key": "B",
+      "markdown": "Q"
+    },
+    {
+      "key": "C",
+      "markdown": "R"
+    },
+    {
+      "key": "D",
+      "markdown": "S"
+    },
+    {
+      "key": "E",
+      "markdown": "U"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "\"T only if R\" means T cannot be there without R, so selecting T forces **R**.\n\nRead the direction carefully: it does **not** say that selecting R forces T. The team $\\{P, Q, R\\}$ contains R without T and is perfectly legal.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

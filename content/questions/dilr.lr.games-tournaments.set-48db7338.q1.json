@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-48db7338.q1",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many matches were played in the tournament in total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 6.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Each pair of teams meets once, so the count is the number of pairs:\n\n$\\dbinom{4}{2} = \\dfrac{4 \\times 3}{2} = 6$\n\n**6 matches**. Cross-check with the table: each team played $2 + 1 + 0 = 3$ matches, giving $\\dfrac{4 \\times 3}{2} = 6$, since every match is counted by two teams.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:games-tournaments"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.combination-charts.set-b11f03c0.q3",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which year was the company's profit the highest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "2020"
+    },
+    {
+      "key": "B",
+      "markdown": "2021"
+    },
+    {
+      "key": "C",
+      "markdown": "2022"
+    },
+    {
+      "key": "D",
+      "markdown": "2023"
+    },
+    {
+      "key": "E",
+      "markdown": "2024"
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Profit is bar times line, year by year:\n\n- 2020: $ 400 \\times 10\\% = 40$\n- 2021: $ 520 \\times 12\\% = 62.4$\n- 2022: $ 480 \\times 15\\% = 72$\n- 2023: $ 650 \\times 12\\% = 78$\n- 2024: $ 800 \\times 14\\% = 112$\n\nHighest in **2024**. 2022 has the tallest point on the line and the third-lowest profit \u2014 the line alone tells you nothing about profit.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

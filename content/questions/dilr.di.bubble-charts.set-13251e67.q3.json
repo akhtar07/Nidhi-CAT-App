@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.bubble-charts.set-13251e67.q3",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which product earns the highest annual revenue?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Product A"
+    },
+    {
+      "key": "B",
+      "markdown": "Product B"
+    },
+    {
+      "key": "C",
+      "markdown": "Product C"
+    },
+    {
+      "key": "D",
+      "markdown": "Product D"
+    },
+    {
+      "key": "E",
+      "markdown": "Product E"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Revenue is the product of the two coordinates, so it is neither the cheapest nor the best-selling product that wins:\n\n- Product A: Rs 140 lakh\n- Product B: Rs 180 lakh\n- Product C: Rs 200 lakh\n- Product D: Rs 180 lakh\n- Product E: Rs 140 lakh\n\n**Product C** leads at Rs 200 lakh. Notice A and E tie on 140, and B and D tie on 180 \u2014 pairs at opposite corners of the chart can generate identical revenue.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

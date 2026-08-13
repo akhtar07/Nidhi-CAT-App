@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.distribution-grouping.set-66c3db54.q4",
+  "microTopicIds": [
+    "dilr.lr.distribution-grouping"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the combined bill of the person who ordered tea and the person who ordered lassi?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 320.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Tea is Ishan at Rs 200, lassi is Kabir at Rs 120:\n\n$200 + 120 = 320$\n\n**Rs 320**. The full grid: Ishan tea 200, Jaya juice 150, Kabir lassi 120, Lata coffee 80. The whole puzzle turns on the second clue, which is a three-way ordering disguised as a sentence about two people.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:distribution-grouping"
+  ],
+  "mockReserved": false
+}

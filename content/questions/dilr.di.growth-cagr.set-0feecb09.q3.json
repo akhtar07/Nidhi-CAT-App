@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.growth-cagr.set-0feecb09.q3",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the compound annual growth rate of Investment B, as a percentage?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 60.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\left(\\dfrac{16000}{6250}\\right)^{1/2} - 1 = (2.56)^{1/2} - 1 = 1.6 - 1 = 0.6$\n\n**60%**, since $1.6^2 = 2.56$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

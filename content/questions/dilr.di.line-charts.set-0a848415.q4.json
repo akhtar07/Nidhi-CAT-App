@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.line-charts.set-0a848415.q4",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In how many years was App C above its own 5-year average?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The average is $\\dfrac{570}{5} = 114$.\n\nFigures above it: 2023, 2024 \u2014 **2**. A value cannot be above average in more than half the periods unless the low ones are very low; checking that sanity is a quick way to catch an arithmetic slip.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bf383d3e.q1",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who is on every possible panel?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "A"
+    },
+    {
+      "key": "B",
+      "markdown": "B"
+    },
+    {
+      "key": "C",
+      "markdown": "D"
+    },
+    {
+      "key": "D",
+      "markdown": "F"
+    },
+    {
+      "key": "E",
+      "markdown": "G"
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "The fourth rule names **G** outright, so G is on every panel.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

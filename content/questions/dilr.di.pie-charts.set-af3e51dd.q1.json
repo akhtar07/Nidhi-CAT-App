@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-af3e51dd.q1",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How much does the company spend on marketing, in Rs lakh?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 30.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$250 \\times \\dfrac{12}{100} = 30$, so **Rs 30 lakh**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.venn-set.set-a6588c6e",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "In a group of 200 people, 130 like tea and 110 like coffee. Nothing else is known about the group.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.venn-set.set-a6588c6e.q1",
+    "dilr.lr.venn-set.set-a6588c6e.q2",
+    "dilr.lr.venn-set.set-a6588c6e.q3",
+    "dilr.lr.venn-set.set-a6588c6e.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

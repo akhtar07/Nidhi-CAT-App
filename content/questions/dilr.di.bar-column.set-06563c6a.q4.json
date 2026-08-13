@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bar-column.set-06563c6a.q4",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In how many months was District A above its own 6-month average?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The average is $\\dfrac{860}{6} = 143.33$.\n\nFigures above it: Jun, Jul, Aug \u2014 **3**. A value cannot be above average in more than half the periods unless the low ones are very low; checking that sanity is a quick way to catch an arithmetic slip.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,58 @@
+{
+  "id": "dilr.di.missing-data.set-d7386a68",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The table below shows units sold by three salespeople over four months, with each person's four-month total in the last column. One entry has been left out.\n\nStudy the table and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "table",
+      "spec": {
+        "columns": [
+          "Salesperson",
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "Total"
+        ],
+        "rows": [
+          [
+            "Anil",
+            "12",
+            "15",
+            "?",
+            "18",
+            "63"
+          ],
+          [
+            "Bina",
+            "20",
+            "14",
+            "16",
+            "10",
+            "60"
+          ],
+          [
+            "Chetan",
+            "8",
+            "11",
+            "13",
+            "9",
+            "41"
+          ]
+        ]
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.missing-data.set-d7386a68.q1",
+    "dilr.di.missing-data.set-d7386a68.q2",
+    "dilr.di.missing-data.set-d7386a68.q3",
+    "dilr.di.missing-data.set-d7386a68.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

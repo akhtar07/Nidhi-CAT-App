@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-29961729.q1",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How much does the household spend on rent each month, in rupees?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18000.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$60{,}000 \\times \\dfrac{30}{100} = 18{,}000$, so **Rs 18000**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

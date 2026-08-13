@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.bar-column.set-0c614252.q4",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which of these grew the fastest in percentage terms from 2021 to 2024?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "CSE"
+    },
+    {
+      "key": "B",
+      "markdown": "ECE"
+    },
+    {
+      "key": "C",
+      "markdown": "Mechanical"
+    },
+    {
+      "key": "D",
+      "markdown": "All of them grew at the same rate"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Percentage growth, each against its own starting figure:\n\n- CSE: $\\dfrac{240 - 120}{120} = 100\\%$\n- ECE: $\\dfrac{130 - 90}{90} = 44.44\\%$\n- Mechanical: $\\dfrac{90 - 60}{60} = 50\\%$\n\nFastest is **CSE**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

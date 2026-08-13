@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.radar-spider.set-f44df64b.q2",
+  "microTopicIds": [
+    "dilr.di.radar-spider"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is Bolt's total score across all five attributes?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 195.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Add Bolt's five vertex values:\n\n$34 + 44 + 38 + 46 + 33 = 195$\n\nBolt totals **195 points**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:radar-spider"
+  ],
+  "mockReserved": false
+}

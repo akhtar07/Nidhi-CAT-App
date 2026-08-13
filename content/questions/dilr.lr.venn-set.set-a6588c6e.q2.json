@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-a6588c6e.q2",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the maximum possible number of people who like both tea and coffee?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 110.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The overlap can be no larger than the smaller of the two groups \u2014 every coffee drinker could also drink tea, but there are only 110 of them:\n\n**110 people**, which happens when the coffee group sits entirely inside the tea group.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:venn-set"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.missing-data.set-60ba2884",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Four students sat a test marked out of 100. Three of the scores are known:\n\n- Prisha: 72\n- Qadir: 65\n- Rahul: not recorded\n- Sana: 81\n\nThe average of all four scores is 74.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.missing-data.set-60ba2884.q1",
+    "dilr.di.missing-data.set-60ba2884.q2",
+    "dilr.di.missing-data.set-60ba2884.q3",
+    "dilr.di.missing-data.set-60ba2884.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

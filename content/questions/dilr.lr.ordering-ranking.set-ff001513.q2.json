@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.ordering-ranking.set-ff001513.q2",
+  "microTopicIds": [
+    "dilr.lr.ordering-ranking"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In which position did Manav finish?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The order is Nisha, Omar, Rehan, Manav, Priya, so Manav finished **4th**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:ordering-ranking"
+  ],
+  "mockReserved": false
+}

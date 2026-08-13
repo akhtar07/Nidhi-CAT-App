@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.growth-cagr.set-8b47fff0.q4",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Suppose the town had instead grown at a constant 10% a year from its end-2019 level. What would its population have been at the end of 2023?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 73205.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Four years of compounding at 10%:\n\n$50{,}000 \\times 1.1^4 = 50{,}000 \\times 1.4641 = 73{,}205$\n\n**73,205**. Worth memorising: $1.1^2 = 1.21$, $1.1^3 = 1.331$, $1.1^4 = 1.4641$. The simple-interest answer of $50{,}000 \\times 1.4 = 70{,}000$ is 3,205 short \u2014 the gap between simple and compound growth over just four years.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

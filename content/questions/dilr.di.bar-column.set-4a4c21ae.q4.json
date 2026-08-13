@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.bar-column.set-4a4c21ae.q4",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which month was the gap between Plant X and Plant Y the largest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Jan"
+    },
+    {
+      "key": "B",
+      "markdown": "Feb"
+    },
+    {
+      "key": "C",
+      "markdown": "Mar"
+    },
+    {
+      "key": "D",
+      "markdown": "Apr"
+    },
+    {
+      "key": "E",
+      "markdown": "May"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Gap in each:\n\n- Jan: $|340 - 300| = 40$\n- Feb: $|420 - 350| = 70$\n- Mar: $|380 - 410| = 30$\n- Apr: $|500 - 390| = 110$\n- May: $|460 - 520| = 60$\n\nThe largest is **Apr**, at 110 units.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

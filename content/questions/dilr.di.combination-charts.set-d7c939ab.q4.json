@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.combination-charts.set-d7c939ab.q4",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Across the five months, how many passengers in total, in lakh, were delayed?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18.16,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Delayed share is $100\\% -$ on-time percentage, applied month by month:\n\n- Jan: $ 12 \\times 18\\% = 2.16$\n- Feb: $ 15 \\times 22\\% = 3.3$\n- Mar: $ 18 \\times 30\\% = 5.4$\n- Apr: $ 14 \\times 15\\% = 2.1$\n- May: $ 20 \\times 26\\% = 5.2$\n\n$2.16 + 3.3 + 5.4 + 2.1 + 5.2 = 18.16$\n\n**18.16 lakh**. Faster route: total passengers 79 lakh minus total on-time 60.84 lakh gives the same 18.16. Averaging the five percentages and applying that to 79 gives 18.09, which is wrong \u2014 the months carry different numbers of passengers.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 140,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

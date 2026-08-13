@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.growth-cagr.set-8b47fff0.q3",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which year did the population increase by the largest number of people?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "2020"
+    },
+    {
+      "key": "B",
+      "markdown": "2021"
+    },
+    {
+      "key": "C",
+      "markdown": "2022"
+    },
+    {
+      "key": "D",
+      "markdown": "2023"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Absolute changes:\n\n- 2020: $60{,}000 - 50{,}000 = 10{,}000$\n- 2021: $66{,}000 - 60{,}000 = 6{,}000$\n- 2022: $82{,}500 - 66{,}000 = 16{,}500$\n- 2023: $79{,}200 - 82{,}500 = -3{,}300$\n\n**2022**. Note 2020 has the highest **percentage** rise (20%) and only the second-largest absolute rise, because it applies to a smaller base.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

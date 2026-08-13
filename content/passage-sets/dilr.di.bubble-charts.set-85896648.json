@@ -1,0 +1,64 @@
+{
+  "id": "dilr.di.bubble-charts.set-85896648",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Five cities are plotted below. The horizontal axis is the literacy rate as a percentage, the vertical axis is average monthly household income in Rs thousand, and bubble area is proportional to population in lakh (printed inside the bubble).\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "bubble",
+        "points": [
+          {
+            "name": "City P",
+            "x": 60,
+            "y": 25,
+            "size": 30
+          },
+          {
+            "name": "City Q",
+            "x": 80,
+            "y": 20,
+            "size": 12
+          },
+          {
+            "name": "City R",
+            "x": 50,
+            "y": 15,
+            "size": 60
+          },
+          {
+            "name": "City S",
+            "x": 70,
+            "y": 30,
+            "size": 20
+          },
+          {
+            "name": "City T",
+            "x": 40,
+            "y": 10,
+            "size": 45
+          }
+        ],
+        "xLabel": "Literacy rate (%)",
+        "yLabel": "Average monthly income (Rs thousand)",
+        "sizeLabel": "population in lakh",
+        "xMax": 80,
+        "yMax": 40,
+        "xDivisions": 8,
+        "yDivisions": 8
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.bubble-charts.set-85896648.q1",
+    "dilr.di.bubble-charts.set-85896648.q2",
+    "dilr.di.bubble-charts.set-85896648.q3",
+    "dilr.di.bubble-charts.set-85896648.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

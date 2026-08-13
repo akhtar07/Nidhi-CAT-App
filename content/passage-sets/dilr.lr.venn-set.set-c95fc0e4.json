@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.venn-set.set-c95fc0e4",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "In a survey of 400 people, 60% read newspaper A, 45% read newspaper B, and 20% read both.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.venn-set.set-c95fc0e4.q1",
+    "dilr.lr.venn-set.set-c95fc0e4.q2",
+    "dilr.lr.venn-set.set-c95fc0e4.q3",
+    "dilr.lr.venn-set.set-c95fc0e4.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

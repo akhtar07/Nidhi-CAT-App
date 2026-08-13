@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.tables.set-a0221de8.q1",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Engineering's figure for 2022?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 300.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Read the Engineering entry for 2022: **300 employees**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables"
+  ],
+  "mockReserved": false
+}

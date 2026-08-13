@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.caselets.set-cdcd88e1.q3",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the day's profit on pastries, in rupees?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3600.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Ingredients take 40% of pastry revenue, leaving 60%:\n\n$6000 \\times 0.60 = 3600$\n\n**Rs 3600**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselets"
+  ],
+  "mockReserved": false
+}

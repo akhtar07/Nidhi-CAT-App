@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.distribution-grouping.set-66c3db54",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "Four friends \u2014 Ishan, Jaya, Kabir and Lata \u2014 each ordered exactly one drink at a cafe. The drinks were coffee, tea, juice and lassi, one each. The four bills were Rs 80, Rs 120, Rs 150 and Rs 200, one each.\n\n- Lata paid Rs 80.\n- Jaya paid more than Kabir but less than the person who ordered tea.\n- Ishan ordered tea.\n- The person who ordered juice paid Rs 150.\n- Kabir did not order coffee.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.distribution-grouping.set-66c3db54.q1",
+    "dilr.lr.distribution-grouping.set-66c3db54.q2",
+    "dilr.lr.distribution-grouping.set-66c3db54.q3",
+    "dilr.lr.distribution-grouping.set-66c3db54.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

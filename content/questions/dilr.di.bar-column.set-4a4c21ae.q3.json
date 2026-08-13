@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bar-column.set-4a4c21ae.q3",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In how many months was Plant Y higher than Plant X?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Compare the two figures month by month. Plant Y is ahead in Mar, May \u2014 **2**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

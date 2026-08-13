@@ -1,0 +1,52 @@
+{
+  "id": "dilr.di.pie-charts.set-29961729",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "A household's monthly income of Rs 60,000 is spent as shown in the pie chart below. Each figure is a percentage of the monthly income.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "pie",
+        "slices": [
+          {
+            "name": "Rent",
+            "value": 30
+          },
+          {
+            "name": "Food",
+            "value": 22
+          },
+          {
+            "name": "Education",
+            "value": 18
+          },
+          {
+            "name": "Transport",
+            "value": 12
+          },
+          {
+            "name": "Savings",
+            "value": 10
+          },
+          {
+            "name": "Other",
+            "value": 8
+          }
+        ],
+        "unit": "%"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.pie-charts.set-29961729.q1",
+    "dilr.di.pie-charts.set-29961729.q2",
+    "dilr.di.pie-charts.set-29961729.q3",
+    "dilr.di.pie-charts.set-29961729.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

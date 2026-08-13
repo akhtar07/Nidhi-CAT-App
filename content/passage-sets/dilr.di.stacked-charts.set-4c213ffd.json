@@ -1,0 +1,61 @@
+{
+  "id": "dilr.di.stacked-charts.set-4c213ffd",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The stacked column chart below splits a college's annual fee, in Rs thousand, into its three components.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "stacked-bar",
+        "categories": [
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "series": [
+          {
+            "name": "Tuition",
+            "values": [
+              60,
+              66,
+              72,
+              80
+            ]
+          },
+          {
+            "name": "Hostel",
+            "values": [
+              30,
+              33,
+              36,
+              40
+            ]
+          },
+          {
+            "name": "Other charges",
+            "values": [
+              10,
+              11,
+              12,
+              15
+            ]
+          }
+        ],
+        "unit": "Rs thousand"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.stacked-charts.set-4c213ffd.q1",
+    "dilr.di.stacked-charts.set-4c213ffd.q2",
+    "dilr.di.stacked-charts.set-4c213ffd.q3",
+    "dilr.di.stacked-charts.set-4c213ffd.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-84ecb4e6.q4",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Defect rates were 2% for Shift 1, 5% for Shift 2 and 3% for Shift 3. How many defective units were produced during the day?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 37.8,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Each rate applies to its own shift's output:\n\n- Shift 1: $420 \\times 0.02 = 8.4$\n- Shift 2: $300 \\times 0.05 = 15$\n- Shift 3: $480 \\times 0.03 = 14.4$\n\n$8.4 + 15 + 14.4 = 37.8$\n\n**37.8 units**. Averaging the three rates to $\\dfrac{2 + 5 + 3}{3} = 3.33\\%$ and applying it to 1,200 gives 40, which is wrong \u2014 the shifts are different sizes, so the rates must be weighted by output.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

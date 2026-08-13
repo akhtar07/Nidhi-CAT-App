@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bubble-charts.set-9eb4478f.q3",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students passed the board exam at School X?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 720.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "School X enrols 1200 with a 60% pass rate:\n\n$1200 \\times 0.60 = 720$\n\n**720 students**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

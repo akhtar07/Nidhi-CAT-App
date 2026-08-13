@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-29961729.q4",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Next year the household's monthly income rises to Rs 75,000 and rent falls to 24% of income. What will the household then spend on rent each month, in rupees?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18000.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "$75{,}000 \\times \\dfrac{24}{100} = 18{,}000$\n\n**Rs 18000** \u2014 exactly what it is today. The rent **share** drops by 6 percentage points and the rent **amount** does not move at all, because the base grew by 25% at the same time. A pie chart shows shares only, so no change in a slice can be read as a change in an amount unless you know what happened to the total.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

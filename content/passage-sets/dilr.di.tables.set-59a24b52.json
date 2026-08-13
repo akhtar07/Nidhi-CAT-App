@@ -1,0 +1,62 @@
+{
+  "id": "dilr.di.tables.set-59a24b52",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The table below shows the production of three crops, in thousand tonnes, in five states in a given year.\n\nStudy the table and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "table",
+      "spec": {
+        "columns": [
+          "State",
+          "Rice",
+          "Wheat",
+          "Maize"
+        ],
+        "rows": [
+          [
+            "State P",
+            "120",
+            "80",
+            "50"
+          ],
+          [
+            "State Q",
+            "200",
+            "60",
+            "90"
+          ],
+          [
+            "State R",
+            "150",
+            "220",
+            "70"
+          ],
+          [
+            "State S",
+            "90",
+            "140",
+            "110"
+          ],
+          [
+            "State T",
+            "180",
+            "100",
+            "130"
+          ]
+        ]
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.tables.set-59a24b52.q1",
+    "dilr.di.tables.set-59a24b52.q2",
+    "dilr.di.tables.set-59a24b52.q3",
+    "dilr.di.tables.set-59a24b52.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

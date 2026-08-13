@@ -1,0 +1,64 @@
+{
+  "id": "dilr.di.combination-charts.set-022bcbd5",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The chart below shows the number of boys and girls appearing for a school's board exam as bars, read against the left axis, and the school's overall pass percentage as a line, read against the right axis.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "combo",
+        "categories": [
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "bars": [
+          {
+            "name": "Boys",
+            "values": [
+              120,
+              140,
+              130,
+              160
+            ]
+          },
+          {
+            "name": "Girls",
+            "values": [
+              100,
+              130,
+              150,
+              180
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "name": "Pass percentage",
+            "values": [
+              75,
+              80,
+              75,
+              85
+            ]
+          }
+        ],
+        "leftUnit": "students",
+        "rightUnit": "%"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.combination-charts.set-022bcbd5.q1",
+    "dilr.di.combination-charts.set-022bcbd5.q2",
+    "dilr.di.combination-charts.set-022bcbd5.q3",
+    "dilr.di.combination-charts.set-022bcbd5.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

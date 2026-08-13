@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.combination-charts.set-d7c939ab.q3",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which month did the largest number of passengers arrive on time?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Jan"
+    },
+    {
+      "key": "B",
+      "markdown": "Feb"
+    },
+    {
+      "key": "C",
+      "markdown": "Mar"
+    },
+    {
+      "key": "D",
+      "markdown": "Apr"
+    },
+    {
+      "key": "E",
+      "markdown": "May"
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Multiply each bar by its own point on the line:\n\n- Jan: $ 12 \\times 82\\% = 9.84$ lakh\n- Feb: $ 15 \\times 78\\% = 11.7$ lakh\n- Mar: $ 18 \\times 70\\% = 12.6$ lakh\n- Apr: $ 14 \\times 85\\% = 11.9$ lakh\n- May: $ 20 \\times 74\\% = 14.8$ lakh\n\n**May**, at 14.8 lakh. April has the best on-time percentage and ranks third on this measure, because the percentage is applied to a smaller base.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

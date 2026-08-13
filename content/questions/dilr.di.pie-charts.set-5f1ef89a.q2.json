@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-5f1ef89a.q2",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students are enrolled in Science?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 420.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$1200 \\times \\dfrac{35}{100} = 420$, so **420 students**. This is the figure the second pie chart divides up, so it is worth writing down before going on.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

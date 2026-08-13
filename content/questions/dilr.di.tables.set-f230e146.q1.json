@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.tables.set-f230e146.q1",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Mall C's figure for Apr?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 42.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Read the Mall C entry for Apr: **42 thousand visitors**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables"
+  ],
+  "mockReserved": false
+}

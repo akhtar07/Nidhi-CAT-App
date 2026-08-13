@@ -1,0 +1,57 @@
+{
+  "id": "dilr.di.radar-spider.set-60211ab9.q4",
+  "microTopicIds": [
+    "dilr.di.radar-spider"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which category recorded the highest percentage growth from 2024 to 2025?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Apparel"
+    },
+    {
+      "key": "B",
+      "markdown": "Footwear"
+    },
+    {
+      "key": "C",
+      "markdown": "Electronics"
+    },
+    {
+      "key": "D",
+      "markdown": "Grocery"
+    },
+    {
+      "key": "E",
+      "markdown": "Beauty"
+    },
+    {
+      "key": "F",
+      "markdown": "Toys"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Percentage growth, not absolute growth:\n\n- Apparel: $\\dfrac{140 - 120}{120} = 16.67\\%$\n- Footwear: $\\dfrac{76 - 80}{80} = -5\\%$\n- Electronics: $\\dfrac{195 - 150}{150} = 30\\%$\n- Grocery: $\\dfrac{210 - 200}{200} = 5\\%$\n- Beauty: $\\dfrac{75 - 60}{60} = 25\\%$\n- Toys: $\\dfrac{44 - 40}{40} = 10\\%$\n\nHighest is **Electronics** at 30%. Grocery grew by the largest **amount** (10 lakh) yet only 5%, because it starts from the biggest base \u2014 the classic radar-chart trap, since the eye reads the outermost movement as the biggest change.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:radar-spider"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.caselets.set-a5556f9e.q1",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the total shared cost of the trip, in rupees?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 9900.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$4200 + 3600 + 2100 = 9900$, so **Rs 9900**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselets"
+  ],
+  "mockReserved": false
+}

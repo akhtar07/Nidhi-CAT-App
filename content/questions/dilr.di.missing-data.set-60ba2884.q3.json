@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-60ba2884.q3",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "A fifth student then scores 89. What is the average of all five scores?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 77.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\dfrac{296 + 89}{5} = \\dfrac{385}{5} = 77$\n\n**77**. Faster: the new score is 15 above the old average of 74, and spreading that surplus over 5 students lifts the average by 3.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

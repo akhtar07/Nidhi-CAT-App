@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.tables.set-59a24b52.q4",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which category was the gap between Rice and Wheat the largest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "State P"
+    },
+    {
+      "key": "B",
+      "markdown": "State Q"
+    },
+    {
+      "key": "C",
+      "markdown": "State R"
+    },
+    {
+      "key": "D",
+      "markdown": "State S"
+    },
+    {
+      "key": "E",
+      "markdown": "State T"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Gap in each:\n\n- State P: $|120 - 80| = 40$\n- State Q: $|200 - 60| = 140$\n- State R: $|150 - 220| = 70$\n- State S: $|90 - 140| = 50$\n- State T: $|180 - 100| = 80$\n\nThe largest is **State Q**, at 140 thousand tonnes.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables"
+  ],
+  "mockReserved": false
+}

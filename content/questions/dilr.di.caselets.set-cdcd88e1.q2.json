@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.caselets.set-cdcd88e1.q2",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the bakery's total revenue for the day, in rupees?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 31400.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "- Loaves: $120 \\times 45 = 5400$\n- Cakes: $80 \\times 250 = 20000$\n- Pastries: $200 \\times 30 = 6000$\n\n$5400 + 20000 + 6000 = 31400$, so **Rs 31400**. Pastries are the biggest seller by count and the smallest by revenue.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselets"
+  ],
+  "mockReserved": false
+}

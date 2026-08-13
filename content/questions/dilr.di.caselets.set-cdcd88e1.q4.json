@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.caselets.set-cdcd88e1.q4",
+  "microTopicIds": [
+    "dilr.di.caselets"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Taking the day as a whole, profit was what percentage of revenue? Give the answer to two decimal places.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 47.01,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Profit line by line:\n\n- Loaves: $5400 \\times 0.40 = 2160$\n- Cakes: $20000 \\times 0.45 = 9000$\n- Pastries: $6000 \\times 0.60 = 3600$\n\n$2160 + 9000 + 3600 = 14760$ on revenue of 31,400:\n\n$\\dfrac{14760}{31400} \\times 100 = 47.01\\%$\n\n**47.01%**. Averaging the three margins (40%, 45%, 60%) gives 48.33% and is wrong: cakes carry nearly two-thirds of the revenue, so the overall margin sits close to the cake margin, not to the middle of the three.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 130,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:caselets"
+  ],
+  "mockReserved": false
+}

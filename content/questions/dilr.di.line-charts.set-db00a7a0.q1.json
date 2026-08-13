@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.line-charts.set-db00a7a0.q1",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Site P's figure for Mar?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 160.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Read the Site P point on the line for Mar: **160 thousand visits**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

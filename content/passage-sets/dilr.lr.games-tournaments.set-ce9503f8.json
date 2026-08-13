@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.games-tournaments.set-ce9503f8",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "A single-elimination (knockout) tournament is one in which a player leaves the tournament as soon as they lose a match, and the last player remaining is the champion. When the number of players is not a power of two, some players are given a bye in the first round, meaning they advance without playing.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.games-tournaments.set-ce9503f8.q1",
+    "dilr.lr.games-tournaments.set-ce9503f8.q2",
+    "dilr.lr.games-tournaments.set-ce9503f8.q3",
+    "dilr.lr.games-tournaments.set-ce9503f8.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

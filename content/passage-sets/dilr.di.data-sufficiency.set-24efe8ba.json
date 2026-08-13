@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.data-sufficiency.set-24efe8ba",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Each question below is followed by two statements, I and II. Decide whether the statements are sufficient to answer the question, and choose the matching option.\n\nJudge each statement on its own first, and only then together \u2014 deciding they are needed jointly before testing them separately is what turns an \"each alone\" question into a wrong answer.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.data-sufficiency.set-24efe8ba.q1",
+    "dilr.di.data-sufficiency.set-24efe8ba.q2",
+    "dilr.di.data-sufficiency.set-24efe8ba.q3",
+    "dilr.di.data-sufficiency.set-24efe8ba.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

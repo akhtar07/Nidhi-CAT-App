@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bf383d3e",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "A review panel of exactly 4 members must be formed from seven people: A, B, C, D, E, F and G. The rules are:\n\n- Exactly one of B and C must be on the panel.\n- D and E cannot both be on the panel.\n- A and F cannot both be on the panel.\n- G must be on the panel.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.selection-conditionalities.set-bf383d3e.q1",
+    "dilr.lr.selection-conditionalities.set-bf383d3e.q2",
+    "dilr.lr.selection-conditionalities.set-bf383d3e.q3",
+    "dilr.lr.selection-conditionalities.set-bf383d3e.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.tables.set-59a24b52.q3",
+  "microTopicIds": [
+    "dilr.di.tables"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "State Q accounted for what percentage of Rice's total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 27.03,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Total Rice is $120 + 200 + 150 + 90 + 180 = 740$.\n\n$\\dfrac{200}{740} \\times 100 = 27.03\\%$\n\n**27.03%**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:tables"
+  ],
+  "mockReserved": false
+}

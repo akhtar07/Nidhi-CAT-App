@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.stacked-charts.set-0ac64260.q3",
+  "microTopicIds": [
+    "dilr.di.stacked-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In 2024, Metro accounted for what percentage of the total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 34.43,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The whole column for 2024 is $50 + 42 + 30 = 122$.\n\n$\\dfrac{42}{122} \\times 100 = 34.43\\%$\n\n**34.43%**. The denominator is this column's own height, not the total of Metro across every column.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:stacked-charts"
+  ],
+  "mockReserved": false
+}

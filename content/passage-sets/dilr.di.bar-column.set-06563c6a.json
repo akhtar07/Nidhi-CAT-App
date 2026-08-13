@@ -1,0 +1,58 @@
+{
+  "id": "dilr.di.bar-column.set-06563c6a",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The bar chart below shows monsoon rainfall, in millimetres, recorded in two districts over six months.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "bar",
+        "categories": [
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov"
+        ],
+        "series": [
+          {
+            "name": "District A",
+            "values": [
+              180,
+              260,
+              240,
+              120,
+              40,
+              20
+            ]
+          },
+          {
+            "name": "District B",
+            "values": [
+              150,
+              300,
+              210,
+              90,
+              60,
+              30
+            ]
+          }
+        ],
+        "unit": "mm"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.bar-column.set-06563c6a.q1",
+    "dilr.di.bar-column.set-06563c6a.q2",
+    "dilr.di.bar-column.set-06563c6a.q3",
+    "dilr.di.bar-column.set-06563c6a.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

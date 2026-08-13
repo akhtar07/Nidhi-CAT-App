@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-38dfd64e",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "A student must register for exactly 4 courses out of six on offer: Economics, Finance, Statistics, Marketing, History and Law. The registration rules are:\n\n- Statistics must be taken if Finance is taken.\n- History and Law cannot both be taken.\n- Marketing can be taken only if Economics is taken.\n- At least one of History and Law must be taken.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.selection-conditionalities.set-38dfd64e.q1",
+    "dilr.lr.selection-conditionalities.set-38dfd64e.q2",
+    "dilr.lr.selection-conditionalities.set-38dfd64e.q3",
+    "dilr.lr.selection-conditionalities.set-38dfd64e.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

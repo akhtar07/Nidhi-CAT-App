@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.bubble-charts.set-f02ea716.q3",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which startup earns the highest absolute profit?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Alpha"
+    },
+    {
+      "key": "B",
+      "markdown": "Beta"
+    },
+    {
+      "key": "C",
+      "markdown": "Gamma"
+    },
+    {
+      "key": "D",
+      "markdown": "Delta"
+    },
+    {
+      "key": "E",
+      "markdown": "Epsilon"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Profit is revenue times margin, so neither axis alone decides it:\n\n- Alpha: 30\n- Beta: 22.5\n- Gamma: 20\n- Delta: 35\n- Epsilon: 12.5\n\n**Delta** leads with Rs 35 crore. Gamma has twice Delta's revenue and still earns less, because a bubble far to the right but low down is a high-revenue, thin-margin business.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

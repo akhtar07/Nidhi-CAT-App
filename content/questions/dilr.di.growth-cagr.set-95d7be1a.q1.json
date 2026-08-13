@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.growth-cagr.set-95d7be1a.q1",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "By what percentage did revenue grow from 2021 to 2022?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 50.0,
+  "titaTolerance": 0.05,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "$\\dfrac{192 - 128}{128} \\times 100 = 50\\%$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

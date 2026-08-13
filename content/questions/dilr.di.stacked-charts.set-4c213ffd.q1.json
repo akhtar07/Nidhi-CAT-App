@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.stacked-charts.set-4c213ffd.q1",
+  "microTopicIds": [
+    "dilr.di.stacked-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Tuition's figure for 2023?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 72.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Read the Tuition segment for 2023: **72 Rs thousand**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:stacked-charts"
+  ],
+  "mockReserved": false
+}

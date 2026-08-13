@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-29961729.q2",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "By how many rupees does monthly spending on education exceed spending on transport?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3600.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Work with the difference in shares rather than computing both amounts:\n\n$(18 - 12)\\% \\text{ of } 60{,}000 = 6\\% \\times 60{,}000 = 3{,}600$\n\n**Rs 3600**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-84ecb4e6.q2",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many units did Shift 2 produce?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 300.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Shift 3 made $1200 \\times \\dfrac{2}{5} = 480$ units. The three shifts must account for the whole day:\n\n$1200 - 420 - 480 = 300$\n\n**300 units**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

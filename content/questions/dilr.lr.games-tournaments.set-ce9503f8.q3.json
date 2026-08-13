@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-ce9503f8.q3",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "A knockout tournament has 64 players. How many matches are played in total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 63.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "One player is eliminated per match, and 63 players must go:\n\n$64 - 1 = 63$\n\n**63 matches**. Adding the rounds gives the same: $32 + 16 + 8 + 4 + 2 + 1 = 63$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:games-tournaments"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bf383d3e.q3",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many different valid panels of 4 can be formed?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 8.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "G takes one of the four seats, leaving three seats for A, B, C, D, E and F.\n\nThose six split into three pairs \u2014 $\\{B, C\\}$, $\\{D, E\\}$, $\\{A, F\\}$ \u2014 and each rule allows **at most one** member from its pair, with $\\{B, C\\}$ requiring exactly one. Three seats and at most one from each of three pairs means exactly one from each pair:\n\n$2 \\times 2 \\times 2 = 8$\n\n**8 panels**. Recognising the pair structure turns a 35-case check into one multiplication.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 150,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

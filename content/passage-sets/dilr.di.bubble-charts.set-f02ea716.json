@@ -1,0 +1,64 @@
+{
+  "id": "dilr.di.bubble-charts.set-f02ea716",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Five startups are plotted below. The horizontal axis is annual revenue in Rs crore, the vertical axis is profit margin as a percentage of revenue, and the area of each bubble is proportional to headcount (printed inside the bubble).\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "bubble",
+        "points": [
+          {
+            "name": "Alpha",
+            "x": 150,
+            "y": 20,
+            "size": 600
+          },
+          {
+            "name": "Beta",
+            "x": 75,
+            "y": 30,
+            "size": 250
+          },
+          {
+            "name": "Gamma",
+            "x": 200,
+            "y": 10,
+            "size": 900
+          },
+          {
+            "name": "Delta",
+            "x": 100,
+            "y": 35,
+            "size": 300
+          },
+          {
+            "name": "Epsilon",
+            "x": 50,
+            "y": 25,
+            "size": 150
+          }
+        ],
+        "xLabel": "Annual revenue (Rs crore)",
+        "yLabel": "Profit margin (%)",
+        "sizeLabel": "headcount",
+        "xMax": 200,
+        "yMax": 40,
+        "xDivisions": 8,
+        "yDivisions": 8
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.bubble-charts.set-f02ea716.q1",
+    "dilr.di.bubble-charts.set-f02ea716.q2",
+    "dilr.di.bubble-charts.set-f02ea716.q3",
+    "dilr.di.bubble-charts.set-f02ea716.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

@@ -1,0 +1,61 @@
+{
+  "id": "dilr.di.bar-column.set-0c614252",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The bar chart below shows the number of students placed from three branches of an engineering college over four years.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "bar",
+        "categories": [
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "series": [
+          {
+            "name": "CSE",
+            "values": [
+              120,
+              150,
+              180,
+              240
+            ]
+          },
+          {
+            "name": "ECE",
+            "values": [
+              90,
+              100,
+              110,
+              130
+            ]
+          },
+          {
+            "name": "Mechanical",
+            "values": [
+              60,
+              66,
+              72,
+              90
+            ]
+          }
+        ],
+        "unit": "students"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.bar-column.set-0c614252.q1",
+    "dilr.di.bar-column.set-0c614252.q2",
+    "dilr.di.bar-column.set-0c614252.q3",
+    "dilr.di.bar-column.set-0c614252.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

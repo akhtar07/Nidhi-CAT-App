@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.ordering-ranking.set-ff001513",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "Five runners \u2014 Manav, Nisha, Omar, Priya and Rehan \u2014 finished a race. There were no ties.\n\n- Omar finished immediately after Nisha.\n- Omar finished ahead of Manav, and Manav ahead of Priya.\n- Rehan finished neither first nor last.\n- Priya finished immediately after Manav.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.ordering-ranking.set-ff001513.q1",
+    "dilr.lr.ordering-ranking.set-ff001513.q2",
+    "dilr.lr.ordering-ranking.set-ff001513.q3",
+    "dilr.lr.ordering-ranking.set-ff001513.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

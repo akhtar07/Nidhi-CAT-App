@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.radar-spider.set-9ef31407.q1",
+  "microTopicIds": [
+    "dilr.di.radar-spider"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is Student P's accuracy in Number System?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 80.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Read P's vertex on the Number System spoke: **80%**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 40,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:radar-spider"
+  ],
+  "mockReserved": false
+}

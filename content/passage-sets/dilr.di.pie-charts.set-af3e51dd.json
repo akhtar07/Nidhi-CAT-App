@@ -1,0 +1,52 @@
+{
+  "id": "dilr.di.pie-charts.set-af3e51dd",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "A company's total annual expenditure of Rs 250 lakh is split as shown in the pie chart below. Each figure is a percentage of total expenditure.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "pie",
+        "slices": [
+          {
+            "name": "Salaries",
+            "value": 40
+          },
+          {
+            "name": "Raw material",
+            "value": 25
+          },
+          {
+            "name": "Marketing",
+            "value": 12
+          },
+          {
+            "name": "Administration",
+            "value": 9
+          },
+          {
+            "name": "R&D",
+            "value": 8
+          },
+          {
+            "name": "Misc",
+            "value": 6
+          }
+        ],
+        "unit": "%"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.pie-charts.set-af3e51dd.q1",
+    "dilr.di.pie-charts.set-af3e51dd.q2",
+    "dilr.di.pie-charts.set-af3e51dd.q3",
+    "dilr.di.pie-charts.set-af3e51dd.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

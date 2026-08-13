@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.arrangements.set-06f39d9c.q3",
+  "microTopicIds": [
+    "dilr.lr.arrangements"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many people sit between Anaya and Chirag?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Anaya is in seat 1 and Chirag in seat 5, so seats 2, 3 and 4 lie between them \u2014 **3 people** (Farhan, Bhavesh and Esha). Count the seats strictly between the two, not the gap in seat numbers, which is 4.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:arrangements"
+  ],
+  "mockReserved": false
+}

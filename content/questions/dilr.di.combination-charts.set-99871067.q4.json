@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.combination-charts.set-99871067.q4",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which quarter did online sales account for exactly 45% of total sales?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Q1"
+    },
+    {
+      "key": "B",
+      "markdown": "Q2"
+    },
+    {
+      "key": "C",
+      "markdown": "Q3"
+    },
+    {
+      "key": "D",
+      "markdown": "Q4"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Share of online in the total, quarter by quarter:\n\n- Q1: $\\dfrac{60}{200} = 30\\%$\n- Q2: $\\dfrac{75}{205} = 36.59\\%$\n- Q3: $\\dfrac{90}{200} = 45\\%$\n- Q4: $\\dfrac{120}{220} = 54.55\\%$\n\n**Q3**. Total sales barely move across the four quarters, so the whole story is the mix shifting from offline to online \u2014 a shift the discount line tracks but does not measure.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

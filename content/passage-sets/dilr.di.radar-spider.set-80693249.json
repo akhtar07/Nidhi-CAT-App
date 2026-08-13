@@ -1,0 +1,66 @@
+{
+  "id": "dilr.di.radar-spider.set-80693249",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Three candidates for a single role were rated on five competencies, each scored out of 20. The radar chart below shows their ratings.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "radar",
+        "axes": [
+          "Analytics",
+          "Communication",
+          "Leadership",
+          "Technical",
+          "Domain"
+        ],
+        "series": [
+          {
+            "name": "Kavya",
+            "values": [
+              18,
+              14,
+              12,
+              17,
+              15
+            ]
+          },
+          {
+            "name": "Rohit",
+            "values": [
+              15,
+              18,
+              16,
+              13,
+              14
+            ]
+          },
+          {
+            "name": "Meera",
+            "values": [
+              16,
+              13,
+              18,
+              15,
+              16
+            ]
+          }
+        ],
+        "max": 20,
+        "unit": "points out of 20"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.radar-spider.set-80693249.q1",
+    "dilr.di.radar-spider.set-80693249.q2",
+    "dilr.di.radar-spider.set-80693249.q3",
+    "dilr.di.radar-spider.set-80693249.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

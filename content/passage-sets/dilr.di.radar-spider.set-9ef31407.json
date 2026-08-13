@@ -1,0 +1,59 @@
+{
+  "id": "dilr.di.radar-spider.set-9ef31407",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Two students' accuracy, as a percentage, across six Quant areas is shown on the radar chart below.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "radar",
+        "axes": [
+          "Arithmetic",
+          "Algebra",
+          "Geometry",
+          "Number System",
+          "Modern Math",
+          "Data Interpretation"
+        ],
+        "series": [
+          {
+            "name": "Student P",
+            "values": [
+              72,
+              65,
+              58,
+              80,
+              54,
+              68
+            ]
+          },
+          {
+            "name": "Student Q",
+            "values": [
+              66,
+              71,
+              62,
+              74,
+              60,
+              63
+            ]
+          }
+        ],
+        "max": 100,
+        "unit": "percent accuracy"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.radar-spider.set-9ef31407.q1",
+    "dilr.di.radar-spider.set-9ef31407.q2",
+    "dilr.di.radar-spider.set-9ef31407.q3",
+    "dilr.di.radar-spider.set-9ef31407.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

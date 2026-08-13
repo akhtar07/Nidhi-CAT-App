@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.missing-data.set-d7386a68.q3",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which month did the three salespeople together sell the most units?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Jan"
+    },
+    {
+      "key": "B",
+      "markdown": "Feb"
+    },
+    {
+      "key": "C",
+      "markdown": "Mar"
+    },
+    {
+      "key": "D",
+      "markdown": "Apr"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Column totals, once the gap is filled: Jan 40, Feb 40, Mar 47, Apr 37.\n\n**March**, at 47 units. March cannot be totalled at all until the missing entry is recovered, which is why that question comes first.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

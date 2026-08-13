@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bar-column.set-0c614252.q3",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "By what percentage did ECE change from 2021 to 2024?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 44.44,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The base is the **earlier** figure, 90:\n\n$\\dfrac{130 - 90}{90} \\times 100 = 44.44\\%$\n\nA **44.44% increase**. Dividing by the later figure instead is the single most common error in this question type.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

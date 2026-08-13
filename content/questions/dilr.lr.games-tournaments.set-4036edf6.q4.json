@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-4036edf6.q4",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many points did Cobra finish with?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Cobra won 2 and drew none:\n\n$2 \\times 2 + 0 \\times 1 = 4$\n\n**4 points**. The full table reads Alpha 7, Bravo 6, Cobra 4, Delta 2, Eagle 1, totalling 20 \u2014 which matches the check that every match hands out exactly 2 points whether it is won or drawn, and $10 \\times 2 = 20$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:games-tournaments"
+  ],
+  "mockReserved": false
+}

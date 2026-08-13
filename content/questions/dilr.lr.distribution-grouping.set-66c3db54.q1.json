@@ -1,0 +1,49 @@
+{
+  "id": "dilr.lr.distribution-grouping.set-66c3db54.q1",
+  "microTopicIds": [
+    "dilr.lr.distribution-grouping"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What did Lata order?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Coffee"
+    },
+    {
+      "key": "B",
+      "markdown": "Tea"
+    },
+    {
+      "key": "C",
+      "markdown": "Juice"
+    },
+    {
+      "key": "D",
+      "markdown": "Lassi"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Lata paid Rs 80, the lowest bill. Since Ishan ordered tea and the juice drinker paid Rs 150, Lata ordered neither. That leaves coffee and lassi for Lata and Kabir, and Kabir did not order coffee \u2014 so Lata ordered **coffee** and Kabir the lassi.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:distribution-grouping"
+  ],
+  "mockReserved": false
+}

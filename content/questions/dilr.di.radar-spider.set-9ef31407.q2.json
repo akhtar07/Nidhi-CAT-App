@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.radar-spider.set-9ef31407.q2",
+  "microTopicIds": [
+    "dilr.di.radar-spider"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In how many of the six areas is Student P's accuracy higher than Student Q's?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "P's polygon lies outside Q's on Arithmetic, Number System, Data Interpretation \u2014 **3 areas**. Q leads on Algebra, Geometry and Modern Math.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 75,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:radar-spider"
+  ],
+  "mockReserved": false
+}

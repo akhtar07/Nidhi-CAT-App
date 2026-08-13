@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.missing-data.set-d7386a68.q4",
+  "microTopicIds": [
+    "dilr.di.missing-data"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Anil accounted for what percentage of total units sold? Give the answer to two decimal places.",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 38.41,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "$\\dfrac{63}{164} \\times 100 = 38.41\\%$\n\n**38.41%**. A useful sanity check: three people would average 33.3% each, so a figure a little above a third is the right neighbourhood.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:missing-data"
+  ],
+  "mockReserved": false
+}

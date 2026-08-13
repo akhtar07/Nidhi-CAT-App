@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.growth-cagr.set-0feecb09.q2",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the compound annual growth rate of Investment A, as a percentage?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 50.0,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\left(\\dfrac{27000}{8000}\\right)^{1/3} - 1 = \\left(\\dfrac{27}{8}\\right)^{1/3} - 1 = \\dfrac{3}{2} - 1 = 0.5$\n\n**50%**. Spotting that 27 and 8 are both perfect cubes turns a cube root into mental arithmetic \u2014 CAT sets these ratios deliberately.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

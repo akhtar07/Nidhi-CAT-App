@@ -1,0 +1,59 @@
+{
+  "id": "dilr.di.radar-spider.set-60211ab9",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "A retail chain's sales across six categories, in Rs lakh, are plotted for 2024 and 2025 on the radar chart below.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "radar",
+        "axes": [
+          "Apparel",
+          "Footwear",
+          "Electronics",
+          "Grocery",
+          "Beauty",
+          "Toys"
+        ],
+        "series": [
+          {
+            "name": "2024",
+            "values": [
+              120,
+              80,
+              150,
+              200,
+              60,
+              40
+            ]
+          },
+          {
+            "name": "2025",
+            "values": [
+              140,
+              76,
+              195,
+              210,
+              75,
+              44
+            ]
+          }
+        ],
+        "max": 220,
+        "unit": "Rs lakh"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.radar-spider.set-60211ab9.q1",
+    "dilr.di.radar-spider.set-60211ab9.q2",
+    "dilr.di.radar-spider.set-60211ab9.q3",
+    "dilr.di.radar-spider.set-60211ab9.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

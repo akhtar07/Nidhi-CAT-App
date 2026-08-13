@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.radar-spider.set-9ef31407.q4",
+  "microTopicIds": [
+    "dilr.di.radar-spider"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Student P wants to raise their average accuracy across the six areas to 70%, and will do it by improving exactly one area. What is the lowest accuracy figure that area must reach?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "70"
+    },
+    {
+      "key": "B",
+      "markdown": "74"
+    },
+    {
+      "key": "C",
+      "markdown": "77"
+    },
+    {
+      "key": "D",
+      "markdown": "80"
+    },
+    {
+      "key": "E",
+      "markdown": "83"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "P currently totals $72 + 65 + 58 + 80 + 54 + 68 = 397$. An average of 70% over six areas needs $70 \\times 6 = 420$, so P must gain $420 - 397 = 23$ percentage points, all in one area.\n\nThat area must end at (its current score) $+ 23$. To make that ending figure as low as possible, improve the **weakest** area \u2014 Modern Math at 54:\n\n$54 + 23 = 77$\n\nSo the answer is **77**. Improving Geometry instead would need 81, and Number System would need 103, which is impossible. The counter-intuitive part: the number you are minimising is the **final** score, and the weakest spoke is the cheapest place to put a fixed number of extra marks.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:radar-spider"
+  ],
+  "mockReserved": false
+}

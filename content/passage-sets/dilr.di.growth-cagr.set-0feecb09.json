@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.growth-cagr.set-0feecb09",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Two investments were made and later valued:\n\n- Investment A: Rs 8,000 grew to Rs 27,000 over 3 years\n- Investment B: Rs 6,250 grew to Rs 16,000 over 2 years\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.growth-cagr.set-0feecb09.q1",
+    "dilr.di.growth-cagr.set-0feecb09.q2",
+    "dilr.di.growth-cagr.set-0feecb09.q3",
+    "dilr.di.growth-cagr.set-0feecb09.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

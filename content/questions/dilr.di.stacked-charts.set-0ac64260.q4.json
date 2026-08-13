@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.stacked-charts.set-0ac64260.q4",
+  "microTopicIds": [
+    "dilr.di.stacked-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which of these grew the fastest in percentage terms from 2020 to 2024?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Bus"
+    },
+    {
+      "key": "B",
+      "markdown": "Metro"
+    },
+    {
+      "key": "C",
+      "markdown": "Car"
+    },
+    {
+      "key": "D",
+      "markdown": "All of them grew at the same rate"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Percentage growth, each against its own starting figure:\n\n- Bus: $\\dfrac{50 - 40}{40} = 25\\%$\n- Metro: $\\dfrac{42 - 10}{10} = 320\\%$\n- Car: $\\dfrac{30 - 25}{25} = 20\\%$\n\nFastest is **Metro**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:stacked-charts"
+  ],
+  "mockReserved": false
+}

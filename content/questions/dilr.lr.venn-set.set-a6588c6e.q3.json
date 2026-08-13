@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-a6588c6e.q3",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "If exactly 20 people in the group like neither tea nor coffee, how many like both?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 60.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Fixing the outside fixes the union: $200 - 20 = 180$ people like at least one.\n\n$130 + 110 - 180 = 60$\n\n**60 people**. Once the \"neither\" count is known the overlap is no longer a range \u2014 it is a single number.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:venn-set"
+  ],
+  "mockReserved": false
+}

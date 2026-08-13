@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bubble-charts.set-85896648.q3",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the combined population, in lakh, of the cities with a literacy rate of 60% or more?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 62.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Cities at or right of the 60% gridline are P (60), S (70) and Q (80). Their bubble figures are the populations:\n\n$30 + 20 + 12 = 62$\n\n**62 lakh**. City P sits exactly on 60 and the condition is \"60% or more\", so it counts.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

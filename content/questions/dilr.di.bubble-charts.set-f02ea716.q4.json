@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bubble-charts.set-f02ea716.q4",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "For how many of the five startups does revenue per employee exceed Rs 25 lakh?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 3.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Revenue per employee uses the bubble's horizontal position and its area. Revenue is in crore, and 1 crore = 100 lakh, so revenue per employee in lakh is $\\dfrac{100 \\times \\text{revenue}}{\\text{headcount}}$:\n\n- Alpha: 25 lakh\n- Beta: 30 lakh\n- Gamma: 22.22 lakh\n- Delta: 33.33 lakh\n- Epsilon: 33.33 lakh\n\n**3** clear the bar. Alpha lands on exactly 25, and the question says **exceed**, so Alpha is excluded \u2014 read the inequality carefully.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

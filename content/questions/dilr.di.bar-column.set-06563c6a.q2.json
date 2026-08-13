@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bar-column.set-06563c6a.q2",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was District A's average per month?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 143.33333333333334,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\dfrac{180 + 260 + 240 + 120 + 40 + 20}{6} = \\dfrac{860}{6} = 143.33$\n\nAverage **143.33 mm**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

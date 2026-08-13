@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.bar-column.set-0c614252.q2",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which year was the combined figure the highest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "2021"
+    },
+    {
+      "key": "B",
+      "markdown": "2022"
+    },
+    {
+      "key": "C",
+      "markdown": "2023"
+    },
+    {
+      "key": "D",
+      "markdown": "2024"
+    }
+  ],
+  "correctKey": "D",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Combined figures: 2021 270, 2022 316, 2023 362, 2024 460.\n\nHighest is **2024**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

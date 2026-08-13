@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bubble-charts.set-f02ea716.q2",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is Delta's annual profit, in Rs crore?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 35.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Delta sits at revenue Rs 100 crore with a 35% margin:\n\n$100 \\times \\dfrac{35}{100} = 35$\n\nProfit **Rs 35 crore**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

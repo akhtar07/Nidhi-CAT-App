@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.combination-charts.set-022bcbd5.q3",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students passed the exam in 2024?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 289.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Total appearing in 2024 is $160 + 180 = 340$, and the line reads 85%.\n\n$340 \\times 0.85 = 289$\n\n**289 students**. The percentage is of the **combined** bar, not of either bar alone.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.growth-cagr.set-0feecb09.q4",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which investment grew more in percentage terms over its own holding period?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Investment A"
+    },
+    {
+      "key": "B",
+      "markdown": "Investment B"
+    },
+    {
+      "key": "C",
+      "markdown": "Both grew by the same percentage"
+    },
+    {
+      "key": "D",
+      "markdown": "Cannot be determined from the data given"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Total growth over the whole holding period:\n\n- A: $\\dfrac{27000 - 8000}{8000} \\times 100 = 237.5\\%$\n- B: $\\dfrac{16000 - 6250}{6250} \\times 100 = 156\\%$\n\n**Investment A**, and this is the point of the set: B has the higher annual rate (60% against 50%) and still grew less overall, because it compounded for two years instead of three. A CAGR is only comparable across investments held for the **same** length of time.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

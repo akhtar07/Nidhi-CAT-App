@@ -1,0 +1,58 @@
+{
+  "id": "dilr.di.line-charts.set-607f0419",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The line chart below shows the number of outpatients seen each month at two hospitals.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "line",
+        "categories": [
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov"
+        ],
+        "series": [
+          {
+            "name": "Hospital A",
+            "values": [
+              420,
+              460,
+              510,
+              480,
+              530,
+              560
+            ]
+          },
+          {
+            "name": "Hospital B",
+            "values": [
+              380,
+              500,
+              470,
+              520,
+              490,
+              600
+            ]
+          }
+        ],
+        "unit": "patients"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.line-charts.set-607f0419.q1",
+    "dilr.di.line-charts.set-607f0419.q2",
+    "dilr.di.line-charts.set-607f0419.q3",
+    "dilr.di.line-charts.set-607f0419.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

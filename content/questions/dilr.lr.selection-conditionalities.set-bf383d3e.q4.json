@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bf383d3e.q4",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "If D is not on the panel, how many valid panels can be formed?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "With D excluded, the $\\{D, E\\}$ pair must contribute E \u2014 it still has to supply exactly one member. The other two pairs are unaffected:\n\n$2 \\times 1 \\times 2 = 4$\n\n**4 panels**: $\\{A,B,E,G\\}$, $\\{A,C,E,G\\}$, $\\{B,E,F,G\\}$ and $\\{C,E,F,G\\}$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

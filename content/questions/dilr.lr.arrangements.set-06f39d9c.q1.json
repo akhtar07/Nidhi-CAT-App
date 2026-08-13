@@ -1,0 +1,57 @@
+{
+  "id": "dilr.lr.arrangements.set-06f39d9c.q1",
+  "microTopicIds": [
+    "dilr.lr.arrangements"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who sits in seat 2?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Anaya"
+    },
+    {
+      "key": "B",
+      "markdown": "Bhavesh"
+    },
+    {
+      "key": "C",
+      "markdown": "Chirag"
+    },
+    {
+      "key": "D",
+      "markdown": "Divya"
+    },
+    {
+      "key": "E",
+      "markdown": "Esha"
+    },
+    {
+      "key": "F",
+      "markdown": "Farhan"
+    }
+  ],
+  "correctKey": "F",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "Anaya is at an end, and Bhavesh sits two seats to her right. If Anaya were in seat 6 there would be no seat 8, so **Anaya is in seat 1 and Bhavesh in seat 3**. Esha follows Bhavesh, so Esha is in seat 4.\n\nSeats 2, 5 and 6 are left for Chirag, Divya and Farhan. Chirag must be immediately left of Divya, and the only such pair among those is 5 and 6 \u2014 so Chirag is in 5, Divya in 6, and Farhan takes seat 2.\n\nFinal row: Anaya, Farhan, Bhavesh, Esha, Chirag, Divya. Seat 2 is **Farhan**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:arrangements"
+  ],
+  "mockReserved": false
+}

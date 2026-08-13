@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bar-column.set-06563c6a.q3",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Jul accounted for what percentage of District A's total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 30.23,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Total District A is $180 + 260 + 240 + 120 + 40 + 20 = 860$.\n\n$\\dfrac{260}{860} \\times 100 = 30.23\\%$\n\n**30.23%**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

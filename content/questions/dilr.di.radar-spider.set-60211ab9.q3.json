@@ -1,0 +1,57 @@
+{
+  "id": "dilr.di.radar-spider.set-60211ab9.q3",
+  "microTopicIds": [
+    "dilr.di.radar-spider"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which category did sales fall between 2024 and 2025?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Apparel"
+    },
+    {
+      "key": "B",
+      "markdown": "Footwear"
+    },
+    {
+      "key": "C",
+      "markdown": "Electronics"
+    },
+    {
+      "key": "D",
+      "markdown": "Grocery"
+    },
+    {
+      "key": "E",
+      "markdown": "Beauty"
+    },
+    {
+      "key": "F",
+      "markdown": "Toys"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Look for the one spoke where the 2025 polygon lies **inside** the 2024 polygon: **Footwear**, from 80 down to 76. Everywhere else 2025 is further out.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:radar-spider"
+  ],
+  "mockReserved": false
+}

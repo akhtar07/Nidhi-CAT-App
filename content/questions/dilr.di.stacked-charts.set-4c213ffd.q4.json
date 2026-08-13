@@ -1,0 +1,49 @@
+{
+  "id": "dilr.di.stacked-charts.set-4c213ffd.q4",
+  "microTopicIds": [
+    "dilr.di.stacked-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which of these grew the fastest in percentage terms from 2021 to 2024?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Tuition"
+    },
+    {
+      "key": "B",
+      "markdown": "Hostel"
+    },
+    {
+      "key": "C",
+      "markdown": "Other charges"
+    },
+    {
+      "key": "D",
+      "markdown": "All of them grew at the same rate"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Percentage growth, each against its own starting figure:\n\n- Tuition: $\\dfrac{80 - 60}{60} = 33.33\\%$\n- Hostel: $\\dfrac{40 - 30}{30} = 33.33\\%$\n- Other charges: $\\dfrac{15 - 10}{10} = 50\\%$\n\nFastest is **Other charges**. Tuition grew by the largest **amount** (20) and is not the answer, because it starts from a much larger base.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:stacked-charts"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.line-charts.set-db00a7a0.q3",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "In which month was the gap between Site P and Site Q the largest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Jan"
+    },
+    {
+      "key": "B",
+      "markdown": "Feb"
+    },
+    {
+      "key": "C",
+      "markdown": "Mar"
+    },
+    {
+      "key": "D",
+      "markdown": "Apr"
+    },
+    {
+      "key": "E",
+      "markdown": "May"
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Gap in each:\n\n- Jan: $|120 - 90| = 30$\n- Feb: $|140 - 150| = 10$\n- Mar: $|160 - 130| = 30$\n- Apr: $|150 - 180| = 30$\n- May: $|200 - 165| = 35$\n\nThe largest is **May**, at 35 thousand visits.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

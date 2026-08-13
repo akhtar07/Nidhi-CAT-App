@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-48db7338.q4",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the total number of points earned by all four teams together?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Team by team: $7 + 4 + 3 + 2 = 16$.\n\nFaster, and the way to check it: every decisive match puts 3 points into the table and every drawn match puts 2. With 4 decisive matches and 2 draws:\n\n$4 \\times 3 + 2 \\times 2 = 12 + 4 = 16$\n\n**16 points**. That second route is worth having, because it tells you the total before you know any individual team's tally \u2014 and it means a points table where draws are unknown can still be pinned down.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:games-tournaments"
+  ],
+  "mockReserved": false
+}

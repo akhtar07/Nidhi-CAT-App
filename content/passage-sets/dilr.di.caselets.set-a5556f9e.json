@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.caselets.set-a5556f9e",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "Pranav, Quasar and Ritu went on a trip together and paid for shared costs out of pocket as they went. Pranav paid Rs 4,200, Quasar paid Rs 3,600 and Ritu paid Rs 2,100. They agreed beforehand to divide the total cost equally between the three of them and settle up at the end.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.caselets.set-a5556f9e.q1",
+    "dilr.di.caselets.set-a5556f9e.q2",
+    "dilr.di.caselets.set-a5556f9e.q3",
+    "dilr.di.caselets.set-a5556f9e.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

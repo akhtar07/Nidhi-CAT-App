@@ -1,0 +1,58 @@
+{
+  "id": "dilr.di.combination-charts.set-b11f03c0",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The chart below shows a company's annual revenue as bars, read against the left axis in Rs crore, and its profit margin as a line, read against the right axis in percent.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "combo",
+        "categories": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "bars": [
+          {
+            "name": "Revenue",
+            "values": [
+              400,
+              520,
+              480,
+              650,
+              800
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "name": "Profit margin",
+            "values": [
+              10,
+              12,
+              15,
+              12,
+              14
+            ]
+          }
+        ],
+        "leftUnit": "Rs crore",
+        "rightUnit": "%"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.combination-charts.set-b11f03c0.q1",
+    "dilr.di.combination-charts.set-b11f03c0.q2",
+    "dilr.di.combination-charts.set-b11f03c0.q3",
+    "dilr.di.combination-charts.set-b11f03c0.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

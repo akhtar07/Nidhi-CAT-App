@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-ce9503f8.q1",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "A knockout tournament has 16 players. How many matches are played in total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 15.0,
+  "titaTolerance": 0.0,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "By rounds: $8 + 4 + 2 + 1 = 15$.\n\n**15 matches**. The shortcut worth internalising: every match eliminates exactly one player, and 15 of the 16 players must be eliminated to leave one champion, so there are 15 matches.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:games-tournaments"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.radar-spider.set-80693249.q3",
+  "microTopicIds": [
+    "dilr.di.radar-spider"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "On how many competencies is Kavya rated strictly higher than both of the other two candidates?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Kavya is the outermost point on Analytics and Technical \u2014 **2** competencies. On Communication and Leadership she is the innermost, and on Domain Meera is ahead of her.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:radar-spider"
+  ],
+  "mockReserved": false
+}

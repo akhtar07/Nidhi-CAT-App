@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-af3e51dd.q4",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Next year total expenditure rises by 20% and salaries fall to 35% of the total. What will the company then spend on salaries, in Rs lakh?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 105.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "New total: $250 \\times 1.2 = 300$ lakh.\n\n$300 \\times \\dfrac{35}{100} = 105$\n\n**Rs 105 lakh**, against Rs 100 lakh this year. Salaries fall by 5 percentage points of the pie and still cost 5% more in rupees, because the pie itself got bigger.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

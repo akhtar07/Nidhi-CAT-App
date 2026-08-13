@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bubble-charts.set-13251e67.q4",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "For how many products is annual revenue more than 8 times the advertising spend on that product?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 2.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Both quantities are already in Rs lakh, so divide revenue by the figure inside the bubble:\n\n- Product A: $\\dfrac{140}{10} = 14$\n- Product B: $\\dfrac{180}{25} = 7.2$\n- Product C: $\\dfrac{200}{40} = 5$\n- Product D: $\\dfrac{180}{15} = 12$\n- Product E: $\\dfrac{140}{30} = 4.67$\n\n**2** products clear 8 \u2014 A and D. Product C earns the most revenue of any product and is the **least** efficient advertiser here, which is exactly why the third dimension is on the chart.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

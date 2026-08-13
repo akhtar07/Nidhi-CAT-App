@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-5f1ef89a.q4",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Students specialising in Mathematics make up what percentage of the whole college?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 7.0,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Mathematics is 20% of Science, and Science is 35% of the college, so multiply the two shares:\n\n$0.20 \\times 0.35 = 0.07 = 7\\%$\n\nChecking with headcounts: $420 \\times 0.20 = 84$, and $\\dfrac{84}{1200} \\times 100 = 7\\%$.\n\n**7%**. Nested pies chain by multiplication, never by addition \u2014 20% and 35% do not combine into 55% or into 20%.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 110,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

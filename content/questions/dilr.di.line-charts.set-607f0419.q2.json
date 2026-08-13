@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.line-charts.set-607f0419.q2",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Hospital B's average per month?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 493.3333333333333,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "$\\dfrac{380 + 500 + 470 + 520 + 490 + 600}{6} = \\dfrac{2960}{6} = 493.33$\n\nAverage **493.33 patients**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

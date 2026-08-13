@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.line-charts.set-607f0419.q4",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "Nov accounted for what percentage of Hospital A's total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 18.92,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Total Hospital A is $420 + 460 + 510 + 480 + 530 + 560 = 2960$.\n\n$\\dfrac{560}{2960} \\times 100 = 18.92\\%$\n\n**18.92%**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

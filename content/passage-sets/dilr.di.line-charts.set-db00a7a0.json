@@ -1,0 +1,55 @@
+{
+  "id": "dilr.di.line-charts.set-db00a7a0",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The line chart below shows monthly visits, in thousands, to two websites.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "line",
+        "categories": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May"
+        ],
+        "series": [
+          {
+            "name": "Site P",
+            "values": [
+              120,
+              140,
+              160,
+              150,
+              200
+            ]
+          },
+          {
+            "name": "Site Q",
+            "values": [
+              90,
+              150,
+              130,
+              180,
+              165
+            ]
+          }
+        ],
+        "unit": "thousand visits"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.line-charts.set-db00a7a0.q1",
+    "dilr.di.line-charts.set-db00a7a0.q2",
+    "dilr.di.line-charts.set-db00a7a0.q3",
+    "dilr.di.line-charts.set-db00a7a0.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

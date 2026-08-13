@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-29961729.q3",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What is the central angle, in degrees, of the sector representing savings?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 36.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "A full circle is 360 degrees, and savings is 10% of the whole:\n\n$\\dfrac{10}{100} \\times 360 = 36$\n\n**36 degrees**. A useful constant to carry: 1% of a pie is 3.6 degrees.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

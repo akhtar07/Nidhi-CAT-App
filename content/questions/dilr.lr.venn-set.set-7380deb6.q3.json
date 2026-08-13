@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.venn-set.set-7380deb6.q3",
+  "microTopicIds": [
+    "dilr.lr.venn-set"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students play cricket only?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 30.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Strip the overlaps out of the cricket total, then restore the triple region that has now been removed twice:\n\n$70 - 30 - 20 + 10 = 30$\n\n**30 students**. Filling the Venn diagram from the centre outwards is the safer habit: 10 in the middle, then $30 - 10 = 20$ in cricket-and-football only, $20 - 10 = 10$ in cricket-and-tennis only, and $70 - 10 - 20 - 10 = 30$ left in cricket alone.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:venn-set"
+  ],
+  "mockReserved": false
+}

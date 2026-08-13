@@ -1,0 +1,57 @@
+{
+  "id": "dilr.lr.arrangements.set-06f39d9c.q2",
+  "microTopicIds": [
+    "dilr.lr.arrangements"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who sits immediately to the left of Chirag?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Anaya"
+    },
+    {
+      "key": "B",
+      "markdown": "Bhavesh"
+    },
+    {
+      "key": "C",
+      "markdown": "Chirag"
+    },
+    {
+      "key": "D",
+      "markdown": "Divya"
+    },
+    {
+      "key": "E",
+      "markdown": "Esha"
+    },
+    {
+      "key": "F",
+      "markdown": "Farhan"
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The row is Anaya, Farhan, Bhavesh, Esha, Chirag, Divya. Chirag is in seat 5, so seat 4 is immediately to his left: **Esha**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:arrangements"
+  ],
+  "mockReserved": false
+}

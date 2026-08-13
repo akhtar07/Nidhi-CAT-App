@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.growth-cagr.set-8b47fff0.q2",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "By what percentage did the population change over the whole period, end-2019 to end-2023?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 58.4,
+  "titaTolerance": 0.05,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Chain the factors rather than adding the percentages:\n\n$1.20 \\times 1.10 \\times 1.25 \\times 0.96 = 1.584$\n\nSo the population is 1.584 times its starting value, a rise of **58.4%**. Adding the four rates gives $20 + 10 + 25 - 4 = 51\\%$, which is wrong \u2014 successive percentages never add.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

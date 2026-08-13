@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.stacked-charts.set-b1de1145.q3",
+  "microTopicIds": [
+    "dilr.di.stacked-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "In 2024, Services accounted for what percentage of the total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 44.0,
+  "titaTolerance": 0.05,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The whole column for 2024 is $200 + 220 + 80 = 500$.\n\n$\\dfrac{220}{500} \\times 100 = 44\\%$\n\n**44%**. The denominator is this column's own height, not the total of Services across every column.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:stacked-charts"
+  ],
+  "mockReserved": false
+}

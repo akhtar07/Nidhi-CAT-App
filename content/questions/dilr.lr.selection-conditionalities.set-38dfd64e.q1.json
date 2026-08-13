@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-38dfd64e.q1",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many different valid sets of 4 courses can the student register for?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 4.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Rules 2 and 4 together mean **exactly one** of History and Law is taken, which uses one of the four slots and leaves three for Economics, Finance, Statistics and Marketing \u2014 that is, exactly one of those four is dropped.\n\n- Drop Economics: Marketing survives without Economics, rejected\n- Drop Finance: $\\{$Economics, Statistics, Marketing$\\}$ \u2014 legal\n- Drop Statistics: Finance survives without Statistics, rejected\n- Drop Marketing: $\\{$Economics, Finance, Statistics$\\}$ \u2014 legal\n\nSo two three-course cores, each pairable with History or with Law:\n\n$2 \\times 2 = 4$\n\n**4 valid registrations**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 180,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

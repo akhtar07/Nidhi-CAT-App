@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bar-column.set-4a4c21ae.q2",
+  "microTopicIds": [
+    "dilr.di.bar-column"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Plant Y's total across all 5 months?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1970.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Add the 5 Plant Y figures:\n\n$300 + 350 + 410 + 390 + 520 = 1970$\n\nTotal **1970 units**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bar-column"
+  ],
+  "mockReserved": false
+}

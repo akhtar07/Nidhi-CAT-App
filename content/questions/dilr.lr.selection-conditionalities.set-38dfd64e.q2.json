@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-38dfd64e.q2",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following is part of every valid registration?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Economics and Statistics"
+    },
+    {
+      "key": "B",
+      "markdown": "Finance"
+    },
+    {
+      "key": "C",
+      "markdown": "Marketing"
+    },
+    {
+      "key": "D",
+      "markdown": "History"
+    },
+    {
+      "key": "E",
+      "markdown": "Economics and Finance"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Both cores contain **Economics and Statistics**, so they appear in all four registrations. Finance and Marketing appear in two each and exclude one another; History appears in two, Law in the other two.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

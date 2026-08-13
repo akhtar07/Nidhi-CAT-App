@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.pie-charts.set-5f1ef89a.q3",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many students specialise in Biology?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 105.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The second chart's percentages are of the Science students, not of the college:\n\n$420 \\times \\dfrac{25}{100} = 105$\n\n**105 students**. Applying 25% to 1,200 gives 300 and is the trap this set is built around.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

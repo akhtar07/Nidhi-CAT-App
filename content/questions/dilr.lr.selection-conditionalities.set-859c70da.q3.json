@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-859c70da.q3",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Which of the following pairs can never be selected together?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "P and Q"
+    },
+    {
+      "key": "B",
+      "markdown": "Q and U"
+    },
+    {
+      "key": "C",
+      "markdown": "R and T"
+    },
+    {
+      "key": "D",
+      "markdown": "P and R"
+    },
+    {
+      "key": "E",
+      "markdown": "R and U"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The fourth condition rules out **Q and U** directly.\n\nEvery other option is achievable: P and Q in $\\{P, Q, R\\}$, R and T in $\\{Q, R, T\\}$, P and R in $\\{P, Q, R\\}$, R and U in $\\{R, T, U\\}$.\n\nR and S is also a forbidden pair, but it is not among the options \u2014 check each option against the conditions rather than stopping at the first prohibition you remember.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 70,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}

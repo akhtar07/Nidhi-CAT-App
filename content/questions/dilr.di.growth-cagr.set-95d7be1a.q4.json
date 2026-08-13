@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.growth-cagr.set-95d7be1a.q4",
+  "microTopicIds": [
+    "dilr.di.growth-cagr"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "If revenue continues to grow at the same annual rate, what will it be in 2026, in Rs crore?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 972.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "2026 is two years past 2024, so apply the 50% growth factor twice:\n\n$432 \\times 1.5 \\times 1.5 = 648 \\times 1.5 = 972$\n\n**Rs 972 crore**. Adding $2 \\times 50\\% = 100\\%$ to get 864 is the trap: growth compounds, so two years of 50% is a factor of 2.25, not 2.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:growth-cagr"
+  ],
+  "mockReserved": false
+}

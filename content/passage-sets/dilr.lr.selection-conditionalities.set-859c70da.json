@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-859c70da",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "A manager must pick a project team of exactly 3 people from six candidates: P, Q, R, S, T and U. The following conditions apply.\n\n- If P is selected, then Q must also be selected.\n- R and S cannot both be selected.\n- T can be selected only if R is selected.\n- Q and U cannot both be selected.\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.selection-conditionalities.set-859c70da.q1",
+    "dilr.lr.selection-conditionalities.set-859c70da.q2",
+    "dilr.lr.selection-conditionalities.set-859c70da.q3",
+    "dilr.lr.selection-conditionalities.set-859c70da.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.radar-spider.set-f44df64b.q4",
+  "microTopicIds": [
+    "dilr.di.radar-spider"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "On which attribute is the gap between the two phones the widest?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Battery"
+    },
+    {
+      "key": "B",
+      "markdown": "Camera"
+    },
+    {
+      "key": "C",
+      "markdown": "Display"
+    },
+    {
+      "key": "D",
+      "markdown": "Performance"
+    },
+    {
+      "key": "E",
+      "markdown": "Value"
+    }
+  ],
+  "correctKey": "A",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "Gap on each spoke:\n\n- Battery: $|43 - 34| = 9$\n- Camera: $|36 - 44| = 8$\n- Display: $|45 - 38| = 7$\n- Performance: $|40 - 46| = 6$\n- Value: $|30 - 33| = 3$\n\nThe widest is **Battery**, at 9 points. The trap is to eyeball the polygon: a gap looks larger near the rim than the same gap near the centre, because the spokes fan out.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:radar-spider"
+  ],
+  "mockReserved": false
+}

@@ -119,7 +119,7 @@ def build_headcount_caselet() -> tuple[PassageSet, list[Question]]:
         eloRating=1200.0,
         solutionMarkdown=(
             "Total bills: " + ", ".join(f"{n}: {totals[n]}" for n in departments) + f". **{lowest_dept}** is lowest — "
-            "note this is about the department's *total* bill, not its average salary; Support has both the "
+            "note this is about the department's **total** bill, not its average salary; Support has both the "
             "fewest employees and the lowest average, so it's unambiguous here, but always check total vs. average."
         ),
         targetSeconds=75,

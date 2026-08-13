@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bubble-charts.set-85896648.q4",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "A city's total household income pool is its population times its average monthly income. For how many cities is this pool larger than City P's?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The pool combines bubble area with vertical position, in units of lakh $\\times$ Rs thousand:\n\n- City P: 750\n- City Q: 240\n- City R: 900\n- City S: 600\n- City T: 450\n\nCity P's pool is 750, and only **1** city beats it \u2014 City R, on 900. R has the lowest income of the three largest cities but by far the biggest population, and the product is what the question asks about.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 120,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.set-7b260d00.q4",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What is the value of the integer $p$?\n\n**I.** $p$ is a prime number between 10 and 20.\n\n**II.** $p$ is odd.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Each statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Statements I and II together are not sufficient."
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "**I alone:** $p \\in \\{11, 13, 17, 19\\}$. Four candidates, not sufficient.\n\n**II alone:** any odd integer. Not sufficient.\n\n**Together:** every prime between 10 and 20 is already odd, so II removes nothing and all four candidates survive. Still not sufficient.\n\nSo **statements I and II together are not sufficient**. This is the shape to watch for: a second statement that sounds like a constraint but is implied by the first, and therefore adds no information at all.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

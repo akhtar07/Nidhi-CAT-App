@@ -1,0 +1,32 @@
+{
+  "id": "dilr.lr.games-tournaments.set-ce9503f8.q4",
+  "microTopicIds": [
+    "dilr.lr.games-tournaments"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "A knockout tournament has 50 players, with byes given in the first round as needed. How many matches are played in total?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 49.0,
+  "titaTolerance": 0.0,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "The byes are a distraction. Whatever the bracket looks like, each match eliminates exactly one player, a bye eliminates nobody, and everyone except the champion is eliminated:\n\n$50 - 1 = 49$\n\n**49 matches**. Trying to work round by round means first deciding how many byes are needed to reach 32 \u2014 that is 14 byes and 18 first-round matches \u2014 and then adding $18 + 16 + 8 + 4 + 2 + 1 = 49$. Same answer, several times the work.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:games-tournaments"
+  ],
+  "mockReserved": false
+}

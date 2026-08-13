@@ -1,0 +1,61 @@
+{
+  "id": "dilr.di.stacked-charts.set-b1de1145",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The stacked column chart below splits a company's annual revenue, in Rs crore, across its three business segments.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "stacked-bar",
+        "categories": [
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "series": [
+          {
+            "name": "Products",
+            "values": [
+              120,
+              140,
+              160,
+              200
+            ]
+          },
+          {
+            "name": "Services",
+            "values": [
+              80,
+              110,
+              150,
+              220
+            ]
+          },
+          {
+            "name": "Licensing",
+            "values": [
+              40,
+              50,
+              60,
+              80
+            ]
+          }
+        ],
+        "unit": "Rs crore"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.stacked-charts.set-b1de1145.q1",
+    "dilr.di.stacked-charts.set-b1de1145.q2",
+    "dilr.di.stacked-charts.set-b1de1145.q3",
+    "dilr.di.stacked-charts.set-b1de1145.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

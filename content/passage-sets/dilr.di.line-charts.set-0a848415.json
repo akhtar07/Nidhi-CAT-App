@@ -1,0 +1,65 @@
+{
+  "id": "dilr.di.line-charts.set-0a848415",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The line chart below shows annual downloads, in lakh, of three mobile apps.\n\nStudy the chart and answer the questions that follow.",
+  "assets": [
+    {
+      "type": "chart",
+      "spec": {
+        "chartKind": "line",
+        "categories": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "series": [
+          {
+            "name": "App A",
+            "values": [
+              50,
+              80,
+              120,
+              150,
+              200
+            ]
+          },
+          {
+            "name": "App B",
+            "values": [
+              200,
+              180,
+              160,
+              150,
+              140
+            ]
+          },
+          {
+            "name": "App C",
+            "values": [
+              30,
+              60,
+              90,
+              150,
+              240
+            ]
+          }
+        ],
+        "unit": "lakh downloads"
+      }
+    }
+  ],
+  "questionIds": [
+    "dilr.di.line-charts.set-0a848415.q1",
+    "dilr.di.line-charts.set-0a848415.q2",
+    "dilr.di.line-charts.set-0a848415.q3",
+    "dilr.di.line-charts.set-0a848415.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

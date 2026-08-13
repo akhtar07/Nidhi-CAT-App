@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.pie-charts.set-af3e51dd.q3",
+  "microTopicIds": [
+    "dilr.di.pie-charts"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "By how much, in Rs lakh, does spending on salaries exceed the combined spending on administration, R&D and miscellaneous?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "17"
+    },
+    {
+      "key": "B",
+      "markdown": "32.5"
+    },
+    {
+      "key": "C",
+      "markdown": "42.5"
+    },
+    {
+      "key": "D",
+      "markdown": "57.5"
+    },
+    {
+      "key": "E",
+      "markdown": "100"
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Combined share of the three smaller heads: $9 + 8 + 6 = 23\\%$. Salaries are 40%, so the difference is $40 - 23 = 17$ percentage points.\n\n$250 \\times \\dfrac{17}{100} = 42.5$\n\n**Rs 42.5 lakh**. The option 17 is there for anyone who stops at the percentage-point gap and forgets to convert it into money.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:pie-charts"
+  ],
+  "mockReserved": false
+}

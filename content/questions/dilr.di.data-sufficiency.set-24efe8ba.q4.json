@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.set-24efe8ba.q4",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What is the value of the integer $n$?\n\n**I.** $n^2 < 20$\n\n**II.** $n > 1$",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Each statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Statements I and II together are not sufficient."
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "hard",
+  "eloRating": 1350.0,
+  "solutionMarkdown": "**I alone:** $n \\in \\{-4, -3, -2, -1, 0, 1, 2, 3, 4\\}$, since $4^2 = 16 < 20$ but $5^2 = 25 > 20$. Not sufficient.\n\n**II alone:** unbounded above. Not sufficient.\n\n**Together:** $n \\in \\{2, 3, 4\\}$. Three candidates survive, so still not sufficient.\n\nSo **statements I and II together are not sufficient**. Narrowing a set is not the same as determining a value \u2014 the test is whether exactly one candidate is left.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

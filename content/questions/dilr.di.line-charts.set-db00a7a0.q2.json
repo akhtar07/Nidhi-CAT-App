@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.line-charts.set-db00a7a0.q2",
+  "microTopicIds": [
+    "dilr.di.line-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was Site Q's total across all 5 months?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 715.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Add the 5 Site Q figures:\n\n$90 + 150 + 130 + 180 + 165 = 715$\n\nTotal **715 thousand visits**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:line-charts"
+  ],
+  "mockReserved": false
+}

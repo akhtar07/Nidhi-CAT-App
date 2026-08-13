@@ -1,0 +1,53 @@
+{
+  "id": "dilr.di.data-sufficiency.set-24efe8ba.q3",
+  "microTopicIds": [
+    "dilr.di.data-sufficiency"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "What is the perimeter of a rectangle?\n\n**I.** Its length is twice its breadth.\n\n**II.** Its area is 72 sq cm.",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Statement I alone is sufficient, but statement II alone is not."
+    },
+    {
+      "key": "B",
+      "markdown": "Statement II alone is sufficient, but statement I alone is not."
+    },
+    {
+      "key": "C",
+      "markdown": "Both statements together are sufficient, but neither alone is."
+    },
+    {
+      "key": "D",
+      "markdown": "Each statement alone is sufficient."
+    },
+    {
+      "key": "E",
+      "markdown": "Statements I and II together are not sufficient."
+    }
+  ],
+  "correctKey": "C",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "**I alone:** a shape ratio with no size. Not sufficient.\n\n**II alone:** area 72 fits $8 \\times 9$ (perimeter 34) and $6 \\times 12$ (perimeter 36). Not sufficient.\n\n**Together:** $l = 2b$ and $lb = 72$ give $2b^2 = 72$, so $b = 6$, $l = 12$, and the perimeter is $2(6 + 12) = 36$ cm. Sufficient.\n\nSo **both statements together are sufficient, but neither alone is**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 90,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:data-sufficiency"
+  ],
+  "mockReserved": false
+}

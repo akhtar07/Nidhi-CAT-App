@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.combination-charts.set-b11f03c0.q2",
+  "microTopicIds": [
+    "dilr.di.combination-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "What was the company's profit in 2021, in Rs crore?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 62.4,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Profit needs both axes: the 2021 bar is Rs 520 crore and the 2021 point on the line is 12%.\n\n$520 \\times \\dfrac{12}{100} = 62.4$\n\nProfit **Rs 62.4 crore**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:combination-charts"
+  ],
+  "mockReserved": false
+}

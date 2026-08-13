@@ -1,0 +1,18 @@
+{
+  "id": "dilr.lr.venn-set.set-7380deb6",
+  "section": "DILR",
+  "kind": "lr_set",
+  "bodyMarkdown": "In a class of 120 students, 70 play cricket, 60 play football and 50 play tennis. 30 play both cricket and football, 25 play both football and tennis, and 20 play both cricket and tennis. 10 students play all three sports.\n\n(Each \"both\" figure includes the students who play all three.)\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.lr.venn-set.set-7380deb6.q1",
+    "dilr.lr.venn-set.set-7380deb6.q2",
+    "dilr.lr.venn-set.set-7380deb6.q3",
+    "dilr.lr.venn-set.set-7380deb6.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

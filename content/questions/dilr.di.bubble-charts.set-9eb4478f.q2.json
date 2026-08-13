@@ -1,0 +1,32 @@
+{
+  "id": "dilr.di.bubble-charts.set-9eb4478f.q2",
+  "microTopicIds": [
+    "dilr.di.bubble-charts"
+  ],
+  "section": "DILR",
+  "format": "tita",
+  "stemMarkdown": "How many teachers does School Y have?",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 50.0,
+  "titaTolerance": 0.0,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "School Y enrols 1500 students at a student-teacher ratio of 30:\n\n$\\dfrac{1500}{30} = 50$\n\n**50 teachers**.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 80,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:bubble-charts"
+  ],
+  "mockReserved": false
+}

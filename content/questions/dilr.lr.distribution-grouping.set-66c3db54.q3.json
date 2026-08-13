@@ -1,0 +1,49 @@
+{
+  "id": "dilr.lr.distribution-grouping.set-66c3db54.q3",
+  "microTopicIds": [
+    "dilr.lr.distribution-grouping"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "Who ordered juice?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "Ishan"
+    },
+    {
+      "key": "B",
+      "markdown": "Jaya"
+    },
+    {
+      "key": "C",
+      "markdown": "Kabir"
+    },
+    {
+      "key": "D",
+      "markdown": "Lata"
+    }
+  ],
+  "correctKey": "B",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The juice drinker paid Rs 150, and that is Jaya's bill. So **Jaya** ordered juice.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 60,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:distribution-grouping"
+  ],
+  "mockReserved": false
+}

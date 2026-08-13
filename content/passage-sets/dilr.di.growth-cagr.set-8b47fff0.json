@@ -1,0 +1,18 @@
+{
+  "id": "dilr.di.growth-cagr.set-8b47fff0",
+  "section": "DILR",
+  "kind": "di_set",
+  "bodyMarkdown": "The population of a town was 50,000 at the end of 2019. It then changed as follows:\n\n- 2020: up 20%\n- 2021: up 10%\n- 2022: up 25%\n- 2023: down 4%\n\nAnswer the questions that follow.",
+  "assets": null,
+  "questionIds": [
+    "dilr.di.growth-cagr.set-8b47fff0.q1",
+    "dilr.di.growth-cagr.set-8b47fff0.q2",
+    "dilr.di.growth-cagr.set-8b47fff0.q3",
+    "dilr.di.growth-cagr.set-8b47fff0.q4"
+  ],
+  "genre": null,
+  "wordCount": null,
+  "targetMinutes": 8.0,
+  "licence": "CC0-1.0",
+  "sourceUrl": null
+}

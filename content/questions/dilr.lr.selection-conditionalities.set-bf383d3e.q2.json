@@ -1,0 +1,53 @@
+{
+  "id": "dilr.lr.selection-conditionalities.set-bf383d3e.q2",
+  "microTopicIds": [
+    "dilr.lr.selection-conditionalities"
+  ],
+  "section": "DILR",
+  "format": "mcq",
+  "stemMarkdown": "If A is on the panel, who cannot be on it?",
+  "options": [
+    {
+      "key": "A",
+      "markdown": "B"
+    },
+    {
+      "key": "B",
+      "markdown": "C"
+    },
+    {
+      "key": "C",
+      "markdown": "D"
+    },
+    {
+      "key": "D",
+      "markdown": "E"
+    },
+    {
+      "key": "E",
+      "markdown": "F"
+    }
+  ],
+  "correctKey": "E",
+  "correctValue": null,
+  "titaTolerance": null,
+  "difficulty": "easy",
+  "eloRating": 1050.0,
+  "solutionMarkdown": "The third rule bars A and F together, so **F** is out. B, C, D and E are all still available \u2014 subject to the other rules, which pick one of B/C and at most one of D/E.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 50,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "self_consistency",
+    "verifiedAt": "2026-08-13T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "dilr:selection-conditionalities"
+  ],
+  "mockReserved": false
+}
