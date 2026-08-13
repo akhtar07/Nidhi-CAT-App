@@ -95,6 +95,10 @@ export function settingsToRow(s: Settings, userId: string) {
     diagnostic_completed_at: s.diagnosticCompletedAt ?? null,
     notifications_enabled: s.notificationsEnabled ?? null,
     last_nudge_shown_date: s.lastNudgeShownDate ?? null,
+    // jsonb columns, added in supabase/migrations/0003_ntfy_settings.sql — see that file for
+    // why these two stay as blobs instead of being flattened into columns.
+    ntfy: s.ntfy ?? null,
+    ntfy_state: s.ntfyState ?? null,
   }
 }
 

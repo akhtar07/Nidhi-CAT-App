@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useSupabaseAuth } from '@/auth/useSupabaseAuth'
+import { NtfySettings } from '@/components/NtfySettings'
+import { ResetProgress } from '@/components/ResetProgress'
 import { Button } from '@/components/ui/button'
 import { isNotificationSupported, requestNotificationPermission, showLocalNotification } from '@/pwa/notify'
 import { useInstallPrompt } from '@/pwa/useInstallPrompt'
@@ -106,10 +107,7 @@ export function Settings() {
   return (
     <main className="mx-auto max-w-2xl space-y-6 p-6">
       <div>
-        <Link to="/" className="text-sm text-primary underline">
-          Back
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Settings</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Settings</h1>
       </div>
 
       {planSettings && (
@@ -274,6 +272,10 @@ export function Settings() {
           {notificationStatus && <p className="text-sm text-muted-foreground">{notificationStatus}</p>}
         </section>
       )}
+
+      {planSettings && <NtfySettings settings={planSettings} onChange={setPlanSettings} />}
+
+      <ResetProgress />
     </main>
   )
 }

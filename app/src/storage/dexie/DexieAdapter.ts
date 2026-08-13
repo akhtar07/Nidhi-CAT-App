@@ -146,6 +146,60 @@ export class DexieAdapter implements StorageAdapter {
     return count > 0
   }
 
+  /**
+   * See StorageAdapter.resetMicroTopic for what is and isn't cleared, and why.
+   *
+   * Returns the affected keys so SupabaseSyncAdapter can queue the same deletions remotely —
+   * it cannot recompute them afterwards, because by then the local rows are already gone.
+   */
+  async resetMicroTopicCollecting(microTopicId: string): Promise<{
+    attemptIds: string[]
+    srsCardIds: string[]
+    bookmarkIds: string[]
+    questionIds: string[]
+    hadMastery: boolean
+  }> {
+    return this.db.transaction(
+      'rw',
+      [this.db.attempts, this.db.masteryStates, this.db.srsCards, this.db.bookmarks, this.db.itemElo],
+      async () => {
+        const attempts = await this.db.attempts.where('microTopicIds').equals(microTopicId).toArray()
+        const attemptIds = attempts.map((a) => a.id)
+        const touchedQuestionIds = [...new Set(attempts.map((a) => a.questionId))]
+
+        const srsCards = await this.db.srsCards.where('microTopicId').equals(microTopicId).toArray()
+        const bookmarks = await this.db.bookmarks.where('microTopicId').equals(microTopicId).toArray()
+        const hadMastery = (await this.db.masteryStates.get(microTopicId)) !== undefined
+
+        await this.db.attempts.bulkDelete(attemptIds)
+        await this.db.masteryStates.delete(microTopicId)
+        await this.db.srsCards.bulkDelete(srsCards.map((c) => c.id))
+        await this.db.bookmarks.bulkDelete(bookmarks.map((b) => b.id))
+
+        // Item Elo is keyed by question, and a question can belong to a set that spans more than
+        // one micro-topic. Only drop the rating once the question has no surviving attempt —
+        // otherwise resetting one topic would quietly reset an unrelated one's calibration.
+        // One scan of what survived, rather than a count() per question — a topic reset can
+        // touch a few hundred questions and `attempts` has no questionId index.
+        const survivingQuestionIds = new Set((await this.db.attempts.toArray()).map((a) => a.questionId))
+        const orphaned = touchedQuestionIds.filter((id) => !survivingQuestionIds.has(id))
+        await this.db.itemElo.bulkDelete(orphaned)
+
+        return {
+          attemptIds,
+          srsCardIds: srsCards.map((c) => c.id),
+          bookmarkIds: bookmarks.map((b) => b.id),
+          questionIds: orphaned,
+          hadMastery,
+        }
+      },
+    )
+  }
+
+  async resetMicroTopic(microTopicId: string): Promise<void> {
+    await this.resetMicroTopicCollecting(microTopicId)
+  }
+
   async exportAll(): Promise<ExportBundle> {
     const [attempts, masteryStates, planDays, mockResults, itemEloStates, settings, mockSession, srsCards, bookmarks] =
       await Promise.all([

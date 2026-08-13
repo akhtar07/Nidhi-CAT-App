@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { BackLink } from '@/components/ui/PageHeader'
 import { EmptyState } from '@/components/ui/EmptyState'
 import { Skeleton } from '@/components/ui/Skeleton'
 import { loadLesson, loadLessonIndex, loadQuestionIndex, loadSyllabus } from '@/content/loadContent'
@@ -48,9 +49,7 @@ export function Search() {
     return (
       <main className="mx-auto max-w-2xl p-6">
         <p className="text-destructive">Failed to load search index: {error}</p>
-        <Link to="/" className="text-primary underline">
-          Back
-        </Link>
+        <BackLink to="/" />
       </main>
     )
   }
@@ -58,10 +57,8 @@ export function Search() {
   return (
     <main className="mx-auto max-w-2xl space-y-4 p-6">
       <div>
-        <Link to="/" className="text-sm text-primary underline">
-          Back
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Search</h1>
+        <BackLink to="/" />
+        <h1 className="text-2xl font-semibold tracking-tight">Search</h1>
       </div>
 
       <input

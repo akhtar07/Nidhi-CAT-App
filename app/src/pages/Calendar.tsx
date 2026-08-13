@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/Skeleton'
 import { loadExamMeta, topicsWithContent } from '@/content/loadContent'
@@ -170,9 +169,6 @@ export function Calendar() {
     return (
       <main className="mx-auto max-w-2xl p-6">
         <p className="text-destructive">Failed to load calendar: {error}</p>
-        <Link to="/" className="text-primary underline">
-          Back
-        </Link>
       </main>
     )
   }
@@ -195,10 +191,7 @@ export function Calendar() {
   return (
     <main className="mx-auto max-w-2xl space-y-6 p-6">
       <div>
-        <Link to="/" className="text-sm text-primary underline">
-          Back
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Calendar</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Calendar</h1>
         {examDate && (
           <p className="text-sm text-muted-foreground">
             Exam day: {examDate} ({daysBetween(today, examDate)} days away)

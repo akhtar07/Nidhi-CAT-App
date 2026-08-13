@@ -63,6 +63,20 @@ export interface StorageAdapter {
   listBookmarks(): Promise<Bookmark[]>
   isBookmarked(questionId: string): Promise<boolean>
 
+  /**
+   * Wipes every trace of practice on one micro-topic: its attempts, its mastery record, its
+   * SRS cards, its bookmarks, and the item-Elo rows for questions that no longer have any
+   * attempt left. The topic returns to the state it was in before it was ever opened, so the
+   * next drill starts from scratch on both sides of SPEC.md §8.3's two-sided Elo.
+   *
+   * Deliberately does NOT touch plan days or mock results. A plan day is a *schedule* ("Monday
+   * was meant to be Percentages"), not progress, and mock results are a record of a sitting
+   * that genuinely happened — silently rewriting either would make the calendar and the score
+   * history lie about the past. Resetting a topic is for "let me learn this again properly",
+   * not for editing history.
+   */
+  resetMicroTopic(microTopicId: string): Promise<void>
+
   exportAll(): Promise<ExportBundle>
   /** Replaces all existing learner state with the bundle's contents. */
   importAll(bundle: ExportBundle): Promise<void>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { BackLink } from '@/components/ui/PageHeader'
 import { Markdown } from '@/components/question-player/Markdown'
 import { QuestionPlayer } from '@/components/question-player/QuestionPlayer'
 import { Button } from '@/components/ui/button'
@@ -130,10 +130,8 @@ export function Bookmarks() {
   return (
     <main className="mx-auto max-w-2xl space-y-4 p-6">
       <div>
-        <Link to="/" className="text-sm text-primary underline">
-          Back
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Bookmarks</h1>
+        <BackLink to="/" />
+        <h1 className="text-2xl font-semibold tracking-tight">Bookmarks</h1>
       </div>
 
       {entries.length === 0 ? (

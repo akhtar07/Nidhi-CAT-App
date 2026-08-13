@@ -18,5 +18,15 @@ export function flushSyncQueue(): Promise<FlushResult> {
   return adapter.flushQueue()
 }
 
+/**
+ * Full reset, including the remote copy. `storage.clearAll()` does the same work, but its
+ * StorageAdapter signature returns void — this variant reports whether the Supabase side was
+ * actually cleared, which Settings needs so it can say "this device only" instead of implying a
+ * wipe that did not reach the server.
+ */
+export function clearAllProgress(): Promise<{ remoteCleared: boolean; error: string | null }> {
+  return adapter.clearAllWithRemote()
+}
+
 export type { ExportBundle, StorageAdapter } from './StorageAdapter'
 export type { FlushResult } from './supabase/SupabaseSyncAdapter'

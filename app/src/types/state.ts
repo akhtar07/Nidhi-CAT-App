@@ -219,6 +219,38 @@ export interface Settings {
     count: number
     timeLimitMinutes: number | null
   }
+  /**
+   * Phone reminders via ntfy (see notify/ntfy.ts for why ntfy, and why the topic name is not
+   * an API key). Separate from `notificationsEnabled`, which is the in-browser service-worker
+   * notification: that one can only fire while Ascent is open, this one reaches a closed phone.
+   * Both can be on, off, or either one alone.
+   */
+  ntfy?: {
+    enabled: boolean
+    /** Doubles as the password — see notify/ntfy.ts. Generated, not chosen. */
+    topic: string
+    /** Base URL. Defaults to https://ntfy.sh; a self-hosted server works unchanged. */
+    server: string
+    /** 'HH:MM' in Asia/Kolkata: when an unfinished day gets its one reminder. */
+    reminderTime: string
+    /** Announce a topic the first time the plan introduces it. */
+    newTopicAlerts: boolean
+    /** Send the evening reminder when the day's plan still has unfinished items. */
+    dailyGoalReminder: boolean
+  }
+  /**
+   * Bookkeeping for the above, kept separate from the settings the learner actually edits so
+   * that Settings' own save button never has to round-trip it. Not user-facing.
+   */
+  ntfyState?: {
+    /** Micro-topic ids already announced, so a topic is introduced exactly once. */
+    announcedTopics: string[]
+    /** What the pending scheduled reminder currently says, so an unchanged day is not
+     * re-published to the server on every single app open. */
+    lastScheduledSignature?: string
+    /** Asia/Kolkata date whose "plan complete" note has already gone out. */
+    lastCompletionDate?: string
+  }
 }
 
 /**

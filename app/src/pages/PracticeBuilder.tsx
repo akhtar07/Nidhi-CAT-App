@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { BackLink } from '@/components/ui/PageHeader'
 import { QuestionPlayer } from '@/components/question-player/QuestionPlayer'
 import { Button } from '@/components/ui/button'
 import { EmptyState } from '@/components/ui/EmptyState'
@@ -227,9 +228,7 @@ export function PracticeBuilder() {
     return (
       <main className="mx-auto max-w-2xl p-6">
         <p className="text-destructive">Failed to build practice set: {error}</p>
-        <Link to="/" className="text-primary underline">
-          Back
-        </Link>
+        <BackLink to="/" />
       </main>
     )
   }
@@ -342,10 +341,8 @@ export function PracticeBuilder() {
   return (
     <main className="mx-auto max-w-2xl space-y-6 p-6">
       <div>
-        <Link to="/" className="text-sm text-primary underline">
-          Back
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Build a practice test</h1>
+        <BackLink to="/" />
+        <h1 className="text-2xl font-semibold tracking-tight">Build a practice test</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           Choose what to practise and how long for. Leave a filter untouched to include everything in it.
         </p>

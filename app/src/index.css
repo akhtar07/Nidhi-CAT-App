@@ -8,6 +8,18 @@
 @theme inline {
     --font-heading: var(--font-sans);
     --font-sans: 'Geist Variable', sans-serif;
+    /*
+     * SPEC.md §13: "a proper reading font for RC passages (Charter, Source Serif, or Literata)
+     * at ~18px / 1.7 line-height. RC is 25% of the exam and she'll read for hours."
+     *
+     * A stack of fonts already on the device rather than a webfont: Charter ships with
+     * macOS/iOS and is SPEC's own first choice, Source Serif and Literata are picked up if
+     * installed, and Georgia is the universal floor. Downloading a serif would cost a render
+     * delay on every passage and another megabyte in the offline cache, to gain very little
+     * over Georgia — which was designed for exactly this job.
+     */
+    --font-serif: Charter, 'Bitstream Charter', 'Source Serif 4', 'Source Serif Pro', Literata,
+        Georgia, 'Times New Roman', serif;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -115,17 +127,21 @@
 }
 
 .dark {
-    --background: oklch(0.16 0.012 55);
+    /* Background dropped and card lifted (was 0.16 / 0.20) so a card reads as a raised surface
+       rather than a faintly outlined rectangle. At the old 0.04 lightness gap the whole app
+       looked like one flat sheet with hairlines drawn on it, which is most of why it felt
+       unfinished. 0.075 apart is still calm — nowhere near a hard-edged panel look. */
+    --background: oklch(0.145 0.012 55);
     --foreground: oklch(0.95 0.006 55);
-    --card: oklch(0.2 0.012 55);
+    --card: oklch(0.22 0.013 55);
     --card-foreground: oklch(0.95 0.006 55);
-    --popover: oklch(0.2 0.012 55);
+    --popover: oklch(0.22 0.013 55);
     --popover-foreground: oklch(0.95 0.006 55);
     --primary: oklch(0.56 0.18 300);
     --primary-foreground: oklch(0.99 0.005 300);
-    --secondary: oklch(0.26 0.012 55);
+    --secondary: oklch(0.28 0.013 55);
     --secondary-foreground: oklch(0.95 0.006 55);
-    --muted: oklch(0.26 0.012 55);
+    --muted: oklch(0.28 0.013 55);
     --muted-foreground: oklch(0.68 0.014 55);
     --accent: oklch(0.29 0.035 300);
     --accent-foreground: oklch(0.95 0.006 55);
@@ -163,8 +179,77 @@
     }
   body {
     @apply bg-background text-foreground;
+    /* Tabular figures everywhere. Almost every number in this app sits in a column that
+       changes as you practise — accuracy, minutes, days-to-CAT, question counts — and
+       proportional digits make those columns jitter on each re-render. */
+    font-variant-numeric: tabular-nums;
     }
   html {
     @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
     }
+  /* SPEC.md §13 accessibility: "respects prefers-reduced-motion". */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /*
+   * Long-form reading: lesson bodies, RC passages, worked solutions. SPEC.md §13's 18px/1.7
+   * serif, plus a measure cap — a line of text wider than about 70 characters is measurably
+   * harder to track back from, and on a tablet in landscape the container would otherwise run
+   * to 100+.
+   */
+  .reading {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 68ch;
+  }
+  .reading p + p {
+    margin-top: 1em;
+  }
+
+  /*
+   * Lesson body rhythm. The markdown tokenizer emits bare <h2>/<h3>/<p> with no classes, so
+   * the spacing has to be applied from here rather than at each call site. Headings go back to
+   * the UI sans: a serif heading above serif body gives the eye nothing to catch, and the
+   * whole point of the heading is to be findable when scrolling back for one section.
+   */
+  .lesson-body h2 {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .lesson-body h2:first-child {
+    margin-top: 0;
+  }
+  .lesson-body h3 {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /*
+   * Section label: the small all-caps run-in above a group of cards. Letterspaced because
+   * small caps set tight are hard to read, and muted because it is a signpost, not content.
+   */
+  .eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
 }

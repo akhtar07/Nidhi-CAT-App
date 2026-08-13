@@ -13,11 +13,13 @@ import { Progress } from '@/pages/Progress'
 import { Review } from '@/pages/Review'
 import { Settings } from '@/pages/Settings'
 import { Today } from '@/pages/Today'
+import { useNtfyNudges } from '@/notify/useNtfyNudges'
 import { UpdateBanner } from '@/pwa/UpdateBanner'
 import { useAutoSync } from '@/storage/supabase/useAutoSync'
 
 function App() {
   useAutoSync()
+  useNtfyNudges()
   return (
     <>
       <Routes>

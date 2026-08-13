@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Markdown } from '@/components/question-player/Markdown'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/Skeleton'
@@ -91,10 +90,7 @@ export function Review() {
   return (
     <main className="mx-auto max-w-2xl space-y-4 p-6">
       <div>
-        <Link to="/" className="text-sm text-primary underline">
-          Back
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Review</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Review</h1>
       </div>
 
       {index >= queue.length ? (

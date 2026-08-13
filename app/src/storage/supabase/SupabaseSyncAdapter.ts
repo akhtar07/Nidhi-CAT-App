@@ -166,6 +166,26 @@ export class SupabaseSyncAdapter implements StorageAdapter {
     return this.dexie.isBookmarked(questionId)
   }
 
+  /**
+   * A reset that only cleared IndexedDB would be undone by the next device that syncs, so the
+   * same deletions are queued for Supabase. DexieAdapter returns the affected keys from inside
+   * its own transaction because they cannot be recovered once the local rows are gone.
+   *
+   * mastery_states is keyed by micro_topic_id remotely, so the topic id is the delete key there;
+   * every other table is keyed by its own row id.
+   */
+  async resetMicroTopic(microTopicId: string): Promise<void> {
+    const affected = await this.dexie.resetMicroTopicCollecting(microTopicId)
+    const deletions: Promise<void>[] = [
+      ...affected.attemptIds.map((id) => this.enqueue('attempts', id, undefined, 'delete')),
+      ...affected.srsCardIds.map((id) => this.enqueue('srs_cards', id, undefined, 'delete')),
+      ...affected.bookmarkIds.map((id) => this.enqueue('bookmarks', id, undefined, 'delete')),
+      ...affected.questionIds.map((id) => this.enqueue('item_elo', id, undefined, 'delete')),
+    ]
+    if (affected.hadMastery) deletions.push(this.enqueue('mastery_states', microTopicId, undefined, 'delete'))
+    await Promise.all(deletions)
+  }
+
   exportAll(): Promise<ExportBundle> {
     return this.dexie.exportAll()
   }
@@ -174,8 +194,57 @@ export class SupabaseSyncAdapter implements StorageAdapter {
     return this.dexie.importAll(bundle)
   }
 
-  clearAll(): Promise<void> {
-    return this.dexie.clearAll()
+  /**
+   * Full wipe. Three things have to happen in this order or the reset does not stick:
+   *
+   *  1. Drop the pending outbox. Anything still queued is an upsert of data the learner just
+   *     asked to delete — flushing it after the wipe would write it all straight back.
+   *  2. Delete every remote row for this user, so another signed-in device does not re-seed
+   *     what was just cleared.
+   *  3. Clear IndexedDB.
+   *
+   * The remote step is best-effort and reports failure rather than throwing: if it is skipped
+   * (offline, signed out, Supabase not configured) the local wipe must still happen, and the
+   * caller tells the learner that remote data is untouched instead of silently pretending.
+   */
+  async clearAll(): Promise<void> {
+    await this.clearAllWithRemote()
+  }
+
+  async clearAllWithRemote(): Promise<{ remoteCleared: boolean; error: string | null }> {
+    await this.queue.clear()
+
+    let remoteCleared = false
+    let error: string | null = null
+    const supabase = getSupabaseClient()
+    if (supabase) {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession()
+      if (session) {
+        const tables: SyncTable[] = [
+          'attempts',
+          'mastery_states',
+          'plan_days',
+          'mock_results',
+          'item_elo',
+          'srs_cards',
+          'bookmarks',
+        ]
+        try {
+          for (const table of tables) {
+            const { error: tableError } = await supabase.from(table).delete().eq('user_id', session.user.id)
+            if (tableError) throw new Error(`${table}: ${tableError.message}`)
+          }
+          remoteCleared = true
+        } catch (e) {
+          error = (e as Error).message
+        }
+      }
+    }
+
+    await this.dexie.clearAll()
+    return { remoteCleared, error }
   }
 
   async queueLength(): Promise<number> {

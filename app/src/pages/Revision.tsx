@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { BackLink } from '@/components/ui/PageHeader'
 import { Markdown } from '@/components/question-player/Markdown'
 import { Button } from '@/components/ui/button'
 import { EmptyState } from '@/components/ui/EmptyState'
@@ -59,9 +60,7 @@ export function Revision() {
     return (
       <main className="mx-auto max-w-2xl p-6">
         <p className="text-destructive">Failed to load revision content: {error}</p>
-        <Link to="/" className="text-primary underline">
-          Back
-        </Link>
+        <BackLink to="/" />
       </main>
     )
   }
@@ -98,10 +97,8 @@ export function Revision() {
   return (
     <main className="mx-auto max-w-2xl space-y-5 p-6">
       <div>
-        <Link to="/" className="text-sm text-primary underline">
-          Back
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Revision</h1>
+        <BackLink to="/" />
+        <h1 className="text-2xl font-semibold tracking-tight">Revision</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           Every formula and every common trap from the lessons, in one place.
         </p>

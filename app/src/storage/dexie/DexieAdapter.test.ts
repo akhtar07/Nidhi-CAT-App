@@ -216,4 +216,79 @@ describe('DexieAdapter', () => {
     expect(await adapter.getSettings()).toBeUndefined()
     expect(await adapter.listBookmarks()).toEqual([])
   })
+
+  describe('resetMicroTopic', () => {
+    const PERCENTAGES = 'qa.arith.percentages'
+    const RATIO = 'qa.arith.ratio-proportion'
+
+    async function seedTwoTopics() {
+      await adapter.addAttempt(makeAttempt({ id: 'a1', questionId: 'q1', microTopicIds: [PERCENTAGES] }))
+      await adapter.addAttempt(makeAttempt({ id: 'a2', questionId: 'q2', microTopicIds: [PERCENTAGES] }))
+      await adapter.addAttempt(makeAttempt({ id: 'a3', questionId: 'q3', microTopicIds: [RATIO] }))
+      await adapter.putMasteryState(makeMasteryState({ microTopicId: PERCENTAGES }))
+      await adapter.putMasteryState(makeMasteryState({ microTopicId: RATIO }))
+      await adapter.putItemElo('q1', 1300)
+      await adapter.putItemElo('q3', 1400)
+      await adapter.addBookmark(makeBookmark({ id: 'b1', questionId: 'q1', microTopicId: PERCENTAGES }))
+      await adapter.addBookmark(makeBookmark({ id: 'b2', questionId: 'q3', microTopicId: RATIO }))
+      await adapter.putSrsCard({
+        schemaVersion: 1,
+        id: 'card-1',
+        cardType: 'mistake',
+        refId: 'q1',
+        microTopicId: PERCENTAGES,
+        stability: 1,
+        difficulty: 5,
+        nextReviewAt: 5000,
+        addedAt: 1000,
+      })
+    }
+
+    it('clears one topic and leaves every other topic untouched', async () => {
+      await seedTwoTopics()
+      await adapter.resetMicroTopic(PERCENTAGES)
+
+      expect(await adapter.listAttempts({ microTopicId: PERCENTAGES })).toEqual([])
+      expect(await adapter.getMasteryState(PERCENTAGES)).toBeUndefined()
+      expect(await adapter.listSrsCards()).toEqual([])
+      expect(await adapter.getItemElo('q1')).toBeUndefined()
+      expect((await adapter.listBookmarks()).map((b) => b.id)).toEqual(['b2'])
+
+      // The untouched topic keeps everything.
+      expect((await adapter.listAttempts({ microTopicId: RATIO })).map((a) => a.id)).toEqual(['a3'])
+      expect(await adapter.getMasteryState(RATIO)).toBeDefined()
+      expect(await adapter.getItemElo('q3')).toBe(1400)
+    })
+
+    it('keeps the item Elo of a question that still has attempts under another topic', async () => {
+      // A DILR set question can carry two micro-topics; resetting one of them must not reset
+      // the item calibration that the other topic's history is still standing on.
+      await adapter.addAttempt(makeAttempt({ id: 'a1', questionId: 'shared', microTopicIds: [PERCENTAGES] }))
+      await adapter.addAttempt(makeAttempt({ id: 'a2', questionId: 'shared', microTopicIds: [RATIO] }))
+      await adapter.putItemElo('shared', 1350)
+
+      await adapter.resetMicroTopic(PERCENTAGES)
+
+      expect(await adapter.getItemElo('shared')).toBe(1350)
+      expect((await adapter.listAttempts()).map((a) => a.id)).toEqual(['a2'])
+    })
+
+    it('leaves the plan and mock results alone — they record what happened, not what she knows', async () => {
+      await seedTwoTopics()
+      await adapter.putPlanDay(makePlanDay())
+      await adapter.addMockResult(makeMockResult())
+
+      await adapter.resetMicroTopic(PERCENTAGES)
+
+      expect(await adapter.listPlanDays()).toHaveLength(1)
+      expect(await adapter.listMockResults()).toHaveLength(1)
+    })
+
+    it('is a no-op on a topic with no history', async () => {
+      await seedTwoTopics()
+      await adapter.resetMicroTopic('qa.geometry.circles')
+      expect(await adapter.listAttempts()).toHaveLength(3)
+      expect(await adapter.listMasteryStates()).toHaveLength(2)
+    })
+  })
 })

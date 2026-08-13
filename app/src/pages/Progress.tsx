@@ -396,10 +396,7 @@ export function Progress() {
   return (
     <main className="mx-auto max-w-2xl space-y-6 p-6">
       <div>
-        <Link to="/" className="text-sm text-primary underline">
-          Back
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Progress</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Progress</h1>
         <p className="text-sm text-muted-foreground">
           Where you stand across the syllabus, which topics are weakest, and whether practice is landing.
         </p>

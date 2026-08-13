@@ -29,4 +29,10 @@ export class SyncQueueStore {
   async length(): Promise<number> {
     return this.db.syncQueue.count()
   }
+
+  /** Drops every pending entry. Only for a full reset — see SupabaseSyncAdapter.clearAll, where
+   * flushing a queue full of upserts after the wipe would restore what was just deleted. */
+  async clear(): Promise<void> {
+    await this.db.syncQueue.clear()
+  }
 }
