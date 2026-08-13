@@ -1,28 +1,51 @@
 {
-  "id": "lesson.varc.va.para-jumbles",
+  "id": "varc.va.para-jumbles",
   "microTopicId": "varc.va.para-jumbles",
-  "bodyMarkdown": "## Para-jumbles\n\nYou're given a set of sentences in the wrong order, and you need to figure out the order they\nwere originally written in \u2014 one that reads as a single, coherent argument or story.\n\n### How to find the starting sentence\n\nThe opening sentence usually:\n- Introduces a topic or person **without** referring back to something (\"This,\" \"However,\" \"The\n  same...\") \u2014 if a sentence starts with a pronoun pointing at something not yet introduced, it\n  can't be first.\n- Doesn't start with a conjunction like \"But,\" \"And,\" \"So\" \u2014 those connect to something before them.\n\n### How to find links between sentences\n\nLook for **explicit connectors**: pronouns (\"it,\" \"this,\" \"they\") that must refer to a specific\nnoun in an earlier sentence, transition words (\"however,\" \"therefore,\" \"in contrast\") that imply\na specific kind of sentence came before, and repeated or related nouns that thread two sentences\ntogether.\n\n### Build from both ends\n\nFind the sentence that's obviously first, and (often easier) the sentence that's obviously\n**last** \u2014 one that concludes or summarizes. Then work inward, linking pairs you're confident\nabout, rather than trying to solve the whole order in one pass.",
+  "bodyMarkdown": "## Before you start\n\nAn ear for how one sentence hands off to the next.\n\n## The idea in plain language\n\nSentences leave fingerprints on each other. 'This decision' can only follow a sentence that mentioned a decision. 'However' can only follow something to push against. 'The empire' can only follow a sentence that has already told you which empire.\n\nSo a jumble is not a puzzle about meaning \u2014 it is a puzzle about **references**. You are not asked which order reads most pleasantly; you are asked which order is the only one where every backward-pointing word has something to point at.\n\nThis is why the reliable method never starts with 'which sentence feels like the beginning?'. It starts with 'which sentences are welded to each other?', because those welds are facts, and feelings are not.\n\n## What is actually going on\n\nWork in three stages, in this order.\n\n**Find a valid opener.** The first sentence cannot refer backwards. It introduces its subject in full \u2014 a name rather than a pronoun, a noun phrase rather than 'this' or 'such' \u2014 and carries no connective like 'however', 'therefore' or 'moreover'. Often two sentences pass this test, which is fine; hold both.\n\n**Build mandatory pairs.** Every pronoun must have an antecedent, and it must come earlier. Every 'however' needs a claim to contrast with. Every 'for example' needs a generalisation above it. Each of these fixes an order between two sentences, and those fixed orders are the only hard information in the question.\n\n**Assemble and read back.** Place the opener, attach the blocks, and then read the paragraph straight through. A wrong order almost always sounds wrong at one identifiable join rather than being vaguely unsatisfying \u2014 and if you can name the join, you can fix it.\n\nA last check that catches a surprising number of errors: the final sentence should close something. If your last sentence opens a new idea, the order is wrong.\n\n## Every question type you will meet\n\nEach of these is a shape a question in this topic actually comes in. Learn to recognise the shape first \u2014 in a timed paper, picking the right method is most of the battle, and the arithmetic is the easy part.\n\n### 1. Identifying the opening sentence\n\n**Spot it when:** the first move in every jumble.\n\n1. Rule out any sentence containing a backward reference: 'this', 'such', 'these', 'it' with no antecedent.\n2. Rule out any sentence starting with a connective \u2014 'however', 'therefore', 'moreover', 'consequently'.\n3. What remains introduces its subject in full. If two survive, keep both and let the pairs decide.\n\n**Worked through:** 'The Mughal empire expanded rapidly' can open; 'This expansion had costs' cannot.\n\n### 2. Fixing mandatory pairs\n\n**Spot it when:** a pronoun, a repeated noun, or a connective linking two sentences.\n\n1. Match each pronoun to the sentence naming what it refers to; that sentence must come first.\n2. Treat contrast, cause and chronology markers the same way.\n3. Note that a pair fixes only the order of those two, not their position in the paragraph.\n\n**Worked through:** 'It' referring to a treaty must follow the sentence naming the treaty.\n\n### 3. Using the definite article as a signal\n\n**Spot it when:** the same noun appearing with 'a' in one sentence and 'the' in another.\n\n1. English introduces a thing with 'a' and refers back to it with 'the'.\n2. So the sentence with 'a scheme' comes before the sentence with 'the scheme'.\n3. This is one of the most reliable ordering clues and one of the most often missed.\n\n**Worked through:** 'A committee was formed' precedes 'The committee reported in March'.\n\n### 4. Assembling and checking the ending\n\n**Spot it when:** you have blocks and need a single order.\n\n1. Place the opener, attach each block by its link, and read the whole paragraph through.\n2. If a join needs a connective the sentence does not have, the order is wrong there.\n3. Confirm the last sentence concludes rather than raising something new.\n\n**Worked through:** A paragraph ending 'But this raises a further question' is almost certainly mis-ordered.\n\n## Check yourself\n\nYou are ready to start practising this topic when you can:\n\n- Eliminate impossible openers on sight.\n- Fix every pair the pronouns and connectives demand.\n- Use the indefinite-to-definite article shift.\n- Read the finished paragraph back and check the ending closes it.",
   "workedExamples": [
     {
-      "id": "varc.va.para-jumbles.we-01",
-      "stemMarkdown": "Arrange into a coherent paragraph:\n\nA. However, this convenience comes at a real cost to attention spans.\nB. Smartphones have made information instantly accessible.\nC. Indeed, studies increasingly link heavy phone use to shorter attention spans.\nD. As a result, anyone can look up any fact within seconds.",
-      "solutionMarkdown": "**B** names the subject (smartphones) with nothing referring backward \u2014 a clean opening. **D** opens with 'As a result,' which demands an immediately preceding cause \u2014 only B provides one, so D follows B. **A** opens with 'However, this convenience,' which needs a stated convenience just before it (B+D) and then pivots to a new claim (a cost) \u2014 so A comes next. **C** opens with 'Indeed,' which confirms/elaborates the claim just made \u2014 only A's claim (a cost to attention spans) fits, so C is last. Order: **B, D, A, C**.",
-      "altSolutionMarkdown": null
+      "id": "varc.va.para-jumbles.ex1",
+      "stemMarkdown": "Order these four sentences.\n\n(1) The scheme was quietly withdrawn two years later.\n(2) A subsidy scheme for rural solar panels was announced in 2019.\n(3) However, uptake remained far below the government's projections.\n(4) It had been expected to reach two million households.",
+      "solutionMarkdown": "Start with the opener test. Sentence 3 begins with 'However' and sentence 1 says 'The scheme', both backward references. Sentence 4 begins with 'It', which needs an antecedent. Only **2** introduces its subject in full \u2014 'A subsidy scheme' \u2014 so 2 opens.\n\nNow the pairs. Sentence 4's 'It' refers to the scheme, so 4 follows 2. The indefinite-to-definite signal agrees: 'A subsidy scheme' in 2, 'The scheme' in 1, so 2 comes before 1.\n\nSentence 3's 'However' must contrast with an expectation. Sentence 4 states the expectation, so 3 follows 4.\n\nSentence 1 reports the outcome, which follows the disappointing uptake.\n\nOrder: **2, 4, 3, 1**.",
+      "altSolutionMarkdown": "Read it back: a scheme is announced, it was expected to reach two million, however uptake was low, so it was withdrawn. Every join carries its own signal, and the paragraph ends on a conclusion rather than a new idea \u2014 both checks pass."
     }
   ],
   "formulaCards": [
     {
-      "id": "varc.va.para-jumbles.fc-method",
+      "id": "varc.va.para-jumbles.fc1",
       "microTopicId": "varc.va.para-jumbles",
-      "title": "Method",
-      "bodyMarkdown": "Find the sentence with no backward reference (likely first) and the one that concludes (likely last). Link the rest via pronouns, connectors, and repeated nouns.",
-      "exampleMarkdown": null
+      "title": "Valid opener",
+      "bodyMarkdown": "No pronoun without an antecedent, no back-referring 'this' or 'such', no opening connective.",
+      "exampleMarkdown": "'However, the plan failed' can never be first."
+    },
+    {
+      "id": "varc.va.para-jumbles.fc2",
+      "microTopicId": "varc.va.para-jumbles",
+      "title": "Mandatory pair",
+      "bodyMarkdown": "A pronoun, or a connective needing something to attach to, fixes the order of two sentences.",
+      "exampleMarkdown": "'They objected' must follow the sentence naming who they are."
+    },
+    {
+      "id": "varc.va.para-jumbles.fc3",
+      "microTopicId": "varc.va.para-jumbles",
+      "title": "A before The",
+      "bodyMarkdown": "A noun introduced with 'a' precedes the sentence referring to it with 'the'.",
+      "exampleMarkdown": "'A report' comes before 'The report'."
+    },
+    {
+      "id": "varc.va.para-jumbles.fc4",
+      "microTopicId": "varc.va.para-jumbles",
+      "title": "Ending check",
+      "bodyMarkdown": "The final sentence should close the paragraph, not open a new line of thought.",
+      "exampleMarkdown": "An ending that raises a fresh question usually signals a wrong order."
     }
   ],
   "commonTraps": [
-    "A sentence starting with a pronoun ('This,' 'They,' 'It') almost never opens the paragraph \u2014 it needs an antecedent.",
-    "Don't just look for topical similarity between two sentences \u2014 look for an actual grammatical link (a pronoun, a connector word).",
-    "Solve from BOTH ends (first and last) rather than only trying to find the opening sentence."
+    "Choosing an order because it reads pleasantly, rather than because the references demand it.",
+    "Missing that a sentence beginning with a pronoun cannot be first, however natural it sounds.",
+    "Ignoring the 'a' to 'the' shift, which is often the only clue distinguishing two candidate orders.",
+    "Fixing a pair correctly and then placing the pair at the wrong point in the paragraph \u2014 a pair fixes relative order only.",
+    "Not reading the assembled paragraph back. The check takes fifteen seconds and catches most errors."
   ],
-  "estReadMinutes": 5
+  "estReadMinutes": 9
 }

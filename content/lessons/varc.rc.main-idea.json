@@ -1,28 +1,44 @@
 {
-  "id": "lesson.varc.rc.main-idea",
+  "id": "varc.rc.main-idea",
   "microTopicId": "varc.rc.main-idea",
-  "bodyMarkdown": "## Main Idea / Central Theme\n\nA \"main idea\" question asks: if you had to summarize this entire passage in one sentence, what\nwould it be? Not a summary of every detail \u2014 the single thread the whole passage is actually\narguing or exploring.\n\n### How to find it without re-reading the whole passage\n\n1. The main idea is usually stated (or strongly implied) in the **first paragraph** or the\n   **last paragraph** \u2014 authors tend to open with their thesis or close by restating it.\n2. Ask: what does **every** paragraph have in common? A wrong answer choice often describes just\n   ONE paragraph's detail, not the passage as a whole.\n3. Beware options that are **too narrow** (true, but only about one part of the passage) or **too\n   broad** (technically related, but goes beyond what the passage actually claims).\n\n### The most common wrong-answer traps\n\n- **A true detail, but not the main point.** The passage mentions it, but it's supporting\n  evidence, not the thesis.\n- **Too extreme.** The passage says something is \"one factor,\" the wrong option says it's \"the\n  only factor.\"\n- **Off-topic but plausible-sounding.** Related to the general subject, but not what this\n  specific passage actually argues.",
+  "bodyMarkdown": "## Before you start\n\nNothing technical. The skill is holding a whole passage in view rather than the last thing you read.\n\n## The idea in plain language\n\nImagine a friend asks what a book was about and you have thirty seconds. You would not recite the third chapter, however interesting it was \u2014 you would say what the book was **for**.\n\nThat is a main-idea question. Wrong options are almost never false; they are true things the passage happens to say. A detail from paragraph two can be perfectly accurate and still be the wrong answer, because it is not what the passage is about.\n\nSo the test is not 'is this true?' \u2014 it will be. The test is 'does the whole passage exist to say this?'\n\n## What is actually going on\n\nA CAT passage usually has one central claim, and the paragraphs around it do jobs: setting up, illustrating, qualifying, countering. If you can say in one sentence what the author is arguing, and what the paragraphs are doing to support that, you can answer nearly every main-idea question without re-reading.\n\nTwo structural habits pay for themselves.\n\n**Watch the turn.** Most argumentative passages pivot somewhere, often on 'however', 'yet' or 'but'. The main idea sits **after** the turn, not before it \u2014 the material before it is usually the position being corrected. Answering from the opening paragraph is the most common way to get these wrong.\n\n**Match the scope.** The right answer covers the whole passage and no more. Too narrow, and it describes one paragraph; too broad, and it claims something the passage never reaches.\n\n## Every question type you will meet\n\nEach of these is a shape a question in this topic actually comes in. Learn to recognise the shape first \u2014 in a timed paper, picking the right method is most of the battle, and the arithmetic is the easy part.\n\n### 1. Stating the main idea before reading options\n\n**Spot it when:** 'the primary purpose', 'the passage is mainly concerned with', 'the best title'.\n\n1. Say the passage's point in one sentence, in your own words, before looking at the options.\n2. Find the option closest to your sentence.\n3. Predicting first stops the options from talking you into a plausible detail.\n\n**Worked through:** If your sentence is 'urban planners have overestimated the value of density', the answer will echo that, not the density statistics.\n\n### 2. Locating the turn\n\n**Spot it when:** a passage that opens by describing a widely-held view.\n\n1. Look for 'however', 'yet', 'but', 'in fact' \u2014 usually near the start of the second or third paragraph.\n2. The author's own position is what follows the turn.\n3. The opening view is what the author is arguing against, so an option restating it is wrong.\n\n**Worked through:** A passage opening 'It is widely believed that X' and turning to 'Yet the evidence suggests otherwise' is about the otherwise.\n\n### 3. Testing scope\n\n**Spot it when:** two options that both sound like reasonable summaries.\n\n1. Ask of each: does the passage support this **and** does it support all of it?\n2. An option is too narrow if a whole paragraph is left unaccounted for.\n3. It is too broad if you can imagine a passage twice as long being needed to justify it.\n\n**Worked through:** For a passage on one city's transport policy, 'transport policy fails in developing economies' is too broad.\n\n### 4. Choosing a title\n\n**Spot it when:** 'the most appropriate title for the passage'.\n\n1. A title must cover the passage's whole span, like a main-idea answer.\n2. Prefer the one naming the passage's tension or argument over the one naming its subject.\n\n**Worked through:** 'The Hidden Cost of Density' beats 'Urban Density' when the passage argues rather than describes.\n\n## Check yourself\n\nYou are ready to start practising this topic when you can:\n\n- State a passage's point in one sentence without looking at the options.\n- Find the turn and know which side of it the author is on.\n- Reject options for being too narrow or too broad, and say which.\n- Pick a title that captures the argument rather than the subject.",
   "workedExamples": [
     {
-      "id": "varc.rc.main-idea.we-01",
-      "stemMarkdown": "A passage opens by describing how early 20th-century economists assumed markets were always rational, spends two paragraphs on behavioral-economics experiments showing systematic irrational biases, and closes by arguing modern economic policy must account for these biases. Which best captures the main idea?\n\nA) Early economists were wrong about everything.\nB) Behavioral economics shows that accounting for real human irrationality, not just assumed rationality, should inform economic policy.\nC) A specific psychological experiment on loss aversion.\nD) Rational-market theory is used in most economics textbooks.",
-      "solutionMarkdown": "**(A)** is too extreme \u2014 the passage critiques one assumption, not \"everything.\" **(C)** is a supporting detail from the middle paragraphs, not the passage's overall point. **(D)** is true but is background, not the argument being made. **(B)** ties together the opening (the old assumption), the middle (evidence against it), and the close (the policy conclusion) \u2014 that's the actual thread running through the whole passage. **Answer: B.**",
-      "altSolutionMarkdown": null
+      "id": "varc.rc.main-idea.ex1",
+      "stemMarkdown": "A passage argues that microfinance was widely praised for reducing poverty, then presents studies showing consumption rose but incomes did not, and closes by saying the programmes should be judged on what they actually deliver. Which option is the main idea?",
+      "solutionMarkdown": "Locate the turn first. The passage opens with the praise \u2014 that is the view being examined, not the author's position.\n\nThe evidence paragraph and the closing sentence both push the same way: the programmes have been credited with something the evidence does not show.\n\nSo the main idea is roughly **microfinance's reputation outruns its measured effects**.\n\nAn option about consumption rising is a true detail from the middle of the passage, and it is the trap. An option saying microfinance should be abandoned goes further than the passage, which asks for honest judgement, not abolition.",
+      "altSolutionMarkdown": "Notice the two failure modes sitting side by side: one option too narrow (a detail), one too strong (a recommendation the author never makes). Most main-idea questions are built from exactly this pair."
     }
   ],
   "formulaCards": [
     {
-      "id": "varc.rc.main-idea.fc-method",
+      "id": "varc.rc.main-idea.fc1",
       "microTopicId": "varc.rc.main-idea",
-      "title": "Method",
-      "bodyMarkdown": "Check the first and last paragraphs first. Reject options that are too narrow (one paragraph only), too extreme, or off-topic.",
-      "exampleMarkdown": null
+      "title": "The one-sentence test",
+      "bodyMarkdown": "State the passage's point in your own words before reading options, then match.",
+      "exampleMarkdown": "Your sentence acts as a filter the plausible details cannot pass."
+    },
+    {
+      "id": "varc.rc.main-idea.fc2",
+      "microTopicId": "varc.rc.main-idea",
+      "title": "After the turn",
+      "bodyMarkdown": "The author's position follows 'however', 'yet' or 'but' \u2014 the opening view is usually the one being corrected.",
+      "exampleMarkdown": "'It is widely assumed... Yet...' means the answer lies after the Yet."
+    },
+    {
+      "id": "varc.rc.main-idea.fc3",
+      "microTopicId": "varc.rc.main-idea",
+      "title": "Scope check",
+      "bodyMarkdown": "The right answer covers the whole passage and nothing beyond it.",
+      "exampleMarkdown": "A summary that leaves a paragraph unexplained is too narrow."
     }
   ],
   "commonTraps": [
-    "Picking an option that's a true detail from one paragraph, not the passage's overall point.",
-    "Picking an option that's more extreme than what the passage actually claims.",
-    "Ignoring the concluding paragraph, which often restates the thesis most directly."
+    "Choosing a true detail. Wrong options in this question type are usually accurate but not central.",
+    "Answering from the first paragraph when the passage turns against it later.",
+    "Picking the option with the most familiar-sounding vocabulary rather than the right scope.",
+    "Choosing a recommendation when the author only diagnoses.",
+    "Reading only the first and last sentences. It works often enough to be a dangerous habit and fails on exactly the passages that carry the hardest questions."
   ],
-  "estReadMinutes": 5
+  "estReadMinutes": 9
 }

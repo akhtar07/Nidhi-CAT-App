@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from . import EX, FC, LessonSpec
+from . import EX, FC, LessonSpec, Method
 
 _SET_SELECTION = (
     "Before solving anything, spend 30 seconds deciding whether to attempt the set at all. "
@@ -15,6 +15,44 @@ _SET_SELECTION = (
 SPECS = [
     LessonSpec(
         mt="dilr.di.bar-column",
+        prereq="Percentages, especially percentage change and share of a total.",
+        methods=[
+            Method(
+                name="Reading a single value",
+                recognise="'what was X in year Y?' — one bar, one number.",
+                steps=[
+                    "Find the axis scale first, including whether it starts at zero and what the units are.",
+                    "Read the bar against the gridlines, not by eye against the axis label.",
+                    "Answer in the units the question asks for, which may differ from the chart's.",
+                ],
+                worked="A bar reaching halfway between the 40 and 60 gridlines is 50, not 45.",
+            ),
+            Method(
+                name="Comparing two bars",
+                recognise="'how much more', 'by what percent did it grow', 'which was largest'.",
+                steps=[
+                    "Read both values before doing any arithmetic.",
+                    "For 'how much more', subtract; for 'what percent more', divide by the **earlier or smaller** one as the question specifies.",
+                    "Watch for a truncated axis, which makes a small difference look enormous.",
+                ],
+                worked="From 40 to 50 is a rise of 10, which is 25 percent of the original.",
+            ),
+            Method(
+                name="Totals and shares",
+                recognise="'what fraction of the total', or a question about the combined figure.",
+                steps=[
+                    "Add the bars in the relevant group.",
+                    "Divide the part by that total for a share.",
+                    "Compute a total once and reuse it — several questions in a set usually need the same one.",
+                ],
+                worked="A category of 30 within a total of 120 is a 25 percent share.",
+            ),
+        ],
+        checklist=[
+            "Read the scale and units before reading any bar.",
+            "Compute change, percentage change and share correctly.",
+            "Notice a truncated axis and discount the visual exaggeration.",
+        ],
         intuition=(
             "A bar chart is a set of numbers wearing a costume. Each bar's height is just a value, drawn so "
             "your eye can compare quickly.\n\n"
@@ -53,6 +91,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.line-charts",
+        prereq="Percentage change, and reading a coordinate grid.",
+        methods=[
+            Method(
+                name="Reading a point or a trend",
+                recognise="'in which year was X highest', or a question about direction.",
+                steps=[
+                    "Identify which line is which from the legend before anything else.",
+                    "For a peak, look for the highest point on that line, not the steepest part.",
+                    "Steepness shows the **rate** of change; height shows the **level**. Questions often test whether you can tell them apart.",
+                ],
+                worked="A line can be falling steeply and still be the highest of the three.",
+            ),
+            Method(
+                name="Crossing points and comparisons",
+                recognise="'when did A overtake B', or 'in how many years was A above B'.",
+                steps=[
+                    "Find where the lines intersect.",
+                    "Count intervals carefully — 'between 2019 and 2023' may mean four gaps or five points.",
+                ],
+                worked="Two lines crossing between year 3 and year 4 means A overtakes B during year 4.",
+            ),
+            Method(
+                name="Growth between two points",
+                recognise="'by what percent did it rise from year A to year B'.",
+                steps=[
+                    "Read both values off the chart.",
+                    "Percentage change is the difference divided by the earlier value.",
+                    "For growth across several years, do not add the yearly percentages — chain the multipliers.",
+                ],
+                worked="From 80 to 100 is a 25 percent rise, even though 100 to 80 would be a 20 percent fall.",
+            ),
+        ],
+        checklist=[
+            "Tell level from rate of change on a line chart.",
+            "Read crossing points and count intervals without off-by-one errors.",
+            "Compute growth between two points, and chain growth across several.",
+        ],
         intuition=(
             "A line chart is a bar chart that has been joined up, and that changes what your eye notices. "
             "Bars invite you to compare heights; lines invite you to notice **direction** — rising, falling, "
@@ -94,6 +169,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.pie-charts",
+        prereq="Percentages and fractions of a whole.",
+        methods=[
+            Method(
+                name="Converting a share into an absolute value",
+                recognise="a pie giving percentages plus a stated total somewhere in the text.",
+                steps=[
+                    "Find the total. It is almost always outside the chart, in the caption or the stem.",
+                    "Multiply the share by the total.",
+                    "Without a total, a pie chart can only answer questions about proportions.",
+                ],
+                worked="18 percent of a total of 4500 is 810.",
+            ),
+            Method(
+                name="Comparing two pies",
+                recognise="two charts side by side, often for two different years.",
+                steps=[
+                    "Check whether the two totals are the same. Usually they are not.",
+                    "A falling share can still mean a rising absolute value if the total grew.",
+                    "Convert both to absolute values before comparing anything.",
+                ],
+                worked="20 percent of 500 is 100, but 15 percent of 800 is 120 — a smaller share and a larger amount.",
+            ),
+            Method(
+                name="Angles and sectors",
+                recognise="a question phrased in degrees rather than percent.",
+                steps=[
+                    "The whole circle is 360 degrees, so one percent is 3.6 degrees.",
+                    "Convert in whichever direction the question needs.",
+                ],
+                worked="A 25 percent slice subtends 90 degrees.",
+            ),
+        ],
+        checklist=[
+            "Locate the total before computing any absolute value.",
+            "Explain how a share can fall while the amount rises.",
+            "Convert between percentages and degrees.",
+        ],
         intuition=(
             "A pie chart shows how one whole thing is sliced up. Every slice is a **share**, not an amount — "
             "which is why two pie charts can look identical while describing totally different totals.\n\n"
@@ -136,6 +248,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.stacked-charts",
+        prereq="Bar charts, and shares of a total.",
+        methods=[
+            Method(
+                name="Reading a segment's value",
+                recognise="a bar divided into coloured bands.",
+                steps=[
+                    "A segment's value is the **difference** between its two boundaries, not the height of its upper edge.",
+                    "Read both boundaries, then subtract.",
+                    "This is the single most common error in the topic.",
+                ],
+                worked="A band running from 30 to 50 is worth 20, not 50.",
+            ),
+            Method(
+                name="Totals per bar",
+                recognise="'which year had the highest total'.",
+                steps=[
+                    "The total is the full height of the bar, which is read directly.",
+                    "For a 100-percent stacked chart every bar is the same height, so totals must come from the text instead.",
+                ],
+                worked="If every bar tops out at 100, the chart shows composition only, not size.",
+            ),
+            Method(
+                name="Composition changes over time",
+                recognise="'did X's share grow', across several stacked bars.",
+                steps=[
+                    "Compute the segment's share of its own bar, for each bar.",
+                    "Compare the shares, not the raw segment sizes.",
+                    "A segment can grow in size while shrinking in share.",
+                ],
+                worked="A segment going 20-of-80 to 25-of-125 grew in size but fell from 25 to 20 percent.",
+            ),
+        ],
+        checklist=[
+            "Get a segment's value by subtracting its boundaries.",
+            "Tell a 100-percent stacked chart from an absolute one.",
+            "Separate a change in size from a change in share.",
+        ],
         intuition=(
             "A stacked bar is several bar charts balanced on top of each other. The whole column tells you the "
             "total; each coloured band tells you one component's contribution.\n\n"
@@ -179,6 +328,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.radar-spider",
+        prereq="Reading any axis-based chart.",
+        methods=[
+            Method(
+                name="Reading one axis",
+                recognise="a value for one attribute of one entity.",
+                steps=[
+                    "Each spoke is its own axis, usually starting at zero in the centre.",
+                    "Read along the spoke to where the shape crosses it.",
+                    "Check whether every spoke uses the same scale — often they do not.",
+                ],
+                worked="A point two-thirds along a spoke marked 0 to 60 reads 40.",
+            ),
+            Method(
+                name="Comparing two entities",
+                recognise="two overlaid shapes, asking which is stronger or more balanced.",
+                steps=[
+                    "Compare spoke by spoke, never by the apparent area of the shapes.",
+                    "Area is misleading: it depends on the arbitrary order of the spokes.",
+                    "A 'more balanced' profile means the values are closer together, which reads as a rounder shape.",
+                ],
+                worked="Swapping two spokes changes the shape entirely without changing a single value.",
+            ),
+        ],
+        checklist=[
+            "Read a value off a single spoke, checking its scale.",
+            "Compare entities attribute by attribute rather than by shape area.",
+            "Explain why the enclosed area of a radar chart is not meaningful.",
+        ],
         intuition=(
             "A radar chart is a set of measuring sticks fanning out from a centre, one per category, with the "
             "values joined into a web. The further from the centre a point sits, the bigger the value.\n\n"
@@ -218,6 +395,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.bubble-charts",
+        prereq="Coordinate reading, and proportion.",
+        methods=[
+            Method(
+                name="Reading three variables at once",
+                recognise="plotted circles of differing sizes.",
+                steps=[
+                    "The x and y positions are two variables; the bubble's size is a third.",
+                    "Read position from the axes and size from the legend.",
+                    "Do not infer the third variable from position — they are independent.",
+                ],
+                worked="A bubble far right and low may still be the largest by the third variable.",
+            ),
+            Method(
+                name="Ranking by the size variable",
+                recognise="'which had the greatest sales', where sales is the bubble size.",
+                steps=[
+                    "Use the size legend rather than judging by eye.",
+                    "Bubble size is usually scaled by **area**, so a circle that looks twice as wide represents about four times the value.",
+                ],
+                worked="Doubling the radius quadruples the area, so it represents four times the quantity.",
+            ),
+        ],
+        checklist=[
+            "Read all three variables off a bubble chart.",
+            "Use the legend rather than eyeballing size.",
+            "Explain why apparent width overstates differences.",
+        ],
         intuition=(
             "A bubble chart squeezes three numbers into one picture. Left-to-right is one variable, up-and-down "
             "is a second, and the **size** of the bubble is a third.\n\n"
@@ -258,6 +462,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.combination-charts",
+        prereq="Bar charts and line charts separately.",
+        methods=[
+            Method(
+                name="Matching each series to its axis",
+                recognise="bars and a line on the same chart, usually with axes on both sides.",
+                steps=[
+                    "Identify which series belongs to the left axis and which to the right. The legend says so.",
+                    "Never compare a bar's height to a line's height directly — they are on different scales.",
+                    "Read each series against its own axis every time.",
+                ],
+                worked="A line below the bars can still represent a much larger number if its axis runs to 1000 and the bars' runs to 50.",
+            ),
+            Method(
+                name="Questions mixing both series",
+                recognise="'revenue per unit', where units are bars and revenue is the line.",
+                steps=[
+                    "Read both values against their correct axes.",
+                    "Then do the arithmetic the question asks for.",
+                    "Sanity check the units of the result.",
+                ],
+                worked="Revenue 600 (right axis) over 40 units (left axis) gives 15 per unit.",
+            ),
+        ],
+        checklist=[
+            "Assign each series to the correct axis before reading anything.",
+            "Combine values from two series with different scales.",
+        ],
         intuition=(
             "Sometimes one picture carries two different kinds of number — say, bars for total sales in crores "
             "and a line for profit margin in percent. They cannot share one axis, so the chart grows a second "
@@ -304,6 +535,42 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.caselets",
+        prereq="Careful reading. There is no chart here — the data is buried in prose.",
+        methods=[
+            Method(
+                name="Extracting the data into a table",
+                recognise="a paragraph of text containing all the numbers, with no diagram.",
+                steps=[
+                    "Read once for structure: who or what are the entities, and what is measured about each.",
+                    "Draw the empty table before filling anything in.",
+                    "Read again, placing each number in its cell and marking what is still unknown.",
+                ],
+                worked="Three departments with headcount and budget become a 3-by-2 grid before any arithmetic starts.",
+            ),
+            Method(
+                name="Filling gaps from totals",
+                recognise="a stated total, with one entry missing.",
+                steps=[
+                    "Use row and column totals to recover missing entries by subtraction.",
+                    "Work outwards from whichever line has only one unknown.",
+                ],
+                worked="If two of three departments hold 45 and 30 of 100 staff, the third has 25.",
+            ),
+            Method(
+                name="Conditional statements in prose",
+                recognise="'if X exceeds Y then...', or ratios stated in words.",
+                steps=[
+                    "Translate each sentence into a symbolic relation as you read it.",
+                    "Keep the translations beside the table so you can apply them in any order.",
+                ],
+                worked="'A is twice B' becomes $A = 2B$, which usually unlocks a row immediately.",
+            ),
+        ],
+        checklist=[
+            "Build the table before attempting any question.",
+            "Recover missing entries from row and column totals.",
+            "Translate worded conditions into relations.",
+        ],
         intuition=(
             "A caselet hides the data inside a paragraph of prose instead of a neat table. Nothing about the "
             "arithmetic is harder — the difficulty is purely in **extraction**.\n\n"
@@ -346,6 +613,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.missing-data",
+        prereq="Table reading, and comfort with simple simultaneous equations.",
+        methods=[
+            Method(
+                name="Working from the most constrained line",
+                recognise="a table with blanks and some totals given.",
+                steps=[
+                    "Scan for any row or column with exactly one blank — that one is solvable immediately.",
+                    "Fill it, then re-scan; filling one cell usually creates another single-blank line.",
+                    "Repeat until nothing new can be filled.",
+                ],
+                worked="A row totalling 100 with entries 40, 25 and a blank gives 35 at once.",
+            ),
+            Method(
+                name="When no line has a single blank",
+                recognise="the sweep stalls with several blanks left.",
+                steps=[
+                    "Name the unknowns and write the totals as equations.",
+                    "Solve the small system — it is usually two or three equations.",
+                    "Then resume the sweep, which now completes.",
+                ],
+                worked="Two blanks in a row and a column both give equations; solving the pair unlocks both.",
+            ),
+            Method(
+                name="Deciding whether a question is answerable",
+                recognise="a question about a cell you could not fill.",
+                steps=[
+                    "Check whether the answer depends on the unfilled value at all — often it cancels.",
+                    "If it genuinely does not follow from the data, that itself may be the intended answer.",
+                ],
+                worked="A ratio question can be answerable even when neither individual value is.",
+            ),
+        ],
+        checklist=[
+            "Sweep repeatedly for single-blank lines before doing any algebra.",
+            "Set up and solve a small system when the sweep stalls.",
+            "Recognise a question that is answerable without filling every cell.",
+        ],
         intuition=(
             "Some tables arrive with holes in them. This looks unfair until you notice the totals: if a row "
             "must add to 100 and three of its four entries are given, the fourth is forced.\n\n"
@@ -390,6 +694,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.data-sufficiency",
+        prereq="Everything else — the skill is judging sufficiency, not computing answers.",
+        methods=[
+            Method(
+                name="Evaluating each statement alone",
+                recognise="the standard two-statement format.",
+                steps=[
+                    "Consider statement 1 by itself, deliberately forgetting statement 2. This is harder than it sounds and is where most marks are lost.",
+                    "Ask whether it pins the answer to exactly one value.",
+                    "Repeat for statement 2 alone.",
+                ],
+                worked="A statement giving only a ratio rarely determines an absolute value on its own.",
+            ),
+            Method(
+                name="Combining the statements",
+                recognise="neither statement was sufficient alone.",
+                steps=[
+                    "Only now use both together.",
+                    "If they still leave two possibilities, the answer is that the data is insufficient even combined.",
+                ],
+                worked="A ratio plus a total does determine both values; a ratio plus another ratio usually does not.",
+            ),
+            Method(
+                name="Testing with counter-examples",
+                recognise="a statement that feels sufficient but you are unsure.",
+                steps=[
+                    "Try to construct two different scenarios that both satisfy the statement but give different answers.",
+                    "If you can, it is insufficient. If you genuinely cannot after trying, it is probably sufficient.",
+                    "Never actually compute the final answer — you are only judging whether it could be computed.",
+                ],
+                worked="If $x^2 = 16$, then $x$ could be 4 or $-4$: two scenarios, so insufficient for the value of $x$.",
+            ),
+        ],
+        checklist=[
+            "Judge each statement in genuine isolation.",
+            "Use counter-examples to prove insufficiency.",
+            "Resist solving the problem when only sufficiency is asked.",
+        ],
         intuition=(
             "Data sufficiency does not ask you to solve anything. It asks: **do I have enough to solve it?**\n\n"
             "That is a genuinely different question, and the discipline is to stop as soon as you know the "
@@ -440,6 +781,42 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.growth-cagr",
+        prereq="Percentages, especially repeated growth over several periods.",
+        methods=[
+            Method(
+                name="Year-on-year growth",
+                recognise="'growth rate in year X'.",
+                steps=[
+                    "Growth is (this year minus last year) divided by **last year**.",
+                    "The denominator is always the earlier value.",
+                ],
+                worked="From 250 to 300 is $\\dfrac{50}{250} = 20$ percent.",
+            ),
+            Method(
+                name="Compound annual growth rate",
+                recognise="a start value, an end value, and a number of years.",
+                steps=[
+                    "CAGR is the single rate that would take you from start to end over that period.",
+                    "Use $\\left(\\dfrac{\\text{end}}{\\text{start}}\\right)^{1/n} - 1$.",
+                    "Count the **intervals**, not the data points: 2019 to 2023 is four years, not five.",
+                ],
+                worked="Doubling over 3 years is a CAGR of $2^{1/3} - 1 \\approx 26$ percent.",
+            ),
+            Method(
+                name="Comparing growth across entities",
+                recognise="'which grew fastest'.",
+                steps=[
+                    "Compare percentage growth, not absolute increase — a small base grows fast easily.",
+                    "For multi-year comparisons use CAGR so the periods are comparable.",
+                ],
+                worked="A rise from 10 to 20 beats one from 500 to 600 in percentage terms, though it is far smaller in absolute terms.",
+            ),
+        ],
+        checklist=[
+            "Compute year-on-year growth with the right denominator.",
+            "Compute and interpret a CAGR, counting intervals correctly.",
+            "Explain why a small base flatters a growth rate.",
+        ],
         intuition=(
             "If a business grows from 100 to 200 over four years, it did not grow 25 percent a year. Growth "
             "compounds, so each year's rise builds on a bigger base.\n\n"
@@ -491,6 +868,44 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.distribution-grouping",
+        prereq="Careful reading, and the habit of drawing a grid.",
+        methods=[
+            Method(
+                name="Setting up the grid",
+                recognise="items to be assigned to people, groups or categories.",
+                steps=[
+                    "Draw a grid with entities down the side and attributes across the top.",
+                    "List the constraints separately, numbered, so you can revisit them.",
+                    "Mark impossibilities with a cross as readily as you mark certainties with a tick — negative information solves these sets.",
+                ],
+                worked="Knowing A is not in group 2 is often worth as much as knowing B is in group 1.",
+            ),
+            Method(
+                name="Starting from the tightest constraint",
+                recognise="several constraints of differing strength.",
+                steps=[
+                    "Rank the constraints by how much they fix: a definite placement beats a negative, which beats a conditional.",
+                    "Apply the tightest first, and re-scan after every placement.",
+                    "A placement usually triggers a cascade — follow it before reading a new constraint.",
+                ],
+                worked="'Exactly two go to Delhi' fixes more than 'C does not go to Delhi'.",
+            ),
+            Method(
+                name="Branching when stuck",
+                recognise="no constraint can be applied and the grid is incomplete.",
+                steps=[
+                    "Pick the cell with the fewest possibilities, usually two.",
+                    "Try each branch and follow it to a contradiction or a solution.",
+                    "Keep the branches physically separate on the page so they cannot contaminate each other.",
+                ],
+                worked="A two-way branch resolves most sets in one step.",
+            ),
+        ],
+        checklist=[
+            "Build a grid and number the constraints before solving.",
+            "Record negative information as diligently as positive.",
+            "Branch cleanly on the smallest remaining choice.",
+        ],
         intuition=(
             "Four friends, four different pets, four different jobs, and a handful of clues. This is the "
             "logic puzzle you may have done in a puzzle book — and the method is exactly the same: draw a "
@@ -539,6 +954,44 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.selection-conditionalities",
+        prereq="Conditional statements, and the idea that 'if P then Q' says nothing when P is false.",
+        methods=[
+            Method(
+                name="Translating conditions into symbols",
+                recognise="'if A is selected then B must be', 'A and C cannot both be chosen'.",
+                steps=[
+                    "Write each rule compactly: an arrow for implication, a bar for exclusion.",
+                    "Note the contrapositive of every implication — if B is out, A is out. Half the deductions come from contrapositives.",
+                    "Do not invert an implication: 'if A then B' does not mean 'if B then A'.",
+                ],
+                worked="From 'A implies B', learning that B is excluded immediately excludes A.",
+            ),
+            Method(
+                name="Testing a candidate selection",
+                recognise="options each offering a complete group, asking which is valid.",
+                steps=[
+                    "Take each rule in turn and check it against the option.",
+                    "Eliminate as soon as one rule is broken; do not verify the rest.",
+                    "This is usually faster than constructing a valid group from scratch.",
+                ],
+                worked="If a rule says A and C cannot co-occur, any option containing both dies immediately.",
+            ),
+            Method(
+                name="Counting valid selections",
+                recognise="'how many different teams are possible'.",
+                steps=[
+                    "Enumerate systematically, in a fixed order, rather than at random.",
+                    "Use the tightest rule to split into cases first.",
+                    "Count each case and add, checking the cases do not overlap.",
+                ],
+                worked="Splitting on whether A is in or out halves the work and keeps the cases disjoint.",
+            ),
+        ],
+        checklist=[
+            "Write every rule and its contrapositive.",
+            "Eliminate options by rule violation rather than building solutions.",
+            "Enumerate valid selections systematically.",
+        ],
         intuition=(
             "You are picking a team, and there are rules: if Amit comes then Bina must come too; Chen and "
             "Deepa refuse to be in the same room. These are the constraints, and every valid team must "
@@ -587,6 +1040,44 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.ordering-ranking",
+        prereq="Nothing beyond careful reading and a drawn line.",
+        methods=[
+            Method(
+                name="Building a line",
+                recognise="positions, ranks, heights, finishing order.",
+                steps=[
+                    "Draw the positions as a row of blanks, numbered.",
+                    "Place absolute statements ('D is third') first.",
+                    "Then apply relative statements ('A is above B') as fragments to be slotted in later.",
+                ],
+                worked="Two absolute placements in a row of five usually pin one relative fragment immediately.",
+            ),
+            Method(
+                name="Handling relative-only information",
+                recognise="only comparisons, with no fixed positions.",
+                steps=[
+                    "Build chains: from 'A > B' and 'B > C' get 'A > B > C'.",
+                    "Merge chains that share a member.",
+                    "Count how many arrangements the merged chain still allows — often more than one, which is itself the answer to 'can it be determined?'",
+                ],
+                worked="A chain of three among five people leaves several orders open.",
+            ),
+            Method(
+                name="Gaps and distances",
+                recognise="'exactly two people sit between A and B'.",
+                steps=[
+                    "Treat the pair plus its gap as a rigid block of fixed length.",
+                    "Slide that block along the row and note every position it fits.",
+                    "Remember the block can usually be reversed, doubling the possibilities.",
+                ],
+                worked="A block spanning four seats fits in two positions in a row of five, each in two orientations.",
+            ),
+        ],
+        checklist=[
+            "Separate absolute from relative statements and use them in that order.",
+            "Merge comparison chains.",
+            "Slide a fixed-gap block through every valid position, both ways round.",
+        ],
         intuition=(
             "Six students finished a test in some order and you are given hints: 'Priya scored better than "
             "Rohan', 'exactly one person came between Sara and Tarun'.\n\n"
@@ -634,6 +1125,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.games-tournaments",
+        prereq="Basic arithmetic, and comfort with a results table.",
+        methods=[
+            Method(
+                name="Round-robin bookkeeping",
+                recognise="every team plays every other team.",
+                steps=[
+                    "With $n$ teams the total matches are $\\dfrac{n(n-1)}{2}$.",
+                    "Total points across the table are fixed by the scoring system, which is a strong check.",
+                    "Fill the results grid, remembering each match appears twice — once for each team.",
+                ],
+                worked="Five teams play 10 matches; at 2 points a win and 1 each for a draw, the total is always 20.",
+            ),
+            Method(
+                name="Knockout structure",
+                recognise="rounds, byes, eliminations.",
+                steps=[
+                    "Each match eliminates exactly one team, so $n$ teams need $n - 1$ matches to produce a winner.",
+                    "Work backwards from the final to place teams in the bracket.",
+                ],
+                worked="16 teams need 15 matches in total, across 4 rounds.",
+            ),
+            Method(
+                name="Best and worst case",
+                recognise="'what is the minimum score guaranteeing qualification'.",
+                steps=[
+                    "For a guarantee, assume everything goes against the team in question.",
+                    "For a possibility, assume everything goes in its favour.",
+                    "Keep the two questions separate — they have different answers and are easy to conflate.",
+                ],
+                worked="A team may qualify with 6 points in the best case but need 8 to be certain.",
+            ),
+        ],
+        checklist=[
+            "Count matches and total points in a round robin.",
+            "Work a knockout bracket backwards.",
+            "Distinguish 'could qualify' from 'must qualify'.",
+        ],
         intuition=(
             "A league table is just bookkeeping. Every match hands out a fixed number of points, and the table "
             "is the running total.\n\n"
@@ -681,6 +1209,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.scheduling",
+        prereq="Grid-building, and careful reading of time constraints.",
+        methods=[
+            Method(
+                name="Laying out the timetable",
+                recognise="days, slots, shifts or sessions to be assigned.",
+                steps=[
+                    "Draw the time axis first, with every slot shown even if empty.",
+                    "Mark blocked slots before placing anything.",
+                    "Note the capacity of each slot — one person, or several.",
+                ],
+                worked="Marking the two unavailable afternoons first often forces the rest.",
+            ),
+            Method(
+                name="Ordering and adjacency constraints",
+                recognise="'X must come before Y', 'no two consecutive days'.",
+                steps=[
+                    "Turn 'before' constraints into a chain and place the chain as a unit.",
+                    "For 'not consecutive', place the constrained items first and let the rest fill gaps.",
+                ],
+                worked="Three items that cannot be consecutive need at least five slots.",
+            ),
+        ],
+        checklist=[
+            "Draw the full time axis and mark blocked slots first.",
+            "Chain ordering constraints.",
+            "Place the most constrained items before the free ones.",
+        ],
         intuition=(
             "Scheduling puzzles are timetables with gaps. Five people, five days, some rules about who cannot "
             "go on which day.\n\n"
@@ -727,6 +1282,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.venn-set",
+        prereq="Set theory and inclusion-exclusion from the QA side.",
+        methods=[
+            Method(
+                name="Filling the diagram from the centre",
+                recognise="overlapping categories with counts.",
+                steps=[
+                    "Draw the circles and start with the all-three region.",
+                    "Then the pairwise-only regions, subtracting the centre from each pairwise total.",
+                    "Then the singles, and finally the outside.",
+                ],
+                worked="If 30 are in both A and B, and 12 are in all three, then 18 are in A and B only.",
+            ),
+            Method(
+                name="Reading the wording precisely",
+                recognise="'only', 'exactly two', 'at least one'.",
+                steps=[
+                    "'Both A and B' includes those also in C; 'only A and B' does not.",
+                    "'At least one' is the union; 'exactly one' is the union minus the overlaps.",
+                    "Mark on the diagram which regions the phrase covers before computing.",
+                ],
+                worked="'At least two' covers all three pairwise regions plus the centre.",
+            ),
+            Method(
+                name="Maximum and minimum overlap",
+                recognise="'what is the largest possible number in both'.",
+                steps=[
+                    "The overlap is at most the size of the smaller set.",
+                    "The minimum overlap is (sum of the sets) minus the total, or zero if that is negative.",
+                ],
+                worked="Sets of 60 and 70 within a universe of 100 must overlap by at least 30.",
+            ),
+        ],
+        checklist=[
+            "Fill a three-set diagram from the centre outwards.",
+            "Translate 'only', 'exactly' and 'at least' into regions.",
+            "Compute maximum and minimum possible overlaps.",
+        ],
         intuition=(
             "Draw overlapping circles for the groups. Every person in the survey lands in exactly one region "
             "of the picture — plays only cricket, plays cricket and football but not tennis, plays nothing at "
@@ -779,6 +1371,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.network-routes",
+        prereq="Reading a diagram of nodes and links.",
+        methods=[
+            Method(
+                name="Shortest path",
+                recognise="a network with weights, asking for the cheapest or quickest route.",
+                steps=[
+                    "List the routes systematically rather than guessing at the promising one.",
+                    "Build up shortest distances node by node, keeping the best known distance to each.",
+                    "Check whether links are one-way; direction changes everything.",
+                ],
+                worked="A route that looks longer on the diagram may carry smaller weights.",
+            ),
+            Method(
+                name="Counting distinct paths",
+                recognise="'how many routes are there from A to B'.",
+                steps=[
+                    "Work forwards, labelling each node with the number of ways to reach it.",
+                    "A node's count is the sum of the counts of everything pointing into it.",
+                    "Respect any rule about not revisiting a node.",
+                ],
+                worked="A node fed by two nodes with 3 and 2 routes each can be reached 5 ways.",
+            ),
+            Method(
+                name="Capacity and flow",
+                recognise="links with maximum throughput.",
+                steps=[
+                    "A route's capacity is its **narrowest** link, not the sum.",
+                    "Total flow adds across independent routes.",
+                ],
+                worked="A path through links of 8, 3 and 6 carries only 3.",
+            ),
+        ],
+        checklist=[
+            "Find a shortest path methodically rather than by eye.",
+            "Count paths by accumulating forwards.",
+            "Apply the bottleneck rule to capacity questions.",
+        ],
         intuition=(
             "Picture a map of towns joined by roads, each road with a distance or a capacity. Questions ask "
             "for the shortest route, or how much traffic can flow from one end to the other.\n\n"
@@ -827,6 +1456,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.binary-logic",
+        prereq="Nothing beyond following a chain of consequences patiently.",
+        methods=[
+            Method(
+                name="Assume and test",
+                recognise="speakers who always lie or always tell the truth.",
+                steps=[
+                    "Assume the first speaker is a truth-teller and follow every consequence.",
+                    "If a contradiction appears, that assumption is dead and the opposite holds.",
+                    "Repeat until only consistent scenarios remain — and check whether more than one survives.",
+                ],
+                worked="If assuming A is truthful forces A to be lying, then A is a liar.",
+            ),
+            Method(
+                name="Using a lie as information",
+                recognise="a known liar's statement.",
+                steps=[
+                    "A liar's statement is reliably **false**, so its negation is true.",
+                    "Negate carefully: the opposite of 'all are guilty' is 'at least one is not', not 'none are'.",
+                ],
+                worked="A liar saying 'C is guilty' establishes that C is not guilty.",
+            ),
+            Method(
+                name="Counting-statement puzzles",
+                recognise="'exactly two of us are liars'.",
+                steps=[
+                    "Enumerate by the number of liars rather than by individuals.",
+                    "For each count, check whether the statements are consistent with it.",
+                    "These break the symmetry that pure accusation puzzles have, and usually give a unique answer.",
+                ],
+                worked="With three speakers, testing 0, 1, 2 and 3 liars is four cases, not eight.",
+            ),
+        ],
+        checklist=[
+            "Run assume-and-test systematically over every case.",
+            "Negate a liar's statement correctly.",
+            "Enumerate by liar count when a counting statement appears.",
+        ],
         intuition=(
             "Some people in the puzzle always tell the truth, and others always lie. Someone says 'I am a "
             "liar' — which cannot be true, because a liar would not admit it, and a truth-teller would not "
@@ -877,6 +1543,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.cubes-dice",
+        prereq="Spatial visualisation, and a willingness to sketch.",
+        methods=[
+            Method(
+                name="A painted cube cut into smaller cubes",
+                recognise="a cube painted then sliced into $n^3$ pieces.",
+                steps=[
+                    "Corners have 3 painted faces: always 8 of them.",
+                    "Edges have 2: $12(n-2)$ of them.",
+                    "Face centres have 1: $6(n-2)^2$. Interior pieces have none: $(n-2)^3$.",
+                    "Check the four counts add to $n^3$.",
+                ],
+                worked="For $n = 4$: $8 + 24 + 24 + 8 = 64$, as required.",
+            ),
+            Method(
+                name="Opposite faces of a die",
+                recognise="several views of the same die, asking what is opposite what.",
+                steps=[
+                    "Two faces seen together in any single view cannot be opposite.",
+                    "Eliminate across all the views until only one pairing survives.",
+                    "On a standard die, opposite faces sum to 7 — but only say so if the question implies a standard die.",
+                ],
+                worked="If 1 appears adjacent to 2, 3, 4 and 5, then 1 must be opposite 6.",
+            ),
+        ],
+        checklist=[
+            "Count painted faces by position, and verify the total.",
+            "Deduce opposite faces by elimination across views.",
+        ],
         intuition=(
             "Take a wooden cube, paint it all over, and saw it into 27 small cubes. The 8 corner pieces have "
             "paint on 3 faces. The middle-of-an-edge pieces have 2. The face-centre pieces have 1. And the "
@@ -925,6 +1619,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.quant-embedded",
+        prereq="The arithmetic topics — this is reasoning with real calculation inside it.",
+        methods=[
+            Method(
+                name="Separating the logic from the arithmetic",
+                recognise="a reasoning set where the constraints are numerical.",
+                steps=[
+                    "First establish the structure — who or what, and what is being counted.",
+                    "Then apply the numerical constraints as equations or bounds.",
+                    "Do the arithmetic last, and only for the cells the questions actually need.",
+                ],
+                worked="Establishing that only three distributions are possible turns a hard set into three small sums.",
+            ),
+            Method(
+                name="Bounding before enumerating",
+                recognise="quantities with minimums, maximums or totals.",
+                steps=[
+                    "Use the totals to bound each unknown before listing possibilities.",
+                    "A tight bound often reduces the cases to two or three.",
+                ],
+                worked="If four positive integers sum to 10 with all distinct, very few sets qualify.",
+            ),
+        ],
+        checklist=[
+            "Fix the structure before computing anything.",
+            "Use bounds to cut the case list down.",
+            "Compute only what the questions require.",
+        ],
         intuition=(
             "Some LR sets hide ordinary arithmetic inside a logic puzzle. You might have to work out who sat "
             "where **and** compute how much each person paid.\n\n"
@@ -968,6 +1689,32 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.number-placement",
+        prereq="Arithmetic, and systematic case-checking.",
+        methods=[
+            Method(
+                name="Using sum constraints",
+                recognise="numbers to be placed so rows, columns or groups hit given totals.",
+                steps=[
+                    "Compute the grand total of all the numbers available — it constrains everything.",
+                    "Find the line with the fewest free cells and solve it first.",
+                    "After each placement, recompute what remains available.",
+                ],
+                worked="If 1 to 9 must fill three rows of equal sum, each row must total 15.",
+            ),
+            Method(
+                name="Parity and divisibility shortcuts",
+                recognise="constraints about even, odd, or multiples.",
+                steps=[
+                    "Check parity before enumerating: an odd total cannot be made from an even count of odd numbers.",
+                    "Use divisibility to rule out placements without testing them.",
+                ],
+                worked="Three odd numbers always sum to an odd number, so an even target is impossible.",
+            ),
+        ],
+        checklist=[
+            "Derive line totals from the grand total.",
+            "Use parity to eliminate cases before enumerating.",
+        ],
         intuition=(
             "This is Sudoku's family. You have a grid, some numbers already placed, and rules about what can "
             "go where — each row sums to a value, or no digit repeats in a line.\n\n"
@@ -1012,6 +1759,43 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.di.tables",
+        prereq="Percentages and averages.",
+        methods=[
+            Method(
+                name="Orienting before solving",
+                recognise="any table set, before reading the first question.",
+                steps=[
+                    "Read the row and column headers and the units. Thirty seconds here saves minutes later.",
+                    "Note which totals are given and which must be computed.",
+                    "Compute any total you will clearly need more than once, and write it down.",
+                ],
+                worked="Knowing a column is in thousands prevents every answer in the set being wrong by a factor of 1000.",
+            ),
+            Method(
+                name="Row and column arithmetic",
+                recognise="questions about totals, averages, or shares.",
+                steps=[
+                    "Averages come from the row or column total divided by the count.",
+                    "Shares divide a cell by its row or column total, whichever the question means.",
+                    "Re-read the question to check which direction the share is over.",
+                ],
+                worked="A cell of 24 in a row totalling 96 is a 25 percent share of that row.",
+            ),
+            Method(
+                name="Ranking and extremes",
+                recognise="'which had the highest', 'how many exceeded'.",
+                steps=[
+                    "Scan rather than compute where possible — the largest value is often visible.",
+                    "For a derived quantity like 'highest per capita', you must compute each one; do them in a single pass.",
+                ],
+                worked="Comparing four ratios is faster by cross-multiplying pairs than by dividing all four.",
+            ),
+        ],
+        checklist=[
+            "Read headers and units before answering anything.",
+            "Compute reusable totals once.",
+            "Handle share, average and ranking questions off the same table.",
+        ],
         intuition=(
             "A table is data with nowhere to hide — no scale to misread, no legend to confuse. Which means "
             "the difficulty is never in reading it, only in deciding **what to compute** and how much of the "
@@ -1051,6 +1835,44 @@ SPECS = [
     ),
     LessonSpec(
         mt="dilr.lr.arrangements",
+        prereq="Grid and line building, plus the circular-seating idea from permutations.",
+        methods=[
+            Method(
+                name="Circular seating",
+                recognise="people around a round table.",
+                steps=[
+                    "Fix one person's position to remove rotational symmetry, then place everyone relative to them.",
+                    "Decide whether 'left' and 'right' are from the seated person's view or the reader's — the question must say, and it matters.",
+                    "Mark both certain and impossible positions.",
+                ],
+                worked="Fixing A at the top turns a circular problem into a linear one around the rest.",
+            ),
+            Method(
+                name="Adjacency and separation",
+                recognise="'B sits next to C', 'D is not adjacent to E'.",
+                steps=[
+                    "Treat an adjacency pair as a block that can be flipped.",
+                    "Place blocks before individuals.",
+                    "Non-adjacency is best handled by placing everything else and checking at the end.",
+                ],
+                worked="A block of two has two internal orders, doubling every arrangement it appears in.",
+            ),
+            Method(
+                name="Facing directions",
+                recognise="some people facing the centre and others facing outwards.",
+                steps=[
+                    "Draw the direction each person faces as an arrow.",
+                    "Someone's 'left' reverses when they face outwards — this is the single biggest source of error.",
+                    "Re-derive each left-right claim from the arrow rather than from habit.",
+                ],
+                worked="For a person facing outwards, their left is the reader's right.",
+            ),
+        ],
+        checklist=[
+            "Fix one position to break circular symmetry.",
+            "Handle adjacency blocks and their internal orders.",
+            "Get left and right correct for outward-facing people.",
+        ],
         intuition=(
             "Six people around a circular table, and clues about who sits next to whom. The thing that makes "
             "circular arrangements different from a straight line is that there is no first or last seat — "

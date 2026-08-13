@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from . import EX, FC, LessonSpec
+from . import EX, FC, LessonSpec, Method
 
 _ELIMINATION = (
     "In VARC you almost never prove an option right. You prove three of them wrong. Options fail for "
@@ -14,6 +14,34 @@ _ELIMINATION = (
 SPECS = [
     LessonSpec(
         mt="varc.rc.direct-detail",
+        prereq="Nothing but discipline: the answer is in the passage, and you must go back and find it.",
+        methods=[
+            Method(
+                name="Locating and matching",
+                recognise="'according to the passage', 'the author states that'.",
+                steps=[
+                    "Find the keyword from the stem in the passage and read the sentence around it, plus the one either side.",
+                    "Match the option against that text, word by word where it matters.",
+                    "Answer from the page, never from memory of the page.",
+                ],
+                worked="An option saying 'always' fails against a passage saying 'often'.",
+            ),
+            Method(
+                name="Eliminating near-misses",
+                recognise="two options that both look supported.",
+                steps=[
+                    "Check the scope words: all, some, most, never, only.",
+                    "Check whether the option attributes the claim to the right party — the author, or someone the author is describing.",
+                    "The wrong option is usually right about the topic and wrong about the degree.",
+                ],
+                worked="'Scientists rejected the theory' fails if the passage says one scientist did.",
+            ),
+        ],
+        checklist=[
+            "Go back to the text for every detail question.",
+            "Compare scope words rather than general meaning.",
+            "Notice when a claim is attributed to the wrong person.",
+        ],
         intuition=(
             "This is the closest VARC gets to a lookup. The answer is written in the passage, somewhere, and "
             "your job is to find the sentence and match it to an option.\n\n"
@@ -63,6 +91,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.rc.vocab-in-context",
+        prereq="A working vocabulary helps, but context does most of the work.",
+        methods=[
+            Method(
+                name="Reading the word in its sentence",
+                recognise="'the word X in line n most nearly means'.",
+                steps=[
+                    "Cover the options and read the sentence, substituting a blank for the word.",
+                    "Predict your own word for the blank from the context alone.",
+                    "Then pick the option closest to your prediction.",
+                ],
+                worked="If the sentence says the argument was 'arresting', context of admiration points to 'striking', not 'stopping'.",
+            ),
+            Method(
+                name="Handling a common word used unusually",
+                recognise="an everyday word being tested, which signals a secondary meaning.",
+                steps=[
+                    "Assume the obvious meaning is the trap, and check it against the sentence.",
+                    "Test each option by substituting it into the sentence and reading the whole thing aloud in your head.",
+                ],
+                worked="'Qualify' often means 'limit or soften', not 'be eligible'.",
+            ),
+        ],
+        checklist=[
+            "Predict from context before looking at options.",
+            "Substitute each option back into the sentence.",
+            "Distrust the most familiar meaning of a common word.",
+        ],
         intuition=(
             "The word 'bright' means one thing about a lamp and another about a student. Nobody needs a "
             "dictionary to tell them apart — the sentence around it does the work.\n\n"
@@ -112,6 +167,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.rc.structure-function",
+        prereq="An eye for how paragraphs relate to each other rather than what they say.",
+        methods=[
+            Method(
+                name="Identifying a paragraph's job",
+                recognise="'the second paragraph serves to', 'the author mentions X in order to'.",
+                steps=[
+                    "Ask what the paragraph **does**, not what it says: introduce, illustrate, qualify, counter, conclude.",
+                    "Look at the transition words at its start — 'however', 'for instance', 'therefore' announce the function.",
+                    "The right answer describes a role; wrong answers usually summarise content.",
+                ],
+                worked="A paragraph opening 'Yet critics argue' is countering, whatever its subject.",
+            ),
+            Method(
+                name="Why a specific example appears",
+                recognise="a question about one named example or quotation.",
+                steps=[
+                    "Read the sentence immediately before the example — it almost always states the claim being illustrated.",
+                    "The example's function is to support that claim, not to introduce a new one.",
+                ],
+                worked="An anecdote following 'this pattern repeats elsewhere' exists to evidence the pattern.",
+            ),
+        ],
+        checklist=[
+            "Describe a paragraph's role in one verb.",
+            "Use transition words as function signals.",
+            "Trace an example back to the claim above it.",
+        ],
         intuition=(
             "Ask not what a paragraph **says** but what it **does**. Is it introducing an idea, giving an "
             "example, raising an objection, or answering one?\n\n"
@@ -161,6 +243,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.rc.inference",
+        prereq="The difference between what is said and what must follow from it.",
+        methods=[
+            Method(
+                name="Staying one step from the text",
+                recognise="'it can be inferred', 'the passage implies', 'the author would most likely agree'.",
+                steps=[
+                    "A valid inference must be **necessarily true** given the passage, not merely plausible.",
+                    "Prefer the option that goes the smallest distance beyond what is written.",
+                    "Reject anything requiring outside knowledge, however true it is in the world.",
+                ],
+                worked="From 'the policy failed in three cities', you cannot infer it fails everywhere.",
+            ),
+            Method(
+                name="Testing an option against the passage",
+                recognise="two options that both seem reasonable.",
+                steps=[
+                    "Ask: could the passage be entirely true and this option still be false?",
+                    "If yes, it is not an inference.",
+                    "The remaining option is the one the passage forces.",
+                ],
+                worked="'The author dislikes the policy' fails if the passage only reports its results neutrally.",
+            ),
+        ],
+        checklist=[
+            "Distinguish necessary from merely plausible.",
+            "Reject options needing outside knowledge.",
+            "Prefer the smallest step beyond the text.",
+        ],
         intuition=(
             "If the passage says the streets are wet and people are shaking out umbrellas, you may infer it "
             "rained. You may **not** infer that it rained for three hours, or that a storm is coming.\n\n"
@@ -211,6 +321,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.rc.tone-attitude",
+        prereq="Sensitivity to word choice — tone lives in adjectives and verbs, not in facts.",
+        methods=[
+            Method(
+                name="Reading tone from loaded words",
+                recognise="'the author's attitude towards X is best described as'.",
+                steps=[
+                    "Underline the evaluative words: 'merely', 'remarkable', 'so-called', 'unfortunately'.",
+                    "Judge the tone from those, not from the subject matter.",
+                    "Most academic passages are measured, so extreme options are usually wrong.",
+                ],
+                worked="'So-called experts' signals scepticism regardless of what follows.",
+            ),
+            Method(
+                name="Calibrating strength",
+                recognise="options ranging from mild to strong on the same axis.",
+                steps=[
+                    "Decide the direction first: positive, negative or neutral.",
+                    "Then decide the intensity, and pick the mildest option consistent with the evidence.",
+                    "'Contempt' needs far more evidence than 'reservation'.",
+                ],
+                worked="Mild criticism supports 'sceptical', not 'scathing'.",
+            ),
+        ],
+        checklist=[
+            "Find the evaluative words and judge from them.",
+            "Fix direction before intensity.",
+            "Default to the more moderate option.",
+        ],
         intuition=(
             "Two people can describe the same event and you can hear, from word choice alone, that one "
             "approves and the other does not. 'Frugal' and 'stingy' describe identical behaviour with "
@@ -260,6 +398,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.rc.assumption",
+        prereq="Argument structure: premise, conclusion, and the gap between them.",
+        methods=[
+            Method(
+                name="Finding the unstated link",
+                recognise="'the argument assumes', 'depends on which of the following'.",
+                steps=[
+                    "Identify the conclusion and the stated premise.",
+                    "Name what must also be true for that premise to actually deliver that conclusion.",
+                    "An assumption is unstated by definition — an option restating a premise is wrong.",
+                ],
+                worked="'Sales rose after the ad, so the ad worked' assumes nothing else changed.",
+            ),
+            Method(
+                name="The negation test",
+                recognise="two candidate assumptions.",
+                steps=[
+                    "Negate the option.",
+                    "If the argument collapses, it was a necessary assumption.",
+                    "If the argument survives, it was not.",
+                ],
+                worked="Negating 'nothing else changed' to 'something else changed' destroys the argument, confirming it.",
+            ),
+        ],
+        checklist=[
+            "Separate premise from conclusion before anything else.",
+            "Apply the negation test.",
+            "Reject options that merely restate what is given.",
+        ],
         intuition=(
             "'She must be at home, her car is in the driveway.' The unstated assumption is that she does not "
             "go anywhere without her car.\n\n"
@@ -310,6 +476,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.rc.strengthen-weaken",
+        prereq="Assumption questions — strengthening and weakening act on the same gap.",
+        methods=[
+            Method(
+                name="Weakening an argument",
+                recognise="'which of the following, if true, most undermines'.",
+                steps=[
+                    "Find the gap between premise and conclusion.",
+                    "The best weakener attacks that gap — usually by offering an alternative explanation.",
+                    "Accept the option as true; you are not judging its plausibility, only its effect.",
+                ],
+                worked="Against 'the ad worked', the strongest weakener is that a competitor closed that month.",
+            ),
+            Method(
+                name="Strengthening an argument",
+                recognise="'most supports', 'best justifies the conclusion'.",
+                steps=[
+                    "Rule out the alternative explanations, or confirm the assumption.",
+                    "Prefer the option that closes the gap over one that merely adds agreeable information.",
+                ],
+                worked="'No other factor changed that month' strengthens by confirming the assumption directly.",
+            ),
+        ],
+        checklist=[
+            "Locate the premise-to-conclusion gap.",
+            "Weaken with an alternative explanation.",
+            "Treat every option as true when judging its effect.",
+        ],
         intuition=(
             "An argument is a bridge from evidence to conclusion. To **strengthen** it, add support under the "
             "bridge. To **weaken** it, knock out a support or show the bridge leads somewhere else.\n\n"
@@ -360,6 +553,23 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.rc.except-least-likely",
+        prereq="All the other RC question types — this is a wrapper around them.",
+        methods=[
+            Method(
+                name="Inverting the task",
+                recognise="EXCEPT, NOT, or LEAST in the stem.",
+                steps=[
+                    "Write the inversion down before reading the options; the commonest error here is forgetting it halfway.",
+                    "Mark each option true or false against the passage.",
+                    "The answer is the odd one out — usually three supported and one not.",
+                ],
+                worked="'All of the following are mentioned EXCEPT' means three appear in the passage and one does not.",
+            ),
+        ],
+        checklist=[
+            "Note the inversion explicitly before evaluating options.",
+            "Evaluate all four options rather than stopping at the first that fits.",
+        ],
         intuition=(
             "'All of the following are true EXCEPT' flips the whole exercise. Now three options are correct "
             "and you are hunting for the odd one out.\n\n"
@@ -411,6 +621,23 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.rc.analogy-application",
+        prereq="Understanding a passage's underlying principle rather than its surface topic.",
+        methods=[
+            Method(
+                name="Extracting the principle",
+                recognise="'which of the following is most analogous', 'the author's argument would apply to'.",
+                steps=[
+                    "State the passage's principle in your own words, stripped of its subject matter.",
+                    "Test each option against that abstract principle.",
+                    "Surface similarity is the trap: an option about the same topic often has a different structure.",
+                ],
+                worked="A passage about ecosystems collapsing from one removal is analogous to a supply chain failing from one supplier, not to another wildlife story.",
+            ),
+        ],
+        checklist=[
+            "Abstract the principle away from the topic.",
+            "Match structure, not subject matter.",
+        ],
         intuition=(
             "The passage explains how a coral reef supports many species by providing structure. Now the "
             "question asks which of four unrelated situations is most similar.\n\n"
@@ -456,6 +683,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.va.para-summary",
+        prereq="Identifying a paragraph's main claim.",
+        methods=[
+            Method(
+                name="Finding the central claim",
+                recognise="a short paragraph with four candidate summaries.",
+                steps=[
+                    "Identify the main claim and note whether the paragraph qualifies or complicates it.",
+                    "A summary must cover the whole paragraph, including any turn at the end.",
+                    "Reject options that capture only one part, however accurately.",
+                ],
+                worked="A paragraph making a claim then limiting it needs a summary containing both halves.",
+            ),
+            Method(
+                name="Eliminating the four failure modes",
+                recognise="options that all sound broadly right.",
+                steps=[
+                    "Too narrow: covers one sentence only.",
+                    "Too broad: makes a claim the paragraph never reaches.",
+                    "Distorted: right subject, altered relationship.",
+                    "Outside: adds information not in the paragraph.",
+                ],
+                worked="Naming which of the four an option commits is faster than re-reading it.",
+            ),
+        ],
+        checklist=[
+            "Cover the whole paragraph, including the turn.",
+            "Name the specific failure mode of each rejected option.",
+        ],
         intuition=(
             "Imagine a friend asks what a paragraph said and you have one sentence to tell them. You would "
             "give the main point — not the examples, not the aside in the middle.\n\n"
@@ -505,6 +760,32 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.va.odd-sentence-out",
+        prereq="Paragraph coherence — how sentences chain to one another.",
+        methods=[
+            Method(
+                name="Building the chain first",
+                recognise="four or five sentences, one of which does not belong.",
+                steps=[
+                    "Find the pairs that clearly link, through pronouns, repeated terms or connectives.",
+                    "Assemble as much of the paragraph as you can.",
+                    "The sentence that will not attach to the assembled chain is the odd one.",
+                ],
+                worked="A sentence beginning 'This meant that' must follow something specific; find its partner.",
+            ),
+            Method(
+                name="Checking the odd one is genuinely off-topic",
+                recognise="a candidate that fits the subject but not the argument.",
+                steps=[
+                    "The odd sentence usually shares the topic but not the thread — that is what makes it hard.",
+                    "Confirm the remaining sentences form a complete, ordered paragraph without it.",
+                ],
+                worked="A sentence about the same subject in a different time period often breaks the thread.",
+            ),
+        ],
+        checklist=[
+            "Build the chain before choosing the outlier.",
+            "Verify the rest forms a coherent paragraph.",
+        ],
         intuition=(
             "Four sentences belong to one paragraph and one has wandered in from somewhere else. It is "
             "usually on the same broad topic — otherwise it would be too easy — but it is doing a different "
@@ -555,6 +836,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.va.para-completion",
+        prereq="Following a paragraph's direction of travel.",
+        methods=[
+            Method(
+                name="Predicting before reading options",
+                recognise="a paragraph with the last sentence missing.",
+                steps=[
+                    "Read the paragraph and decide where it is heading — is it building to a conclusion, a contrast, or an example?",
+                    "Predict the shape of the ending in your own words.",
+                    "Then find the option matching that shape.",
+                ],
+                worked="A paragraph listing failures is heading towards a judgement, not a new fact.",
+            ),
+            Method(
+                name="Rejecting the plausible-but-wrong",
+                recognise="options that are all true statements.",
+                steps=[
+                    "The ending must follow from **this** paragraph, not merely be true.",
+                    "Reject options introducing a new subject the paragraph never raised.",
+                    "Reject options that repeat what has already been said.",
+                ],
+                worked="An option restating the opening sentence adds nothing and cannot be the conclusion.",
+            ),
+        ],
+        checklist=[
+            "Predict the ending before reading the options.",
+            "Reject new-subject and restatement endings.",
+        ],
         intuition=(
             "A paragraph has been cut off mid-thought and you must supply the ending. The right sentence "
             "finishes the journey the paragraph was already on — it does not start a new one.\n\n"
@@ -604,6 +912,33 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.va.critical-reasoning",
+        prereq="Argument anatomy: premise, conclusion, assumption.",
+        methods=[
+            Method(
+                name="Mapping the argument",
+                recognise="any short argument followed by a question about it.",
+                steps=[
+                    "Find the conclusion first — it is often not the last sentence.",
+                    "List the premises supporting it.",
+                    "Name the gap, which is what every question type then acts on.",
+                ],
+                worked="'Therefore', 'so' and 'hence' mark conclusions; 'because' and 'since' mark premises.",
+            ),
+            Method(
+                name="Identifying a flaw",
+                recognise="'the reasoning is most vulnerable to the criticism that'.",
+                steps=[
+                    "Check for the standard flaws: correlation taken as causation, an unrepresentative sample, a false either-or, an attack on the person.",
+                    "Name the flaw before reading the options.",
+                    "Then find the option describing it.",
+                ],
+                worked="'Sales rose after the ad, so the ad caused it' is correlation mistaken for causation.",
+            ),
+        ],
+        checklist=[
+            "Locate the conclusion even when it is buried mid-paragraph.",
+            "Name the flaw in your own words first.",
+        ],
         intuition=(
             "Someone says: 'Ice cream sales and drowning deaths both rise in July, so ice cream causes "
             "drowning.' The flaw is obvious once stated — hot weather drives both.\n\n"
@@ -652,6 +987,61 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.va.sentence-correction",
+        prereq="Basic grammar: subjects, verbs, pronouns and parallel structure.",
+        methods=[
+            Method(
+                name="Subject-verb agreement",
+                recognise="a long subject, or words between subject and verb.",
+                steps=[
+                    "Strip out the intervening phrase and read subject and verb together.",
+                    "The verb agrees with the subject, never with the nearest noun.",
+                ],
+                worked="'The list of items **is** long' — the subject is 'list', not 'items'.",
+            ),
+            Method(
+                name="Parallelism",
+                recognise="a list, or a pair joined by and, or, both-and, not only-but also.",
+                steps=[
+                    "Items in a list must share grammatical form.",
+                    "Check the word right after each connective matches the others.",
+                ],
+                worked="'She likes reading, writing and to swim' breaks parallelism at the third item.",
+            ),
+            Method(
+                name="Pronoun reference",
+                recognise="'it', 'they', 'this' in the sentence.",
+                steps=[
+                    "Every pronoun needs exactly one possible antecedent.",
+                    "Ambiguity is an error even when the meaning is guessable.",
+                    "Check number agreement too: a singular noun takes a singular pronoun.",
+                ],
+                worked="'The company told the supplier it was late' — 'it' could be either party.",
+            ),
+            Method(
+                name="Modifier placement",
+                recognise="a sentence opening with a descriptive phrase and a comma.",
+                steps=[
+                    "The noun immediately after the comma must be what the phrase describes.",
+                    "If it is not, the modifier dangles and the sentence is wrong.",
+                ],
+                worked="'Walking home, the rain started' says the rain was walking.",
+            ),
+            Method(
+                name="Comparisons",
+                recognise="'than', 'as', 'like', 'compared to'.",
+                steps=[
+                    "The two things compared must be of the same kind.",
+                    "Check for a missing possessive: 'his salary is higher than Ravi' compares a salary to a person.",
+                ],
+                worked="'Higher than Ravi's' is correct; 'higher than Ravi' is not.",
+            ),
+        ],
+        checklist=[
+            "Strip intervening phrases to check agreement.",
+            "Test parallelism at each connective.",
+            "Catch ambiguous pronouns and dangling modifiers.",
+            "Verify comparisons are like-for-like.",
+        ],
         intuition=(
             "'The list of items are on the table.' It sounds acceptable spoken aloud, but the subject is "
             "'list', which is singular, so it should be 'is'. The plural 'items' sitting next to the verb is "
@@ -708,6 +1098,34 @@ SPECS = [
     ),
     LessonSpec(
         mt="varc.va.fill-in-blanks",
+        prereq="Sensitivity to connectives and sentence logic.",
+        methods=[
+            Method(
+                name="Reading the logical direction",
+                recognise="a blank in a sentence or short paragraph.",
+                steps=[
+                    "Decide whether the blank continues, contrasts with, or explains what precedes it.",
+                    "The surrounding connectives tell you: 'however' signals contrast, 'because' signals cause.",
+                    "Predict the sense of the missing word before reading options.",
+                ],
+                worked="A blank after 'despite' must run against the preceding clause.",
+            ),
+            Method(
+                name="Testing options by substitution",
+                recognise="two options with similar meanings.",
+                steps=[
+                    "Substitute each into the full sentence and read it through.",
+                    "Check collocation — which word actually pairs with the surrounding ones in ordinary English.",
+                    "Check register: a formal passage rarely takes a colloquial word.",
+                ],
+                worked="'Raise a question' is idiomatic; 'lift a question' is not, though the meanings match.",
+            ),
+        ],
+        checklist=[
+            "Read the connective to fix the logical direction.",
+            "Predict before reading options.",
+            "Use collocation and register to split near-synonyms.",
+        ],
         intuition=(
             "A sentence with a gap is a puzzle with a shape. The words around the gap tell you what kind of "
             "word belongs there — positive or negative, strong or mild, and what part of speech.\n\n"
