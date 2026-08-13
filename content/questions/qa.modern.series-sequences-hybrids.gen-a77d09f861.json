@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-a77d09f861",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the 23th term of the arithmetic progression 17, 28, 39, ...",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 259.0,
+  "titaTolerance": 0.01,
+  "difficulty": "very_hard",
+  "eloRating": 1600.0,
+  "solutionMarkdown": "The first term is $17$ and the common difference is $11$. The $n$th term is $a + (n-1)d = 17 + 22 \\times 11 = 259$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "ap-term"
+  ],
+  "mockReserved": false
+}

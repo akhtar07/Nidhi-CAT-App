@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-a1e51eacce",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum of the first 20 terms of the arithmetic progression 8, 11, 14, ...",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 730.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The 20th term is $8 + 19 \\times 3 = 65$. Sum $= \\dfrac{n}{2}(\\text{first} + \\text{last}) = \\dfrac{20}{2}(8 + 65) = 730$.",
+  "altSolutionMarkdown": "Pairing works because the terms are evenly spaced: the first pairs with the last, the second with the second-last, and every pair totals $73$.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "ap-sum"
+  ],
+  "mockReserved": false
+}

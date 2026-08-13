@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-103d98689b",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "An arithmetic progression has first term 6 and common difference 9. Find the average of its first 15 terms. (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 69.0,
+  "titaTolerance": 0.001,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "For evenly spaced terms the average is the midpoint of the first and last. The last term is $6 + 14 \\times 9 = 132$, so the average is $\\dfrac{6 + 132}{2} = 69.0$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "ap-average"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-d993c64b7c",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the 8th term of the geometric progression 5, 10, 20, ...",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 640.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The first term is $5$ and the common ratio is $2$. The $n$th term is $ar^{n-1} = 5 \\times 2^{7} = 640$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "gp-term"
+  ],
+  "mockReserved": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-0b42d51b20",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum of the first 5 terms of the geometric progression 5, 10, 20, ...",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 155.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "Sum $= \\dfrac{a(r^n - 1)}{r - 1} = \\dfrac{5(2^{5} - 1)}{2 - 1} = 155$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "gp-sum"
+  ],
+  "mockReserved": false
+}

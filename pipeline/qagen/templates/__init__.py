@@ -44,7 +44,7 @@ from collections.abc import Callable
 
 from qagen.harness import ItemSpec
 
-from . import algebra, arith, numsys_geom, tsd_work
+from . import algebra, arith, numsys_geom, series, tsd_work
 
 TemplateFn = Callable[[random.Random, str], ItemSpec]
 
@@ -54,6 +54,7 @@ TEMPLATES.update(arith.TEMPLATES)
 TEMPLATES.update(tsd_work.TEMPLATES)
 TEMPLATES.update(algebra.TEMPLATES)
 TEMPLATES.update(numsys_geom.TEMPLATES)
+TEMPLATES.update(series.TEMPLATES)
 
 # Difficulty ladder walked in parallel with the template cycle, so a topic's items
 # spread across both axes instead of all its "hard" items landing on one archetype.

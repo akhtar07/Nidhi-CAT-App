@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-dcc06a0efb",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the 7th term of the geometric progression 2, 6, 18, ...",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 1458.0,
+  "titaTolerance": 0.01,
+  "difficulty": "easy",
+  "eloRating": 1000.0,
+  "solutionMarkdown": "The first term is $2$ and the common ratio is $3$. The $n$th term is $ar^{n-1} = 2 \\times 3^{6} = 1458$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "gp-term"
+  ],
+  "mockReserved": false
+}

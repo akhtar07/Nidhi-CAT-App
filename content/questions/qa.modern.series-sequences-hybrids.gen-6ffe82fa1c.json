@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-6ffe82fa1c",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the next term in the series: 1, 4, 9, 16, 25, ...",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 36.0,
+  "titaTolerance": 0.01,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The differences between consecutive terms are 3, 5, 7, 9, which are themselves patterned rather than constant \u2014 so this is not an arithmetic progression. In fact each term is $n^2$, and continuing that rule gives **36**.",
+  "altSolutionMarkdown": "When a series is neither arithmetic nor geometric, writing out the differences is the first thing to try.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "pattern"
+  ],
+  "mockReserved": false
+}

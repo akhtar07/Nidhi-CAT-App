@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-632767405e",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the 40th term of the arithmetic progression 4, 13, 22, ...",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 355.0,
+  "titaTolerance": 0.01,
+  "difficulty": "hard",
+  "eloRating": 1400.0,
+  "solutionMarkdown": "The first term is $4$ and the common difference is $9$. The $n$th term is $a + (n-1)d = 4 + 39 \\times 9 = 355$.",
+  "altSolutionMarkdown": null,
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "ap-term"
+  ],
+  "mockReserved": false
+}

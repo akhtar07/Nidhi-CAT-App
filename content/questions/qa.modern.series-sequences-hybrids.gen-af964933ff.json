@@ -1,0 +1,33 @@
+{
+  "id": "qa.modern.series-sequences-hybrids.gen-af964933ff",
+  "microTopicIds": [
+    "qa.modern.series-sequences-hybrids"
+  ],
+  "section": "QA",
+  "format": "tita",
+  "stemMarkdown": "Find the sum to infinity of the geometric progression $12, \\dfrac{12}{4}, \\dfrac{12}{16}, \\ldots$ (Round to 4 decimal places.)",
+  "options": null,
+  "correctKey": null,
+  "correctValue": 16.0,
+  "titaTolerance": 0.001,
+  "difficulty": "medium",
+  "eloRating": 1200.0,
+  "solutionMarkdown": "The common ratio is $\\dfrac{1}{4}$, whose absolute value is below 1, so the series converges. Sum $= \\dfrac{a}{1 - r} = \\dfrac{12}{1 - 1/4} = 16.0$.",
+  "altSolutionMarkdown": "The formula only applies when the ratio is strictly between -1 and 1; otherwise the terms never die away.",
+  "targetSeconds": 100,
+  "source": "generated",
+  "sourceRef": null,
+  "verification": {
+    "method": "sympy_verified",
+    "verifiedAt": "2026-08-09T00:00:00Z",
+    "selfConsistencyAgreement": null,
+    "distractorAuditPassed": null,
+    "dedupChecked": null,
+    "reviewerNote": null
+  },
+  "tags": [
+    "modern:series",
+    "infinite-gp"
+  ],
+  "mockReserved": false
+}
