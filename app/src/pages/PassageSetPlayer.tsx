@@ -90,6 +90,25 @@ interface BarChartSeries {
   values: number[]
 }
 
+/** Every chart type needs the same swatch row, so it lives here rather than being copied per chart. */
+function ChartLegend({ names, suffixes }: { names: string[]; suffixes?: (string | undefined)[] }) {
+  if (names.length < 2) return null
+  return (
+    <div className="mt-2 flex flex-wrap gap-3 text-xs text-muted-foreground">
+      {names.map((name, i) => (
+        <span key={name} className="flex items-center gap-1">
+          <span
+            className="inline-block size-2.5 rounded-sm"
+            style={{ backgroundColor: BAR_COLORS[i % BAR_COLORS.length] }}
+          />
+          {name}
+          {suffixes?.[i] ? ` (${suffixes[i]})` : ''}
+        </span>
+      ))}
+    </div>
+  )
+}
+
 /** Renders from the underlying {categories, series} data, not an image — SPEC.md §5.1: "render
  * charts from data, not images, so they render responsively." Plain SVG, no charting library. */
 function BarChartAsset({ asset }: { asset: PassageAsset }) {
@@ -135,19 +154,7 @@ function BarChartAsset({ asset }: { asset: PassageAsset }) {
           </g>
         ))}
       </svg>
-      {series.length > 1 && (
-        <div className="mt-2 flex flex-wrap gap-3 text-xs text-muted-foreground">
-          {series.map((s, si) => (
-            <span key={s.name} className="flex items-center gap-1">
-              <span
-                className="inline-block size-2.5 rounded-sm"
-                style={{ backgroundColor: BAR_COLORS[si % BAR_COLORS.length] }}
-              />
-              {s.name}
-            </span>
-          ))}
-        </div>
-      )}
+      <ChartLegend names={series.map((s) => s.name)} />
       {unit && <p className="mt-1 text-xs text-muted-foreground">Values in {unit}</p>}
     </div>
   )
@@ -204,19 +211,7 @@ function LineChartAsset({ asset }: { asset: PassageAsset }) {
           </text>
         ))}
       </svg>
-      {series.length > 1 && (
-        <div className="mt-2 flex flex-wrap gap-3 text-xs text-muted-foreground">
-          {series.map((s, si) => (
-            <span key={s.name} className="flex items-center gap-1">
-              <span
-                className="inline-block size-2.5 rounded-sm"
-                style={{ backgroundColor: BAR_COLORS[si % BAR_COLORS.length] }}
-              />
-              {s.name}
-            </span>
-          ))}
-        </div>
-      )}
+      <ChartLegend names={series.map((s) => s.name)} />
       {unit && <p className="mt-1 text-xs text-muted-foreground">Values in {unit}</p>}
     </div>
   )
@@ -276,19 +271,7 @@ function StackedBarChartAsset({ asset }: { asset: PassageAsset }) {
           )
         })}
       </svg>
-      {series.length > 1 && (
-        <div className="mt-2 flex flex-wrap gap-3 text-xs text-muted-foreground">
-          {series.map((s, si) => (
-            <span key={s.name} className="flex items-center gap-1">
-              <span
-                className="inline-block size-2.5 rounded-sm"
-                style={{ backgroundColor: BAR_COLORS[si % BAR_COLORS.length] }}
-              />
-              {s.name}
-            </span>
-          ))}
-        </div>
-      )}
+      <ChartLegend names={series.map((s) => s.name)} />
       {unit && <p className="mt-1 text-xs text-muted-foreground">Values in {unit}</p>}
     </div>
   )
@@ -347,12 +330,432 @@ function PieChartAsset({ asset }: { asset: PassageAsset }) {
   )
 }
 
+/** Paints a background-coloured outline behind label text before the fill, so a value stays
+ * readable where it lands on a bar, a bubble or another series' label. Cheaper and more robust
+ * than trying to lay labels out so they never overlap. */
+const HALO: React.CSSProperties = {
+  paintOrder: 'stroke',
+  stroke: 'var(--color-card)',
+  strokeWidth: 3,
+  strokeLinejoin: 'round',
+}
+
+/** Rounds an axis maximum up to a readable gridline value (1/2/2.5/5 x a power of ten), so tick
+ * labels land on round numbers instead of on whatever the largest data point happens to be. */
+function niceCeil(value: number): number {
+  if (value <= 0) return 1
+  const magnitude = 10 ** Math.floor(Math.log10(value))
+  const normalised = value / magnitude
+  const step = normalised <= 1 ? 1 : normalised <= 2 ? 2 : normalised <= 2.5 ? 2.5 : normalised <= 5 ? 5 : 10
+  return step * magnitude
+}
+
+/** Radar (spider) chart: one spoke per axis, one closed polygon per series.
+ *
+ * Values are printed at each vertex for the same reason BarChartAsset prints them above its bars —
+ * a learner has to be able to read an exact figure off the chart, and interpolating between grid
+ * rings by eye would make any arithmetic question ambiguous. The rings are visual guides only. */
+function RadarChartAsset({ asset }: { asset: PassageAsset }) {
+  const axes = (asset.spec.axes as string[] | undefined) ?? []
+  const series = (asset.spec.series as BarChartSeries[] | undefined) ?? []
+  const unit = (asset.spec.unit as string | undefined) ?? ''
+  const scaleMax = (asset.spec.max as number | undefined) ?? niceCeil(Math.max(1, ...series.flatMap((s) => s.values)))
+
+  const radius = 92
+  const labelRadius = radius * 1.22
+  // Axis names sit outside the rim, anchored away from the centre, so the box has to be wide
+  // enough for the longest of them or a name like "Data Interpretation" is clipped by the
+  // viewBox. Estimated at ~6.2px per character at font-size 11 rather than measured, since
+  // measuring text would mean a layout pass and a re-render.
+  const sideMargin = Math.max(...axes.map((a) => a.length), 1) * 6.2
+  const cx = labelRadius + sideMargin
+  const cy = radius + 26
+  const width = 2 * cx
+  const height = 2 * cy
+  const rings = [0.25, 0.5, 0.75, 1]
+
+  const angleAt = (i: number) => -Math.PI / 2 + (i * 2 * Math.PI) / Math.max(1, axes.length)
+  const pointAt = (i: number, fraction: number) => ({
+    x: cx + radius * fraction * Math.cos(angleAt(i)),
+    y: cy + radius * fraction * Math.sin(angleAt(i)),
+  })
+  const polygon = (fraction: number) =>
+    axes
+      .map((_, i) => {
+        const p = pointAt(i, fraction)
+        return `${p.x.toFixed(1)},${p.y.toFixed(1)}`
+      })
+      .join(' ')
+
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border p-3">
+      <svg width={width} height={height} role="img" aria-label="Radar chart">
+        {rings.map((r) => (
+          <polygon
+            key={r}
+            points={polygon(r)}
+            fill="none"
+            stroke="var(--color-border)"
+            strokeWidth={1}
+          />
+        ))}
+        {axes.map((axis, i) => {
+          const end = pointAt(i, 1)
+          const label = pointAt(i, labelRadius / radius)
+          const cos = Math.cos(angleAt(i))
+          const anchor = Math.abs(cos) < 0.25 ? 'middle' : cos > 0 ? 'start' : 'end'
+          return (
+            <g key={axis}>
+              <line x1={cx} y1={cy} x2={end.x} y2={end.y} stroke="var(--color-border)" strokeWidth={1} />
+              <text x={label.x} y={label.y + 4} fontSize={11} textAnchor={anchor} className="fill-muted-foreground">
+                {axis}
+              </text>
+            </g>
+          )
+        })}
+        {series.map((s, si) => {
+          const color = BAR_COLORS[si % BAR_COLORS.length]
+          const points = axes.map((_, i) => pointAt(i, (s.values[i] ?? 0) / scaleMax))
+          return (
+            <g key={s.name}>
+              <polygon
+                points={points.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ')}
+                fill={color}
+                fillOpacity={0.12}
+                stroke={color}
+                strokeWidth={2}
+              />
+              {points.map((p, i) => {
+                // Two series that score similarly on one attribute put their vertices within a
+                // few pixels of each other, so a fixed label offset stacks "72" on top of "66"
+                // and neither is readable. Each series is nudged along the tangent instead, which
+                // separates the labels while keeping each one next to its own vertex.
+                const angle = angleAt(i)
+                const spread = (si - (series.length - 1) / 2) * 18
+                const lx = p.x + Math.cos(angle) * 11 - Math.sin(angle) * spread
+                const ly = p.y + Math.sin(angle) * 11 + Math.cos(angle) * spread
+                return (
+                  <g key={axes[i]}>
+                    <circle cx={p.x} cy={p.y} r={3} fill={color} />
+                    <text
+                      x={lx}
+                      y={ly + 3}
+                      fontSize={10}
+                      textAnchor="middle"
+                      className="fill-foreground"
+                      style={HALO}
+                    >
+                      {s.values[i]}
+                    </text>
+                  </g>
+                )
+              })}
+            </g>
+          )
+        })}
+      </svg>
+      <ChartLegend names={series.map((s) => s.name)} />
+      {unit && <p className="mt-1 text-xs text-muted-foreground">Values in {unit}</p>}
+    </div>
+  )
+}
+
+interface BubblePoint {
+  name: string
+  x: number
+  y: number
+  size: number
+}
+
+/** Bubble chart: two positional dimensions plus a third carried by bubble *area*.
+ *
+ * Area, not radius, is proportional to `size` — scaling the radius linearly would overstate a
+ * large bubble by squaring the difference, which is the classic way a bubble chart lies. The
+ * size value is printed inside each bubble so the third dimension is readable exactly. */
+function BubbleChartAsset({ asset }: { asset: PassageAsset }) {
+  const points = (asset.spec.points as BubblePoint[] | undefined) ?? []
+  const xLabel = (asset.spec.xLabel as string | undefined) ?? ''
+  const yLabel = (asset.spec.yLabel as string | undefined) ?? ''
+  const sizeLabel = (asset.spec.sizeLabel as string | undefined) ?? ''
+
+  const plotWidth = 360
+  const plotHeight = 220
+  const marginLeft = 52
+  const marginTop = 14
+  const marginBottom = 46
+  const marginRight = 18
+
+  const xMax = (asset.spec.xMax as number | undefined) ?? niceCeil(Math.max(1, ...points.map((p) => p.x)))
+  const yMax = (asset.spec.yMax as number | undefined) ?? niceCeil(Math.max(1, ...points.map((p) => p.y)))
+  const sizeMax = Math.max(1, ...points.map((p) => p.size))
+  // Gridline count is the generator's call: it picks divisions such that every plotted point
+  // lands exactly on a labelled gridline, so a value can be read off without interpolating.
+  const xDivisions = (asset.spec.xDivisions as number | undefined) ?? 4
+  const yDivisions = (asset.spec.yDivisions as number | undefined) ?? 4
+  const fractions = (n: number) => Array.from({ length: n + 1 }, (_, i) => i / n)
+  const xTicks = fractions(xDivisions)
+  const yTicks = fractions(yDivisions)
+
+  const px = (x: number) => marginLeft + (x / xMax) * plotWidth
+  const py = (y: number) => marginTop + plotHeight - (y / yMax) * plotHeight
+  const pr = (size: number) => 8 + 18 * Math.sqrt(size / sizeMax)
+
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border p-3">
+      <svg
+        width={marginLeft + plotWidth + marginRight}
+        height={marginTop + plotHeight + marginBottom}
+        role="img"
+        aria-label="Bubble chart"
+      >
+        {yTicks.map((t) => (
+          <g key={`y${t}`}>
+            <line
+              x1={marginLeft}
+              y1={py(t * yMax)}
+              x2={marginLeft + plotWidth}
+              y2={py(t * yMax)}
+              stroke="var(--color-border)"
+              strokeWidth={1}
+            />
+            <text x={marginLeft - 8} y={py(t * yMax) + 4} fontSize={10} textAnchor="end" className="fill-muted-foreground">
+              {Math.round(t * yMax * 100) / 100}
+            </text>
+          </g>
+        ))}
+        {xTicks.map((t) => (
+          <g key={`x${t}`}>
+            <line
+              x1={px(t * xMax)}
+              y1={marginTop}
+              x2={px(t * xMax)}
+              y2={marginTop + plotHeight}
+              stroke="var(--color-border)"
+              strokeWidth={1}
+            />
+            <text
+              x={px(t * xMax)}
+              y={marginTop + plotHeight + 16}
+              fontSize={10}
+              textAnchor="middle"
+              className="fill-muted-foreground"
+            >
+              {Math.round(t * xMax * 100) / 100}
+            </text>
+          </g>
+        ))}
+        {/* Circles first, then every label — otherwise a bubble drawn later paints over the
+            name of one drawn earlier, which is exactly what happens when two points sit close
+            together and the right-hand one is large. */}
+        {points.map((p, i) => {
+          const color = BAR_COLORS[i % BAR_COLORS.length]
+          return (
+            <circle
+              key={p.name}
+              cx={px(p.x)}
+              cy={py(p.y)}
+              r={pr(p.size)}
+              fill={color}
+              fillOpacity={0.35}
+              stroke={color}
+              strokeWidth={1.5}
+            />
+          )
+        })}
+        {points.map((p) => (
+          <g key={p.name}>
+            <text x={px(p.x)} y={py(p.y) + 4} fontSize={10} textAnchor="middle" className="fill-foreground" style={HALO}>
+              {p.size}
+            </text>
+            <text
+              x={px(p.x)}
+              y={py(p.y) - pr(p.size) - 4}
+              fontSize={10}
+              textAnchor="middle"
+              className="fill-muted-foreground"
+              style={HALO}
+            >
+              {p.name}
+            </text>
+          </g>
+        ))}
+        {xLabel && (
+          <text
+            x={marginLeft + plotWidth / 2}
+            y={marginTop + plotHeight + 38}
+            fontSize={11}
+            textAnchor="middle"
+            className="fill-muted-foreground"
+          >
+            {xLabel}
+          </text>
+        )}
+        {yLabel && (
+          <text
+            x={12}
+            y={marginTop + plotHeight / 2}
+            fontSize={11}
+            textAnchor="middle"
+            transform={`rotate(-90, 12, ${marginTop + plotHeight / 2})`}
+            className="fill-muted-foreground"
+          >
+            {yLabel}
+          </text>
+        )}
+      </svg>
+      {sizeLabel && (
+        <p className="mt-1 text-xs text-muted-foreground">Bubble area is proportional to {sizeLabel} (printed inside each bubble).</p>
+      )}
+    </div>
+  )
+}
+
+/** Combination chart: bars on the left axis, lines on the right axis.
+ *
+ * The whole point of this chart type in CAT is that the two axes carry *different units* — sales
+ * in crores against margin in percent — so a question can only be answered by reading each series
+ * against its own scale. Sharing one axis would quietly destroy that. */
+function ComboChartAsset({ asset }: { asset: PassageAsset }) {
+  const categories = (asset.spec.categories as string[] | undefined) ?? []
+  const bars = (asset.spec.bars as BarChartSeries[] | undefined) ?? []
+  const lines = (asset.spec.lines as BarChartSeries[] | undefined) ?? []
+  const leftUnit = (asset.spec.leftUnit as string | undefined) ?? ''
+  const rightUnit = (asset.spec.rightUnit as string | undefined) ?? ''
+
+  const chartHeight = 200
+  const groupWidth = 96
+  const marginLeft = 44
+  const marginRight = 44
+  // Enough headroom for a value label sitting above a point that reaches the top gridline.
+  const marginTop = 24
+  const plotWidth = Math.max(1, categories.length) * groupWidth
+
+  const leftMax = niceCeil(Math.max(1, ...bars.flatMap((s) => s.values)))
+  const rightMax = niceCeil(Math.max(1, ...lines.flatMap((s) => s.values)))
+  // Both axes share gridlines, so the division count has to give round steps on *both*. Four
+  // divisions of a right-axis max of 25 reads 6.25 / 12.5 / 18.75, which is unreadable on a
+  // percentage axis; five gives 5 / 10 / 15 / 20. Falls back to 4 if nothing divides cleanly.
+  const divisions =
+    [4, 5, 6].find((d) => Number.isInteger((leftMax / d) * 2) && Number.isInteger((rightMax / d) * 2)) ?? 4
+  const ticks = Array.from({ length: divisions + 1 }, (_, i) => i / divisions)
+
+  const barGap = 6
+  const barWidth = bars.length > 0 ? (groupWidth - barGap * (bars.length + 1)) / bars.length : 0
+  const yLeft = (v: number) => marginTop + chartHeight - (v / leftMax) * chartHeight
+  const yRight = (v: number) => marginTop + chartHeight - (v / rightMax) * chartHeight
+  const xCentre = (ci: number) => marginLeft + ci * groupWidth + groupWidth / 2
+
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border p-3">
+      <svg
+        width={marginLeft + plotWidth + marginRight}
+        height={marginTop + chartHeight + 40}
+        role="img"
+        aria-label="Combination bar and line chart"
+      >
+        {ticks.map((t) => (
+          <g key={t}>
+            <line
+              x1={marginLeft}
+              y1={yLeft(t * leftMax)}
+              x2={marginLeft + plotWidth}
+              y2={yLeft(t * leftMax)}
+              stroke="var(--color-border)"
+              strokeWidth={1}
+            />
+            <text x={marginLeft - 6} y={yLeft(t * leftMax) + 4} fontSize={10} textAnchor="end" className="fill-muted-foreground">
+              {Math.round(t * leftMax * 100) / 100}
+            </text>
+            <text
+              x={marginLeft + plotWidth + 6}
+              y={yRight(t * rightMax) + 4}
+              fontSize={10}
+              textAnchor="start"
+              className="fill-muted-foreground"
+            >
+              {Math.round(t * rightMax * 100) / 100}
+            </text>
+          </g>
+        ))}
+        {categories.map((cat, ci) => (
+          <g key={cat}>
+            {bars.map((s, si) => {
+              const value = s.values[ci] ?? 0
+              const x = marginLeft + ci * groupWidth + barGap + si * (barWidth + barGap)
+              const y = yLeft(value)
+              return (
+                <g key={s.name}>
+                  <rect x={x} y={y} width={barWidth} height={marginTop + chartHeight - y} fill={BAR_COLORS[si % BAR_COLORS.length]} />
+                  <text x={x + barWidth / 2} y={y - 4} fontSize={10} textAnchor="middle" className="fill-foreground" style={HALO}>
+                    {value}
+                  </text>
+                </g>
+              )
+            })}
+            <text
+              x={xCentre(ci)}
+              y={marginTop + chartHeight + 16}
+              fontSize={11}
+              textAnchor="middle"
+              className="fill-muted-foreground"
+            >
+              {cat}
+            </text>
+          </g>
+        ))}
+        {lines.map((s, li) => {
+          const color = BAR_COLORS[(bars.length + li) % BAR_COLORS.length]
+          const pts = categories.map((_, ci) => ({ x: xCentre(ci), y: yRight(s.values[ci] ?? 0) }))
+          return (
+            <g key={s.name}>
+              <polyline points={pts.map((p) => `${p.x},${p.y}`).join(' ')} fill="none" stroke={color} strokeWidth={2} />
+              {pts.map((p, ci) => {
+                // Above the point normally, but below it when the point sits lower than the
+                // tallest bar in that category — otherwise the line's value lands on top of the
+                // bar's value, which is where the two labels would collide.
+                const tallestBarTop = yLeft(Math.max(0, ...bars.map((b) => b.values[ci] ?? 0)))
+                const below = p.y > tallestBarTop
+                return (
+                  <g key={ci}>
+                    <circle cx={p.x} cy={p.y} r={3.5} fill={color} />
+                    <text
+                      x={p.x}
+                      y={below ? p.y + 15 : p.y - 8}
+                      fontSize={10}
+                      textAnchor="middle"
+                      className="fill-foreground"
+                      style={HALO}
+                    >
+                      {s.values[ci]}
+                    </text>
+                  </g>
+                )
+              })}
+            </g>
+          )
+        })}
+      </svg>
+      <ChartLegend
+        names={[...bars.map((s) => s.name), ...lines.map((s) => s.name)]}
+        suffixes={[...bars.map(() => leftUnit), ...lines.map(() => rightUnit)]}
+      />
+      <p className="mt-1 text-xs text-muted-foreground">
+        Bars read against the left axis{leftUnit ? ` (${leftUnit})` : ''}; the line reads against the right axis
+        {rightUnit ? ` (${rightUnit})` : ''}.
+      </p>
+    </div>
+  )
+}
+
 function SetAsset({ asset }: { asset: PassageAsset }) {
   if (asset.type === 'table') return <TableAsset asset={asset} />
   if (asset.type === 'chart' && asset.spec.chartKind === 'bar') return <BarChartAsset asset={asset} />
   if (asset.type === 'chart' && asset.spec.chartKind === 'line') return <LineChartAsset asset={asset} />
   if (asset.type === 'chart' && asset.spec.chartKind === 'pie') return <PieChartAsset asset={asset} />
   if (asset.type === 'chart' && asset.spec.chartKind === 'stacked-bar') return <StackedBarChartAsset asset={asset} />
+  if (asset.type === 'chart' && asset.spec.chartKind === 'radar') return <RadarChartAsset asset={asset} />
+  if (asset.type === 'chart' && asset.spec.chartKind === 'bubble') return <BubbleChartAsset asset={asset} />
+  if (asset.type === 'chart' && asset.spec.chartKind === 'combo') return <ComboChartAsset asset={asset} />
   return (
     <p className="text-sm text-muted-foreground">
       [chart rendering not yet implemented for this chart type]
