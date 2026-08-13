@@ -1846,3 +1846,127 @@ it independently before the item is kept.
   run review_ui/app.py` from `/pipeline` to do that pass; nothing in the
   bank is blocked on it, but it's the "step everyone skips" §6.2 warns
   about.
+
+---
+
+## Session: reset controls, ntfy reminders, design pass, lesson depth
+
+Four things were asked for: the aesthetic was still poor, progress needed to
+be resettable (all of it, and per topic), lessons were far too shallow, and
+reminders should reach a phone via ntfy.
+
+### Reset progress (new)
+
+- `StorageAdapter.resetMicroTopic(id)` clears one topic's attempts, mastery
+  record, SRS cards, bookmarks, and the item-Elo rows for questions left with
+  no attempt. It deliberately does **not** touch plan days or mock results:
+  those record what happened on a given day, not what she currently knows, and
+  silently rewriting them would make the calendar and score history lie.
+- Item Elo is only dropped once a question has no surviving attempt, so
+  resetting one topic cannot reset a set-mate topic's calibration. Covered by
+  a test using a question carrying two micro-topic ids.
+- **Bug found while building this:** `clearAll()` cleared IndexedDB only. With
+  Supabase configured, the pending sync outbox still held upserts of the data
+  just deleted, so the next flush would have written all of it back. Full
+  reset now drops the outbox, deletes remote rows, then clears local — in that
+  order — and reports whether the remote step actually happened rather than
+  implying a wipe that never reached the server.
+- Both surfaced in Settings, with the guard scaled to the blast radius: one
+  topic takes a second click, everything takes the typed word RESET.
+- Supabase migration `0003_ntfy_settings.sql` adds the two jsonb columns the
+  new settings need.
+
+### Phone reminders via ntfy (new)
+
+SPEC.md §11's Phase 1 notification can only fire while the app is open, and
+Phase 2's backend only sends email — so nothing reached a closed phone.
+
+- `notify/ntfy.ts` publishes to a learner-supplied ntfy topic. No API key is
+  involved: ntfy topics are unauthenticated, the topic is entered at runtime
+  and stored in learner state, and nothing is baked into the bundle. Because
+  the topic name *is* the password, Settings generates a random one and says
+  so plainly.
+- The daily reminder is scheduled ahead using ntfy's `delay`, and **cancelled
+  by sequence id the moment the day's plan is finished**, so it cannot arrive
+  after she is already done. Nothing is sent at all once the chosen time has
+  passed — a late nudge is the "compliance report" §11 forbids.
+- `notify/nudgePlan.ts` is pure and holds every decision; 12 tests cover the
+  cancel-on-completion path, the once-per-topic announcement, the
+  don't-re-publish-unchanged case and the past-the-time silence.
+- Verified against ntfy.sh directly, not just against the docs: CORS preflight
+  (`access-control-allow-origin: *`, POST/DELETE allowed), JSON publish with
+  tags/click/priority, scheduled publish with `delay` + `sequence_id`, and
+  DELETE cancellation returning 200.
+
+### Design pass
+
+- New primitives: `Card`, `PageHeader`/`BackLink`, `StatusChip`, `Meter`.
+  Pages had been hand-rolling one-off containers with different padding and
+  radius each time.
+- Dark surfaces re-stepped (background 0.16 → 0.145, card 0.20 → 0.22). At the
+  old 0.04 lightness gap the app read as one flat sheet with hairlines on it,
+  which was most of why it looked unfinished.
+- SPEC.md §13's reading font finally applied to lessons: 18px / 1.7 serif from
+  a device-font stack (Charter → Source Serif → Literata → Georgia), so no
+  webfont download and nothing added to the offline cache.
+- **Today** was the worst screen. QA alone rendered 44 open rows above the
+  fold, every one labelled "Lesson included" — the same eleven characters 86
+  times. Sections are now collapsed with a per-section progress meter, and
+  each topic row shows its real status and accuracy. Page height dropped from
+  ~9,700px to ~4,400px.
+- Shortcuts now reach the practice builder, formula hub and search, which had
+  been merged but had **no entry point anywhere in the UI**.
+- Lesson rebuilt for long lessons: contents strip derived from the lesson's
+  own headings, solutions collapsed by default (SPEC.md §13 — and a worked
+  example whose answer is already on screen is one nobody attempts), pinned
+  practice CTA.
+- Redundant "Back" links dropped from every page that owns a nav tab.
+
+### Lesson depth
+
+The complaint was that lessons did not teach enough to solve the questions.
+Measured, that was right: median 158 words, typically a definition and one
+example, against topics whose banks span six or seven distinct archetypes.
+
+- `LessonSpec` gains `methods` — one `Method` per archetype the topic's
+  questions actually come in, each with how to **recognise** it (choosing the
+  method is the hard part in a timed paper), the steps, and a worked instance.
+  Plus `prereq` and a closing `checklist`.
+- Archetypes were taken from `qagen/templates/*` and the tags on
+  `content/questions/*.json`, so coverage tracks the real bank.
+- The markdown tokenizer gained ordered/unordered lists, which procedural
+  steps need. All-or-nothing per block, so a paragraph like "the ratio came to
+  1. 5 times the original" stays a paragraph. 5 tests.
+- **Nine lessons had JSON on disk but were declared nowhere in the package** —
+  unbuildable and unchecked. All nine are now declared, so every QA lesson in
+  /content is reproducible from source.
+- Result: **QA lessons median 433 words across 45 topics** (from ~150), with
+  101 methods, and the longest at 1,144 words.
+- **Every numeric claim was re-derived independently** (fractions, `comb`,
+  Legendre counts, brute-forced solution sets) rather than re-read. That caught
+  three real errors in text written this session: a linear-equations example
+  that trailed off mid-solution, an integer-solutions example claiming `y` must
+  be a multiple of 3 for `3x + 5y = 100` (false — `y = 3` gives `3x = 85`), and
+  an unanswered non-negative variant. 239 claims verified in total.
+
+### Verified
+
+CI green throughout: typecheck, 276 tests (+17), content validation (86
+lessons, 1,428 questions). Live in Chromium with zero console errors: the
+per-topic reset was exercised through the UI and confirmed against IndexedDB
+(6 attempts → 2, only the target topic's four removed, mastery row cleared).
+
+### Not done — do not read this section as complete
+
+- **DILR lessons (median 150 words) and VARC lessons (median 219 words) have
+  not had the `methods` treatment.** Only QA does. This is the largest
+  outstanding piece of the "teach every topic properly" request.
+- Two lessons are still undeclared: `varc.rc.main-idea`,
+  `varc.va.para-jumbles`.
+- 9 topics still have zero questions: 6 VARC RC types (need real open-licence
+  passages), 3 DILR chart types (need radar/bubble/combination SVG renderers).
+- `pipeline/qagen/templates/series.py` is written but still not wired into the
+  templates registry or run.
+- The QA LLM batch (~649 items) is still blocked on the GPU.
+- ntfy delivery was verified against the server with curl; it has not been
+  confirmed arriving on a real handset, which only the phone's owner can do.
