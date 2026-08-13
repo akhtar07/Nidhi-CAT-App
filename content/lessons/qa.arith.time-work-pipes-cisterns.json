@@ -1,40 +1,63 @@
 {
-  "id": "lesson.qa.arith.time-work-pipes-cisterns",
+  "id": "qa.arith.time-work-pipes-cisterns",
   "microTopicId": "qa.arith.time-work-pipes-cisterns",
-  "bodyMarkdown": "## Time & Work: Pipes & Cisterns\n\nTreat this exactly like Time & Work, with one twist: an **outlet** pipe (a leak, or a pipe that\nempties the tank) has a **negative** rate.\n\n$$\\text{Rate} = \\frac{1}{\\text{time to complete alone}} \\qquad \\text{Combined rate} = \\sum \\text{individual rates}$$\n\n$$\\text{Time} = \\frac{1}{\\text{combined rate}}$$\n\nInlet pipes: positive rate (they fill). Outlet pipes/leaks: negative rate (they empty). Never\naverage two times directly \u2014 always combine through rates.",
+  "bodyMarkdown": "## Before you start\n\nFractions, and ideally the time-and-work idea that work done is rate times time.\n\n## The idea in plain language\n\nA pipe filling a tank is exactly the same problem as a person doing a job, wearing different clothes. The tank is the job; the pipe is the worker.\n\nThe trick that makes all of these easy is to stop thinking about **how long** and start thinking about **how much per hour**. A pipe that fills a tank in 6 hours fills $\\dfrac{1}{6}$ of it each hour. That fraction is the pipe's rate, and rates are wonderful because they simply add up: two taps running together fill at the sum of their rates.\n\nTimes do not add. If one pipe takes 6 hours and another 3, together they do not take 9 hours, or 4.5 \u2014 they take 2, which is faster than either alone, as it must be. Rates add; times do not. Almost every mistake in this topic is a time being added where a rate should have been.\n\nA drain pipe is a worker doing the job backwards. Give it a negative rate and every formula keeps working unchanged.\n\n## What is actually going on\n\nThe method never varies:\n\nConvert every pipe to a rate \u2014 a pipe that fills in $t$ hours has rate $\\dfrac{1}{t}$ tanks per hour. Add the rates of everything that is open, subtracting for anything that empties. Then invert the combined rate to get the time.\n\n$$\\text{time together} = \\frac{1}{\\text{sum of rates}}$$\n\nThere is a shortcut worth having for the common two-pipe case: if the pipes take $a$ and $b$ hours, together they take $\\dfrac{ab}{a + b}$ hours. It is just the rate method with the algebra already done.\n\nWhen the numbers are ugly, use the **LCM trick** instead of fractions. Take the capacity of the tank to be the LCM of the given times \u2014 say pipes of 12 and 18 hours, so let the tank hold 36 litres. Then the first pipe does 3 litres an hour and the second 2, together 5, so the tank fills in $\\dfrac{36}{5} = 7.2$ hours. Whole numbers throughout, and no fraction arithmetic at all.\n\n## Every question type you will meet\n\nEach of these is a shape a question in this topic actually comes in. Learn to recognise the shape first \u2014 in a timed paper, picking the right method is most of the battle, and the arithmetic is the easy part.\n\n### 1. Two pipes filling together\n\n**Spot it when:** two taps, both filling, opened at the same time.\n\n1. Write each rate as $\\dfrac{1}{t}$.\n2. Add them.\n3. Invert the sum \u2014 or go straight to $\\dfrac{ab}{a+b}$.\n\n**Worked through:** Pipes of 12 and 15 hours: $\\dfrac{12 \\times 15}{27} = \\dfrac{180}{27} = 6\\tfrac{2}{3}$ hours.\n\n### 2. A filling pipe with a leak or outlet\n\n**Spot it when:** one pipe fills while another empties, or a tank has a leak.\n\n1. Give the emptying pipe a negative rate.\n2. Add the rates as usual; the result is the net filling rate.\n3. If the net rate is negative or zero, the tank never fills \u2014 a legitimate answer that some questions are testing for.\n\n**Worked through:** Fills in 10 hours, leaks empty in 15: net rate is $\\dfrac{1}{10} - \\dfrac{1}{15} = \\dfrac{1}{30}$, so 30 hours.\n\n### 3. Three or more pipes\n\n**Spot it when:** three taps, some filling and some emptying, all open together.\n\n1. Use the LCM trick \u2014 take the tank's capacity as the LCM of the times so every rate is a whole number.\n2. Add and subtract the whole-number rates.\n3. Divide the capacity by the net rate.\n\n**Worked through:** Pipes of 6, 8 filling and 12 emptying: take 24 litres, giving rates of 4, 3 and $-2$, net 5, so $\\dfrac{24}{5} = 4.8$ hours.\n\n### 4. Finding one pipe's time from the combined time\n\n**Spot it when:** the combined time is given along with one pipe's, asking for the other's.\n\n1. Write combined rate $=$ rate of the first $+$ rate of the second.\n2. Subtract the known rate from the combined rate.\n3. Invert what is left.\n\n**Worked through:** Together 4 hours, one alone 6: the other's rate is $\\dfrac{1}{4} - \\dfrac{1}{6} = \\dfrac{1}{12}$, so 12 hours.\n\n### 5. Pipes opened at different times\n\n**Spot it when:** one pipe runs for a while before another is opened, or one is closed partway.\n\n1. Work out the fraction of the tank filled during the first stage: rate $\\times$ time.\n2. Subtract that from 1 to get what remains.\n3. Divide the remainder by the rate that applies during the second stage.\n\n**Worked through:** A 1/10-per-hour pipe running 4 hours alone fills $\\dfrac{4}{10}$; the remaining $\\dfrac{6}{10}$ at a combined rate of $\\dfrac{1}{6}$ takes $\\dfrac{6}{10} \\times 6 = 3.6$ more hours.\n\n## Check yourself\n\nYou are ready to start practising this topic when you can:\n\n- Turn any 'fills in $t$ hours' into a rate without pausing.\n- Combine any number of filling and emptying pipes into one net rate.\n- Use the LCM trick to avoid fraction arithmetic entirely.\n- Handle a pipe that is opened late or closed early, in two stages.\n- Recognise when a tank will never fill, and say so.",
   "workedExamples": [
     {
-      "id": "qa.arith.time-work-pipes-cisterns.we-01",
-      "stemMarkdown": "Pipe A can fill a tank in 6 hours, pipe B in 8 hours. If both pipes are opened together, how long will it take to fill the tank?",
-      "solutionMarkdown": "Rate of A $= \\dfrac{1}{6}$, rate of B $= \\dfrac{1}{8}$. Combined rate $= \\dfrac{1}{6} + \\dfrac{1}{8} = \\dfrac{4}{24} + \\dfrac{3}{24} = \\dfrac{7}{24}$. Time $= \\dfrac{24}{7} \\approx 3.43$ hours.",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.time-work-pipes-cisterns.ex1",
+      "stemMarkdown": "Pipe A fills a tank in 20 hours and pipe B in 30 hours. How long do they take together?",
+      "solutionMarkdown": "Convert to rates per hour.\n\nA fills $\\dfrac{1}{20}$ of the tank each hour, B fills $\\dfrac{1}{30}$.\n\nTogether: $\\dfrac{1}{20} + \\dfrac{1}{30} = \\dfrac{3 + 2}{60} = \\dfrac{5}{60} = \\dfrac{1}{12}$.\n\nA rate of $\\dfrac{1}{12}$ tank per hour means the tank fills in **12 hours**.",
+      "altSolutionMarkdown": "By the LCM trick: let the tank hold 60 litres. Then A does 3 litres an hour and B does 2, so together 5 litres an hour, and $\\dfrac{60}{5} = 12$ hours. No fractions anywhere."
     },
     {
-      "id": "qa.arith.time-work-pipes-cisterns.we-02",
-      "stemMarkdown": "Pipe A fills a tank in 5 hours. Pipe B can empty the full tank in 10 hours. If both are opened together, how long will it take to fill the tank?",
-      "solutionMarkdown": "Rate of A (inlet) $= \\dfrac{1}{5}$. Rate of B (outlet) $= -\\dfrac{1}{10}$. Combined rate $= \\dfrac{1}{5} - \\dfrac{1}{10} = \\dfrac{2}{10} - \\dfrac{1}{10} = \\dfrac{1}{10}$. Time $= 10$ hours.",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.time-work-pipes-cisterns.ex2",
+      "stemMarkdown": "A tank is filled by a pipe in 12 hours, but a leak at the bottom empties a full tank in 20 hours. With both operating, how long does the tank take to fill?",
+      "solutionMarkdown": "The leak works against the pipe, so it gets a negative rate.\n\nFilling rate: $\\dfrac{1}{12}$. Leaking rate: $-\\dfrac{1}{20}$.\n\nNet rate: $\\dfrac{1}{12} - \\dfrac{1}{20} = \\dfrac{5 - 3}{60} = \\dfrac{2}{60} = \\dfrac{1}{30}$.\n\nSo the tank fills in **30 hours**.",
+      "altSolutionMarkdown": "Sanity check the direction: with a leak the answer must be **longer** than 12 hours. If your arithmetic ever produces a time shorter than the filling pipe alone, you have added the leak instead of subtracting it."
     },
     {
-      "id": "qa.arith.time-work-pipes-cisterns.we-03",
-      "stemMarkdown": "Pipes A and B can fill a tank in 12 and 15 hours respectively. Both are opened together, but after 4 hours pipe A is closed. How much longer will pipe B alone take to fill the remaining tank?",
-      "solutionMarkdown": "Combined rate $= \\dfrac{1}{12} + \\dfrac{1}{15} = \\dfrac{5}{60} + \\dfrac{4}{60} = \\dfrac{9}{60} = \\dfrac{3}{20}$. In 4 hours: $4 \\times \\dfrac{3}{20} = \\dfrac{3}{5}$ of the tank is filled, leaving $\\dfrac{2}{5}$. B alone fills at $\\dfrac{1}{15}$ per hour, so time $= \\dfrac{2/5}{1/15} = \\dfrac{2}{5} \\times 15 = 6$ hours.",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.time-work-pipes-cisterns.ex3",
+      "stemMarkdown": "Two pipes fill a tank in 15 and 20 hours. Both are opened together, but the first is closed after 5 hours. How much longer does the second take to fill the tank?",
+      "solutionMarkdown": "Stage one: both pipes for 5 hours.\n\nCombined rate $= \\dfrac{1}{15} + \\dfrac{1}{20} = \\dfrac{4 + 3}{60} = \\dfrac{7}{60}$.\n\nIn 5 hours they fill $5 \\times \\dfrac{7}{60} = \\dfrac{35}{60} = \\dfrac{7}{12}$ of the tank.\n\nStage two: $1 - \\dfrac{7}{12} = \\dfrac{5}{12}$ remains, and only the second pipe is running at $\\dfrac{1}{20}$ per hour.\n\nTime $= \\dfrac{5}{12} \\div \\dfrac{1}{20} = \\dfrac{5}{12} \\times 20 = \\dfrac{100}{12} = 8\\tfrac{1}{3}$ hours.\n\nThe second pipe needs **$8\\tfrac{1}{3}$ hours** more.",
+      "altSolutionMarkdown": "Two-stage questions all have this shape: fill some, find what is left, divide the remainder by the new rate. Write down the fraction filled at the end of each stage and the problem cannot get away from you."
     }
   ],
   "formulaCards": [
     {
-      "id": "qa.arith.time-work-pipes-cisterns.fc-combined-rate",
+      "id": "qa.arith.time-work-pipes-cisterns.fc1",
       "microTopicId": "qa.arith.time-work-pipes-cisterns",
-      "title": "Combined rate",
-      "bodyMarkdown": "$$\\text{Combined rate} = \\sum \\text{individual rates}, \\quad \\text{Time} = \\frac{1}{\\text{combined rate}}$$ Outlet/leak rates are negative.",
-      "exampleMarkdown": "Fill in 4h, leak empties in 12h: combined = 1/4 - 1/12 = 1/6 \u2192 fills in 6h."
+      "title": "Rate of a pipe",
+      "bodyMarkdown": "A pipe that fills in $t$ hours has rate $\\dfrac{1}{t}$ tanks per hour. An emptying pipe's rate is negative.",
+      "exampleMarkdown": "A 6-hour pipe fills $\\dfrac{1}{6}$ of the tank each hour."
+    },
+    {
+      "id": "qa.arith.time-work-pipes-cisterns.fc2",
+      "microTopicId": "qa.arith.time-work-pipes-cisterns",
+      "title": "Pipes together",
+      "bodyMarkdown": "$\\dfrac{1}{T} = \\dfrac{1}{a} + \\dfrac{1}{b}$, so $T = \\dfrac{ab}{a + b}$.",
+      "exampleMarkdown": "Pipes of 4 and 6 hours together take $\\dfrac{24}{10} = 2.4$ hours."
+    },
+    {
+      "id": "qa.arith.time-work-pipes-cisterns.fc3",
+      "microTopicId": "qa.arith.time-work-pipes-cisterns",
+      "title": "Fill against a leak",
+      "bodyMarkdown": "$\\dfrac{1}{T} = \\dfrac{1}{a} - \\dfrac{1}{b}$, where $b$ is the emptying time. If $b \\le a$ the tank never fills.",
+      "exampleMarkdown": "Fill 12, leak 20 gives $\\dfrac{1}{30}$, so 30 hours."
+    },
+    {
+      "id": "qa.arith.time-work-pipes-cisterns.fc4",
+      "microTopicId": "qa.arith.time-work-pipes-cisterns",
+      "title": "The LCM trick",
+      "bodyMarkdown": "Set the tank's capacity to the LCM of all the given times; every rate becomes a whole number.",
+      "exampleMarkdown": "Times of 6 and 8: take 24 units, so rates are 4 and 3 units per hour."
     }
   ],
   "commonTraps": [
-    "An outlet pipe's rate is subtracted, never added.",
-    "Never average two fill times directly (e.g. (6+8)/2) \u2014 you must combine through rates.",
-    "When a pipe is closed partway through, compute work done so far, then solve the remaining fraction with only the pipe(s) still open."
+    "Adding times instead of rates. Two pipes together are always faster than either alone.",
+    "Adding a leak's rate rather than subtracting it. Check that your answer is slower than the filling pipe alone.",
+    "In a two-stage question, applying the second stage's rate to the whole tank instead of the remainder.",
+    "Missing that a question with a large leak has no answer \u2014 the tank genuinely never fills.",
+    "Mixing units: a pipe given in minutes and another in hours must be converted before the rates are added."
   ],
-  "estReadMinutes": 6
+  "estReadMinutes": 11
 }

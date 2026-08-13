@@ -1,47 +1,63 @@
 {
-  "id": "lesson.qa.arith.ratio-proportion-variation",
+  "id": "qa.arith.ratio-proportion-variation",
   "microTopicId": "qa.arith.ratio-proportion-variation",
-  "bodyMarkdown": "## Ratio, Proportion & Variation\n\nA ratio $a:b$ is just the fraction $\\dfrac{a}{b}$. A proportion $a:b :: c:d$ means\n$\\dfrac{a}{b} = \\dfrac{c}{d}$, i.e. $ad = bc$ (cross-multiplication).\n\n### Dividing a quantity in a given ratio\n\nIf a total $T$ is split in the ratio $p:q:r$, each share is\n$\\dfrac{p}{p+q+r} \\times T$, $\\dfrac{q}{p+q+r} \\times T$, $\\dfrac{r}{p+q+r} \\times T$ \u2014 the total\nnumber of \"parts\" is the **sum** of the ratio terms, not the number of people/groups.\n\n### Combining two ratios\n\nTo combine $a:b$ and $b:c$ into $a:b:c$, scale both so the common term ($b$) matches \u2014 usually\nvia the LCM of the two $b$ values.\n\n### Variation\n\n- **Direct**: $y \\propto x \\implies y = kx$ (y grows as x grows).\n- **Inverse**: $y \\propto \\dfrac{1}{x} \\implies y = \\dfrac{k}{x}$ (y shrinks as x grows).\n- **Joint**: $y \\propto \\dfrac{x}{z} \\implies y = \\dfrac{kx}{z}$.",
+  "bodyMarkdown": "## Before you start\n\nFractions, and the idea that a fraction can be scaled up or down without changing its value.\n\n## The idea in plain language\n\nA ratio is a recipe. 'Two parts water to three parts squash' does not tell you how much drink you are making \u2014 it tells you the **shape** of the mixture. You can make a glass or a bathtub of it; as long as you keep two parts to three, it tastes the same.\n\nThat is why every ratio question starts the same way: give the parts a size. If the ratio is $2 : 3$, call the amounts $2k$ and $3k$. The $k$ is the size of one part, and it is almost always what the question is secretly asking you to find.\n\nOnce you have $k$, everything else falls out in one line. Students who struggle with this topic are usually the ones trying to work with $2$ and $3$ directly instead of $2k$ and $3k$.\n\n## What is actually going on\n\n**Direct variation** means two quantities move together: double one, double the other. Their ratio stays fixed, so $\\dfrac{a}{b}$ is constant. More petrol, more distance.\n\n**Inverse variation** means they move oppositely: double one, halve the other. Their **product** stays fixed, so $ab$ is constant. More workers, fewer days.\n\nKnowing which of the two you are looking at is the entire difficulty in most questions, and there is a reliable test: ask what happens if you double the first quantity. If the second doubles, it is direct and you keep the ratio fixed. If the second halves, it is inverse and you keep the product fixed.\n\n**Compounding ratios** happens when ratios chain: if $A : B = 2 : 3$ and $B : C = 4 : 5$, they cannot be joined directly because B is 3 in one and 4 in the other. Scale both so B matches \u2014 multiply the first by 4 and the second by 3, giving $A : B = 8 : 12$ and $B : C = 12 : 15$, so $A : B : C = 8 : 12 : 15$.\n\n## Every question type you will meet\n\nEach of these is a shape a question in this topic actually comes in. Learn to recognise the shape first \u2014 in a timed paper, picking the right method is most of the battle, and the arithmetic is the easy part.\n\n### 1. Dividing an amount in a given ratio\n\n**Spot it when:** a total is to be shared among two or more people in a stated ratio.\n\n1. Add the ratio terms to get the total number of parts.\n2. Divide the amount by the total parts to find the value of one part, $k$.\n3. Multiply $k$ by each term to get each share.\n\n**Worked through:** Rs. 3600 in $2 : 3 : 4$ has 9 parts, so $k = 400$ and the shares are 800, 1200 and 1600.\n\n### 2. Ages in a ratio, now and later\n\n**Spot it when:** two ages in a ratio now, and a different ratio some years earlier or later.\n\n1. Write the present ages as $ak$ and $bk$.\n2. Add or subtract the number of years from **both** ages.\n3. Set the new expressions equal to the second ratio and solve for $k$.\n\n**Worked through:** If ages are $3k$ and $5k$ and in 4 years the ratio is $5 : 7$, then $7(3k + 4) = 5(5k + 4)$, giving $21k + 28 = 25k + 20$, so $k = 2$ and the ages are 6 and 10.\n\n### 3. Compounding two ratios with a common term\n\n**Spot it when:** $A : B$ and $B : C$ given separately, asking for $A : B : C$.\n\n1. Look at the two values of the shared term.\n2. Multiply the first ratio through by the second's value of the shared term, and the second ratio by the first's.\n3. The shared term now matches, so the three-part ratio can be read off.\n\n**Worked through:** $A : B = 3 : 4$ and $B : C = 6 : 7$ scale to $18 : 24$ and $24 : 28$, so $A : B : C = 18 : 24 : 28$, which reduces to $9 : 12 : 14$.\n\n### 4. Inverse variation\n\n**Spot it when:** more of one thing means less of another \u2014 workers and time, speed and duration, pipes and filling time.\n\n1. Write $x_1 y_1 = x_2 y_2$, because the product is what stays constant.\n2. Substitute the three known values and solve for the fourth.\n\n**Worked through:** If 12 workers take 8 days, then 16 workers take $\\dfrac{12 \\times 8}{16} = 6$ days.\n\n### 5. Adding the same amount to both terms\n\n**Spot it when:** a ratio that changes when an identical quantity is added to or removed from both parts.\n\n1. Write the original amounts as $ak$ and $bk$.\n2. Add the same number $n$ to each, then set the result equal to the new ratio.\n3. Cross-multiply and solve. Note the ratio always moves **towards** $1 : 1$ when you add to both.\n\n**Worked through:** $\\dfrac{2k + 6}{5k + 6} = \\dfrac{1}{2}$ gives $4k + 12 = 5k + 6$, so $k = 6$ and the original amounts are 12 and 30.\n\n## Check yourself\n\nYou are ready to start practising this topic when you can:\n\n- Convert any ratio into $ak$, $bk$ form as a reflex.\n- Split a total in a ratio, and find a difference directly in parts.\n- Decide whether a situation is direct or inverse variation, and justify it.\n- Compound two ratios that share a term.\n- Set up and solve an ages question with a past or future ratio.",
   "workedExamples": [
     {
-      "id": "qa.arith.ratio-proportion-variation.we-01",
-      "stemMarkdown": "Divide Rs. 1400 among A, B, and C in the ratio 2:3:5.",
-      "solutionMarkdown": "Total parts $= 2+3+5 = 10$. $A = \\dfrac{2}{10}\\times 1400 = 280$, $B = \\dfrac{3}{10}\\times 1400 = 420$, $C = \\dfrac{5}{10}\\times 1400 = 700$. Check: $280+420+700 = 1400$. \u2713",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.ratio-proportion-variation.ex1",
+      "stemMarkdown": "Rs. 6300 is divided among A, B and C in the ratio 3 : 4 : 7. How much more does C get than A?",
+      "solutionMarkdown": "Total parts $= 3 + 4 + 7 = 14$.\n\nOne part $k = \\dfrac{6300}{14} = 450$.\n\nC gets $7 \\times 450 = 3150$ and A gets $3 \\times 450 = 1350$.\n\nThe difference is $3150 - 1350 = 1800$, so C gets **Rs. 1800** more.",
+      "altSolutionMarkdown": "Faster: the difference is $7 - 3 = 4$ parts, so it is $4 \\times 450 = 1800$ without computing either share. When a question asks for a difference, work in parts and skip straight to it."
     },
     {
-      "id": "qa.arith.ratio-proportion-variation.we-02",
-      "stemMarkdown": "If a:b = 2:3 and b:c = 4:5, find a:b:c.",
-      "solutionMarkdown": "Make the common term ($b$) equal: LCM(3, 4) = 12. $a:b = 2:3 = 8:12$ (\u00d74). $b:c = 4:5 = 12:15$ (\u00d73). Combined: $a:b:c = 8:12:15$.",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.ratio-proportion-variation.ex2",
+      "stemMarkdown": "The ratio of Anu's age to Bala's is 4 : 7. Six years ago it was 2 : 5. How old is Bala now?",
+      "solutionMarkdown": "Write the present ages as $4k$ and $7k$.\n\nSix years ago they were $4k - 6$ and $7k - 6$, and that ratio was $2 : 5$. Cross-multiplying:\n\n$5(4k - 6) = 2(7k - 6)$\n\n$20k - 30 = 14k - 12$\n\n$6k = 18$, so $k = 3$.\n\nPresent ages are $4 \\times 3 = 12$ and $7 \\times 3 = 21$, so Bala is **21 years old**.",
+      "altSolutionMarkdown": "Check against the original wording, not against your own equation: six years ago they were 6 and 15, and $6 : 15$ does reduce to $2 : 5$. An algebra slip reproduces itself if you only re-check the line you wrote."
     },
     {
-      "id": "qa.arith.ratio-proportion-variation.we-03",
-      "stemMarkdown": "y varies directly as x and inversely as z. When x = 6, z = 2, y = 9. Find y when x = 8, z = 4.",
-      "solutionMarkdown": "$y = \\dfrac{kx}{z}$. Using $x=6, z=2, y=9$: $9 = \\dfrac{k \\times 6}{2} = 3k \\implies k = 3$. When $x=8, z=4$: $y = \\dfrac{3 \\times 8}{4} = 6$.",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.ratio-proportion-variation.ex3",
+      "stemMarkdown": "If 15 workers can build a wall in 24 days, how many days will 20 workers take, working at the same rate?",
+      "solutionMarkdown": "More workers means fewer days, so this is inverse variation and the product workers $\\times$ days is constant.\n\n$15 \\times 24 = 20 \\times d$\n\n$360 = 20d$, so $d = 18$.\n\nIt takes **18 days**.",
+      "altSolutionMarkdown": "Sanity check the direction before trusting the number: 20 workers is more than 15, so the answer must be less than 24. It is. Getting a larger number would mean the ratio was applied the wrong way up, which is the single most common error here."
     }
   ],
   "formulaCards": [
     {
-      "id": "qa.arith.ratio-proportion-variation.fc-dividing-ratio",
+      "id": "qa.arith.ratio-proportion-variation.fc1",
       "microTopicId": "qa.arith.ratio-proportion-variation",
-      "title": "Dividing a total in a ratio",
-      "bodyMarkdown": "Total parts = sum of ratio terms. Each share $= \\dfrac{\\text{its term}}{\\text{total parts}} \\times T$.",
-      "exampleMarkdown": "Split 900 in ratio 1:2:6 \u2192 parts=9 \u2192 shares 100, 200, 600."
+      "title": "Dividing in a ratio",
+      "bodyMarkdown": "Share of a term $= \\dfrac{\\text{that term}}{\\text{sum of terms}} \\times \\text{total}$",
+      "exampleMarkdown": "B's share of 6300 in $3:4:7$ is $\\dfrac{4}{14} \\times 6300 = 1800$."
     },
     {
-      "id": "qa.arith.ratio-proportion-variation.fc-variation",
+      "id": "qa.arith.ratio-proportion-variation.fc2",
       "microTopicId": "qa.arith.ratio-proportion-variation",
-      "title": "Direct / inverse / joint variation",
-      "bodyMarkdown": "Direct: $y=kx$. Inverse: $y=k/x$. Joint: $y=kx/z$. Solve for $k$ first from given values.",
-      "exampleMarkdown": "y\u221dx\u00b2, y=20 at x=5 \u2192 k=0.8 \u2192 y=(0.8)(100)=80 at x=10."
+      "title": "Direct variation",
+      "bodyMarkdown": "$\\dfrac{a_1}{b_1} = \\dfrac{a_2}{b_2}$ \u2014 the ratio is fixed.",
+      "exampleMarkdown": "3 books cost 240, so 7 books cost $\\dfrac{240}{3} \\times 7 = 560$."
+    },
+    {
+      "id": "qa.arith.ratio-proportion-variation.fc3",
+      "microTopicId": "qa.arith.ratio-proportion-variation",
+      "title": "Inverse variation",
+      "bodyMarkdown": "$a_1 b_1 = a_2 b_2$ \u2014 the product is fixed.",
+      "exampleMarkdown": "6 taps fill a tank in 8 hours, so 4 taps take $\\dfrac{48}{4} = 12$ hours."
+    },
+    {
+      "id": "qa.arith.ratio-proportion-variation.fc4",
+      "microTopicId": "qa.arith.ratio-proportion-variation",
+      "title": "Compounding ratios",
+      "bodyMarkdown": "Given $A : B = a : b$ and $B : C = c : d$, then $A : B : C = ac : bc : bd$.",
+      "exampleMarkdown": "$2:3$ and $4:5$ compound to $8 : 12 : 15$."
     }
   ],
   "commonTraps": [
-    "\"Divide in ratio\" \u2014 total parts is the sum of the ratio terms, not the number of people.",
-    "Combining two ratios requires matching the common term first (via LCM), not just multiplying blindly.",
-    "Inverse variation means y goes DOWN as x goes up \u2014 easy to accidentally treat it as direct."
+    "Working with the ratio terms as if they were the actual amounts. Always introduce $k$.",
+    "Joining $A : B$ and $B : C$ without first making the two values of B agree.",
+    "Applying an age change to only one of the two people. Everyone ages at the same rate.",
+    "Treating an inverse relationship as direct. Check the direction of the answer against common sense before moving on.",
+    "Assuming that adding the same amount to both terms leaves the ratio unchanged. It moves it towards $1 : 1$."
   ],
-  "estReadMinutes": 6
+  "estReadMinutes": 11
 }

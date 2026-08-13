@@ -1,48 +1,71 @@
 {
-  "id": "lesson.qa.arith.profit-loss-discount",
+  "id": "qa.arith.profit-loss-discount",
   "microTopicId": "qa.arith.profit-loss-discount",
-  "bodyMarkdown": "## Profit, Loss & Discount\n\n$$\\text{Profit\\%} = \\frac{SP - CP}{CP} \\times 100 \\qquad \\text{Loss\\%} = \\frac{CP - SP}{CP} \\times 100$$\n\nProfit/loss percentage is **always** calculated on the cost price (CP), never on the selling\nprice (SP), unless a question explicitly says \"profit on SP.\"\n\n### Marked price and discount\n\n$$SP = MP \\times \\left(1 - \\frac{d}{100}\\right)$$\n\nDiscount is applied to the **marked price**, profit/loss is measured against the **cost price**\n\u2014 these are two different bases, and mixing them up is the single most common error here.\n\n### Successive discounts\n\nSuccessive discounts combine exactly like successive percentage changes (see the Percentages\nlesson): a 20% discount followed by a 10% discount is **not** a 30% discount.\n\n$$\\text{single equivalent discount} = 1 - (1 - d_1)(1 - d_2)$$",
+  "bodyMarkdown": "## Before you start\n\nPercentages, especially successive changes and recovering an original value.\n\n## The idea in plain language\n\nThere are only three prices in this entire topic, and every question is about the gaps between them.\n\nImagine a shop. **Cost price** is what the shopkeeper paid the wholesaler. **Marked price** is the number on the tag in the window. **Selling price** is what you actually hand over at the till after haggling or a sale.\n\nDiscount is the gap between the tag and the till. Profit is the gap between the till and the wholesaler. That is it \u2014 and the single most common error in the whole topic is computing one of those gaps as a percentage of the wrong price. Discount is always a percentage of the tag. Profit is always a percentage of the cost.\n\n## What is actually going on\n\nWrite it as two independent multipliers and this topic becomes bookkeeping.\n\nFrom cost to selling price: $SP = CP \\times \\left(1 + \\dfrac{\\text{profit}\\%}{100}\\right)$. A loss is the same thing with a minus sign.\n\nFrom marked price to selling price: $SP = MP \\times \\left(1 - \\dfrac{\\text{discount}\\%}{100}\\right)$.\n\nThe selling price is the hinge \u2014 it is the only number that appears in both. So when a question mentions both a discount and a profit, the route is always the same: go from MP down to SP, then from SP back to CP. Never try to relate the marked price to the cost price directly.\n\nA useful sanity check throughout: profit percent is computed on cost, discount percent on marked price. If you ever find yourself dividing a profit by the marked price, something has gone wrong.\n\n## Every question type you will meet\n\nEach of these is a shape a question in this topic actually comes in. Learn to recognise the shape first \u2014 in a timed paper, picking the right method is most of the battle, and the arithmetic is the easy part.\n\n### 1. Selling price from cost and profit percent\n\n**Spot it when:** the plainest form \u2014 cost price and a profit or loss percentage are given.\n\n1. Convert the profit percent to a multiplier on cost.\n2. Multiply. A loss uses a multiplier below 1.\n\n**Worked through:** Cost 400 at 15 percent profit gives $400 \\times 1.15 = 460$.\n\n### 2. Successive discounts\n\n**Spot it when:** two discounts applied one after another, or 'a further x percent off the sale price'.\n\n1. Turn each discount into a multiplier.\n2. Multiply them; do not add the discounts.\n3. The single equivalent discount is $100(1 - \\text{product})$ percent.\n\n**Worked through:** 20 percent then 10 percent is $0.8 \\times 0.9 = 0.72$, so a single equivalent discount of 28 percent \u2014 not 30.\n\n### 3. Cost price from marked price, discount and profit\n\n**Spot it when:** all three prices are involved: a marked price, a discount, and a resulting profit.\n\n1. Apply the discount to the marked price to get the selling price.\n2. Divide the selling price by the profit multiplier to get back to cost.\n\n**Worked through:** MP 1000, 20 percent off, 25 percent profit: $SP = 800$, then $CP = \\dfrac{800}{1.25} = 640$.\n\n### 4. Equal gain and loss on two items sold at the same price\n\n**Spot it when:** two articles sold for the same amount, one at $x$ percent gain and the other at $x$ percent loss, asking for the overall result.\n\n1. The answer does not depend on the selling price at all: the result is always an overall **loss**.\n2. The loss percent is $\\dfrac{x^2}{100}$.\n3. It happens because the item sold at a loss had the larger cost price, so the loss is taken on a bigger base than the gain.\n\n**Worked through:** At 10 percent each way the net is a $\\dfrac{100}{100} = 1$ percent loss.\n\n### 5. Target selling price for a required profit\n\n**Spot it when:** an item sold at a known profit or loss, asking what price would have produced a different profit.\n\n1. Work back from the known sale to the cost price first.\n2. Then apply the required profit multiplier to that cost.\n\n**Worked through:** Sold at 480 for a 20 percent profit means $CP = \\dfrac{480}{1.2} = 400$; for 35 percent profit the price must be $400 \\times 1.35 = 540$.\n\n### 6. False weights\n\n**Spot it when:** a dishonest trader using a weight of, say, 900 g while claiming a kilogram, usually while also selling at cost price.\n\n1. The gain comes purely from the short measure: he gives less than he charges for.\n2. Gain percent $= \\dfrac{\\text{true weight} - \\text{false weight}}{\\text{false weight}} \\times 100$.\n3. The denominator is what he actually hands over, because that is what it cost him.\n\n**Worked through:** Using 900 g as a kilogram gives $\\dfrac{100}{900} \\times 100 = 11\\tfrac{1}{9}$ percent profit.\n\n## Check yourself\n\nYou are ready to start practising this topic when you can:\n\n- Name which of CP, MP and SP each number in the stem is.\n- Move from MP to SP with the discount, and SP to CP with the profit \u2014 in that order.\n- Chain a markup and a discount into one multiplier.\n- Explain why selling two items at the same price with equal gain and loss always loses money.\n- Handle a false-weight question without being fooled by 'sells at cost price'.",
   "workedExamples": [
     {
-      "id": "qa.arith.profit-loss-discount.we-01",
-      "stemMarkdown": "A shopkeeper marks an item 40% above cost price and then gives a discount of 15%. What is his profit percentage?",
-      "solutionMarkdown": "Take CP $= 100$. Marked price $= 100 \\times 1.40 = 140$. After a 15% discount on MP: $SP = 140 \\times 0.85 = 119$. $\\text{Profit\\%} = \\dfrac{119 - 100}{100} \\times 100 = 19\\%$.",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.profit-loss-discount.ex1",
+      "stemMarkdown": "A trader marks his goods 40 percent above cost and then allows a discount of 25 percent. What is his profit percentage?",
+      "solutionMarkdown": "Take the cost price as 100 \u2014 with only percentages in play, any convenient cost works and 100 makes the arithmetic disappear.\n\nMarked price: $100 \\times 1.40 = 140$.\n\nSelling price after the discount: $140 \\times 0.75 = 105$.\n\nProfit is $105 - 100 = 5$ on a cost of 100, so **5 percent**.",
+      "altSolutionMarkdown": "As one chain: $1.40 \\times 0.75 = 1.05$. The markup multiplier times the discount multiplier gives the profit multiplier directly, which is worth recognising \u2014 nearly every markup-and-discount question is this one line."
     },
     {
-      "id": "qa.arith.profit-loss-discount.we-02",
-      "stemMarkdown": "A trader sells two items at Rs. 1200 each. On one he gains 20% and on the other he loses 20%. What is his overall profit or loss percentage?",
-      "solutionMarkdown": "$CP_1 = \\dfrac{1200}{1.20} = 1000$ (20% gain). $CP_2 = \\dfrac{1200}{0.80} = 1500$ (20% loss). Total CP $= 2500$, total SP $= 2400$. Loss $= 100$, $\\text{loss\\%} = \\dfrac{100}{2500} \\times 100 = 4\\%$. It is **not** breakeven \u2014 equal SP with equal +x%/-x% always nets a loss.",
-      "altSolutionMarkdown": "Shortcut: when two items are sold at the **same** SP, one at $x\\%$ gain and the other at $x\\%$ loss, the overall result is always a loss of $\\dfrac{x^2}{100}\\%$, regardless of the SP value. Here $x = 20$: loss $= \\dfrac{20^2}{100} = 4\\%$."
+      "id": "qa.arith.profit-loss-discount.ex2",
+      "stemMarkdown": "Two cameras are each sold for Rs. 9600. One is sold at a 20 percent profit and the other at a 20 percent loss. What is the overall result?",
+      "solutionMarkdown": "Find each cost price separately \u2014 that is where the asymmetry lives.\n\nThe one sold at a profit: $CP_1 = \\dfrac{9600}{1.2} = 8000$.\n\nThe one sold at a loss: $CP_2 = \\dfrac{9600}{0.8} = 12000$.\n\nTotal cost $= 8000 + 12000 = 20000$. Total received $= 2 \\times 9600 = 19200$.\n\nSo there is a loss of $20000 - 19200 = 800$, which on a cost of 20000 is **a 4 percent loss**.",
+      "altSolutionMarkdown": "The shortcut confirms it: the loss is always $\\dfrac{x^2}{100}$ percent, here $\\dfrac{400}{100} = 4$ percent. Notice the answer never depended on the Rs. 9600 \u2014 try it with any figure and the loss is still 4 percent."
     },
     {
-      "id": "qa.arith.profit-loss-discount.we-03",
-      "stemMarkdown": "Successive discounts of 20% and 10% are equivalent to a single discount of what percentage?",
-      "solutionMarkdown": "Combined multiplier $= 0.80 \\times 0.90 = 0.72$, i.e. the buyer pays 72% of MP. Single equivalent discount $= 100 - 72 = 28\\%$ (not $20+10=30\\%$).",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.profit-loss-discount.ex3",
+      "stemMarkdown": "A shopkeeper sells rice at cost price but uses a weight of 800 g in place of 1 kg. Find his profit percentage.",
+      "solutionMarkdown": "He charges for 1000 g and hands over 800 g. His cost is the 800 g he actually parted with; his gain is the 200 g he kept.\n\nProfit percent $= \\dfrac{200}{800} \\times 100 = 25$ percent.\n\nSo he makes **25 percent** despite selling at 'cost price'.",
+      "altSolutionMarkdown": "The tempting wrong answer is 20 percent, from dividing the 200 g by the 1000 g he claimed. Profit is always measured against what it cost him, and the 1000 g never existed."
     }
   ],
   "formulaCards": [
     {
-      "id": "qa.arith.profit-loss-discount.fc-profit-loss",
+      "id": "qa.arith.profit-loss-discount.fc1",
       "microTopicId": "qa.arith.profit-loss-discount",
-      "title": "Profit / Loss %",
-      "bodyMarkdown": "$$\\text{Profit\\%} = \\frac{SP-CP}{CP}\\times 100$$ Always on CP, never on SP.",
-      "exampleMarkdown": "CP=80, SP=100 \u2192 profit% = $(100-80)/80 \\times 100 = 25\\%$."
+      "title": "Profit and loss percent",
+      "bodyMarkdown": "$\\text{profit}\\% = \\dfrac{SP - CP}{CP} \\times 100$, and $\\text{loss}\\% = \\dfrac{CP - SP}{CP} \\times 100$. Both are on cost.",
+      "exampleMarkdown": "Cost 250, sold at 300 gives $\\dfrac{50}{250} \\times 100 = 20$ percent."
     },
     {
-      "id": "qa.arith.profit-loss-discount.fc-equal-sp-trick",
+      "id": "qa.arith.profit-loss-discount.fc2",
       "microTopicId": "qa.arith.profit-loss-discount",
-      "title": "Equal-SP, equal-%, opposite-sign trick",
-      "bodyMarkdown": "Two items sold at the **same** SP, one at $+x\\%$ and one at $-x\\%$: overall result is always a **loss** of $\\dfrac{x^2}{100}\\%$.",
-      "exampleMarkdown": "x=10 \u2192 always a 1% net loss, never breakeven."
+      "title": "Discount",
+      "bodyMarkdown": "$\\text{discount}\\% = \\dfrac{MP - SP}{MP} \\times 100$ \u2014 this one is on the marked price.",
+      "exampleMarkdown": "Marked 900, sold at 720 is a $\\dfrac{180}{900} \\times 100 = 20$ percent discount."
+    },
+    {
+      "id": "qa.arith.profit-loss-discount.fc3",
+      "microTopicId": "qa.arith.profit-loss-discount",
+      "title": "Markup and discount together",
+      "bodyMarkdown": "$SP = CP \\times \\left(1 + \\dfrac{\\text{markup}}{100}\\right)\\left(1 - \\dfrac{\\text{discount}}{100}\\right)$",
+      "exampleMarkdown": "40 percent markup with 25 percent discount gives $1.4 \\times 0.75 = 1.05$: 5 percent profit."
+    },
+    {
+      "id": "qa.arith.profit-loss-discount.fc4",
+      "microTopicId": "qa.arith.profit-loss-discount",
+      "title": "Same price, equal gain and loss",
+      "bodyMarkdown": "Always a net loss of $\\dfrac{x^2}{100}$ percent, whatever the selling price.",
+      "exampleMarkdown": "20 percent each way is a 4 percent loss."
+    },
+    {
+      "id": "qa.arith.profit-loss-discount.fc5",
+      "microTopicId": "qa.arith.profit-loss-discount",
+      "title": "False weight",
+      "bodyMarkdown": "$\\text{gain}\\% = \\dfrac{\\text{claimed weight} - \\text{actual weight}}{\\text{actual weight}} \\times 100$",
+      "exampleMarkdown": "Passing 900 g off as 1 kg gives $11\\tfrac{1}{9}$ percent."
     }
   ],
   "commonTraps": [
-    "Profit/loss % is calculated on CP, not SP \u2014 mixing the base is the #1 error here.",
-    "Discount is applied to the marked price (MP), not the cost price \u2014 MP and CP are different bases entirely.",
-    "Successive discounts don't add: 20% + 10% is a 28% single discount, not 30%.",
-    "Equal SP with +x% gain on one item and -x% loss on another is always a net LOSS of x\u00b2/100%, never breakeven."
+    "Computing profit percent on the selling price or the marked price. It is always on cost.",
+    "Adding successive discounts. 20 percent then 10 percent is 28 percent, not 30.",
+    "Trying to link marked price to cost price directly. Always route through the selling price.",
+    "In the equal-gain-and-loss case, concluding the trader broke even. There is always a loss.",
+    "In false-weight questions, dividing by the claimed weight rather than the weight actually handed over.",
+    "Forgetting that overheads or transport costs are part of the cost price when a question mentions them."
   ],
-  "estReadMinutes": 6
+  "estReadMinutes": 11
 }

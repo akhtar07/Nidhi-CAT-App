@@ -69,3 +69,41 @@ describe('parseMarkdownBlocks', () => {
     })
   })
 })
+
+describe('lists', () => {
+  it('parses a bullet block into one list', () => {
+    const blocks = parseMarkdownBlocks('- first\n- second\n- third')
+    expect(blocks).toHaveLength(1)
+    expect(blocks[0]).toMatchObject({ type: 'list', ordered: false })
+    if (blocks[0].type !== 'list') throw new Error('expected a list')
+    expect(blocks[0].items).toHaveLength(3)
+    expect(blocks[0].items[0]).toEqual([{ type: 'text', value: 'first' }])
+  })
+
+  it('parses a numbered block as an ordered list', () => {
+    const blocks = parseMarkdownBlocks('1. step one\n2. step two')
+    expect(blocks[0]).toMatchObject({ type: 'list', ordered: true })
+  })
+
+  it('keeps math and bold inside list items', () => {
+    const blocks = parseMarkdownBlocks('- **Spot it:** when $x > 0$')
+    if (blocks[0].type !== 'list') throw new Error('expected a list')
+    expect(blocks[0].items[0]).toEqual([
+      { type: 'bold', value: 'Spot it:' },
+      { type: 'text', value: ' when ' },
+      { type: 'inline-math', value: 'x > 0' },
+    ])
+  })
+
+  it('leaves a paragraph that merely starts with a number alone', () => {
+    // "1. 5" is a decimal in prose, not a list marker — an all-or-nothing rule is what stops
+    // a sentence like this from rendering as a one-item list.
+    const blocks = parseMarkdownBlocks('The ratio came to 1. 5 times the original figure.')
+    expect(blocks[0].type).toBe('paragraph')
+  })
+
+  it('does not treat a mixed block as a list', () => {
+    const blocks = parseMarkdownBlocks('- a bullet\nand a trailing sentence')
+    expect(blocks[0].type).toBe('paragraph')
+  })
+})

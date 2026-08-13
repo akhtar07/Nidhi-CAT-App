@@ -59,6 +59,31 @@ class FC:
 
 
 @dataclass
+class Method:
+    """
+    One question archetype the topic actually contains, taught end to end.
+
+    This is the field that decides whether a lesson meets the bar "any question in this topic
+    can be solved by someone who has read the lesson". A lesson that explains the idea and
+    gives two examples teaches the *concept*; it does not teach the eight distinct shapes a
+    percentages question can arrive in, and the learner meets all eight in the drill.
+
+    So there is one Method per archetype in the bank for that micro-topic (see
+    qagen/templates/* and the tags on content/questions/*.json), and each one answers the
+    three questions a learner actually has:
+
+      - `recognise` — what does this question look like? The hardest part of a timed exam is
+        not executing a method, it is knowing which method the stem is asking for.
+      - `steps` — the procedure, in order, short enough to hold in your head.
+      - `worked` — the same procedure run once on real numbers.
+    """
+    name: str
+    recognise: str
+    steps: list[str]
+    worked: str | None = None
+
+
+@dataclass
 class LessonSpec:
     mt: str
     intuition: str
@@ -68,6 +93,12 @@ class LessonSpec:
     traps: list[str] = field(default_factory=list)
     minutes: int = 5
     extra_sections: list[tuple[str, str]] = field(default_factory=list)
+    #: What the learner should already be comfortable with. One sentence, or None.
+    prereq: str | None = None
+    #: One entry per question archetype in this topic. See Method.
+    methods: list[Method] = field(default_factory=list)
+    #: Closing self-check — "you can now do X". Renders as a bullet list.
+    checklist: list[str] = field(default_factory=list)
 
 
 # LaTeX commands are fine inside $...$; loose backslashes outside one are not.
@@ -93,15 +124,41 @@ def check_markdown(where: str, text: str) -> list[str]:
 
 
 def build_body(spec: LessonSpec) -> str:
-    parts = [
+    parts: list[str] = []
+    if spec.prereq:
+        parts += ["## Before you start", spec.prereq]
+    parts += [
         "## The idea in plain language",
         spec.intuition,
         "## What is actually going on",
         spec.core,
     ]
+
+    if spec.methods:
+        parts.append("## Every question type you will meet")
+        parts.append(
+            "Each of these is a shape a question in this topic actually comes in. Learn to "
+            "recognise the shape first — in a timed paper, picking the right method is most of "
+            "the battle, and the arithmetic is the easy part."
+        )
+        for i, method in enumerate(spec.methods, 1):
+            parts.append(f"### {i}. {method.name}")
+            parts.append(f"**Spot it when:** {method.recognise}")
+            # Ordered list: the renderer's list support is all-or-nothing per block, so the
+            # steps go in one block with nothing else in it.
+            parts.append("\n".join(f"{j}. {step}" for j, step in enumerate(method.steps, 1)))
+            if method.worked:
+                parts.append(f"**Worked through:** {method.worked}")
+
     for heading, body in spec.extra_sections:
         parts.append(f"## {heading}")
         parts.append(body)
+
+    if spec.checklist:
+        parts.append("## Check yourself")
+        parts.append("You are ready to start practising this topic when you can:")
+        parts.append("\n".join(f"- {item}" for item in spec.checklist))
+
     return "\n\n".join(parts)
 
 

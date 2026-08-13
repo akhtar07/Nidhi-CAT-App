@@ -50,6 +50,22 @@ export function MarkdownBlocks({ text }: { text: string }) {
     <div className="space-y-3">
       {blocks.map((block, i) => {
         const key = `block-${i}`
+        if (block.type === 'list') {
+          const items = block.items.map((segments, j) => (
+            <li key={j} className="pl-1">
+              {renderSegments(segments, `${key}-${j}`)}
+            </li>
+          ))
+          return block.ordered ? (
+            <ol key={key} className="ml-5 list-outside list-decimal space-y-1.5 leading-relaxed marker:text-muted-foreground">
+              {items}
+            </ol>
+          ) : (
+            <ul key={key} className="ml-5 list-outside list-disc space-y-1.5 leading-relaxed marker:text-muted-foreground">
+              {items}
+            </ul>
+          )
+        }
         const content = renderSegments(block.segments, key)
         if (block.type === 'heading') {
           return block.level === 2 ? (

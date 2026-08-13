@@ -1,47 +1,63 @@
 {
-  "id": "lesson.qa.arith.averages-weighted-averages",
+  "id": "qa.arith.averages-weighted-averages",
   "microTopicId": "qa.arith.averages-weighted-averages",
-  "bodyMarkdown": "## Averages & Weighted Averages\n\n$$\\text{Average} = \\frac{\\text{Sum of values}}{\\text{Number of values}} \\qquad \\Rightarrow \\qquad \\text{Sum} = \\text{Average} \\times \\text{Count}$$\n\nAlmost every average question is really a \"sum\" question in disguise \u2014 convert to sums first,\nsolve there, and only convert back to an average at the end if the question asks for one.\n\n### Weighted average\n\n$$\\bar{x} = \\frac{w_1 x_1 + w_2 x_2 + \\cdots}{w_1 + w_2 + \\cdots}$$\n\nThis is **not** the simple average of the group averages when the group sizes (weights) differ.\n\n### When one value joins, leaves, or is replaced\n\nConvert to sums: $\\text{new sum} = \\text{old sum} \\pm \\text{value changed}$, remembering that the\n**count** ($n$) usually changes too when a member joins or leaves (but not on a simple swap).",
+  "bodyMarkdown": "## Before you start\n\nNothing beyond arithmetic, though ratios help for the weighted-average section.\n\n## The idea in plain language\n\nAn average is what everyone would get if you pooled everything and shared it out equally. Five people put their pocket money on the table, you mix it up and deal it back in equal piles \u2014 the size of one pile is the average.\n\nThat picture makes the key fact obvious: the **total is all that matters**. The average of a group and the number of people in it between them fix the total, and the total is what survives when the group changes. So when someone joins, leaves, or is replaced, do not fiddle with the average directly \u2014 work out what happened to the total.\n\nSecond picture, for weighted averages: think of a seesaw. Put a heavy group at one end and a light group at the other, and the balance point sits nearer the heavy one. The combined average of two groups is never the midpoint unless the groups are the same size.\n\n## What is actually going on\n\nEverything here comes from one relationship: $\\text{total} = \\text{average} \\times \\text{count}$. Read it in both directions and most questions collapse.\n\n**When one member is replaced**, the count does not change, so the change in the total is exactly the change in one person's value. If the average of 8 people rises by 3 when one is replaced, the total rose by $8 \\times 3 = 24$, so the newcomer is 24 more than the person who left. That single sentence answers most replacement questions.\n\n**For evenly spaced numbers** \u2014 consecutive integers, an arithmetic progression, consecutive even numbers \u2014 the average is simply the midpoint of the first and last. No summing required, because the terms above the middle exactly balance the terms below.\n\n**For two groups combined**, the weighted average is\n\n$$\\bar{x} = \\frac{n_1 \\bar{x}_1 + n_2 \\bar{x}_2}{n_1 + n_2}$$\n\nwhich is just 'total of everything over count of everything'.\n\n## Every question type you will meet\n\nEach of these is a shape a question in this topic actually comes in. Learn to recognise the shape first \u2014 in a timed paper, picking the right method is most of the battle, and the arithmetic is the easy part.\n\n### 1. Replacing a member\n\n**Spot it when:** someone leaves and someone else joins, and the average shifts.\n\n1. The count is unchanged, so total change $=$ count $\\times$ change in average.\n2. That total change is the difference between the newcomer and the person replaced.\n3. Add or subtract it from the known value.\n\n**Worked through:** The average of 10 boys rises by 2 kg when a 40 kg boy is replaced, so the new boy is $40 + 10 \\times 2 = 60$ kg.\n\n### 2. Combining two groups\n\n**Spot it when:** two groups with their own averages and sizes, asking for the overall average.\n\n1. Compute each group's total as average $\\times$ count.\n2. Add the totals and add the counts.\n3. Divide. The answer always lies between the two averages, nearer the larger group.\n\n**Worked through:** 20 students averaging 60 and 30 averaging 70 give $\\dfrac{1200 + 2100}{50} = 66$.\n\n### 3. Average of consecutive or evenly spaced numbers\n\n**Spot it when:** consecutive integers, consecutive odd or even numbers, or any arithmetic progression.\n\n1. Take the first and last terms.\n2. The average is their midpoint, $\\dfrac{\\text{first} + \\text{last}}{2}$.\n3. If asked for the sum, multiply that by the count.\n\n**Worked through:** The average of the integers from 11 to 29 is $\\dfrac{11 + 29}{2} = 20$.\n\n### 4. A wrongly read value\n\n**Spot it when:** an average was computed, then a single entry turns out to have been misread or mis-copied.\n\n1. Compute the total that was originally used.\n2. Correct it by the difference between the true value and the value used.\n3. Divide the corrected total by the unchanged count.\n\n**Worked through:** For 10 numbers averaging 50, if 36 was read as 63 the total is 13 too high, so the correct average is $\\dfrac{500 - 13}{10} = 48.7$.\n\n### 5. Excluding a member\n\n**Spot it when:** the average of a group and of a smaller sub-group are both given, asking for the one left out.\n\n1. Compute both totals.\n2. Subtract. The difference is the value of the excluded members.\n3. Divide by how many were excluded, if more than one.\n\n**Worked through:** 11 players average 50 and 10 of them average 48, so the eleventh scored $550 - 480 = 70$.\n\n## Check yourself\n\nYou are ready to start practising this topic when you can:\n\n- Move between total, average and count in either direction without hesitating.\n- Solve a replacement question using only the change in the average.\n- Combine two unequal groups and predict roughly where the answer must land.\n- Average an evenly spaced list at sight.\n- Correct an average after a misread entry.",
   "workedExamples": [
     {
-      "id": "qa.arith.averages-weighted-averages.we-01",
-      "stemMarkdown": "The average of 5 numbers is 28. If one number is excluded, the average of the remaining 4 numbers becomes 25. What is the excluded number?",
-      "solutionMarkdown": "Sum of 5 numbers $= 28 \\times 5 = 140$. Sum of remaining 4 $= 25 \\times 4 = 100$. Excluded number $= 140 - 100 = 40$.",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.averages-weighted-averages.ex1",
+      "stemMarkdown": "The average weight of 8 people increases by 2.5 kg when a new person replaces one weighing 65 kg. What is the weight of the new person?",
+      "solutionMarkdown": "The count stays at 8, so the whole change in the average must come from the one swap.\n\nTotal change $= 8 \\times 2.5 = 20$ kg.\n\nSo the new person is 20 kg heavier than the one who left:\n\n$65 + 20 = 85$ kg.\n\nThe new person weighs **85 kg**.",
+      "altSolutionMarkdown": "Note what is **not** needed: the original average. A replacement question never requires it, because only the difference matters. If a question gives you the original average here, it is decoration."
     },
     {
-      "id": "qa.arith.averages-weighted-averages.we-02",
-      "stemMarkdown": "The average weight of 10 students is 42 kg. A new student joins and the average becomes 43 kg. What is the weight of the new student?",
-      "solutionMarkdown": "Old sum (10 students) $= 42 \\times 10 = 420$. New sum (11 students) $= 43 \\times 11 = 473$. New student's weight $= 473 - 420 = 53$ kg.",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.averages-weighted-averages.ex2",
+      "stemMarkdown": "In a class of 30 students, 18 boys average 62 marks and the girls average 71. What is the class average?",
+      "solutionMarkdown": "There are $30 - 18 = 12$ girls.\n\nBoys' total: $18 \\times 62 = 1116$.\n\nGirls' total: $12 \\times 71 = 852$.\n\nClass total: $1116 + 852 = 1968$, over 30 students:\n\n$\\dfrac{1968}{30} = 65.6$\n\nThe class average is **65.6 marks**.",
+      "altSolutionMarkdown": "Sanity check with the seesaw: the answer must fall between 62 and 71, and closer to 62 because there are more boys. 65.6 sits where it should. An answer outside that range means an arithmetic slip, and you can catch it without redoing the sum."
     },
     {
-      "id": "qa.arith.averages-weighted-averages.we-03",
-      "stemMarkdown": "A shopkeeper mixes 20 kg of rice costing Rs. 30/kg with 30 kg of rice costing Rs. 45/kg. Find the average cost per kg of the mixture.",
-      "solutionMarkdown": "Weighted average $= \\dfrac{20 \\times 30 + 30 \\times 45}{20 + 30} = \\dfrac{600 + 1350}{50} = \\dfrac{1950}{50} = 39$ Rs./kg. Note this is closer to 45 than to 30 \u2014 correctly reflecting the larger weight (30 kg) on the higher price.",
-      "altSolutionMarkdown": null
+      "id": "qa.arith.averages-weighted-averages.ex3",
+      "stemMarkdown": "The average of 11 numbers is 45. The average of the first six is 49 and of the last six is 52. What is the sixth number?",
+      "solutionMarkdown": "The sixth number belongs to both groups of six, which is what makes this work.\n\nTotal of all eleven: $11 \\times 45 = 495$.\n\nFirst six: $6 \\times 49 = 294$. Last six: $6 \\times 52 = 312$.\n\nAdding those two gives $294 + 312 = 606$, which counts all eleven numbers once \u2014 except the sixth, which it counts twice.\n\nSo the sixth number is $606 - 495 = 111$.",
+      "altSolutionMarkdown": "The structural insight is the double-count: six plus six is twelve, but there are only eleven numbers, so exactly one has been counted twice. Any question with overlapping groups yields to the same reasoning."
     }
   ],
   "formulaCards": [
     {
-      "id": "qa.arith.averages-weighted-averages.fc-sum-trick",
+      "id": "qa.arith.averages-weighted-averages.fc1",
       "microTopicId": "qa.arith.averages-weighted-averages",
-      "title": "Sum = Average \u00d7 Count",
-      "bodyMarkdown": "Convert average problems to sum problems first \u2014 it's almost always easier from there.",
-      "exampleMarkdown": "Average of 6 numbers is 15 \u2192 sum = 90."
+      "title": "The core relationship",
+      "bodyMarkdown": "$\\text{average} = \\dfrac{\\text{total}}{\\text{count}}$, so $\\text{total} = \\text{average} \\times \\text{count}$.",
+      "exampleMarkdown": "12 items averaging 15 have a total of 180."
     },
     {
-      "id": "qa.arith.averages-weighted-averages.fc-weighted-average",
+      "id": "qa.arith.averages-weighted-averages.fc2",
+      "microTopicId": "qa.arith.averages-weighted-averages",
+      "title": "Replacement",
+      "bodyMarkdown": "New value $=$ old value $+$ count $\\times$ change in average.",
+      "exampleMarkdown": "8 people, average up 2.5, replacing 65 gives $65 + 20 = 85$."
+    },
+    {
+      "id": "qa.arith.averages-weighted-averages.fc3",
       "microTopicId": "qa.arith.averages-weighted-averages",
       "title": "Weighted average",
-      "bodyMarkdown": "$$\\bar{x} = \\frac{w_1x_1 + w_2x_2 + \\cdots}{w_1 + w_2 + \\cdots}$$",
-      "exampleMarkdown": "10 items @ 20 and 5 items @ 50: weighted avg = (10\u00d720+5\u00d750)/15 = 30."
+      "bodyMarkdown": "$\\bar{x} = \\dfrac{n_1\\bar{x}_1 + n_2\\bar{x}_2}{n_1 + n_2}$",
+      "exampleMarkdown": "20 at 60 and 30 at 70 average $\\dfrac{3300}{50} = 66$."
+    },
+    {
+      "id": "qa.arith.averages-weighted-averages.fc4",
+      "microTopicId": "qa.arith.averages-weighted-averages",
+      "title": "Evenly spaced numbers",
+      "bodyMarkdown": "Average $= \\dfrac{\\text{first} + \\text{last}}{2}$, and sum $=$ that $\\times$ count.",
+      "exampleMarkdown": "The first 20 positive integers average $\\dfrac{1 + 20}{2} = 10.5$, summing to 210."
     }
   ],
   "commonTraps": [
-    "Weighted average \u2260 simple average of the group averages when group sizes differ.",
-    "When a member joins or leaves, the count (n) changes too \u2014 forgetting this is the most common slip.",
-    "Convert to sums before solving; working directly with averages usually leads to fraction errors."
+    "Averaging two averages directly when the groups differ in size. That answer is only right when the groups are equal.",
+    "Changing the count in a replacement question. Nobody joined or left the count \u2014 one person swapped for another.",
+    "Forgetting that a corrected total keeps the same count, so only the numerator changes.",
+    "Adding an extra term to an evenly spaced list without re-checking the first and last.",
+    "Assuming the average must be one of the values in the list. It usually is not."
   ],
-  "estReadMinutes": 5
+  "estReadMinutes": 10
 }
