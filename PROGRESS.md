@@ -1956,17 +1956,56 @@ lessons, 1,428 questions). Live in Chromium with zero console errors: the
 per-topic reset was exercised through the UI and confirmed against IndexedDB
 (6 attempts → 2, only the target topic's four removed, mastery row cleared).
 
-### Not done — do not read this section as complete
+### Lesson depth, part two — DILR and VARC
 
-- **DILR lessons (median 150 words) and VARC lessons (median 219 words) have
-  not had the `methods` treatment.** Only QA does. This is the largest
-  outstanding piece of the "teach every topic properly" request.
-- Two lessons are still undeclared: `varc.rc.main-idea`,
-  `varc.va.para-jumbles`.
-- 9 topics still have zero questions: 6 VARC RC types (need real open-licence
-  passages), 3 DILR chart types (need radar/bubble/combination SVG renderers).
-- `pipeline/qagen/templates/series.py` is written but still not wired into the
-  templates registry or run.
+The previous section closed with DILR and VARC still untouched. They now have
+the same treatment.
+
+- `dilr.py` (24 topics, 65 methods): a reading routine per chart type, and a
+  solving routine per LR family — grid-building with negative information,
+  branching on the smallest remaining choice, assume-and-test, painted-cube
+  counts by position (verified to sum to n^3), bottleneck capacity,
+  contrapositives in selection sets.
+- `varc.py` (15 topics, 34 methods): elimination routines. `recognise` carries
+  most of the weight, because the same passage supports a main-idea and an
+  inference question with different correct answers — identifying what is
+  being asked is most of the work.
+- `varc_orphans.py` (new): `varc.rc.main-idea` and `varc.va.para-jumbles`,
+  the last two lessons with JSON on disk but no declaration.
+
+**Every lesson in /content is now reproducible from source.** 86 declared, 86
+written, none undeclared.
+
+Median lesson body: QA 433 words (45 topics), DILR 448 (24), VARC 448 (17).
+Total lesson prose 42,362 words, up from ~13,600 at the start of the session.
+
+39 numeric claims in the DILR lessons verified independently.
+
+Rendered all 86 lessons in Chromium: 235 method sections, 906 list items,
+1,281 KaTeX nodes, zero math errors, zero literal-markup leaks, zero console
+errors, no lesson under 200 words.
+
+### series.py wired
+
+`qa.modern.series-sequences-hybrids` was the last zero-question QA topic.
+15/15 verified from 7 archetypes, spread easy 4 / medium 6 / hard 4 /
+very_hard 1. Bank now 1,443 questions.
+
+### Still not done — do not read this section as complete
+
+- **9 topics have zero questions, and all 9 are blocked on content that
+  cannot be generated:** 6 VARC RC types (`vocab-in-context`,
+  `structure-function`, `assumption`, `strengthen-weaken`,
+  `except-least-likely`, `analogy-application`) need real open-licence
+  passages; 3 DILR chart types (`radar-spider`, `bubble-charts`,
+  `combination-charts`) need SVG renderers in `PassageSetPlayer.tsx` before
+  their sets can exist. Note their lessons *are* written — only the questions
+  are missing.
+- 30 topics have fewer than 15 questions, so SPEC.md §16's per-topic bar is
+  not met across the board.
 - The QA LLM batch (~649 items) is still blocked on the GPU.
 - ntfy delivery was verified against the server with curl; it has not been
   confirmed arriving on a real handset, which only the phone's owner can do.
+- The `answer_fn` independence gap in the older `pipeline/qagen/generators/`
+  arithmetic generators (flagged in the Milestone 3 addendum above) is still
+  unaddressed. The newer `qagen/templates/` modules do not have it.
