@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Skeleton } from '@/components/ui/Skeleton'
 import {
+  loadExamMeta,
   loadLessonIndex,
   loadMockDefinition,
   loadMockIndex,
@@ -10,7 +11,9 @@ import {
   loadSyllabus,
   type PassageSetIndexEntry,
 } from '@/content/loadContent'
-import { todayIsoIST } from '@/planner/dateUtils'
+import { daysBetween, todayIsoIST } from '@/planner/dateUtils'
+import { summariseCoverage, type CoverageSummary } from '@/progress/sectionRollup'
+import { buildTopicProgress } from '@/progress/topicProgress'
 import { MOCK_SENTINEL, REVIEW_SENTINEL } from '@/planner/generatePlan'
 import { showLocalNotification } from '@/pwa/notify'
 import { storage } from '@/storage'
@@ -51,6 +54,8 @@ export function Today() {
   const [todayPlan, setTodayPlan] = useState<PlanDay | null>(null)
   const [topicNameById, setTopicNameById] = useState<Map<string, string>>(new Map())
   const [settings, setSettings] = useState<SettingsType | null>(null)
+  const [daysToExam, setDaysToExam] = useState<number | null>(null)
+  const [coverage, setCoverage] = useState<CoverageSummary | null>(null)
 
   useEffect(() => {
     storage
@@ -108,6 +113,22 @@ export function Today() {
       .then((day) => setTodayPlan(day ?? null))
       .catch(() => undefined)
 
+    // SPEC.md §4.1 asks the Today card for "A countdown: '112 days to CAT'". It existed
+    // only on /calendar until now. Settings override the shipped exam date, matching
+    // Calendar.tsx's precedence.
+    Promise.all([loadExamMeta(), storage.getSettings()])
+      .then(([meta, s]) => setDaysToExam(daysBetween(todayIsoIST(), s?.examDate ?? meta.examDate)))
+      .catch(() => undefined)
+
+    // An at-a-glance coverage line, so the home screen answers "how far along am I"
+    // without a trip to /progress. Same pure reduction the Progress page uses, so the
+    // two can never disagree.
+    Promise.all([loadSyllabus(), storage.listAttempts(), storage.listMasteryStates()])
+      .then(([syllabus, attempts, masteryStates]) =>
+        setCoverage(summariseCoverage(buildTopicProgress(syllabus, attempts, masteryStates))),
+      )
+      .catch(() => undefined)
+
     loadMockIndex()
       .then((ids) => Promise.all(ids.map((id) => loadMockDefinition(id))))
       .then((defs) => {
@@ -144,9 +165,32 @@ export function Today() {
           </Link>
         </div>
       </div>
-      <p className="mb-6 text-muted-foreground">
+      <p className="mb-4 text-muted-foreground">
         Micro-topics with drillable questions. Pick one to practice.
       </p>
+
+      {(daysToExam !== null || coverage) && (
+        <section className="mb-6 flex flex-wrap items-center gap-x-6 gap-y-2 rounded-lg border border-border p-4 text-sm">
+          {daysToExam !== null && (
+            <span>
+              <span className="text-2xl font-semibold tabular-nums">{Math.max(daysToExam, 0)}</span>
+              <span className="ml-1.5 text-muted-foreground">days to CAT</span>
+            </span>
+          )}
+          {coverage && (
+            <span className="text-muted-foreground">
+              <span className="font-medium text-foreground tabular-nums">
+                {coverage.started}/{coverage.totalTopics}
+              </span>{' '}
+              topics started · {coverage.mastered} mastered
+              {coverage.overallAccuracyPct !== null && <> · {coverage.overallAccuracyPct}% accuracy</>}
+            </span>
+          )}
+          <Link to="/progress" className="ml-auto text-primary underline">
+            View progress
+          </Link>
+        </section>
+      )}
 
       {todayPlan && (
         <section className="mb-6 rounded-lg border border-border p-4">

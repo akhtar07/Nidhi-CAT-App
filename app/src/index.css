@@ -92,6 +92,26 @@
     --sidebar-accent-foreground: oklch(0.22 0.02 300);
     --sidebar-border: oklch(0.9 0.008 55);
     --sidebar-ring: oklch(0.5 0.19 300 / 50%);
+
+    /*
+     * Mastery ladder — an ORDINAL ramp, not a categorical palette. Swapping the order
+     * would change the meaning (untouched -> learning -> practising -> mastered is a
+     * progression), so it takes a single hue with monotone lightness steps and the
+     * reader sees the order in the colour itself. Hue 300 is the app's one accent,
+     * keeping SPEC.md §13's "one accent colour" intact.
+     *
+     * Steps were validated, not eyeballed: monotone lightness, adjacent dL >= 0.06,
+     * and the lightest step clearing 2:1 against the card surface so an untouched
+     * topic is still a visible mark rather than an invisible hole. An earlier
+     * lighter first step failed that contrast floor at 1.35:1 and was re-stepped.
+     */
+    --mastery-0: oklch(0.74 0.055 300);
+    --mastery-1: oklch(0.66 0.12 300);
+    --mastery-2: oklch(0.58 0.17 300);
+    --mastery-3: oklch(0.48 0.19 300);
+    /* Decaying is a state needing attention, not a rung on the ladder, so it sits
+       outside the ramp. Amber matches the timer's existing "past target" signal. */
+    --mastery-decaying: oklch(0.66 0.15 75);
 }
 
 .dark {
@@ -126,6 +146,15 @@
     --sidebar-accent-foreground: oklch(0.95 0.006 55);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.56 0.18 300 / 55%);
+
+    /* Dark mode re-steps the ordinal ramp rather than flipping it: more progress reads
+       brighter against a dark surface. Validated against the dark card surface on the
+       same four checks as the light ramp. */
+    --mastery-0: oklch(0.42 0.02 300);
+    --mastery-1: oklch(0.5 0.1 300);
+    --mastery-2: oklch(0.58 0.15 300);
+    --mastery-3: oklch(0.68 0.19 300);
+    --mastery-decaying: oklch(0.72 0.15 75);
 }
 
 @layer base {
