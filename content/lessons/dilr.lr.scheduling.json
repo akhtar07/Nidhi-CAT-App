@@ -1,0 +1,35 @@
+{
+  "id": "dilr.lr.scheduling",
+  "microTopicId": "dilr.lr.scheduling",
+  "bodyMarkdown": "## The idea in plain language\n\nScheduling puzzles are timetables with gaps. Five people, five days, some rules about who cannot go on which day.\n\nIt is the same grid technique as any matching puzzle, with one extra feature: time has an order. 'Before' and 'after' constrain things that 'different from' does not.\n\n## What is actually going on\n\nBuild a grid of slots against entities. Mark the impossible cells from the negative clues first \u2014 these are usually generous and cut the space down fast.\n\nThen apply the ordering clues. 'A is scheduled before B' means A cannot take the last slot and B cannot take the first, which is often an immediate elimination people miss.\n\nWatch for clues about gaps ('three days after') versus mere order ('some day after'). And check whether every slot must be filled, or whether some can be empty \u2014 that changes the counting.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.scheduling.ex1",
+      "stemMarkdown": "Four presentations run Monday to Thursday, one per day. P is before Q. R is on Wednesday. P is not on Monday. When is P?",
+      "solutionMarkdown": "R takes Wednesday, leaving Monday, Tuesday and Thursday for P, Q and S.\n\nP is not on Monday, so P is Tuesday or Thursday.\n\nP must be before Q, so P cannot be Thursday \u2014 nothing would be left after it.\n\nSo P is on Tuesday.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.scheduling.fc1",
+      "microTopicId": "dilr.lr.scheduling",
+      "title": "Ordering eliminations",
+      "bodyMarkdown": "'A before B' immediately rules A out of the last slot and B out of the first.",
+      "exampleMarkdown": "With four slots and A before B, A can only be in slots 1 to 3."
+    },
+    {
+      "id": "dilr.lr.scheduling.fc2",
+      "microTopicId": "dilr.lr.scheduling",
+      "title": "Grid first, order second",
+      "bodyMarkdown": "Apply negative and fixed clues to the grid first, then layer the ordering constraints onto what remains.",
+      "exampleMarkdown": "Fixing one entity to Wednesday shrinks the problem before any ordering logic is needed."
+    }
+  ],
+  "commonTraps": [
+    "Missing the automatic first-and-last eliminations that any ordering clue produces.",
+    "Reading 'after' as 'immediately after'.",
+    "Assuming every slot is filled when the puzzle allows empty ones."
+  ],
+  "estReadMinutes": 7
+}

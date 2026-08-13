@@ -1,0 +1,35 @@
+{
+  "id": "qa.numsys.factorials-prime-power",
+  "microTopicId": "qa.numsys.factorials-prime-power",
+  "bodyMarkdown": "## The idea in plain language\n\n$10!$ means $1 \\times 2 \\times 3 \\times \\cdots \\times 10$. Suppose you want to know how many 2s are hiding inside it. You could multiply the whole thing out \u2014 or you could just walk along and count.\n\nEvery second number contributes a 2. Every fourth number contributes an **extra** one, because 4 is $2 \\times 2$. Every eighth contributes yet another. Adding those counts is Legendre's formula.\n\n## What is actually going on\n\nThe highest power of a prime $p$ dividing $n!$ is\n\n$$\\left\\lfloor \\frac{n}{p} \\right\\rfloor + \\left\\lfloor \\frac{n}{p^2} \\right\\rfloor + \\left\\lfloor \\frac{n}{p^3} \\right\\rfloor + \\cdots$$\n\nThe first term counts the multiples of $p$. The second catches the fact that multiples of $p^2$ carry a second copy, the third catches a third copy, and so on. Keep going until the power of $p$ exceeds $n$, at which point every remaining term is zero.",
+  "workedExamples": [
+    {
+      "id": "qa.numsys.factorials-prime-power.ex1",
+      "stemMarkdown": "Find the highest power of 3 that divides $50!$.",
+      "solutionMarkdown": "$\\lfloor 50/3 \\rfloor = 16$\n$\\lfloor 50/9 \\rfloor = 5$\n$\\lfloor 50/27 \\rfloor = 1$\n$\\lfloor 50/81 \\rfloor = 0$, so stop.\n\nTotal $= 16 + 5 + 1 = 22$.\n\nSo $3^{22}$ divides $50!$ but $3^{23}$ does not.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.numsys.factorials-prime-power.fc1",
+      "microTopicId": "qa.numsys.factorials-prime-power",
+      "title": "Legendre's formula",
+      "bodyMarkdown": "The exponent of prime $p$ in $n!$ is $\\sum_{k \\geq 1} \\left\\lfloor \\dfrac{n}{p^k} \\right\\rfloor$.",
+      "exampleMarkdown": "Power of 2 in $20!$: $10 + 5 + 2 + 1 = 18$."
+    },
+    {
+      "id": "qa.numsys.factorials-prime-power.fc2",
+      "microTopicId": "qa.numsys.factorials-prime-power",
+      "title": "Highest power of a composite",
+      "bodyMarkdown": "Factorise it first, apply Legendre to each prime, then take the most restrictive.",
+      "exampleMarkdown": "For $6^k$ in $20!$: 2s give 18, 3s give 8, so the answer is 8."
+    }
+  ],
+  "commonTraps": [
+    "Stopping after the first term and undercounting badly.",
+    "Rounding up instead of taking the floor. Always round down.",
+    "For a composite like 6 or 12, forgetting to take the smaller of the two prime counts."
+  ],
+  "estReadMinutes": 6
+}

@@ -1,0 +1,35 @@
+{
+  "id": "varc.rc.tone-attitude",
+  "microTopicId": "varc.rc.tone-attitude",
+  "bodyMarkdown": "## The idea in plain language\n\nTwo people can describe the same event and you can hear, from word choice alone, that one approves and the other does not. 'Frugal' and 'stingy' describe identical behaviour with opposite attitudes.\n\nTone questions ask you to hear that. The information is carried by adjectives, verbs and the occasional aside, not by the facts themselves.\n\n## What is actually going on\n\nFirst decide the simplest thing: is the author positive, negative, or neutral? That alone usually eliminates half the options.\n\nThen calibrate the strength. Most academic and editorial writing is measured \u2014 'critical' or 'sceptical' rather than 'furious' or 'contemptuous'. Extreme tone words are rarely correct because passages are rarely extreme.\n\nWatch for authors who present a view at length and then reject it. The tone belongs to the **author**, not to the view being reported.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.tone-attitude.ex1",
+      "stemMarkdown": "An author writes: 'The proposal is well intentioned, though its authors appear not to have consulted anyone who would live with its consequences.' What is the tone?",
+      "solutionMarkdown": "'Well intentioned' is mild praise, but the second clause is a pointed criticism.\n\nThe tone is **critical but measured** \u2014 something like 'qualified disapproval'.\n\nIt is not 'enthusiastic', and it is not 'scathing' either. The concession in the first half rules out anything harsh.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.tone-attitude.fc1",
+      "microTopicId": "varc.rc.tone-attitude",
+      "title": "Sign first, strength second",
+      "bodyMarkdown": "Decide positive, negative or neutral, then judge how strong. Most passages are moderate.",
+      "exampleMarkdown": "Between 'sceptical' and 'derisive', a measured passage takes 'sceptical'."
+    },
+    {
+      "id": "varc.rc.tone-attitude.fc2",
+      "microTopicId": "varc.rc.tone-attitude",
+      "title": "The author is not the view",
+      "bodyMarkdown": "When a passage reports others' opinions, the tone is the author's attitude to them, not the opinions themselves.",
+      "exampleMarkdown": "An author explaining a theory at length may still be arguing against it."
+    }
+  ],
+  "commonTraps": [
+    "Choosing an extreme tone word for a moderately worded passage.",
+    "Mistaking a reported opinion for the author's own.",
+    "Reading a single strong word as the tone of the whole passage."
+  ],
+  "estReadMinutes": 6
+}

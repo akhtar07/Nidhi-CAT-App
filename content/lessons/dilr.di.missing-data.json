@@ -1,0 +1,35 @@
+{
+  "id": "dilr.di.missing-data",
+  "microTopicId": "dilr.di.missing-data",
+  "bodyMarkdown": "## The idea in plain language\n\nSome tables arrive with holes in them. This looks unfair until you notice the totals: if a row must add to 100 and three of its four entries are given, the fourth is forced.\n\nThe blanks are not missing information. They are a puzzle whose answer is already determined by the constraints around them.\n\n## What is actually going on\n\nWork the constraints, not the blanks. Row totals, column totals, grand totals and stated percentages each pin down values.\n\nFill in whatever is immediately forced by a single constraint. That usually unlocks another cell, which unlocks another. Proceed until the table is complete or you have exhausted the constraints.\n\nIf several blanks remain and no constraint forces them individually, check whether the question actually needs them \u2014 often it only asks about a total, which may already be determined.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.missing-data.ex1",
+      "stemMarkdown": "A row must total 200. Three of its four entries are 45, 60 and 30. Find the fourth.",
+      "solutionMarkdown": "Sum of the known entries $= 45 + 60 + 30 = 135$.\n\nThe missing entry $= 200 - 135 = 65$.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.missing-data.fc1",
+      "microTopicId": "dilr.di.missing-data",
+      "title": "Filling by constraint",
+      "bodyMarkdown": "A blank is determined when its row total, column total, or a stated percentage leaves only one possible value.",
+      "exampleMarkdown": "A column summing to 500 with entries 120, 180 and one blank forces 200."
+    },
+    {
+      "id": "dilr.di.missing-data.fc2",
+      "microTopicId": "dilr.di.missing-data",
+      "title": "Cascade",
+      "bodyMarkdown": "Fill every forced cell first; each one may force another. Repeat until nothing new is forced.",
+      "exampleMarkdown": "Completing a row often completes a column that crosses it."
+    }
+  ],
+  "commonTraps": [
+    "Guessing a blank rather than deriving it from a constraint.",
+    "Missing the grand total, which often constrains the table when no single row or column does.",
+    "Spending time filling cells the questions never reference."
+  ],
+  "estReadMinutes": 6
+}

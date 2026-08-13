@@ -1,0 +1,35 @@
+{
+  "id": "varc.va.para-summary",
+  "microTopicId": "varc.va.para-summary",
+  "bodyMarkdown": "## The idea in plain language\n\nImagine a friend asks what a paragraph said and you have one sentence to tell them. You would give the main point \u2014 not the examples, not the aside in the middle.\n\nThat is a summary. The commonest mistake is picking an option that repeats a striking detail instead of capturing the whole.\n\n## What is actually going on\n\nFind the paragraph's central claim, then check that your chosen option covers **all** of it and nothing beyond it.\n\nOptions fail in four recognisable ways. Too narrow: captures only one part. Too broad: says something more general than the paragraph supports. Distorted: changes an emphasis or a qualifier. Outside: introduces material the paragraph never mentioned.\n\nA summary must also preserve the paragraph's **relationships** \u2014 if the paragraph argued A despite B, a summary mentioning only A has lost the argument.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.va.para-summary.ex1",
+      "stemMarkdown": "A paragraph argues that microfinance helps some borrowers but that its benefits have been overstated by advocates. Which summary is best?",
+      "solutionMarkdown": "The best summary keeps **both** halves: microfinance has real but limited benefits that have been exaggerated.\n\n'Microfinance helps borrowers escape poverty' is too narrow and drops the criticism.\n\n'Microfinance does not work' is a distortion \u2014 the paragraph said some borrowers do benefit.\n\nKeeping the concession **and** the criticism is what makes a summary faithful.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.va.para-summary.fc1",
+      "microTopicId": "varc.va.para-summary",
+      "title": "Four ways an option fails",
+      "bodyMarkdown": "Too narrow, too broad, distorted, or introducing outside material. Name the failure for each rejected option.",
+      "exampleMarkdown": "An option covering only the first half of a two-part argument is too narrow."
+    },
+    {
+      "id": "varc.va.para-summary.fc2",
+      "microTopicId": "varc.va.para-summary",
+      "title": "Preserve the relationship",
+      "bodyMarkdown": "If the paragraph concedes something and then objects, the summary must keep both parts.",
+      "exampleMarkdown": "'A, although B' cannot be summarised as just 'A'."
+    }
+  ],
+  "commonTraps": [
+    "Choosing an option built around the paragraph's most memorable example.",
+    "Dropping a concession or qualifier that changes the paragraph's stance.",
+    "Picking an option that is true but broader than what the paragraph argued."
+  ],
+  "estReadMinutes": 6
+}

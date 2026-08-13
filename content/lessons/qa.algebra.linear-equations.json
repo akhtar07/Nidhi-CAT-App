@@ -1,0 +1,41 @@
+{
+  "id": "qa.algebra.linear-equations",
+  "microTopicId": "qa.algebra.linear-equations",
+  "bodyMarkdown": "## The idea in plain language\n\nA balance scale with the same weight on both pans stays level. Add 3 kg to one side and you must add 3 kg to the other, or it tips. An equation is that scale, and the equals sign is the pivot.\n\nSolving means peeling away everything around the unknown, doing the identical thing to both sides each time, until the unknown sits alone.\n\n## What is actually going on\n\nOne equation with one unknown pins it down. One equation with **two** unknowns does not \u2014 $x + y = 10$ has endless solutions. You need as many independent equations as unknowns.\n\nTo solve a pair, get rid of one variable. **Elimination** scales the two equations so one variable has matching coefficients, then subtracts. **Substitution** rearranges one equation and plugs it into the other. Both work; elimination is usually faster when coefficients are tidy.",
+  "workedExamples": [
+    {
+      "id": "qa.algebra.linear-equations.ex1",
+      "stemMarkdown": "Solve $2x + 3y = 16$ and $3x - y = 2$.",
+      "solutionMarkdown": "The second equation gives $y = 3x - 2$. Substitute into the first:\n\n$2x + 3(3x - 2) = 16$, so $2x + 9x - 6 = 16$, giving $11x = 22$ and $x = 2$.\n\nThen $y = 3(2) - 2 = 4$.\n\nCheck: $2(2) + 3(4) = 16$ and $3(2) - 4 = 2$. Both hold.",
+      "altSolutionMarkdown": "By elimination: multiply the second by 3 to get $9x - 3y = 6$, add to the first, and the $y$ terms cancel to give $11x = 22$."
+    },
+    {
+      "id": "qa.algebra.linear-equations.ex2",
+      "stemMarkdown": "A box has 20 coins of Rs. 5 and Rs. 10, worth Rs. 145 in total. How many Rs. 5 coins are there?",
+      "solutionMarkdown": "Let $x$ be the number of Rs. 5 coins, so $20 - x$ are Rs. 10 coins.\n\n$5x + 10(20 - x) = 145$\n\n$5x + 200 - 10x = 145$, so $-5x = -55$ and $x = 11$.\n\nThere are 11 five-rupee coins and 9 ten-rupee coins. Check: $55 + 90 = 145$.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.algebra.linear-equations.fc1",
+      "microTopicId": "qa.algebra.linear-equations",
+      "title": "Solving a 2 by 2 system",
+      "bodyMarkdown": "For $a_1x + b_1y = c_1$ and $a_2x + b_2y = c_2$: $x = \\dfrac{c_1b_2 - c_2b_1}{a_1b_2 - a_2b_1}$.",
+      "exampleMarkdown": "$2x + 3y = 16$, $3x - y = 2$ gives $x = \\dfrac{16(-1) - 2(3)}{2(-1) - 3(3)} = \\dfrac{-22}{-11} = 2$."
+    },
+    {
+      "id": "qa.algebra.linear-equations.fc2",
+      "microTopicId": "qa.algebra.linear-equations",
+      "title": "When there is no unique solution",
+      "bodyMarkdown": "If $a_1b_2 = a_2b_1$ the lines are parallel: either no solution, or infinitely many if the equations are multiples of each other.",
+      "exampleMarkdown": "$2x + 4y = 6$ and $x + 2y = 3$ are the same line, so every point on it is a solution."
+    }
+  ],
+  "commonTraps": [
+    "Doing something to one side of the equation and forgetting the other.",
+    "Sign errors when subtracting one equation from another. Write out the subtraction rather than doing it in your head.",
+    "Not checking the answer back in both original equations. It takes ten seconds and catches most mistakes."
+  ],
+  "estReadMinutes": 6
+}

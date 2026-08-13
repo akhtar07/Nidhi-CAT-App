@@ -1,28 +1,35 @@
 {
-  "id": "lesson.dilr.lr.arrangements",
+  "id": "dilr.lr.arrangements",
   "microTopicId": "dilr.lr.arrangements",
-  "bodyMarkdown": "## Circular & Linear Arrangements\n\nThink of this like a seating chart puzzle. You're given a handful of clues about where people\nsit, and you need to figure out the **one** arrangement that makes every clue true at once.\n\n### How to actually solve one (step by step)\n\n1. **Draw the shape** \u2014 a circle for circular arrangements, a line of boxes for linear ones.\n   Don't try to do it in your head.\n2. **Start with the most specific clue** \u2014 one that pins someone down relative to a fixed point,\n   or links two people directly (\"X sits immediately clockwise of Y\").\n3. **Fill in what each clue forces**, one at a time. After each clue, ask: does this create a\n   contradiction with what I've already placed? If yes, you misread something \u2014 recheck.\n4. **The last person left goes in the last empty seat** \u2014 often the easiest \"clue\" is simply\n   \"there's nowhere else for them to go.\"\n5. **Re-read every clue against your finished diagram** before answering \u2014 a puzzle isn't solved\n   until every single clue checks out, not just the ones you used to build it.\n\n### \"Clockwise\" matters\n\nIn a circular arrangement, clockwise and counter-clockwise are genuinely different arrangements\n\u2014 don't assume symmetry. If a clue says \"clockwise,\" it means going around the circle in one\nspecific direction, and mixing it up flips your whole answer.",
+  "bodyMarkdown": "## The idea in plain language\n\nSix people around a circular table, and clues about who sits next to whom. The thing that makes circular arrangements different from a straight line is that there is no first or last seat \u2014 only neighbours.\n\nSo fix somebody's position arbitrarily and arrange everyone else relative to them. Rotating the whole table does not create a new arrangement.\n\n## What is actually going on\n\nDraw the actual shape \u2014 a circle with the right number of seats, or a row of boxes. Do not try to hold it in your head.\n\nFix one person to break the rotational symmetry. Then place the most rigid clue next: 'X sits immediately left of Y' is far more restrictive than 'X sits somewhere opposite Y'.\n\nDirection matters enormously in circular puzzles. Decide once whether people face the centre or outwards, since that flips what 'left' means, and write it at the top of your diagram.\n\n## Choosing whether to attempt a set\n\nBefore solving anything, spend 30 seconds deciding whether to attempt the set at all. Count how many questions it carries, look at whether the data is fully given or has to be deduced, and check whether the first question is answerable from a single row or needs the whole grid solved. A set that takes 12 minutes for 4 marks is worse than two sets that take 5 minutes each. Walking away from a bad set is a skill, not a failure.",
   "workedExamples": [
     {
-      "id": "dilr.lr.arrangements.we-01",
-      "stemMarkdown": "4 friends P, Q, R, S sit around a circular table. Clue 1: Q sits immediately clockwise of P. Clue 2: R sits immediately clockwise of Q. Where does S sit, relative to P, going clockwise?",
-      "solutionMarkdown": "Clue 1 fixes Q right after P (clockwise). Clue 2 fixes R right after Q. That places three of the four seats: $P \\to Q \\to R \\to \\_$. Only one seat is left, and only S is left to fill it \u2014 so S must be immediately clockwise of R (and, since it's a circle, immediately **before** P). Going clockwise from P, the order is P, Q, R, S \u2014 so **2 people (Q and R) sit between P and S** going clockwise from P.",
-      "altSolutionMarkdown": null
+      "id": "dilr.lr.arrangements.ex1",
+      "stemMarkdown": "Five people sit in a circle. B is immediately clockwise of A. C is directly opposite... with 5 seats, why is that impossible?",
+      "solutionMarkdown": "With an odd number of seats, no seat has a true opposite \u2014 the position directly across falls between two seats.\n\n'Directly opposite' clues only make sense when the number of seats is even.\n\nSpotting that immediately tells you the clue must mean something else, or the set has a different seat count than assumed.",
+      "altSolutionMarkdown": "Checking whether opposites can even exist takes two seconds and prevents a lot of wasted effort."
     }
   ],
   "formulaCards": [
     {
-      "id": "dilr.lr.arrangements.fc-method",
+      "id": "dilr.lr.arrangements.fc1",
       "microTopicId": "dilr.lr.arrangements",
-      "title": "Solving method",
-      "bodyMarkdown": "Draw it \u2192 place the most specific clue first \u2192 fill in what each clue forces \u2192 the last person takes the last seat \u2192 re-check every clue against the finished diagram.",
-      "exampleMarkdown": null
+      "title": "Fix one, arrange the rest",
+      "bodyMarkdown": "In a circle, fix one person to remove rotational duplicates. $n$ people in a circle have $(n-1)!$ distinct arrangements.",
+      "exampleMarkdown": "5 people around a table have $4! = 24$ arrangements, not 120."
+    },
+    {
+      "id": "dilr.lr.arrangements.fc2",
+      "microTopicId": "dilr.lr.arrangements",
+      "title": "Opposites need even seats",
+      "bodyMarkdown": "A seat has a directly opposite seat only when the total number of seats is even.",
+      "exampleMarkdown": "In 8 seats, seat 1 faces seat 5. In 7 seats, nothing faces seat 1 exactly."
     }
   ],
   "commonTraps": [
-    "Clockwise and counter-clockwise are different arrangements \u2014 don't assume the puzzle is symmetric.",
-    "Don't stop as soon as your diagram satisfies the clues you USED to build it \u2014 re-check every clue, including ones you placed early and might have drifted from.",
-    "\"Immediately clockwise of X\" and \"immediately clockwise of the person clockwise of X\" are different distances \u2014 read the exact wording, not the gist."
+    "Forgetting to state whether people face inward or outward, which reverses left and right.",
+    "Treating rotations of the same arrangement as different answers.",
+    "Applying 'directly opposite' logic to an odd number of seats."
   ],
-  "estReadMinutes": 5
+  "estReadMinutes": 7
 }

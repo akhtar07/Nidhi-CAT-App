@@ -1,0 +1,35 @@
+{
+  "id": "dilr.lr.binary-logic",
+  "microTopicId": "dilr.lr.binary-logic",
+  "bodyMarkdown": "## The idea in plain language\n\nSome people in the puzzle always tell the truth, and others always lie. Someone says 'I am a liar' \u2014 which cannot be true, because a liar would not admit it, and a truth-teller would not say it.\n\nThat contradiction is the engine of the whole topic. You assume something, follow it through, and see whether the world it creates makes sense.\n\n## What is actually going on\n\nThe reliable method is **assume and test**. Suppose person A is a truth-teller. Work out what every statement then implies. If you reach a contradiction, A must be a liar; if everything holds together, that scenario is possible.\n\nDo this systematically rather than jumping between assumptions. Two people gives four cases; three gives eight \u2014 still perfectly countable.\n\nRemember the asymmetry: a liar's statement is **false**, which tells you the opposite is true. A false statement is information, not an absence of it.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.binary-logic.ex1",
+      "stemMarkdown": "A says 'B is a liar'. B says 'A and I are both truth-tellers'. Who is what?",
+      "solutionMarkdown": "Assume A tells the truth. Then B is a liar, so B's claim must be false. B claimed both are truth-tellers \u2014 false, since B is a liar. Consistent so far, with no contradiction.\n\nNow assume A lies. Then B is a truth-teller, so B's claim is true, meaning A is a truth-teller too. That contradicts our assumption that A lies.\n\nSo A is a truth-teller and B is a liar.",
+      "altSolutionMarkdown": "Only one of the two assumptions survives \u2014 which is exactly how these puzzles are built."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.binary-logic.fc1",
+      "microTopicId": "dilr.lr.binary-logic",
+      "title": "Assume and test",
+      "bodyMarkdown": "Assume one person's type, follow every consequence, and reject the assumption if a contradiction appears.",
+      "exampleMarkdown": "If assuming A is truthful forces A to be lying, then A is a liar."
+    },
+    {
+      "id": "dilr.lr.binary-logic.fc2",
+      "microTopicId": "dilr.lr.binary-logic",
+      "title": "A lie is information",
+      "bodyMarkdown": "If a liar says X, then X is false, so the negation of X is true.",
+      "exampleMarkdown": "A liar saying 'C is guilty' establishes that C is not guilty."
+    }
+  ],
+  "commonTraps": [
+    "Treating a liar's statement as merely unreliable. It is reliably false.",
+    "Stopping at the first consistent scenario without checking whether others also work.",
+    "Forgetting that 'not a truth-teller' means liar only when the puzzle offers exactly two types."
+  ],
+  "estReadMinutes": 7
+}

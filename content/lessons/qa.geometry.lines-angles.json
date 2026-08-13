@@ -1,0 +1,41 @@
+{
+  "id": "qa.geometry.lines-angles",
+  "microTopicId": "qa.geometry.lines-angles",
+  "bodyMarkdown": "## The idea in plain language\n\nStand facing north and spin all the way round back to north. You have turned 360 degrees. Turn only half of that and you are facing south \u2014 a straight line, 180 degrees.\n\nThose two numbers, 360 for a full turn and 180 for a straight line, generate almost every angle fact in geometry. Everything else is bookkeeping.\n\n## What is actually going on\n\nAngles on a straight line add to 180. Angles round a point add to 360. Two crossing lines make vertically opposite angles, which are always equal.\n\nWhen a transversal cuts two **parallel** lines, three relationships appear:\n\n**Corresponding** angles (same position at each crossing) are equal.\n**Alternate** angles (opposite sides of the transversal, between the parallels) are equal.\n**Co-interior** angles (same side, between the parallels) add to 180.\n\nTwo of the three are equalities and only one is a sum \u2014 mixing them up is the commonest error here.",
+  "workedExamples": [
+    {
+      "id": "qa.geometry.lines-angles.ex1",
+      "stemMarkdown": "Two parallel lines are cut by a transversal. One co-interior angle is 65 degrees. Find the other.",
+      "solutionMarkdown": "Co-interior angles between parallel lines are supplementary, meaning they add to 180.\n\nThe other angle is $180 - 65 = 115$ degrees.",
+      "altSolutionMarkdown": "Sanity check: co-interior angles are equal only when both are 90. Since 65 is not 90, the two must differ."
+    },
+    {
+      "id": "qa.geometry.lines-angles.ex2",
+      "stemMarkdown": "Three angles meet at a point on one side of a straight line. Two are 55 and 70 degrees. Find the third.",
+      "solutionMarkdown": "Angles on a straight line total 180 degrees.\n\n$180 - 55 - 70 = 55$ degrees.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.geometry.lines-angles.fc1",
+      "microTopicId": "qa.geometry.lines-angles",
+      "title": "Angle sums",
+      "bodyMarkdown": "On a straight line: 180 degrees. Around a point: 360 degrees. Vertically opposite angles are equal.",
+      "exampleMarkdown": "If one angle at a crossing is 40, the opposite one is 40 and each neighbour is 140."
+    },
+    {
+      "id": "qa.geometry.lines-angles.fc2",
+      "microTopicId": "qa.geometry.lines-angles",
+      "title": "Parallel lines and a transversal",
+      "bodyMarkdown": "Corresponding angles equal. Alternate angles equal. Co-interior angles add to 180.",
+      "exampleMarkdown": "A transversal making 70 degrees gives another 70 (corresponding) and a 110 (co-interior)."
+    }
+  ],
+  "commonTraps": [
+    "Using an equality rule for co-interior angles. Those are the only pair that sum rather than match.",
+    "Applying parallel-line rules when the lines are not actually stated to be parallel.",
+    "Assuming a diagram is to scale. Work from the stated values, never from how it looks."
+  ],
+  "estReadMinutes": 5
+}

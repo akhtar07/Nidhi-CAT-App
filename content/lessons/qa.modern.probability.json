@@ -1,0 +1,48 @@
+{
+  "id": "qa.modern.probability",
+  "microTopicId": "qa.modern.probability",
+  "bodyMarkdown": "## The idea in plain language\n\nProbability is just careful counting. Roll a die: there are 6 equally likely outcomes, and 3 of them are even, so the chance of an even number is $\\frac36 = \\frac12$.\n\nThe whole skill is counting the favourable outcomes and the total outcomes **correctly** \u2014 and making sure every outcome you count really is equally likely.\n\n## What is actually going on\n\n$$P(\\text{event}) = \\frac{\\text{number of favourable outcomes}}{\\text{total number of outcomes}}$$\n\nTwo dice give $6 \\times 6 = 36$ outcomes, not 11 \u2014 the sums 2 through 12 are **not** equally likely, so counting sums would be wrong.\n\nWhen drawing objects where order does not matter, count with combinations. Drawing 2 balls from 9 gives $\\binom92 = 36$ possible pairs.\n\n'At least one' questions are almost always faster backwards: find the probability of **none** and subtract from 1.",
+  "workedExamples": [
+    {
+      "id": "qa.modern.probability.ex1",
+      "stemMarkdown": "Two fair dice are thrown. What is the probability that the sum is 7?",
+      "solutionMarkdown": "Total outcomes: $6 \\times 6 = 36$.\n\nPairs summing to 7: $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$ \u2014 that is 6 pairs. Note $(2,5)$ and $(5,2)$ are different outcomes.\n\n$P = \\dfrac{6}{36} = \\dfrac16$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.modern.probability.ex2",
+      "stemMarkdown": "A bag has 4 red and 5 blue balls. Two are drawn without replacement. What is the probability that both are red?",
+      "solutionMarkdown": "Total ways to choose 2 from 9: $\\binom92 = 36$.\n\nWays to choose 2 reds from 4: $\\binom42 = 6$.\n\n$P = \\dfrac{6}{36} = \\dfrac16$.",
+      "altSolutionMarkdown": "Sequentially: the first ball is red with probability $\\frac49$, and then only 3 reds remain among 8 balls, so $\\frac49 \\times \\frac38 = \\frac{12}{72} = \\frac16$. Same answer."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.modern.probability.fc1",
+      "microTopicId": "qa.modern.probability",
+      "title": "Basic probability",
+      "bodyMarkdown": "$P(E) = \\dfrac{n(E)}{n(S)}$ when all outcomes are equally likely. Always between 0 and 1.",
+      "exampleMarkdown": "Drawing an ace from a full deck: $\\dfrac{4}{52} = \\dfrac{1}{13}$."
+    },
+    {
+      "id": "qa.modern.probability.fc2",
+      "microTopicId": "qa.modern.probability",
+      "title": "Complement and 'at least one'",
+      "bodyMarkdown": "$P(\\text{at least one}) = 1 - P(\\text{none})$.",
+      "exampleMarkdown": "At least one head in 3 tosses: $1 - \\dfrac18 = \\dfrac78$."
+    },
+    {
+      "id": "qa.modern.probability.fc3",
+      "microTopicId": "qa.modern.probability",
+      "title": "Addition and multiplication",
+      "bodyMarkdown": "$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. For independent events, $P(A \\cap B) = P(A)P(B)$.",
+      "exampleMarkdown": "Two independent events with $P = 0.5$ each both occur with probability $0.25$."
+    }
+  ],
+  "commonTraps": [
+    "Treating the 11 possible dice sums as equally likely. They are not; work with the 36 ordered outcomes.",
+    "Forgetting that 'without replacement' changes the denominator for the second draw.",
+    "Adding probabilities of events that can happen together without subtracting the overlap."
+  ],
+  "estReadMinutes": 7
+}

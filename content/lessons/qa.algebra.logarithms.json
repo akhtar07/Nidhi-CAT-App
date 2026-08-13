@@ -1,0 +1,48 @@
+{
+  "id": "qa.algebra.logarithms",
+  "microTopicId": "qa.algebra.logarithms",
+  "bodyMarkdown": "## The idea in plain language\n\nA logarithm answers one question: **how many times do I multiply this number by itself to get that number?**\n\n$\\log_2 8$ asks: how many 2s multiplied together make 8? Since $2 \\times 2 \\times 2 = 8$, the answer is 3. That is all a log is \u2014 an exponent, written the other way round.\n\n## What is actually going on\n\n$\\log_b x = y$ and $b^y = x$ say exactly the same thing. Being fluent at flipping between those two forms solves most log questions immediately.\n\nThe rules all come from what exponents already do. Multiplying powers adds their exponents, so logs of a product add. Dividing subtracts. Raising to a power multiplies. Nothing new to memorise if you remember where they come from.",
+  "workedExamples": [
+    {
+      "id": "qa.algebra.logarithms.ex1",
+      "stemMarkdown": "Evaluate $\\log_3 81$.",
+      "solutionMarkdown": "How many 3s multiply together to make 81?\n\n$3 \\times 3 = 9$, $\\times 3 = 27$, $\\times 3 = 81$. That is four 3s.\n\nSo $\\log_3 81 = 4$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.algebra.logarithms.ex2",
+      "stemMarkdown": "Evaluate $\\log_2 8 + \\log_2 4$.",
+      "solutionMarkdown": "Separately: $\\log_2 8 = 3$ and $\\log_2 4 = 2$, so the sum is 5.\n\nOr use the product rule: $\\log_2 8 + \\log_2 4 = \\log_2 (8 \\times 4) = \\log_2 32 = 5$, since $2^5 = 32$.\n\nBoth routes agree.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.algebra.logarithms.fc1",
+      "microTopicId": "qa.algebra.logarithms",
+      "title": "Definition",
+      "bodyMarkdown": "$\\log_b x = y$ means exactly $b^y = x$.",
+      "exampleMarkdown": "$\\log_5 125 = 3$ because $5^3 = 125$."
+    },
+    {
+      "id": "qa.algebra.logarithms.fc2",
+      "microTopicId": "qa.algebra.logarithms",
+      "title": "The three rules",
+      "bodyMarkdown": "$\\log_b(mn) = \\log_b m + \\log_b n$, $\\log_b\\left(\\dfrac{m}{n}\\right) = \\log_b m - \\log_b n$, $\\log_b(m^k) = k\\log_b m$.",
+      "exampleMarkdown": "$\\log 8 = \\log 2^3 = 3\\log 2$."
+    },
+    {
+      "id": "qa.algebra.logarithms.fc3",
+      "microTopicId": "qa.algebra.logarithms",
+      "title": "Change of base",
+      "bodyMarkdown": "$\\log_b x = \\dfrac{\\log_a x}{\\log_a b}$ for any valid base $a$.",
+      "exampleMarkdown": "$\\log_8 32 = \\dfrac{\\log_2 32}{\\log_2 8} = \\dfrac{5}{3}$."
+    }
+  ],
+  "commonTraps": [
+    "Writing $\\log(m + n)$ as $\\log m + \\log n$. The product rule applies to products, never to sums.",
+    "Forgetting that logs of zero or negative numbers are undefined.",
+    "Losing track of the base. $\\log_2 8$ and $\\log_8 2$ are very different numbers."
+  ],
+  "estReadMinutes": 6
+}

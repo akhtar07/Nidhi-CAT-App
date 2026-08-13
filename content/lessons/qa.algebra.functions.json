@@ -1,0 +1,41 @@
+{
+  "id": "qa.algebra.functions",
+  "microTopicId": "qa.algebra.functions",
+  "bodyMarkdown": "## The idea in plain language\n\nA function is a machine. Put a number in the top, and a number comes out of the bottom. $f(x) = 2x + 3$ is the machine that doubles whatever you feed it and then adds 3.\n\nA **composite** function is two machines bolted together: the output of the first is poured straight into the second. An **inverse** function is the machine running backwards \u2014 it undoes what the original did.\n\n## What is actually going on\n\n$(f \\circ g)(x)$ means $f(g(x))$: $g$ runs **first**, then $f$. The order matters, and reading it right to left is what keeps people out of trouble.\n\nThe inverse $f^{-1}$ answers 'what input would have produced this output?'. To find it, write $y = f(x)$, swap the roles of $x$ and $y$, and solve. If $f$ doubles and adds 3, then $f^{-1}$ subtracts 3 and halves \u2014 the same steps, reversed and undone.",
+  "workedExamples": [
+    {
+      "id": "qa.algebra.functions.ex1",
+      "stemMarkdown": "If $f(x) = 3x + 1$ and $g(x) = x - 4$, find $(f \\circ g)(6)$.",
+      "solutionMarkdown": "Inside first: $g(6) = 6 - 4 = 2$.\n\nThen feed that into $f$: $f(2) = 3(2) + 1 = 7$.\n\nSo $(f \\circ g)(6) = 7$.",
+      "altSolutionMarkdown": "Note $(g \\circ f)(6) = g(19) = 15$, a completely different answer. Order is not optional."
+    },
+    {
+      "id": "qa.algebra.functions.ex2",
+      "stemMarkdown": "If $f(x) = 4x - 5$, find $f^{-1}(11)$.",
+      "solutionMarkdown": "We want the input that gives an output of 11.\n\n$4x - 5 = 11$, so $4x = 16$ and $x = 4$.\n\nSo $f^{-1}(11) = 4$. Check: $f(4) = 16 - 5 = 11$.",
+      "altSolutionMarkdown": "The general inverse is $f^{-1}(y) = \\dfrac{y + 5}{4}$: add 5, then divide by 4 \u2014 undoing the original steps in reverse order."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.algebra.functions.fc1",
+      "microTopicId": "qa.algebra.functions",
+      "title": "Composition",
+      "bodyMarkdown": "$(f \\circ g)(x) = f(g(x))$ \u2014 apply $g$ first. In general $f \\circ g \\neq g \\circ f$.",
+      "exampleMarkdown": "$f(x) = x^2$, $g(x) = x+1$: $(f \\circ g)(2) = f(3) = 9$ but $(g \\circ f)(2) = g(4) = 5$."
+    },
+    {
+      "id": "qa.algebra.functions.fc2",
+      "microTopicId": "qa.algebra.functions",
+      "title": "Inverse",
+      "bodyMarkdown": "$f^{-1}$ satisfies $f(f^{-1}(x)) = x$. Find it by setting $y = f(x)$ and solving for $x$.",
+      "exampleMarkdown": "$f(x) = 2x + 7$ gives $f^{-1}(x) = \\dfrac{x - 7}{2}$."
+    }
+  ],
+  "commonTraps": [
+    "Applying the outer function first. In $f(g(x))$, $g$ goes first.",
+    "Reading $f^{-1}(x)$ as $\\dfrac{1}{f(x)}$. The superscript $-1$ means inverse, not reciprocal.",
+    "Assuming every function has an inverse. It needs each output to come from exactly one input."
+  ],
+  "estReadMinutes": 6
+}

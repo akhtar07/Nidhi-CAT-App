@@ -1,0 +1,35 @@
+{
+  "id": "qa.numsys.rational-irrational",
+  "microTopicId": "qa.numsys.rational-irrational",
+  "bodyMarkdown": "## The idea in plain language\n\nA **rational** number is one you can write as a fraction of whole numbers. $0.5$ is $\\frac12$, and even $0.333\\ldots$ is $\\frac13$. Their decimals either stop or settle into a repeating pattern forever.\n\nAn **irrational** number never does either. $\\sqrt{2}$ and $\\pi$ run on forever with no repeat, and no fraction of whole numbers can ever capture them exactly.\n\n## What is actually going on\n\nRational means expressible as $\\dfrac{p}{q}$ with $q \\neq 0$. Terminating and recurring decimals are both rational; everything else is irrational.\n\nConverting a recurring decimal back to a fraction uses a neat pattern: a single repeating digit sits over 9, a two-digit repeating block over 99, three digits over 999. So $0.\\overline{27} = \\frac{27}{99} = \\frac{3}{11}$.\n\nUseful closure facts: rational plus rational is rational, but rational plus irrational is always irrational. Irrational plus irrational can be either \u2014 $\\sqrt2 + (-\\sqrt2) = 0$.",
+  "workedExamples": [
+    {
+      "id": "qa.numsys.rational-irrational.ex1",
+      "stemMarkdown": "Express $0.\\overline{36}$ as a fraction in lowest terms.",
+      "solutionMarkdown": "A two-digit repeating block sits over 99:\n\n$0.\\overline{36} = \\dfrac{36}{99}$\n\nDivide top and bottom by 9: $\\dfrac{4}{11}$.\n\nCheck: $4 \\div 11 = 0.3636\\ldots$",
+      "altSolutionMarkdown": "The algebraic route: let $x = 0.3636\\ldots$, so $100x = 36.3636\\ldots$. Subtracting gives $99x = 36$, hence $x = \\frac{36}{99}$."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.numsys.rational-irrational.fc1",
+      "microTopicId": "qa.numsys.rational-irrational",
+      "title": "Recurring decimal to fraction",
+      "bodyMarkdown": "A repeating block of $k$ digits sits over $k$ nines. Then reduce.",
+      "exampleMarkdown": "$0.\\overline{123} = \\dfrac{123}{999} = \\dfrac{41}{333}$."
+    },
+    {
+      "id": "qa.numsys.rational-irrational.fc2",
+      "microTopicId": "qa.numsys.rational-irrational",
+      "title": "Closure facts",
+      "bodyMarkdown": "Rational $+$ rational is rational. Rational $+$ irrational is irrational. Irrational $+$ irrational may be either.",
+      "exampleMarkdown": "$2 + \\sqrt3$ is irrational, but $\\sqrt3 + (2 - \\sqrt3) = 2$ is rational."
+    }
+  ],
+  "commonTraps": [
+    "Calling every decimal that looks messy irrational. If it repeats, it is rational.",
+    "Assuming every square root is irrational. $\\sqrt{16} = 4$ is perfectly rational.",
+    "Forgetting to reduce the fraction at the end."
+  ],
+  "estReadMinutes": 5
+}

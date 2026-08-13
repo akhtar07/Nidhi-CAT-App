@@ -1,0 +1,35 @@
+{
+  "id": "dilr.lr.games-tournaments",
+  "microTopicId": "dilr.lr.games-tournaments",
+  "bodyMarkdown": "## The idea in plain language\n\nA league table is just bookkeeping. Every match hands out a fixed number of points, and the table is the running total.\n\nThe useful consequence: the **total** points awarded across the whole tournament is fixed before a single game is played. That total is often the key that unlocks an incomplete table.\n\n## What is actually going on\n\nFirst establish the format. In a round robin with $n$ teams, each pair meets once, giving $\\binom{n}{2}$ matches. If a win is 2 points and there are no draws, the total handed out is $2 \\times \\binom{n}{2}$.\n\nThat total lets you find a missing team's points by subtraction, and caps how high any team can finish.\n\nFor 'maximum possible' questions, imagine the most favourable remaining results for the team in question \u2014 but check the arrangement is actually consistent, since one team winning means another must lose.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.games-tournaments.ex1",
+      "stemMarkdown": "Four teams play a round robin, each pair once. How many matches are played?",
+      "solutionMarkdown": "Every pair of teams meets exactly once, so count the pairs:\n\n$\\binom42 = \\dfrac{4 \\times 3}{2} = 6$ matches.",
+      "altSolutionMarkdown": "Listing them confirms it: AB, AC, AD, BC, BD, CD."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.games-tournaments.fc1",
+      "microTopicId": "dilr.lr.games-tournaments",
+      "title": "Round robin size",
+      "bodyMarkdown": "$n$ teams playing each other once gives $\\binom{n}{2} = \\dfrac{n(n-1)}{2}$ matches. Twice each doubles it.",
+      "exampleMarkdown": "6 teams play 15 matches in a single round robin."
+    },
+    {
+      "id": "dilr.lr.games-tournaments.fc2",
+      "microTopicId": "dilr.lr.games-tournaments",
+      "title": "Total points",
+      "bodyMarkdown": "With a fixed award per match, total points $=$ matches $\\times$ points per match. Use it to find a missing entry.",
+      "exampleMarkdown": "6 matches at 2 points each distributes 12 points in total."
+    }
+  ],
+  "commonTraps": [
+    "Forgetting whether teams meet once or twice. It doubles everything.",
+    "Ignoring draws when the format allows them, which changes the points-per-match total.",
+    "Computing a 'maximum possible' score without checking the results are mutually consistent."
+  ],
+  "estReadMinutes": 7
+}

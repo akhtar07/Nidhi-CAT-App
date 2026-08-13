@@ -1,0 +1,35 @@
+{
+  "id": "varc.rc.structure-function",
+  "microTopicId": "varc.rc.structure-function",
+  "bodyMarkdown": "## The idea in plain language\n\nAsk not what a paragraph **says** but what it **does**. Is it introducing an idea, giving an example, raising an objection, or answering one?\n\nThink of a paragraph as a person in a conversation. Some people set the topic, some disagree, some give evidence, some summarise. The question is asking which role this one plays.\n\n## What is actually going on\n\nRead the paragraph and describe its job in a short verb phrase: 'gives a counterexample', 'explains the mechanism', 'concedes a limitation'.\n\nConnectives are the strongest clue. 'However' signals a turn against what came before; 'for instance' signals illustration; 'therefore' signals a conclusion drawn from earlier material.\n\nNote that a paragraph's function is about its **relationship to the passage**, not its content. Options describing what the paragraph says, accurately, can still be the wrong answer to a function question.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.structure-function.ex1",
+      "stemMarkdown": "A paragraph opens 'However, this account overlooks the role of migration...' What is its function?",
+      "solutionMarkdown": "'However' signals a turn against the preceding argument.\n\nThe paragraph's function is to **raise an objection** to the account just described, by pointing to a factor it ignores.\n\nAn option saying it 'describes patterns of migration' might be factually accurate about the content, but it misses the paragraph's role in the argument.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.structure-function.fc1",
+      "microTopicId": "varc.rc.structure-function",
+      "title": "Describe the job, not the content",
+      "bodyMarkdown": "Summarise the paragraph as a verb phrase: introduces, illustrates, qualifies, refutes, concludes.",
+      "exampleMarkdown": "'Presents a counterexample' is a function; 'discusses rainfall in Kerala' is content."
+    },
+    {
+      "id": "varc.rc.structure-function.fc2",
+      "microTopicId": "varc.rc.structure-function",
+      "title": "Connectives carry the signal",
+      "bodyMarkdown": "'However' and 'yet' turn; 'for example' illustrates; 'therefore' and 'thus' conclude; 'moreover' extends.",
+      "exampleMarkdown": "A paragraph starting 'Moreover' is adding support, not objecting."
+    }
+  ],
+  "commonTraps": [
+    "Choosing an accurate description of content when the question asked about function.",
+    "Ignoring the opening connective, which usually gives the answer away.",
+    "Judging the paragraph in isolation rather than by its relationship to what surrounds it."
+  ],
+  "estReadMinutes": 6
+}

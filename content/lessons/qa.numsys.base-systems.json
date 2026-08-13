@@ -1,0 +1,41 @@
+{
+  "id": "qa.numsys.base-systems",
+  "microTopicId": "qa.numsys.base-systems",
+  "bodyMarkdown": "## The idea in plain language\n\nWe count in tens because we have ten fingers. The number 342 means three hundreds, four tens and two ones \u2014 each place is worth ten times the one to its right.\n\nThere is nothing sacred about ten. A computer counts in twos. If you had only five fingers per hand and counted in fives, then '342' would mean three twenty-fives, four fives and two ones, which is 97 in our notation. Same digits, different place values.\n\n## What is actually going on\n\nIn base $b$, the places are worth $1, b, b^2, b^3, \\ldots$ from the right. Converting **to** decimal means multiplying each digit by its place value and adding.\n\nConverting **from** decimal goes the other way: divide repeatedly by $b$, collecting remainders, then read those remainders bottom to top.\n\nOne rule worth remembering: in base $b$ the only digits allowed are $0$ through $b-1$. Seeing a 7 in a base-5 number means something has gone wrong.",
+  "workedExamples": [
+    {
+      "id": "qa.numsys.base-systems.ex1",
+      "stemMarkdown": "Convert $2143_5$ to decimal.",
+      "solutionMarkdown": "Place values from the right are $1, 5, 25, 125$.\n\n$2 \\times 125 + 1 \\times 25 + 4 \\times 5 + 3 \\times 1$\n\n$= 250 + 25 + 20 + 3 = 298$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.numsys.base-systems.ex2",
+      "stemMarkdown": "Convert 100 to base 7.",
+      "solutionMarkdown": "Divide repeatedly by 7 and keep the remainders:\n\n$100 \\div 7 = 14$ remainder $2$\n$14 \\div 7 = 2$ remainder $0$\n$2 \\div 7 = 0$ remainder $2$\n\nReading the remainders bottom to top: $202_7$.\n\nCheck: $2 \\times 49 + 0 \\times 7 + 2 = 100$.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.numsys.base-systems.fc1",
+      "microTopicId": "qa.numsys.base-systems",
+      "title": "Base to decimal",
+      "bodyMarkdown": "$d_n \\ldots d_1 d_0$ in base $b$ equals $\\sum d_i b^i$, with place values $1, b, b^2, \\ldots$",
+      "exampleMarkdown": "$1011_2 = 8 + 0 + 2 + 1 = 11$."
+    },
+    {
+      "id": "qa.numsys.base-systems.fc2",
+      "microTopicId": "qa.numsys.base-systems",
+      "title": "Decimal to base",
+      "bodyMarkdown": "Divide by $b$ repeatedly, collect remainders, and read them in reverse order.",
+      "exampleMarkdown": "$30$ in base 4: remainders 2, 3, 1 giving $132_4$."
+    }
+  ],
+  "commonTraps": [
+    "Reading the remainders in the order you found them. They must be reversed.",
+    "Using a digit that does not exist in that base, such as an 8 in base 8.",
+    "Assuming a bigger base means a bigger number. $100_2$ is 4, far smaller than $100_{10}$."
+  ],
+  "estReadMinutes": 6
+}

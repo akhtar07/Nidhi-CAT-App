@@ -1,0 +1,48 @@
+{
+  "id": "qa.geometry.quadrilaterals-polygons",
+  "microTopicId": "qa.geometry.quadrilaterals-polygons",
+  "bodyMarkdown": "## The idea in plain language\n\nWalk all the way around the edge of a field and back to where you started, facing the same way. You have turned a full 360 degrees, no matter how many corners the field has \u2014 three or thirty.\n\nThat fact gives you the exterior angles instantly. Each interior angle is then just what is left over from a straight line.\n\n## What is actually going on\n\nExterior angles of **any** polygon sum to 360. For a regular polygon with $n$ sides, each exterior angle is $\\dfrac{360}{n}$, and each interior angle is its supplement.\n\nInterior angles sum to $(n-2) \\times 180$, because the polygon splits into $n - 2$ triangles.\n\nFor quadrilaterals, the family tree matters: a square is a rectangle **and** a rhombus; every rectangle is a parallelogram. Diagonals distinguish them \u2014 a rectangle's are equal, a rhombus's cross at right angles, a square's do both.",
+  "workedExamples": [
+    {
+      "id": "qa.geometry.quadrilaterals-polygons.ex1",
+      "stemMarkdown": "Find each interior angle of a regular octagon.",
+      "solutionMarkdown": "Each exterior angle is $\\dfrac{360}{8} = 45$ degrees.\n\nEach interior angle is $180 - 45 = 135$ degrees.\n\nCheck: $8 \\times 135 = 1080 = (8-2) \\times 180$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.geometry.quadrilaterals-polygons.ex2",
+      "stemMarkdown": "How many diagonals does a decagon have?",
+      "solutionMarkdown": "Each of the 10 vertices connects to $10 - 3 = 7$ others by a diagonal (excluding itself and its two neighbours).\n\nThat counts $10 \\times 7 = 70$, but each diagonal is counted from both ends.\n\nDiagonals $= \\dfrac{70}{2} = 35$.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.geometry.quadrilaterals-polygons.fc1",
+      "microTopicId": "qa.geometry.quadrilaterals-polygons",
+      "title": "Polygon angles",
+      "bodyMarkdown": "Interior angles sum to $(n-2) \\times 180$. Exterior angles always sum to 360.",
+      "exampleMarkdown": "A hexagon's interiors total 720; each is 120 if regular."
+    },
+    {
+      "id": "qa.geometry.quadrilaterals-polygons.fc2",
+      "microTopicId": "qa.geometry.quadrilaterals-polygons",
+      "title": "Diagonals",
+      "bodyMarkdown": "A polygon with $n$ sides has $\\dfrac{n(n-3)}{2}$ diagonals.",
+      "exampleMarkdown": "A pentagon has $\\dfrac{5 \\times 2}{2} = 5$."
+    },
+    {
+      "id": "qa.geometry.quadrilaterals-polygons.fc3",
+      "microTopicId": "qa.geometry.quadrilaterals-polygons",
+      "title": "Quadrilateral areas",
+      "bodyMarkdown": "Parallelogram: base $\\times$ height. Trapezium: $\\dfrac12(a+b)h$. Rhombus: $\\dfrac12 d_1 d_2$.",
+      "exampleMarkdown": "A rhombus with diagonals 6 and 8 has area 24."
+    }
+  ],
+  "commonTraps": [
+    "Using $n \\times 180$ for the interior sum instead of $(n-2) \\times 180$.",
+    "Forgetting to halve when counting diagonals, so counting each one twice.",
+    "Assuming a parallelogram has equal diagonals. Only rectangles and squares do."
+  ],
+  "estReadMinutes": 6
+}

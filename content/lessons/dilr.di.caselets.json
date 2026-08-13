@@ -1,0 +1,28 @@
+{
+  "id": "dilr.di.caselets",
+  "microTopicId": "dilr.di.caselets",
+  "bodyMarkdown": "## The idea in plain language\n\nA caselet hides the data inside a paragraph of prose instead of a neat table. Nothing about the arithmetic is harder \u2014 the difficulty is purely in **extraction**.\n\nSo the first move is always the same: stop reading for meaning and start reading for numbers. Build the table the examiner declined to give you.\n\n## What is actually going on\n\nRead once with a pen. Every time a number appears, write it down with its label. Every time a relationship appears ('twice as many', 'Rs. 200 more than'), write that as a small equation.\n\nYou will usually find you have enough to fill a table completely, or enough equations to solve for the unknowns. Only then look at the questions.\n\nResist the urge to start answering during the first read. Half-extracted data leads to rework.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.caselets.ex1",
+      "stemMarkdown": "A firm has 3 departments. Sales has 40 staff, Engineering has twice as many as Sales, and Support has 10 fewer than Engineering. Find the total headcount.",
+      "solutionMarkdown": "Extract in order:\n\nSales $= 40$.\nEngineering $= 2 \\times 40 = 80$.\nSupport $= 80 - 10 = 70$.\n\nTotal $= 40 + 80 + 70 = 190$.",
+      "altSolutionMarkdown": "Written as a three-row table this takes seconds; read as prose it invites arithmetic slips."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.caselets.fc1",
+      "microTopicId": "dilr.di.caselets",
+      "title": "Extraction routine",
+      "bodyMarkdown": "Read once, tabulating every number with its label and every relationship as an equation. Only then read the questions.",
+      "exampleMarkdown": "'Twice as many as Sales' becomes $E = 2S$, written down immediately."
+    }
+  ],
+  "commonTraps": [
+    "Answering while still reading, then discovering a later sentence changes an earlier value.",
+    "Missing a relationship buried mid-sentence, especially comparatives like 'fewer than' or 'more than'.",
+    "Assuming the paragraph gives values in the order the questions need them."
+  ],
+  "estReadMinutes": 6
+}

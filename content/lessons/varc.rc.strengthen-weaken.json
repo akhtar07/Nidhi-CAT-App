@@ -1,0 +1,35 @@
+{
+  "id": "varc.rc.strengthen-weaken",
+  "microTopicId": "varc.rc.strengthen-weaken",
+  "bodyMarkdown": "## The idea in plain language\n\nAn argument is a bridge from evidence to conclusion. To **strengthen** it, add support under the bridge. To **weaken** it, knock out a support or show the bridge leads somewhere else.\n\nNotice that weakening does not mean disproving. Making the conclusion less likely is enough.\n\n## What is actually going on\n\nFind the conclusion first, precisely. Everything depends on knowing exactly what is being claimed.\n\nTo weaken, look for an alternative explanation of the evidence, a case the argument did not consider, or a reason the evidence does not transfer to the conclusion's situation.\n\nTo strengthen, rule out an alternative explanation, or supply the missing link.\n\nThe most common wrong answer is relevant to the **topic** but not to the **argument**. Ask whether the option changes how likely the conclusion is; if not, it is out however interesting it sounds.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.strengthen-weaken.ex1",
+      "stemMarkdown": "'Sales rose after we changed the packaging, so the new packaging caused the increase.' What most weakens this?",
+      "solutionMarkdown": "The argument moves from a correlation in time to a cause. It is weakened most by an **alternative explanation** for the rise.\n\nFor instance: 'A competitor withdrew from the market in the same month.'\n\nThat leaves the sales rise fully explained without the packaging, so the causal claim loses its support \u2014 without anyone having to prove the packaging did nothing.",
+      "altSolutionMarkdown": "Most causal arguments in CAT are weakened the same way: something else could have caused the effect."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.strengthen-weaken.fc1",
+      "microTopicId": "varc.rc.strengthen-weaken",
+      "title": "Weaken a causal claim",
+      "bodyMarkdown": "Offer another cause, show the effect happened without the cause, or show the cause happened without the effect.",
+      "exampleMarkdown": "A competitor leaving the market explains the sales rise without the packaging."
+    },
+    {
+      "id": "varc.rc.strengthen-weaken.fc2",
+      "microTopicId": "varc.rc.strengthen-weaken",
+      "title": "Strengthen",
+      "bodyMarkdown": "Eliminate an alternative explanation, or supply the missing link between evidence and conclusion.",
+      "exampleMarkdown": "'No other market conditions changed that month' strengthens the packaging claim."
+    }
+  ],
+  "commonTraps": [
+    "Choosing an option on the right topic that does not affect the conclusion's likelihood.",
+    "Expecting a weakener to disprove the conclusion. It only has to make it less likely.",
+    "Losing track of the precise conclusion and attacking a different claim."
+  ],
+  "estReadMinutes": 7
+}

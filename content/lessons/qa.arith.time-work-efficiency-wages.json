@@ -1,0 +1,48 @@
+{
+  "id": "qa.arith.time-work-efficiency-wages",
+  "microTopicId": "qa.arith.time-work-efficiency-wages",
+  "bodyMarkdown": "## The idea in plain language\n\nIf you can paint a room in 4 hours, then in one hour you paint a quarter of it. That is your **rate**. If your friend takes 6 hours, their rate is one sixth per hour.\n\nPut you both in the room and in one hour you finish a quarter plus a sixth. You cannot add the times (4 and 6 hours) \u2014 that would be nonsense, since two people should finish faster, not slower. You add the rates.\n\n## What is actually going on\n\nConvert every worker into work-per-day and the topic becomes simple addition. Someone who finishes in $n$ days does $\\dfrac{1}{n}$ of the job per day.\n\nEfficiency is just another word for rate. Being 'twice as efficient' means twice the rate, which means half the time. Efficiency and time are inversely related \u2014 always.\n\nWages follow work done, not hours present. If A does twice as much of the job as B, A gets twice the money, so the pay splits in the ratio of their rates.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.time-work-efficiency-wages.ex1",
+      "stemMarkdown": "A can do a job in 12 days and B in 24 days. How long do they take together?",
+      "solutionMarkdown": "A's rate is $\\dfrac{1}{12}$ per day; B's is $\\dfrac{1}{24}$ per day.\n\nTogether: $\\dfrac{1}{12} + \\dfrac{1}{24} = \\dfrac{2}{24} + \\dfrac{1}{24} = \\dfrac{3}{24} = \\dfrac{1}{8}$ per day.\n\nSo they finish in 8 days.",
+      "altSolutionMarkdown": "Sanity check: 8 days is less than either 12 or 24. Adding a helper must always reduce the time."
+    },
+    {
+      "id": "qa.arith.time-work-efficiency-wages.ex2",
+      "stemMarkdown": "A can do a job in 10 days, B in 15 days. They work together and earn Rs. 3000 in total. What is A's share?",
+      "solutionMarkdown": "Rates: A is $\\dfrac{1}{10}$, B is $\\dfrac{1}{15}$ per day. Working the same number of days, the work they each do is in the ratio of their rates.\n\n$\\dfrac{1}{10} : \\dfrac{1}{15} = 3 : 2$ (multiply both by 30).\n\nA's share $= \\dfrac{3}{5} \\times 3000 = 1800$.",
+      "altSolutionMarkdown": "Shortcut: the ratio of rates for times $a$ and $b$ is simply $b : a$ \u2014 the times, flipped."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.time-work-efficiency-wages.fc1",
+      "microTopicId": "qa.arith.time-work-efficiency-wages",
+      "title": "Rate of work",
+      "bodyMarkdown": "Finishing in $n$ days means a rate of $\\dfrac{1}{n}$ per day. Add rates, never times.",
+      "exampleMarkdown": "Rates $\\dfrac{1}{6}$ and $\\dfrac{1}{12}$ combine to $\\dfrac{1}{4}$, so 4 days together."
+    },
+    {
+      "id": "qa.arith.time-work-efficiency-wages.fc2",
+      "microTopicId": "qa.arith.time-work-efficiency-wages",
+      "title": "Efficiency and time",
+      "bodyMarkdown": "If B is $p$ percent more efficient than A, then B takes $\\dfrac{100}{100 + p}$ of A's time.",
+      "exampleMarkdown": "25 percent more efficient than someone who takes 20 days means $20 \\times \\dfrac{100}{125} = 16$ days."
+    },
+    {
+      "id": "qa.arith.time-work-efficiency-wages.fc3",
+      "microTopicId": "qa.arith.time-work-efficiency-wages",
+      "title": "Wages",
+      "bodyMarkdown": "Pay splits in the ratio of work done. For workers taking $a$ and $b$ days, that ratio is $b : a$.",
+      "exampleMarkdown": "Times 8 and 12 days split the money 12 : 8, i.e. 3 : 2."
+    }
+  ],
+  "commonTraps": [
+    "Adding the times instead of the rates. If the combined time is not smaller than every individual time, something went wrong.",
+    "Splitting wages equally, or in the ratio of days taken rather than the ratio of work done.",
+    "Reading 'twice as efficient' as 'twice the time'. It means half the time."
+  ],
+  "estReadMinutes": 7
+}

@@ -1,0 +1,41 @@
+{
+  "id": "qa.arith.tsd-circular-tracks",
+  "microTopicId": "qa.arith.tsd-circular-tracks",
+  "bodyMarkdown": "## The idea in plain language\n\nThink of the hands of a clock. The minute hand keeps catching up to the hour hand, over and over. They do not need to reach a finish line \u2014 they meet whenever the faster one has gained a full lap on the slower one.\n\nA circular running track is the same. There is no end, so 'meeting' means the gap between the runners has grown (or shrunk) to exactly one whole lap.\n\n## What is actually going on\n\nTwo different questions get asked, and they need different tools.\n\n**Meeting anywhere on the track** is a relative-speed question. Running in opposite directions they close a full lap at the sum of their speeds; running the same way the faster gains a full lap at the difference.\n\n**Meeting at the starting point** is a completely different, LCM question. Each runner is back at the start only after a whole number of laps, so you need the first time that is a whole-number multiple of both of their individual lap times.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.tsd-circular-tracks.ex1",
+      "stemMarkdown": "Two runners start together on a 400 m circular track, running in opposite directions at 6 m/s and 4 m/s. When do they first meet?",
+      "solutionMarkdown": "Running towards each other around the loop, they close the gap at $6 + 4 = 10$ m/s.\n\nBetween two meetings they must together cover one full lap of 400 m.\n\nTime $= \\dfrac{400}{10} = 40$ seconds.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.tsd-circular-tracks.ex2",
+      "stemMarkdown": "On the same 400 m track, the two run in the same direction at 6 m/s and 4 m/s. When does the faster first lap the slower?",
+      "solutionMarkdown": "Same direction, so the gap grows at $6 - 4 = 2$ m/s.\n\nTo lap the other runner, the faster must gain a whole 400 m.\n\nTime $= \\dfrac{400}{2} = 200$ seconds.",
+      "altSolutionMarkdown": "Notice it takes far longer than the head-on case \u2014 the same reason a slow overtake on a motorway feels endless."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.tsd-circular-tracks.fc1",
+      "microTopicId": "qa.arith.tsd-circular-tracks",
+      "title": "First meeting on a circular track",
+      "bodyMarkdown": "Opposite directions: $\\dfrac{C}{v_1 + v_2}$. Same direction: $\\dfrac{C}{|v_1 - v_2|}$, where $C$ is the circumference.",
+      "exampleMarkdown": "On a 600 m track at 5 and 3 m/s: 75 s head-on, 300 s same direction."
+    },
+    {
+      "id": "qa.arith.tsd-circular-tracks.fc2",
+      "microTopicId": "qa.arith.tsd-circular-tracks",
+      "title": "Meeting again at the starting point",
+      "bodyMarkdown": "Take the LCM of the individual lap times $\\dfrac{C}{v_1}$ and $\\dfrac{C}{v_2}$. This is not a relative-speed calculation.",
+      "exampleMarkdown": "Lap times of 40 s and 60 s coincide at the start after LCM$(40, 60) = 120$ s."
+    }
+  ],
+  "commonTraps": [
+    "Using relative speed for a 'meet at the starting point' question. That one needs an LCM of lap times.",
+    "Forgetting that meeting anywhere on the track happens far more often than meeting at the start.",
+    "Using the sum of speeds for runners going the same way."
+  ],
+  "estReadMinutes": 7
+}

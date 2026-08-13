@@ -1,0 +1,35 @@
+{
+  "id": "dilr.lr.cubes-dice",
+  "microTopicId": "dilr.lr.cubes-dice",
+  "bodyMarkdown": "## The idea in plain language\n\nTake a wooden cube, paint it all over, and saw it into 27 small cubes. The 8 corner pieces have paint on 3 faces. The middle-of-an-edge pieces have 2. The face-centre pieces have 1. And the single cube buried in the middle has none at all.\n\nEvery painted-cube question is that picture, with a different number of cuts.\n\n## What is actually going on\n\nCut a cube into $n \\times n \\times n$ smaller cubes and the counts follow fixed patterns:\n\n3 painted faces: always 8, the corners.\n2 painted faces: $12(n-2)$, along the twelve edges.\n1 painted face: $6(n-2)^2$, on the six faces.\n0 painted faces: $(n-2)^3$, the hidden core.\n\nFor **dice**, the key fact is that opposite faces sum to 7 in a standard die. Two faces that appear adjacent in any view cannot be opposite each other \u2014 that one observation resolves most dice questions.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.cubes-dice.ex1",
+      "stemMarkdown": "A painted cube is cut into 64 smaller cubes. How many have exactly two painted faces?",
+      "solutionMarkdown": "$64 = 4^3$, so $n = 4$.\n\nTwo-face cubes lie along the edges, excluding the corners: $12(n-2) = 12 \\times 2 = 24$.\n\nSo 24 small cubes have exactly two painted faces.",
+      "altSolutionMarkdown": "Check the total: $8 + 24 + 6(4) + 8 = 8 + 24 + 24 + 8 = 64$. It balances."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.cubes-dice.fc1",
+      "microTopicId": "dilr.lr.cubes-dice",
+      "title": "Painted cube counts",
+      "bodyMarkdown": "For an $n \\times n \\times n$ cut: 3 faces $= 8$, 2 faces $= 12(n-2)$, 1 face $= 6(n-2)^2$, 0 faces $= (n-2)^3$.",
+      "exampleMarkdown": "$n = 5$: 8, 36, 54 and 27, totalling 125."
+    },
+    {
+      "id": "dilr.lr.cubes-dice.fc2",
+      "microTopicId": "dilr.lr.cubes-dice",
+      "title": "Standard dice",
+      "bodyMarkdown": "Opposite faces sum to 7. Any two faces visible together in one view are adjacent, never opposite.",
+      "exampleMarkdown": "If 2 and 5 are both visible, neither is opposite the other, so 2 faces 5's opposite side."
+    }
+  ],
+  "commonTraps": [
+    "Using $n$ where $n-2$ is needed. The corners are always excluded from edge and face counts.",
+    "Forgetting that the corner count is always 8, regardless of how many cuts are made.",
+    "Assuming two faces seen in the same view could be opposite."
+  ],
+  "estReadMinutes": 7
+}

@@ -1,0 +1,35 @@
+{
+  "id": "varc.va.para-completion",
+  "microTopicId": "varc.va.para-completion",
+  "bodyMarkdown": "## The idea in plain language\n\nA paragraph has been cut off mid-thought and you must supply the ending. The right sentence finishes the journey the paragraph was already on \u2014 it does not start a new one.\n\nRead the paragraph and ask: where was this heading? The answer is usually visible in the last sentence before the gap.\n\n## What is actually going on\n\nPay closest attention to the final sentence given. It sets the direction, and the completion must continue it \u2014 resolving a tension, drawing the conclusion, or delivering the point the paragraph was building to.\n\nIf the paragraph has been building a contrast, the ending usually lands on the second side of it. If it has been listing evidence, the ending usually states what the evidence shows.\n\nReject options that introduce a genuinely new topic, that repeat something already said, or that contradict the paragraph's direction.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.va.para-completion.ex1",
+      "stemMarkdown": "A paragraph lists three failures of a policy and ends 'Each of these problems was foreseeable, and indeed foreseen.' What kind of completion fits?",
+      "solutionMarkdown": "The last sentence sharpens the criticism: the failures were predictable and predicted.\n\nThe completion should follow that to its conclusion \u2014 something about responsibility, or why the warnings went unheeded.\n\nAn option introducing a new policy area would abandon the paragraph's direction, and an option restating that the policy failed would add nothing.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.va.para-completion.fc1",
+      "microTopicId": "varc.va.para-completion",
+      "title": "Follow the last sentence",
+      "bodyMarkdown": "The sentence just before the gap sets the direction. The completion continues it rather than changing course.",
+      "exampleMarkdown": "A paragraph ending on an unanswered question should be completed with an answer."
+    },
+    {
+      "id": "varc.va.para-completion.fc2",
+      "microTopicId": "varc.va.para-completion",
+      "title": "Reject new topics",
+      "bodyMarkdown": "A completion cannot introduce material the paragraph was not already heading towards.",
+      "exampleMarkdown": "Switching from transport policy to housing policy is a change of subject, not a completion."
+    }
+  ],
+  "commonTraps": [
+    "Choosing a broadly true statement that does not follow from this paragraph.",
+    "Picking an option that restates a point already made.",
+    "Ignoring the direction set by the final given sentence."
+  ],
+  "estReadMinutes": 6
+}

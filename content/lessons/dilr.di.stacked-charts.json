@@ -1,0 +1,35 @@
+{
+  "id": "dilr.di.stacked-charts",
+  "microTopicId": "dilr.di.stacked-charts",
+  "bodyMarkdown": "## The idea in plain language\n\nA stacked bar is several bar charts balanced on top of each other. The whole column tells you the total; each coloured band tells you one component's contribution.\n\nThe catch is that only the bottom band starts at zero. Every band above it has to be read as a **difference** between two boundary lines, which is where careless reading costs marks.\n\n## What is actually going on\n\nTwo questions get asked. Absolute questions ask for one band's size \u2014 read the gap between its top and bottom edges. Proportional questions ask for a component's share of its column \u2014 divide the band by the column total.\n\nWatch for the difference between a component **growing** and its **share** growing. A component can increase in absolute terms while its share falls, if the total grew faster.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.stacked-charts.ex1",
+      "stemMarkdown": "Quarterly sales stack as Electronics 45, Apparel 30, Groceries 25 in Q1. What share of Q1 came from Electronics?",
+      "solutionMarkdown": "Q1 total $= 45 + 30 + 25 = 100$.\n\nElectronics share $= \\dfrac{45}{100} \\times 100 = 45$ percent.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.stacked-charts.fc1",
+      "microTopicId": "dilr.di.stacked-charts",
+      "title": "Reading a band",
+      "bodyMarkdown": "A band's value is (its top edge) minus (its bottom edge), not its top edge alone.",
+      "exampleMarkdown": "A band running from 45 to 75 on the axis represents 30, not 75."
+    },
+    {
+      "id": "dilr.di.stacked-charts.fc2",
+      "microTopicId": "dilr.di.stacked-charts",
+      "title": "Share within a column",
+      "bodyMarkdown": "Component share $= \\dfrac{\\text{band}}{\\text{column total}} \\times 100$.",
+      "exampleMarkdown": "A band of 30 in a column totalling 120 is a 25 percent share."
+    }
+  ],
+  "commonTraps": [
+    "Reading a band's top edge as its value instead of subtracting the bottom edge.",
+    "Confusing growth in absolute size with growth in share.",
+    "Comparing bands across columns of different heights without converting to shares."
+  ],
+  "estReadMinutes": 5
+}

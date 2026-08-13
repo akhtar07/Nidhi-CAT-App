@@ -1,0 +1,55 @@
+{
+  "id": "qa.geometry.circles",
+  "microTopicId": "qa.geometry.circles",
+  "bodyMarkdown": "## The idea in plain language\n\nStand in the middle of a round room and look at a painting on the wall. Now walk to the wall yourself and look at the same painting from there. From the centre it looks twice as wide as it does from the edge.\n\nThat is the central-angle theorem: the angle at the centre is always double the angle at the circumference, when both look at the same arc.\n\n## What is actually going on\n\nThree facts do most of the work.\n\n**Centre doubles.** The angle at the centre is twice any angle at the circumference standing on the same arc. A special case: an angle in a semicircle is always 90 degrees.\n\n**Tangents meet radii at right angles**, and the two tangents drawn from an external point are equal in length.\n\n**Cyclic quadrilaterals** \u2014 with all four corners on the circle \u2014 have opposite angles summing to 180.",
+  "workedExamples": [
+    {
+      "id": "qa.geometry.circles.ex1",
+      "stemMarkdown": "An arc subtends 40 degrees at a point on the circumference. What angle does it subtend at the centre?",
+      "solutionMarkdown": "The angle at the centre is double the angle at the circumference on the same arc.\n\n$2 \\times 40 = 80$ degrees.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.geometry.circles.ex2",
+      "stemMarkdown": "Find the area of a sector of radius 14 cm subtending 90 degrees at the centre. Use $\\pi = \\frac{22}{7}$.",
+      "solutionMarkdown": "A 90-degree sector is $\\dfrac{90}{360} = \\dfrac14$ of the whole circle.\n\nFull area $= \\dfrac{22}{7} \\times 14^2 = \\dfrac{22}{7} \\times 196 = 616$ square cm.\n\nSector area $= \\dfrac{616}{4} = 154$ square cm.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.geometry.circles.fc1",
+      "microTopicId": "qa.geometry.circles",
+      "title": "Circle basics",
+      "bodyMarkdown": "Circumference $= 2\\pi r$. Area $= \\pi r^2$.",
+      "exampleMarkdown": "$r = 7$ gives circumference 44 and area 154 with $\\pi = \\frac{22}{7}$."
+    },
+    {
+      "id": "qa.geometry.circles.fc2",
+      "microTopicId": "qa.geometry.circles",
+      "title": "Sector and arc",
+      "bodyMarkdown": "Arc length $= \\dfrac{\\theta}{360} \\times 2\\pi r$. Sector area $= \\dfrac{\\theta}{360} \\times \\pi r^2$.",
+      "exampleMarkdown": "A 60-degree sector is one sixth of the circle."
+    },
+    {
+      "id": "qa.geometry.circles.fc3",
+      "microTopicId": "qa.geometry.circles",
+      "title": "Angle theorems",
+      "bodyMarkdown": "Angle at centre $= 2 \\times$ angle at circumference. Angle in a semicircle is 90. Opposite angles of a cyclic quadrilateral sum to 180.",
+      "exampleMarkdown": "A cyclic quadrilateral with one angle 70 has its opposite angle 110."
+    },
+    {
+      "id": "qa.geometry.circles.fc4",
+      "microTopicId": "qa.geometry.circles",
+      "title": "Tangents",
+      "bodyMarkdown": "A tangent is perpendicular to the radius at the point of contact, and the two tangents from an external point are equal.",
+      "exampleMarkdown": "From a point 13 cm from the centre of a circle of radius 5, the tangent length is 12."
+    }
+  ],
+  "commonTraps": [
+    "Halving instead of doubling when moving from circumference to centre.",
+    "Using degrees directly in an arc-length formula without the $\\frac{\\theta}{360}$ fraction.",
+    "Applying cyclic-quadrilateral rules to a quadrilateral whose corners are not all on the circle."
+  ],
+  "estReadMinutes": 7
+}

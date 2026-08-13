@@ -1,0 +1,41 @@
+{
+  "id": "qa.numsys.last-digit-trailing-zeroes",
+  "microTopicId": "qa.numsys.last-digit-trailing-zeroes",
+  "bodyMarkdown": "## The idea in plain language\n\nMultiply any two numbers and look only at the last digit of the answer. It depends **only** on the last digits of the two numbers you multiplied. $37 \\times 43$ ends in 1 for the same reason $7 \\times 3 = 21$ does \u2014 everything else lands further left.\n\nSo for the last digit of a huge power, throw away all but the units digit and watch the pattern repeat. It always repeats within four steps.\n\n## What is actually going on\n\n**Last digit of a power.** Keep only the units digit of the base and list its powers until they repeat. Powers of 2 go 2, 4, 8, 6 and then start again \u2014 a cycle of 4. Every digit's cycle has length 1, 2 or 4, so you never track more than four cases.\n\n**Trailing zeroes of a factorial.** Each trailing zero needs a factor of 10, which needs a 2 and a 5. In any factorial there are far more 2s than 5s, so the number of 5s is the limiting factor. Count them with $\\lfloor n/5 \\rfloor + \\lfloor n/25 \\rfloor + \\lfloor n/125 \\rfloor + \\cdots$, where the higher terms catch numbers like 25 that contribute more than one 5.",
+  "workedExamples": [
+    {
+      "id": "qa.numsys.last-digit-trailing-zeroes.ex1",
+      "stemMarkdown": "Find the last digit of $7^{35}$.",
+      "solutionMarkdown": "Powers of 7 end in: $7, 9, 3, 1$, then repeat. The cycle length is 4.\n\n$35 \\bmod 4 = 3$, so we want the third entry of the cycle.\n\nThe last digit is 3.",
+      "altSolutionMarkdown": "When the remainder is 0, take the last entry of the cycle, not the first."
+    },
+    {
+      "id": "qa.numsys.last-digit-trailing-zeroes.ex2",
+      "stemMarkdown": "How many trailing zeroes does $100!$ have?",
+      "solutionMarkdown": "Count the factors of 5:\n\n$\\lfloor 100/5 \\rfloor = 20$\n$\\lfloor 100/25 \\rfloor = 4$\n$\\lfloor 100/125 \\rfloor = 0$, so we stop.\n\nTotal $= 20 + 4 = 24$ trailing zeroes.\n\nThe extra 4 accounts for 25, 50, 75 and 100, each of which supplies a second 5.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.numsys.last-digit-trailing-zeroes.fc1",
+      "microTopicId": "qa.numsys.last-digit-trailing-zeroes",
+      "title": "Cyclicity of last digits",
+      "bodyMarkdown": "Last digits of powers repeat with period 1, 2 or 4. Reduce the exponent modulo the cycle length.",
+      "exampleMarkdown": "$3^{22}$: cycle 3, 9, 7, 1 of length 4; $22 \\bmod 4 = 2$, so it ends in 9."
+    },
+    {
+      "id": "qa.numsys.last-digit-trailing-zeroes.fc2",
+      "microTopicId": "qa.numsys.last-digit-trailing-zeroes",
+      "title": "Trailing zeroes in $n!$",
+      "bodyMarkdown": "$\\left\\lfloor \\dfrac{n}{5} \\right\\rfloor + \\left\\lfloor \\dfrac{n}{25} \\right\\rfloor + \\left\\lfloor \\dfrac{n}{125} \\right\\rfloor + \\cdots$",
+      "exampleMarkdown": "$50!$ has $10 + 2 = 12$ trailing zeroes."
+    }
+  ],
+  "commonTraps": [
+    "Stopping after $\\lfloor n/5 \\rfloor$ and missing the higher powers of 5.",
+    "Counting 2s instead of 5s. There are always more 2s, so they never run out first.",
+    "Mishandling a remainder of 0 when locating a position in the cycle."
+  ],
+  "estReadMinutes": 7
+}

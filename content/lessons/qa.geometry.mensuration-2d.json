@@ -1,0 +1,48 @@
+{
+  "id": "qa.geometry.mensuration-2d",
+  "microTopicId": "qa.geometry.mensuration-2d",
+  "bodyMarkdown": "## The idea in plain language\n\nArea is how much paint you need to cover a shape. Perimeter is how much fence you need around it. They are completely different quantities, and two shapes with the same perimeter can have wildly different areas \u2014 a long thin rectangle versus a square, for instance.\n\nMost exam questions are one standard shape, or a standard shape with a piece added or removed.\n\n## What is actually going on\n\nLearn the handful of standard formulas, then treat every complicated figure as standard shapes **added together or subtracted from each other**. A path around a garden is the big rectangle minus the small one. A shaded region is usually one shape with another cut out.\n\nOne relationship worth internalising: scaling every length by $k$ multiplies the perimeter by $k$ but the area by $k^2$. Doubling a room's dimensions quadruples the carpet needed.",
+  "workedExamples": [
+    {
+      "id": "qa.geometry.mensuration-2d.ex1",
+      "stemMarkdown": "A rectangular garden 20 m by 15 m is surrounded by a 2 m wide path on the outside. Find the area of the path.",
+      "solutionMarkdown": "The path adds 2 m on **each** side, so the outer rectangle is $20 + 4 = 24$ m by $15 + 4 = 19$ m.\n\nOuter area $= 24 \\times 19 = 456$ square m.\nGarden area $= 20 \\times 15 = 300$ square m.\n\nPath area $= 456 - 300 = 156$ square m.",
+      "altSolutionMarkdown": "Adding 2 m only once to each dimension is the classic error \u2014 the path runs along both sides."
+    },
+    {
+      "id": "qa.geometry.mensuration-2d.ex2",
+      "stemMarkdown": "Find the area of a circle inscribed in a square of side 14 cm. Use $\\pi = \\frac{22}{7}$.",
+      "solutionMarkdown": "An inscribed circle touches all four sides, so its diameter equals the square's side.\n\nDiameter 14, so radius 7.\n\nArea $= \\dfrac{22}{7} \\times 49 = 154$ square cm.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.geometry.mensuration-2d.fc1",
+      "microTopicId": "qa.geometry.mensuration-2d",
+      "title": "Standard areas",
+      "bodyMarkdown": "Rectangle $lb$. Triangle $\\dfrac12 bh$. Circle $\\pi r^2$. Trapezium $\\dfrac12(a+b)h$. Parallelogram $bh$.",
+      "exampleMarkdown": "A trapezium with parallel sides 8 and 12 and height 5 has area 50."
+    },
+    {
+      "id": "qa.geometry.mensuration-2d.fc2",
+      "microTopicId": "qa.geometry.mensuration-2d",
+      "title": "Perimeters",
+      "bodyMarkdown": "Rectangle $2(l+b)$. Circle $2\\pi r$. Square $4a$.",
+      "exampleMarkdown": "A square of side 9 has perimeter 36 and area 81."
+    },
+    {
+      "id": "qa.geometry.mensuration-2d.fc3",
+      "microTopicId": "qa.geometry.mensuration-2d",
+      "title": "Scaling",
+      "bodyMarkdown": "Multiplying every length by $k$ multiplies perimeter by $k$ and area by $k^2$.",
+      "exampleMarkdown": "Tripling the side of a square makes the area nine times larger."
+    }
+  ],
+  "commonTraps": [
+    "Adding a border width only once per dimension instead of twice.",
+    "Confusing radius and diameter in circle formulas.",
+    "Mixing units \u2014 metres with centimetres \u2014 inside one calculation."
+  ],
+  "estReadMinutes": 6
+}

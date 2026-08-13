@@ -1,0 +1,35 @@
+{
+  "id": "varc.rc.direct-detail",
+  "microTopicId": "varc.rc.direct-detail",
+  "bodyMarkdown": "## The idea in plain language\n\nThis is the closest VARC gets to a lookup. The answer is written in the passage, somewhere, and your job is to find the sentence and match it to an option.\n\nIt sounds easy, which is exactly why people lose marks: they answer from memory of the passage instead of going back and reading the actual line.\n\n## What is actually going on\n\nLocate first, then answer. Find the specific sentence that addresses the question and read it fully, including whatever comes just before and after \u2014 qualifications often sit in the neighbouring clause.\n\nThe correct option is a **paraphrase** of that sentence, not a copy of it. Options that reuse the passage's exact words are often the trap, with one word quietly changed.\n\nWrong options here typically overstate ('always' where the passage said 'often'), or attach the right fact to the wrong subject.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.direct-detail.ex1",
+      "stemMarkdown": "A passage says: 'Coastal cities in the region have, in most years since 2010, recorded higher rainfall than inland ones.' Which option is supported?",
+      "solutionMarkdown": "The passage supports: 'Coastal cities usually received more rain than inland cities after 2010.'\n\nIt does **not** support 'Coastal cities always received more rain' \u2014 the passage said 'in most years', not every year.\n\nNor does it support any claim about why, since the passage gives no cause.",
+      "altSolutionMarkdown": "The single word 'most' is what decides between the right and wrong options. Detail questions usually turn on one such word."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.direct-detail.fc1",
+      "microTopicId": "varc.rc.direct-detail",
+      "title": "Locate before you answer",
+      "bodyMarkdown": "Find the exact sentence, read it with its neighbours, then match to an option. Never answer from memory of the passage.",
+      "exampleMarkdown": "A question about a date sends you back to the sentence with that date in it."
+    },
+    {
+      "id": "varc.rc.direct-detail.fc2",
+      "microTopicId": "varc.rc.direct-detail",
+      "title": "Watch the quantifiers",
+      "bodyMarkdown": "'Most', 'some', 'often' and 'always' are not interchangeable. An option that upgrades the strength is wrong.",
+      "exampleMarkdown": "Passage 'many economists' does not support option 'economists agree'."
+    }
+  ],
+  "commonTraps": [
+    "Answering from memory rather than returning to the line.",
+    "Choosing the option that repeats the passage's wording most closely, which is often the distortion.",
+    "Missing a qualifier such as 'in most years' that limits the claim."
+  ],
+  "estReadMinutes": 6
+}

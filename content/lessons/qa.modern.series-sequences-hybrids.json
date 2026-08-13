@@ -1,0 +1,48 @@
+{
+  "id": "qa.modern.series-sequences-hybrids",
+  "microTopicId": "qa.modern.series-sequences-hybrids",
+  "bodyMarkdown": "## The idea in plain language\n\nSome sequences grow by **adding** the same thing each time: 3, 7, 11, 15 \u2014 always plus 4. That is an arithmetic progression, and it is like climbing stairs of equal height.\n\nOthers grow by **multiplying**: 3, 6, 12, 24 \u2014 always doubling. That is a geometric progression, and it is like a rumour spreading, each round bigger than the last.\n\nSpotting which one you are looking at is most of the work.\n\n## What is actually going on\n\nFor an arithmetic progression, check that consecutive differences are constant. For a geometric progression, check that consecutive **ratios** are constant.\n\nThe sum of an AP has a lovely shortcut: pair the first term with the last, the second with the second-last, and each pair has the same total. That is why the sum is just the average of the first and last terms, times how many terms there are.\n\nFor hybrid or pattern-spotting questions, write out the differences between consecutive terms. If those differences themselves form a recognisable pattern, you have found the rule.",
+  "workedExamples": [
+    {
+      "id": "qa.modern.series-sequences-hybrids.ex1",
+      "stemMarkdown": "Find the sum of the first 20 terms of 5, 9, 13, 17, ...",
+      "solutionMarkdown": "The common difference is 4, so this is an AP with $a = 5$ and $d = 4$.\n\nThe 20th term is $a + 19d = 5 + 76 = 81$.\n\nSum $= \\dfrac{n}{2}(\\text{first} + \\text{last}) = \\dfrac{20}{2}(5 + 81) = 10 \\times 86 = 860$.",
+      "altSolutionMarkdown": "Pairing shows why: 5 with 81, 9 with 77, and so on \u2014 ten pairs each totalling 86."
+    },
+    {
+      "id": "qa.modern.series-sequences-hybrids.ex2",
+      "stemMarkdown": "Find the next term in 2, 6, 12, 20, 30, ...",
+      "solutionMarkdown": "The differences are 4, 6, 8, 10 \u2014 increasing by 2 each time, so the next difference is 12.\n\nThe next term is $30 + 12 = 42$.\n\n(The pattern is $n(n+1)$: $1 \\times 2$, $2 \\times 3$, $3 \\times 4$, and so on.)",
+      "altSolutionMarkdown": "When a sequence is neither arithmetic nor geometric, the differences are the first place to look."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.modern.series-sequences-hybrids.fc1",
+      "microTopicId": "qa.modern.series-sequences-hybrids",
+      "title": "Arithmetic progression",
+      "bodyMarkdown": "$n$th term $= a + (n-1)d$. Sum $= \\dfrac{n}{2}[2a + (n-1)d] = \\dfrac{n}{2}(\\text{first} + \\text{last})$.",
+      "exampleMarkdown": "$a = 3$, $d = 5$, $n = 10$: last term 48, sum $= 5 \\times 51 = 255$."
+    },
+    {
+      "id": "qa.modern.series-sequences-hybrids.fc2",
+      "microTopicId": "qa.modern.series-sequences-hybrids",
+      "title": "Geometric progression",
+      "bodyMarkdown": "$n$th term $= ar^{n-1}$. Sum of $n$ terms $= \\dfrac{a(r^n - 1)}{r - 1}$ for $r \\neq 1$.",
+      "exampleMarkdown": "$a = 2$, $r = 3$, $n = 4$: terms 2, 6, 18, 54 summing to 80."
+    },
+    {
+      "id": "qa.modern.series-sequences-hybrids.fc3",
+      "microTopicId": "qa.modern.series-sequences-hybrids",
+      "title": "Infinite geometric sum",
+      "bodyMarkdown": "If $|r| < 1$, the sum to infinity is $\\dfrac{a}{1 - r}$.",
+      "exampleMarkdown": "$1 + \\frac12 + \\frac14 + \\cdots = \\dfrac{1}{1 - 0.5} = 2$."
+    }
+  ],
+  "commonTraps": [
+    "Using $a + nd$ for the $n$th term. It is $a + (n-1)d$ \u2014 the first term has taken no steps yet.",
+    "Applying the infinite-sum formula when $|r| \\geq 1$, where the series does not converge.",
+    "Assuming a sequence is arithmetic after checking only one difference. Check at least two."
+  ],
+  "estReadMinutes": 7
+}

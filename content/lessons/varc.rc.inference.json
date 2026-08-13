@@ -1,0 +1,35 @@
+{
+  "id": "varc.rc.inference",
+  "microTopicId": "varc.rc.inference",
+  "bodyMarkdown": "## The idea in plain language\n\nIf the passage says the streets are wet and people are shaking out umbrellas, you may infer it rained. You may **not** infer that it rained for three hours, or that a storm is coming.\n\nAn inference is what must follow from what is written \u2014 one small step beyond the text, never a leap.\n\n## What is actually going on\n\nThe correct inference is the option that **must** be true given the passage, not the one that is most likely or most interesting.\n\nTest each option by asking: could the passage be entirely true while this option is false? If yes, it is not an inference.\n\nCorrect answers to inference questions are usually cautiously worded \u2014 'may', 'suggests', 'at least some'. Options with sweeping language are usually going a step too far, because a strong claim needs stronger support than most passages give.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.inference.ex1",
+      "stemMarkdown": "Passage: 'Every student who passed the exam had attended the revision class.' What can be inferred?",
+      "solutionMarkdown": "It follows that **a student who did not attend the revision class did not pass**. That is just the original statement read backwards, and it must be true.\n\nIt does **not** follow that everyone who attended the class passed. Attending was necessary, but the passage never says it was sufficient.\n\nThat distinction between necessary and sufficient is the heart of most inference questions.",
+      "altSolutionMarkdown": "'All P are Q' guarantees 'not Q means not P', but never 'all Q are P'."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.inference.fc1",
+      "microTopicId": "varc.rc.inference",
+      "title": "Must be true, not could be",
+      "bodyMarkdown": "An inference is only correct if the passage cannot be true while the option is false.",
+      "exampleMarkdown": "'Sales rose' does not let you infer 'profits rose'."
+    },
+    {
+      "id": "varc.rc.inference.fc2",
+      "microTopicId": "varc.rc.inference",
+      "title": "Necessary is not sufficient",
+      "bodyMarkdown": "'All P are Q' implies 'not Q means not P'. It does not imply 'all Q are P'.",
+      "exampleMarkdown": "All doctors studied medicine; that does not make every medicine student a doctor."
+    }
+  ],
+  "commonTraps": [
+    "Picking the most plausible real-world statement rather than what the passage forces.",
+    "Reversing a conditional. 'All A are B' does not give 'all B are A'.",
+    "Choosing a strongly worded option when the passage supports only a cautious one."
+  ],
+  "estReadMinutes": 7
+}

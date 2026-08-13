@@ -1,0 +1,48 @@
+{
+  "id": "qa.algebra.inequalities-modulus",
+  "microTopicId": "qa.algebra.inequalities-modulus",
+  "bodyMarkdown": "## The idea in plain language\n\n$|x|$ just means 'how far is $x$ from zero, ignoring direction'. Both 5 and $-5$ are five steps from zero, so both have modulus 5.\n\nSo $|x - 3| < 4$ reads as: how far can $x$ wander from 3 before it is more than 4 steps away? Answer: it can go 4 steps either way, so anywhere strictly between $-1$ and $7$.\n\n## What is actually going on\n\nTurn modulus into a range. $|x - a| < b$ becomes $a - b < x < a + b$, a single interval centred on $a$. $|x - a| > b$ becomes two separate pieces: $x < a - b$ or $x > a + b$.\n\nFor inequalities generally, the one rule that catches everyone: **multiplying or dividing by a negative number flips the direction**. And for a product like $(x - p)(x - q) < 0$, the product is negative exactly between the two roots, because that is where the factors have opposite signs.",
+  "workedExamples": [
+    {
+      "id": "qa.algebra.inequalities-modulus.ex1",
+      "stemMarkdown": "How many integers satisfy $|x - 5| < 3$?",
+      "solutionMarkdown": "$|x - 5| < 3$ means $x$ is within 3 of 5, so $2 < x < 8$.\n\nStrictly between, so the integers are 3, 4, 5, 6 and 7.\n\nThat is 5 integers.",
+      "altSolutionMarkdown": "For a strict inequality $|x - a| < b$ with whole $b$, the count is always $2b - 1$: here $2(3) - 1 = 5$."
+    },
+    {
+      "id": "qa.algebra.inequalities-modulus.ex2",
+      "stemMarkdown": "Solve $(x - 2)(x + 3) < 0$.",
+      "solutionMarkdown": "The roots are $x = 2$ and $x = -3$. These split the line into three regions.\n\nFor $x < -3$: both factors negative, product positive.\nFor $-3 < x < 2$: first negative, second positive, product negative. This is what we want.\nFor $x > 2$: both positive, product positive.\n\nSo the solution is $-3 < x < 2$.",
+      "altSolutionMarkdown": "For a product of two linear factors, 'less than zero' always means strictly between the roots."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.algebra.inequalities-modulus.fc1",
+      "microTopicId": "qa.algebra.inequalities-modulus",
+      "title": "Modulus as a range",
+      "bodyMarkdown": "$|x - a| < b$ means $a - b < x < a + b$. $|x - a| > b$ means $x < a - b$ or $x > a + b$.",
+      "exampleMarkdown": "$|x + 2| \\leq 5$ becomes $-7 \\leq x \\leq 3$ (write $x + 2$ as $x - (-2)$)."
+    },
+    {
+      "id": "qa.algebra.inequalities-modulus.fc2",
+      "microTopicId": "qa.algebra.inequalities-modulus",
+      "title": "Sign of a product",
+      "bodyMarkdown": "$(x-p)(x-q) < 0$ holds strictly between the roots; $> 0$ holds outside them.",
+      "exampleMarkdown": "$(x-1)(x-4) > 0$ gives $x < 1$ or $x > 4$."
+    },
+    {
+      "id": "qa.algebra.inequalities-modulus.fc3",
+      "microTopicId": "qa.algebra.inequalities-modulus",
+      "title": "The flip rule",
+      "bodyMarkdown": "Multiplying or dividing an inequality by a negative number reverses the sign.",
+      "exampleMarkdown": "From $-2x > 6$, dividing by $-2$ gives $x < -3$, not $x > -3$."
+    }
+  ],
+  "commonTraps": [
+    "Forgetting to flip the inequality when multiplying by a negative.",
+    "Treating $|x - a| > b$ as one interval. It is two disjoint pieces.",
+    "Counting endpoints when the inequality is strict, or omitting them when it is not."
+  ],
+  "estReadMinutes": 7
+}

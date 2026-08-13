@@ -1,0 +1,41 @@
+{
+  "id": "qa.arith.tsd-boats-streams",
+  "microTopicId": "qa.arith.tsd-boats-streams",
+  "bodyMarkdown": "## The idea in plain language\n\nWalking on an airport travelator: walk with it and you fly along, walk against it and you barely make progress. Your own walking speed never changed \u2014 the floor is helping or fighting you.\n\nA river does the same to a boat. Downstream the current adds to the boat's speed; upstream it takes away.\n\n## What is actually going on\n\nThere are two hidden speeds \u2014 the boat in still water ($b$) and the stream ($s$) \u2014 and two observable ones: downstream ($b + s$) and upstream ($b - s$).\n\nBecause the stream is added in one and subtracted in the other, adding the two observed speeds cancels the stream entirely and subtracting them cancels the boat. That is why you can always recover both hidden speeds from the two observed ones.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.tsd-boats-streams.ex1",
+      "stemMarkdown": "A boat goes downstream at 18 km/h and upstream at 12 km/h. Find the speed of the boat in still water and of the stream.",
+      "solutionMarkdown": "Adding cancels the stream: $b = \\dfrac{18 + 12}{2} = 15$ km/h.\n\nSubtracting cancels the boat: $s = \\dfrac{18 - 12}{2} = 3$ km/h.\n\nCheck: $15 + 3 = 18$ and $15 - 3 = 12$.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.tsd-boats-streams.ex2",
+      "stemMarkdown": "A boat whose speed in still water is 10 km/h rows 24 km downstream and back. The stream flows at 2 km/h. Find the total time.",
+      "solutionMarkdown": "Downstream speed $= 12$ km/h, so that leg takes $\\dfrac{24}{12} = 2$ hours.\n\nUpstream speed $= 8$ km/h, so the return takes $\\dfrac{24}{8} = 3$ hours.\n\nTotal time $= 5$ hours.",
+      "altSolutionMarkdown": "Notice the round trip took 5 hours, not the $\\dfrac{48}{10} = 4.8$ hours it would have taken in still water. A current always costs you time overall, because you spend longer on the slow leg than you save on the fast one."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.tsd-boats-streams.fc1",
+      "microTopicId": "qa.arith.tsd-boats-streams",
+      "title": "Downstream and upstream speeds",
+      "bodyMarkdown": "Downstream $= b + s$. Upstream $= b - s$.",
+      "exampleMarkdown": "Boat 12 km/h, stream 3 km/h: 15 km/h down, 9 km/h up."
+    },
+    {
+      "id": "qa.arith.tsd-boats-streams.fc2",
+      "microTopicId": "qa.arith.tsd-boats-streams",
+      "title": "Recovering the hidden speeds",
+      "bodyMarkdown": "$b = \\dfrac{\\text{down} + \\text{up}}{2}$ and $s = \\dfrac{\\text{down} - \\text{up}}{2}$",
+      "exampleMarkdown": "Down 20, up 14 gives $b = 17$ and $s = 3$."
+    }
+  ],
+  "commonTraps": [
+    "Thinking a round trip takes the same time as the still-water journey. It always takes longer.",
+    "Swapping the two halves: half the sum is the boat, half the difference is the stream.",
+    "Reading a stated speed as the downstream speed when it is actually the still-water speed."
+  ],
+  "estReadMinutes": 6
+}

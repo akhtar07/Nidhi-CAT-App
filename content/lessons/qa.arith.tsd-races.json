@@ -1,0 +1,41 @@
+{
+  "id": "qa.arith.tsd-races",
+  "microTopicId": "qa.arith.tsd-races",
+  "bodyMarkdown": "## The idea in plain language\n\nTwo children race across a playground. When the faster one touches the wall, the slower one is still a few steps behind. Those few steps are the whole story: the two ran for the **same amount of time**, so the gap between them tells you exactly how their speeds compare.\n\n## What is actually going on\n\nThe key to every race question is that both runners are running for the same duration. When time is equal, distance is directly proportional to speed. So if A beats B by some metres, then\n\n$$\\frac{\\text{speed of A}}{\\text{speed of B}} = \\frac{\\text{distance A ran}}{\\text{distance B ran}}$$\n\nA head start (or 'start of $x$ metres') means B begins $x$ metres up the track, so B only has to run the remaining distance. A dead heat means both finish at the same moment.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.tsd-races.ex1",
+      "stemMarkdown": "In a 100 m race, A beats B by 20 m. Compare their speeds.",
+      "solutionMarkdown": "In the time A covers 100 m, B covers only $100 - 20 = 80$ m.\n\nEqual time means speeds are in the ratio of distances: $\\dfrac{\\text{A}}{\\text{B}} = \\dfrac{100}{80} = \\dfrac{5}{4}$.\n\nSo A is 1.25 times as fast as B.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.tsd-races.ex2",
+      "stemMarkdown": "A and B have speeds in the ratio 5 : 4. In a 200 m race, what head start must A give B for a dead heat?",
+      "solutionMarkdown": "In the time A runs 200 m, B runs $200 \\times \\dfrac{4}{5} = 160$ m.\n\nFor them to finish together, B must already be $200 - 160 = 40$ m up the track.\n\nSo A gives B a 40 m head start.",
+      "altSolutionMarkdown": "Equivalently, B needs to cover only 160 m in the time A covers 200 m \u2014 and a 40 m start achieves exactly that."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.tsd-races.fc1",
+      "microTopicId": "qa.arith.tsd-races",
+      "title": "Beating by a distance",
+      "bodyMarkdown": "If A beats B by $d$ in a race of length $L$, then $\\dfrac{v_A}{v_B} = \\dfrac{L}{L - d}$.",
+      "exampleMarkdown": "Beaten by 25 m in 200 m gives a speed ratio $\\dfrac{200}{175} = \\dfrac{8}{7}$."
+    },
+    {
+      "id": "qa.arith.tsd-races.fc2",
+      "microTopicId": "qa.arith.tsd-races",
+      "title": "Beating by a time",
+      "bodyMarkdown": "If A finishes in $t_A$ and B in $t_B$, then A beats B by the distance B covers in $t_B - t_A$, i.e. $\\dfrac{L}{t_B}(t_B - t_A)$.",
+      "exampleMarkdown": "A takes 20 s and B 25 s over 100 m: B's speed is 4 m/s, so A wins by $4 \\times 5 = 20$ m."
+    }
+  ],
+  "commonTraps": [
+    "Treating 'beats by 20 m' as though B ran the full distance. B ran 20 m less.",
+    "Confusing 'beats by 5 seconds' with 'beats by 5 metres' \u2014 one is a time gap, the other a distance gap.",
+    "Forgetting that a head start reduces the distance B must run, not B's speed."
+  ],
+  "estReadMinutes": 6
+}

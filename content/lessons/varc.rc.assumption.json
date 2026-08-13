@@ -1,0 +1,35 @@
+{
+  "id": "varc.rc.assumption",
+  "microTopicId": "varc.rc.assumption",
+  "bodyMarkdown": "## The idea in plain language\n\n'She must be at home, her car is in the driveway.' The unstated assumption is that she does not go anywhere without her car.\n\nAn assumption is the missing plank the argument is standing on. The author never says it, but the argument collapses without it.\n\n## What is actually going on\n\nIdentify the conclusion, then the stated evidence, then ask what gap sits between them. The assumption is whatever bridges that gap.\n\nThe **negation test** is the reliable check: negate the option and see whether the argument falls apart. If it does, that option was a necessary assumption. If the argument survives, it was not.\n\nAssumptions are usually modest, not grand. The correct answer often sounds obvious or barely worth saying, which is exactly what makes it an assumption rather than a claim.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.assumption.ex1",
+      "stemMarkdown": "'The new bridge will reduce congestion, since it gives drivers a second route into the city.' What is assumed?",
+      "solutionMarkdown": "The argument assumes that **drivers will actually use the new route**.\n\nApply the negation test: if drivers do not use it, the bridge cannot reduce congestion and the argument fails completely. So this is a necessary assumption.\n\nBy contrast, 'the bridge was expensive' can be negated without touching the argument, so it is not an assumption.",
+      "altSolutionMarkdown": "A good assumption often feels too obvious to state. That is the point \u2014 it goes unsaid."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.assumption.fc1",
+      "microTopicId": "varc.rc.assumption",
+      "title": "Find the gap",
+      "bodyMarkdown": "Separate the conclusion from the evidence. The assumption is whatever must be true to get from one to the other.",
+      "exampleMarkdown": "Evidence about a route plus a conclusion about congestion needs an assumption about usage."
+    },
+    {
+      "id": "varc.rc.assumption.fc2",
+      "microTopicId": "varc.rc.assumption",
+      "title": "Negation test",
+      "bodyMarkdown": "Negate the option. If the argument collapses, it is a necessary assumption; if it survives, it is not.",
+      "exampleMarkdown": "Negating 'drivers will use it' destroys the conclusion, confirming it as the assumption."
+    }
+  ],
+  "commonTraps": [
+    "Choosing something that would strengthen the argument rather than something it requires.",
+    "Picking a sweeping statement when the argument only needs a narrow one.",
+    "Selecting a restatement of the conclusion instead of the gap beneath it."
+  ],
+  "estReadMinutes": 7
+}

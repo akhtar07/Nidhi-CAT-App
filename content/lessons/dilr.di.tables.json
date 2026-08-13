@@ -1,28 +1,28 @@
 {
-  "id": "lesson.dilr.di.tables",
+  "id": "dilr.di.tables",
   "microTopicId": "dilr.di.tables",
-  "bodyMarkdown": "## Reading Data Tables\n\nA DI table question is rarely about hard maths \u2014 it's about reading carefully and not rushing.\nBefore you touch a single question, spend 20-30 seconds just **understanding the table**:\n\n1. What does each **row** represent? What does each **column** represent?\n2. What are the **units** (Rs., kg, %, thousands...)? Mixing these up is the #1 source of wrong\n   answers in DI.\n3. Are there **totals** given (row totals, column totals)? If so, they're a free way to check\n   your own arithmetic \u2014 the row totals should always add up to the same grand total as the\n   column totals.\n\n### The \"totals cross-check\" trick\n\nIf a table gives you both row totals and column totals, they must agree:\n$$\\sum (\\text{row totals}) = \\sum (\\text{column totals}) = \\text{grand total}$$\n\nIf your calculated answer doesn't respect this, you've made an arithmetic slip somewhere \u2014 this\nis a genuinely useful sanity check, not just a curiosity.",
+  "bodyMarkdown": "## The idea in plain language\n\nA table is data with nowhere to hide \u2014 no scale to misread, no legend to confuse. Which means the difficulty is never in reading it, only in deciding **what to compute** and how much of the table you actually need.\n\nMost tables are far bigger than the question requires. Finding the two relevant cells fast is the real skill.\n\n## What is actually going on\n\nRead the row and column headers and the units before anything else. Then read the question and identify exactly which cells it touches. Resist computing row totals you were never asked for.\n\nCommon asks: a single lookup, a ratio between two cells, a row or column total, a percentage change across two periods, or a rank ('which region grew fastest'). Ranking questions need every row computed, so check whether the question really needs all of them before starting.\n\n## Choosing whether to attempt a set\n\nBefore solving anything, spend 30 seconds deciding whether to attempt the set at all. Count how many questions it carries, look at whether the data is fully given or has to be deduced, and check whether the first question is answerable from a single row or needs the whole grid solved. A set that takes 12 minutes for 4 marks is worse than two sets that take 5 minutes each. Walking away from a bad set is a skill, not a failure.",
   "workedExamples": [
     {
-      "id": "dilr.di.tables.we-01",
-      "stemMarkdown": "A table shows sales (units) for two products across two months: Product A sold 40 in Jan and 60 in Feb. Product B sold 30 in Jan and 50 in Feb. What is the row total for Product A, and does it match the sum of column totals?",
-      "solutionMarkdown": "Product A's row total $= 40+60=100$. Product B's row total $= 30+50=80$. Grand total (both rows) $= 180$. Column totals: Jan $=40+30=70$, Feb $=60+50=110$; sum $=70+110=180$. Both ways give **180** \u2014 the cross-check passes.",
+      "id": "dilr.di.tables.ex1",
+      "stemMarkdown": "A table shows a product's sales as 240 in 2022 and 300 in 2023. Find the percentage growth.",
+      "solutionMarkdown": "Growth $= \\dfrac{300 - 240}{240} \\times 100 = \\dfrac{60}{240} \\times 100 = 25$ percent.",
       "altSolutionMarkdown": null
     }
   ],
   "formulaCards": [
     {
-      "id": "dilr.di.tables.fc-cross-check",
+      "id": "dilr.di.tables.fc1",
       "microTopicId": "dilr.di.tables",
-      "title": "Row/column totals cross-check",
-      "bodyMarkdown": "Sum of row totals = sum of column totals = grand total. Use this to catch arithmetic slips.",
-      "exampleMarkdown": null
+      "title": "Ratio and share",
+      "bodyMarkdown": "Share of a total $= \\dfrac{\\text{cell}}{\\text{row or column total}} \\times 100$.",
+      "exampleMarkdown": "A cell of 30 in a row totalling 120 is a 25 percent share."
     }
   ],
   "commonTraps": [
-    "Mixing up which axis is rows vs columns when the question names a category \u2014 always re-check the header before reading a value.",
-    "Ignoring stated units (thousands, %, Rs. crore) \u2014 a right number in the wrong unit is a wrong answer.",
-    "Not using the totals cross-check when it's available \u2014 it's free error-detection."
+    "Computing totals the question never asked for.",
+    "Reading across the wrong row, especially in a wide table. Track with a finger or cursor.",
+    "Missing a units note such as 'figures in thousands'."
   ],
-  "estReadMinutes": 4
+  "estReadMinutes": 5
 }

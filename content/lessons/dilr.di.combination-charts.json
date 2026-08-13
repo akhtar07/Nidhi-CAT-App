@@ -1,0 +1,35 @@
+{
+  "id": "dilr.di.combination-charts",
+  "microTopicId": "dilr.di.combination-charts",
+  "bodyMarkdown": "## The idea in plain language\n\nSometimes one picture carries two different kinds of number \u2014 say, bars for total sales in crores and a line for profit margin in percent. They cannot share one axis, so the chart grows a second one on the right.\n\nThe single most important habit here: check which axis each series belongs to before reading any value.\n\n## What is actually going on\n\nA combination chart mixes chart types precisely because the quantities are of different kinds \u2014 usually an absolute amount and a rate or percentage.\n\nThe left axis serves one series, the right axis the other. Reading a line against the bar axis produces confidently wrong answers, and the chart is often designed so that mistake yields one of the offered options.\n\nThe interesting questions ask you to combine the two: revenue from the bars times margin from the line gives profit, which appears nowhere on the chart directly.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.combination-charts.ex1",
+      "stemMarkdown": "Bars show revenue of Rs. 200 crore and a line shows a profit margin of 15 percent for the same year. Find the profit.",
+      "solutionMarkdown": "Profit $=$ revenue $\\times$ margin $= 200 \\times \\dfrac{15}{100} = 30$ crore.\n\nNeither axis showed profit directly \u2014 it had to be built from both series.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.combination-charts.fc1",
+      "microTopicId": "dilr.di.combination-charts",
+      "title": "Two axes, two scales",
+      "bodyMarkdown": "Identify which axis each series uses before reading anything. Bars and lines normally use opposite axes.",
+      "exampleMarkdown": "A line at '15' may mean 15 percent on the right axis, not 15 crore on the left."
+    },
+    {
+      "id": "dilr.di.combination-charts.fc2",
+      "microTopicId": "dilr.di.combination-charts",
+      "title": "Combining the series",
+      "bodyMarkdown": "Absolute $\\times$ rate gives a new absolute. This is usually what the hard question wants.",
+      "exampleMarkdown": "Revenue 400 with margin 12 percent gives profit 48."
+    }
+  ],
+  "commonTraps": [
+    "Reading a percentage line against the absolute axis.",
+    "Assuming both axes start at zero or share a scale.",
+    "Adding a percentage to an absolute value. They are different kinds of quantity."
+  ],
+  "estReadMinutes": 6
+}

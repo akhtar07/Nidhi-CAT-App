@@ -1,0 +1,35 @@
+{
+  "id": "dilr.lr.network-routes",
+  "microTopicId": "dilr.lr.network-routes",
+  "bodyMarkdown": "## The idea in plain language\n\nPicture a map of towns joined by roads, each road with a distance or a capacity. Questions ask for the shortest route, or how much traffic can flow from one end to the other.\n\nThese look intimidating but reward patience: with a small network, listing the possible routes and totalling each is completely reliable.\n\n## What is actually going on\n\nFor **shortest path** in a small network, enumerate the distinct routes and add up each one. Do not try to eyeball it \u2014 the shortest-looking route on the diagram is often not the shortest by the numbers.\n\nFor **maximum flow**, the total that can pass along a route is limited by its narrowest link, just as a chain is only as strong as its weakest link. Add up the capacities of independent routes, being careful not to reuse an edge's capacity twice.\n\nRedraw the network neatly before starting. Crossed lines cause more errors than the logic does.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.network-routes.ex1",
+      "stemMarkdown": "Routes from A to D: via B costs 4 + 5, via C costs 3 + 7, direct costs 11. Which is shortest?",
+      "solutionMarkdown": "Via B: $4 + 5 = 9$.\nVia C: $3 + 7 = 10$.\nDirect: $11$.\n\nThe shortest is via B, at 9.",
+      "altSolutionMarkdown": "Note the direct route is the longest here \u2014 a deliberate trap in many such questions."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.network-routes.fc1",
+      "microTopicId": "dilr.lr.network-routes",
+      "title": "Shortest path",
+      "bodyMarkdown": "Enumerate every distinct route and total its edge weights. Choose the smallest total.",
+      "exampleMarkdown": "Three routes costing 9, 10 and 11 give a shortest path of 9."
+    },
+    {
+      "id": "dilr.lr.network-routes.fc2",
+      "microTopicId": "dilr.lr.network-routes",
+      "title": "Bottleneck capacity",
+      "bodyMarkdown": "A route's capacity is its smallest edge. Total flow adds independent routes without reusing edges.",
+      "exampleMarkdown": "A route with capacities 8, 5 and 6 carries only 5."
+    }
+  ],
+  "commonTraps": [
+    "Assuming the direct link is the shortest. It frequently is not.",
+    "Counting an edge's capacity in two different routes.",
+    "Missing a valid route because the diagram is drawn awkwardly. Redraw it."
+  ],
+  "estReadMinutes": 7
+}

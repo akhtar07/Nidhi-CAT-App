@@ -1,0 +1,55 @@
+{
+  "id": "qa.geometry.triangles",
+  "microTopicId": "qa.geometry.triangles",
+  "bodyMarkdown": "## The idea in plain language\n\nTear the three corners off a paper triangle and place them side by side. They always form a perfectly straight line. That is the 180-degree rule, and it holds for every triangle ever drawn.\n\n**Similar** triangles are photocopies at different zoom levels: same shape, same angles, all sides scaled by the same factor. **Congruent** triangles are the same photocopy \u2014 identical in every way.\n\n## What is actually going on\n\nAngles sum to 180. Any exterior angle equals the sum of the two opposite interior angles.\n\nThe **triangle inequality** says any two sides must together exceed the third; otherwise the triangle cannot close.\n\nSimilarity is the real workhorse. If two triangles have equal angles, their sides are in a fixed ratio \u2014 and their **areas** are in the square of that ratio. Doubling every length quadruples the area, which surprises people every time.\n\nPythagoras applies only to right-angled triangles. Memorising a few triples (3-4-5, 5-12-13, 8-15-17) and their multiples saves real time.",
+  "workedExamples": [
+    {
+      "id": "qa.geometry.triangles.ex1",
+      "stemMarkdown": "A right triangle has legs 9 cm and 12 cm. Find its hypotenuse.",
+      "solutionMarkdown": "$h^2 = 9^2 + 12^2 = 81 + 144 = 225$, so $h = 15$ cm.\n\nThis is the 3-4-5 triple scaled by 3.",
+      "altSolutionMarkdown": "Recognising 9-12-15 as $3 \\times (3,4,5)$ gives the answer with no arithmetic at all."
+    },
+    {
+      "id": "qa.geometry.triangles.ex2",
+      "stemMarkdown": "Two similar triangles have corresponding sides 4 cm and 6 cm. The smaller has area 20 square cm. Find the area of the larger.",
+      "solutionMarkdown": "The ratio of sides is $\\dfrac{6}{4} = \\dfrac32$.\n\nAreas scale as the **square** of that ratio: $\\left(\\dfrac32\\right)^2 = \\dfrac94$.\n\nArea $= 20 \\times \\dfrac94 = 45$ square cm.",
+      "altSolutionMarkdown": "A common wrong answer is 30, from scaling the area by $\\frac32$ instead of $\\frac94$."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.geometry.triangles.fc1",
+      "microTopicId": "qa.geometry.triangles",
+      "title": "Angle facts",
+      "bodyMarkdown": "Interior angles sum to 180. An exterior angle equals the sum of the two remote interior angles.",
+      "exampleMarkdown": "Angles 50 and 60 force the third to be 70, and the exterior angle there is 110."
+    },
+    {
+      "id": "qa.geometry.triangles.fc2",
+      "microTopicId": "qa.geometry.triangles",
+      "title": "Area",
+      "bodyMarkdown": "$\\dfrac12 \\times \\text{base} \\times \\text{height}$, or Heron's $\\sqrt{s(s-a)(s-b)(s-c)}$ with $s = \\dfrac{a+b+c}{2}$.",
+      "exampleMarkdown": "Sides 13, 14, 15 give $s = 21$ and area $\\sqrt{21 \\times 8 \\times 7 \\times 6} = 84$."
+    },
+    {
+      "id": "qa.geometry.triangles.fc3",
+      "microTopicId": "qa.geometry.triangles",
+      "title": "Similarity",
+      "bodyMarkdown": "Equal angles mean sides in a constant ratio $k$. Areas are then in the ratio $k^2$.",
+      "exampleMarkdown": "Sides in 2 : 3 means areas in 4 : 9."
+    },
+    {
+      "id": "qa.geometry.triangles.fc4",
+      "microTopicId": "qa.geometry.triangles",
+      "title": "Triangle inequality",
+      "bodyMarkdown": "Each pair of sides must sum to more than the third side.",
+      "exampleMarkdown": "Sides 3, 4 and 8 cannot form a triangle, since $3 + 4 < 8$."
+    }
+  ],
+  "commonTraps": [
+    "Scaling areas by the side ratio instead of its square.",
+    "Applying Pythagoras to a triangle that is not right-angled.",
+    "Forgetting to check the triangle inequality when a question asks which side lengths are possible."
+  ],
+  "estReadMinutes": 8
+}

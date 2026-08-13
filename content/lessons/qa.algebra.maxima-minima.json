@@ -1,0 +1,41 @@
+{
+  "id": "qa.algebra.maxima-minima",
+  "microTopicId": "qa.algebra.maxima-minima",
+  "bodyMarkdown": "## The idea in plain language\n\nYou have 40 metres of fencing and want to enclose the biggest possible rectangular garden. A long thin strip encloses almost nothing. So does a very short wide one. Somewhere in between is the best shape \u2014 and it turns out to be the square.\n\nThat is the pattern behind most optimisation questions: when a total is fixed, the product or area is largest when the parts are **equal**.\n\n## What is actually going on\n\nTwo tools cover almost every CAT question here.\n\n**Quadratic vertex.** A parabola $ax^2 + bx + c$ turns at $x = -\\dfrac{b}{2a}$. If $a > 0$ it opens upward and that point is the minimum; if $a < 0$ it is the maximum.\n\n**AM-GM.** For positive numbers the arithmetic mean is at least the geometric mean, with equality only when all the numbers are equal. So for a fixed sum, the product peaks when the terms match \u2014 and for a fixed product, the sum bottoms out at the same place.",
+  "workedExamples": [
+    {
+      "id": "qa.algebra.maxima-minima.ex1",
+      "stemMarkdown": "Two positive numbers add to 20. What is their largest possible product?",
+      "solutionMarkdown": "Try a few: $1 \\times 19 = 19$, $5 \\times 15 = 75$, $9 \\times 11 = 99$, $10 \\times 10 = 100$.\n\nThe product peaks when the numbers are equal, at $10 \\times 10 = 100$.\n\nThis is AM-GM: with a fixed sum, equal parts maximise the product.",
+      "altSolutionMarkdown": "Algebraically, the product is $x(20 - x) = -x^2 + 20x$, a downward parabola with vertex at $x = 10$."
+    },
+    {
+      "id": "qa.algebra.maxima-minima.ex2",
+      "stemMarkdown": "Find the minimum value of $f(x) = 2x^2 - 8x + 11$.",
+      "solutionMarkdown": "Since $a = 2 > 0$, the parabola opens upward, so the vertex is a minimum.\n\nVertex at $x = -\\dfrac{b}{2a} = -\\dfrac{-8}{4} = 2$.\n\n$f(2) = 2(4) - 16 + 11 = 8 - 16 + 11 = 3$.\n\nThe minimum value is 3.",
+      "altSolutionMarkdown": "Completing the square: $2(x^2 - 4x) + 11 = 2(x-2)^2 - 8 + 11 = 2(x-2)^2 + 3$. A square is never negative, so the smallest value is 3, reached at $x = 2$."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.algebra.maxima-minima.fc1",
+      "microTopicId": "qa.algebra.maxima-minima",
+      "title": "Vertex of a parabola",
+      "bodyMarkdown": "$ax^2 + bx + c$ turns at $x = -\\dfrac{b}{2a}$. Minimum if $a > 0$, maximum if $a < 0$.",
+      "exampleMarkdown": "$x^2 - 6x + 5$ turns at $x = 3$, where the value is $-4$."
+    },
+    {
+      "id": "qa.algebra.maxima-minima.fc2",
+      "microTopicId": "qa.algebra.maxima-minima",
+      "title": "AM-GM inequality",
+      "bodyMarkdown": "For positive $a, b$: $\\dfrac{a + b}{2} \\geq \\sqrt{ab}$, with equality only when $a = b$.",
+      "exampleMarkdown": "Fixed sum 12 gives a maximum product of $6 \\times 6 = 36$."
+    }
+  ],
+  "commonTraps": [
+    "Applying AM-GM to negative numbers. It requires all terms to be positive.",
+    "Reporting the $x$ at which the extreme occurs when the question asked for the value there, or vice versa.",
+    "Assuming the vertex is a minimum without checking the sign of $a$."
+  ],
+  "estReadMinutes": 7
+}

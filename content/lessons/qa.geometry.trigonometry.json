@@ -1,0 +1,48 @@
+{
+  "id": "qa.geometry.trigonometry",
+  "microTopicId": "qa.geometry.trigonometry",
+  "bodyMarkdown": "## The idea in plain language\n\nLean a ladder against a wall. Keep the angle the same but use a ladder twice as long, and both the height it reaches and its distance from the wall double. The **ratio** between them does not change at all.\n\nThat constant ratio, fixed by the angle alone, is what sine, cosine and tangent record. That is why a single angle plus one length tells you everything else.\n\n## What is actually going on\n\nIn a right-angled triangle, relative to an angle:\n\n$\\sin = \\dfrac{\\text{opposite}}{\\text{hypotenuse}}$, $\\cos = \\dfrac{\\text{adjacent}}{\\text{hypotenuse}}$, $\\tan = \\dfrac{\\text{opposite}}{\\text{adjacent}}$.\n\nFor heights-and-distances questions, tangent is almost always the one you want, because it links the height you cannot reach to the ground distance you can measure.\n\nAngle of **elevation** is measured looking up from the horizontal; angle of **depression** looking down. The two are equal between the same pair of points, which often shortcuts a diagram.",
+  "workedExamples": [
+    {
+      "id": "qa.geometry.trigonometry.ex1",
+      "stemMarkdown": "From a point 50 m from the foot of a tower, the angle of elevation of the top is 60 degrees. Find the tower's height.",
+      "solutionMarkdown": "The height is opposite the angle and the 50 m is adjacent, so use tangent.\n\n$\\tan 60^\\circ = \\dfrac{h}{50}$\n\n$h = 50\\sqrt3 \\approx 86.6$ m.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.geometry.trigonometry.ex2",
+      "stemMarkdown": "A ladder 10 m long leans against a wall at 30 degrees to the ground. How high up the wall does it reach?",
+      "solutionMarkdown": "The height is opposite the angle and the ladder is the hypotenuse, so use sine.\n\n$\\sin 30^\\circ = \\dfrac{h}{10}$, and $\\sin 30^\\circ = \\dfrac12$.\n\n$h = 10 \\times \\dfrac12 = 5$ m.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.geometry.trigonometry.fc1",
+      "microTopicId": "qa.geometry.trigonometry",
+      "title": "The three ratios",
+      "bodyMarkdown": "$\\sin\\theta = \\dfrac{O}{H}$, $\\cos\\theta = \\dfrac{A}{H}$, $\\tan\\theta = \\dfrac{O}{A} = \\dfrac{\\sin\\theta}{\\cos\\theta}$.",
+      "exampleMarkdown": "In a 3-4-5 triangle, the angle opposite 3 has $\\sin = 0.6$, $\\cos = 0.8$, $\\tan = 0.75$."
+    },
+    {
+      "id": "qa.geometry.trigonometry.fc2",
+      "microTopicId": "qa.geometry.trigonometry",
+      "title": "Standard angles",
+      "bodyMarkdown": "$\\sin 30 = \\dfrac12$, $\\sin 45 = \\dfrac{1}{\\sqrt2}$, $\\sin 60 = \\dfrac{\\sqrt3}{2}$. Cosine runs the same list backwards. $\\tan 30 = \\dfrac{1}{\\sqrt3}$, $\\tan 45 = 1$, $\\tan 60 = \\sqrt3$.",
+      "exampleMarkdown": "$\\cos 60 = \\frac12$, matching $\\sin 30$."
+    },
+    {
+      "id": "qa.geometry.trigonometry.fc3",
+      "microTopicId": "qa.geometry.trigonometry",
+      "title": "Identities",
+      "bodyMarkdown": "$\\sin^2\\theta + \\cos^2\\theta = 1$, and $1 + \\tan^2\\theta = \\sec^2\\theta$.",
+      "exampleMarkdown": "If $\\sin\\theta = 0.6$ then $\\cos\\theta = 0.8$."
+    }
+  ],
+  "commonTraps": [
+    "Picking the wrong ratio. Identify which sides the question gives and wants before choosing.",
+    "Mixing up elevation and depression when drawing the diagram.",
+    "Forgetting that 'opposite' and 'adjacent' are relative to the angle you are using, and swap for the other acute angle."
+  ],
+  "estReadMinutes": 7
+}

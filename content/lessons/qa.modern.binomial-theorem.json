@@ -1,0 +1,48 @@
+{
+  "id": "qa.modern.binomial-theorem",
+  "microTopicId": "qa.modern.binomial-theorem",
+  "bodyMarkdown": "## The idea in plain language\n\nMultiply out $(1+x)^3$ by hand and you get $1 + 3x + 3x^2 + x^3$. Where does that 3 come from? There are three brackets, and to get a single $x$ you pick it from exactly one of them \u2014 three ways to choose which.\n\nThat is all the binomial theorem is: the coefficients are counts of **how many ways** you can pick the terms.\n\n## What is actually going on\n\n$$(1 + x)^n = \\binom{n}{0} + \\binom{n}{1}x + \\binom{n}{2}x^2 + \\cdots + \\binom{n}{n}x^n$$\n\nThe coefficient of $x^r$ is $\\binom{n}{r}$, the number of ways to choose which $r$ of the $n$ brackets contribute an $x$.\n\nPascal's triangle builds these quickly: each entry is the sum of the two above it. For CAT, the two things worth knowing cold are how to pick out a specific term, and the fact that all the coefficients together sum to $2^n$ (set $x = 1$).",
+  "workedExamples": [
+    {
+      "id": "qa.modern.binomial-theorem.ex1",
+      "stemMarkdown": "Find the coefficient of $x^3$ in $(1+x)^7$.",
+      "solutionMarkdown": "The coefficient is $\\binom73 = \\dfrac{7!}{3! \\, 4!} = \\dfrac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$.",
+      "altSolutionMarkdown": "From Pascal's triangle, row 7 reads 1, 7, 21, 35, 35, 21, 7, 1 \u2014 the entry for $x^3$ is the fourth, which is 35."
+    },
+    {
+      "id": "qa.modern.binomial-theorem.ex2",
+      "stemMarkdown": "Find the sum of all the binomial coefficients in $(1+x)^6$.",
+      "solutionMarkdown": "Setting $x = 1$ turns the left side into $2^6$ and the right side into the plain sum of all the coefficients.\n\nSo the sum is $2^6 = 64$.\n\nCheck against row 6: $1 + 6 + 15 + 20 + 15 + 6 + 1 = 64$.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.modern.binomial-theorem.fc1",
+      "microTopicId": "qa.modern.binomial-theorem",
+      "title": "Binomial expansion",
+      "bodyMarkdown": "$(a+b)^n = \\sum_{r=0}^{n} \\binom{n}{r} a^{n-r} b^r$",
+      "exampleMarkdown": "$(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$."
+    },
+    {
+      "id": "qa.modern.binomial-theorem.fc2",
+      "microTopicId": "qa.modern.binomial-theorem",
+      "title": "General term",
+      "bodyMarkdown": "The term with $b^r$ is $T_{r+1} = \\binom{n}{r} a^{n-r} b^r$.",
+      "exampleMarkdown": "In $(2+x)^5$, the $x^2$ term is $\\binom52 2^3 x^2 = 80x^2$."
+    },
+    {
+      "id": "qa.modern.binomial-theorem.fc3",
+      "microTopicId": "qa.modern.binomial-theorem",
+      "title": "Sum of coefficients",
+      "bodyMarkdown": "Substituting $x = 1$ gives the sum of all coefficients: $2^n$ for $(1+x)^n$.",
+      "exampleMarkdown": "$(1+x)^{10}$ has coefficients summing to 1024."
+    }
+  ],
+  "commonTraps": [
+    "Off-by-one on the term number. The term containing $b^r$ is the $(r+1)$th term.",
+    "Forgetting to raise the numerical part too. In $(2+x)^5$ the powers of 2 matter.",
+    "Assuming the middle coefficient is always the largest. It is, but only when $a = b = 1$."
+  ],
+  "estReadMinutes": 6
+}

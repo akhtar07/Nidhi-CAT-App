@@ -1,0 +1,28 @@
+{
+  "id": "dilr.di.line-charts",
+  "microTopicId": "dilr.di.line-charts",
+  "bodyMarkdown": "## The idea in plain language\n\nA line chart is a bar chart that has been joined up, and that changes what your eye notices. Bars invite you to compare heights; lines invite you to notice **direction** \u2014 rising, falling, flattening, crossing.\n\nSo line-chart questions lean towards trends and turning points rather than single readings.\n\n## What is actually going on\n\nThe steepness of a segment is the rate of change, not the value. A line can be high but falling, or low but climbing fast \u2014 and questions deliberately exploit that difference.\n\nWhen two lines cross, the quantities are equal at that moment; before and after, one leads. Questions about 'in how many years did A exceed B' are answered by reading which line sits on top, interval by interval.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.line-charts.ex1",
+      "stemMarkdown": "Two colleges' enrolments over 2019-2023 are 820, 865, 790, 910, 960 and 700, 745, 810, 845, 880. In how many years did the second exceed the first?",
+      "solutionMarkdown": "Compare year by year:\n\n2019: 700 against 820, no. 2020: 745 against 865, no. 2021: 810 against 790, **yes**. 2022: 845 against 910, no. 2023: 880 against 960, no.\n\nSo in exactly 1 year.",
+      "altSolutionMarkdown": "On the chart this is simply the interval where the second line pokes above the first."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.line-charts.fc1",
+      "microTopicId": "dilr.di.line-charts",
+      "title": "Reading a line chart",
+      "bodyMarkdown": "Height is the value; steepness is the rate of change; a crossing point means the two values are equal.",
+      "exampleMarkdown": "A steeply falling line from 900 to 700 still sits above a flat line at 400."
+    }
+  ],
+  "commonTraps": [
+    "Confusing the steepest rise with the highest value.",
+    "Assuming values between marked points are meaningful. Only the plotted points are data.",
+    "Missing a crossing that happens between two labelled years."
+  ],
+  "estReadMinutes": 5
+}

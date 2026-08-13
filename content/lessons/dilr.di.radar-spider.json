@@ -1,0 +1,28 @@
+{
+  "id": "dilr.di.radar-spider",
+  "microTopicId": "dilr.di.radar-spider",
+  "bodyMarkdown": "## The idea in plain language\n\nA radar chart is a set of measuring sticks fanning out from a centre, one per category, with the values joined into a web. The further from the centre a point sits, the bigger the value.\n\nIt is designed for comparing **profiles** \u2014 is this student strong across the board, or spiky?\n\n## What is actually going on\n\nEach spoke is its own axis, and every spoke usually shares the same scale. Read a value by seeing how far along its spoke the point lies.\n\nThe enclosed area is visually striking but rarely the answer to anything \u2014 it depends on the arbitrary order of the spokes. Trust the individual readings, not the shape.\n\nTypical questions: which category scores highest, which entity is most balanced, or on how many categories does one entity beat another.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.radar-spider.ex1",
+      "stemMarkdown": "Two products are rated out of 10 on five features. A scores 8, 6, 9, 5, 7 and B scores 7, 8, 6, 9, 5. On how many features does A beat B?",
+      "solutionMarkdown": "Compare feature by feature:\n\n8 vs 7: A. 6 vs 8: B. 9 vs 6: A. 5 vs 9: B. 7 vs 5: A.\n\nA wins on 3 of the 5 features.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.radar-spider.fc1",
+      "microTopicId": "dilr.di.radar-spider",
+      "title": "Reading a radar chart",
+      "bodyMarkdown": "Distance from centre along a spoke is the value on that category. Compare spoke by spoke, never by overall shape.",
+      "exampleMarkdown": "A point halfway along a spoke scaled 0-10 represents about 5."
+    }
+  ],
+  "commonTraps": [
+    "Judging 'bigger overall' from the enclosed area, which changes if the spokes are reordered.",
+    "Assuming all spokes share a scale when the chart labels them differently.",
+    "Reading towards the centre as larger. The centre is the minimum."
+  ],
+  "estReadMinutes": 5
+}

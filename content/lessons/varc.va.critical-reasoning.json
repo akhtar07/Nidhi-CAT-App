@@ -1,0 +1,35 @@
+{
+  "id": "varc.va.critical-reasoning",
+  "microTopicId": "varc.va.critical-reasoning",
+  "bodyMarkdown": "## The idea in plain language\n\nSomeone says: 'Ice cream sales and drowning deaths both rise in July, so ice cream causes drowning.' The flaw is obvious once stated \u2014 hot weather drives both.\n\nCritical reasoning is the practice of spotting that kind of flaw when it is less obvious. Most flaws come from a small number of recurring patterns.\n\n## What is actually going on\n\nAlways separate **conclusion** from **evidence** first. Almost every question becomes easier once you can say precisely what is being claimed and what is offered in support.\n\nThen look for the standard flaws. Correlation treated as causation. A sample that does not represent the group. A conclusion about individuals drawn from a group average, or the reverse. An either-or framing that ignores other options. A term used in two different senses.\n\nNaming the flaw explicitly, in your own words, makes the right option much easier to recognise.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.va.critical-reasoning.ex1",
+      "stemMarkdown": "'A survey of our website visitors found 90 percent prefer online shopping, so most people prefer online shopping.' What is the flaw?",
+      "solutionMarkdown": "Conclusion: most people prefer online shopping.\nEvidence: 90 percent of **website visitors** said so.\n\nThe flaw is an unrepresentative sample. People who visit a shopping website are already predisposed to shop online, so they cannot stand in for the general population.\n\nThis is selection bias, and it is one of the most frequently tested flaws.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.va.critical-reasoning.fc1",
+      "microTopicId": "varc.va.critical-reasoning",
+      "title": "Split conclusion from evidence",
+      "bodyMarkdown": "Identify what is claimed and what supports it before evaluating anything.",
+      "exampleMarkdown": "Marking the conclusion sentence makes the gap visible."
+    },
+    {
+      "id": "varc.va.critical-reasoning.fc2",
+      "microTopicId": "varc.va.critical-reasoning",
+      "title": "Common flaws",
+      "bodyMarkdown": "Correlation as causation, unrepresentative sample, group-to-individual leaps, false dichotomy, shifting definitions.",
+      "exampleMarkdown": "A survey of a self-selected group cannot support a claim about everyone."
+    }
+  ],
+  "commonTraps": [
+    "Attacking the conclusion because you disagree with it, rather than assessing the reasoning.",
+    "Choosing an option that is true but does not describe this argument's flaw.",
+    "Missing that the evidence and the conclusion refer to different populations."
+  ],
+  "estReadMinutes": 7
+}

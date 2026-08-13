@@ -1,0 +1,35 @@
+{
+  "id": "varc.rc.vocab-in-context",
+  "microTopicId": "varc.rc.vocab-in-context",
+  "bodyMarkdown": "## The idea in plain language\n\nThe word 'bright' means one thing about a lamp and another about a student. Nobody needs a dictionary to tell them apart \u2014 the sentence around it does the work.\n\nVocabulary-in-context questions test exactly that. They rarely use obscure words; they use ordinary words in a particular sense and check whether you read the sentence.\n\n## What is actually going on\n\nCover the word and read the sentence with a blank. Decide what would fit, in your own words, before looking at the options. This stops the options from steering you.\n\nThen find the option closest to your own guess. The correct answer must fit the sentence grammatically and carry the right tone \u2014 positive, negative or neutral \u2014 as well as the right meaning.\n\nThe most common trap is an option that is a perfectly good dictionary synonym but wrong for **this** sentence.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.vocab-in-context.ex1",
+      "stemMarkdown": "'The committee's decision was arresting, and delegates spoke of little else for days.' What does 'arresting' mean here?",
+      "solutionMarkdown": "Cover the word: 'The decision was ___, and delegates spoke of little else.'\n\nSomething that makes people talk for days is **striking** or attention-grabbing.\n\n'Arresting' here means striking, not 'stopping' or 'detaining' \u2014 even though those are its more common senses elsewhere.",
+      "altSolutionMarkdown": "The clue is entirely in the second half of the sentence. The literal police sense is the deliberate trap."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.vocab-in-context.fc1",
+      "microTopicId": "varc.rc.vocab-in-context",
+      "title": "Blank-it-out method",
+      "bodyMarkdown": "Cover the word, predict a replacement from context, then match to the closest option.",
+      "exampleMarkdown": "Predicting 'striking' makes the right option obvious and the trap visible."
+    },
+    {
+      "id": "varc.rc.vocab-in-context.fc2",
+      "microTopicId": "varc.rc.vocab-in-context",
+      "title": "Match the tone",
+      "bodyMarkdown": "The replacement must carry the same positive, negative or neutral charge as the original sentence implies.",
+      "exampleMarkdown": "A word describing criticism cannot be replaced with a complimentary synonym."
+    }
+  ],
+  "commonTraps": [
+    "Choosing the word's most common meaning rather than its meaning here.",
+    "Picking a synonym that does not fit the sentence grammatically.",
+    "Ignoring whether the sentence is approving or disapproving."
+  ],
+  "estReadMinutes": 5
+}

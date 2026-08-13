@@ -1,0 +1,41 @@
+{
+  "id": "qa.arith.time-work-chain-rule",
+  "microTopicId": "qa.arith.time-work-chain-rule",
+  "bodyMarkdown": "## The idea in plain language\n\nDigging a hole takes a certain amount of total effort \u2014 say, 60 hours of one person's shovelling. It does not matter whether that is one person for 60 hours, or ten people for 6 hours. The hole does not care who does the work.\n\nThat fixed lump of effort is the idea behind the chain rule. Count it in **man-days** (or man-hours), and then redistribute it however the question asks.\n\n## What is actually going on\n\nFor a fixed job, the total effort is constant:\n\n$$M_1 \\times D_1 \\times H_1 = M_2 \\times D_2 \\times H_2$$\n\nwhere $M$ is the number of workers, $D$ the days and $H$ the hours per day. More workers means fewer days; that is an inverse relationship.\n\nIf the size of the job changes too, put the work on the other side: $\\dfrac{M_1 D_1 H_1}{W_1} = \\dfrac{M_2 D_2 H_2}{W_2}$. Everything that supplies effort multiplies on top; the amount of work divides underneath.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.time-work-chain-rule.ex1",
+      "stemMarkdown": "If 12 men build a wall in 15 days, how long will 20 men take?",
+      "solutionMarkdown": "Total effort $= 12 \\times 15 = 180$ man-days, and the wall needs that much regardless of the crew size.\n\nWith 20 men: $\\dfrac{180}{20} = 9$ days.",
+      "altSolutionMarkdown": "More men, fewer days \u2014 and 9 is indeed less than 15, so the direction is right."
+    },
+    {
+      "id": "qa.arith.time-work-chain-rule.ex2",
+      "stemMarkdown": "If 10 men working 8 hours a day finish a job in 6 days, how many days will 15 men working 4 hours a day take?",
+      "solutionMarkdown": "Total effort $= 10 \\times 8 \\times 6 = 480$ man-hours.\n\nThe new crew supplies $15 \\times 4 = 60$ man-hours per day.\n\nDays needed $= \\dfrac{480}{60} = 8$ days.",
+      "altSolutionMarkdown": "The crew grew but the working day shrank more, so the job takes longer than 6 days. Checking the direction of change before computing catches most errors here."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.time-work-chain-rule.fc1",
+      "microTopicId": "qa.arith.time-work-chain-rule",
+      "title": "Chain rule",
+      "bodyMarkdown": "$\\dfrac{M_1 D_1 H_1}{W_1} = \\dfrac{M_2 D_2 H_2}{W_2}$",
+      "exampleMarkdown": "8 men, 10 days, 6 hours on 1 job equals 12 men, $D$ days, 4 hours on 1 job, giving $D = 10$."
+    },
+    {
+      "id": "qa.arith.time-work-chain-rule.fc2",
+      "microTopicId": "qa.arith.time-work-chain-rule",
+      "title": "Man-days",
+      "bodyMarkdown": "Total effort $=$ workers $\\times$ days $\\times$ hours per day. For a fixed job this is invariant.",
+      "exampleMarkdown": "15 men for 8 days is 120 man-days, the same job as 20 men for 6 days."
+    }
+  ],
+  "commonTraps": [
+    "Setting up a direct proportion where it should be inverse. More workers must mean fewer days.",
+    "Forgetting to scale by the size of the job when the second job is bigger or smaller.",
+    "Dropping the hours-per-day factor when it differs between the two scenarios."
+  ],
+  "estReadMinutes": 6
+}

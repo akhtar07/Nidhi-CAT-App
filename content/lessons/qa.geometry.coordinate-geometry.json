@@ -1,0 +1,55 @@
+{
+  "id": "qa.geometry.coordinate-geometry",
+  "microTopicId": "qa.geometry.coordinate-geometry",
+  "bodyMarkdown": "## The idea in plain language\n\nCoordinate geometry is geometry with a street map. Instead of describing a point as 'over there', you give it an address: 3 blocks east, 4 blocks north.\n\nOnce every point has an address, distances and midpoints become arithmetic. The distance formula is just Pythagoras applied to the east-west and north-south gaps.\n\n## What is actually going on\n\nThe distance between two points is $\\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$ \u2014 the horizontal and vertical gaps are the legs of a right triangle, and the distance is its hypotenuse.\n\nThe **section formula** finds a point dividing a segment in a given ratio. For the midpoint, the ratio is 1 : 1 and it collapses to simply averaging the coordinates.\n\nA line's **slope** is rise over run. Parallel lines share a slope; perpendicular lines have slopes multiplying to $-1$.",
+  "workedExamples": [
+    {
+      "id": "qa.geometry.coordinate-geometry.ex1",
+      "stemMarkdown": "Find the distance between $(2, 3)$ and $(7, 15)$.",
+      "solutionMarkdown": "Horizontal gap $= 7 - 2 = 5$. Vertical gap $= 15 - 3 = 12$.\n\n$d = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$.",
+      "altSolutionMarkdown": "The 5-12-13 triple appears again \u2014 worth recognising on sight."
+    },
+    {
+      "id": "qa.geometry.coordinate-geometry.ex2",
+      "stemMarkdown": "Find the point dividing the segment from $(1, 2)$ to $(7, 8)$ in the ratio 2 : 1.",
+      "solutionMarkdown": "By the section formula with $m = 2$, $n = 1$:\n\n$x = \\dfrac{2(7) + 1(1)}{3} = \\dfrac{15}{3} = 5$\n\n$y = \\dfrac{2(8) + 1(2)}{3} = \\dfrac{18}{3} = 6$\n\nThe point is $(5, 6)$.",
+      "altSolutionMarkdown": "A 2 : 1 split sits two-thirds of the way along, and $(5,6)$ is indeed two-thirds from $(1,2)$ to $(7,8)$."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.geometry.coordinate-geometry.fc1",
+      "microTopicId": "qa.geometry.coordinate-geometry",
+      "title": "Distance and midpoint",
+      "bodyMarkdown": "$d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$. Midpoint $= \\left(\\dfrac{x_1+x_2}{2}, \\dfrac{y_1+y_2}{2}\\right)$.",
+      "exampleMarkdown": "From $(0,0)$ to $(6,8)$: distance 10, midpoint $(3,4)$."
+    },
+    {
+      "id": "qa.geometry.coordinate-geometry.fc2",
+      "microTopicId": "qa.geometry.coordinate-geometry",
+      "title": "Section formula",
+      "bodyMarkdown": "Dividing internally in ratio $m : n$ gives $\\left(\\dfrac{mx_2+nx_1}{m+n}, \\dfrac{my_2+ny_1}{m+n}\\right)$.",
+      "exampleMarkdown": "Ratio 1 : 3 from $(0,0)$ to $(8,4)$ gives $(2,1)$."
+    },
+    {
+      "id": "qa.geometry.coordinate-geometry.fc3",
+      "microTopicId": "qa.geometry.coordinate-geometry",
+      "title": "Slope",
+      "bodyMarkdown": "$m = \\dfrac{y_2-y_1}{x_2-x_1}$. Parallel lines have equal slopes; perpendicular slopes multiply to $-1$.",
+      "exampleMarkdown": "A line of slope 2 is perpendicular to one of slope $-\\frac12$."
+    },
+    {
+      "id": "qa.geometry.coordinate-geometry.fc4",
+      "microTopicId": "qa.geometry.coordinate-geometry",
+      "title": "Area of a triangle from vertices",
+      "bodyMarkdown": "$\\dfrac12 |x_1(y_2-y_3) + x_2(y_3-y_1) + x_3(y_1-y_2)|$",
+      "exampleMarkdown": "$(0,0)$, $(4,0)$, $(0,3)$ gives area 6."
+    }
+  ],
+  "commonTraps": [
+    "Sign errors when subtracting coordinates. Squaring hides them in distance, but not in slope.",
+    "Swapping $m$ and $n$ in the section formula. The ratio $m : n$ weights the **far** point by $m$.",
+    "Forgetting the absolute value in the area formula, and reporting a negative area."
+  ],
+  "estReadMinutes": 7
+}

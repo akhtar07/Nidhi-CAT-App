@@ -1,0 +1,48 @@
+{
+  "id": "qa.numsys.remainders",
+  "microTopicId": "qa.numsys.remainders",
+  "bodyMarkdown": "## The idea in plain language\n\nLook at a clock. It is 10 o'clock and you wait 5 hours \u2014 you land on 3, not 15, because the clock wraps around at 12. Remainders work exactly like that: only the wrap-around position matters, not how many full loops you made.\n\nThat is why enormous powers like $7^{100}$ have easy remainders. The pattern repeats in a short cycle, and you just need to know where in the cycle you land.\n\n## What is actually going on\n\nThe key habit is to **reduce early**. If you want the remainder of a big product, replace each factor by its own remainder first \u2014 the answer is unchanged and the numbers stay small.\n\nFor powers, compute the first few remainders and watch for the repeat. Once you know the cycle length $L$, the exponent only matters modulo $L$. Take $7^{100} \\bmod 5$: the remainders of $7^1, 7^2, 7^3, 7^4$ are 2, 4, 3, 1 and then it repeats, so the cycle length is 4. Since $100 \\bmod 4 = 0$, we land on the last entry of the cycle, giving 1.",
+  "workedExamples": [
+    {
+      "id": "qa.numsys.remainders.ex1",
+      "stemMarkdown": "Find the remainder when $3^{20}$ is divided by 7.",
+      "solutionMarkdown": "List the remainders of successive powers of 3 modulo 7:\n\n$3^1 = 3$, $3^2 = 9 \\to 2$, $3^3 \\to 6$, $3^4 \\to 4$, $3^5 \\to 5$, $3^6 \\to 1$, and then the pattern restarts.\n\nThe cycle has length 6. Since $20 \\bmod 6 = 2$, we are at the second entry, which is 2.\n\nThe remainder is 2.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.numsys.remainders.ex2",
+      "stemMarkdown": "Find the remainder when $123 \\times 457$ is divided by 11.",
+      "solutionMarkdown": "Reduce each factor first. $123 = 11 \\times 11 + 2$, so $123 \\to 2$. $457 = 11 \\times 41 + 6$, so $457 \\to 6$.\n\nNow $2 \\times 6 = 12$, and $12 \\bmod 11 = 1$.\n\nThe remainder is 1 \u2014 found without ever multiplying 123 by 457.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.numsys.remainders.fc1",
+      "microTopicId": "qa.numsys.remainders",
+      "title": "Reduce before combining",
+      "bodyMarkdown": "$(a \\times b) \\bmod m = ((a \\bmod m) \\times (b \\bmod m)) \\bmod m$. The same holds for addition.",
+      "exampleMarkdown": "$98 \\times 97 \\bmod 9$: $98 \\to 8$, $97 \\to 7$, $8 \\times 7 = 56 \\to 2$."
+    },
+    {
+      "id": "qa.numsys.remainders.fc2",
+      "microTopicId": "qa.numsys.remainders",
+      "title": "Cyclicity of powers",
+      "bodyMarkdown": "Find the smallest $L$ with $a^L \\equiv 1 \\pmod m$. Then $a^n$ depends only on $n \\bmod L$.",
+      "exampleMarkdown": "Powers of 2 mod 7 cycle 2, 4, 1 with $L = 3$, so $2^{30} \\equiv 1$."
+    },
+    {
+      "id": "qa.numsys.remainders.fc3",
+      "microTopicId": "qa.numsys.remainders",
+      "title": "Fermat's little theorem",
+      "bodyMarkdown": "If $p$ is prime and $a$ is not a multiple of $p$, then $a^{p-1} \\equiv 1 \\pmod p$.",
+      "exampleMarkdown": "$3^{10} \\equiv 1 \\pmod{11}$, so $3^{23} = 3^{20} \\cdot 3^3 \\equiv 27 \\equiv 5$."
+    }
+  ],
+  "commonTraps": [
+    "Computing the giant power first. Reduce as you go or the numbers become unusable.",
+    "Getting the cycle length off by one. Write out the first several powers explicitly until you see the repeat.",
+    "Applying Fermat's theorem when the base is a multiple of the prime \u2014 the theorem does not apply there."
+  ],
+  "estReadMinutes": 7
+}

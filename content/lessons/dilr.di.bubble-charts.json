@@ -1,0 +1,28 @@
+{
+  "id": "dilr.di.bubble-charts",
+  "microTopicId": "dilr.di.bubble-charts",
+  "bodyMarkdown": "## The idea in plain language\n\nA bubble chart squeezes three numbers into one picture. Left-to-right is one variable, up-and-down is a second, and the **size** of the bubble is a third.\n\nSo a bubble far right, high up and large is scoring well on all three \u2014 and a question asking 'which is best' usually needs you to say which of the three you are judging on.\n\n## What is actually going on\n\nRead the two axes first, then check what the legend says bubble size encodes. Size is the dimension people forget.\n\nBe careful comparing bubble sizes by eye: a bubble that looks twice as wide has four times the area, so visual comparison badly exaggerates differences. Where exact values matter, the question will normally give them in a table alongside.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.bubble-charts.ex1",
+      "stemMarkdown": "Bubbles plot revenue on the x-axis, profit margin on the y-axis, and headcount as size. A firm is far right but low down with a small bubble. Describe it.",
+      "solutionMarkdown": "Far right means high revenue.\n\nLow down means a low profit margin.\n\nA small bubble means few employees.\n\nSo it is a high-revenue, low-margin business run by a small team.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.bubble-charts.fc1",
+      "microTopicId": "dilr.di.bubble-charts",
+      "title": "Three variables at once",
+      "bodyMarkdown": "x-position, y-position, and bubble size are three separate readings. Always check the legend for what size means.",
+      "exampleMarkdown": "Two bubbles at the same height differ only in the x-variable and in size."
+    }
+  ],
+  "commonTraps": [
+    "Comparing bubble sizes by width when area is what encodes the value.",
+    "Ignoring the size dimension entirely and treating the chart as a scatter plot.",
+    "Assuming position implies causation between the two axis variables."
+  ],
+  "estReadMinutes": 5
+}

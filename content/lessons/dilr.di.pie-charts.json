@@ -1,0 +1,35 @@
+{
+  "id": "dilr.di.pie-charts",
+  "microTopicId": "dilr.di.pie-charts",
+  "bodyMarkdown": "## The idea in plain language\n\nA pie chart shows how one whole thing is sliced up. Every slice is a **share**, not an amount \u2014 which is why two pie charts can look identical while describing totally different totals.\n\nA 40 percent slice of a small pie can be less food than a 20 percent slice of a huge one.\n\n## What is actually going on\n\nAll slices sum to 100 percent, or equivalently 360 degrees. So one degree is $\\frac{1}{3.6}$ of a percent, and a slice's angle converts straight to its share.\n\nTo turn a share into an actual quantity you need the total, and the question must give it. If two pie charts are shown with different totals, you can only compare absolute amounts after multiplying each share by its own total \u2014 comparing percentages directly is meaningless.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.pie-charts.ex1",
+      "stemMarkdown": "A company's Rs. 60 lakh budget is split: Salaries 40 percent, Marketing 20, Rent 15, R&D 15, Utilities 10. How much goes to Marketing and Utilities together?",
+      "solutionMarkdown": "Combined share $= 20 + 10 = 30$ percent.\n\nAmount $= \\dfrac{30}{100} \\times 60 = 18$ lakh.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.pie-charts.fc1",
+      "microTopicId": "dilr.di.pie-charts",
+      "title": "Share to angle and back",
+      "bodyMarkdown": "Percentage $= \\dfrac{\\text{angle}}{360} \\times 100$, and angle $= \\dfrac{\\text{percentage}}{100} \\times 360$.",
+      "exampleMarkdown": "A 90-degree slice is 25 percent; a 20 percent slice is 72 degrees."
+    },
+    {
+      "id": "dilr.di.pie-charts.fc2",
+      "microTopicId": "dilr.di.pie-charts",
+      "title": "Share to amount",
+      "bodyMarkdown": "Amount $=$ share $\\times$ total. Without the total, a pie chart gives you no absolute values at all.",
+      "exampleMarkdown": "15 percent of Rs. 80 lakh is Rs. 12 lakh."
+    }
+  ],
+  "commonTraps": [
+    "Comparing percentages across two pie charts with different totals as though they were amounts.",
+    "Forgetting that the slices must sum to exactly 100 percent \u2014 useful for finding a missing slice.",
+    "Treating a bigger angle as a bigger quantity when the two pies have different totals."
+  ],
+  "estReadMinutes": 5
+}

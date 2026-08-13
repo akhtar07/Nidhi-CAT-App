@@ -1,0 +1,41 @@
+{
+  "id": "qa.arith.tsd-trains",
+  "microTopicId": "qa.arith.tsd-trains",
+  "bodyMarkdown": "## The idea in plain language\n\nThink about walking past a doorway versus walking past a long wall. To clear the doorway you only need to move your own body length. To clear the wall you need your length plus the wall's length.\n\nA train works exactly the same way. Passing a pole means covering just the train's own length, because a pole has no width worth counting. Passing a platform means covering the train's length **plus** the platform's.\n\n## What is actually going on\n\nEvery train question is answered by asking one thing: how much distance must the front of the train travel for the back of the train to be clear of the object?\n\nPole or man: the train's length alone.\nPlatform, bridge or tunnel: the train's length plus the object's length.\nAnother train: the sum of both trains' lengths.\n\nThen divide that distance by the relative speed, converting km/h to m/s first.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.tsd-trains.ex1",
+      "stemMarkdown": "A 180 m long train running at 54 km/h crosses a platform 270 m long. How long does it take?",
+      "solutionMarkdown": "Distance to cover $= 180 + 270 = 450$ m.\n\nSpeed $= 54 \\times \\dfrac{5}{18} = 15$ m/s.\n\nTime $= \\dfrac{450}{15} = 30$ seconds.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.arith.tsd-trains.ex2",
+      "stemMarkdown": "Two trains, 150 m and 200 m long, run towards each other at 45 km/h and 27 km/h. How long do they take to cross completely?",
+      "solutionMarkdown": "Opposite directions, so the speeds add: $45 + 27 = 72$ km/h $= 72 \\times \\dfrac{5}{18} = 20$ m/s.\n\nThey must clear both lengths: $150 + 200 = 350$ m.\n\nTime $= \\dfrac{350}{20} = 17.5$ seconds.",
+      "altSolutionMarkdown": "Freeze the first train; the second then rushes at it at 20 m/s and must travel 350 m to get fully past."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.tsd-trains.fc1",
+      "microTopicId": "qa.arith.tsd-trains",
+      "title": "What distance does the train cover?",
+      "bodyMarkdown": "Pole or standing man: train length. Platform or bridge: train length $+$ platform length. Another train: sum of both lengths.",
+      "exampleMarkdown": "A 120 m train crossing a 180 m bridge covers 300 m."
+    },
+    {
+      "id": "qa.arith.tsd-trains.fc2",
+      "microTopicId": "qa.arith.tsd-trains",
+      "title": "Train and a moving person",
+      "bodyMarkdown": "Use the relative speed: add if they move towards each other, subtract if the same way. The person contributes no length.",
+      "exampleMarkdown": "A 200 m train at 63 km/h passing a man walking at 9 km/h the same way: relative speed 54 km/h = 15 m/s, so the time is $\\dfrac{200}{15}$ seconds."
+    }
+  ],
+  "commonTraps": [
+    "Forgetting to add the platform length, and treating a platform like a pole.",
+    "Adding the person's length. People are treated as points.",
+    "Leaving the speed in km/h while the lengths are in metres."
+  ],
+  "estReadMinutes": 6
+}

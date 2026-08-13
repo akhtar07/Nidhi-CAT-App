@@ -1,0 +1,35 @@
+{
+  "id": "qa.algebra.integer-solutions",
+  "microTopicId": "qa.algebra.integer-solutions",
+  "bodyMarkdown": "## The idea in plain language\n\nYou have only Rs. 5 and Rs. 7 coins and need to pay exactly Rs. 43. You cannot hand over half a coin, so most combinations simply will not work. The question is not 'what is $x$' but 'how many whole-number combinations exist at all'.\n\nThat restriction to whole numbers is what makes these questions different from ordinary equations.\n\n## What is actually going on\n\nFor $ax + by = c$ with $x, y$ whole numbers, the practical method is to sweep one variable through its possible range and test whether the rest divides cleanly.\n\nSince $x$ cannot be negative and $ax \\leq c$, you only need to try $x = 0, 1, 2, \\ldots$ up to $\\lfloor c/a \\rfloor$. For each, check whether $c - ax$ is a multiple of $b$.\n\nSolutions, when they exist, are evenly spaced: increasing $x$ by $b$ and decreasing $y$ by $a$ always lands on another solution. So once you find one, you can step to all the others.",
+  "workedExamples": [
+    {
+      "id": "qa.algebra.integer-solutions.ex1",
+      "stemMarkdown": "How many non-negative integer solutions does $3x + 5y = 30$ have?",
+      "solutionMarkdown": "Sweep $y$ from 0 upward and check whether $30 - 5y$ is divisible by 3.\n\n$y = 0$: $30$, divisible by 3, so $x = 10$. Valid.\n$y = 1$: $25$, not divisible by 3.\n$y = 2$: $20$, not divisible by 3.\n$y = 3$: $15$, so $x = 5$. Valid.\n$y = 4$: $10$, no. $y = 5$: $5$, no. $y = 6$: $0$, so $x = 0$. Valid.\n\nThat gives 3 solutions: $(10, 0)$, $(5, 3)$ and $(0, 6)$.",
+      "altSolutionMarkdown": "Notice the solutions step by 5 in $x$ and 3 in $y$ \u2014 exactly the two coefficients, swapped."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.algebra.integer-solutions.fc1",
+      "microTopicId": "qa.algebra.integer-solutions",
+      "title": "When solutions exist",
+      "bodyMarkdown": "$ax + by = c$ has integer solutions if and only if $\\gcd(a, b)$ divides $c$.",
+      "exampleMarkdown": "$4x + 6y = 9$ has none, since $\\gcd(4,6) = 2$ does not divide 9."
+    },
+    {
+      "id": "qa.algebra.integer-solutions.fc2",
+      "microTopicId": "qa.algebra.integer-solutions",
+      "title": "Stepping between solutions",
+      "bodyMarkdown": "From one solution $(x_0, y_0)$, every other is $(x_0 + kb', y_0 - ka')$ where $a' = a/\\gcd$ and $b' = b/\\gcd$.",
+      "exampleMarkdown": "From $(10, 0)$ for $3x + 5y = 30$: subtract 5 from $x$ and add 3 to $y$ to get $(5, 3)$."
+    }
+  ],
+  "commonTraps": [
+    "Missing the boundary cases $x = 0$ or $y = 0$. 'Non-negative' includes zero; 'positive' does not.",
+    "Reading 'positive integers' as 'non-negative integers'. That usually changes the count by one or two.",
+    "Sweeping the variable with the smaller coefficient, which means many more cases to test. Sweep the larger one."
+  ],
+  "estReadMinutes": 6
+}

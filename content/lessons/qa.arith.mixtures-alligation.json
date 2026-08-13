@@ -1,0 +1,42 @@
+{
+  "id": "qa.arith.mixtures-alligation",
+  "microTopicId": "qa.arith.mixtures-alligation",
+  "bodyMarkdown": "## The idea in plain language\n\nPicture two jugs of squash. One is weak, one is strong. Pour them into a bigger jug and the result sits somewhere between the two \u2014 closer to whichever jug you poured more of.\n\nThat single sentence is the whole topic. Alligation is just a fast way to answer: how much of each jug do I need so the mixture lands on exactly the strength I want?\n\n## What is actually going on\n\nThe trick that makes every mixture question easy is to stop tracking the mixture and start tracking **one ingredient**. Count litres of pure acid, or grams of pure gold, and ignore everything else. That quantity only changes when you actually add or remove that ingredient.\n\nSo when you dilute a solution with water, the acid does not change at all \u2014 only the total volume does. When you repeatedly draw off some mixture and top it back up with water, each round removes the same **fraction** of whatever milk is left, which is why the answer involves a power rather than a subtraction.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.mixtures-alligation.ex1",
+      "stemMarkdown": "30 litres of a 40 percent acid solution is mixed with 20 litres of a 60 percent acid solution. What is the concentration of the result?",
+      "solutionMarkdown": "Track the acid only.\n\nFrom the first: $30 \\times 0.40 = 12$ litres of acid.\nFrom the second: $20 \\times 0.60 = 12$ litres of acid.\n\nTotal acid $= 24$ litres in a total volume of $50$ litres, so the concentration is $\\dfrac{24}{50} \\times 100 = 48$ percent.",
+      "altSolutionMarkdown": "Sanity check: the answer must lie between 40 and 60, and nearer 40 since there is more of the weaker solution. 48 fits."
+    },
+    {
+      "id": "qa.arith.mixtures-alligation.ex2",
+      "stemMarkdown": "A vessel holds 50 litres of pure milk. 10 litres are drawn off and replaced with water. This is done twice in total. How much milk remains?",
+      "solutionMarkdown": "Each operation removes one-fifth of whatever is in the vessel and replaces it with water, so four-fifths of the milk survives each round.\n\nAfter round 1: $50 \\times \\dfrac{4}{5} = 40$ litres of milk.\nAfter round 2: $40 \\times \\dfrac{4}{5} = 32$ litres of milk.\n\nSo 32 litres of milk remain.",
+      "altSolutionMarkdown": "In one step: $50 \\times \\left(\\dfrac{4}{5}\\right)^2 = 32$. The fraction is the same every round because the vessel is always topped back up to 50 litres."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.mixtures-alligation.fc1",
+      "microTopicId": "qa.arith.mixtures-alligation",
+      "title": "Alligation rule",
+      "bodyMarkdown": "To hit a mean price $m$ using ingredients priced $c$ (cheaper) and $d$ (dearer), the quantities must be in the ratio $\\dfrac{\\text{cheaper}}{\\text{dearer}} = \\dfrac{d - m}{m - c}$.",
+      "exampleMarkdown": "Blending Rs. 30/kg and Rs. 50/kg rice to cost Rs. 42/kg needs a ratio $\\dfrac{50-42}{42-30} = \\dfrac{8}{12} = 2:3$."
+    },
+    {
+      "id": "qa.arith.mixtures-alligation.fc2",
+      "microTopicId": "qa.arith.mixtures-alligation",
+      "title": "Repeated replacement",
+      "bodyMarkdown": "After $n$ rounds of removing $x$ from a vessel of volume $V$ and topping up: remaining $= V\\left(1 - \\dfrac{x}{V}\\right)^n$.",
+      "exampleMarkdown": "$V = 40$, $x = 8$, $n = 2$ leaves $40 \\times 0.8^2 = 25.6$ litres."
+    }
+  ],
+  "commonTraps": [
+    "Averaging the two concentrations directly. That is only correct when the two volumes happen to be equal.",
+    "In replacement problems, subtracting the drawn amount each time instead of multiplying by the surviving fraction.",
+    "Mixing up which difference goes on top in alligation. The quantity of the cheaper ingredient pairs with the distance from the mean to the dearer one.",
+    "Forgetting that adding water changes the total volume but never the amount of solute."
+  ],
+  "estReadMinutes": 7
+}

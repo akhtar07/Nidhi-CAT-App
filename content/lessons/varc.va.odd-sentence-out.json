@@ -1,0 +1,35 @@
+{
+  "id": "varc.va.odd-sentence-out",
+  "microTopicId": "varc.va.odd-sentence-out",
+  "bodyMarkdown": "## The idea in plain language\n\nFour sentences belong to one paragraph and one has wandered in from somewhere else. It is usually on the same broad topic \u2014 otherwise it would be too easy \u2014 but it is doing a different job.\n\nThe reliable move is to build the paragraph from the sentences that clearly link, and see which one is left holding nothing.\n\n## What is actually going on\n\nFirst find the pairs. Pronouns, repeated nouns and connectives link sentences to each other: 'this shift', 'such policies', 'however' all point back at something specific.\n\nAssemble the sentences that chain together into a coherent paragraph. The odd one is the sentence that no other sentence refers to and that refers to nothing itself.\n\nBeing on the same topic is not enough to belong. The odd sentence often makes a general or definitional statement while the others are pursuing a specific argument.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.va.odd-sentence-out.ex1",
+      "stemMarkdown": "Three sentences trace how a city's transport policy changed after 2010. A fourth defines what public transport is. Which is the odd one?",
+      "solutionMarkdown": "The definitional sentence is the odd one.\n\nThe other three form a narrative chain about a specific city and a specific period, each referring back to the previous one.\n\nThe definition is on the same topic but sits at a different level of generality and connects to nothing in the sequence.",
+      "altSolutionMarkdown": "Same subject matter, different job \u2014 that mismatch is what marks the intruder."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.va.odd-sentence-out.fc1",
+      "microTopicId": "varc.va.odd-sentence-out",
+      "title": "Chain by reference",
+      "bodyMarkdown": "Track pronouns, repeated nouns and connectives. The odd sentence neither refers back nor is referred to.",
+      "exampleMarkdown": "'Such measures' must point at measures named in another sentence."
+    },
+    {
+      "id": "varc.va.odd-sentence-out.fc2",
+      "microTopicId": "varc.va.odd-sentence-out",
+      "title": "Level of generality",
+      "bodyMarkdown": "A general or definitional sentence among specific, argumentative ones is usually the intruder.",
+      "exampleMarkdown": "A textbook definition among three sentences about one city's history does not belong."
+    }
+  ],
+  "commonTraps": [
+    "Removing a sentence just because it is the hardest to read.",
+    "Assuming shared topic means it belongs.",
+    "Failing to actually build the remaining paragraph and check it reads coherently."
+  ],
+  "estReadMinutes": 6
+}

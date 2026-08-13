@@ -1,0 +1,42 @@
+{
+  "id": "varc.va.fill-in-blanks",
+  "microTopicId": "varc.va.fill-in-blanks",
+  "bodyMarkdown": "## The idea in plain language\n\nA sentence with a gap is a puzzle with a shape. The words around the gap tell you what kind of word belongs there \u2014 positive or negative, strong or mild, and what part of speech.\n\nAs with vocabulary questions, guess before you look. Predicting your own word first makes the options much easier to judge.\n\n## What is actually going on\n\nRead the whole sentence, not just the words touching the gap. The decisive clue is often at the far end.\n\nWatch the connectives closely. 'Although' and 'despite' signal contrast, so the blank opposes what came before. 'Because' and 'therefore' signal agreement, so it continues.\n\nWith two blanks, solve the easier one first and use it to eliminate. Any option whose first word fails is out regardless of how well the second word fits \u2014 you do not need to evaluate both.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.va.fill-in-blanks.ex1",
+      "stemMarkdown": "'Although the team had prepared thoroughly, their performance was ___.' What kind of word fits?",
+      "solutionMarkdown": "'Although' sets up a contrast, so the second half must go against what thorough preparation would predict.\n\nThorough preparation predicts a good performance, so the blank needs something negative: 'disappointing', 'lacklustre', 'poor'.\n\nAnything positive would break the contrast the sentence explicitly announced.",
+      "altSolutionMarkdown": "The single word 'Although' determines the sign of the answer before any option is read."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.va.fill-in-blanks.fc1",
+      "microTopicId": "varc.va.fill-in-blanks",
+      "title": "Predict before you look",
+      "bodyMarkdown": "Decide what the blank needs in your own words, then find the closest option.",
+      "exampleMarkdown": "Predicting 'disappointing' makes the correct option obvious."
+    },
+    {
+      "id": "varc.va.fill-in-blanks.fc2",
+      "microTopicId": "varc.va.fill-in-blanks",
+      "title": "Connectives set the direction",
+      "bodyMarkdown": "'Although', 'despite', 'yet' reverse direction. 'Because', 'therefore', 'moreover' continue it.",
+      "exampleMarkdown": "'Because he had prepared, his performance was ___' needs a positive word."
+    },
+    {
+      "id": "varc.va.fill-in-blanks.fc3",
+      "microTopicId": "varc.va.fill-in-blanks",
+      "title": "Two blanks: eliminate on the easier one",
+      "bodyMarkdown": "Solve whichever blank is more constrained and discard every option that fails it.",
+      "exampleMarkdown": "If only two options have a workable first word, only those two need checking."
+    }
+  ],
+  "commonTraps": [
+    "Reading only the words immediately around the gap.",
+    "Missing a contrast connective and choosing a word with the wrong sign.",
+    "Evaluating both blanks in every option instead of eliminating on one."
+  ],
+  "estReadMinutes": 6
+}

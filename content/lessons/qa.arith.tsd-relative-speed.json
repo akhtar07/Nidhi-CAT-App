@@ -1,0 +1,48 @@
+{
+  "id": "qa.arith.tsd-relative-speed",
+  "microTopicId": "qa.arith.tsd-relative-speed",
+  "bodyMarkdown": "## The idea in plain language\n\nSit in a moving train and look out of the window. A train coming the other way flashes past in a second. A train going the same way as you, at almost your speed, seems to crawl alongside for ages.\n\nNeither train changed speed. What changed is the speed **relative to you**. Coming towards you, the speeds add. Going the same way, they subtract.\n\n## What is actually going on\n\nRelative speed lets you pretend one object is standing still. Instead of tracking two moving things, you freeze one and give the other the combined speed. The distance between them then closes at that single rate, and the problem becomes an ordinary distance-equals-speed-times-time question.\n\nOpposite directions: add the speeds. Same direction: subtract them. That is the entire idea, and it powers trains, boats, races and circular tracks too.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.tsd-relative-speed.ex1",
+      "stemMarkdown": "Two cars 300 km apart drive towards each other at 60 km/h and 40 km/h. When do they meet?",
+      "solutionMarkdown": "They approach each other at $60 + 40 = 100$ km/h.\n\nThe 300 km gap closes at 100 km/h, so they meet after $\\dfrac{300}{100} = 3$ hours.",
+      "altSolutionMarkdown": "Freeze one car and let the other drive at 100 km/h \u2014 the meeting time is unchanged."
+    },
+    {
+      "id": "qa.arith.tsd-relative-speed.ex2",
+      "stemMarkdown": "A man walks to school at 4 km/h and returns along the same road at 6 km/h. What is his average speed?",
+      "solutionMarkdown": "Average speed is total distance over total time, never the average of the two speeds.\n\nTake the one-way distance as 12 km (any number works). Going takes $\\dfrac{12}{4} = 3$ hours; returning takes $\\dfrac{12}{6} = 2$ hours. Total: 24 km in 5 hours.\n\nAverage speed $= \\dfrac{24}{5} = 4.8$ km/h.",
+      "altSolutionMarkdown": "For two equal distances use the harmonic mean: $\\dfrac{2 \\times 4 \\times 6}{4 + 6} = 4.8$. Note it is below 5, the naive average \u2014 you spend longer at the slower speed, so the slow leg counts for more."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.tsd-relative-speed.fc1",
+      "microTopicId": "qa.arith.tsd-relative-speed",
+      "title": "Relative speed",
+      "bodyMarkdown": "Towards each other: $v_1 + v_2$. Same direction: $|v_1 - v_2|$.",
+      "exampleMarkdown": "At 70 and 50 km/h: closing at 120 km/h head-on, or 20 km/h if one chases the other."
+    },
+    {
+      "id": "qa.arith.tsd-relative-speed.fc2",
+      "microTopicId": "qa.arith.tsd-relative-speed",
+      "title": "Average speed over two equal distances",
+      "bodyMarkdown": "$\\text{Average} = \\dfrac{2 v_1 v_2}{v_1 + v_2}$",
+      "exampleMarkdown": "60 km/h out and 40 km/h back gives $\\dfrac{2 \\times 60 \\times 40}{100} = 48$ km/h."
+    },
+    {
+      "id": "qa.arith.tsd-relative-speed.fc3",
+      "microTopicId": "qa.arith.tsd-relative-speed",
+      "title": "Unit conversion",
+      "bodyMarkdown": "Multiply by $\\dfrac{5}{18}$ to turn km/h into m/s, and by $\\dfrac{18}{5}$ to go back.",
+      "exampleMarkdown": "72 km/h $= 72 \\times \\dfrac{5}{18} = 20$ m/s."
+    }
+  ],
+  "commonTraps": [
+    "Taking the plain average of two speeds. That is only right if the two legs took equal time, not equal distance.",
+    "Mixing km/h and m/s in the same calculation without converting.",
+    "Adding speeds when the objects move the same way, or subtracting when they move towards each other."
+  ],
+  "estReadMinutes": 6
+}

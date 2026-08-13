@@ -1,0 +1,35 @@
+{
+  "id": "dilr.lr.number-placement",
+  "microTopicId": "dilr.lr.number-placement",
+  "bodyMarkdown": "## The idea in plain language\n\nThis is Sudoku's family. You have a grid, some numbers already placed, and rules about what can go where \u2014 each row sums to a value, or no digit repeats in a line.\n\nThe method is always the same: find the most constrained cell, not the first empty one. A row with five of six entries filled tells you the sixth immediately.\n\n## What is actually going on\n\nScan for the cell with the fewest possibilities and fill that. It will usually force a neighbour, which forces another. Working the most-constrained cell first turns a large search into a chain of forced moves.\n\nFor magic squares, the row, column and diagonal sums are all equal, and for a $3 \\times 3$ square using 1 to 9 that common sum is 15, with 5 always in the centre.\n\nIf you must guess, note where you guessed so you can unwind cleanly on a contradiction.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.number-placement.ex1",
+      "stemMarkdown": "A row of a magic square using 1-9 contains 8 and 3. What is the third entry?",
+      "solutionMarkdown": "Every line of a $3 \\times 3$ magic square using 1 to 9 sums to 15.\n\n$15 - 8 - 3 = 4$.\n\nThe third entry is 4.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.number-placement.fc1",
+      "microTopicId": "dilr.lr.number-placement",
+      "title": "Most-constrained first",
+      "bodyMarkdown": "Always fill the cell with the fewest remaining options. It converts searching into forced deduction.",
+      "exampleMarkdown": "A row missing one entry is fully determined by the row's sum."
+    },
+    {
+      "id": "dilr.lr.number-placement.fc2",
+      "microTopicId": "dilr.lr.number-placement",
+      "title": "3 by 3 magic square",
+      "bodyMarkdown": "Using 1 to 9, every row, column and diagonal sums to 15, and the centre is always 5.",
+      "exampleMarkdown": "A corner of 8 forces the opposite corner to 2, since $8 + 5 + 2 = 15$."
+    }
+  ],
+  "commonTraps": [
+    "Filling cells in reading order instead of by how constrained they are.",
+    "Forgetting the diagonals when checking a magic square.",
+    "Guessing without recording it, so a contradiction cannot be traced back."
+  ],
+  "estReadMinutes": 6
+}

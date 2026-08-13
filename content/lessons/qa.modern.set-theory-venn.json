@@ -1,0 +1,42 @@
+{
+  "id": "qa.modern.set-theory-venn",
+  "microTopicId": "qa.modern.set-theory-venn",
+  "bodyMarkdown": "## The idea in plain language\n\nTwenty students play cricket and fifteen play football. How many students are there? You cannot just say 35 \u2014 some of them play both, and you have counted those twice.\n\nSubtracting the double-counted overlap once is the entire principle of inclusion-exclusion. Two overlapping circles on paper make it obvious.\n\n## What is actually going on\n\nFor two sets: $|A \\cup B| = |A| + |B| - |A \\cap B|$. You add both, then remove the overlap you counted twice.\n\nFor three sets the pattern alternates: add the singles, subtract the pairs, add the triple back. The triple overlap gets added three times and subtracted three times, so it needs adding once more to be counted at all.\n\nWhen solving, fill the Venn diagram from the **middle outwards**. Start with the all-three region, then the pairwise-only regions, then the only-one regions. Filling from the outside in leads to double counting almost every time.",
+  "workedExamples": [
+    {
+      "id": "qa.modern.set-theory-venn.ex1",
+      "stemMarkdown": "In a class of 50, 30 like tea, 25 like coffee, and 8 like neither. How many like both?",
+      "solutionMarkdown": "Students liking at least one drink: $50 - 8 = 42$.\n\nBy inclusion-exclusion, $|T \\cup C| = |T| + |C| - |T \\cap C|$:\n\n$42 = 30 + 25 - |T \\cap C|$\n\nSo $|T \\cap C| = 55 - 42 = 13$ students like both.",
+      "altSolutionMarkdown": "Check: only tea is $30 - 13 = 17$, only coffee is $25 - 13 = 12$, and $17 + 12 + 13 + 8 = 50$."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.modern.set-theory-venn.fc1",
+      "microTopicId": "qa.modern.set-theory-venn",
+      "title": "Two sets",
+      "bodyMarkdown": "$|A \\cup B| = |A| + |B| - |A \\cap B|$",
+      "exampleMarkdown": "$|A| = 20$, $|B| = 15$, overlap 5 gives a union of 30."
+    },
+    {
+      "id": "qa.modern.set-theory-venn.fc2",
+      "microTopicId": "qa.modern.set-theory-venn",
+      "title": "Three sets",
+      "bodyMarkdown": "$|A \\cup B \\cup C| = |A| + |B| + |C| - |A \\cap B| - |B \\cap C| - |A \\cap C| + |A \\cap B \\cap C|$",
+      "exampleMarkdown": "All singles 20, all pairs 8, triple 3 gives $60 - 24 + 3 = 39$."
+    },
+    {
+      "id": "qa.modern.set-theory-venn.fc3",
+      "microTopicId": "qa.modern.set-theory-venn",
+      "title": "Exactly one, exactly two",
+      "bodyMarkdown": "Exactly two $=$ (sum of pairwise overlaps) $- 3 \\times$ (triple overlap). Exactly one $=$ union $-$ exactly two $-$ triple.",
+      "exampleMarkdown": "Pairwise 8 each and triple 3: exactly two is $24 - 9 = 15$."
+    }
+  ],
+  "commonTraps": [
+    "Reading 'both A and B' (which includes people who also do C) as 'only A and B'.",
+    "Forgetting the people in none of the sets when the total is given.",
+    "Filling the diagram from the outside in. Always start with the innermost region."
+  ],
+  "estReadMinutes": 7
+}

@@ -1,0 +1,35 @@
+{
+  "id": "dilr.lr.ordering-ranking",
+  "microTopicId": "dilr.lr.ordering-ranking",
+  "bodyMarkdown": "## The idea in plain language\n\nSix students finished a test in some order and you are given hints: 'Priya scored better than Rohan', 'exactly one person came between Sara and Tarun'.\n\nDraw six blank slots on paper. Each clue either fixes someone, or fixes a **relationship** between two people that you can slide along the line until other clues lock it down.\n\n## What is actually going on\n\nSeparate the clues into two kinds. **Absolute** clues fix a position outright ('Uma was third'). **Relative** clues fix an order or a gap without saying where ('A is immediately above B').\n\nStart with the absolutes \u2014 they anchor the line. Then take the relative clues with the largest blocks, since a rigid pair or triple has few places it can fit.\n\nBe precise about language. 'Better than' allows any gap; 'immediately above' allows none. 'Exactly one between' means a gap of two positions.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.ordering-ranking.ex1",
+      "stemMarkdown": "Five runners finish a race. C is immediately ahead of D. A finished first. B finished last. Where can C and D be?",
+      "solutionMarkdown": "A is 1st and B is 5th, so positions 2, 3 and 4 remain for C, D and E.\n\nC and D must be adjacent with C first, so the possible pairs are (2,3) or (3,4).\n\nIf C and D take 2 and 3, E is 4th. If they take 3 and 4, E is 2nd. Both remain possible without a further clue.",
+      "altSolutionMarkdown": "Recognising that a question can still have two valid arrangements matters \u2014 do not force a unique answer that the clues do not support."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.ordering-ranking.fc1",
+      "microTopicId": "dilr.lr.ordering-ranking",
+      "title": "Anchor then slide",
+      "bodyMarkdown": "Place absolute clues first, then fit rigid relative blocks into the remaining gaps.",
+      "exampleMarkdown": "A fixed 1st place plus an adjacent pair leaves very few arrangements to test."
+    },
+    {
+      "id": "dilr.lr.ordering-ranking.fc2",
+      "microTopicId": "dilr.lr.ordering-ranking",
+      "title": "Reading the gap language",
+      "bodyMarkdown": "'Immediately' means adjacent. 'Exactly one between' means two positions apart. 'Above' or 'before' alone means any gap.",
+      "exampleMarkdown": "'Exactly two between X and Y' means their positions differ by 3."
+    }
+  ],
+  "commonTraps": [
+    "Reading 'better than' as 'immediately better than'.",
+    "Fixing a direction for a relative clue that does not state one, such as 'X and Y are two apart'.",
+    "Assuming the answer must be unique when the clues genuinely allow several orders."
+  ],
+  "estReadMinutes": 7
+}

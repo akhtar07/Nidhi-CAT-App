@@ -1,0 +1,41 @@
+{
+  "id": "qa.algebra.polynomials-remainder-factor",
+  "microTopicId": "qa.algebra.polynomials-remainder-factor",
+  "bodyMarkdown": "## The idea in plain language\n\nDivide 17 by 5 and you get 3 remainder 2. Polynomials divide the same way, but there is a wonderful shortcut: to find the remainder when dividing by $(x - a)$, you do not divide at all. You just plug in $x = a$.\n\nIt feels like cheating the first time you see it, but it follows directly from what division means.\n\n## What is actually going on\n\nAny division can be written as $p(x) = (x - a) \\cdot q(x) + r$, where $r$ is the remainder. Now substitute $x = a$. The $(x - a)$ term becomes zero and wipes out the whole quotient, leaving $p(a) = r$.\n\nThat is the **Remainder Theorem**. The **Factor Theorem** is the special case where $r = 0$: $(x - a)$ divides $p(x)$ exactly when $p(a) = 0$. So checking whether something is a factor is a single substitution.",
+  "workedExamples": [
+    {
+      "id": "qa.algebra.polynomials-remainder-factor.ex1",
+      "stemMarkdown": "Find the remainder when $x^3 - 4x^2 + 5x - 2$ is divided by $(x - 3)$.",
+      "solutionMarkdown": "By the Remainder Theorem, substitute $x = 3$:\n\n$27 - 4(9) + 5(3) - 2 = 27 - 36 + 15 - 2 = 4$.\n\nThe remainder is 4. No long division needed.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.algebra.polynomials-remainder-factor.ex2",
+      "stemMarkdown": "Find $k$ if $(x - 2)$ is a factor of $x^3 + kx^2 - 4x + 4$.",
+      "solutionMarkdown": "If $(x-2)$ is a factor then substituting $x = 2$ must give zero:\n\n$8 + 4k - 8 + 4 = 0$\n\n$4k + 4 = 0$, so $k = -1$.\n\nCheck with $k = -1$: $8 - 4 - 8 + 4 = 0$. Correct.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.algebra.polynomials-remainder-factor.fc1",
+      "microTopicId": "qa.algebra.polynomials-remainder-factor",
+      "title": "Remainder Theorem",
+      "bodyMarkdown": "The remainder when $p(x)$ is divided by $(x - a)$ is $p(a)$.",
+      "exampleMarkdown": "$p(x) = x^2 + 3x + 1$ divided by $(x - 2)$ leaves $p(2) = 4 + 6 + 1 = 11$."
+    },
+    {
+      "id": "qa.algebra.polynomials-remainder-factor.fc2",
+      "microTopicId": "qa.algebra.polynomials-remainder-factor",
+      "title": "Factor Theorem",
+      "bodyMarkdown": "$(x - a)$ is a factor of $p(x)$ if and only if $p(a) = 0$.",
+      "exampleMarkdown": "$p(x) = x^2 - 5x + 6$ has $p(2) = 0$, so $(x - 2)$ is a factor."
+    }
+  ],
+  "commonTraps": [
+    "Using $x = -a$ when dividing by $(x - a)$. Set the divisor to zero: $x - a = 0$ means $x = a$.",
+    "With a divisor like $(x + 3)$, the substitution is $x = -3$, not $x = 3$.",
+    "Applying the theorem to a quadratic divisor. It only works for linear divisors."
+  ],
+  "estReadMinutes": 6
+}

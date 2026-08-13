@@ -1,0 +1,48 @@
+{
+  "id": "qa.algebra.quadratic-equations",
+  "microTopicId": "qa.algebra.quadratic-equations",
+  "bodyMarkdown": "## The idea in plain language\n\nThrow a ball straight up. It rises, slows, stops, and falls back. Plot its height against time and you get an arch \u2014 a parabola. A quadratic equation asks: at what times was the ball at ground level? Those two moments are the **roots**.\n\nSometimes the ball never reaches the height you asked about, and then there are no real roots at all. The discriminant is what tells you which case you are in, before you do any work.\n\n## What is actually going on\n\nFor $ax^2 + bx + c = 0$, the discriminant $D = b^2 - 4ac$ decides everything:\n\n$D > 0$: two distinct real roots (the parabola cuts the axis twice).\n$D = 0$: one repeated root (it just touches).\n$D < 0$: no real roots (it misses entirely).\n\nYou often do not need the roots themselves. Vieta's relations give their sum and product straight from the coefficients, which answers a surprising share of CAT questions without any solving.",
+  "workedExamples": [
+    {
+      "id": "qa.algebra.quadratic-equations.ex1",
+      "stemMarkdown": "Find the roots of $x^2 - 7x + 12 = 0$.",
+      "solutionMarkdown": "Look for two numbers that multiply to 12 and add to 7. Those are 3 and 4.\n\nSo $x^2 - 7x + 12 = (x - 3)(x - 4) = 0$, giving $x = 3$ or $x = 4$.\n\nCheck: $3 + 4 = 7$ and $3 \\times 4 = 12$. Both match the coefficients.",
+      "altSolutionMarkdown": "By formula: $x = \\dfrac{7 \\pm \\sqrt{49 - 48}}{2} = \\dfrac{7 \\pm 1}{2}$, so 4 or 3."
+    },
+    {
+      "id": "qa.algebra.quadratic-equations.ex2",
+      "stemMarkdown": "Without solving, find the sum and product of the roots of $3x^2 - 12x + 9 = 0$.",
+      "solutionMarkdown": "Sum of roots $= -\\dfrac{b}{a} = -\\dfrac{-12}{3} = 4$.\n\nProduct of roots $= \\dfrac{c}{a} = \\dfrac{9}{3} = 3$.\n\n(The roots happen to be 1 and 3, which do sum to 4 and multiply to 3.)",
+      "altSolutionMarkdown": "Vieta's relations save real time when the question only asks about the sum or product, not the roots themselves."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.algebra.quadratic-equations.fc1",
+      "microTopicId": "qa.algebra.quadratic-equations",
+      "title": "Quadratic formula",
+      "bodyMarkdown": "$x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$",
+      "exampleMarkdown": "For $2x^2 - 4x - 6 = 0$: $x = \\dfrac{4 \\pm \\sqrt{16 + 48}}{4} = \\dfrac{4 \\pm 8}{4}$, so 3 or $-1$."
+    },
+    {
+      "id": "qa.algebra.quadratic-equations.fc2",
+      "microTopicId": "qa.algebra.quadratic-equations",
+      "title": "Discriminant",
+      "bodyMarkdown": "$D = b^2 - 4ac$. Positive means two real roots, zero means one repeated root, negative means none.",
+      "exampleMarkdown": "$x^2 + 2x + 5$ has $D = 4 - 20 = -16 < 0$, so it never touches the $x$-axis."
+    },
+    {
+      "id": "qa.algebra.quadratic-equations.fc3",
+      "microTopicId": "qa.algebra.quadratic-equations",
+      "title": "Vieta's relations",
+      "bodyMarkdown": "Sum of roots $= -\\dfrac{b}{a}$, product of roots $= \\dfrac{c}{a}$.",
+      "exampleMarkdown": "$x^2 - 5x + 6$: sum 5, product 6, consistent with roots 2 and 3."
+    }
+  ],
+  "commonTraps": [
+    "Sign slips on $-\\dfrac{b}{a}$. If $b$ is already negative, the sum of roots is positive.",
+    "Forgetting to divide by $a$ when $a$ is not 1. The relations use $b/a$ and $c/a$, not $b$ and $c$.",
+    "Concluding 'no solution' when $D < 0$ \u2014 there are no **real** roots, but complex roots still exist."
+  ],
+  "estReadMinutes": 7
+}

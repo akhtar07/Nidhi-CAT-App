@@ -1,0 +1,35 @@
+{
+  "id": "dilr.lr.selection-conditionalities",
+  "microTopicId": "dilr.lr.selection-conditionalities",
+  "bodyMarkdown": "## The idea in plain language\n\nYou are picking a team, and there are rules: if Amit comes then Bina must come too; Chen and Deepa refuse to be in the same room. These are the constraints, and every valid team must satisfy all of them.\n\nThe safest approach is often just to list every possible team and strike out the ones that break a rule. With small numbers that is faster than clever reasoning, and far less error-prone.\n\n## What is actually going on\n\nTranslate each rule into precise logic before doing anything else.\n\n'If A then B' means A cannot appear without B \u2014 but B **can** appear without A. That asymmetry is the single most misread rule type.\n\n'A and B cannot both be selected' allows either alone, or neither.\n\n'At least one of A or B' forbids only the case where both are absent.\n\nFor counting questions, enumerate systematically. Choosing 3 from 6 is only 20 possibilities, and checking all 20 against three rules is quick and certain.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.selection-conditionalities.ex1",
+      "stemMarkdown": "Rule: if Amit is selected, Bina must be selected. Is a team of Bina and Chen, without Amit, valid?",
+      "solutionMarkdown": "The rule only restricts what happens **when Amit is in**. Amit is not selected here, so the rule imposes nothing at all.\n\nThe team is valid. Bina may be selected with or without Amit.",
+      "altSolutionMarkdown": "The common error is reading 'if A then B' as 'A and B always travel together'. It is a one-way street."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.selection-conditionalities.fc1",
+      "microTopicId": "dilr.lr.selection-conditionalities",
+      "title": "Conditional",
+      "bodyMarkdown": "'If A then B' forbids exactly one case: A present and B absent. B alone is fine, and neither is fine.",
+      "exampleMarkdown": "With this rule, valid teams include {B}, {B, C} and {A, B} but never {A, C}."
+    },
+    {
+      "id": "dilr.lr.selection-conditionalities.fc2",
+      "microTopicId": "dilr.lr.selection-conditionalities",
+      "title": "Mutual exclusion and at-least-one",
+      "bodyMarkdown": "'Not both A and B' forbids only {A, B} together. 'At least one of A or B' forbids only the case with neither.",
+      "exampleMarkdown": "Under both rules, a team must contain exactly one of A and B if only those two are involved."
+    }
+  ],
+  "commonTraps": [
+    "Reading a conditional as working in both directions.",
+    "Treating 'at least one' as 'exactly one'. Both being present is usually allowed.",
+    "Missing that 'neither' can be a valid option for an exclusion rule."
+  ],
+  "estReadMinutes": 7
+}

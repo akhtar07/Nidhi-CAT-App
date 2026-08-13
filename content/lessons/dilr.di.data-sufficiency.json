@@ -1,0 +1,35 @@
+{
+  "id": "dilr.di.data-sufficiency",
+  "microTopicId": "dilr.di.data-sufficiency",
+  "bodyMarkdown": "## The idea in plain language\n\nData sufficiency does not ask you to solve anything. It asks: **do I have enough to solve it?**\n\nThat is a genuinely different question, and the discipline is to stop as soon as you know the answer is determined, without actually computing it. Solving wastes time you do not have.\n\n## What is actually going on\n\nThe answer options are fixed:\n\nA: Statement I alone is enough, II alone is not.\nB: Statement II alone is enough, I alone is not.\nC: Both together are enough, neither alone is.\nD: Either alone is enough.\nE: Even together they are not enough.\n\nTest statement I **completely on its own**, forgetting II entirely. Then test II alone, forgetting I. Only if both fail individually do you combine them.\n\n'Sufficient' means it pins down exactly one answer. Two possible values is not sufficient, even if both look plausible.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.data-sufficiency.ex1",
+      "stemMarkdown": "What is the value of x? Statement I: $x^2 = 16$. Statement II: $x > -10$.",
+      "solutionMarkdown": "Statement I alone gives $x = 4$ or $x = -4$ \u2014 two values, so not sufficient.\n\nStatement II alone allows endless values, so not sufficient.\n\nTogether: both 4 and $-4$ satisfy $x > -10$, so the ambiguity survives.\n\nThe answer is **E** \u2014 not sufficient even together.",
+      "altSolutionMarkdown": "The trap is assuming a square root has one value. $x^2 = 16$ has two solutions."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.data-sufficiency.fc1",
+      "microTopicId": "dilr.di.data-sufficiency",
+      "title": "The five options",
+      "bodyMarkdown": "A: I alone. B: II alone. C: both needed. D: either alone. E: insufficient even together.",
+      "exampleMarkdown": "If each statement independently pins the answer down, the answer is D, not C."
+    },
+    {
+      "id": "dilr.di.data-sufficiency.fc2",
+      "microTopicId": "dilr.di.data-sufficiency",
+      "title": "What counts as sufficient",
+      "bodyMarkdown": "A statement is sufficient only if it leaves exactly one possible answer. Two candidates means insufficient.",
+      "exampleMarkdown": "'x is a positive even number less than 5' gives only 2 or 4 \u2014 still insufficient."
+    }
+  ],
+  "commonTraps": [
+    "Letting information from statement I leak into your evaluation of statement II.",
+    "Actually computing the answer instead of just establishing that it is determined.",
+    "Choosing C when each statement alone would have sufficed, which is D."
+  ],
+  "estReadMinutes": 7
+}

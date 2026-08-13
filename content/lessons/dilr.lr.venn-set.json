@@ -1,0 +1,42 @@
+{
+  "id": "dilr.lr.venn-set",
+  "microTopicId": "dilr.lr.venn-set",
+  "bodyMarkdown": "## The idea in plain language\n\nDraw overlapping circles for the groups. Every person in the survey lands in exactly one region of the picture \u2014 plays only cricket, plays cricket and football but not tennis, plays nothing at all, and so on.\n\nOnce you see it that way, the entire problem is filling in each region's headcount without counting anyone twice.\n\n## What is actually going on\n\nAlways fill the diagram from the **middle outwards**. Start with the all-three overlap, then the pairwise regions (subtracting the middle from each), then the only-one regions.\n\nThe reason is that a stated figure like 'cricket and football' almost always includes the people who also play tennis. Only by subtracting the centre do you get the genuinely-only-two region.\n\nWatch the wording closely: 'both A and B' usually means at least both, while 'only A and B' explicitly excludes the third.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.venn-set.ex1",
+      "stemMarkdown": "Of 100 people, 60 like tea, 50 like coffee, and 10 like neither. How many like both?",
+      "solutionMarkdown": "People liking at least one $= 100 - 10 = 90$.\n\n$|T \\cup C| = |T| + |C| - |T \\cap C|$\n\n$90 = 60 + 50 - |T \\cap C|$, so $|T \\cap C| = 20$.",
+      "altSolutionMarkdown": "Check the regions: only tea 40, only coffee 30, both 20, neither 10 \u2014 totalling 100."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.venn-set.fc1",
+      "microTopicId": "dilr.lr.venn-set",
+      "title": "Two-set inclusion-exclusion",
+      "bodyMarkdown": "$|A \\cup B| = |A| + |B| - |A \\cap B|$",
+      "exampleMarkdown": "Sets of 30 and 25 with a union of 45 must overlap in 10."
+    },
+    {
+      "id": "dilr.lr.venn-set.fc2",
+      "microTopicId": "dilr.lr.venn-set",
+      "title": "Three-set inclusion-exclusion",
+      "bodyMarkdown": "$|A \\cup B \\cup C| = \\sum|A| - \\sum|A \\cap B| + |A \\cap B \\cap C|$",
+      "exampleMarkdown": "Singles 20 each, pairs 8 each, triple 3: union is $60 - 24 + 3 = 39$."
+    },
+    {
+      "id": "dilr.lr.venn-set.fc3",
+      "microTopicId": "dilr.lr.venn-set",
+      "title": "Fill order",
+      "bodyMarkdown": "Centre first, then pairwise-only (pair minus centre), then only-one regions.",
+      "exampleMarkdown": "If 'A and B' is 12 and the centre is 5, then A-and-B-only is 7."
+    }
+  ],
+  "commonTraps": [
+    "Treating a stated pairwise figure as the only-two region without subtracting the centre.",
+    "Forgetting the 'neither' group when the grand total is given.",
+    "Filling the diagram outside-in, which double counts almost every time."
+  ],
+  "estReadMinutes": 7
+}

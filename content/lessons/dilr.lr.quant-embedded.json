@@ -1,0 +1,28 @@
+{
+  "id": "dilr.lr.quant-embedded",
+  "microTopicId": "dilr.lr.quant-embedded",
+  "bodyMarkdown": "## The idea in plain language\n\nSome LR sets hide ordinary arithmetic inside a logic puzzle. You might have to work out who sat where **and** compute how much each person paid.\n\nThe trap is treating it as two separate problems. Usually the arithmetic constrains the logic: a total that must come out right eliminates most arrangements immediately.\n\n## What is actually going on\n\nRead the set twice \u2014 once for the logical structure (who, what, where) and once for the numeric constraints (totals, averages, differences).\n\nThen use the numbers as filters. If the four values must sum to 100 and three arrangements are logically possible, computing the sums usually kills two of them at once.\n\nSet up the logic grid as usual, but add a column for the numeric attribute so the two kinds of constraint can talk to each other.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.quant-embedded.ex1",
+      "stemMarkdown": "Three people scored distinct whole numbers summing to 30, each between 8 and 12. A scored more than B, who scored more than C. Find the scores.",
+      "solutionMarkdown": "Distinct values from 8 to 12 summing to 30. The possible triples are {8, 10, 12} and {9, 10, 11}.\n\nBoth sum to 30, so the numeric constraint alone does not decide it \u2014 but both are consistent with $A > B > C$.\n\nSo the data is insufficient without a further clue, and recognising that is the correct answer.",
+      "altSolutionMarkdown": "Noticing when a set is under-determined saves more time than grinding for a unique answer that is not there."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.quant-embedded.fc1",
+      "microTopicId": "dilr.lr.quant-embedded",
+      "title": "Numbers as filters",
+      "bodyMarkdown": "Enumerate the logically possible arrangements, then discard those whose totals or averages do not fit.",
+      "exampleMarkdown": "Three arrangements reduced to one by a required total is the usual shape."
+    }
+  ],
+  "commonTraps": [
+    "Solving the logic fully before looking at the numbers, when the numbers would have pruned the work.",
+    "Assuming values are whole numbers when the set never said so.",
+    "Missing that the set is genuinely under-determined and forcing an answer."
+  ],
+  "estReadMinutes": 7
+}

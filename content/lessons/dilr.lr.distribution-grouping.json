@@ -1,0 +1,35 @@
+{
+  "id": "dilr.lr.distribution-grouping",
+  "microTopicId": "dilr.lr.distribution-grouping",
+  "bodyMarkdown": "## The idea in plain language\n\nFour friends, four different pets, four different jobs, and a handful of clues. This is the logic puzzle you may have done in a puzzle book \u2014 and the method is exactly the same: draw a grid and start crossing things out.\n\nWhat you can rule **out** is as valuable as what you can confirm. A cell you have eliminated narrows every row and column it touches.\n\n## What is actually going on\n\nDraw a grid with people down the side and each attribute across the top. Work through the clues in order, marking a tick for anything confirmed and a cross for anything ruled out.\n\nAfter each pass, look for **forced** cells: a row where only one option remains, or a column where only one person can take a value. These cascade \u2014 one confirmation usually creates another.\n\nNegative clues ('Ben does not own the cat') are often more useful than positive ones, because they eliminate across a whole row or column at once. Re-read clues after each pass; a clue that told you nothing early can become decisive later.",
+  "workedExamples": [
+    {
+      "id": "dilr.lr.distribution-grouping.ex1",
+      "stemMarkdown": "Aria, Ben and Cora own a cat, dog and fish in some order. Aria does not own the fish. Ben owns the dog. Who owns the fish?",
+      "solutionMarkdown": "Ben owns the dog, so Ben is settled and neither Aria nor Cora owns it.\n\nAria does not own the fish, so Aria must own the cat.\n\nThat leaves the fish for Cora.",
+      "altSolutionMarkdown": "Notice the negative clue about Aria did the real work \u2014 it forced her onto the cat by elimination."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.lr.distribution-grouping.fc1",
+      "microTopicId": "dilr.lr.distribution-grouping",
+      "title": "Grid method",
+      "bodyMarkdown": "One row per person, one column per attribute value. Tick confirmations, cross eliminations, and re-scan for forced cells after every clue.",
+      "exampleMarkdown": "If a row has crosses in all but one cell, that cell is confirmed."
+    },
+    {
+      "id": "dilr.lr.distribution-grouping.fc2",
+      "microTopicId": "dilr.lr.distribution-grouping",
+      "title": "Uniqueness constraint",
+      "bodyMarkdown": "Each attribute value is used exactly once, so confirming a cell crosses out the rest of its row and its column.",
+      "exampleMarkdown": "Confirming Ben owns the dog rules out the dog for everyone else."
+    }
+  ],
+  "commonTraps": [
+    "Using a clue once and never revisiting it. Clues often become useful only after other deductions.",
+    "Forgetting to propagate a confirmation across both the row and the column.",
+    "Guessing a placement to 'see what happens' without tracking that it was an assumption."
+  ],
+  "estReadMinutes": 7
+}

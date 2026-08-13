@@ -1,0 +1,48 @@
+{
+  "id": "qa.geometry.mensuration-3d",
+  "microTopicId": "qa.geometry.mensuration-3d",
+  "bodyMarkdown": "## The idea in plain language\n\nVolume is how much water a container holds. Surface area is how much wrapping paper you would need to cover it. A closed box needs paper on all six faces; an open tank needs only five.\n\nReading whether the shape is open or closed, solid or hollow, decides which formula applies \u2014 and that is where most marks are lost.\n\n## What is actually going on\n\nFor any prism or cylinder, volume is simply **base area times height**. A cylinder is a circle extruded upward, so its volume is $\\pi r^2 h$.\n\nCones and pyramids taper to a point and hold exactly **one third** as much as the prism or cylinder with the same base and height.\n\nFor surface area, decide what surfaces actually exist. A cylindrical pipe open at both ends has only the curved surface $2\\pi r h$; a sealed tin adds two circular ends.",
+  "workedExamples": [
+    {
+      "id": "qa.geometry.mensuration-3d.ex1",
+      "stemMarkdown": "Find the volume of a cylinder of radius 7 cm and height 10 cm. Use $\\pi = \\frac{22}{7}$.",
+      "solutionMarkdown": "Volume $= \\pi r^2 h = \\dfrac{22}{7} \\times 49 \\times 10$.\n\n$= 22 \\times 7 \\times 10 = 1540$ cubic cm.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.geometry.mensuration-3d.ex2",
+      "stemMarkdown": "A cube of side 6 cm is melted and recast into smaller cubes of side 2 cm. How many small cubes are formed?",
+      "solutionMarkdown": "Volume is conserved when melting and recasting.\n\nLarge cube: $6^3 = 216$ cubic cm.\nSmall cube: $2^3 = 8$ cubic cm.\n\nNumber $= \\dfrac{216}{8} = 27$.",
+      "altSolutionMarkdown": "Since $6 = 3 \\times 2$, the big cube is 3 small cubes along each edge: $3^3 = 27$."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.geometry.mensuration-3d.fc1",
+      "microTopicId": "qa.geometry.mensuration-3d",
+      "title": "Volumes",
+      "bodyMarkdown": "Cuboid $lbh$. Cube $a^3$. Cylinder $\\pi r^2 h$. Cone $\\dfrac13\\pi r^2 h$. Sphere $\\dfrac43\\pi r^3$.",
+      "exampleMarkdown": "A cone of radius 3 and height 7 holds $\\frac13 \\pi \\times 9 \\times 7 = 21\\pi$."
+    },
+    {
+      "id": "qa.geometry.mensuration-3d.fc2",
+      "microTopicId": "qa.geometry.mensuration-3d",
+      "title": "Surface areas",
+      "bodyMarkdown": "Cube $6a^2$. Cylinder: curved $2\\pi rh$, total $2\\pi r(r+h)$. Sphere $4\\pi r^2$.",
+      "exampleMarkdown": "A closed cylinder with $r = 7$, $h = 10$ has total surface $2 \\times \\frac{22}{7} \\times 7 \\times 17 = 748$."
+    },
+    {
+      "id": "qa.geometry.mensuration-3d.fc3",
+      "microTopicId": "qa.geometry.mensuration-3d",
+      "title": "Melting and recasting",
+      "bodyMarkdown": "Volume is conserved. Set the old volume equal to the new one and solve.",
+      "exampleMarkdown": "A sphere of radius 3 recast into spheres of radius 1 gives 27 of them."
+    }
+  ],
+  "commonTraps": [
+    "Including the ends of an open cylinder, or omitting them from a closed one.",
+    "Dropping the one-third for cones and pyramids.",
+    "Using slant height where vertical height is needed in a cone's volume. Volume uses the vertical height; curved surface area uses the slant."
+  ],
+  "estReadMinutes": 7
+}

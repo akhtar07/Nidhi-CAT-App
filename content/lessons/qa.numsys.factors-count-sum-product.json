@@ -1,0 +1,48 @@
+{
+  "id": "qa.numsys.factors-count-sum-product",
+  "microTopicId": "qa.numsys.factors-count-sum-product",
+  "bodyMarkdown": "## The idea in plain language\n\nEvery whole number is built from prime bricks, and there is only one way to build it. $12 = 2 \\times 2 \\times 3$, always.\n\nNow, a factor of 12 is anything you can make using **some** of those bricks. You can take zero, one or two 2s (3 choices) and zero or one 3 (2 choices). That is $3 \\times 2 = 6$ factors \u2014 and indeed 12 has exactly 6: 1, 2, 3, 4, 6, 12.\n\n## What is actually going on\n\nWrite $N = p^a \\times q^b \\times r^c \\ldots$. Building a factor means choosing an exponent for each prime independently: $a+1$ options for $p$ (from 0 to $a$), $b+1$ for $q$, and so on.\n\nMultiply those counts and you have the number of factors. That single idea also gives you the sum of factors, and lets you count only the even ones, or only the odd ones, by restricting the choices you allow.",
+  "workedExamples": [
+    {
+      "id": "qa.numsys.factors-count-sum-product.ex1",
+      "stemMarkdown": "How many factors does 360 have?",
+      "solutionMarkdown": "Factorise: $360 = 2^3 \\times 3^2 \\times 5^1$.\n\nChoices: the power of 2 can be 0 to 3 (4 ways), the power of 3 can be 0 to 2 (3 ways), and the power of 5 can be 0 or 1 (2 ways).\n\nTotal $= 4 \\times 3 \\times 2 = 24$ factors.",
+      "altSolutionMarkdown": null
+    },
+    {
+      "id": "qa.numsys.factors-count-sum-product.ex2",
+      "stemMarkdown": "How many of 360's factors are even?",
+      "solutionMarkdown": "An even factor must include at least one 2, so the power of 2 can be 1, 2 or 3 \u2014 that is 3 choices instead of 4.\n\nThe other primes are unrestricted: 3 ways for the 3s, 2 ways for the 5.\n\nEven factors $= 3 \\times 3 \\times 2 = 18$.",
+      "altSolutionMarkdown": "Cross-check: odd factors allow only $2^0$, giving $1 \\times 3 \\times 2 = 6$. And $18 + 6 = 24$, the total."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.numsys.factors-count-sum-product.fc1",
+      "microTopicId": "qa.numsys.factors-count-sum-product",
+      "title": "Number of factors",
+      "bodyMarkdown": "If $N = p^a q^b r^c$ then the number of factors is $(a+1)(b+1)(c+1)$.",
+      "exampleMarkdown": "$72 = 2^3 \\times 3^2$ has $(3+1)(2+1) = 12$ factors."
+    },
+    {
+      "id": "qa.numsys.factors-count-sum-product.fc2",
+      "microTopicId": "qa.numsys.factors-count-sum-product",
+      "title": "Sum of factors",
+      "bodyMarkdown": "$\\sigma(N) = \\dfrac{p^{a+1}-1}{p-1} \\times \\dfrac{q^{b+1}-1}{q-1} \\times \\cdots$",
+      "exampleMarkdown": "$12 = 2^2 \\times 3$: $\\dfrac{2^3-1}{1} \\times \\dfrac{3^2-1}{2} = 7 \\times 4 = 28$, and indeed $1+2+3+4+6+12 = 28$."
+    },
+    {
+      "id": "qa.numsys.factors-count-sum-product.fc3",
+      "microTopicId": "qa.numsys.factors-count-sum-product",
+      "title": "Product of factors",
+      "bodyMarkdown": "The product of all factors of $N$ is $N^{d/2}$, where $d$ is the number of factors.",
+      "exampleMarkdown": "12 has 6 factors, so their product is $12^3 = 1728$."
+    }
+  ],
+  "commonTraps": [
+    "Forgetting that the exponent can be zero. A prime with exponent $a$ gives $a+1$ choices, not $a$.",
+    "Missing 1 and $N$ themselves \u2014 they are both factors.",
+    "Rushing the prime factorisation. Every later step depends on getting it exactly right."
+  ],
+  "estReadMinutes": 7
+}

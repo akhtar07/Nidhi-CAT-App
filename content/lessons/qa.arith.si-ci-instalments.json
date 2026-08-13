@@ -1,0 +1,56 @@
+{
+  "id": "qa.arith.si-ci-instalments",
+  "microTopicId": "qa.arith.si-ci-instalments",
+  "bodyMarkdown": "## The idea in plain language\n\nImagine you lend a friend Rs. 1000 and charge Rs. 100 a year. Under **simple interest** you charge Rs. 100 every single year, forever, because you always charge on the original Rs. 1000. It is like rent on a room: the room does not grow, so the rent does not change.\n\n**Compound interest** is different. At the end of year one your friend owes Rs. 1100, and now you charge on the whole Rs. 1100. Next year the interest is bigger. It is a snowball rolling downhill: each turn it picks up more snow, so each turn it grows faster than the last.\n\n## What is actually going on\n\nSimple interest is a straight line. The same amount gets added every year, so after $T$ years you have added $T$ equal slices.\n\nCompound interest is a curve. Each year you multiply by the same factor, so the growth feeds on itself. This is why the two are equal after one year and drift apart after that \u2014 the gap is exactly the interest that the earlier interest has itself earned.\n\nWhen compounding happens more often than yearly (half-yearly, quarterly), split the rate and multiply the number of periods to match.",
+  "workedExamples": [
+    {
+      "id": "qa.arith.si-ci-instalments.ex1",
+      "stemMarkdown": "Find the simple interest on Rs. 8000 at 12 percent per annum for 3 years.",
+      "solutionMarkdown": "Each year the interest is $\\dfrac{8000 \\times 12}{100} = 960$. Over 3 years that is $960 \\times 3 = 2400$.\n\nSo the simple interest is Rs. 2400.",
+      "altSolutionMarkdown": "Straight to the formula: $SI = \\dfrac{PRT}{100} = \\dfrac{8000 \\times 12 \\times 3}{100} = 2400$."
+    },
+    {
+      "id": "qa.arith.si-ci-instalments.ex2",
+      "stemMarkdown": "Find the difference between compound and simple interest on Rs. 10000 at 10 percent per annum for 2 years.",
+      "solutionMarkdown": "Simple interest: $\\dfrac{10000 \\times 10 \\times 2}{100} = 2000$.\n\nCompound: after year 1 the amount is $10000 \\times 1.1 = 11000$; after year 2 it is $11000 \\times 1.1 = 12100$. So the compound interest is $12100 - 10000 = 2100$.\n\nThe difference is $2100 - 2000 = 100$.",
+      "altSolutionMarkdown": "That Rs. 100 is exactly 10 percent of the first year's Rs. 1000 of interest \u2014 the interest earned by interest. For 2 years the gap is always $P\\left(\\dfrac{R}{100}\\right)^2 = 10000 \\times 0.01 = 100$."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "qa.arith.si-ci-instalments.fc1",
+      "microTopicId": "qa.arith.si-ci-instalments",
+      "title": "Simple interest",
+      "bodyMarkdown": "$SI = \\dfrac{P \\times R \\times T}{100}$, and Amount $= P + SI$.",
+      "exampleMarkdown": "$P = 5000$, $R = 8$, $T = 2$ gives $SI = \\dfrac{5000 \\times 8 \\times 2}{100} = 800$."
+    },
+    {
+      "id": "qa.arith.si-ci-instalments.fc2",
+      "microTopicId": "qa.arith.si-ci-instalments",
+      "title": "Compound interest",
+      "bodyMarkdown": "$A = P\\left(1 + \\dfrac{R}{100}\\right)^T$ and $CI = A - P$.",
+      "exampleMarkdown": "$P = 5000$, $R = 8$, $T = 2$ gives $A = 5000 \\times 1.08^2 = 5832$, so $CI = 832$."
+    },
+    {
+      "id": "qa.arith.si-ci-instalments.fc3",
+      "microTopicId": "qa.arith.si-ci-instalments",
+      "title": "Gap between CI and SI over 2 years",
+      "bodyMarkdown": "$CI - SI = P\\left(\\dfrac{R}{100}\\right)^2$",
+      "exampleMarkdown": "$P = 20000$, $R = 5$ gives a difference of $20000 \\times 0.0025 = 50$."
+    },
+    {
+      "id": "qa.arith.si-ci-instalments.fc4",
+      "microTopicId": "qa.arith.si-ci-instalments",
+      "title": "Compounding more often than yearly",
+      "bodyMarkdown": "Half-yearly: use rate $\\dfrac{R}{2}$ for $2T$ periods. Quarterly: use $\\dfrac{R}{4}$ for $4T$ periods.",
+      "exampleMarkdown": "Rs. 8000 at 10 percent for 1 year half-yearly gives $8000 \\times 1.05^2 = 8820$."
+    }
+  ],
+  "commonTraps": [
+    "Halving the rate for half-yearly compounding but forgetting to double the number of periods.",
+    "Reporting the amount when the question asked for the interest, or the other way round.",
+    "Assuming CI and SI differ in the first year \u2014 over one year with annual compounding they are identical.",
+    "Applying the 2-year difference formula to a 3-year question. It is specific to 2 years."
+  ],
+  "estReadMinutes": 7
+}

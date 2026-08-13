@@ -1,0 +1,28 @@
+{
+  "id": "dilr.di.bar-column",
+  "microTopicId": "dilr.di.bar-column",
+  "bodyMarkdown": "## The idea in plain language\n\nA bar chart is a set of numbers wearing a costume. Each bar's height is just a value, drawn so your eye can compare quickly.\n\nSo the first thing to do is undress it: read the axis, note the units, and treat the picture as a small table of numbers. Once it is numbers, it is ordinary arithmetic.\n\n## What is actually going on\n\nRead three things before any question: what the axis units are (thousands? crores?), what each bar represents, and what the legend says if there are grouped bars.\n\nMost bar-chart questions are one of four kinds: read a value, compare two values, compute a total or average across bars, or find a percentage change between two bars. None are hard individually; errors come from misreading the scale or the legend.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.bar-column.ex1",
+      "stemMarkdown": "A chart shows sales of 45, 52, 48 and 60 units across Q1 to Q4. By what percent did sales grow from Q1 to Q4?",
+      "solutionMarkdown": "Growth $= \\dfrac{60 - 45}{45} \\times 100 = \\dfrac{15}{45} \\times 100 = 33.33$ percent.\n\nAlways divide by the **starting** value, not the ending one.",
+      "altSolutionMarkdown": null
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.bar-column.fc1",
+      "microTopicId": "dilr.di.bar-column",
+      "title": "Percentage change",
+      "bodyMarkdown": "$\\dfrac{\\text{new} - \\text{old}}{\\text{old}} \\times 100$. The denominator is always the earlier value.",
+      "exampleMarkdown": "From 80 to 100 is a 25 percent rise; from 100 to 80 is a 20 percent fall."
+    }
+  ],
+  "commonTraps": [
+    "Misreading the axis scale, especially when it starts somewhere other than zero.",
+    "Ignoring the legend on grouped bars and reading the wrong series.",
+    "Dividing by the new value when computing percentage change."
+  ],
+  "estReadMinutes": 5
+}

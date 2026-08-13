@@ -1,0 +1,42 @@
+{
+  "id": "varc.va.sentence-correction",
+  "microTopicId": "varc.va.sentence-correction",
+  "bodyMarkdown": "## The idea in plain language\n\n'The list of items are on the table.' It sounds acceptable spoken aloud, but the subject is 'list', which is singular, so it should be 'is'. The plural 'items' sitting next to the verb is what misleads the ear.\n\nSentence correction rewards checking structure rather than trusting how a sentence sounds.\n\n## What is actually going on\n\nCheck a small number of things in order.\n\n**Subject-verb agreement**: find the true subject, ignoring any phrase sitting between it and the verb.\n**Pronoun reference**: every pronoun needs exactly one clear noun it refers to.\n**Modifier placement**: a describing phrase attaches to whatever it sits next to, which can produce nonsense.\n**Parallel structure**: items in a list must share a grammatical form.\n**Tense consistency**: shifts must be justified by the meaning.\n\nWhere two options are both grammatical, prefer the clearer and shorter one.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.va.sentence-correction.ex1",
+      "stemMarkdown": "'Walking through the park, the flowers seemed especially bright.' What is wrong?",
+      "solutionMarkdown": "The opening phrase 'Walking through the park' attaches to whatever follows it \u2014 which here is 'the flowers'. So the sentence literally says the flowers were walking.\n\nThis is a dangling modifier. It is fixed by naming the real walker:\n\n'Walking through the park, I thought the flowers seemed especially bright.'",
+      "altSolutionMarkdown": "Any sentence opening with an '-ing' phrase should be checked: whoever follows the comma must be the one doing it."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.va.sentence-correction.fc1",
+      "microTopicId": "varc.va.sentence-correction",
+      "title": "Find the real subject",
+      "bodyMarkdown": "Ignore phrases between the subject and verb. 'The list of items **is**', not 'are'.",
+      "exampleMarkdown": "'A box of chocolates was delivered' \u2014 the subject is 'box', not 'chocolates'."
+    },
+    {
+      "id": "varc.va.sentence-correction.fc2",
+      "microTopicId": "varc.va.sentence-correction",
+      "title": "Parallel structure",
+      "bodyMarkdown": "Items in a list must take the same grammatical form.",
+      "exampleMarkdown": "'She likes reading, writing and to paint' should be 'reading, writing and painting'."
+    },
+    {
+      "id": "varc.va.sentence-correction.fc3",
+      "microTopicId": "varc.va.sentence-correction",
+      "title": "Dangling modifiers",
+      "bodyMarkdown": "An opening descriptive phrase must describe the subject that immediately follows the comma.",
+      "exampleMarkdown": "'Having finished the report, the printer jammed' wrongly credits the printer."
+    }
+  ],
+  "commonTraps": [
+    "Trusting how a sentence sounds. Spoken English tolerates errors that written English does not.",
+    "Being distracted by a plural noun sitting next to a singular subject.",
+    "Choosing a wordier option when a shorter grammatical one is available."
+  ],
+  "estReadMinutes": 7
+}

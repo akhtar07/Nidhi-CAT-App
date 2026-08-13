@@ -1,0 +1,28 @@
+{
+  "id": "varc.rc.analogy-application",
+  "microTopicId": "varc.rc.analogy-application",
+  "bodyMarkdown": "## The idea in plain language\n\nThe passage explains how a coral reef supports many species by providing structure. Now the question asks which of four unrelated situations is most similar.\n\nYou are not matching the topic \u2014 reefs to reefs. You are matching the **shape** of the relationship: something providing structure that others depend on.\n\n## What is actually going on\n\nStrip the passage's idea down to an abstract pattern, ignoring its subject matter entirely. 'X enables Y by providing Z' or 'a small change produces a disproportionate effect'.\n\nThen test each option against that pattern, again ignoring subject matter. The correct option usually comes from a completely different domain, because superficial topic similarity is the trap.\n\nIf two options seem to fit, the pattern was described too loosely. Sharpen it and test again.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.analogy-application.ex1",
+      "stemMarkdown": "A passage describes how a keystone species keeps an ecosystem stable despite being small in number. Which is analogous?",
+      "solutionMarkdown": "The abstract pattern is: **a small component whose removal destabilises a much larger system**.\n\nAn option about a small supplier whose failure halts an entire manufacturing chain fits that pattern exactly, despite having nothing to do with ecology.\n\nAn option about a different animal species would look related but need not share the pattern at all.",
+      "altSolutionMarkdown": "Same-topic options are usually decoys in analogy questions. Match structure, not subject."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.analogy-application.fc1",
+      "microTopicId": "varc.rc.analogy-application",
+      "title": "Abstract the pattern",
+      "bodyMarkdown": "Restate the relationship without any subject-specific nouns, then test the options against that skeleton.",
+      "exampleMarkdown": "'Small part, disproportionate effect on the whole' is a testable skeleton."
+    }
+  ],
+  "commonTraps": [
+    "Matching the topic instead of the relationship.",
+    "Describing the pattern too vaguely, so several options appear to fit.",
+    "Ignoring the direction of the relationship, such as cause versus effect."
+  ],
+  "estReadMinutes": 6
+}

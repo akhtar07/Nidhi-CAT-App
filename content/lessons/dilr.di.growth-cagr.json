@@ -1,0 +1,42 @@
+{
+  "id": "dilr.di.growth-cagr",
+  "microTopicId": "dilr.di.growth-cagr",
+  "bodyMarkdown": "## The idea in plain language\n\nIf a business grows from 100 to 200 over four years, it did not grow 25 percent a year. Growth compounds, so each year's rise builds on a bigger base.\n\nCAGR answers: what **steady** yearly rate would have produced this same journey? It is the smoothed-out rate, ignoring the bumps along the way.\n\n## What is actually going on\n\nYear-on-year growth compares consecutive periods and always divides by the earlier value.\n\nCAGR looks only at the start and end, and asks what constant multiplier repeated over the period would connect them. Crucially, the exponent uses the number of **intervals**, not the number of data points: 2019 to 2023 is 4 years of growth, not 5.\n\nMarket share is a share of a total, so a company's share can fall while its absolute sales rise, if the market grew faster. Questions exploit exactly that.",
+  "workedExamples": [
+    {
+      "id": "dilr.di.growth-cagr.ex1",
+      "stemMarkdown": "Revenue rises from 120 to 210 between 2019 and 2023. Find the CAGR.",
+      "solutionMarkdown": "From 2019 to 2023 is 4 intervals, not 5.\n\n$\\text{CAGR} = \\left(\\dfrac{210}{120}\\right)^{1/4} - 1$\n\n$= (1.75)^{0.25} - 1 \\approx 0.1503$, so about 15.03 percent per year.",
+      "altSolutionMarkdown": "Sanity check: 15 percent compounded 4 times multiplies by roughly 1.75, matching 120 to 210."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "dilr.di.growth-cagr.fc1",
+      "microTopicId": "dilr.di.growth-cagr",
+      "title": "Year-on-year growth",
+      "bodyMarkdown": "$\\dfrac{\\text{this year} - \\text{last year}}{\\text{last year}} \\times 100$",
+      "exampleMarkdown": "From 175 to 210 is a 20 percent rise."
+    },
+    {
+      "id": "dilr.di.growth-cagr.fc2",
+      "microTopicId": "dilr.di.growth-cagr",
+      "title": "CAGR",
+      "bodyMarkdown": "$\\left(\\dfrac{\\text{End}}{\\text{Start}}\\right)^{1/n} - 1$, where $n$ is the number of intervals.",
+      "exampleMarkdown": "Doubling over 3 years gives $2^{1/3} - 1 \\approx 25.99$ percent."
+    },
+    {
+      "id": "dilr.di.growth-cagr.fc3",
+      "microTopicId": "dilr.di.growth-cagr",
+      "title": "Market share",
+      "bodyMarkdown": "$\\dfrac{\\text{company sales}}{\\text{total market sales}} \\times 100$. Share can fall while sales rise.",
+      "exampleMarkdown": "Sales up from 50 to 60 while the market doubles from 200 to 500 means share fell from 25 to 12 percent."
+    }
+  ],
+  "commonTraps": [
+    "Counting years instead of intervals. 2019 to 2023 is 4, not 5.",
+    "Averaging the yearly growth rates and calling it CAGR. Compounding is not additive.",
+    "Reading a falling market share as falling sales."
+  ],
+  "estReadMinutes": 7
+}

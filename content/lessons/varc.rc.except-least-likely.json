@@ -1,0 +1,35 @@
+{
+  "id": "varc.rc.except-least-likely",
+  "microTopicId": "varc.rc.except-least-likely",
+  "bodyMarkdown": "## The idea in plain language\n\n'All of the following are true EXCEPT' flips the whole exercise. Now three options are correct and you are hunting for the odd one out.\n\nThe error people make is not misunderstanding the passage \u2014 it is forgetting halfway through that they are looking for the wrong one.\n\n## What is actually going on\n\nWrite a small 'NOT' on your page, or say it aloud. Some visible reminder that the polarity is reversed.\n\nThen work option by option, marking each as supported or not supported by the passage. Do not try to spot the answer directly \u2014 check all four and the odd one reveals itself.\n\nThe answer is the option that is either contradicted by the passage or simply absent from it. Both count as 'except'; it does not have to be contradicted.\n\n## How elimination works in VARC\n\nIn VARC you almost never prove an option right. You prove three of them wrong. Options fail for recognisable reasons: they go further than the passage does, they are true in the world but not stated here, they get the right idea but the wrong scope, or they distort a small detail. Naming **why** an option is wrong is what separates a reliable eliminator from a guesser.",
+  "workedExamples": [
+    {
+      "id": "varc.rc.except-least-likely.ex1",
+      "stemMarkdown": "'The passage supports all of the following EXCEPT:' \u2014 how should you work through it?",
+      "solutionMarkdown": "Mark each option individually:\n\nOption A: find the supporting line. Supported.\nOption B: find the supporting line. Supported.\nOption C: no supporting line anywhere. **Not supported**.\nOption D: find the supporting line. Supported.\n\nC is the answer, because it is the one the passage does not support \u2014 even though nothing in the passage contradicts it either.",
+      "altSolutionMarkdown": "Checking all four is slower but far safer than trying to spot the odd one at a glance."
+    }
+  ],
+  "formulaCards": [
+    {
+      "id": "varc.rc.except-least-likely.fc1",
+      "microTopicId": "varc.rc.except-least-likely",
+      "title": "Flag the reversal",
+      "bodyMarkdown": "Physically mark that the question is negative before reading the options.",
+      "exampleMarkdown": "Writing 'NOT' beside the question prevents the commonest error in this type."
+    },
+    {
+      "id": "varc.rc.except-least-likely.fc2",
+      "microTopicId": "varc.rc.except-least-likely",
+      "title": "Check all four",
+      "bodyMarkdown": "Label each option supported or not. The answer is the one that stands alone.",
+      "exampleMarkdown": "Three ticks and one blank identifies the answer without guesswork."
+    }
+  ],
+  "commonTraps": [
+    "Forgetting the 'except' partway through and picking a supported option.",
+    "Expecting the answer to be contradicted, when merely being unmentioned is enough.",
+    "Stopping at the first option that looks odd instead of checking all four."
+  ],
+  "estReadMinutes": 6
+}
