@@ -204,6 +204,21 @@ export interface Settings {
    * last shown, so opening the app twice in one day doesn't fire it twice.
    */
   lastNudgeShownDate?: string
+  /**
+   * Professionalization pass: the last filters used in the custom practice builder, so the
+   * page reopens where the learner left it rather than resetting every visit. Optional and
+   * purely a convenience — nothing reads it for scheduling or scoring, so an absent or stale
+   * value is harmless. Added as an optional field on the existing settings record, which is
+   * why `schemaVersion` stays 1 and no migration step is needed (an old row simply reads
+   * `undefined` here).
+   */
+  practiceBuilderPrefs?: {
+    sections: Section[]
+    microTopicIds: string[]
+    difficulties: ('easy' | 'medium' | 'hard' | 'very_hard')[]
+    count: number
+    timeLimitMinutes: number | null
+  }
 }
 
 /**
