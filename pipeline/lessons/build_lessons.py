@@ -13,13 +13,14 @@ import json
 from pathlib import Path
 
 from lessons import LESSONS_DIR, write_lessons
-from lessons import qa_algebra, qa_arith, qa_arith_core, qa_geometry, qa_numsys_modern, dilr, varc
+from lessons import qa_algebra, qa_arith, qa_arith_core, qa_geometry, qa_numsys_modern, qa_orphans, dilr, varc
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
 ALL_SPECS = (
     qa_arith.SPECS
     + qa_arith_core.SPECS
+    + qa_orphans.SPECS
     + qa_algebra.SPECS
     + qa_numsys_modern.SPECS
     + qa_geometry.SPECS

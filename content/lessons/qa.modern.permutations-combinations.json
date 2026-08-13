@@ -1,40 +1,77 @@
 {
-  "id": "lesson.qa.modern.permutations-combinations",
+  "id": "qa.modern.permutations-combinations",
   "microTopicId": "qa.modern.permutations-combinations",
-  "bodyMarkdown": "## Permutations & Combinations\n\nHere's the one question that tells them apart: **does the order matter?**\n\n- **Permutation** = arranging things where **who goes where** matters. Picking a President, a\n  Vice-President, and a Secretary from a group of friends is a permutation \u2014 swapping who gets\n  which job gives you a genuinely different outcome.\n- **Combination** = just picking a group, where order doesn't matter. Picking 3 friends to be on\n  a committee is a combination \u2014 it doesn't matter who you \"picked first.\"\n\n$$nPr = \\frac{n!}{(n-r)!} \\qquad nCr = \\frac{n!}{r! \\, (n-r)!}$$\n\nNotice $nCr$ is just $nPr$ divided by $r!$ \u2014 because for every group you pick, there are $r!$\nways to arrange that same group in order, and combinations don't care about those arrangements.\n\n### The two questions to ask yourself\n\n1. Am I **selecting** a group, or **arranging** things in specific positions/roles? (selecting \u2192\n   combination; arranging/assigning roles \u2192 permutation)\n2. Can something repeat, or is each item used at most once? (Most CAT questions: no repetition \u2014\n   read carefully when they do allow it.)",
+  "bodyMarkdown": "## Before you start\n\nMultiplication, and factorial notation \u2014 $5!$ just means $5 \\times 4 \\times 3 \\times 2 \\times 1$.\n\n## The idea in plain language\n\nOne question separates every problem in this topic: **does the order matter?**\n\nPicture picking three people from a group of ten. If you are choosing a president, a secretary and a treasurer, then Asha-Ben-Chandra is a different outcome from Ben-Asha-Chandra \u2014 the same three people, different jobs. Order matters, and that is a **permutation**.\n\nIf instead you are choosing three people to form a committee with no titles, then those two outcomes are the same committee. Order does not matter, and that is a **combination**.\n\nThere are always more permutations than combinations, because each combination can be shuffled into several orders. Precisely: each group of $r$ people can be arranged in $r!$ ways, which is exactly the factor between the two formulas.\n\n## What is actually going on\n\nThe whole topic rests on one principle: if a first choice can be made in $m$ ways and a second in $n$ ways, the pair can be made in $m \\times n$ ways. Multiply independent choices; add mutually exclusive cases.\n\nFrom that, arranging $r$ objects out of $n$ distinct ones: the first slot has $n$ candidates, the next $n-1$, and so on for $r$ slots. That product is $^nP_r = \\dfrac{n!}{(n-r)!}$.\n\nFor a selection where order is irrelevant, take the permutations and divide out the $r!$ orderings you have counted more than once:\n\n$$^nC_r = \\frac{n!}{r!\\,(n-r)!}$$\n\nTwo facts worth having in your fingers. First, $^nC_r = {}^nC_{n-r}$ \u2014 choosing 8 of 10 to take is the same as choosing 2 to leave behind, and the second sum is much less work. Second, when items repeat, divide by the factorial of each repeat count: the letters of LEVEL arrange in $\\dfrac{5!}{2!\\,2!}$ ways, because swapping the two Ls, or the two Es, does not make a new word.\n\n## Every question type you will meet\n\nEach of these is a shape a question in this topic actually comes in. Learn to recognise the shape first \u2014 in a timed paper, picking the right method is most of the battle, and the arithmetic is the easy part.\n\n### 1. Choosing a committee\n\n**Spot it when:** a group selected with no roles or ordering.\n\n1. Use $^nC_r$.\n2. If the group must contain specified numbers from different pools, multiply the choices for each pool.\n3. Use the symmetry $^nC_r = {}^nC_{n-r}$ to keep the arithmetic small.\n\n**Worked through:** Choosing 3 from 5 men and 2 from 4 women gives $\\binom{5}{3}\\binom{4}{2} = 10 \\times 6 = 60$.\n\n### 2. Arranging distinct objects\n\n**Spot it when:** a queue, a photograph, a seating row, or a set of ranked positions.\n\n1. All $n$ objects in a row: $n!$.\n2. Only $r$ of them: $^nP_r$.\n3. If some objects must sit together, glue them into one block, arrange the blocks, then arrange within the block.\n\n**Worked through:** Five people in a row with two insisting on adjacency: $4! \\times 2! = 48$.\n\n### 3. Arrangements with repeated items\n\n**Spot it when:** a word with repeated letters, or identical objects among distinct ones.\n\n1. Start with $n!$ for all positions.\n2. Divide by $k!$ for each group of $k$ identical items.\n\n**Worked through:** BANANA has 6 letters with three As and two Ns: $\\dfrac{6!}{3!\\,2!} = 60$.\n\n### 4. At least / at most conditions\n\n**Spot it when:** 'at least one', 'at most two', or a condition that splits into cases.\n\n1. For 'at least one', it is usually far quicker to count the total and subtract the 'none' case.\n2. Otherwise split into disjoint cases and add them.\n3. Check the cases do not overlap and do not leave a gap.\n\n**Worked through:** At least one woman on a committee of 3 from 5 men and 4 women: $\\binom{9}{3} - \\binom{5}{3} = 84 - 10 = 74$.\n\n### 5. Circular arrangements\n\n**Spot it when:** people around a round table, or beads in a ring.\n\n1. Fix one person to kill the rotational symmetry, leaving $(n-1)!$ arrangements.\n2. If the arrangement can also be flipped over \u2014 a necklace rather than a table \u2014 halve it again.\n\n**Worked through:** Six people round a table: $5! = 120$ ways.\n\n## Check yourself\n\nYou are ready to start practising this topic when you can:\n\n- Decide, for any question, whether order matters.\n- Multiply independent choices and add exclusive cases, correctly.\n- Handle repeated items and circular seating.\n- Use the gap method for 'no two together'.\n- Choose between direct casework and total-minus-complement.",
   "workedExamples": [
     {
-      "id": "qa.modern.permutations-combinations.we-01",
-      "stemMarkdown": "In how many ways can 3 people be selected from a group of 6 to serve as President, Vice-President, and Secretary (three different roles)?",
-      "solutionMarkdown": "The roles are different, so **order/role matters** \u2014 this is a permutation. $^6P_3 = \\dfrac{6!}{3!} = 6 \\times 5 \\times 4 = 120$.",
-      "altSolutionMarkdown": null
+      "id": "qa.modern.permutations-combinations.ex1",
+      "stemMarkdown": "In how many ways can a committee of 4 be formed from 7 men and 5 women, if it must contain at least 3 women?",
+      "solutionMarkdown": "'At least 3 women' from a committee of 4 splits into exactly two disjoint cases: 3 women, or 4 women.\n\n**Three women and one man:** $\\binom{5}{3} \\times \\binom{7}{1} = 10 \\times 7 = 70$.\n\n**Four women and no man:** $\\binom{5}{4} \\times \\binom{7}{0} = 5 \\times 1 = 5$.\n\nThe cases cannot both happen, so add them: $70 + 5 = 75$ ways.",
+      "altSolutionMarkdown": "Adding rather than multiplying here is the point. Multiply when choices happen together (women **and** men in one committee); add when they are alternatives (3 women **or** 4 women)."
     },
     {
-      "id": "qa.modern.permutations-combinations.we-02",
-      "stemMarkdown": "In how many ways can a committee of 3 be selected from the same group of 6 people?",
-      "solutionMarkdown": "A committee has no roles \u2014 just a group. This is a combination. $^6C_3 = \\dfrac{6!}{3! \\, 3!} = \\dfrac{720}{6 \\times 6} = 20$. Notice this is exactly the permutation answer (120) divided by $3! = 6$ \u2014 the number of ways to reorder any one group of 3.",
-      "altSolutionMarkdown": null
+      "id": "qa.modern.permutations-combinations.ex2",
+      "stemMarkdown": "How many different words can be formed using all the letters of the word MISSISSIPPI?",
+      "solutionMarkdown": "Count the letters first: 11 in total, made of one M, four Is, four Ss and two Ps.\n\nIf every letter were distinct there would be $11!$ arrangements. But swapping the four Is changes nothing, and likewise for the Ss and the Ps, so divide by each repeat count's factorial:\n\n$\\dfrac{11!}{4!\\,4!\\,2!} = \\dfrac{39916800}{24 \\times 24 \\times 2} = 34650$\n\nSo there are **34650** distinct arrangements.",
+      "altSolutionMarkdown": "Sanity check the letter count before anything else \u2014 miscounting the Is or Ss is far more common than getting the formula wrong, and it is silent."
     },
     {
-      "id": "qa.modern.permutations-combinations.we-03",
-      "stemMarkdown": "How many 4-letter arrangements (not necessarily meaningful words) can be formed using the letters of 'LOGIC', with no letter repeated?",
-      "solutionMarkdown": "'LOGIC' has 5 distinct letters, and we're arranging 4 of them in order (position matters \u2014 'LOGI' and 'GILO' are different arrangements). $^5P_4 = 5 \\times 4 \\times 3 \\times 2 = 120$.",
-      "altSolutionMarkdown": null
+      "id": "qa.modern.permutations-combinations.ex3",
+      "stemMarkdown": "In how many ways can 5 boys and 3 girls sit in a row so that no two girls sit together?",
+      "solutionMarkdown": "Seat the boys first, then slot the girls into the gaps between them.\n\nThe 5 boys can be arranged in $5! = 120$ ways.\n\nThat creates 6 gaps \u2014 one before each boy and one at the end. Choose 3 of those gaps for the girls and arrange them: $\\binom{6}{3} \\times 3! = 20 \\times 6 = 120$.\n\nTotal $= 120 \\times 120 = 14400$ ways.",
+      "altSolutionMarkdown": "The gap method is the standard tool for every 'no two together' question. Place the unrestricted items first, count the gaps they create \u2014 always one more than the number of items \u2014 then choose gaps for the restricted ones."
     }
   ],
   "formulaCards": [
     {
-      "id": "qa.modern.permutations-combinations.fc-npr-ncr",
+      "id": "qa.modern.permutations-combinations.fc1",
       "microTopicId": "qa.modern.permutations-combinations",
-      "title": "nPr vs nCr",
-      "bodyMarkdown": "$$nPr = \\frac{n!}{(n-r)!}, \\qquad nCr = \\frac{n!}{r!(n-r)!} = \\frac{nPr}{r!}$$",
-      "exampleMarkdown": "5P2 = 20 (order matters), 5C2 = 10 (order doesn't)."
+      "title": "Permutations",
+      "bodyMarkdown": "$^nP_r = \\dfrac{n!}{(n-r)!}$ \u2014 order matters.",
+      "exampleMarkdown": "$^5P_2 = \\dfrac{120}{6} = 20$."
+    },
+    {
+      "id": "qa.modern.permutations-combinations.fc2",
+      "microTopicId": "qa.modern.permutations-combinations",
+      "title": "Combinations",
+      "bodyMarkdown": "$^nC_r = \\dfrac{n!}{r!\\,(n-r)!}$ \u2014 order does not matter.",
+      "exampleMarkdown": "$\\binom{5}{2} = 10$."
+    },
+    {
+      "id": "qa.modern.permutations-combinations.fc3",
+      "microTopicId": "qa.modern.permutations-combinations",
+      "title": "Symmetry",
+      "bodyMarkdown": "$^nC_r = {}^nC_{n-r}$",
+      "exampleMarkdown": "$\\binom{10}{8} = \\binom{10}{2} = 45$, and the second is much less work."
+    },
+    {
+      "id": "qa.modern.permutations-combinations.fc4",
+      "microTopicId": "qa.modern.permutations-combinations",
+      "title": "Repeated items",
+      "bodyMarkdown": "$\\dfrac{n!}{p!\\,q!\\,r!}$, dividing by the factorial of each repeat count.",
+      "exampleMarkdown": "LEVEL gives $\\dfrac{5!}{2!\\,2!} = 30$."
+    },
+    {
+      "id": "qa.modern.permutations-combinations.fc5",
+      "microTopicId": "qa.modern.permutations-combinations",
+      "title": "Circular arrangements",
+      "bodyMarkdown": "$(n-1)!$ round a table; halve it if reflections are also identical.",
+      "exampleMarkdown": "Five people round a table: $4! = 24$."
+    },
+    {
+      "id": "qa.modern.permutations-combinations.fc6",
+      "microTopicId": "qa.modern.permutations-combinations",
+      "title": "The gap method",
+      "bodyMarkdown": "Arrange the unrestricted items, then choose from the $n + 1$ gaps for the ones that must not be adjacent.",
+      "exampleMarkdown": "4 boys make 5 gaps for the girls to go into."
     }
   ],
   "commonTraps": [
-    "Assigning distinct roles/positions is a permutation, even if the question doesn't use the word 'arrange.'",
-    "nCr is nPr divided by r! \u2014 forgetting this division is the most common slip when a problem actually needs a combination.",
-    "Read for repetition allowed vs not allowed \u2014 it changes the formula entirely (this lesson covers the no-repetition case, the default on CAT)."
+    "Using a permutation where the question does not care about order. Ask 'would swapping two of these give a different outcome?'",
+    "Adding when you should multiply. Multiply for 'and', add for 'or'.",
+    "Forgetting to divide by the repeats when letters or objects are identical.",
+    "In circular arrangements, using $n!$ instead of $(n-1)!$ \u2014 a rotation is not a new arrangement.",
+    "Counting overlapping cases twice in an 'at least' question. Subtract from the total instead when you can."
   ],
-  "estReadMinutes": 6
+  "estReadMinutes": 12
 }

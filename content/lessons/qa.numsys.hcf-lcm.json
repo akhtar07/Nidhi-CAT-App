@@ -1,47 +1,63 @@
 {
-  "id": "lesson.qa.numsys.hcf-lcm",
+  "id": "qa.numsys.hcf-lcm",
   "microTopicId": "qa.numsys.hcf-lcm",
-  "bodyMarkdown": "## HCF & LCM\n\nFor **exactly two** numbers $a, b$:\n\n$$HCF(a,b) \\times LCM(a,b) = a \\times b$$\n\nThis does **not** extend to three or more numbers \u2014 compute HCF/LCM of 3+ numbers directly via\nprime factorization instead.\n\n### Via prime factorization\n\n- **LCM** = product of the **highest** power of every prime appearing in any number.\n- **HCF** = product of the **lowest** power of every prime common to **all** the numbers.\n\n### \"Leaves a remainder\" problems\n\n\"Find the largest number that divides $X$ and $Y$, leaving remainder $r$ in each case\" \u2014\n**subtract $r$ first**, then take the HCF of $(X-r)$ and $(Y-r)$.\n\n### Word-problem cue\n\nDividing things into equal groups / finding the largest common measure \u2192 **HCF**. Events that\nrecur together / finding when things next coincide \u2192 **LCM**.",
+  "bodyMarkdown": "## Before you start\n\nPrime factorisation.\n\n## The idea in plain language\n\nTwo ways of thinking about two numbers.\n\nThe **HCF** is the largest tile that paves both. If you have a floor 12 m by 18 m and want to cover it in identical square tiles with none cut, the biggest square you can use is 6 m \u2014 the highest common factor. HCF questions are the ones about cutting things into equal largest pieces.\n\nThe **LCM** is when two repeating cycles line up again. Two bells, one ringing every 12 minutes and one every 18, both rang together at the start; they next coincide after 36 minutes \u2014 the lowest common multiple. LCM questions are the ones about things meeting, coinciding, or coming round together.\n\nSo the giveaway in a stem: **cutting or distributing** points to HCF, **repeating or coinciding** points to LCM.\n\n## What is actually going on\n\nPrime factorise both numbers and the two quantities read straight off.\n\nFor the **HCF**, take every prime the numbers share, each to the **lowest** power that appears. Anything not in both cannot divide both.\n\nFor the **LCM**, take every prime that appears in either, each to the **highest** power. Anything less would fail to be a multiple of one of them.\n\nFor two numbers there is a relationship worth keeping as a check:\n\n$$\\text{HCF} \\times \\text{LCM} = a \\times b$$\n\nIt holds for two numbers only \u2014 it is **not** true for three, and assuming otherwise is a classic error.\n\nFor fractions the rules invert in a way that is easy to remember once you see why: the HCF of fractions is $\\dfrac{\\text{HCF of numerators}}{\\text{LCM of denominators}}$, and the LCM is $\\dfrac{\\text{LCM of numerators}}{\\text{HCF of denominators}}$. A larger denominator makes a smaller fraction, so the roles swap.\n\n## Every question type you will meet\n\nEach of these is a shape a question in this topic actually comes in. Learn to recognise the shape first \u2014 in a timed paper, picking the right method is most of the battle, and the arithmetic is the easy part.\n\n### 1. Finding HCF and LCM from factorisation\n\n**Spot it when:** two or more numbers, asking for a greatest common divisor or least common multiple.\n\n1. Prime factorise each number.\n2. HCF: lowest power of each shared prime. LCM: highest power of every prime present.\n3. For two numbers, check with $\\text{HCF} \\times \\text{LCM} = a \\times b$.\n\n**Worked through:** $24 = 2^3 \\times 3$ and $36 = 2^2 \\times 3^2$ give HCF $2^2 \\times 3 = 12$ and LCM $2^3 \\times 3^2 = 72$.\n\n### 2. Bells, lights and coinciding cycles\n\n**Spot it when:** things repeating at fixed intervals, asking when they next coincide.\n\n1. Take the LCM of the intervals.\n2. For 'how many times in an hour', divide the total time by that LCM.\n3. Decide whether the moment at the very start counts \u2014 questions differ, and the wording decides it.\n\n**Worked through:** Bells at 6, 8 and 12 minutes have LCM 24, so they ring together every 24 minutes.\n\n### 3. Largest equal pieces, or largest common measure\n\n**Spot it when:** cutting rope, tiling a floor, or distributing items into equal groups with nothing left over.\n\n1. Take the HCF of the quantities.\n2. For 'how many pieces', divide each quantity by the HCF and add.\n\n**Worked through:** Ropes of 36 and 48 m cut into equal longest pieces use 12 m lengths: $3 + 4 = 7$ pieces.\n\n### 4. Numbers leaving the same remainder\n\n**Spot it when:** 'the least number that leaves remainder r when divided by a, b and c'.\n\n1. If the remainder is the same each time, the answer is $\\text{LCM} + r$.\n2. If instead each divisor leaves a remainder that falls short by the same amount, the answer is $\\text{LCM} - \\text{that shortfall}$.\n3. Read carefully which of the two situations you are in.\n\n**Worked through:** The least number leaving remainder 3 with 4, 6 and 8 is $24 + 3 = 27$.\n\n## Check yourself\n\nYou are ready to start practising this topic when you can:\n\n- Compute HCF and LCM from prime factorisations without hesitating.\n- Tell an HCF question from an LCM question by the wording alone.\n- Use the differences trick for equal-remainder problems.\n- Handle HCF and LCM of fractions.",
   "workedExamples": [
     {
-      "id": "qa.numsys.hcf-lcm.we-01",
-      "stemMarkdown": "Find the HCF and LCM of 36 and 60.",
-      "solutionMarkdown": "$36 = 2^2 \\times 3^2$, $60 = 2^2 \\times 3 \\times 5$. HCF $= 2^2 \\times 3 = 12$ (lowest common powers). LCM $= 2^2 \\times 3^2 \\times 5 = 180$ (highest powers of every prime). Check: $12 \\times 180 = 2160 = 36 \\times 60$. \u2713",
-      "altSolutionMarkdown": null
+      "id": "qa.numsys.hcf-lcm.ex1",
+      "stemMarkdown": "Find the HCF and LCM of 48 and 180, and verify the relationship between them.",
+      "solutionMarkdown": "Factorise both.\n\n$48 = 2^4 \\times 3$ and $180 = 2^2 \\times 3^2 \\times 5$.\n\n**HCF** \u2014 shared primes at their lowest powers: $2^2 \\times 3 = 12$.\n\n**LCM** \u2014 every prime at its highest power: $2^4 \\times 3^2 \\times 5 = 720$.\n\nCheck: $12 \\times 720 = 8640$, and $48 \\times 180 = 8640$. They agree.",
+      "altSolutionMarkdown": "That check is cheap and catches most slips. Note it only works for two numbers \u2014 with three, HCF times LCM has no such tidy relationship to the product."
     },
     {
-      "id": "qa.numsys.hcf-lcm.we-02",
-      "stemMarkdown": "Three bells toll at intervals of 12, 18, and 24 minutes. If they toll together at 6:00 AM, when will they next toll together?",
-      "solutionMarkdown": "$12 = 2^2 \\times 3$, $18 = 2 \\times 3^2$, $24 = 2^3 \\times 3$. LCM $= 2^3 \\times 3^2 = 72$ minutes. Next together at $6{:}00 + 72\\text{ min} = 7{:}12$ AM.",
-      "altSolutionMarkdown": null
+      "id": "qa.numsys.hcf-lcm.ex2",
+      "stemMarkdown": "Three bells ring at intervals of 9, 12 and 15 minutes. If they ring together at 10 am, when do they next ring together?",
+      "solutionMarkdown": "They coincide at multiples of every interval, so take the LCM.\n\n$9 = 3^2$, $12 = 2^2 \\times 3$, $15 = 3 \\times 5$.\n\nHighest power of each prime: $2^2 \\times 3^2 \\times 5 = 180$.\n\nSo they next ring together after 180 minutes, which is 3 hours: at **1 pm**.",
+      "altSolutionMarkdown": "Sanity check by dividing: $180$ is $20$ nines, $15$ twelves and $12$ fifteens \u2014 all whole, as they must be. If any division leaves a remainder, the LCM is wrong."
     },
     {
-      "id": "qa.numsys.hcf-lcm.we-03",
-      "stemMarkdown": "Find the greatest number that divides 245 and 1029, leaving remainder 5 in each case.",
-      "solutionMarkdown": "Subtract the remainder first: $245 - 5 = 240$, $1029 - 5 = 1024$. $240 = 2^4 \\times 3 \\times 5$, $1024 = 2^{10}$. HCF $= 2^4 = 16$.",
-      "altSolutionMarkdown": null
+      "id": "qa.numsys.hcf-lcm.ex3",
+      "stemMarkdown": "Find the greatest number that divides 261, 933 and 1381 leaving the same remainder in each case.",
+      "solutionMarkdown": "If a number $d$ leaves the same remainder with all three, then it divides their **differences** exactly \u2014 the remainder cancels out on subtraction.\n\n$933 - 261 = 672$, $1381 - 933 = 448$, and $1381 - 261 = 1120$.\n\nSo $d$ is the HCF of 672, 448 and 1120.\n\n$672 = 2^5 \\times 3 \\times 7$, $448 = 2^6 \\times 7$, $1120 = 2^5 \\times 5 \\times 7$.\n\nShared at lowest powers: $2^5 \\times 7 = 224$.\n\nThe greatest such number is **224**.",
+      "altSolutionMarkdown": "The differences trick is the key move, and it is worth remembering as a sentence: **equal remainders means take differences**. Checking, $261 = 224 + 37$ and $933 = 4 \\times 224 + 37$ \u2014 remainder 37 both times."
     }
   ],
   "formulaCards": [
     {
-      "id": "qa.numsys.hcf-lcm.fc-product-rule",
+      "id": "qa.numsys.hcf-lcm.fc1",
       "microTopicId": "qa.numsys.hcf-lcm",
-      "title": "HCF \u00d7 LCM = product (two numbers only)",
-      "bodyMarkdown": "$$HCF(a,b) \\times LCM(a,b) = a \\times b$$ Only valid for exactly two numbers.",
-      "exampleMarkdown": "HCF(12,18)=6, LCM(12,18)=36, and 6\u00d736=216=12\u00d718."
+      "title": "From prime factorisation",
+      "bodyMarkdown": "HCF takes the lowest power of each shared prime; LCM takes the highest power of every prime present.",
+      "exampleMarkdown": "$2^3 3$ and $2^2 3^2$ give HCF $2^2 3 = 12$ and LCM $2^3 3^2 = 72$."
     },
     {
-      "id": "qa.numsys.hcf-lcm.fc-remainder-trick",
+      "id": "qa.numsys.hcf-lcm.fc2",
       "microTopicId": "qa.numsys.hcf-lcm",
-      "title": "\"Leaves remainder r\" trick",
-      "bodyMarkdown": "Subtract the remainder from each number **before** taking the HCF.",
-      "exampleMarkdown": "Largest number dividing 50 and 80 leaving remainder 2: HCF(48,78)=6."
+      "title": "The two-number identity",
+      "bodyMarkdown": "$\\text{HCF} \\times \\text{LCM} = a \\times b$. True for two numbers only.",
+      "exampleMarkdown": "$12 \\times 72 = 864 = 24 \\times 36$."
+    },
+    {
+      "id": "qa.numsys.hcf-lcm.fc3",
+      "microTopicId": "qa.numsys.hcf-lcm",
+      "title": "Fractions",
+      "bodyMarkdown": "$\\text{HCF} = \\dfrac{\\text{HCF of numerators}}{\\text{LCM of denominators}}$ and $\\text{LCM} = \\dfrac{\\text{LCM of numerators}}{\\text{HCF of denominators}}$",
+      "exampleMarkdown": "For $\\dfrac{2}{3}$ and $\\dfrac{4}{9}$ the HCF is $\\dfrac{2}{9}$."
+    },
+    {
+      "id": "qa.numsys.hcf-lcm.fc4",
+      "microTopicId": "qa.numsys.hcf-lcm",
+      "title": "Equal remainders",
+      "bodyMarkdown": "A divisor leaving the same remainder with several numbers is a factor of their pairwise differences.",
+      "exampleMarkdown": "Same remainder with 261 and 933 means it divides 672."
     }
   ],
   "commonTraps": [
-    "HCF \u00d7 LCM = product only works for exactly two numbers \u2014 not three or more.",
-    "In \"leaves remainder r\" problems, subtract r from each number before computing the HCF \u2014 a very common miss.",
-    "Confusing when to use HCF (equal grouping / largest common measure) vs LCM (things recurring together)."
+    "Applying $\\text{HCF} \\times \\text{LCM} = $ product to three numbers. It only holds for two.",
+    "Reaching for the LCM on a cutting-into-pieces question, or the HCF on a coinciding question. Read what is being asked for.",
+    "Including a prime in the HCF that is missing from one of the numbers.",
+    "Forgetting that the moment at the start may or may not count as a coincidence, depending on the wording.",
+    "Inverting the fraction rules, using LCM of denominators where HCF belongs."
   ],
-  "estReadMinutes": 6
+  "estReadMinutes": 11
 }
